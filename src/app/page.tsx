@@ -324,16 +324,16 @@ export default function HomePage() {
           </p>
         </div>
         <div className="relative marquee-track">
-          <div className="flex animate-marquee gap-16 items-center">
+          <div className="flex animate-marquee gap-24 items-center">
             {[...partnerLogos, ...partnerLogos].map((logo, i) => (
-              <div key={`${logo.alt}-${i}`} className="shrink-0 flex items-center justify-center h-12 px-4">
+              <div key={`${logo.alt}-${i}`} className="shrink-0 flex items-center justify-center h-28 px-6">
                 <Image
                   src={logo.src}
                   alt={logo.alt}
-                  width={120}
-                  height={40}
+                  width={240}
+                  height={96}
                   className="partner-logo"
-                  style={{ height: '40px', width: 'auto', objectFit: 'contain' }}
+                  style={{ height: '96px', width: 'auto', objectFit: 'contain' }}
                 />
               </div>
             ))}
@@ -911,14 +911,14 @@ export default function HomePage() {
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
           {partnerLogos.map((logo) => (
-            <div key={logo.alt} className="bg-white rounded-2xl p-5 shadow-card hover:shadow-card-hover transition-all flex items-center justify-center h-24 group">
+            <div key={logo.alt} className="bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all flex items-center justify-center h-40 group">
               <Image
                 src={logo.src}
                 alt={logo.alt}
-                width={120}
-                height={48}
+                width={220}
+                height={100}
                 className="partner-logo"
-                style={{ maxHeight: '48px', width: 'auto', objectFit: 'contain' }}
+                style={{ maxHeight: '100px', width: 'auto', objectFit: 'contain' }}
               />
             </div>
           ))}
