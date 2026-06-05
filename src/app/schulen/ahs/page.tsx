@@ -13,6 +13,15 @@ const icon = (
   </svg>
 )
 
+const bookIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+const chartIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+const shieldIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+const alertIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+const starIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+const playIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+const homeIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+const piggyIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8.5 3.3 1.5 4.5L5 21h6l1-1 1 1h6l-1.5-4.5C19.5 15.3 20 13.8 20 12c0-1-.3-2-.5-2.5.5-.7 1-2.5.5-4.5z"/></svg>
+
 export default function AhsPage() {
   return (
     <SchulPage
@@ -73,6 +82,20 @@ export default function AhsPage() {
           was: 'Jede Schüler:in beantwortet eine Reflexionsfrage in der App. Du siehst die Antworten im Dashboard — idealer Einstieg für die nächste Stunde.',
           zeitMinuten: 5,
         },
+      ]}
+      module={[
+        { titel: 'Finfluencer in Österreich', lernziel: 'Seriöse Finanzinformationen von problematischer Werbung unterscheiden — FMA, WAG 2018 und parasoziale Beziehungen verstehen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Medienkompetenz', icon: shieldIcon },
+        { titel: 'Konsumfallen', lernziel: 'FOMO, Anchoring und Present Bias als psychologische Kauftrigger erkennen — und die 24-Stunden-Regel als einfache Gegenmaßnahme einsetzen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Konsumpsychologie', icon: alertIcon },
+        { titel: 'Sparen & Geldentscheidungen', lernziel: 'Nominalzins vs. Realzins verstehen, Zinseszinseffekt berechnen und begreifen, warum Inflation Erspartes auffressen kann.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Sparen', icon: piggyIcon },
+        { titel: 'Kryptowährungen & Krypto-Assets', lernziel: 'Blockchain-Grundlagen, Bitcoin-Risiken und österreichische Steuerpflicht kennen — MiCA-Regulierung und FMA-Warnliste verstehen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Investieren', icon: chartIcon },
+        { titel: 'Finanzplanung', lernziel: 'Erstes Monatsbudget erstellen: Fixkosten vs. variable Kosten, 50-30-20-Regel und "Pay yourself first" als Sparstrategie.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Budgetplanung', icon: bookIcon },
+        { titel: 'Altersvorsorge', lernziel: 'Das österreichische 3-Säulen-Modell kennen und verstehen, warum früh privat vorzusorgen entscheidend ist — Zinseszins und Pensionslücke berechnen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Vorsorge', icon: starIcon },
+      ]}
+      simulationen={[
+        { titel: 'Konsumfallen-Parcours', untertitel: 'Erkenne FOMO, Dark Patterns, künstliche Knappheit und Abo-Fallen — mit 14-Tage-Widerrufsrecht nach FAGG.', dauer: '15–20 Min', icon: playIcon },
+        { titel: 'Aktienmarkt-Langläufer', untertitel: 'Simulation eines 20-Jahres-Portfolios: ETF-Auswahl, Sparplan-Rechner, Marktvolatilität, Zinseszins erleben.', dauer: '25–35 Min', icon: chartIcon },
+        { titel: 'Bank-Simulation', untertitel: 'Girokonto vs. Sparkonto, Überweisung, Dauerauftrag, Kartenzahlung — Bankalltag erleben.', dauer: '20–30 Min', icon: homeIcon },
+        { titel: 'Krypto-Handel', untertitel: 'Simulierter Krypto-Markt: Bitcoin/ETH kaufen/verkaufen, Portfoliorisiko einschätzen, MiCA-Regulierung verstehen.', dauer: '30–45 Min', icon: alertIcon },
       ]}
       themen={[
         'Budgetplanung im Alltag',

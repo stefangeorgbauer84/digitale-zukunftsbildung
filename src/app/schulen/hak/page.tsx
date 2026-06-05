@@ -15,6 +15,14 @@ const icon = (
   </svg>
 )
 
+const bookIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+const chartIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+const moneyIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+const taxIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+const alertIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+const playIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+const piggyIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8.5 3.3 1.5 4.5L5 21h6l1-1 1 1h6l-1.5-4.5C19.5 15.3 20 13.8 20 12c0-1-.3-2-.5-2.5.5-.7 1-2.5.5-4.5z"/></svg>
+
 export default function HakPage() {
   return (
     <SchulPage
@@ -75,6 +83,20 @@ export default function HakPage() {
           was: 'Ein Peer-Video zeigt einen Lehrling, der nach dem ersten Monatsgehalt im Minus war — und warum. Das öffnet die Diskussion über Ratenkauf, Abos und Konsumfallen ohne pädagogischen Zeigefinger.',
           zeitMinuten: 10,
         },
+      ]}
+      module={[
+        { titel: 'Gehalt & Einkommen', lernziel: 'Lohnzettel lesen, Brutto-Netto-Berechnung verstehen, Kollektivvertrag nutzen — und die Negativsteuer via FinanzOnline beantragen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Einkommen', icon: moneyIcon },
+        { titel: 'Finanzplanung', lernziel: 'Vollständigen Monats- und Jahresfinanzplan erstellen: Dauerauftrag vs. Lastschrift, Sonderzahlungen einplanen, 50-30-20-Regel anwenden.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Budgetplanung', icon: bookIcon },
+        { titel: 'Steuern in Österreich', lernziel: 'Lohnsteuer und Sozialversicherung unterscheiden, Arbeitnehmerveranlagung auf FinanzOnline durchführen — bis zu 5 Jahre rückwirkend.', dauer: '15 oder 50 Min', level: 'Mittel', kategorie: 'Steuern', icon: taxIcon },
+        { titel: 'Ratenkauf & BNPL', lernziel: 'Effektivzins berechnen, Klarna & Co. kritisch einschätzen, 14-Tage-Widerrufsrecht kennen — KSV-Eintrag verstehen und vermeiden.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Konsumentenschutz', icon: alertIcon },
+        { titel: 'Sparen & Geldentscheidungen', lernziel: 'Zinseszinseffekt und Inflation verstehen — warum das Sparbuch Kaufkraft verliert und wie ETF-Sparpläne funktionieren.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Sparen', icon: piggyIcon },
+        { titel: 'Schulden & Geld leihen', lernziel: 'Warnsignale für problematische Schulden erkennen, Inkasso-Rechte kennen und erste Anlaufstellen (AK, Schuldnerberatung) nutzen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Schuldenprävention', icon: chartIcon },
+      ]}
+      simulationen={[
+        { titel: 'Arbeitnehmerveranlagung', untertitel: 'Steuerausgleich selbst durchführen: Werbungskosten, Sonderausgaben, Negativsteuer — mit FinanzOnline-Simulation.', dauer: '15–25 Min', icon: taxIcon },
+        { titel: 'Gehaltsverhandlung', untertitel: 'KV-Mindestlohn recherchieren, Argumente formulieren, Einwände parieren — auch als Lehrling verhandelbar.', dauer: '15–20 Min', icon: moneyIcon },
+        { titel: 'Kredit-Falle', untertitel: 'Konsumkredit, Ratenkauf, BNPL: Gesamtkosten berechnen, VKrG-Rechte kennen, Schuldenfallen erkennen.', dauer: '15–20 Min', icon: alertIcon },
+        { titel: 'Aktienmarkt-Langläufer', untertitel: 'ETF-Sparplan simulieren: Zinseszins über 20 Jahre erleben, Diversifikation verstehen, Rebalancing üben.', dauer: '25–35 Min', icon: chartIcon },
       ]}
       themen={[
         'Lohnzettel lesen & verstehen',

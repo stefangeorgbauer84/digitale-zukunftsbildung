@@ -10,6 +10,22 @@ export interface UnterrichtsEinheit {
   zeitMinuten: number
 }
 
+export interface Modul {
+  titel: string
+  lernziel: string
+  dauer: string
+  level: 'Einsteiger' | 'Mittel'
+  kategorie: string
+  icon: React.ReactNode
+}
+
+export interface Simulation {
+  titel: string
+  untertitel: string
+  dauer: string
+  icon: React.ReactNode
+}
+
 export interface SchulPageProps {
   name: string
   kurzname: string
@@ -17,14 +33,16 @@ export interface SchulPageProps {
   farbe: string
   farbeHell: string
   schulstufen: string
-  lehrplanFach: string        // z.B. "GWK, PuG oder Wahlpflichtfach"
-  lehrerProblem: string      // Der eine Satz, der den Lehrer-Schmerz trifft
+  lehrplanFach: string
+  lehrerProblem: string
   intro: string
-  lehrplanPassung: {         // Wie passt es konkret in den Lehrplan?
+  lehrplanPassung: {
     fach: string
     kontext: string
   }[]
-  unterrichtsEinheiten: UnterrichtsEinheit[]  // So läuft eine Stunde
+  unterrichtsEinheiten: UnterrichtsEinheit[]
+  module: Modul[]            // Passende Lernmodule für diesen Schultyp
+  simulationen: Simulation[] // Passende Simulationen für diesen Schultyp
   themen: string[]
   features: {               // Features aus Lehrerperspektive
     titel: string
@@ -50,7 +68,7 @@ const arrowIcon = (
 export default function SchulPage({
   name, kurzname, gradient, farbe, farbeHell,
   schulstufen, lehrplanFach, lehrerProblem, intro,
-  lehrplanPassung, unterrichtsEinheiten, themen,
+  lehrplanPassung, unterrichtsEinheiten, module, simulationen, themen,
   features, lehrerZitat, icon,
 }: SchulPageProps) {
 
@@ -201,6 +219,76 @@ export default function SchulPage({
                   <div className="bg-gray-50 rounded-2xl p-5 flex-1">
                     <p className="font-heading font-700 text-sm mb-1" style={{ color: '#1a1040' }}>{e.schritt}</p>
                     <p className="font-body text-sm text-text-muted leading-relaxed">{e.was}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Module & Simulationen ────────────────────────────── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="text-xs font-body font-700 uppercase tracking-widest mb-2" style={{ color: farbe }}>Inhalte der Plattform</p>
+            <h2 className="font-heading text-3xl font-bold mb-3" style={{ color: '#1a1040' }}>
+              Module &amp; Simulationen für {name}
+            </h2>
+            <p className="font-body text-text-muted text-sm max-w-md mx-auto">
+              Alle Inhalte sind fertig aufbereitet — Lernmodule mit Quiz, Checklisten und Reflexion, plus interaktive Simulationen mit österreichischen Alltagsszenarien.
+            </p>
+          </div>
+
+          {/* Module */}
+          <div className="mb-14">
+            <p className="font-heading font-700 text-sm uppercase tracking-widest mb-5" style={{ color: farbe }}>
+              Lernmodule — je 15 oder 50 Minuten
+            </p>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+              {module.map((m) => (
+                <div key={m.titel} className="rounded-2xl border border-gray-100 p-5 hover:border-gray-200 hover:shadow-sm transition-all bg-white">
+                  <div className="flex items-start gap-3 mb-3">
+                    <div className="shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-white"
+                      style={{ background: gradient }}>
+                      {m.icon}
+                    </div>
+                    <div className="flex-1 min-w-0">
+                      <div className="flex items-center gap-2 mb-0.5 flex-wrap">
+                        <span className="text-xs font-body font-700 px-2 py-0.5 rounded-full"
+                          style={{ background: farbeHell, color: farbe }}>
+                          {m.dauer}
+                        </span>
+                        <span className="text-xs font-body text-text-muted">{m.level}</span>
+                      </div>
+                      <p className="font-heading font-700 text-sm leading-tight" style={{ color: '#1a1040' }}>{m.titel}</p>
+                    </div>
+                  </div>
+                  <p className="font-body text-xs text-text-muted leading-relaxed">{m.lernziel}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Simulationen */}
+          <div>
+            <p className="font-heading font-700 text-sm uppercase tracking-widest mb-5" style={{ color: farbe }}>
+              Interaktive Simulationen — österreichische Alltagsszenarien
+            </p>
+            <div className="grid sm:grid-cols-2 gap-4">
+              {simulationen.map((s) => (
+                <div key={s.titel} className="flex items-start gap-4 p-5 rounded-2xl border-2 transition-all"
+                  style={{ borderColor: `${farbe}22`, background: farbeHell }}>
+                  <div className="shrink-0 w-10 h-10 rounded-xl flex items-center justify-center text-white"
+                    style={{ background: farbe }}>
+                    {s.icon}
+                  </div>
+                  <div>
+                    <div className="flex items-center gap-2 mb-1">
+                      <p className="font-heading font-700 text-sm" style={{ color: '#1a1040' }}>{s.titel}</p>
+                      <span className="text-xs font-body text-text-muted">{s.dauer}</span>
+                    </div>
+                    <p className="font-body text-xs leading-relaxed" style={{ color: farbe, opacity: 0.8 }}>{s.untertitel}</p>
                   </div>
                 </div>
               ))}

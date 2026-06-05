@@ -13,6 +13,13 @@ const icon = (
   </svg>
 )
 
+const moneyIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+const bookIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+const alertIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+const piggyIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8.5 3.3 1.5 4.5L5 21h6l1-1 1 1h6l-1.5-4.5C19.5 15.3 20 13.8 20 12c0-1-.3-2-.5-2.5.5-.7 1-2.5.5-4.5z"/></svg>
+const playIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+const homeIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+
 export default function PtsPage() {
   return (
     <SchulPage
@@ -65,6 +72,20 @@ export default function PtsPage() {
           was: 'Führerschein, Urlaub, eigene Wohnung — Schüler:innen definieren ihr persönliches Sparziel und die App berechnet, wie lange sie mit welchem monatlichen Betrag dafür brauchen. Konkret und motivierend.',
           zeitMinuten: 10,
         },
+      ]}
+      module={[
+        { titel: 'Gehalt & Einkommen', lernziel: 'Lohnzettel lesen, Brutto-Netto verstehen — und mit der Negativsteuer bis zu €110 vom Finanzamt zurückbekommen. Für Lehrlinge direkt relevant.', dauer: '15 Min', level: 'Einsteiger', kategorie: 'Einkommen', icon: moneyIcon },
+        { titel: 'Finanzplanung', lernziel: 'Ersten Monatsplan erstellen: Lehrlingslohn, Fixkosten, Freizeit, Sparen. Die 50-30-20-Regel und "Pay yourself first" als einfache Strategie.', dauer: '15 Min', level: 'Einsteiger', kategorie: 'Budgetplanung', icon: bookIcon },
+        { titel: 'Ratenkauf & BNPL', lernziel: 'Klarna und Co. mit echten Zahlen bewerten: Effektivzins, Mahngebühren, KSV-Eintrag — und das 14-Tage-Widerrufsrecht als Schutz kennen.', dauer: '15 Min', level: 'Einsteiger', kategorie: 'Konsumentenschutz', icon: alertIcon },
+        { titel: 'Konsumfallen', lernziel: 'FOMO, Ankerpreise und Flash-Sales erkennen — 24-Stunden-Regel als einfachste Gegenstrategie für Impulskäufe.', dauer: '15 Min', level: 'Einsteiger', kategorie: 'Konsumpsychologie', icon: alertIcon },
+        { titel: 'Sparen & Geldentscheidungen', lernziel: 'Zinseszins verstehen und Sparziel berechnen: Führerschein, Moped, erste Wohnung — wie lange dauert das beim aktuellen Lehrlingslohn?', dauer: '15 Min', level: 'Einsteiger', kategorie: 'Sparziele', icon: piggyIcon },
+        { titel: 'Risiko & Krisen', lernziel: 'Notgroschen aufbauen: Was ist ein Notgroschen? Warum braucht man ihn? Wie baut man ihn realistisch mit einem Lehrlingslohn auf?', dauer: '15 Min', level: 'Einsteiger', kategorie: 'Krisenvorsorge', icon: piggyIcon },
+      ]}
+      simulationen={[
+        { titel: 'Gehaltsverhandlung', untertitel: 'KV-Mindestlohn für 50+ Lehrberufe recherchieren, Argumente formulieren — dein Gehalt als Lehrling ist verhandelbar.', dauer: '15–20 Min', icon: moneyIcon },
+        { titel: 'Konsumfallen-Parcours', untertitel: 'FOMO, Dark Patterns, Abo-Fallen und BNPL-Versuchungen — in 15 Minuten erkennen was vorher unsichtbar war.', dauer: '15–20 Min', icon: playIcon },
+        { titel: 'Bank-Simulation', untertitel: 'Girokonto eröffnen, Dauerauftrag einrichten, erste Überweisung — Bankalltag in der Simulation.', dauer: '20–30 Min', icon: homeIcon },
+        { titel: 'Erste eigene Wohnung', untertitel: 'Was kostet Wohnen wirklich? Kaution, Provision, Betriebskosten — alles mit realen Zahlen durchsimuliert.', dauer: '20–30 Min', icon: homeIcon },
       ]}
       themen={[
         'Lehrlingseinkommen nach Beruf',

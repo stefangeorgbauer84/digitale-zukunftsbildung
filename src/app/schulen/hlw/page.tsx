@@ -13,6 +13,13 @@ const icon = (
   </svg>
 )
 
+const bookIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+const alertIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+const shieldIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+const homeIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+const playIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+const chartIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+
 export default function HlwPage() {
   return (
     <SchulPage
@@ -69,6 +76,20 @@ export default function HlwPage() {
           was: 'Schüler:innen dokumentieren drei Entscheidungen, die sie nach dieser Stunde anders treffen würden. Das geht direkt in die App — du siehst die Antworten im Dashboard.',
           zeitMinuten: 5,
         },
+      ]}
+      module={[
+        { titel: 'Finanzplanung', lernziel: 'Haushaltsbudget erstellen: Fixkosten vs. variable Kosten, 50-30-20-Regel, Sonderzahlungen einplanen — die 5 häufigsten Budgetfehler vermeiden.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Budgetplanung', icon: bookIcon },
+        { titel: 'Konsumfallen', lernziel: 'Psychologische Kauftrigger (FOMO, Anchoring, Scarcity) erkennen — und verstehen, wie Werbung und Dark Patterns Kaufentscheidungen steuern.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Konsumpsychologie', icon: alertIcon },
+        { titel: 'Ratenkauf & BNPL', lernziel: 'Klarna, Afterpay und Co. kritisch bewerten: Effektivzins berechnen, Widerrufsrecht kennen, KSV-Eintrag verstehen und vermeiden.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Konsumentenschutz', icon: alertIcon },
+        { titel: 'Versicherungen verstehen', lernziel: 'Haushaltsversicherung, Haftpflicht, Kfz-Pflicht — was braucht man wirklich? Selbstbehalt und Prämien sinnvoll vergleichen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Versicherungen', icon: shieldIcon },
+        { titel: 'Schulden & Geld leihen', lernziel: 'Warnsignale für problematische Schulden früh erkennen, Inkasso-Rechte kennen — AK und Schuldnerberatung als kostenlose Hilfe.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Schuldenprävention', icon: chartIcon },
+        { titel: 'Risiko & Krisen', lernziel: 'Notgroschen aufbauen, Eskalationskette von Verzug bis Pfändung kennen — Krisenbudget für unerwartete Ausgaben.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Krisenmanagement', icon: chartIcon },
+      ]}
+      simulationen={[
+        { titel: 'Konsumfallen-Parcours', untertitel: 'FOMO, Dark Patterns, künstliche Knappheit und Abo-Fallen erleben — Konsumentenschutz nach FAGG kennenlernen.', dauer: '15–20 Min', icon: playIcon },
+        { titel: 'Versicherungs-Entscheider', untertitel: 'Interaktive Szenarien: Haushaltsversicherung, Haftpflicht, Kfz — welche Versicherung braucht man wirklich?', dauer: '15–20 Min', icon: shieldIcon },
+        { titel: 'Erste eigene Wohnung', untertitel: 'Kaution, Provision, Betriebskosten, Mietvertrag prüfen — alle Kosten einer Wohnung realistisch kalkulieren.', dauer: '20–30 Min', icon: homeIcon },
+        { titel: 'Kredit-Falle', untertitel: 'Konsumkredit, Ratenkauf, BNPL: Fallstricke erkennen, Gesamtkosten berechnen, VKrG-Rechte nutzen.', dauer: '15–20 Min', icon: alertIcon },
       ]}
       themen={[
         'Haushaltsbudget planen',

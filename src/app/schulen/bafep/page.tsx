@@ -15,6 +15,13 @@ const icon = (
   </svg>
 )
 
+const bookIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+const alertIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+const shieldIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+const chartIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+const playIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+const homeIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+
 export default function BafepPage() {
   return (
     <SchulPage
@@ -71,6 +78,20 @@ export default function BafepPage() {
           was: 'Ein Fallbeispiel aus dem Berufsalltag: Eine Familie kommt zur Beratung, Geldprobleme spielen eine Rolle. Wie reagierst du? Schüler:innen erarbeiten in Gruppen Gesprächsstrategien.',
           zeitMinuten: 5,
         },
+      ]}
+      module={[
+        { titel: 'Konsumfallen', lernziel: 'FOMO, Present Bias, Dark Patterns verstehen — und als pädagogische Fachkraft wissen, wie Konsumpsychologie auf Jugendliche wirkt.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Pädagogik & Konsum', icon: alertIcon },
+        { titel: 'Schulden & Geld leihen', lernziel: 'Soziale Folgen von Schulden verstehen: Inkasso, Eskalationskette, Schuldnerberatung — Gesprächsgrundlage für Familien- und Sozialarbeit.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Soziale Kompetenz', icon: chartIcon },
+        { titel: 'Finanzplanung', lernziel: 'Persönliches Monatsbudget erstellen — und die Methode kennenlernen, um sie später einfach mit Kindern, Jugendlichen oder Familien zu üben.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Lebenskompetenz', icon: bookIcon },
+        { titel: 'Finfluencer in Österreich', lernziel: 'Parasoziale Beziehungen und Medienmanipulation verstehen — FMA-Regulierung und Prebunking als Medienkompetenz für die Arbeit mit Jugendlichen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Medienkompetenz', icon: shieldIcon },
+        { titel: 'Risiko & Krisen', lernziel: 'Notgroschen, Krisenbudget, Eskalationskette — finanzielle Risikolagen frühzeitig erkennen und geeignete Stellen kennen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Krisenmanagement', icon: chartIcon },
+        { titel: 'Ratenkauf & BNPL', lernziel: 'BNPL-Risiken mit echten Zahlen verstehen: warum Jugendliche besonders gefährdet sind und wie man das Thema pädagogisch aufgreift.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Konsumentenschutz', icon: alertIcon },
+      ]}
+      simulationen={[
+        { titel: 'Konsumfallen-Parcours', untertitel: 'FOMO, künstliche Knappheit, Abo-Fallen — als Pädagogin selbst erleben, was Jugendliche täglich erleben.', dauer: '15–20 Min', icon: playIcon },
+        { titel: 'Bank-Simulation', untertitel: 'Girokonto eröffnen, Dauerauftrag einrichten, Überweisung — Grundlagen die man später einfach erklären kann.', dauer: '20–30 Min', icon: homeIcon },
+        { titel: 'Kredit-Falle', untertitel: 'Konsumkredit und BNPL-Szenarien durchspielen — ideale Grundlage für Elterngespräche über Schulden.', dauer: '15–20 Min', icon: alertIcon },
+        { titel: 'Versicherungs-Entscheider', untertitel: 'Welche Versicherungen braucht man wirklich? Szenarien die man auch mit Familien besprechen kann.', dauer: '15–20 Min', icon: shieldIcon },
       ]}
       themen={[
         'Eigene Geldbiografie reflektieren',

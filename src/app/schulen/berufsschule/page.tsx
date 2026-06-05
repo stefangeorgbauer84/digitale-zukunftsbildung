@@ -12,6 +12,14 @@ const icon = (
   </svg>
 )
 
+const moneyIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+const bookIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+const alertIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+const taxIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+const piggyIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8.5 3.3 1.5 4.5L5 21h6l1-1 1 1h6l-1.5-4.5C19.5 15.3 20 13.8 20 12c0-1-.3-2-.5-2.5.5-.7 1-2.5.5-4.5z"/></svg>
+const playIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+const chartIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+
 export default function BerufsschulePage() {
   return (
     <SchulPage
@@ -68,6 +76,20 @@ export default function BerufsschulePage() {
           was: 'Schüler:innen legen fest, wie viel sie bis Ende des Lehrjahres ansparen wollen. Die App zeigt den Weg dorthin und schickt optional Erinnerungen. Ein kleiner Abschluss mit großer Wirkung.',
           zeitMinuten: 10,
         },
+      ]}
+      module={[
+        { titel: 'Gehalt & Einkommen', lernziel: 'Lohnzettel lesen, Brutto-Netto mit österreichischen Zahlen berechnen, Kollektivvertrag kennen — und die Negativsteuer (bis €110) via FinanzOnline holen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Einkommen', icon: moneyIcon },
+        { titel: 'Steuern in Österreich', lernziel: 'Arbeitnehmerveranlagung selbst durchführen: Was ist die Lohnsteuergrenze? Was ist die Negativsteuer? FinanzOnline in 10 Minuten nutzen.', dauer: '15 oder 50 Min', level: 'Mittel', kategorie: 'Steuern', icon: taxIcon },
+        { titel: 'Ratenkauf & BNPL', lernziel: 'Klarna, Afterpay und Ratenkauf mit realen Zahlen durchrechnen: Effektivzins, Mahngebühren, KSV-Eintrag — und Widerrufsrecht als Schutz.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Konsumentenschutz', icon: alertIcon },
+        { titel: 'Risiko & Krisen', lernziel: 'Notgroschen aufbauen (3 Monatsgehälter), Eskalationskette von Mahnung bis Pfändung kennen — und wissen, wo man kostenlos Hilfe bekommt.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Krisenmanagement', icon: piggyIcon },
+        { titel: 'Schulden & Geld leihen', lernziel: 'Warnsignale für problematische Schulden früh erkennen: Was darf Inkasso wirklich? Welche Schulden sind gefährlich? AK und Schuldnerberatung als Anlaufstelle.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Schuldenprävention', icon: chartIcon },
+        { titel: 'Finanzplanung', lernziel: 'Monatlichen Finanzplan für Lehrlinge erstellen: Lehrlingslohn einteilen, Dauerauftrag fürs Sparen einrichten, Fixkosten im Griff behalten.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Budgetplanung', icon: bookIcon },
+      ]}
+      simulationen={[
+        { titel: 'Arbeitnehmerveranlagung', untertitel: 'Steuerausgleich Schritt für Schritt durchführen: Negativsteuer beantragen, Werbungskosten eintragen — mit FinanzOnline-Simulation.', dauer: '15–25 Min', icon: taxIcon },
+        { titel: 'Kredit-Falle', untertitel: 'Konsumkredit, Ratenkauf, BNPL — Fallstricke und Gesamtkosten berechnen, VKrG-Rechte als Lehrling kennen.', dauer: '15–20 Min', icon: alertIcon },
+        { titel: 'Konsumfallen-Parcours', untertitel: 'FOMO, Dark Patterns, Abo-Fallen und BNPL-Versuchungen erleben — mit Widerrufsrecht nach FAGG als Schutz.', dauer: '15–20 Min', icon: playIcon },
+        { titel: 'Nebenjob & Geringfügigkeit', untertitel: 'Geringfügigkeitsgrenze kennen, SV-Pflicht verstehen, Steuerpflicht bei Mehrfachbeschäftigung — mit konkreten Zahlen 2026.', dauer: '15–20 Min', icon: moneyIcon },
       ]}
       themen={[
         'Lehrlingseinkommen verstehen',

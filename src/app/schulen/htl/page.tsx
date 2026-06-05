@@ -13,6 +13,13 @@ const icon = (
   </svg>
 )
 
+const moneyIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+const chartIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/></svg>
+const starIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+const shieldIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+const piggyIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M19 5c-1.5 0-2.8 1.4-3 2-3.5-1.5-11-.3-11 5 0 1.8.5 3.3 1.5 4.5L5 21h6l1-1 1 1h6l-1.5-4.5C19.5 15.3 20 13.8 20 12c0-1-.3-2-.5-2.5.5-.7 1-2.5.5-4.5z"/></svg>
+const carIcon = <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v9a2 2 0 0 1-2 2h-2"/><circle cx="7.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg>
+
 export default function HtlPage() {
   return (
     <SchulPage
@@ -69,6 +76,20 @@ export default function HtlPage() {
           was: 'Optional: Schüler:innen präsentieren ihren persönlichen Finanzplan in Kurzform. Das trainiert Präsentationskompetenz und gibt dir einen direkten Einblick ins Verständnis — ohne schriftliche Prüfung.',
           zeitMinuten: 5,
         },
+      ]}
+      module={[
+        { titel: 'Gehalt & Einkommen', lernziel: 'Brutto-Netto-Berechnung meistern, Kollektivvertrag für den Technikbereich kennen, Lohnzettel prüfen und Negativsteuer zurückholen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Einkommen', icon: moneyIcon },
+        { titel: 'Sparen & Geldentscheidungen', lernziel: 'Zinseszinseffekt und Inflation: warum früh Investieren entscheidend ist — ETF-Sparplan als konkretes Werkzeug.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Investieren', icon: piggyIcon },
+        { titel: 'Kryptowährungen & Krypto-Assets', lernziel: 'Blockchain, Bitcoin und Stablecoins technisch verstehen — und gleichzeitig Risiken, Steuerpflicht und MiCA-Regulierung in Österreich kennen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Tech & Finanzen', icon: chartIcon },
+        { titel: 'Altersvorsorge', lernziel: '3-Säulen-Modell kennen, Pensionslücke berechnen, ETF-Sparplan vs. staatliche Pension vergleichen — je früher, desto mehr.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Vorsorge', icon: starIcon },
+        { titel: 'Versicherungen verstehen', lernziel: 'Pflicht- von freiwilligen Versicherungen unterscheiden: Was braucht man beim Berufseinstieg wirklich? Selbstbehalt und Prämien verstehen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Versicherungen', icon: shieldIcon },
+        { titel: 'Risiko & Krisen', lernziel: 'Notgroschen aufbauen (3 Monatsgehälter), Eskalationskette von Verzug bis Pfändung kennen — Krisenbudget für den Ernstfall erstellen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Krisenmanagement', icon: chartIcon },
+      ]}
+      simulationen={[
+        { titel: 'Gehaltsverhandlung', untertitel: 'Marktwert recherchieren, KV-Grenzen kennen, Argumente formulieren — dein Gehalt als HTL-Absolvent ist verhandelbar.', dauer: '15–20 Min', icon: moneyIcon },
+        { titel: 'Aktienmarkt-Langläufer', untertitel: 'Simulation eines 20-Jahres-Portfolios: ETF-Sparplan, Zinseszins und Marktvolatilität hautnah erleben.', dauer: '25–35 Min', icon: chartIcon },
+        { titel: 'Krypto-Handel', untertitel: 'Bitcoin/ETH kaufen und verkaufen, Wallet-Verwaltung, Portfoliorisiko einschätzen — MiCA-Regulierung und FMA-Warnliste kennenlernen.', dauer: '30–45 Min', icon: starIcon },
+        { titel: 'Auto-Kauf-Kalkulator', untertitel: 'Gesamtkosten eines Fahrzeugs berechnen: Kaufpreis, Versicherung, Steuer, Service, Wertverlust — Kauf vs. Leasing vs. Kredit.', dauer: '15–20 Min', icon: carIcon },
       ]}
       themen={[
         'Brutto-Netto-Rechnung',
