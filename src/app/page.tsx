@@ -58,7 +58,7 @@ const angebote = [
     zielgruppe: 'Risikofrei & interaktiv',
     maxPersonen: 'Lernen durch Tun',
     foerderbar: true,
-    text: 'Depot eröffnen, Gehalt verhandeln, Überweisung tätigen, Ratenkauf-Falle erkennen. Echte österreichische Szenarien in geschützter Umgebung.',
+    text: 'Virtuelles Depot eröffnen, Kontoüberweisung, Budgetplanung, Gehaltsverhandlung, Ratenkauf-Falle, Scam erkennen, Krypto-Mythen, Versicherungen, Notgroschen-Aufbau. Echte österreichische Szenarien in geschützter Umgebung.',
   },
   {
     icon: (
@@ -108,8 +108,8 @@ const trustFacts = [
         <path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
       </svg>
     ),
-    accent: '#7c3aed',
-    bg: '#ede9f7',
+    accent: '#4a2d8a',
+    bg: '#f3f1f9',
     headline: '15 bis 20 Jahre',
     detail: 'Für AHS, BHS (HAK, HTL, HLW, BAfEP, BASOP) und PTS konzipiert',
   },
@@ -119,8 +119,8 @@ const trustFacts = [
         <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
       </svg>
     ),
-    accent: '#1a7a68',
-    bg: '#d4ede8',
+    accent: '#2A8A76',
+    bg: '#e6f4f1',
     headline: 'DSGVO-konform',
     detail: 'Aus Österreich, für Österreich — keine Daten ins Ausland',
   },
@@ -128,9 +128,9 @@ const trustFacts = [
 
 /* ── How it works ───────────────────────────────────────── */
 const steps = [
-  { step: '01', title: 'Im Browser starten', desc: 'Kein IT-Aufwand, keine Installation. Skills-UP! läuft direkt im Browser, DSGVO-sicher und EU-rechtskonform. Schulweites Rollout in Minuten.', color: '#a78bfa' },
-  { step: '02', title: 'Erleben statt zuhören', desc: 'Schüler:innen durchlaufen Module und Praxissimulationen: Depot eröffnen, Gehalt verhandeln, Budget planen. Microlearning, Peer-Videos und Gamification halten die Motivation hoch.', color: '#34d399' },
-  { step: '03', title: 'Fortschritt im Dashboard', desc: 'Lehrkräfte sehen Fortschritt, Noten und Deadlines aller Klassen auf einen Blick — ideal für Elterngespräche und ohne zusätzliche Korrekturarbeit.', color: '#fbbf24' },
+  { step: '01', title: 'Im Browser starten', desc: 'Kein IT-Aufwand, keine Installation. Skills-UP! läuft direkt im Browser, DSGVO-sicher und EU-rechtskonform. Schulweites Rollout in Minuten.', color: '#9b7ed4' },
+  { step: '02', title: 'Erleben statt zuhören', desc: 'Schüler:innen durchlaufen Module und Praxissimulationen: Depot eröffnen, Gehalt verhandeln, Budget planen. Microlearning, Peer-Videos und Gamification halten die Motivation hoch.', color: '#2a8a76' },
+  { step: '03', title: 'Fortschritt im Dashboard', desc: 'Lehrkräfte sehen Fortschritt, Noten und Deadlines aller Klassen auf einen Blick — ideal für Elterngespräche und ohne zusätzliche Korrekturarbeit.', color: '#D87228' },
 ]
 
 export default function HomePage() {
@@ -149,37 +149,37 @@ export default function HomePage() {
     },
     {
       icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>),
-      gradient: 'linear-gradient(135deg, #0891b2 0%, #06b6d4 100%)', bg: '#e0f7fa', accent: '#0891b2',
+      gradient: 'linear-gradient(135deg, #1a5c4e 0%, #2a8a76 100%)', bg: '#e6f4f1', accent: '#1a5c4e',
       title: 'Microlearning', badge: 'Kurz & effektiv',
       desc: 'Kurze Lerneinheiten statt langer Vorträge. Jedes Thema in 15 Minuten erfassbar — perfekt für eine Unterrichtsstunde oder zwischendurch.',
     },
     {
       icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>),
-      gradient: 'linear-gradient(135deg, #7c3aed 0%, #9b4ed8 100%)', bg: '#ede9f7', accent: '#7c3aed',
+      gradient: 'linear-gradient(135deg, #4a2d8a 0%, #6b4db0 100%)', bg: '#f3f1f9', accent: '#4a2d8a',
       title: 'Gamification', badge: 'Motivierend',
       desc: 'Punkte, Quizzes und Badges halten die Motivation hoch — auch bei Schüler:innen, die sonst schwer zu erreichen sind. Lernen wird zum Wettbewerb.',
     },
     {
       icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>),
-      gradient: 'linear-gradient(135deg, #92400e 0%, #d87228 100%)', bg: '#fdf0e6', accent: '#92400e',
+      gradient: 'linear-gradient(135deg, #b85e20 0%, #D87228 100%)', bg: '#fdf0e6', accent: '#D87228',
       title: 'Lehrer-Dashboard', badge: 'Für Lehrkräfte',
       desc: 'Fortschritt, Noten und Deadlines aller Klassen auf einen Blick. Ideal für Elterngespräche — und ohne zusätzliche Korrekturarbeit.',
     },
     {
       icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>),
-      gradient: 'linear-gradient(135deg, #065f46 0%, #059669 100%)', bg: '#d1fae5', accent: '#065f46',
+      gradient: 'linear-gradient(135deg, #1a5c4e 0%, #2a8a76 100%)', bg: '#e6f4f1', accent: '#2a8a76',
       title: 'DSGVO-konform', badge: 'Datensicher',
       desc: 'Im Browser gestartet, keine Installation nötig. EU-rechtssicher und datenschutzkonform — kein IT-Aufwand für die Schule.',
     },
   ]
 
   const modulThemen = [
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>), color: '#4a2d8a', bg: '#f3f1f9', title: 'Persönlichkeitsbildung', topics: ['Finanzielle Glaubenssätze erkennen', 'Eigene Geldbiografie reflektieren', 'Persönliche Finanzziele definieren'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>), color: '#1d4ed8', bg: '#dbeafe', title: 'Basiswissen', topics: ['Nettolohn berechnen & verstehen', 'Steuern & Sozialversicherung', 'Inflation und Lohnabrechnung'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>), color: '#2a8a76', bg: '#e6f4f1', title: 'Praxis & Planung', topics: ['Haushaltsbudget & Notgroschen', 'Virtuelles Depot eröffnen', 'Kurz- & langfristige Ziele setzen'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>), color: '#b45309', bg: '#fef3c7', title: 'Schutzwissen', topics: ['Ratenkauf & Buy-Now-Pay-Later', 'Krypto-Mythen, Scams & Impulskäufe', 'Schulden vermeiden durch Strategie'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>), color: '#7c3aed', bg: '#ede9f7', title: 'Investieren & Vorsorge', topics: ['Aktien, ETFs & Zinseszins', 'Krypto realistisch einschätzen', 'Altersvorsorge & 3-Säulen-Modell'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>), color: '#be185d', bg: '#fdf2f8', title: 'Versicherungen & Risiko', topics: ['Pflicht- vs. freiwillige Versicherung', 'Notgroschen & Krisenvorsorge', 'Selbstbehalt und Prämien verstehen'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>), color: '#4a2d8a', bg: '#f3f1f9', title: 'Persönlichkeitsbildung', subtitle: 'Finanzielle Glaubenssätze & Geldbiografie', topics: ['Finanzielle Glaubenssätze erkennen', 'Eigene Geldbiografie reflektieren', 'Persönliche Finanzziele definieren'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>), color: '#6b4db0', bg: '#ede9f7', title: 'Basiswissen', subtitle: 'Alltagsbegriffe aus dem echten Leben', topics: ['Nettolohn berechnen & verstehen', 'Steuern & Sozialversicherung', 'Inflation und Lohnabrechnung'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>), color: '#2a8a76', bg: '#e6f4f1', title: 'Praxis & Planung', subtitle: 'Persönliches Finanzmanagement', topics: ['Haushaltsbudget & Notgroschen', 'Virtuelles Depot eröffnen', 'Kurz- & langfristige Ziele setzen'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>), color: '#D87228', bg: '#fdf0e6', title: 'Schutzwissen', subtitle: 'Schuldenprävention & Konsumkritik', topics: ['Ratenkauf & Buy-Now-Pay-Later', 'Krypto-Mythen, Scams & Impulskäufe', 'Schulden vermeiden durch Strategie'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>), color: '#4a2d8a', bg: '#f3f1f9', title: 'Investieren & Vorsorge', subtitle: 'Aktien, ETFs & Altersvorsorge', topics: ['Aktien, ETFs & Zinseszins', 'Krypto realistisch einschätzen', 'Altersvorsorge & 3-Säulen-Modell'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>), color: '#2a8a76', bg: '#e6f4f1', title: 'Versicherungen & Risiko', subtitle: 'Pflicht, Krisenvorsorge & Prämien', topics: ['Pflicht- vs. freiwillige Versicherung', 'Notgroschen & Krisenvorsorge', 'Selbstbehalt und Prämien verstehen'] },
   ]
 
   return (
@@ -233,7 +233,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-white/75 text-xl max-w-2xl mx-auto mb-4 font-body leading-relaxed">
-            Das Unterrichtsprogramm für 15- bis 20-Jährige — mit 12+ Modulen, über 10 Praxissimulationen und Gamification. Für AHS, BHS (HAK, HTL, HLW) und PTS.
+            Das Unterrichtsprogramm für 15- bis 20-Jährige — mit 12+ Modulen, über 10 Praxissimulationen und Gamification. Für AHS, BHS (HAK, HTL, HLW, BAfEP, BASOP) und PTS.
           </p>
           <p className="text-white/50 text-base max-w-xl mx-auto mb-12 font-body">
             Fertig aufbereitet, lehrplankonform und sofort startbereit. Kein IT-Aufwand, DSGVO-sicher.
@@ -375,17 +375,17 @@ export default function HomePage() {
             {[
               { slug: 'ahs', label: 'AHS-Oberstufe', sub: '9.–12. Schulstufe', farbe: '#4a2d8a', bg: '#ede9f8',
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> },
-              { slug: 'hak', label: 'HAK & HAS', sub: 'Wirtschaft & Finanzen', farbe: '#1d4ed8', bg: '#eff6ff',
+              { slug: 'hak', label: 'HAK & HAS', sub: 'Wirtschaft & Finanzen', farbe: '#6b4db0', bg: '#ede9f7',
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg> },
-              { slug: 'htl', label: 'HTL', sub: 'Technik & Beruf', farbe: '#0f766e', bg: '#f0fdfa',
+              { slug: 'htl', label: 'HTL', sub: 'Technik & Beruf', farbe: '#2a8a76', bg: '#e6f4f1',
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 17.66l-1.41 1.41M2 12h2m16 0h2M5.34 6.34L3.93 4.93m14.14 14.14l-1.41-1.41M12 2v2m0 16v2"/></svg> },
-              { slug: 'hlw', label: 'HLW & Fachschulen', sub: 'Alltag & Lebensführung', farbe: '#15803d', bg: '#f0fdf4',
+              { slug: 'hlw', label: 'HLW & Fachschulen', sub: 'Alltag & Lebensführung', farbe: '#1a5c4e', bg: '#e6f4f1',
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> },
-              { slug: 'bafep', label: 'BAfEP & BASOP', sub: 'Pädagogik', farbe: '#be185d', bg: '#fdf2f8',
+              { slug: 'bafep', label: 'BAfEP & BASOP', sub: 'Pädagogik', farbe: '#4a2d8a', bg: '#f3f1f9',
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> },
-              { slug: 'pts', label: 'PTS', sub: '9. Schulstufe', farbe: '#b45309', bg: '#fffbeb',
+              { slug: 'pts', label: 'PTS', sub: '9. Schulstufe', farbe: '#D87228', bg: '#fdf0e6',
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg> },
-              { slug: 'berufsschule', label: 'Berufsschulen', sub: 'Lehre & Ausbildung', farbe: '#2A8A76', bg: '#f0fdfa',
+              { slug: 'berufsschule', label: 'Berufsschulen', sub: 'Lehre & Ausbildung', farbe: '#2A8A76', bg: '#e6f4f1',
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> },
               { slug: null, label: 'Alle Schultypen', sub: 'Übersicht & Vergleich', farbe: '#ffffff', bg: 'linear-gradient(135deg, #4a2d8a, #2A8A76)',
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> },
@@ -525,11 +525,14 @@ export default function HomePage() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {modulThemen.map((m) => (
             <div key={m.title} className="rounded-2xl p-6 border border-gray-100 hover:shadow-card-hover transition-all group" style={{ background: m.bg }}>
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: m.color, color: '#fff' }}>
+              <div className="flex items-start gap-3 mb-4">
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: m.color, color: '#fff' }}>
                   {m.icon}
                 </div>
-                <h3 className="font-heading font-700 text-base" style={{ color: m.color }}>{m.title}</h3>
+                <div>
+                  <h3 className="font-heading font-700 text-base leading-tight" style={{ color: m.color }}>{m.title}</h3>
+                  {'subtitle' in m && <p className="font-body text-xs text-text-muted mt-0.5">{(m as typeof m & { subtitle: string }).subtitle}</p>}
+                </div>
               </div>
               <ul className="space-y-2">
                 {m.topics.map((t) => (
@@ -567,12 +570,12 @@ export default function HomePage() {
             </div>
             <ul className="space-y-4">
               {[
-                { text: 'Den eigenen Lohnzettel lesen und Brutto-Netto verstehen', color: '#a78bfa' },
-                { text: 'Ein realistisches Haushaltsbudget erstellen und einhalten', color: '#34d399' },
-                { text: 'Ratenkauf, BNPL und Konsumfallen kritisch durchschauen', color: '#fbbf24' },
-                { text: 'Krypto-Mythen und Scams als solche erkennen', color: '#f87171' },
-                { text: 'Ein erstes Sparziel setzen und einen Notgroschen aufbauen', color: '#60a5fa' },
-                { text: 'Versicherungen einschätzen und Schuldenfallen vermeiden', color: '#4ade80' },
+                { text: 'Den eigenen Lohnzettel lesen und Brutto-Netto verstehen', color: '#9b7ed4' },
+                { text: 'Ein realistisches Haushaltsbudget erstellen und einhalten', color: '#2a8a76' },
+                { text: 'Ratenkauf, BNPL und Konsumfallen kritisch durchschauen', color: '#D87228' },
+                { text: 'Krypto-Mythen und Scams als solche erkennen', color: '#4a2d8a' },
+                { text: 'Ein erstes Sparziel setzen und einen Notgroschen aufbauen', color: '#6b4db0' },
+                { text: 'Versicherungen einschätzen und Schuldenfallen vermeiden', color: '#1a5c4e' },
               ].map((item) => (
                 <li key={item.text} className="flex items-start gap-3">
                   <span className="mt-1 shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style={{ background: item.color + '25' }}>
@@ -725,7 +728,7 @@ export default function HomePage() {
             {
               emoji: '🏫',
               title: 'Schulleitung',
-              color: '#92400e', bg: 'linear-gradient(135deg, #92400e 0%, #d87228 100%)',
+              color: '#D87228', bg: 'linear-gradient(135deg, #b85e20 0%, #D87228 100%)',
               points: [
                 'Schulweites Rollout in Minuten',
                 'Kein IT-Aufwand, im Browser gestartet',
@@ -771,7 +774,7 @@ export default function HomePage() {
               </svg>
             </div>
             <div className="flex-1 text-center md:text-left">
-              <h3 className="font-heading text-xl font-bold mb-2" style={{ color: '#065f46' }}>Gefördert durch starke Partner</h3>
+              <h3 className="font-heading text-xl font-bold mb-2" style={{ color: '#1a5c4e' }}>Gefördert durch starke Partner</h3>
               <p className="text-text-muted font-body text-sm leading-relaxed">
                 Skills-UP! wird von der <strong>MEGA Bildungsstiftung</strong> und im Rahmen der <strong>Nationalen Finanzbildungsstrategie</strong> unterstützt.
                 Sprecht uns an — wir finden gemeinsam ein leistbares Modell für eure Schule.
@@ -820,7 +823,7 @@ export default function HomePage() {
               name: 'Mag. Thomas K.',
               role: 'Lehrer, HAK Linz',
               initials: 'TK',
-              color: '#7c3aed',
+              color: '#4a2d8a',
             },
           ].map((t) => (
             <div key={t.name} className="bg-white rounded-2xl p-7 shadow-card border border-gray-100 flex flex-col">
