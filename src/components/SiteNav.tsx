@@ -5,9 +5,9 @@ import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 const links = [
-  { href: '/#angebote', label: 'Kurse' },
+  { href: '/#angebote', label: 'Programm' },
   { href: '/schulen', label: 'Für Schulen' },
-  { href: '/#plattform', label: 'Plattform' },
+  { href: '/#plattform', label: 'So funktioniert’s' },
   { href: '/ueber-uns', label: 'Über uns' },
 ]
 

@@ -4,28 +4,28 @@ import { useState } from 'react'
 
 const faqs = [
   {
-    q: 'Für wen sind die Skills-UP! Kurse geeignet?',
-    a: 'Unsere Kurse richten sich an Unternehmen, Schulen und Einzelpersonen in Österreich. Kein technisches Vorwissen ist nötig — wir holen alle dort ab, wo sie stehen. Von Einsteigern bis zu Fortgeschrittenen gibt es das passende Format.',
+    q: 'Für welche Schulen ist Skills-UP! geeignet?',
+    a: 'Skills-UP! ist das Finanzbildungsprogramm für 15- bis 20-Jährige und eignet sich für AHS-Oberstufe, BHS (HAK, HTL, HLW, BAfEP, BASOP) sowie PTS und Berufsschulen. Die Inhalte sind lehrplankonform und lassen sich in Wirtschaft, Recht, Mathematik, Soziales oder im Klassenvorstand einsetzen.',
   },
   {
-    q: 'Können die Kurse auch als Inhouse-Schulung gebucht werden?',
-    a: 'Ja, alle Skills-UP! Formate sind als Inhouse-Schulung buchbar. Wir kommen zu euch ins Unternehmen oder in die Schule und passen die Inhalte auf eure spezifischen Bedürfnisse an. Kontaktiert uns einfach für ein individuelles Angebot.',
+    q: 'Wie viel Vorbereitung brauchen Lehrkräfte?',
+    a: 'Keine. Alle Module, Aufgaben und Übungsblätter sind fertig aufbereitet und sofort startbereit. Lehrkräfte öffnen Skills-UP! im Browser, starten ein Modul oder eine Simulation — und die Schüler:innen arbeiten selbstständig. Das Dashboard zeigt den Fortschritt aller Klassen auf einen Blick.',
   },
   {
-    q: 'Sind die Kurse über AMS oder andere Stellen förderbar?',
-    a: 'In vielen Fällen ja. Für Unternehmen gibt es Möglichkeiten über die Betriebliche Bildungsförderung (WAFF Wien, etc.), für Einzelpersonen über den AMS Qualifizierungsbonus. Wir helfen euch dabei, die passende Förderung zu finden.',
+    q: 'Was sind die Praxissimulationen genau?',
+    a: 'Über 10 interaktive Szenarien aus dem echten Leben: virtuelles Depot eröffnen, Kontoüberweisung, Budgetplanung, Gehaltsverhandlung, Ratenkauf-Falle, Scam erkennen, Krypto-Mythen, Versicherungen und Notgroschen-Aufbau. Alles risikofrei in geschützter Umgebung — Lernen durch echtes Tun.',
   },
   {
-    q: 'Wie viele Personen können an einem Kurs teilnehmen?',
-    a: 'Um echten Lernerfolg zu garantieren, halten wir die Gruppen bewusst klein: maximal 12–15 Personen pro Kursformat. So bleibt Zeit für individuelle Fragen und echte Interaktion statt Frontalvortrag.',
+    q: 'Muss etwas installiert werden? Ist es DSGVO-konform?',
+    a: 'Nein, es muss nichts installiert werden. Skills-UP! läuft direkt im Browser, ist EU-rechtssicher und vollständig DSGVO-konform. Kein IT-Aufwand für die Schule — ein schulweites Rollout ist in wenigen Minuten möglich.',
   },
   {
-    q: 'Gibt es ein Zertifikat nach dem Kurs?',
-    a: 'Ja — alle Teilnehmer:innen erhalten nach erfolgreichem Abschluss ein digitales Skills-UP! Zertifikat, das von der Wirtschaftskammer Österreich (WKÖ) und der Hochschule Burgenland anerkannt ist. Es kann ausgedruckt und im Lebenslauf angegeben werden.',
+    q: 'Wie ist das Programm didaktisch aufgebaut?',
+    a: 'Skills-UP! kombiniert Microlearning (kurze Lerneinheiten), jugendnahe Peer-Videos, Gamification (Punkte, Quizzes, Badges) und ein Lehrer-Dashboard. Jedes der 12+ Module gibt es in einer Kurzversion (15 Minuten) und einer Langversion (50 Minuten) — flexibel für jede Unterrichtssituation.',
   },
   {
-    q: 'In welcher Sprache werden die Kurse angeboten?',
-    a: 'Alle Skills-UP! Kurse werden auf Deutsch angeboten, mit österreichischem Bezug (DSGVO, österreichische Behörden, lokale Plattformen). Auf Anfrage sind auch englischsprachige Formate für internationale Unternehmen möglich.',
+    q: 'Ist Skills-UP! ausgezeichnet oder zertifiziert?',
+    a: 'Ja. Skills-UP! wurde als Top-3-Projekt der MEGA Bildungsmillion 2025 ausgezeichnet und von der Hochschule Burgenland sowie der WKÖ in Qualität und Praxisrelevanz bestätigt. Das Programm wird im Rahmen der Nationalen Finanzbildungsstrategie unterstützt.',
   },
 ]
 

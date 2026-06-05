@@ -15,23 +15,23 @@ const nunito = Nunito({
 })
 
 export const metadata: Metadata = {
-  title: 'Verein zur Entwicklung der digitalen Zukunftsbildung',
-  description: 'Skills-UP! – Digitale Bildung, die wirklich wirkt. Innovative Kurse für Unternehmen, Schulen und Einzelpersonen in Österreich.',
+  title: 'Skills-UP! – Finanzbildung für Schulen | Verein zur Entwicklung der digitalen Zukunftsbildung',
+  description: 'Skills-UP! – Finanzbildung, die wirklich ankommt. Das Unterrichtsprogramm für 15- bis 20-Jährige: 12+ Module, 10+ Praxissimulationen, lehrplankonform und DSGVO-sicher. Für AHS, BHS und PTS.',
   metadataBase: new URL('https://www.digitale-zukunftsbildung.eu'),
   openGraph: {
-    title: 'Digitale Zukunftsbildung – Skills-UP!',
-    description: 'Digitale Bildung, die wirklich wirkt.',
+    title: 'Skills-UP! – Finanzbildung, die wirklich ankommt',
+    description: 'Das Unterrichtsprogramm für 15- bis 20-Jährige. 12+ Module, 10+ Praxissimulationen, lehrplankonform und sofort einsetzbar.',
     locale: 'de_AT',
     type: 'website',
     images: [{ url: '/fotos/Logo.png', width: 180, height: 180, alt: 'Skills-UP! Logo' }],
   },
   twitter: {
     card: 'summary',
-    title: 'Skills-UP! – Digitale Zukunftsbildung',
-    description: 'Echte digitale Kompetenz für Unternehmen, Schulen und Privatpersonen in Österreich.',
+    title: 'Skills-UP! – Finanzbildung für Schulen',
+    description: 'Finanzbildung für 15- bis 20-Jährige: Module, Praxissimulationen und Gamification. Lehrplankonform, für AHS, BHS und PTS.',
     images: ['/fotos/Logo.png'],
   },
-  keywords: ['Digitale Bildung', 'Skills-UP', 'KI Kurs Österreich', 'Digitale Kompetenz', 'Weiterbildung Wien', 'Inhouse Schulung', 'WKÖ zertifiziert'],
+  keywords: ['Finanzbildung', 'Skills-UP', 'Finanzbildung Schule Österreich', 'Wirtschaftsbildung', 'Finanzkompetenz Jugendliche', 'Unterrichtsprogramm Finanzen', 'AHS BHS PTS', 'WKÖ zertifiziert'],
 }
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

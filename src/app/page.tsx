@@ -29,52 +29,51 @@ const programPics = [
   { src: '/fotos/Workshops.png', alt: 'Skills-UP! Inhouse Workshop für Unternehmen' },
 ]
 
-/* ── Angebote ───────────────────────────────────────────── */
+/* ── Programm-Bausteine ─────────────────────────────────── */
 const angebote = [
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <rect x="2" y="3" width="20" height="14" rx="2" />
-        <line x1="8" y1="21" x2="16" y2="21" />
-        <line x1="12" y1="17" x2="12" y2="21" />
+        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
       </svg>
     ),
     gradient: 'linear-gradient(135deg, #4a2d8a 0%, #6b4db0 100%)',
-    title: 'Skills-UP! Digital Basics',
-    tag: '2 Tage',
-    zielgruppe: 'Einsteiger & Teams',
-    maxPersonen: 'Max. 15 Personen',
+    title: '12+ Module Finanzwissen',
+    tag: '15 oder 50 Min',
+    zielgruppe: 'Kurz- & Langversion',
+    maxPersonen: 'Lehrplankonform',
     foerderbar: true,
-    text: 'Von sicherem Surfen bis KI im Alltag — der perfekte Einstieg für alle, die digital endlich ankommen wollen. Kein Vorwissen nötig.',
+    text: 'Von Geldbiografie und Lohnabrechnung über Budgetplanung bis zu Schuldenprävention und Krypto-Mythen. Jedes Modul in zwei Längen — flexibel einsetzbar.',
   },
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+        <polygon points="5 3 19 12 5 21 5 3" />
       </svg>
     ),
     gradient: 'linear-gradient(135deg, #1a5c4e 0%, #2a8a76 100%)',
-    title: 'Skills-UP! Digital Work',
-    tag: '1 Tag',
-    zielgruppe: 'Unternehmen & Schulen',
-    maxPersonen: 'Max. 12 Personen',
+    title: '10+ Praxissimulationen',
+    tag: 'Das Herzstück',
+    zielgruppe: 'Risikofrei & interaktiv',
+    maxPersonen: 'Lernen durch Tun',
     foerderbar: true,
-    text: 'Videokonferenzen, Cloud-Tools, E-Mail-Etikette und digitale Zusammenarbeit — alles, was modernes Arbeiten braucht.',
+    text: 'Depot eröffnen, Gehalt verhandeln, Überweisung tätigen, Ratenkauf-Falle erkennen. Echte österreichische Szenarien in geschützter Umgebung.',
   },
   {
     icon: (
       <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-        <circle cx="12" cy="12" r="3" />
-        <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+        <rect x="3" y="3" width="7" height="7" /><rect x="14" y="3" width="7" height="7" />
+        <rect x="14" y="14" width="7" height="7" /><rect x="3" y="14" width="7" height="7" />
       </svg>
     ),
     gradient: 'linear-gradient(135deg, #92400e 0%, #d87228 100%)',
-    title: 'Skills-UP! KI & Zukunft',
-    tag: '1 Tag',
-    zielgruppe: 'Alle Levels',
-    maxPersonen: 'Max. 15 Personen',
+    title: 'Dashboard & Gamification',
+    tag: 'Für Lehrkräfte',
+    zielgruppe: 'Alle Klassen im Blick',
+    maxPersonen: 'Punkte, Quizzes, Badges',
     foerderbar: true,
-    text: 'ChatGPT, Bildgeneratoren, Automatisierung — wer KI versteht, hat die Nase vorn. Praxisnah, ehrlich, ohne Buzzword-Bingo.',
+    text: 'Fortschritt, Noten und Deadlines aller Klassen auf einen Blick — ideal für Elterngespräche. Gamification hält Schüler:innen motiviert.',
   },
 ]
 
@@ -111,8 +110,8 @@ const trustFacts = [
     ),
     accent: '#7c3aed',
     bg: '#ede9f7',
-    headline: 'Kleine Gruppen',
-    detail: 'Echter Lernerfolg statt Frontalvortrag für 200 Personen',
+    headline: '15 bis 20 Jahre',
+    detail: 'Für AHS, BHS (HAK, HTL, HLW, BAfEP, BASOP) und PTS konzipiert',
   },
   {
     icon: (
@@ -129,9 +128,9 @@ const trustFacts = [
 
 /* ── How it works ───────────────────────────────────────── */
 const steps = [
-  { step: '01', title: 'Format wählen', desc: 'Action-Modus (15 min) für schnellen Einstieg oder Deep-Dive (50 min) für echte Tiefe — je nachdem, wie viel Zeit dein Team hat.', color: '#a78bfa' },
-  { step: '02', title: 'Interaktiv lernen', desc: 'Kleine Gruppen, Live-Simulationen und Quizze mit sofortigem Feedback. Gamification hält die Motivation hoch — Streaks, Badges, Ranglisten.', color: '#34d399' },
-  { step: '03', title: 'Zertifikat & Transfer', desc: 'Wer besteht, bekommt ein anerkanntes Zertifikat. Trainer erhalten ein Dashboard mit dem Lernfortschritt der ganzen Gruppe.', color: '#fbbf24' },
+  { step: '01', title: 'Im Browser starten', desc: 'Kein IT-Aufwand, keine Installation. Skills-UP! läuft direkt im Browser, DSGVO-sicher und EU-rechtskonform. Schulweites Rollout in Minuten.', color: '#a78bfa' },
+  { step: '02', title: 'Erleben statt zuhören', desc: 'Schüler:innen durchlaufen Module und Praxissimulationen: Depot eröffnen, Gehalt verhandeln, Budget planen. Microlearning, Peer-Videos und Gamification halten die Motivation hoch.', color: '#34d399' },
+  { step: '03', title: 'Fortschritt im Dashboard', desc: 'Lehrkräfte sehen Fortschritt, Noten und Deadlines aller Klassen auf einen Blick — ideal für Elterngespräche und ohne zusätzliche Korrekturarbeit.', color: '#fbbf24' },
 ]
 
 export default function HomePage() {
@@ -143,44 +142,44 @@ export default function HomePage() {
       desc: 'Action-Modus (15 min) für unterwegs, Deep-Dive (50 min) für intensive Sessions. Jedes Modul in beiden Varianten verfügbar.',
     },
     {
-      icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>),
+      icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>),
       gradient: 'linear-gradient(135deg, #1a5c4e 0%, #2a8a76 100%)', bg: '#e6f4f1', accent: '#1a5c4e',
-      title: '60+ Simulationen', badge: 'Hands-on',
-      desc: 'Interaktive Übungen zu KI-Tools, Datenschutz, Office und mehr. Kein passives Zuschauen — direkt ausprobieren.',
+      title: 'Peer-Videos', badge: 'Jugendnah',
+      desc: 'Gleichaltrige erklären Gleichaltrigen — authentisch und auf Augenhöhe. Das trifft die Lebenswelt der Schüler:innen besser als jeder Frontalvortrag.',
     },
     {
-      icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>),
+      icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>),
+      gradient: 'linear-gradient(135deg, #0891b2 0%, #06b6d4 100%)', bg: '#e0f7fa', accent: '#0891b2',
+      title: 'Microlearning', badge: 'Kurz & effektiv',
+      desc: 'Kurze Lerneinheiten statt langer Vorträge. Jedes Thema in 15 Minuten erfassbar — perfekt für eine Unterrichtsstunde oder zwischendurch.',
+    },
+    {
+      icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>),
       gradient: 'linear-gradient(135deg, #7c3aed 0%, #9b4ed8 100%)', bg: '#ede9f7', accent: '#7c3aed',
-      title: 'Gamification & Badges', badge: 'Motivierend',
-      desc: 'XP-Punkte, Streaks und Badges halten die Motivation hoch. Gruppenranglisten machen Lernen zum Teamsport.',
+      title: 'Gamification', badge: 'Motivierend',
+      desc: 'Punkte, Quizzes und Badges halten die Motivation hoch — auch bei Schüler:innen, die sonst schwer zu erreichen sind. Lernen wird zum Wettbewerb.',
     },
     {
-      icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg>),
+      icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>),
       gradient: 'linear-gradient(135deg, #92400e 0%, #d87228 100%)', bg: '#fdf0e6', accent: '#92400e',
-      title: 'Trainer-Dashboard', badge: 'Für Trainer',
-      desc: 'Auf einen Blick: wer hat welches Modul abgeschlossen, wo hakt es, welche Themen brauchen mehr Zeit.',
-    },
-    {
-      icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/><circle cx="12" cy="12" r="10"/></svg>),
-      gradient: 'linear-gradient(135deg, #065f46 0%, #059669 100%)', bg: '#d1fae5', accent: '#065f46',
-      title: 'Zertifikate', badge: 'Anerkannt',
-      desc: 'Nach jedem Kurs gibt es ein anerkanntes Skills-UP! Zertifikat — WKÖ-zertifiziert, digital und ausdruckbar.',
+      title: 'Lehrer-Dashboard', badge: 'Für Lehrkräfte',
+      desc: 'Fortschritt, Noten und Deadlines aller Klassen auf einen Blick. Ideal für Elterngespräche — und ohne zusätzliche Korrekturarbeit.',
     },
     {
       icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>),
-      gradient: 'linear-gradient(135deg, #1e3a5f 0%, #2563eb 100%)', bg: '#dbeafe', accent: '#1e3a5f',
-      title: 'Österreich-spezifisch', badge: 'Lokal & relevant',
-      desc: 'Alle Inhalte auf den österreichischen Kontext zugeschnitten: DSGVO, AMS, österreichische Behörden und Plattformen.',
+      gradient: 'linear-gradient(135deg, #065f46 0%, #059669 100%)', bg: '#d1fae5', accent: '#065f46',
+      title: 'DSGVO-konform', badge: 'Datensicher',
+      desc: 'Im Browser gestartet, keine Installation nötig. EU-rechtssicher und datenschutzkonform — kein IT-Aufwand für die Schule.',
     },
   ]
 
   const modulThemen = [
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>), color: '#4a2d8a', bg: '#f3f1f9', title: 'Digitale Grundlagen', topics: ['Sicher surfen & Passwörter', 'Cloud & Datenspeicherung', 'Betriebssysteme & Updates'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/></svg>), color: '#7c3aed', bg: '#ede9f7', title: 'KI & Automatisierung', topics: ['ChatGPT & Prompt-Techniken', 'KI-Tools im Arbeitsalltag', 'Chancen & Risiken realistisch'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>), color: '#0891b2', bg: '#e0f2fe', title: 'Digital Work & Office', topics: ['Teams, Zoom & Videokonferenzen', 'Microsoft 365 & Google Workspace', 'E-Mail-Etikette & Collaboration'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>), color: '#b45309', bg: '#fef3c7', title: 'Datenschutz & Sicherheit', topics: ['DSGVO im Arbeitsalltag', 'Phishing & Social Engineering', 'Datensicherung & Backup'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 2H7a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>), color: '#2a8a76', bg: '#e6f4f1', title: 'Social Media & Kommunikation', topics: ['LinkedIn & professionelle Profile', 'Digitale Kommunikation & Netiquette', 'Content & persönliche Marke'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>), color: '#1d4ed8', bg: '#dbeafe', title: 'Digitales Finanzwissen', topics: ['Online-Banking & Sicherheit', 'Digitale Zahlungsmethoden', 'Finanz-Apps & Budgettools'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>), color: '#4a2d8a', bg: '#f3f1f9', title: 'Persönlichkeitsbildung', topics: ['Finanzielle Glaubenssätze erkennen', 'Eigene Geldbiografie reflektieren', 'Persönliche Finanzziele definieren'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>), color: '#1d4ed8', bg: '#dbeafe', title: 'Basiswissen', topics: ['Nettolohn berechnen & verstehen', 'Steuern & Sozialversicherung', 'Inflation und Lohnabrechnung'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>), color: '#2a8a76', bg: '#e6f4f1', title: 'Praxis & Planung', topics: ['Haushaltsbudget & Notgroschen', 'Virtuelles Depot eröffnen', 'Kurz- & langfristige Ziele setzen'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>), color: '#b45309', bg: '#fef3c7', title: 'Schutzwissen', topics: ['Ratenkauf & Buy-Now-Pay-Later', 'Krypto-Mythen, Scams & Impulskäufe', 'Schulden vermeiden durch Strategie'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>), color: '#7c3aed', bg: '#ede9f7', title: 'Investieren & Vorsorge', topics: ['Aktien, ETFs & Zinseszins', 'Krypto realistisch einschätzen', 'Altersvorsorge & 3-Säulen-Modell'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>), color: '#be185d', bg: '#fdf2f8', title: 'Versicherungen & Risiko', topics: ['Pflicht- vs. freiwillige Versicherung', 'Notgroschen & Krisenvorsorge', 'Selbstbehalt und Prämien verstehen'] },
   ]
 
   return (
@@ -229,15 +228,15 @@ export default function HomePage() {
           </div>
 
           <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Digital fit.<br />
-            <span className="text-primary-light">Morgen startet heute.</span>
+            Finanzbildung,<br />
+            <span className="text-primary-light">die wirklich ankommt.</span>
           </h1>
 
           <p className="text-white/75 text-xl max-w-2xl mx-auto mb-4 font-body leading-relaxed">
-            Skills-UP! bringt echte digitale Kompetenz zu Menschen, Teams und Organisationen — mit 20+ interaktiven Modulen, 60+ Simulationen und Gamification, die Spaß macht.
+            Das Unterrichtsprogramm für 15- bis 20-Jährige — mit 12+ Modulen, über 10 Praxissimulationen und Gamification. Für AHS, BHS (HAK, HTL, HLW) und PTS.
           </p>
           <p className="text-white/50 text-base max-w-xl mx-auto mb-12 font-body">
-            15 Minuten am Tag reichen aus. Kein Buzzword-Bingo. Nur das, was morgen im Job zählt.
+            Fertig aufbereitet, lehrplankonform und sofort startbereit. Kein IT-Aufwand, DSGVO-sicher.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
@@ -245,22 +244,22 @@ export default function HomePage() {
               className="inline-flex items-center justify-center gap-2 font-body font-700 text-lg px-8 py-4 rounded-xl shadow-2xl transition-all duration-200 hover:scale-105 active:scale-95 text-white"
               style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #6b4db0 50%, #2a8a76 100%)', boxShadow: '0 8px 32px rgba(107,77,176,0.5)' }}
             >
-              Kurse entdecken
+              Programm entdecken
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
             <a href="#kontakt"
               className="glass inline-flex items-center justify-center gap-2 text-white font-body font-600 text-lg px-8 py-4 rounded-xl hover:bg-white/15 transition-all duration-200 border border-white/20"
             >
-              Kontakt aufnehmen
+              Schule anmelden
             </a>
           </div>
 
           {/* Trust signals */}
           <div className="flex flex-wrap items-center justify-center gap-6 text-white/55 text-sm font-body">
             {[
-              '20+ interaktive Module',
-              '60+ Simulationen & Übungen',
-              'Zertifikat nach Abschluss',
+              '12+ interaktive Module',
+              '10+ Praxissimulationen',
+              'Lehrplankonform',
               'DSGVO-konform aus Österreich',
             ].map((t) => (
               <div key={t} className="flex items-center gap-1.5">
@@ -424,13 +423,13 @@ export default function HomePage() {
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-primary-medium bg-primary-50 px-4 py-2 rounded-full mb-5">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
-            Skills-UP! Kursprogramm
+            Das Skills-UP! Programm
           </div>
           <h2 className="font-heading text-4xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
-            Lernen, das wirklich <span className="text-status-teal">wirkt.</span>
+            Drei Bausteine, die <span className="text-status-teal">wirken.</span>
           </h2>
           <p className="text-text-muted text-lg max-w-2xl mx-auto font-body">
-            Alle unsere Kurse laufen unter der Marke Skills-UP! und sind auf echter Praxiserfahrung aufgebaut. Inhouse-Formate für Unternehmen auf Anfrage.
+            Skills-UP! verbindet fundiertes Finanzwissen mit echtem Erleben — alles fertig aufbereitet, lehrplankonform und ohne Vorbereitungsaufwand für Lehrkräfte.
           </p>
         </div>
 
@@ -444,7 +443,7 @@ export default function HomePage() {
                 </div>
                 {a.foerderbar && (
                   <span className="text-xs font-body font-700 px-2 py-1 rounded-lg bg-emerald-50 text-emerald-700 border border-emerald-100">
-                    AMS-förderbar
+                    Sofort startbereit
                   </span>
                 )}
               </div>
@@ -481,10 +480,10 @@ export default function HomePage() {
               Was Skills-UP! einzigartig macht
             </div>
             <h2 className="font-heading text-4xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
-              Mehr als ein Kurs.<br /><span className="text-primary-medium">Eine Lernplattform.</span>
+              So funktioniert<br /><span className="text-primary-medium">das Programm.</span>
             </h2>
             <p className="text-text-muted text-lg max-w-2xl mx-auto font-body">
-              Skills-UP! kombiniert bewährte Didaktik mit moderner Lerntechnologie — damit das Gelernte auch wirklich hängen bleibt.
+              Skills-UP! kombiniert bewährte Didaktik mit moderner Lerntechnologie — Peer-Videos, Microlearning und Gamification, damit Finanzwissen wirklich hängen bleibt.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -514,13 +513,13 @@ export default function HomePage() {
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-status-teal bg-status-teal-light px-4 py-2 rounded-full mb-5">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            20+ interaktive Module
+            12+ Module für fundiertes Finanzwissen
           </div>
           <h2 className="font-heading text-4xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
-            Was du lernst.
+            Was Schüler:innen lernen.
           </h2>
           <p className="text-text-muted text-lg max-w-2xl mx-auto font-body">
-            Sechs Themenbereiche, aufgebaut auf dem was im österreichischen Arbeitsalltag wirklich gebraucht wird.
+            Sechs Themenbereiche, aufgebaut auf dem, was junge Menschen ab 15 für echte Finanzentscheidungen wirklich brauchen.
           </p>
         </div>
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -554,10 +553,10 @@ export default function HomePage() {
             <div>
               <p className="text-white/50 text-xs font-body font-700 uppercase tracking-widest mb-4">Lernziele</p>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-                Was du nach Skills-UP!<br /><span className="text-primary-light">wirklich kannst.</span>
+                Was Schüler:innen danach<br /><span className="text-primary-light">wirklich können.</span>
               </h2>
               <p className="text-white/60 font-body text-lg mb-8 leading-relaxed">
-                90 % der Teilnehmer:innen wenden das Gelernte direkt am nächsten Arbeitstag an. Nicht irgendwann.
+                Finanzbildung, die nicht im Klassenzimmer bleibt — sondern bei der ersten Lohnabrechnung, beim ersten Onlinekauf und beim ersten Sparziel ankommt.
               </p>
               <div className="relative">
                 <div className="absolute inset-0 blur-3xl scale-110 pointer-events-none"
@@ -568,12 +567,12 @@ export default function HomePage() {
             </div>
             <ul className="space-y-4">
               {[
-                { text: 'KI-Tools wie ChatGPT produktiv und kritisch einsetzen', color: '#a78bfa' },
-                { text: 'Phishing-Mails erkennen und Daten schützen', color: '#34d399' },
-                { text: 'Online-Meetings professionell vorbereiten und leiten', color: '#fbbf24' },
-                { text: 'DSGVO-Grundlagen im Arbeitsalltag sicher anwenden', color: '#f87171' },
-                { text: 'Digitale Zahlungsmethoden & Online-Banking sicher nutzen', color: '#60a5fa' },
-                { text: 'LinkedIn & Social Media professionell für Karriere einsetzen', color: '#4ade80' },
+                { text: 'Den eigenen Lohnzettel lesen und Brutto-Netto verstehen', color: '#a78bfa' },
+                { text: 'Ein realistisches Haushaltsbudget erstellen und einhalten', color: '#34d399' },
+                { text: 'Ratenkauf, BNPL und Konsumfallen kritisch durchschauen', color: '#fbbf24' },
+                { text: 'Krypto-Mythen und Scams als solche erkennen', color: '#f87171' },
+                { text: 'Ein erstes Sparziel setzen und einen Notgroschen aufbauen', color: '#60a5fa' },
+                { text: 'Versicherungen einschätzen und Schuldenfallen vermeiden', color: '#4ade80' },
               ].map((item) => (
                 <li key={item.text} className="flex items-start gap-3">
                   <span className="mt-1 shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style={{ background: item.color + '25' }}>
@@ -700,40 +699,40 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-8">
           {[
             {
-              emoji: '🏢',
-              title: 'Unternehmen',
+              emoji: '👩‍🏫',
+              title: 'Lehrkräfte',
               color: '#4a2d8a', bg: 'linear-gradient(135deg, #4a2d8a 0%, #6b4db0 100%)',
               points: [
-                'Inhouse-Schulungen für Teams jeder Größe',
-                'Maßgeschneiderte Inhalte für eure Branche',
-                'Trainer-Dashboard mit Fortschrittsreport',
-                'AMS- und WAFF-Förderung möglich',
+                'Fertige Module, Aufgaben und Übungsblätter',
+                'Kein Vorbereitungsaufwand, sofort startbereit',
+                'Dashboard mit Fortschritt aller Klassen',
+                'Lehrplankonform für Wirtschaft, Recht, Mathematik',
               ],
-              cta: 'Unternehmen anfragen',
+              cta: 'Als Lehrkraft anfragen',
+            },
+            {
+              emoji: '🧑‍🎓',
+              title: 'Schüler:innen',
+              color: '#1a5c4e', bg: 'linear-gradient(135deg, #1a5c4e 0%, #2a8a76 100%)',
+              points: [
+                'Über 10 Praxissimulationen aus dem echten Leben',
+                'Peer-Videos auf Augenhöhe, jugendnah',
+                'Gamification mit Punkten, Quizzes und Badges',
+                'Finanzwissen, das im Alltag wirklich ankommt',
+              ],
+              cta: 'Mehr für Schüler:innen',
             },
             {
               emoji: '🏫',
-              title: 'Schulen & Bildungseinrichtungen',
-              color: '#1a5c4e', bg: 'linear-gradient(135deg, #1a5c4e 0%, #2a8a76 100%)',
-              points: [
-                'Kursformate passend zum Lehrplan',
-                'Motivierende Gamification für Schülerinnen',
-                'Lehrerinnen-Dashboard für Klassenübersicht',
-                'Zertifikat für alle Teilnehmerinnen',
-              ],
-              cta: 'Schulen anfragen',
-            },
-            {
-              emoji: '🧑',
-              title: 'Privatpersonen',
+              title: 'Schulleitung',
               color: '#92400e', bg: 'linear-gradient(135deg, #92400e 0%, #d87228 100%)',
               points: [
-                'Öffentliche Kurstermine in Wien',
-                'Kein Vorwissen nötig',
-                'Anerkanntes Zertifikat für den Lebenslauf',
-                'AMS Qualifizierungsbonus anrechenbar',
+                'Schulweites Rollout in Minuten',
+                'Kein IT-Aufwand, im Browser gestartet',
+                'DSGVO-konform und EU-rechtssicher',
+                'Für AHS, BHS (HAK, HTL, HLW, BAfEP, BASOP) & PTS',
               ],
-              cta: 'Als Privatperson anfragen',
+              cta: 'Für die Schule anfragen',
             },
           ].map((z) => (
             <div key={z.title} className="rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all group">
@@ -772,14 +771,14 @@ export default function HomePage() {
               </svg>
             </div>
             <div className="flex-1 text-center md:text-left">
-              <h3 className="font-heading text-xl font-bold mb-2" style={{ color: '#065f46' }}>Förderung verfügbar</h3>
+              <h3 className="font-heading text-xl font-bold mb-2" style={{ color: '#065f46' }}>Gefördert durch starke Partner</h3>
               <p className="text-text-muted font-body text-sm leading-relaxed">
-                Skills-UP! Kurse können über den <strong>AMS Qualifizierungsbonus</strong>, den <strong>WAFF Wien</strong> oder die betriebliche Bildungsförderung co-finanziert werden.
-                Wir helfen euch beim Förderantrag — meldet euch einfach.
+                Skills-UP! wird von der <strong>MEGA Bildungsstiftung</strong> und im Rahmen der <strong>Nationalen Finanzbildungsstrategie</strong> unterstützt.
+                Sprecht uns an — wir finden gemeinsam ein leistbares Modell für eure Schule.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 justify-center md:justify-end shrink-0">
-              {['AMS-förderbar', 'WAFF Wien', 'Betriebliche Bildungsförderung'].map((f) => (
+              {['MEGA Bildungsstiftung', 'Finanzbildungsstrategie', 'Für Schulen leistbar'].map((f) => (
                 <span key={f} className="px-3 py-1.5 rounded-full text-xs font-body font-700 bg-emerald-50 text-emerald-700 border border-emerald-100">{f}</span>
               ))}
             </div>
@@ -803,24 +802,24 @@ export default function HomePage() {
         <div className="grid md:grid-cols-3 gap-6">
           {[
             {
-              quote: 'Endlich ein Kurs, bei dem ich nicht nach 20 Minuten eingeschlafen bin. Das Tempo war perfekt, die Trainerin hat auf alle Fragen eingegangen und ich hab am nächsten Tag sofort ChatGPT für meine Arbeit genutzt.',
-              name: 'Sandra M.',
-              role: 'Bürokauffrau, Wien',
-              initials: 'SM',
+              quote: 'Aufgrund von Skills-UP! hab ich es endlich geschafft, für den Führerschein zu sparen. Zum ersten Mal hab ich verstanden, wo mein Geld eigentlich hingeht.',
+              name: 'Lisa M.',
+              role: 'Schülerin, 17 Jahre',
+              initials: 'LM',
               color: '#4a2d8a',
             },
             {
-              quote: 'Wir haben den Kurs als Inhouse-Schulung für unser Team gebucht. Die Inhalte waren genau auf unsere Bedürfnisse abgestimmt — vor allem das Thema Datenschutz und sichere Kommunikation war für uns sehr relevant.',
-              name: 'Thomas K.',
-              role: 'HR-Leiter, Linz',
-              initials: 'TK',
+              quote: 'Endlich Material, das ich ohne Vorbereitung sofort einsetzen kann. Die Simulationen nehmen mir die Erklärarbeit ab — und im Dashboard sehe ich auf einen Blick, wo meine Klasse steht.',
+              name: 'Mag. Eva R.',
+              role: 'Lehrerin, BHS Burgenland',
+              initials: 'ER',
               color: '#2a8a76',
             },
             {
-              quote: 'Meine Schülerinnen waren wirklich begeistert — und das will bei 16-Jährigen etwas heißen. Die Kombination aus Praxis, Quiz und der entspannten Atmosphäre hat funktioniert.',
-              name: 'Mag. Eva R.',
-              role: 'Lehrerin, Berufsschule Burgenland',
-              initials: 'ER',
+              quote: 'Die Gehaltsverhandlungs-Simulation war ein Augenöffner. Meine Schüler:innen reden jetzt über Kollektivvertrag und Nettolohn — Themen, die vorher kein Thema waren.',
+              name: 'Mag. Thomas K.',
+              role: 'Lehrer, HAK Linz',
+              initials: 'TK',
               color: '#7c3aed',
             },
           ].map((t) => (
@@ -880,7 +879,7 @@ export default function HomePage() {
                 Menschen hinter Skills-UP!
               </h2>
               <p className="text-text-muted font-body text-lg leading-relaxed mb-6">
-                Unser Team kommt aus der Praxis — aus Bildung, Technologie und Unternehmensberatung. Wir kennen die Herausforderungen der digitalen Transformation aus eigener Erfahrung.
+                Unser Team kommt aus der Praxis — aus Bildung, Wirtschaft und Finanzpädagogik. Wir wissen, was Jugendliche für echte Finanzentscheidungen brauchen, und was Lehrkräften den Alltag erleichtert.
               </p>
               <Link href="/ueber-uns"
                 className="inline-flex items-center gap-2 text-sm font-body font-700 text-primary-dark hover:text-primary-medium transition-colors">
@@ -948,12 +947,12 @@ export default function HomePage() {
               Bereit für den<br />nächsten Schritt?
             </h2>
             <p className="text-white/70 font-body text-lg mb-8 leading-relaxed">
-              Fragen zu Skills-UP! Kursen, Inhouse-Schulungen oder einer Kooperation? Wir melden uns innerhalb von 24 Stunden.
+              Skills-UP! an Ihrer Schule einsetzen? Fragen zum Programm, zum Rollout oder einer Kooperation? Wir melden uns innerhalb von 24 Stunden.
             </p>
             <div className="space-y-4 mb-8">
               {[
-                'Individuelle Beratung ohne Verpflichtung',
-                'Maßgeschneiderte Inhouse-Formate',
+                'Unverbindliche Beratung für Ihre Schule',
+                'Schulweites Rollout in Minuten, kein IT-Aufwand',
                 'Schnelle Antwort in unter 24 Stunden',
               ].map((t) => (
                 <div key={t} className="flex items-center gap-3 text-white/80 font-body text-sm">
