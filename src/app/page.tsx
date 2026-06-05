@@ -26,7 +26,7 @@ const programPics = [
   { src: '/fotos/Einblick%20ins%20Programm%203.png', alt: 'KI-Simulation im Skills-UP! Workshop' },
   { src: '/fotos/Einblick%20ins%20Programm%204.png', alt: 'Gruppenarbeit zu digitalen Werkzeugen' },
   { src: '/fotos/Einblick%20ins%20Programm%205.png', alt: 'Präsentation im Skills-UP! Training' },
-  { src: '/fotos/Workshops.png', alt: 'Skills-UP! Inhouse Workshop für Unternehmen' },
+  { src: '/fotos/Workshops.png', alt: 'Skills-UP! Workshop für Schulen und Lehrkräfte' },
 ]
 
 /* ── Programm-Bausteine ─────────────────────────────────── */

@@ -64,11 +64,11 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
           style={light ? { color: form.anliegen ? 'white' : 'rgba(255,255,255,0.4)' } : {}}
         >
           <option value="" disabled>Bitte auswählen…</option>
-          <option value="Kursanfrage Unternehmen">Kursanfrage für mein Unternehmen</option>
-          <option value="Kursanfrage Schule">Kursanfrage für meine Schule / Klasse</option>
-          <option value="Kursanfrage Privat">Kursanfrage als Privatperson</option>
+          <option value="Schule anmelden">Skills-UP! für meine Schule / Klasse</option>
+          <option value="Lehrplanintegration">Fragen zur Lehrplanintegration</option>
+          <option value="Schulleitung Rollout">Schulweiter Rollout / Schulleitung</option>
           <option value="Kooperation">Kooperation / Partnerschaft</option>
-          <option value="Förderung">Fragen zu Förderungen (AMS, WAFF etc.)</option>
+          <option value="Lehrbetrieb">Anfrage Lehrbetrieb / Berufsschule</option>
           <option value="Sonstiges">Sonstiges</option>
         </select>
       </div>

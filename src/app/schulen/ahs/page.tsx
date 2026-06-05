@@ -38,7 +38,7 @@ export default function AhsPage() {
       lehrplanPassung={[
         {
           fach: 'GWK (Geographie, Wirtschaft, Kultur)',
-          kontext: 'Konsum, Wirtschaftssysteme, digitaler Wandel — Skills-UP! macht diese Themen mit persönlichen Finanzentscheidungen der Schüler:innen greifbar.',
+          kontext: 'Konsum, Wirtschaftssysteme, Geldwirtschaft — Skills-UP! macht diese Themen mit persönlichen Finanzentscheidungen der Schüler:innen greifbar: Budgetplanung, Ratenkauf, Investieren.',
         },
         {
           fach: 'PuG (Politische Bildung und Geschichte)',

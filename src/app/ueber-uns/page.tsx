@@ -5,8 +5,8 @@ import SiteFooter from '@/components/SiteFooter'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Über uns | Skills-UP! – Digitale Zukunftsbildung',
-  description: 'Erfahren Sie mehr über den Verein und unser erfahrenes Team hinter den Skills-UP! Kursen.',
+  title: 'Über uns | Skills-UP! – Finanzbildung für Schulen',
+  description: 'Der Verein zur Entwicklung der digitalen Zukunftsbildung steht hinter Skills-UP! — dem Finanzbildungsprogramm für 15- bis 20-Jährige in österreichischen Schulen.',
 }
 
 export default function UeberUns() {
@@ -22,11 +22,11 @@ export default function UeberUns() {
         <div className="max-w-4xl mx-auto relative z-10">
           <p className="text-white/60 text-xs font-body font-700 uppercase tracking-widest mb-4">Über uns</p>
           <h1 className="font-heading text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
-            Wir machen digitale<br />
-            <span className="text-primary-light">Bildung zugänglich.</span>
+            Wir machen Jugendliche<br />
+            <span className="text-primary-light">fit fürs echte Leben.</span>
           </h1>
           <p className="text-white/70 font-body text-xl max-w-2xl leading-relaxed">
-            Der Verein zur Entwicklung der digitalen Zukunftsbildung verbindet Leidenschaft fürs Lernen mit echter Praxiserfahrung aus Wirtschaft und Technologie.
+            Der Verein zur Entwicklung der digitalen Zukunftsbildung steht hinter Skills-UP! — dem Finanzbildungsprogramm, das jungen Menschen ab 15 echte Finanzkompetenz für den Alltag vermittelt.
           </p>
         </div>
         <div className="relative z-10 mt-10">
@@ -45,13 +45,13 @@ export default function UeberUns() {
               Unsere Mission
             </div>
             <h2 className="font-heading text-3xl font-bold mb-5" style={{ color: '#1a1040' }}>
-              Digitale Kompetenz ist kein Luxus.
+              Finanzbildung gehört in die Schule.
             </h2>
             <p className="text-text-muted font-body text-lg leading-relaxed mb-4">
-              Wir leben in einer Welt, die sich schneller verändert als je zuvor. Wer nicht mitkommt, verliert den Anschluss — im Job, im Alltag, im Leben.
+              Jugendliche treffen ab etwa 15 ihre ersten echten Geldentscheidungen: erstes Einkommen, Onlinekäufe, Verträge, Sparziele. Doch wie man mit Geld umgeht, lernt kaum jemand systematisch.
             </p>
             <p className="text-text-muted font-body text-lg leading-relaxed">
-              Unser Verein setzt genau hier an: Mit dem Kursformat <strong className="text-primary-dark">Skills-UP!</strong> vermitteln wir digitale Kompetenzen, die sofort einsetzbar sind — unabhängig von Alter, Vorwissen oder Berufsfeld.
+              Genau hier setzt unser Verein an: Mit dem Unterrichtsprogramm <strong className="text-primary-dark">Skills-UP!</strong> bringen wir Finanzbildung praxisnah, digital und lehrplankonform in österreichische Klassenzimmer — von der AHS bis zur Berufsschule.
             </p>
           </div>
 
@@ -65,10 +65,10 @@ export default function UeberUns() {
             </h2>
             <ul className="space-y-4">
               {[
-                { title: 'Praxis first', desc: 'Kein theoretisches Bla-Bla. Was wir lehren, funktioniert am nächsten Arbeitstag.' },
-                { title: 'Kleine Gruppen', desc: 'Echter Lernerfolg passiert im Gespräch, nicht im Hörsaal mit 200 Leuten.' },
-                { title: 'Österreichischer Kontext', desc: 'DSGVO, Finanzamt, österreichische Behörden — wir reden über das, was hier relevant ist.' },
-                { title: 'Ehrlichkeit statt Hype', desc: 'KI kann viel, aber nicht alles. Wir erklären beides — klar und ohne Übertreibung.' },
+                { title: 'Praxis statt Theorie', desc: 'Lohnzettel, Budget, Depot, Gehaltsverhandlung — Schüler:innen lernen durch echtes Erleben in Simulationen.' },
+                { title: 'Lehrkräfte entlasten', desc: 'Fertige Module ohne Vorbereitungsaufwand und ein Dashboard, das Korrekturarbeit abnimmt.' },
+                { title: 'Österreichischer Kontext', desc: 'FinanzOnline, Kollektivvertrag, FMA, KSV — wir erklären das österreichische Finanzsystem, nicht abstrakte Theorie.' },
+                { title: 'Ehrlichkeit statt Hype', desc: 'Krypto, schnelle Gewinne, Finfluencer — wir vermitteln einen realistischen, kritischen Blick statt leerer Versprechen.' },
               ].map((v) => (
                 <li key={v.title} className="flex items-start gap-4 p-4 bg-gray-50 rounded-2xl">
                   <div className="w-8 h-8 bg-primary-50 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
@@ -107,15 +107,15 @@ export default function UeberUns() {
                 <h3 className="font-heading font-700 text-base text-text-primary mb-1">Marina Winkler</h3>
                 <p className="text-xs font-body text-primary-medium font-700 mb-3">Vereinsleitung &amp; Kursleitung</p>
                 <p className="text-sm font-body text-text-muted leading-relaxed">
-                  Pionierin hinter Skills-UP! mit jahrelanger Erfahrung in Bildung und digitaler Transformation.
+                  Pionierin hinter Skills-UP! mit jahrelanger Erfahrung in Bildung und Finanzpädagogik. Projektleiterin und Hauptansprechperson des Vereins.
                 </p>
               </div>
             </div>
 
             {/* Platzhalter — hier kommen weitere Personen rein */}
             {[
-              { name: '[Name eintragen]', rolle: 'Dozent / Digitale Kompetenzen', bio: 'Kurze Bio hier eintragen — Hintergrund, Expertise, Leidenschaft.' },
-              { name: '[Name eintragen]', rolle: 'Organisation & Partnerschaften', bio: 'Kurze Bio hier eintragen — Hintergrund, Expertise, Leidenschaft.' },
+              { name: 'Dr. Stefan Bauer', rolle: 'Vorstand & Finanzbildung', bio: 'Mitglied des Vereinsvorstands. Verbindet wirtschaftliche Expertise mit der Mission, jungen Menschen echte Finanzkompetenz zu vermitteln.' },
+              { name: '[Name eintragen]', rolle: 'Didaktik & Schulkooperationen', bio: 'Kurze Bio hier eintragen — Hintergrund, Expertise, Leidenschaft für Finanzbildung.' },
             ].map((p, i) => (
               <div key={i} className="bg-white rounded-3xl overflow-hidden shadow-card">
                 <div className="h-64 bg-primary-50 flex items-center justify-center text-primary-light">
@@ -152,10 +152,10 @@ export default function UeberUns() {
           <div className="rounded-3xl p-10 md:p-14 text-white relative overflow-hidden"
             style={{ background: 'linear-gradient(135deg, #4a2d8a 0%, #6b4db0 50%, #2a8a76 100%)' }}>
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
-              Willst du mit uns die digitale Zukunft gestalten?
+              Skills-UP! an Ihre Schule bringen?
             </h2>
             <p className="text-white/70 font-body text-lg mb-8">
-              Als Kooperationspartner, Förderer oder Kursteilnehmer — wir freuen uns über jede Form der Zusammenarbeit.
+              Als Schule, Kooperationspartner oder Förderer der Finanzbildung — wir freuen uns über jede Form der Zusammenarbeit.
             </p>
             <Link href="/#kontakt"
               className="inline-flex items-center gap-2 bg-white text-primary-dark font-body font-700 px-8 py-4 rounded-xl hover:bg-gray-50 transition-all hover:scale-105 active:scale-95 shadow-xl"
