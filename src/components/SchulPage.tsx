@@ -113,6 +113,18 @@ export default function SchulPage({
                 </div>
               </div>
 
+              {/* Capybara Maskottchen */}
+              <div className="flex items-center gap-3 mb-5">
+                <div className="relative">
+                  <div className="absolute inset-0 blur-2xl scale-150 pointer-events-none"
+                    style={{ background: 'radial-gradient(circle, rgba(155,126,212,0.5) 0%, transparent 70%)' }} />
+                  <Image src="/capybara-mascot.png" alt="Skills-UP! Maskottchen" width={72} height={72}
+                    className="relative drop-shadow-2xl" />
+                </div>
+                <Image src="/fotos/Logo.png" alt="Skills-UP!" width={44} height={44}
+                  className="relative drop-shadow-xl rounded-xl opacity-90" />
+              </div>
+
               <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-4 leading-tight">
                 Skills-UP! für<br />{name}
               </h1>
@@ -519,6 +531,15 @@ export default function SchulPage({
       {/* ── CTA ─────────────────────────────────────────────── */}
       <section className="py-20" style={{ background: 'linear-gradient(135deg, #2d1b69 0%, #4a2d8a 50%, #1a5c4e 100%)' }}>
         <div className="max-w-4xl mx-auto px-6 text-center">
+          {/* Capybara im CTA */}
+          <div className="flex justify-center mb-6">
+            <div className="relative">
+              <div className="absolute inset-0 blur-3xl scale-150 pointer-events-none"
+                style={{ background: 'radial-gradient(circle, rgba(155,126,212,0.4) 0%, transparent 70%)' }} />
+              <Image src="/capybara-mascot.png" alt="Skills-UP! Maskottchen" width={100} height={100}
+                className="relative drop-shadow-2xl" />
+            </div>
+          </div>
           <h3 className="font-heading text-3xl font-bold text-white mb-4">
             Bereit für Skills-UP! an deiner Schule?
           </h3>
@@ -528,7 +549,7 @@ export default function SchulPage({
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <a href="/#kontakt"
               className="inline-flex items-center gap-2 font-body font-700 text-base px-8 py-4 rounded-xl text-white transition-all hover:scale-105 active:scale-95"
-              style={{ background: 'linear-gradient(135deg, #7c3aed, #2a8a76)', boxShadow: '0 8px 32px rgba(107,77,176,0.4)' }}>
+              style={{ background: 'linear-gradient(135deg, #4a2d8a, #2a8a76)', boxShadow: '0 8px 32px rgba(107,77,176,0.4)' }}>
               Jetzt Kontakt aufnehmen
               {arrowIcon}
             </a>

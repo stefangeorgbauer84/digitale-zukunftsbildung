@@ -25,9 +25,9 @@ export default function BerufsschulePage() {
     <SchulPage
       name="Berufsschulen & Lehre"
       kurzname="Lehre"
-      gradient="linear-gradient(135deg, #134e4a 0%, #2A8A76 60%, #34d399 100%)"
+      gradient="linear-gradient(135deg, #0f3d32 0%, #1a5c4e 60%, #2A8A76 100%)"
       farbe="#2A8A76"
-      farbeHell="#f0fdfa"
+      farbeHell="#e6f4f1"
       schulstufen="Lehre / 9.–12. Schulstufe"
       lehrplanFach="Politische Bildung · Lebenskunde · Projektunterricht · Marktplatz Lern-Apps"
       icon={icon}

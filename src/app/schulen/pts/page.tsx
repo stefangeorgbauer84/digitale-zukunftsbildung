@@ -25,9 +25,9 @@ export default function PtsPage() {
     <SchulPage
       name="Polytechnische Schule"
       kurzname="PTS"
-      gradient="linear-gradient(135deg, #78350f 0%, #b45309 60%, #f59e0b 100%)"
-      farbe="#b45309"
-      farbeHell="#fffbeb"
+      gradient="linear-gradient(135deg, #061a15 0%, #1a5c4e 60%, #2A8A76 100%)"
+      farbe="#1a5c4e"
+      farbeHell="#e6f4f1"
       schulstufen="9. Schulstufe"
       lehrplanFach="Berufsorientierung · Lebenskunde · Klassenvorstand · Soziales Lernen"
       icon={icon}
