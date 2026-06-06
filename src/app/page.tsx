@@ -826,6 +826,67 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
+          MARINA STATEMENT
+      ══════════════════════════════════════════════════ */}
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, #0f3d32 0%, #1a5c4e 60%, #2d1b69 100%)' }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid md:grid-cols-[1fr_280px] gap-12 items-center">
+            {/* Quote — links */}
+            <div>
+              <div className="flex items-center gap-2 mb-6">
+                <Image src="/fotos/Logo.png" alt="Skills-UP!" width={32} height={32} className="rounded-lg opacity-80" />
+                <span className="text-xs font-body font-700 uppercase tracking-widest text-white/40">Aus dem Klassenzimmer</span>
+              </div>
+
+              <svg width="44" height="33" viewBox="0 0 48 36" fill="none" className="mb-5 opacity-30">
+                <path d="M0 36V21.6C0 9.6 6.4 2.4 19.2 0l2.4 4.8C14.4 6.4 10.4 10.4 10.4 16.8H19.2V36H0ZM28.8 36V21.6C28.8 9.6 35.2 2.4 48 0l2.4 4.8C43.2 6.4 39.2 10.4 39.2 16.8H48V36H28.8Z" fill="white"/>
+              </svg>
+
+              <p className="font-body text-2xl md:text-3xl leading-relaxed text-white/90 italic mb-6">
+                &ldquo;Als Lehrerin habe ich jeden Tag gesehen, wie wenig Jugendliche über Geld wissen — und wie wenig Zeit ich hatte, das zu ändern. Skills-UP! gibt Lehrkräften genau das Werkzeug, das mir damals gefehlt hat.&rdquo;
+              </p>
+              <p className="font-body text-lg text-white/70 leading-relaxed mb-10">
+                Ich habe selbst im Klasssenzimmer gestanden und gewusst: Die Themen, die junge Menschen wirklich brauchen — Lohnzettel, Budget, Kredit, erste eigene Wohnung — kommen im Lehrplan kaum vor. Deshalb haben wir Skills-UP! gebaut. Für Schüler:innen, die echte Entscheidungen treffen müssen. Und für Lehrkräfte, die ihnen dabei helfen wollen.
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { label: 'Ehemalige Lehrerin', icon: '◆' },
+                  { label: 'Vereinsleitung', icon: '◆' },
+                  { label: 'Kursleitung Skills-UP!', icon: '◆' },
+                ].map((b) => (
+                  <span key={b.label} className="inline-flex items-center gap-1.5 text-xs font-body font-700 px-3 py-1.5 rounded-full"
+                    style={{ background: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.75)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                    <span style={{ color: '#4aaa96' }}>{b.icon}</span> {b.label}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            {/* Foto — rechts */}
+            <div className="flex flex-col items-center md:items-end gap-5">
+              <div className="relative">
+                <div className="absolute inset-0 rounded-2xl blur-3xl scale-125 pointer-events-none"
+                  style={{ background: 'radial-gradient(circle, rgba(42,138,118,0.45) 0%, transparent 70%)' }} />
+                <div className="relative w-52 h-52 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
+                  <Image
+                    src="/fotos/marina-winkler.jpg"
+                    alt="Marina Winkler, Vereinsleitung Skills-UP!"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+              </div>
+              <div className="text-center md:text-right">
+                <p className="font-heading font-700 text-white text-lg leading-tight">Marina Winkler</p>
+                <p className="font-body text-white/60 text-sm mt-0.5">Vereinsleitung &amp; Kursleitung</p>
+                <p className="font-body text-white/40 text-xs mt-0.5">Ehemalige Lehrerin</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════
           ZIELGRUPPEN
       ══════════════════════════════════════════════════ */}
       <section className="py-24 max-w-7xl mx-auto px-6">

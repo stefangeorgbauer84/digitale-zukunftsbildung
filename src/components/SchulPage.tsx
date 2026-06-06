@@ -395,6 +395,46 @@ export default function SchulPage({
               </div>
             </div>
           </div>
+
+          {/* Divider */}
+          <div className="border-t border-white/10 my-14" />
+
+          {/* Marina Winkler */}
+          <div className="grid md:grid-cols-[1fr_220px] gap-10 items-center">
+            <div>
+              <div className="flex items-center gap-2 mb-5">
+                <span className="text-xs font-body font-700 uppercase tracking-widest text-white/40">Aus dem Klassenzimmer</span>
+              </div>
+              <svg width="36" height="27" viewBox="0 0 48 36" fill="none" className="mb-4 opacity-30">
+                <path d="M0 36V21.6C0 9.6 6.4 2.4 19.2 0l2.4 4.8C14.4 6.4 10.4 10.4 10.4 16.8H19.2V36H0ZM28.8 36V21.6C28.8 9.6 35.2 2.4 48 0l2.4 4.8C43.2 6.4 39.2 10.4 39.2 16.8H48V36H28.8Z" fill="white"/>
+              </svg>
+              <p className="font-body text-lg md:text-xl leading-relaxed text-white/85 italic mb-6">
+                &ldquo;Als Lehrerin habe ich jeden Tag gesehen, wie wenig Zeit ich hatte, Finanzthemen wirklich zu vertiefen. Skills-UP! gibt Lehrkräften genau das Werkzeug, das mir damals gefehlt hat — fertig aufbereitet, sofort einsetzbar.&rdquo;
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {['Ehemalige Lehrerin', 'Vereinsleitung', 'Kursleitung Skills-UP!'].map((tag) => (
+                  <span key={tag} className="text-xs font-body font-700 px-3 py-1.5 rounded-full"
+                    style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.15)' }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex flex-col items-center md:items-end gap-3">
+              <div className="relative">
+                <div className="absolute inset-0 rounded-2xl blur-2xl scale-110 pointer-events-none"
+                  style={{ background: 'radial-gradient(circle, rgba(42,138,118,0.4) 0%, transparent 70%)' }} />
+                <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden border-2 border-white/15 shadow-xl">
+                  <Image src="/fotos/marina-winkler.jpg" alt="Marina Winkler" fill className="object-cover object-top" />
+                </div>
+              </div>
+              <div className="text-center md:text-right">
+                <p className="font-heading font-700 text-white text-sm leading-tight">Marina Winkler</p>
+                <p className="font-body text-white/55 text-xs mt-0.5">Vereinsleitung &amp; Kursleitung</p>
+                <p className="font-body text-white/35 text-xs">Ehemalige Lehrerin</p>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
