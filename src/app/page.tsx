@@ -326,17 +326,93 @@ export default function HomePage() {
         <div className="relative marquee-track">
           <div className="flex animate-marquee gap-24 items-center">
             {[...partnerLogos, ...partnerLogos].map((logo, i) => (
-              <div key={`${logo.alt}-${i}`} className="shrink-0 flex items-center justify-center h-28 px-6">
+              <div key={`${logo.alt}-${i}`}
+                className="shrink-0 flex items-center justify-center px-6 rounded-2xl"
+                style={{
+                  height: '96px',
+                  background: logo.alt === 'Gütesiegel Lern-Apps' ? '#f3f1f9' : 'transparent',
+                  padding: logo.alt === 'Gütesiegel Lern-Apps' ? '12px 24px' : '0 24px',
+                }}>
                 <Image
                   src={logo.src}
                   alt={logo.alt}
                   width={240}
-                  height={96}
+                  height={logo.alt === 'Gütesiegel Lern-Apps' ? 72 : 96}
                   className="partner-logo"
-                  style={{ height: '96px', width: 'auto', objectFit: 'contain' }}
+                  style={{
+                    height: logo.alt === 'Gütesiegel Lern-Apps' ? '72px' : '96px',
+                    width: 'auto',
+                    objectFit: 'contain',
+                  }}
                 />
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════
+          AUSZEICHNUNGEN STRIP
+      ══════════════════════════════════════════════════ */}
+      <section className="py-16" style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)' }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <p className="text-xs font-body font-700 uppercase tracking-widest mb-2" style={{ color: '#6b4db0' }}>
+              Ausgezeichnet &amp; zertifiziert
+            </p>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold" style={{ color: '#1a1040' }}>
+              Von unabhängigen Stellen geprüft und empfohlen.
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {/* Gütesiegel — highlight */}
+            <div className="bg-white rounded-3xl p-7 flex flex-col items-center text-center gap-4 shadow-card hover:shadow-card-hover transition-all border-2" style={{ borderColor: '#4a2d8a' }}>
+              <div className="h-20 flex items-center justify-center">
+                <Image
+                  src="/fotos/Logo%20G%C3%BCtesiegel%20Lernapps.png"
+                  alt="Gütesiegel Qualitäts-Lern-Apps"
+                  width={200}
+                  height={80}
+                  className="max-h-20 w-auto object-contain"
+                />
+              </div>
+              <div>
+                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#4a2d8a', color: '#fff' }}>Qualitätszertifiziert</span>
+                <p className="font-body text-sm text-text-muted leading-relaxed">Gütesiegel für digitale Qualitäts-Lern-Apps. Geprüft nach pädagogischen und technischen Qualitätskriterien.</p>
+              </div>
+            </div>
+            {/* Finanzbildungsstrategie */}
+            <div className="bg-white rounded-3xl p-7 flex flex-col items-center text-center gap-4 shadow-card hover:shadow-card-hover transition-all">
+              <div className="h-20 flex items-center justify-center">
+                <Image
+                  src="/fotos/Logo%20Nationale%20Finanzbildungsstrategie.png"
+                  alt="Nationale Finanzbildungsstrategie"
+                  width={200}
+                  height={80}
+                  className="max-h-20 w-auto object-contain"
+                />
+              </div>
+              <div>
+                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#2A8A76', color: '#fff' }}>Bundesministerium</span>
+                <p className="font-body text-sm text-text-muted leading-relaxed">Teil der Nationalen Finanzbildungsstrategie der österreichischen Bundesregierung.</p>
+              </div>
+            </div>
+            {/* MEGA Bildungsmillion */}
+            <div className="bg-white rounded-3xl p-7 flex flex-col items-center text-center gap-4 shadow-card hover:shadow-card-hover transition-all">
+              <div className="h-20 flex items-center justify-center">
+                <Image
+                  src="/fotos/MEGA%20Bildungsstiftung%20Logo.jpeg"
+                  alt="MEGA Bildungsstiftung"
+                  width={200}
+                  height={80}
+                  className="max-h-20 w-auto object-contain"
+                />
+              </div>
+              <div>
+                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#D87228', color: '#fff' }}>Top-3 Österreich</span>
+                <p className="font-body text-sm text-text-muted leading-relaxed">Top-3 Projekt der MEGA Bildungsmillion 2025 — aus hunderten Einreichungen österreichweit.</p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
