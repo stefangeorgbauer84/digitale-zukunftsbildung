@@ -236,6 +236,173 @@ export default function SchulPage({
         </section>
       )}
 
+      {/* ── Lehrer-Credibility: Plattform aus Lehrersicht ──────── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <p className="text-xs font-body font-700 uppercase tracking-widest mb-3" style={{ color: farbe }}>Für Lehrkräfte gemacht</p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4" style={{ color: '#1a1040' }}>
+              Alles, was du brauchst.<br />
+              <span style={{ color: farbe }}>Nichts, was du nicht brauchst.</span>
+            </h2>
+            <p className="font-body text-text-muted text-lg max-w-xl mx-auto">
+              Skills-UP! ist so gebaut, dass du in wenigen Minuten startklar bist — ohne Schulung, ohne IT-Ticket, ohne Vorbereitung.
+            </p>
+          </div>
+
+          {/* 3-Spalten Feature-Grid */}
+          <div className="grid md:grid-cols-3 gap-6 mb-12">
+            {/* Module */}
+            <div className="rounded-3xl p-7 flex flex-col gap-4 border border-gray-100 hover:shadow-card transition-all" style={{ background: farbeHell }}>
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-white shrink-0" style={{ background: farbe }}>
+                <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                </svg>
+              </div>
+              <div>
+                <p className="font-heading font-700 text-base mb-2" style={{ color: '#1a1040' }}>12+ fertige Module</p>
+                <p className="font-body text-sm text-text-muted leading-relaxed">
+                  Jedes Modul ist eine komplett ausgearbeitete Unterrichtseinheit — mit Lernzielen, Aufgaben, Reflexionsfragen und Lehrerhinweisen. Kurzversion (15 Min) oder Langversion (50 Min), je nach Stunde.
+                </p>
+              </div>
+              <ul className="space-y-1.5 mt-auto">
+                {['Sofort im Browser öffnen', 'Kein Ausdrucken, kein Kopieren', 'Lehrplankonform dokumentiert'].map((t) => (
+                  <li key={t} className="flex items-center gap-2 text-xs font-body" style={{ color: farbe }}>
+                    <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Simulationen */}
+            <div className="rounded-3xl p-7 flex flex-col gap-4 border border-gray-100 hover:shadow-card transition-all" style={{ background: farbeHell }}>
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-white shrink-0" style={{ background: farbe }}>
+                <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polygon points="5 3 19 12 5 21 5 3"/>
+                </svg>
+              </div>
+              <div>
+                <p className="font-heading font-700 text-base mb-2" style={{ color: '#1a1040' }}>10+ Praxissimulationen</p>
+                <p className="font-body text-sm text-text-muted leading-relaxed">
+                  Schüler:innen erleben echte Finanzentscheidungen in einer sicheren Umgebung — vom Gehaltszettel lesen bis zur Gehaltsverhandlung. Du startest die Simulation, der Rest läuft von allein.
+                </p>
+              </div>
+              <ul className="space-y-1.5 mt-auto">
+                {['Selbstständiges Arbeiten', 'Kein Scheitern mit echtem Geld', 'Österreichische Alltagsszenarien'].map((t) => (
+                  <li key={t} className="flex items-center gap-2 text-xs font-body" style={{ color: farbe }}>
+                    <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Quizze */}
+            <div className="rounded-3xl p-7 flex flex-col gap-4 border border-gray-100 hover:shadow-card transition-all" style={{ background: farbeHell }}>
+              <div className="w-12 h-12 rounded-2xl flex items-center justify-center text-white shrink-0" style={{ background: farbe }}>
+                <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/>
+                </svg>
+              </div>
+              <div>
+                <p className="font-heading font-700 text-base mb-2" style={{ color: '#1a1040' }}>Automatische Quizze</p>
+                <p className="font-body text-sm text-text-muted leading-relaxed">
+                  Nach jedem Modul folgt ein kurzes Quiz — automatisch ausgewertet, keine Korrektur durch dich. Du siehst sofort, wer was verstanden hat, ohne einen einzigen Test einzusammeln.
+                </p>
+              </div>
+              <ul className="space-y-1.5 mt-auto">
+                {['Automatische Auswertung', 'Kein Korrekturaufwand', 'Ergebnisse live im Dashboard'].map((t) => (
+                  <li key={t} className="flex items-center gap-2 text-xs font-body" style={{ color: farbe }}>
+                    <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    {t}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Breitere 2-Spalten Karten: Analytics + Setup/Support */}
+          <div className="grid md:grid-cols-2 gap-6">
+            {/* Analytics */}
+            <div className="rounded-3xl p-8 flex gap-6 items-start border-2" style={{ borderColor: farbe, background: '#fff' }}>
+              <div className="w-14 h-14 rounded-2xl flex items-center justify-center text-white shrink-0" style={{ background: `linear-gradient(135deg, ${farbe} 0%, ${farbe}cc 100%)` }}>
+                <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/>
+                </svg>
+              </div>
+              <div>
+                <span className="inline-block text-xs font-body font-700 px-2.5 py-1 rounded-full mb-3 text-white" style={{ background: farbe }}>Analytics-Dashboard</span>
+                <p className="font-heading font-700 text-lg mb-2" style={{ color: '#1a1040' }}>Wer hat was gelernt — auf einen Blick.</p>
+                <p className="font-body text-sm text-text-muted leading-relaxed mb-4">
+                  Dein Dashboard zeigt dir den Lernfortschritt jeder Schüler:in in Echtzeit. Welches Modul wurde abgeschlossen? Welches Quiz hat wer nicht bestanden? Ohne Excel, ohne Nachfragen — einfach öffnen und sehen.
+                </p>
+                <div className="grid grid-cols-2 gap-3">
+                  {[
+                    { label: 'Fortschritt pro Schüler:in', icon: '📊' },
+                    { label: 'Quiz-Ergebnisse live', icon: '✅' },
+                    { label: 'Klassenvergleich', icon: '🏫' },
+                    { label: 'Export für Zeugnis', icon: '📄' },
+                  ].map((i) => (
+                    <div key={i.label} className="flex items-center gap-2 text-xs font-body text-text-muted">
+                      <span aria-hidden="true">{i.icon}</span>
+                      {i.label}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            {/* Setup + Support */}
+            <div className="rounded-3xl p-8 flex flex-col gap-6" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 100%)' }}>
+              {/* Setup */}
+              <div className="flex gap-4 items-start">
+                <div className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0" style={{ background: 'rgba(255,255,255,0.15)' }}>
+                  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-heading font-700 text-base text-white mb-1">Setup in unter 5 Minuten</p>
+                  <p className="font-body text-sm text-white/65 leading-relaxed">
+                    Kein IT-Ticket, keine Installation, kein Antrag. Du meldest deine Klasse an, schickst den Link — und am nächsten Tag kann der erste Unterricht starten. Wirklich.
+                  </p>
+                  <div className="flex flex-wrap gap-2 mt-3">
+                    {['Browser öffnen', 'Klasse anlegen', 'Loslegen'].map((s, i) => (
+                      <span key={s} className="flex items-center gap-1.5 text-xs font-body font-700 px-3 py-1.5 rounded-full text-white/80" style={{ background: 'rgba(255,255,255,0.1)' }}>
+                        <span className="w-4 h-4 rounded-full flex items-center justify-center text-xs font-700 text-white" style={{ background: farbe }}>{i + 1}</span>
+                        {s}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="border-t border-white/10" />
+
+              {/* Support */}
+              <div className="flex gap-4 items-start">
+                <div className="w-12 h-12 rounded-2xl flex items-center justify-center shrink-0" style={{ background: 'rgba(255,255,255,0.15)' }}>
+                  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-heading font-700 text-base text-white mb-1">Persönlicher Support — immer erreichbar</p>
+                  <p className="font-body text-sm text-white/65 leading-relaxed">
+                    Fragen zur Lehrplanintegration, zum Rollout oder zu einem bestimmten Modul? Du bekommst eine Antwort — von einem Menschen, innerhalb von 24 Stunden. Kein Helpdesk-Ticket, kein Chatbot.
+                  </p>
+                  <a href="/#kontakt" className="inline-flex items-center gap-1.5 mt-3 text-xs font-body font-700 transition-colors hover:opacity-80" style={{ color: '#9b7ed4' }}>
+                    Jetzt anfragen
+                    <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Trust Stats ─────────────────────────────────────── */}
       <section className="py-14 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
