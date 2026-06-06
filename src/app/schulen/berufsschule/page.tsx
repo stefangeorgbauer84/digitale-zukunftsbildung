@@ -143,6 +143,7 @@ export default function BerufsschulePage() {
         text: 'Ich hab Skills-UP! in einer Blockwoche eingesetzt. Am dritten Tag haben Lehrlinge angefangen, sich gegenseitig beim Budget-Tool zu helfen. Ich musste fast nichts tun. Das war das erste Mal seit Jahren, dass ich in einer Berufsschulstunde wirklich ruhig dasitzen konnte.',
         person: 'Lehrer für Politische Bildung, Berufsschule Linz',
       }}
+      lehrerFoto="/fotos/Lehrerinnen%20f%C3%BCr%20Schulseiten/Berufsschullehrer.png"
     />
   )
 }

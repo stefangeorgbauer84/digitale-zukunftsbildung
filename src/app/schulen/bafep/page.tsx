@@ -135,6 +135,7 @@ export default function BafepPage() {
         text: 'Eine Schülerin hat nach der Geldbiografie-Einheit gesagt: Jetzt verstehe ich, warum manche Familien im Kindergarten so schwer über Geld reden können. Das war ein Moment, den ich mit keiner Unterlagematerialien erreicht hätte.',
         person: 'Pädagogik-Lehrerin, BAfEP Wien',
       }}
+      lehrerFoto="/fotos/Lehrerinnen%20f%C3%BCr%20Schulseiten/BAfEP%20Lehrerin.png"
     />
   )
 }

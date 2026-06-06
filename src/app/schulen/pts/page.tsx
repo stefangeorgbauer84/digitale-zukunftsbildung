@@ -129,6 +129,7 @@ export default function PtsPage() {
         text: 'Ich hab die Simulation mit dem Lehrlingsgeld gestartet, und plötzlich wollten alle wissen: Was verdient man als Elektriker? Und als Friseurin? Das war ein Gespräch über Berufswahl, das ich so nicht geplant hatte — und das war das Beste an der Stunde.',
         person: 'Lehrerin für Berufsorientierung, PTS Niederösterreich',
       }}
+      lehrerFoto="/fotos/Lehrerinnen%20f%C3%BCr%20Schulseiten/PTS%20Lehrer.png"
     />
   )
 }

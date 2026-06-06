@@ -150,6 +150,7 @@ export default function HakPage() {
         text: 'Ich hab Skills-UP! in meiner Betriebswirtschaftsstunde eingesetzt, nachdem wir Kostenrechnung hatten. Die Schüler:innen haben die Verbindung zu ihrem eigenen Leben sofort gezogen — das hätte ich mit Folien nicht geschafft.',
         person: 'BWL-Lehrer, HAK Burgenland, 11. Schulstufe',
       }}
+      lehrerFoto="/fotos/Lehrerinnen%20f%C3%BCr%20Schulseiten/HAK%20Lehrer.png"
     />
   )
 }

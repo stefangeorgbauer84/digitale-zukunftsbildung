@@ -149,6 +149,7 @@ export default function AhsPage() {
         text: 'Ich hab die Stunde mit einer kurzen Erklärung eröffnet — dann haben die Schüler:innen 30 Minuten selbstständig gearbeitet. Am Ende wollten viele weitermachen. So eine Stunde hatte ich schon lange nicht mehr.',
         person: 'GWK-Lehrerin, AHS Wien, nach dem ersten Piloteinsatz',
       }}
+      lehrerFoto="/fotos/Lehrerinnen%20f%C3%BCr%20Schulseiten/AHS%20Lehrerin.png"
     />
   )
 }
