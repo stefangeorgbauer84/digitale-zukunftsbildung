@@ -223,6 +223,114 @@ export default function SchulPage({
         </section>
       )}
 
+      {/* ── Trust Stats ─────────────────────────────────────── */}
+      <section className="py-14 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>, accent: '#6b4db0', bg: '#f3f1f9', headline: 'Top-3 Österreich', detail: 'MEGA Bildungsmillion 2025' },
+              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>, accent: '#2a8a76', bg: '#e6f4f1', headline: 'WKÖ zertifiziert', detail: 'Hochschule Burgenland bestätigt Qualität' },
+              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, accent: '#4a2d8a', bg: '#f3f1f9', headline: 'Gütesiegel', detail: 'Qualitäts-Lern-Apps zertifiziert' },
+              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>, accent: '#2A8A76', bg: '#e6f4f1', headline: 'DSGVO-konform', detail: 'Aus Österreich, für Österreich' },
+            ].map((f) => (
+              <div key={f.headline} className="rounded-2xl p-5 flex items-start gap-4" style={{ background: f.bg }}>
+                <div className="shrink-0 w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: f.accent, color: '#fff' }}>
+                  {f.icon}
+                </div>
+                <div>
+                  <p className="font-heading font-700 text-sm leading-tight" style={{ color: f.accent }}>{f.headline}</p>
+                  <p className="font-body text-xs text-text-muted mt-0.5 leading-snug">{f.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Awards Strip ────────────────────────────────────── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <p className="text-xs font-body font-700 uppercase tracking-widest mb-2" style={{ color: '#6b4db0' }}>Ausgezeichnet &amp; zertifiziert</p>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold" style={{ color: '#1a1040' }}>
+              Von unabhängigen Stellen geprüft und empfohlen.
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <div className="bg-white rounded-3xl p-6 flex flex-col items-center text-center gap-4 shadow-card hover:shadow-card-hover transition-all border-2" style={{ borderColor: '#4a2d8a' }}>
+              <div className="h-16 flex items-center justify-center">
+                <Image src="/fotos/Logo%20G%C3%BCtesiegel%20Lernapps.png" alt="Gütesiegel Qualitäts-Lern-Apps" width={180} height={64} className="max-h-14 w-auto object-contain" />
+              </div>
+              <div>
+                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#4a2d8a', color: '#fff' }}>Qualitätszertifiziert</span>
+                <p className="font-body text-sm text-text-muted leading-relaxed">Gütesiegel für digitale Qualitäts-Lern-Apps. Geprüft nach pädagogischen und technischen Qualitätskriterien.</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-3xl p-6 flex flex-col items-center text-center gap-4 shadow-card hover:shadow-card-hover transition-all">
+              <div className="h-16 flex items-center justify-center">
+                <Image src="/fotos/Logo%20Nationale%20Finanzbildungsstrategie.png" alt="Nationale Finanzbildungsstrategie" width={180} height={64} className="max-h-14 w-auto object-contain" />
+              </div>
+              <div>
+                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#2A8A76', color: '#fff' }}>Bundesministerium</span>
+                <p className="font-body text-sm text-text-muted leading-relaxed">Teil der Nationalen Finanzbildungsstrategie der österreichischen Bundesregierung.</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-3xl p-6 flex flex-col items-center text-center gap-4 shadow-card hover:shadow-card-hover transition-all">
+              <div className="h-16 flex items-center justify-center">
+                <Image src="/fotos/MEGA%20Bildungsstiftung%20Logo.jpeg" alt="MEGA Bildungsstiftung" width={180} height={64} className="max-h-14 w-auto object-contain" />
+              </div>
+              <div>
+                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#D87228', color: '#fff' }}>Top-3 Österreich</span>
+                <p className="font-body text-sm text-text-muted leading-relaxed">Top-3 Projekt der MEGA Bildungsmillion 2025 — aus hunderten Einreichungen österreichweit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Partner-Logo-Marquee ─────────────────────────────── */}
+      <section className="py-12 bg-gray-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 mb-6 text-center">
+          <p className="text-xs font-body font-700 uppercase tracking-widest text-text-muted">Partner &amp; Kooperationen</p>
+        </div>
+        <div className="relative marquee-track">
+          <div className="flex animate-marquee gap-20 items-center">
+            {[
+              { src: '/fotos/Logo%20Hochschule%20Burgenland.jpg', alt: 'Hochschule Burgenland' },
+              { src: '/fotos/Logo%20Wko%20Wirtschaftskammer.png', alt: 'WKÖ Wirtschaftskammer' },
+              { src: '/fotos/MEGA%20Bildungsstiftung%20Logo.jpeg', alt: 'MEGA Bildungsstiftung' },
+              { src: '/fotos/Logo%20Nationale%20Finanzbildungsstrategie.png', alt: 'Nationale Finanzbildungsstrategie' },
+              { src: '/fotos/Logo%20G%C3%BCtesiegel%20Lernapps.png', alt: 'Gütesiegel Lern-Apps', highlight: true },
+              { src: '/fotos/Logo%20Ovos.jpeg', alt: 'Ovos' },
+              { src: '/fotos/TGW%20Future%20Wings.png', alt: 'TGW Future Wings' },
+              { src: '/fotos/TGW%20Logistics%20Logo.png', alt: 'TGW Logistics' },
+              { src: '/fotos/Bildungsdirketion%20Burgenland.jpg', alt: 'Bildungsdirektion Burgenland' },
+            ].flatMap((logo, _, arr) => [logo, ...arr]).slice(0, 18).map((logo, i) => (
+              <div key={i}
+                className="shrink-0 flex items-center justify-center px-5 rounded-2xl"
+                style={{
+                  height: '80px',
+                  background: logo.alt === 'Gütesiegel Lern-Apps' ? '#f3f1f9' : 'transparent',
+                  padding: logo.alt === 'Gütesiegel Lern-Apps' ? '10px 20px' : '0 20px',
+                }}>
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={200}
+                  height={logo.alt === 'Gütesiegel Lern-Apps' ? 60 : 80}
+                  style={{
+                    height: logo.alt === 'Gütesiegel Lern-Apps' ? '60px' : '80px',
+                    width: 'auto',
+                    objectFit: 'contain',
+                    filter: 'grayscale(20%)',
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* ── Lehrplan-Passung ────────────────────────────────── */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
