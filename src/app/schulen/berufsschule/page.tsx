@@ -144,6 +144,7 @@ export default function BerufsschulePage() {
         person: 'Lehrer für Politische Bildung, Berufsschule Linz',
       }}
       lehrerFoto="/fotos/lehrer/berufsschule.png"
+      gruenderStatement="Lehrlinge verdienen echtes Geld — oft das erste Mal in ihrem Leben. Die meisten haben niemanden, der ihnen erklärt, was man damit macht. Skills-UP! springt genau dort ein: praxisnah, in kurzen Einheiten, und mit Szenarien, die Lehrlinge aus ihrem eigenen Alltag kennen."
     />
   )
 }

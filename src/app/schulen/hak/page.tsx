@@ -151,6 +151,7 @@ export default function HakPage() {
         person: 'BWL-Lehrer, HAK Burgenland, 11. Schulstufe',
       }}
       lehrerFoto="/fotos/lehrer/hak.png"
+      gruenderStatement="Wirtschaft wird an der HAK theoretisch sehr gut vermittelt. Skills-UP! bringt das persönliche Finanzleben der Schüler:innen direkt in die Stunde — und das ist der Unterschied zwischen Wissen und echtem Können."
     />
   )
 }

@@ -134,6 +134,7 @@ export default function HlwPage() {
         person: 'Lehrerin für Haushaltswirtschaft, HLW Graz',
       }}
       lehrerFoto="/fotos/lehrer/hlw.png"
+      gruenderStatement="Wer an der HLW Haushaltsführung und Wirtschaft lehrt, kommt an persönlicher Finanzplanung nicht vorbei. Skills-UP! macht diesen Zusammenhang für Schüler:innen konkret erlebbar — mit österreichischen Alltagsszenarien, die sie direkt betreffen."
     />
   )
 }

@@ -150,6 +150,7 @@ export default function AhsPage() {
         person: 'GWK-Lehrerin, AHS Wien, nach dem ersten Piloteinsatz',
       }}
       lehrerFoto="/fotos/lehrer/ahs.png"
+      gruenderStatement="An der AHS lernen Schüler:innen analytisch zu denken — aber wie man das erste Gehalt einteilt, kommt im Lehrplan kaum vor. Skills-UP! schließt genau diese Lücke. Praxisnah, ohne Mehraufwand für Lehrkräfte, und mit Inhalten, die wirklich im Leben ankommen."
     />
   )
 }

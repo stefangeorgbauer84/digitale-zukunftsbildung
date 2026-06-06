@@ -136,6 +136,7 @@ export default function BafepPage() {
         person: 'Pädagogik-Lehrerin, BAfEP Wien',
       }}
       lehrerFoto="/fotos/lehrer/bafep.png"
+      gruenderStatement="Wer als Pädagogin oder Pädagoge arbeitet, prägt früh das Verhältnis von Kindern zu Geld und Konsum. Deshalb ist Finanzbildung an der BAfEP keine nette Ergänzung — sie ist eine professionelle Notwendigkeit. Skills-UP! liefert dafür das Fundament."
     />
   )
 }

@@ -134,6 +134,7 @@ export default function HtlPage() {
         person: 'Allgemeinbildungs-Lehrer, HTL Steyr, 12. Schulstufe',
       }}
       lehrerFoto="/fotos/lehrer/htl.png"
+      gruenderStatement="Technische Kompetenz ist an der HTL gesetzt. Finanzielle Kompetenz nicht — dabei treffen Absolvent:innen schon kurz nach der Matura echte Geldentscheidungen. Skills-UP! bereitet sie konkret darauf vor, ohne dem Lehrplan etwas wegzunehmen."
     />
   )
 }

@@ -130,6 +130,7 @@ export default function PtsPage() {
         person: 'Lehrerin für Berufsorientierung, PTS Niederösterreich',
       }}
       lehrerFoto="/fotos/lehrer/pts.png"
+      gruenderStatement="Schüler:innen der PTS stehen kurz vor ihrer Berufswahl und dem ersten echten Einkommen. Skills-UP! gibt ihnen das Handwerkszeug, das kein Beruf automatisch mitliefert: wie man mit Geld wirklich umgeht — und welche Entscheidungen man lieber nicht bereuen möchte."
     />
   )
 }
