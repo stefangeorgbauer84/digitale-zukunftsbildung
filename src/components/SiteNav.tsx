@@ -7,7 +7,7 @@ import { useEffect, useRef, useState } from 'react'
 const links = [
   { href: '/#angebote', label: 'Programm' },
   { href: '/schulen', label: 'Für Schulen' },
-  { href: '/#plattform', label: 'So funktioniert's' },
+  { href: '/#plattform', label: 'So funktioniert’s' },
   { href: '/ueber-uns', label: 'Über uns' },
 ]
 
