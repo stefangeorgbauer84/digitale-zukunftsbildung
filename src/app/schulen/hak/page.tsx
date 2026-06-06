@@ -28,9 +28,9 @@ export default function HakPage() {
     <SchulPage
       name="HAK & HAS"
       kurzname="HAK"
-      gradient="linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 60%, #3b82f6 100%)"
-      farbe="#1d4ed8"
-      farbeHell="#eff6ff"
+      gradient="linear-gradient(135deg, #2d1b69 0%, #4a2d8a 60%, #6b4db0 100%)"
+      farbe="#4a2d8a"
+      farbeHell="#f3f1f9"
       schulstufen="9.–13. Schulstufe"
       lehrplanFach="Betriebswirtschaft · Rechnungswesen · Volkswirtschaft · Projektunterricht"
       icon={icon}
