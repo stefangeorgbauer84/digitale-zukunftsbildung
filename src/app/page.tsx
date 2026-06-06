@@ -195,12 +195,12 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
       <SiteNav dark />
-      <div id="main-content" />
 
       {/* ══════════════════════════════════════════════════
           HERO
       ══════════════════════════════════════════════════ */}
-      <header className="relative overflow-hidden min-h-screen flex flex-col">
+      <main id="main-content">
+      <section aria-labelledby="hero-heading" className="relative overflow-hidden min-h-screen flex flex-col">
         {/* Mesh gradient */}
         <div
           className="absolute inset-0 animate-gradient-shift"
@@ -237,7 +237,7 @@ export default function HomePage() {
               className="relative drop-shadow-xl rounded-2xl opacity-90" priority />
           </div>
 
-          <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 id="hero-heading" className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Finanzbildung für Ihre Klasse.<br />
             <span className="text-primary-light">Fertig. Sofort. Ohne Vorbereitung.</span>
           </h1>
@@ -299,7 +299,7 @@ export default function HomePage() {
             <path d="M0,50 C240,100 480,0 720,50 C960,100 1200,10 1440,50 L1440,100 L0,100 Z" fill="url(#waveGrad)" />
           </svg>
         </div>
-      </header>
+      </section>
 
       {/* ══════════════════════════════════════════════════
           TRUST FACTS
@@ -331,7 +331,11 @@ export default function HomePage() {
             Unsere Partner &amp; Auszeichnungen
           </p>
         </div>
-        <div className="relative marquee-track">
+        {/* Screen-reader-only partner list — no duplicates */}
+        <ul className="sr-only">
+          {partnerLogos.map((l) => <li key={l.alt}>{l.alt}</li>)}
+        </ul>
+        <div className="relative marquee-track" aria-hidden="true">
           <div className="flex animate-marquee gap-24 items-center">
             {[...partnerLogos, ...partnerLogos].map((logo, i) => (
               <div key={`${logo.alt}-${i}`}
@@ -343,7 +347,7 @@ export default function HomePage() {
                 }}>
                 <Image
                   src={logo.src}
-                  alt={logo.alt}
+                  alt=""
                   width={240}
                   height={logo.alt === 'Gütesiegel Lern-Apps' ? 72 : 96}
                   className="partner-logo"
@@ -948,7 +952,7 @@ export default function HomePage() {
           ].map((z) => (
             <div key={z.title} className="rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all group">
               <div className="px-8 pt-8 pb-6 text-white" style={{ background: z.bg }}>
-                <div className="text-4xl mb-3">{z.emoji}</div>
+                <div className="text-4xl mb-3" aria-hidden="true">{z.emoji}</div>
                 <h3 className="font-heading text-xl font-bold leading-tight">{z.title}</h3>
               </div>
               <div className="bg-white px-8 py-6">
@@ -1187,6 +1191,7 @@ export default function HomePage() {
         </div>
       </section>
 
+      </main>
       <SiteFooter />
       <BackToTop />
     </div>

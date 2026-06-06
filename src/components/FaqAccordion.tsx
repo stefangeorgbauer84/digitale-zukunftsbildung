@@ -37,9 +37,11 @@ export default function FaqAccordion() {
       {faqs.map((faq, i) => (
         <div key={i} className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
           <button
+            id={`faq-btn-${i}`}
             className="w-full text-left px-6 py-5 flex items-center justify-between gap-4 group"
             onClick={() => setOpen(open === i ? null : i)}
             aria-expanded={open === i}
+            aria-controls={`faq-panel-${i}`}
           >
             <span className="font-heading font-700 text-base text-text-primary leading-snug">{faq.q}</span>
             <span
@@ -47,6 +49,7 @@ export default function FaqAccordion() {
               style={{ background: open === i ? '#4a2d8a' : '#f3f1f9' }}
             >
               <svg
+                aria-hidden="true"
                 width="14" height="14" viewBox="0 0 24 24" fill="none"
                 stroke={open === i ? 'white' : '#6b4db0'} strokeWidth="2.5"
                 strokeLinecap="round" strokeLinejoin="round"
@@ -58,7 +61,12 @@ export default function FaqAccordion() {
             </span>
           </button>
           {open === i && (
-            <div className="px-6 pb-5">
+            <div
+              id={`faq-panel-${i}`}
+              role="region"
+              aria-labelledby={`faq-btn-${i}`}
+              className="px-6 pb-5"
+            >
               <p className="text-text-muted font-body text-sm leading-relaxed">{faq.a}</p>
             </div>
           )}

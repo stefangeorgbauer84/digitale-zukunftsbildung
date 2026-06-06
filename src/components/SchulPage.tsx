@@ -57,13 +57,13 @@ export interface SchulPageProps {
 }
 
 const checkIcon = (
-  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+  <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
     <polyline points="20 6 9 17 4 12"/>
   </svg>
 )
 
 const arrowIcon = (
-  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+  <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
     <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
   </svg>
 )
@@ -97,7 +97,7 @@ export default function SchulPage({
               </svg>
               Alle Schultypen
             </Link>
-            <span className="text-white/30">/</span>
+            <span className="text-white/30" aria-hidden="true">/</span>
             <span className="text-white/70 text-sm font-body font-600">{kurzname}</span>
           </div>
 
@@ -306,7 +306,11 @@ export default function SchulPage({
         <div className="max-w-7xl mx-auto px-6 mb-6 text-center">
           <p className="text-xs font-body font-700 uppercase tracking-widest text-text-muted">Partner &amp; Kooperationen</p>
         </div>
-        <div className="relative marquee-track">
+        {/* Screen-reader-only partner list */}
+        <ul className="sr-only">
+          {['Hochschule Burgenland','WKÖ Wirtschaftskammer','MEGA Bildungsstiftung','Nationale Finanzbildungsstrategie','Gütesiegel Lern-Apps','Ovos','TGW Future Wings','TGW Logistics','Bildungsdirektion Burgenland'].map((n) => <li key={n}>{n}</li>)}
+        </ul>
+        <div className="relative marquee-track" aria-hidden="true">
           <div className="flex animate-marquee gap-20 items-center">
             {[
               { src: '/fotos/Logo%20Hochschule%20Burgenland.jpg', alt: 'Hochschule Burgenland' },
@@ -328,7 +332,7 @@ export default function SchulPage({
                 }}>
                 <Image
                   src={logo.src}
-                  alt={logo.alt}
+                  alt=""
                   width={200}
                   height={logo.alt === 'Gütesiegel Lern-Apps' ? 60 : 80}
                   style={{
@@ -636,9 +640,9 @@ export default function SchulPage({
                 className="relative drop-shadow-2xl" />
             </div>
           </div>
-          <h3 className="font-heading text-3xl font-bold text-white mb-4">
+          <h2 className="font-heading text-3xl font-bold text-white mb-4">
             Bereit für Skills-UP! an deiner Schule?
-          </h3>
+          </h2>
           <p className="font-body text-white/70 text-lg mb-8 max-w-xl mx-auto">
             Kein Ausfüllen langer Formulare. Ein kurzes Gespräch genügt — danach weißt du, ob Skills-UP! zu deiner Schule passt.
           </p>

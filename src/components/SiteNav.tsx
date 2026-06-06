@@ -2,24 +2,45 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 
 const links = [
   { href: '/#angebote', label: 'Programm' },
   { href: '/schulen', label: 'Für Schulen' },
-  { href: '/#plattform', label: 'So funktioniert’s' },
+  { href: '/#plattform', label: 'So funktioniert's' },
   { href: '/ueber-uns', label: 'Über uns' },
 ]
 
 export default function SiteNav({ dark = false }: { dark?: boolean }) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const menuRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40)
     window.addEventListener('scroll', fn, { passive: true })
     return () => window.removeEventListener('scroll', fn)
   }, [])
+
+  // Focus trap for mobile menu
+  useEffect(() => {
+    if (!open) return
+    const focusable = menuRef.current?.querySelectorAll<HTMLElement>(
+      'a, button, [tabindex]:not([tabindex="-1"])'
+    )
+    focusable?.[0]?.focus()
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') { setOpen(false); return }
+      if (e.key !== 'Tab' || !focusable?.length) return
+      const first = focusable[0], last = focusable[focusable.length - 1]
+      if (e.shiftKey ? document.activeElement === first : document.activeElement === last) {
+        e.preventDefault()
+        ;(e.shiftKey ? last : first).focus()
+      }
+    }
+    document.addEventListener('keydown', handleKey)
+    return () => document.removeEventListener('keydown', handleKey)
+  }, [open])
 
   const solid = !dark || scrolled
 
@@ -50,7 +71,7 @@ export default function SiteNav({ dark = false }: { dark?: boolean }) {
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-1">
+        <nav className="hidden md:flex items-center gap-1" aria-label="Hauptnavigation">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -79,10 +100,11 @@ export default function SiteNav({ dark = false }: { dark?: boolean }) {
         <button
           className={`md:hidden p-2 rounded-xl transition-colors ${solid ? 'text-text-secondary hover:bg-primary-50' : 'text-white hover:bg-white/10'}`}
           onClick={() => setOpen(!open)}
-          aria-label="Menü öffnen"
+          aria-label={open ? 'Menü schließen' : 'Menü öffnen'}
           aria-expanded={open}
+          aria-controls="mobile-menu"
         >
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
             {open ? (
               <><line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" /></>
             ) : (
@@ -93,24 +115,33 @@ export default function SiteNav({ dark = false }: { dark?: boolean }) {
       </div>
 
       {open && (
-        <div className="md:hidden bg-white border-t border-gray-200 px-4 pb-4 shadow-lg">
-          {links.map((l) => (
-            <Link
-              key={l.href}
-              href={l.href}
+        <div
+          id="mobile-menu"
+          ref={menuRef}
+          className="md:hidden bg-white border-t border-gray-200 px-4 pb-4 shadow-lg"
+          role="dialog"
+          aria-label="Navigation"
+          aria-modal="true"
+        >
+          <nav aria-label="Mobile Navigation">
+            {links.map((l) => (
+              <Link
+                key={l.href}
+                href={l.href}
+                onClick={() => setOpen(false)}
+                className="block py-3 text-sm font-body font-600 text-text-secondary hover:text-primary-dark border-b border-gray-100 last:border-0"
+              >
+                {l.label}
+              </Link>
+            ))}
+            <a
+              href="/#kontakt"
               onClick={() => setOpen(false)}
-              className="block py-3 text-sm font-body font-600 text-text-secondary hover:text-primary-dark border-b border-gray-100 last:border-0"
+              className="mt-3 block text-center bg-primary-dark text-white px-5 py-3 rounded-xl text-sm font-body font-700"
             >
-              {l.label}
-            </Link>
-          ))}
-          <a
-            href="/#kontakt"
-            onClick={() => setOpen(false)}
-            className="mt-3 block text-center bg-primary-dark text-white px-5 py-3 rounded-xl text-sm font-body font-700"
-          >
-            Kontakt aufnehmen
-          </a>
+              Kontakt aufnehmen
+            </a>
+          </nav>
         </div>
       )}
     </header>
