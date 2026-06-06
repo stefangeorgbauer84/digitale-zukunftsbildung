@@ -167,6 +167,62 @@ export default function SchulPage({
         </div>
       </section>
 
+      {/* ── Lehrer-Testimonial ───────────────────────────────── */}
+      {(lehrerFoto || lehrerZitat) && (
+        <section className="py-16 bg-white">
+          <div className="max-w-5xl mx-auto px-6">
+            <div className="text-center mb-8">
+              <p className="text-xs font-body font-700 uppercase tracking-widest" style={{ color: farbe }}>
+                Stimmen aus der Praxis
+              </p>
+            </div>
+
+            <div className="rounded-3xl shadow-card-hover overflow-hidden border border-gray-100">
+              <div className="grid md:grid-cols-[300px_1fr]">
+                {/* Foto */}
+                <div className="relative min-h-[360px] md:min-h-0" style={{ background: gradient }}>
+                  {lehrerFoto && (
+                    <Image
+                      src={lehrerFoto}
+                      alt={lehrerZitat.person}
+                      fill
+                      className="object-cover object-top"
+                    />
+                  )}
+                  <div className="absolute bottom-0 left-0 right-0 h-20 pointer-events-none"
+                    style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.3), transparent)' }} />
+                  <div className="absolute top-4 left-4">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-body font-700 px-3 py-1.5 rounded-full"
+                      style={{ background: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(8px)', color: '#fff', border: '1px solid rgba(255,255,255,0.3)' }}>
+                      {name}
+                    </span>
+                  </div>
+                </div>
+
+                {/* Quote */}
+                <div className="p-8 md:p-10 flex flex-col justify-center" style={{ background: farbeHell }}>
+                  <svg width="40" height="30" viewBox="0 0 48 36" fill="none" className="mb-4 opacity-25" style={{ color: farbe }}>
+                    <path d="M0 36V21.6C0 9.6 6.4 2.4 19.2 0l2.4 4.8C14.4 6.4 10.4 10.4 10.4 16.8H19.2V36H0ZM28.8 36V21.6C28.8 9.6 35.2 2.4 48 0l2.4 4.8C43.2 6.4 39.2 10.4 39.2 16.8H48V36H28.8Z" fill="currentColor"/>
+                  </svg>
+                  <p className="font-body text-lg md:text-xl leading-relaxed italic mb-6" style={{ color: '#2d1b69' }}>
+                    &ldquo;{lehrerZitat.text}&rdquo;
+                  </p>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-0.5 rounded-full shrink-0" style={{ background: farbe }} />
+                    <div>
+                      <p className="font-body font-700 text-sm leading-tight" style={{ color: farbe }}>
+                        {lehrerZitat.person}
+                      </p>
+                      <p className="font-body text-xs text-text-muted mt-0.5">Skills-UP! Piloteinsatz</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* ── Lehrplan-Passung ────────────────────────────────── */}
       <section className="py-16 bg-gray-50">
         <div className="max-w-6xl mx-auto px-6">
@@ -348,85 +404,6 @@ export default function SchulPage({
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Lehrer-Testimonial ───────────────────────────────── */}
-      <section className="py-20" style={{ background: farbeHell }}>
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <p className="text-xs font-body font-700 uppercase tracking-widest" style={{ color: farbe }}>
-              Stimmen aus der Praxis
-            </p>
-          </div>
-
-          <div className="bg-white rounded-3xl shadow-card-hover overflow-hidden">
-            <div className="grid md:grid-cols-[320px_1fr]">
-              {/* Foto */}
-              <div className="relative min-h-[340px] md:min-h-0" style={{ background: gradient }}>
-                {lehrerFoto ? (
-                  <Image
-                    src={lehrerFoto}
-                    alt={lehrerZitat.person}
-                    fill
-                    className="object-cover object-top"
-                  />
-                ) : (
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.4)" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-                    </svg>
-                  </div>
-                )}
-                {/* Overlay gradient at bottom for smooth transition */}
-                <div className="absolute bottom-0 left-0 right-0 h-24 pointer-events-none"
-                  style={{ background: 'linear-gradient(to top, rgba(0,0,0,0.25), transparent)' }} />
-                {/* School badge */}
-                <div className="absolute top-5 left-5">
-                  <span className="inline-flex items-center gap-1.5 text-xs font-body font-700 px-3 py-1.5 rounded-full"
-                    style={{ background: 'rgba(255,255,255,0.2)', backdropFilter: 'blur(8px)', color: '#fff', border: '1px solid rgba(255,255,255,0.3)' }}>
-                    {name}
-                  </span>
-                </div>
-              </div>
-
-              {/* Quote */}
-              <div className="p-8 md:p-12 flex flex-col justify-center">
-                {/* Big quote mark */}
-                <svg width="48" height="36" viewBox="0 0 48 36" fill="none" className="mb-5 opacity-20" style={{ color: farbe }}>
-                  <path d="M0 36V21.6C0 9.6 6.4 2.4 19.2 0l2.4 4.8C14.4 6.4 10.4 10.4 10.4 16.8H19.2V36H0ZM28.8 36V21.6C28.8 9.6 35.2 2.4 48 0l2.4 4.8C43.2 6.4 39.2 10.4 39.2 16.8H48V36H28.8Z" fill="currentColor"/>
-                </svg>
-
-                <p className="font-body text-xl md:text-2xl leading-relaxed italic mb-8" style={{ color: '#2d1b69' }}>
-                  &ldquo;{lehrerZitat.text}&rdquo;
-                </p>
-
-                <div className="flex items-center gap-4">
-                  <div className="w-10 h-0.5 rounded-full" style={{ background: farbe }} />
-                  <div>
-                    <p className="font-body font-700 text-sm leading-tight" style={{ color: farbe }}>
-                      {lehrerZitat.person}
-                    </p>
-                    <p className="font-body text-xs text-text-muted mt-0.5">
-                      Skills-UP! Piloteinsatz
-                    </p>
-                  </div>
-                </div>
-
-                {/* Skills-UP badge */}
-                <div className="mt-8 pt-8 border-t border-gray-100">
-                  <div className="flex items-center gap-2">
-                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ color: farbe }}>
-                      <polyline points="20 6 9 17 4 12"/>
-                    </svg>
-                    <p className="font-body text-sm text-text-muted">
-                      <span className="font-700" style={{ color: farbe }}>Skills-UP!</span> — Finanzbildung für {name}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </section>

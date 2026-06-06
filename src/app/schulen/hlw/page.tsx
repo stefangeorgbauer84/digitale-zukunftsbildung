@@ -133,7 +133,7 @@ export default function HlwPage() {
         text: 'Ich hatte das Thema Haushaltsführung schon tausendmal unterrichtet. Mit Skills-UP! war es das erste Mal, dass Schüler:innen danach sagten: Das hat mich persönlich betroffen.',
         person: 'Lehrerin für Haushaltswirtschaft, HLW Graz',
       }}
-      lehrerFoto="/fotos/Lehrerinnen%20f%C3%BCr%20Schulseiten/HLW%20Lehrerin.png"
+      lehrerFoto="/fotos/lehrer/hlw.png"
     />
   )
 }

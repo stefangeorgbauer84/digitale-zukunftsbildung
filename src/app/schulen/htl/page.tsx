@@ -133,7 +133,7 @@ export default function HtlPage() {
         text: 'Ich hab die App kurz gezeigt und dann sind die einfach losgelegt. Die haben sich das Gehalts-Modul selbst erarbeitet — und danach wollten sie wissen, wie man am besten spart. Das Gespräch hätte ich so nicht planen können.',
         person: 'Allgemeinbildungs-Lehrer, HTL Steyr, 12. Schulstufe',
       }}
-      lehrerFoto="/fotos/Lehrerinnen%20f%C3%BCr%20Schulseiten/HTL%20Lehrer.png"
+      lehrerFoto="/fotos/lehrer/htl.png"
     />
   )
 }
