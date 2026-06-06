@@ -248,10 +248,11 @@ export default function UeberUns() {
           <div className="text-center mb-12">
             <p className="text-xs font-body font-700 uppercase tracking-widest text-primary-medium mb-3">Das Team</p>
             <h2 className="font-heading text-3xl md:text-4xl font-bold" style={{ color: '#1a1040' }}>
-              Erfahrene Menschen.<br />Echte Expertise.
+              Gegründet von einer Lehrerin und einem Finanzexperten.<br />
+              <span style={{ color: '#4a2d8a' }}>Entwickelt für den Schulalltag.</span>
             </h2>
           </div>
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <div className="bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all group">
               <div className="h-64 overflow-hidden">
                 <Image src="/fotos/Marina%20Winkler%20Profilbild.jpeg" alt="Marina Winkler"
@@ -261,30 +262,28 @@ export default function UeberUns() {
               </div>
               <div className="p-6">
                 <h3 className="font-heading font-700 text-base text-text-primary mb-1">Marina Winkler</h3>
-                <p className="text-xs font-body text-primary-medium font-700 mb-3">Vereinsleitung &amp; Kursleitung</p>
+                <p className="text-xs font-body text-primary-medium font-700 mb-3">Vereinsleiterin und pädagogische Leiterin</p>
                 <p className="text-sm font-body text-text-muted leading-relaxed">
-                  Pionierin hinter Skills-UP! mit jahrelanger Erfahrung in Bildung und Finanzpädagogik. Projektleiterin und Hauptansprechperson des Vereins.
+                  Ehemalige Lehrerin mit jahrelanger Erfahrung im österreichischen Schulsystem. Projektleiterin und Hauptansprechperson des Vereins.
                 </p>
               </div>
             </div>
 
-            {[
-              { name: 'Dr. Stefan Bauer', rolle: 'Vorstand & Finanzbildung', bio: 'Mitglied des Vereinsvorstands. Verbindet wirtschaftliche Expertise mit der Mission, jungen Menschen echte Finanzkompetenz zu vermitteln.' },
-              { name: '[Name eintragen]', rolle: 'Didaktik & Schulkooperationen', bio: 'Kurze Bio hier eintragen — Hintergrund, Expertise, Leidenschaft für Finanzbildung.' },
-            ].map((p, i) => (
-              <div key={i} className="bg-white rounded-3xl overflow-hidden shadow-card">
-                <div className="h-64 bg-primary-50 flex items-center justify-center text-primary-light">
-                  <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                    <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
-                  </svg>
-                </div>
-                <div className="p-6">
-                  <h3 className="font-heading font-700 text-base text-text-primary mb-1">{p.name}</h3>
-                  <p className="text-xs font-body text-primary-medium font-700 mb-3">{p.rolle}</p>
-                  <p className="text-sm font-body text-text-muted leading-relaxed">{p.bio}</p>
-                </div>
+            <div className="bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all group">
+              <div className="h-64 overflow-hidden">
+                <Image src="/fotos/stefan-bauer-alt.jpg" alt="Dr. Stefan Bauer"
+                  width={400} height={256}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  style={{ objectPosition: 'center 20%' }} />
               </div>
-            ))}
+              <div className="p-6">
+                <h3 className="font-heading font-700 text-base text-text-primary mb-1">Dr. Stefan Bauer</h3>
+                <p className="text-xs font-body text-primary-medium font-700 mb-3">Vorstand & Finanzbildung</p>
+                <p className="text-sm font-body text-text-muted leading-relaxed">
+                  Mitglied des Vereinsvorstands. Verbindet wirtschaftliche Expertise mit der Mission, jungen Menschen echte Finanzkompetenz zu vermitteln.
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -298,8 +297,9 @@ export default function UeberUns() {
               Skills-UP! an Ihre Schule bringen?
             </h2>
             <p className="text-white/70 font-body text-lg mb-8">
-              Als Schule, Kooperationspartner oder Förderer der Finanzbildung — wir freuen uns über jede Form der Zusammenarbeit.
+              Wir richten uns nach Ihrem Schuljahr. Schicken Sie uns eine kurze Nachricht — wir melden uns innerhalb von 24 Stunden.
             </p>
+            <p className="text-white/40 text-xs font-body mb-6">Skills-UP! wird vom gemeinnützigen Verein zur Entwicklung der digitalen Zukunftsbildung betrieben. Sitz in Wien.</p>
             <Link href="/#kontakt"
               className="inline-flex items-center gap-2 bg-white text-primary-dark font-body font-700 px-8 py-4 rounded-xl hover:bg-gray-50 transition-all hover:scale-105 active:scale-95 shadow-xl">
               Gespräch anfragen

@@ -130,7 +130,7 @@ export default function HtlPage() {
         },
       ]}
       lehrerZitat={{
-        text: 'Ich hab die App kurz gezeigt und dann sind die einfach losgelegt. Die haben sich das Gehalts-Modul selbst erarbeitet — und danach wollten sie wissen, wie man am besten spart. Das Gespräch hätte ich so nicht planen können.',
+        text: 'Ich hab die App kurz gezeigt, dann haben die einfach losgelegt. Nach dem Gehalts-Modul kam einer zu mir und hat gefragt, ob das wirklich stimmt — dass er als HTL-Techniker in Wien für eine 60-m²-Wohnung mehr als die Hälfte seines Nettos zahlt. Ja, stimmt. Das hat ihn mehr beschäftigt als jede Aufgabe davor.',
         person: 'Allgemeinbildungs-Lehrer, HTL Steyr, 12. Schulstufe',
       }}
       lehrerFoto="/fotos/lehrer/htl.png"

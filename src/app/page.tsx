@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
@@ -5,6 +6,15 @@ import SiteFooter from '@/components/SiteFooter'
 import ContactForm from '@/components/ContactForm'
 import BackToTop from '@/components/BackToTop'
 import FaqAccordion from '@/components/FaqAccordion'
+
+export const metadata: Metadata = {
+  title: 'Skills-UP! | Finanzbildung für Schulen in Österreich',
+  description: 'Fertige Unterrichtsmodule, Praxissimulationen und ein Lehrer-Dashboard für AHS, HAK, HTL, HLW, BAfEP, BASOP und PTS. Lehrplankonform, DSGVO-sicher, sofort einsetzbar.',
+  openGraph: {
+    title: 'Skills-UP! | Finanzbildung für österreichische Schulen',
+    description: 'Top-3 MEGA Bildungsmillion. 12 Module, 10+ Simulationen. Kein Vorbereitungsaufwand für Lehrkräfte.',
+  },
+}
 
 /* ── Partner / Award logos ─────────────────────────────── */
 const partnerLogos = [
@@ -99,7 +109,7 @@ const trustFacts = [
     accent: '#2a8a76',
     bg: '#e6f4f1',
     headline: 'WKÖ zertifiziert',
-    detail: 'Hochschule Burgenland bestätigt Qualität und Praxisrelevanz',
+    detail: 'Von der Wirtschaftskammer Österreich empfohlen und durch die Hochschule Burgenland pädagogisch validiert.',
   },
   {
     icon: (
@@ -228,18 +238,15 @@ export default function HomePage() {
           </div>
 
           <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
-            Finanzbildung,<br />
-            <span className="text-primary-light">die wirklich ankommt.</span>
+            Finanzbildung für Ihre Klasse.<br />
+            <span className="text-primary-light">Fertig. Sofort. Ohne Vorbereitung.</span>
           </h1>
 
           <p className="text-white/75 text-xl max-w-2xl mx-auto mb-4 font-body leading-relaxed">
-            Das Unterrichtsprogramm für 15- bis 20-Jährige — mit 12+ Modulen, über 10 Praxissimulationen und Gamification. Für AHS, BHS (HAK, HTL, HLW, BAfEP, BASOP) und PTS.
-          </p>
-          <p className="text-white/50 text-base max-w-xl mx-auto mb-12 font-body">
-            Fertig aufbereitet, lehrplankonform und sofort startbereit. Kein IT-Aufwand, DSGVO-sicher.
+            12 lehrplankonforme Module, über 10 österreichische Praxissimulationen und ein Dashboard, das Ihnen die Korrekturarbeit abnimmt. Für AHS, HAK, HTL, HLW, BAfEP, BASOP und PTS — browser-basiert, DSGVO-sicher, heute einsetzbar.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <a href="#angebote"
               className="inline-flex items-center justify-center gap-2 font-body font-700 text-lg px-8 py-4 rounded-xl shadow-2xl transition-all duration-200 hover:scale-105 active:scale-95 text-white"
               style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #6b4db0 50%, #2a8a76 100%)', boxShadow: '0 8px 32px rgba(107,77,176,0.5)' }}
@@ -250,9 +257,10 @@ export default function HomePage() {
             <a href="#kontakt"
               className="glass inline-flex items-center justify-center gap-2 text-white font-body font-600 text-lg px-8 py-4 rounded-xl hover:bg-white/15 transition-all duration-200 border border-white/20"
             >
-              Schule anmelden
+              Kostenloses Beratungsgespräch
             </a>
           </div>
+          <p className="text-white/40 text-sm mb-10 font-body">Kostenlos · Unverbindlich · Kein automatischer Vertrag</p>
 
           {/* Trust signals */}
           <div className="flex flex-wrap items-center justify-center gap-6 text-white/55 text-sm font-body">
@@ -378,7 +386,7 @@ export default function HomePage() {
               </div>
               <div>
                 <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#4a2d8a', color: '#fff' }}>Qualitätszertifiziert</span>
-                <p className="font-body text-sm text-text-muted leading-relaxed">Gütesiegel für digitale Qualitäts-Lern-Apps. Geprüft nach pädagogischen und technischen Qualitätskriterien.</p>
+                <p className="font-body text-sm text-text-muted leading-relaxed">Erfüllt die Qualitätsstandards für den Einsatz in österreichischen Schulen — pädagogisch geprüft, lehrplankonform, technisch stabil.</p>
               </div>
             </div>
             {/* Finanzbildungsstrategie */}
@@ -410,7 +418,7 @@ export default function HomePage() {
               </div>
               <div>
                 <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#D87228', color: '#fff' }}>Top-3 Österreich</span>
-                <p className="font-body text-sm text-text-muted leading-relaxed">Top-3 Projekt der MEGA Bildungsmillion 2025 — aus hunderten Einreichungen österreichweit.</p>
+                <p className="font-body text-sm text-text-muted leading-relaxed">Ausgezeichnet unter hunderten Einreichungen österreichweit — von einer unabhängigen Jury für Innovation und pädagogischen Impact.</p>
               </div>
             </div>
           </div>
@@ -981,7 +989,7 @@ export default function HomePage() {
               </p>
             </div>
             <div className="flex flex-wrap gap-3 justify-center md:justify-end shrink-0">
-              {['MEGA Bildungsstiftung', 'Finanzbildungsstrategie', 'Für Schulen leistbar'].map((f) => (
+              {['MEGA Bildungsstiftung', 'Finanzbildungsstrategie', 'Jährliche Schullizenz, gestaffelt nach Klassenzahl. Förderung möglich.'].map((f) => (
                 <span key={f} className="px-3 py-1.5 rounded-full text-xs font-body font-700 bg-emerald-50 text-emerald-700 border border-emerald-100">{f}</span>
               ))}
             </div>

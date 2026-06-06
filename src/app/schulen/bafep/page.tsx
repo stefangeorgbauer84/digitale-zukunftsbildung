@@ -132,7 +132,7 @@ export default function BafepPage() {
         },
       ]}
       lehrerZitat={{
-        text: 'Eine Schülerin hat nach der Geldbiografie-Einheit gesagt: Jetzt verstehe ich, warum manche Familien im Kindergarten so schwer über Geld reden können. Das war ein Moment, den ich mit keiner Unterlagematerialien erreicht hätte.',
+        text: 'Eine Schülerin hat nach der Reflexionseinheit gesagt: Ich glaub, ich hab selbst nie gelernt, wie man über Geld redet. Genau darum geht\'s an dieser Schule — und diesen Satz hätte ich ohne Skills-UP! wahrscheinlich nie gehört.',
         person: 'Pädagogik-Lehrerin, BAfEP Wien',
       }}
       lehrerFoto="/fotos/lehrer/bafep.png"

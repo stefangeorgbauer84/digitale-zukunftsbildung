@@ -603,8 +603,9 @@ export default function SchulPage({
           <div className="text-center mb-12">
             <p className="text-xs font-body font-700 uppercase tracking-widest mb-2" style={{ color: farbe }}>Werkzeuge</p>
             <h2 className="font-heading text-3xl font-bold" style={{ color: '#1a1040' }}>
-              Was Skills-UP! dir als Lehrkraft gibt.
+              Kein Aufwand. Mehr Wirkung im Unterricht.
             </h2>
+            <p className="font-body text-text-muted text-sm mt-2 max-w-md mx-auto">Alles, was du brauchst, ist bereits fertig. Du bringst die Klasse mit.</p>
           </div>
           <div className="grid md:grid-cols-2 gap-6">
             {features.map((f) => (
@@ -651,13 +652,13 @@ export default function SchulPage({
             <Link href="/schulen"
               className="inline-flex items-center gap-2 font-body font-600 text-base px-8 py-4 rounded-xl text-white/80 hover:text-white transition-all"
               style={{ border: '1px solid rgba(255,255,255,0.2)' }}>
-              Andere Schultypen
+              Skills-UP! auch für andere Schultypen
             </Link>
           </div>
 
           {/* Andere Schultypen mini-nav */}
           <div className="border-t border-white/10 pt-10">
-            <p className="text-white/40 text-xs font-body uppercase tracking-widest mb-5">Andere Schulformen</p>
+            <p className="text-white/40 text-xs font-body uppercase tracking-widest mb-5">Skills-UP! auch für andere Schultypen</p>
             <div className="flex flex-wrap justify-center gap-3">
               {[
                 { slug: 'ahs', label: 'AHS' },

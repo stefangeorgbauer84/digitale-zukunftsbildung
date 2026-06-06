@@ -32,7 +32,7 @@ export default function BerufsschulePage() {
       lehrplanFach="Politische Bildung · Lebenskunde · Projektunterricht · Marktplatz Lern-Apps"
       icon={icon}
       lehrerProblem="Meine Lehrlinge verdienen schon Geld — aber am Ende des Monats weiß die Hälfte nicht mehr, wo es geblieben ist. Und ich hab kaum Zeit und kein fertiges Material, das das wirklich ändert."
-      intro="Lehrlinge stehen nicht kurz vor dem Berufsleben — sie sind bereits mittendrin. Sie verdienen echtes Geld, schließen Verträge ab und treffen täglich finanzielle Entscheidungen. Skills-UP! trifft diese Zielgruppe genau dort: praxisnah, kurz, digital und ohne Vorbereitung für Lehrkräfte."
+      intro="Lehrlinge stehen nicht kurz vor dem Berufsleben — sie sind bereits mittendrin. Sie verdienen echtes Geld, schließen Verträge ab und treffen täglich finanzielle Entscheidungen. Skills-UP! trifft diese Zielgruppe genau dort: praxisnah, kurz, digital und ohne Vorbereitung für Lehrkräfte. Im Unterschied zur PTS sind Lehrlinge nicht mehr in der Vorbereitung. Sie handeln bereits. Skills-UP! setzt dort an, wo die Fehler schon passieren."
       lehrplanPassung={[
         {
           fach: 'Politische Bildung & Wirtschaftskunde',

@@ -32,7 +32,7 @@ export default function PtsPage() {
       lehrplanFach="Berufsorientierung · Lebenskunde · Klassenvorstand · Soziales Lernen"
       icon={icon}
       lehrerProblem="Viele meiner Schüler:innen fangen in wenigen Monaten eine Lehre an. Aber sie haben keine Ahnung, was sie mit ihrem ersten Lehrlingsgeld machen sollen — und ich hab kein fertiges Material dafür."
-      intro="Die PTS ist die letzte Station vor dem Berufsleben. Genau hier sitzt Skills-UP! perfekt: Die Module treffen Jugendliche in dem Moment, wo Finanzkompetenz plötzlich keine Schulübung mehr ist — sondern echte Lebensrealität, die in Wochen beginnt."
+      intro="Die PTS ist die letzte Station vor dem Berufsleben. Genau hier sitzt Skills-UP! perfekt: Die Module treffen Jugendliche in dem Moment, wo Finanzkompetenz plötzlich keine Schulübung mehr ist — sondern echte Lebensrealität, die in Wochen beginnt. Der Unterschied zur Berufsschule: PTS-Schüler:innen stehen noch davor. Skills-UP! gibt ihnen einen Vorsprung — bevor das erste Lehrlingsgeld ankommt."
       lehrplanPassung={[
         {
           fach: 'Berufsorientierung (BOK)',
