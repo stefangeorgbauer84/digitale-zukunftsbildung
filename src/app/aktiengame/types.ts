@@ -93,4 +93,10 @@ export interface GameState {
   difficulty: Difficulty
   wealthHistory: number[]
   role: PlayerRole
+  /** Durchschnitts-Konfidenz nach Trades (0 = nicht gesetzt) */
+  avgConfidence?: number
+  /** Zielpreise je Asset-ID */
+  targetPrices?: Record<string, number>
+  /** Konfidenz-Ratings für Durchschnitt */
+  confidenceRatings?: number[]
 }

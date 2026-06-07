@@ -572,6 +572,91 @@ export function calcGesamtScore(
 }
 
 // ---------------------------------------------------------------------------
+// Achievement-System
+// ---------------------------------------------------------------------------
+
+export interface Achievement {
+  id: string
+  emoji: string
+  name: string
+  description: string
+  earned: boolean
+}
+
+export function calcAchievements(state: GameState, assets: Asset[]): Achievement[] {
+  // "Erstkäufer" — mind. 1 Transaktion
+  const erstkäufer = state.transactions.length >= 1
+
+  // "Diversifikations-Profi" — mind. 4 verschiedene Assets gehalten (je gekauft)
+  const uniqueAssetsBought = new Set(state.transactions.filter((t) => t.type === 'buy').map((t) => t.assetId))
+  const diversiProfi = uniqueAssetsBought.size >= 4
+
+  // "Krisengewinner" — ein Rundenabschluss mit negativem Avg-Event-Impact aber positivem Portfolio
+  const avgChange = Object.values(state.roundChanges).length > 0
+    ? Object.values(state.roundChanges).reduce((a, b) => a + b, 0) / Object.values(state.roundChanges).length
+    : 0
+  const portfolioValue = calculatePortfolioValue(state.positions, state.currentPrices)
+  const totalWealth = state.cash + portfolioValue
+  const performance = totalWealth - state.startCapital
+  const krisengewinner = avgChange < 0 && performance > 0
+
+  // "Langzeit-Investor" — alle 10 Runden gespielt
+  const langezeit = state.currentRound >= state.totalRounds
+
+  // "Mission erfüllt" — Rollenmission abgeschlossen
+  const { fulfilled: missionFulfilled } = calcRoleMissionBonus(state, assets)
+
+  // "Reflexions-Champion" — alle Reflexionsfragen beantwortet (mit mind. 10 Zeichen)
+  const answeredCount = state.reflections.filter((r) => r.answer.trim().length > 10).length
+  const reflexionsChampion = answeredCount >= state.totalRounds
+
+  return [
+    {
+      id: 'erstkäufer',
+      emoji: '🛒',
+      name: 'Erstkäufer',
+      description: 'Erste Transaktion durchgeführt',
+      earned: erstkäufer,
+    },
+    {
+      id: 'diversi-profi',
+      emoji: '🌐',
+      name: 'Diversifikations-Profi',
+      description: 'Mind. 4 verschiedene Assets gekauft',
+      earned: diversiProfi,
+    },
+    {
+      id: 'krisengewinner',
+      emoji: '💪',
+      name: 'Krisengewinner',
+      description: 'Trotz negativem Marktumfeld Gewinn erzielt',
+      earned: krisengewinner,
+    },
+    {
+      id: 'langezeit',
+      emoji: '⏳',
+      name: 'Langzeit-Investor',
+      description: 'Alle 10 Runden gespielt',
+      earned: langezeit,
+    },
+    {
+      id: 'mission',
+      emoji: '🎯',
+      name: 'Mission erfüllt',
+      description: 'Rollenmission erfolgreich abgeschlossen',
+      earned: missionFulfilled,
+    },
+    {
+      id: 'reflexion',
+      emoji: '🧠',
+      name: 'Reflexions-Champion',
+      description: 'Alle Reflexionsfragen ausführlich beantwortet',
+      earned: reflexionsChampion,
+    },
+  ]
+}
+
+// ---------------------------------------------------------------------------
 // Initialzustand
 // ---------------------------------------------------------------------------
 export function createInitialState(

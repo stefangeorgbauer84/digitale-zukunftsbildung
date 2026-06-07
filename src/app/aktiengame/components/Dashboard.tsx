@@ -32,15 +32,179 @@ import GlossarModal, { GlossarButton } from './GlossarModal'
 interface DashboardProps {
   state: GameState
   assets: Asset[]
-  onBuy: (assetId: string, qty: number) => void
-  onSell: (assetId: string, qty: number) => void
+  onBuy: (assetId: string, qty: number, confidence?: number) => void
+  onSell: (assetId: string, qty: number, confidence?: number) => void
   onEndRound: () => void
+  onSetTargetPrice: (assetId: string, price: number) => void
 }
 
 const RISK_COLORS: Record<string, string> = {
   niedrig: 'bg-status-teal-light text-status-teal',
   mittel: 'bg-status-orange-light text-status-orange',
   hoch: 'bg-red-50 text-red-600',
+}
+
+// ---------------------------------------------------------------------------
+// News-Ticker headlines per event id
+// ---------------------------------------------------------------------------
+const EVENT_HEADLINES: Record<string, string[]> = {
+  zinsen: [
+    'EZB hebt Leitzins um 0,5 % an – Technologiewerte unter Druck',
+    'Steigende Zinsen belasten wachstumsorientierte Unternehmen',
+    'Anleihen gewinnen an Attraktivität gegenüber Aktien',
+    'Kreditkosten steigen: Investitionsbereitschaft sinkt',
+    'Bankensektor profitiert von höheren Zinsspannen',
+  ],
+  'eu-energie': [
+    'EU-Kommission beschließt 200-Mrd.-Paket für erneuerbare Energien',
+    'GreenEnergy-Aktien nach Förderprogramm im Aufwind',
+    'Subventionen für Solar und Wind treiben Sektor nach oben',
+    'Nachhaltige Investments mit Rückenwind aus Brüssel',
+    'Mobilitätswende beschleunigt sich durch EU-Förderung',
+  ],
+  lieferketten: [
+    'Lieferengpässe lösen sich schneller als erwartet auf',
+    'Technologiebranche profitiert von stabilisierten Lieferketten',
+    'Produktionskosten sinken – Unternehmen optimistischer',
+    'Automobilsektor meldet wieder volle Produktionskapazitäten',
+    'Österreichische Industrie meldet Auftragsplus',
+  ],
+  konjunktur: [
+    'Wirtschaftsforscher senken BIP-Prognosen für 2027',
+    'Konjunktursorgen belasten zyklische Branchen',
+    'Defensive Sektoren zeigen sich krisenresistent',
+    'Rückgang der Konsumausgaben trübt Unternehmensaussichten',
+    'Analysten empfehlen Portfolioabsicherung bei Abschwung',
+  ],
+  gesundheit: [
+    'Neue Studie bestätigt Wirksamkeit digitaler Diagnostik',
+    'HealthCare-Sektor zeigt Stärke in unsicherem Markt',
+    'Telemedizin-Nachfrage steigt – Branche wächst',
+    'Medizintechnik gilt als defensiver Hafen in volatilen Zeiten',
+    'Investoren setzen auf defensive Qualitätswerte im Gesundheitssektor',
+  ],
+  inflation: [
+    'Inflation übersteigt Erwartungen – Kaufkraft sinkt',
+    'Verbraucherpreise steigen stärker als prognostiziert',
+    'Anleihen unter Druck durch höhere Inflationserwartungen',
+    'Sachwerte als Inflationsschutz rücken in den Fokus',
+    'ETFs als Stabilitätsanker in inflationärem Umfeld',
+  ],
+  digitalisierung: [
+    'Regierungen investieren Milliarden in digitale Infrastruktur',
+    'Technologiebranche meldet Rekordaufträge aus öffentlicher Hand',
+    'Digitalisierungsschub befeuert Wachstumswerte',
+    'Cloud- und KI-Unternehmen profitieren von staatlichen Programmen',
+    'TechPioneer ETF auf Jahreshoch nach Regierungsankündigung',
+  ],
+  klimaregulierung: [
+    'Neue CO₂-Regulierung trifft emissionsintensive Industrien hart',
+    'Nachhaltige Unternehmen profitieren von verschärften Klimaregeln',
+    'GreenEnergy Europe und Austria ETF mit Kursgewinnen',
+    'Traditionelle Energiekonzerne müssen hohe Strafen fürchten',
+    'ESG-Kriterien gewinnen als Investitionsentscheidung an Gewicht',
+  ],
+}
+
+// ---------------------------------------------------------------------------
+// News Ticker
+// ---------------------------------------------------------------------------
+function NewsTicker({ event }: { event: GameState['currentEvent'] }) {
+  if (!event) return null
+  const headlines = EVENT_HEADLINES[event.id] ?? [`Marktereignis: ${event.title}`]
+  const text = headlines.join('   ·   ') + '   ·   '
+
+  return (
+    <div className="bg-primary-dark text-white text-xs overflow-hidden py-2 px-0">
+      <div
+        className="whitespace-nowrap"
+        style={{
+          display: 'inline-block',
+          animation: 'ticker-scroll 28s linear infinite',
+          paddingLeft: '100%',
+        }}
+      >
+        📰 {text}📰 {text}
+      </div>
+      <style>{`
+        @keyframes ticker-scroll {
+          0% { transform: translateX(0); }
+          100% { transform: translateX(-50%); }
+        }
+      `}</style>
+    </div>
+  )
+}
+
+// ---------------------------------------------------------------------------
+// Portfolio Donut (SVG stroke-dasharray)
+// ---------------------------------------------------------------------------
+const DONUT_COLORS = [
+  '#4a2d8a', '#6b4db0', '#2A8A76', '#D87228', '#3b82f6', '#ef4444', '#6b7280',
+]
+
+function PortfolioDonut({ state, assets }: { state: GameState; assets: Asset[] }) {
+  const totalWealth = state.cash + calculatePortfolioValue(state.positions, state.currentPrices)
+  if (totalWealth === 0) return null
+
+  // Group by sector
+  const sectorMap: Record<string, number> = {}
+  for (const pos of state.positions) {
+    const asset = assets.find((a) => a.id === pos.assetId)
+    if (!asset) continue
+    const val = pos.quantity * (state.currentPrices[pos.assetId] ?? 0)
+    sectorMap[asset.sector] = (sectorMap[asset.sector] ?? 0) + val
+  }
+  sectorMap['Cash'] = state.cash
+
+  const entries = Object.entries(sectorMap).filter(([, v]) => v > 0)
+  const total = entries.reduce((s, [, v]) => s + v, 0)
+
+  const R = 40
+  const circumference = 2 * Math.PI * R
+  let offset = 0
+  const segments = entries.map(([label, value], i) => {
+    const pct = value / total
+    const dash = pct * circumference
+    const gap = circumference - dash
+    const seg = { label, pct, dash, gap, offset, color: DONUT_COLORS[i % DONUT_COLORS.length] }
+    offset += dash
+    return seg
+  })
+
+  return (
+    <div className="bg-white rounded-2xl shadow-card p-5">
+      <div className="text-sm font-semibold text-text-primary mb-4">Portfolio-Zusammensetzung</div>
+      <div className="flex items-center gap-6 flex-wrap">
+        <svg width="120" height="120" viewBox="0 0 100 100">
+          <circle cx="50" cy="50" r={R} fill="none" stroke="#f3f4f6" strokeWidth="18" />
+          {segments.map((seg, i) => (
+            <circle
+              key={i}
+              cx="50"
+              cy="50"
+              r={R}
+              fill="none"
+              stroke={seg.color}
+              strokeWidth="18"
+              strokeDasharray={`${seg.dash} ${seg.gap}`}
+              strokeDashoffset={-seg.offset}
+              style={{ transform: 'rotate(-90deg)', transformOrigin: '50% 50%' }}
+            />
+          ))}
+        </svg>
+        <div className="flex flex-col gap-1.5">
+          {segments.map((seg, i) => (
+            <div key={i} className="flex items-center gap-2 text-xs">
+              <div className="w-3 h-3 rounded-sm flex-shrink-0" style={{ backgroundColor: seg.color }} />
+              <span className="text-text-secondary">{seg.label}</span>
+              <span className="font-semibold text-text-primary ml-auto pl-2">{(seg.pct * 100).toFixed(1)}%</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
 }
 
 // Mini sparkline from price history for one asset (CSS bars)
@@ -209,7 +373,7 @@ function QuickInvestBar({
   )
 }
 
-export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: DashboardProps) {
+export default function Dashboard({ state, assets, onBuy, onSell, onEndRound, onSetTargetPrice }: DashboardProps) {
   const [selectedAsset, setSelectedAsset] = useState<Asset | null>(null)
   const [detailAsset, setDetailAsset] = useState<Asset | null>(null)
   const [activeTab, setActiveTab] = useState<'markt' | 'verlauf'>('markt')
@@ -224,14 +388,14 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
 
   const thisRoundBuys = state.transactions.filter((t) => t.round === state.currentRound && t.type === 'buy')
 
-  const handleBuyWithFlash = useCallback((assetId: string, qty: number) => {
-    onBuy(assetId, qty)
+  const handleBuyWithFlash = useCallback((assetId: string, qty: number, confidence = 0) => {
+    onBuy(assetId, qty, confidence)
     setFlashAssetId(assetId)
     setTimeout(() => setFlashAssetId(null), 600)
   }, [onBuy])
 
-  const handleSellWithFlash = useCallback((assetId: string, qty: number) => {
-    onSell(assetId, qty)
+  const handleSellWithFlash = useCallback((assetId: string, qty: number, confidence = 0) => {
+    onSell(assetId, qty, confidence)
     setFlashAssetId(assetId)
     setTimeout(() => setFlashAssetId(null), 600)
   }, [onSell])
@@ -247,7 +411,6 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
   }, [onBuy])
 
   const handleEndRoundClick = () => {
-    // Warn if lots of cash and no buys this round
     if (state.cash > state.startCapital * 0.5 && thisRoundBuys.length === 0) {
       setShowEndWarning(true)
     } else {
@@ -255,14 +418,16 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
     }
   }
 
+  const targetPrices = state.targetPrices ?? {}
+
   return (
     <div className="space-y-6">
       {/* Mission Banner */}
       <MissionBanner state={state} assets={assets} />
 
       {/* Round indicator */}
-      <div className="bg-white rounded-2xl shadow-card p-4">
-        <div className="flex items-center justify-between mb-2">
+      <div className="bg-white rounded-2xl shadow-card overflow-hidden">
+        <div className="flex items-center justify-between p-4 pb-3">
           <span className="text-sm font-semibold text-text-secondary">
             Jahr {roundToYear(state.currentRound)}
             <span className="ml-2 text-xs font-normal text-text-muted">
@@ -277,16 +442,23 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
             </span>
           </div>
         </div>
-        <div className="w-full bg-gray-100 rounded-full h-2">
-          <div
-            className="bg-primary-dark h-2 rounded-full transition-all duration-500"
-            style={{ width: `${progressPct}%` }}
-          />
+        <div className="px-4 pb-4">
+          <div className="w-full bg-gray-100 rounded-full h-2">
+            <div
+              className="bg-primary-dark h-2 rounded-full transition-all duration-500"
+              style={{ width: `${progressPct}%` }}
+            />
+          </div>
         </div>
+        {/* News Ticker */}
+        <NewsTicker event={state.currentEvent} />
       </div>
 
       {/* Live-Sektoranalyse */}
       <PortfolioAnalysis state={state} assets={assets} />
+
+      {/* Portfolio Donut */}
+      <PortfolioDonut state={state} assets={assets} />
 
       {/* Schnell investieren */}
       <QuickInvestBar
@@ -347,6 +519,8 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
                   const change = state.roundChanges[asset.id] ?? 0
                   const pos = state.positions.find((p) => p.assetId === asset.id)
                   const isFlashing = flashAssetId === asset.id
+                  const target = targetPrices[asset.id]
+                  const targetHit = target != null && price >= target
                   return (
                     <tr
                       key={asset.id}
@@ -357,8 +531,9 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
                           onClick={() => setDetailAsset(asset)}
                           className="text-left group"
                         >
-                          <div className="font-semibold text-text-primary group-hover:text-primary-dark transition-colors">
+                          <div className="font-semibold text-text-primary group-hover:text-primary-dark transition-colors flex items-center gap-1">
                             {asset.name}
+                            {targetHit && <span title="Zielkurs erreicht!">🎯</span>}
                           </div>
                           <div className="text-xs text-text-muted flex items-center gap-1">
                             {asset.symbol} · {asset.type}
@@ -373,6 +548,9 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
                       </td>
                       <td className="px-4 py-3 text-right font-mono font-semibold">
                         {price.toFixed(2)} €
+                        {target != null && (
+                          <div className="text-xs text-text-muted font-normal">Ziel: {target.toFixed(2)} €</div>
+                        )}
                       </td>
                       <td className={`px-4 py-3 text-right font-mono text-sm font-semibold ${change >= 0 ? 'text-status-teal' : 'text-red-500'}`}>
                         {change >= 0 ? '+' : ''}{(change * 100).toFixed(1)}%
@@ -445,7 +623,7 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
         </p>
       </div>
 
-      {/* End-round warning dialog (improvement 6) */}
+      {/* End-round warning dialog */}
       {showEndWarning && (
         <div className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center p-4">
           <div className="bg-white rounded-2xl shadow-card-hover w-full max-w-sm p-6 space-y-4">
@@ -484,8 +662,8 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
           position={state.positions.find((p) => p.assetId === selectedAsset.id)}
           portfolioValue={portfolioValue}
           playerRole={state.role}
-          onBuy={(qty) => handleBuyWithFlash(selectedAsset.id, qty)}
-          onSell={(qty) => handleSellWithFlash(selectedAsset.id, qty)}
+          onBuy={(qty, confidence) => handleBuyWithFlash(selectedAsset.id, qty, confidence)}
+          onSell={(qty, confidence) => handleSellWithFlash(selectedAsset.id, qty, confidence)}
           onClose={() => setSelectedAsset(null)}
         />
       )}
@@ -502,6 +680,8 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
           position={state.positions.find((p) => p.assetId === detailAsset.id)}
           onClose={() => setDetailAsset(null)}
           onTrade={() => { setDetailAsset(null); setSelectedAsset(detailAsset) }}
+          targetPrice={targetPrices[detailAsset.id]}
+          onSetTargetPrice={(price) => onSetTargetPrice(detailAsset.id, price)}
         />
       )}
     </div>

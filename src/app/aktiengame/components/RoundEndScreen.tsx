@@ -193,6 +193,21 @@ export default function RoundEndScreen({ state, assets, onReflectionSubmit, onNe
 
   const isLastRound = state.currentRound >= state.totalRounds
 
+  // Jahres-Zusammenfassung Daten
+  const totalWealth = state.cash + currentPortfolioValue
+  const wealthChangePct = ((totalWealth - state.startCapital) / state.startCapital) * 100
+  const cashPct = totalWealth > 0 ? (state.cash / totalWealth) * 100 : 100
+  const roundTxCount = state.transactions.filter((t) => t.round === state.currentRound).length
+
+  // Bestes und schlechtestes Asset dieser Runde
+  const assetChanges = assets.map((asset) => {
+    const prev = prevPrices[asset.id] ?? asset.price
+    const curr = state.currentPrices[asset.id] ?? asset.price
+    return { asset, pct: ((curr - prev) / prev) * 100 }
+  })
+  const bestAsset = [...assetChanges].sort((a, b) => b.pct - a.pct)[0]
+  const worstAsset = [...assetChanges].sort((a, b) => a.pct - b.pct)[0]
+
   const handleSubmit = () => {
     onReflectionSubmit(answer)
     setSubmitted(true)
@@ -200,6 +215,45 @@ export default function RoundEndScreen({ state, assets, onReflectionSubmit, onNe
 
   return (
     <div className="space-y-6">
+      {/* Jahres-Zusammenfassung Card */}
+      <div className="bg-white rounded-2xl shadow-card p-5">
+        <div className="text-sm font-bold text-primary-dark mb-3">
+          Jahr {roundToYear(state.currentRound)} im Überblick
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          <div className="bg-status-teal-light rounded-xl p-3">
+            <div className="text-xs text-text-muted mb-0.5">Bestes Asset</div>
+            <div className="text-sm font-bold text-status-teal truncate">{bestAsset?.asset.name}</div>
+            <div className="text-xs font-semibold text-status-teal">+{bestAsset?.pct.toFixed(1)}%</div>
+          </div>
+          <div className="bg-red-50 rounded-xl p-3">
+            <div className="text-xs text-text-muted mb-0.5">Schwächstes Asset</div>
+            <div className="text-sm font-bold text-red-500 truncate">{worstAsset?.asset.name}</div>
+            <div className="text-xs font-semibold text-red-500">{worstAsset?.pct.toFixed(1)}%</div>
+          </div>
+          <div className={`rounded-xl p-3 ${portfolioChange >= 0 ? 'bg-status-teal-light' : 'bg-red-50'}`}>
+            <div className="text-xs text-text-muted mb-0.5">Portfolio ±</div>
+            <div className={`text-sm font-bold ${portfolioChange >= 0 ? 'text-status-teal' : 'text-red-500'}`}>
+              {portfolioChange >= 0 ? '+' : ''}{portfolioChange.toFixed(0)} €
+            </div>
+          </div>
+          <div className="bg-gray-50 rounded-xl p-3">
+            <div className="text-xs text-text-muted mb-0.5">Transaktionen</div>
+            <div className="text-sm font-bold text-text-primary">{roundTxCount}</div>
+          </div>
+          <div className="bg-gray-50 rounded-xl p-3">
+            <div className="text-xs text-text-muted mb-0.5">Cash-Anteil</div>
+            <div className="text-sm font-bold text-text-primary">{cashPct.toFixed(1)}%</div>
+          </div>
+          <div className={`rounded-xl p-3 ${wealthChangePct >= 0 ? 'bg-primary-50' : 'bg-red-50'}`}>
+            <div className="text-xs text-text-muted mb-0.5">Gesamt-Performance</div>
+            <div className={`text-sm font-bold ${wealthChangePct >= 0 ? 'text-primary-dark' : 'text-red-500'}`}>
+              {wealthChangePct >= 0 ? '+' : ''}{wealthChangePct.toFixed(1)}%
+            </div>
+          </div>
+        </div>
+      </div>
+
       {/* Event card */}
       {state.currentEvent && (
         <div className="bg-white rounded-2xl shadow-card p-6 border-l-4 border-primary-medium">

@@ -1,5 +1,6 @@
 'use client'
 
+import { useState } from 'react'
 import type { Asset, GameState, Position } from '../types'
 
 function XIcon() {
@@ -19,6 +20,8 @@ interface AssetDetailPanelProps {
   position: Position | undefined
   onClose: () => void
   onTrade: () => void
+  targetPrice?: number
+  onSetTargetPrice?: (price: number) => void
 }
 
 export default function AssetDetailPanel({
@@ -28,7 +31,10 @@ export default function AssetDetailPanel({
   position,
   onClose,
   onTrade,
+  targetPrice,
+  onSetTargetPrice,
 }: AssetDetailPanelProps) {
+  const [targetInput, setTargetInput] = useState(targetPrice?.toFixed(2) ?? '')
   const risk = RISK_LABELS[asset.risk]
 
   // Build price series from history
@@ -135,6 +141,39 @@ export default function AssetDetailPanel({
               <div className={`text-sm font-semibold mt-1 ${currentPrice >= position.avgBuyPrice ? 'text-status-teal' : 'text-red-500'}`}>
                 Aktueller Gewinn/Verlust: {((currentPrice - position.avgBuyPrice) / position.avgBuyPrice * 100).toFixed(1)} %
               </div>
+            </div>
+          )}
+
+          {/* Zielkurs */}
+          {onSetTargetPrice && (
+            <div className="bg-gray-50 rounded-xl p-4">
+              <div className="text-xs font-semibold text-text-muted mb-2">🎯 Zielkurs setzen</div>
+              <div className="flex gap-2">
+                <input
+                  type="number"
+                  step="0.01"
+                  min="0"
+                  value={targetInput}
+                  onChange={(e) => setTargetInput(e.target.value)}
+                  placeholder={`z.B. ${(currentPrice * 1.1).toFixed(2)}`}
+                  className="flex-1 border border-gray-200 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary-medium"
+                />
+                <button
+                  onClick={() => {
+                    const val = parseFloat(targetInput)
+                    if (!isNaN(val) && val > 0) onSetTargetPrice(val)
+                  }}
+                  className="bg-primary-dark text-white text-xs font-semibold px-3 py-2 rounded-lg hover:bg-primary-medium transition-colors"
+                >
+                  Setzen
+                </button>
+              </div>
+              {targetPrice != null && (
+                <p className="text-xs text-text-muted mt-1.5">
+                  Aktuell: {targetPrice.toFixed(2)} € Ziel
+                  {currentPrice >= targetPrice ? ' ✅ Erreicht!' : ` — noch ${(targetPrice - currentPrice).toFixed(2)} € bis Ziel`}
+                </p>
+              )}
             </div>
           )}
 

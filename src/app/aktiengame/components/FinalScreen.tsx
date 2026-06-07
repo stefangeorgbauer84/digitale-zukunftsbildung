@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import type { Asset, GameState } from '../types'
+import type { Asset, GameState, PlayerRole } from '../types'
 import {
   calculatePortfolioValue,
   calcDiversificationScore,
@@ -9,6 +9,7 @@ import {
   calcReflectionScore,
   calcRoleMissionBonus,
   calcGesamtScore,
+  calcAchievements,
   PLAYER_ROLES,
   roundToYear,
   START_YEAR,
@@ -37,7 +38,7 @@ interface FinalScreenProps {
   onRestart: () => void
 }
 
-// Wealth curve over rounds (improvement 9)
+// Wealth curve over rounds
 function WealthCurve({ wealthHistory, startCapital, totalRounds }: { wealthHistory: number[]; startCapital: number; totalRounds: number }) {
   if (wealthHistory.length < 2) return null
   const min = Math.min(...wealthHistory, startCapital) * 0.98
@@ -58,7 +59,6 @@ function WealthCurve({ wealthHistory, startCapital, totalRounds }: { wealthHisto
     <div className="bg-gray-50 rounded-xl p-4">
       <div className="text-xs font-semibold text-text-muted uppercase tracking-wide mb-2">Vermögensverlauf</div>
       <svg viewBox={`0 0 ${WIDTH} ${HEIGHT}`} className="w-full h-20" preserveAspectRatio="none">
-        {/* Baseline at startCapital */}
         <line
           x1="0"
           y1={HEIGHT - ((startCapital - min) / range) * HEIGHT}
@@ -98,6 +98,44 @@ const GRADE_CONFIG: Record<string, { label: string; ring: string; text: string; 
   E: { label: 'Nicht genügend', ring: 'ring-red-400', text: 'text-red-600', bg: 'bg-red-50' },
 }
 
+// Benchmark comparison
+const BENCHMARKS = {
+  performance: 12,
+  diversifikation: 58,
+  reflexion: 65,
+}
+
+function BenchmarkBar({ label, ownValue, benchmark }: { label: string; ownValue: number; benchmark: number }) {
+  const isBetter = ownValue >= benchmark
+  const maxVal = Math.max(ownValue, benchmark, 1)
+  return (
+    <div className="space-y-1">
+      <div className="flex justify-between text-xs text-text-muted">
+        <span>{label}</span>
+        <span className={isBetter ? 'text-status-teal font-semibold' : 'text-status-orange font-semibold'}>
+          Du: {ownValue.toFixed(0)} {isBetter ? '↑' : '↓'} Ø: {benchmark}
+        </span>
+      </div>
+      <div className="relative h-4 bg-gray-100 rounded-full overflow-hidden">
+        {/* Benchmark line */}
+        <div
+          className="absolute top-0 bottom-0 w-0.5 bg-gray-400 z-10"
+          style={{ left: `${(benchmark / 100) * 100}%` }}
+        />
+        {/* Own bar */}
+        <div
+          className={`h-full rounded-full transition-all ${isBetter ? 'bg-status-teal' : 'bg-status-orange'}`}
+          style={{ width: `${Math.min(100, (ownValue / 100) * 100)}%` }}
+        />
+      </div>
+      <div className="flex justify-between text-xs text-text-muted">
+        <span>0</span>
+        <span>100</span>
+      </div>
+    </div>
+  )
+}
+
 export default function FinalScreen({ state, assets, onRestart }: FinalScreenProps) {
   const [openReflections, setOpenReflections] = useState(false)
   const [copied, setCopied] = useState(false)
@@ -110,10 +148,13 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
   const diversiScore = calcDiversificationScore(state.positions, assets, state.currentPrices)
   const riskScore = calcRiskScore(state.positions, assets, state.currentPrices)
   const reflectionScore = calcReflectionScore(state.reflections, state.totalRounds)
-  const { fulfilled: missionFulfilled, bonusPoints, reason: missionReason } = calcRoleMissionBonus(state, assets)
+  const { fulfilled: missionFulfilled, reason: missionReason } = calcRoleMissionBonus(state, assets)
   const roleDef = PLAYER_ROLES[state.role]
   const { score: gesamtScore, grade, breakdown } = calcGesamtScore(state, assets)
   const gradeCfg = GRADE_CONFIG[grade]
+
+  const achievements = calcAchievements(state, assets)
+  const earnedAchievements = achievements.filter((a) => a.earned)
 
   // Best/worst position
   const positionsWithGain = state.positions.map((pos) => {
@@ -130,16 +171,27 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
   const ampelColor = diversiScore > 70 ? 'bg-status-teal' : diversiScore >= 40 ? 'bg-status-orange' : 'bg-red-500'
   const ampelLabel = diversiScore > 70 ? 'Gut diversifiziert' : diversiScore >= 40 ? 'Mäßig diversifiziert' : 'Kaum diversifiziert'
 
-  const shareText = `Beim Aktiengame der Digitalen Zukunftsbildung habe ich ${performance >= 0 ? '+' : ''}${performance.toFixed(1)}% erreicht! 📈 digitale-zukunftsbildung.eu/aktiengame`
+  // Improved copy text (Feature 10)
+  const avgConf = state.avgConfidence ?? 0
+  const achievementNames = earnedAchievements.map((a) => `${a.emoji} ${a.name}`).join(', ') || 'keine'
+  const copyText = [
+    '🎮 Skills-UP! Aktiengame – Mein Ergebnis',
+    `📅 Zeitraum: ${START_YEAR}–${START_YEAR + state.totalRounds - 1} (${state.totalRounds} Jahre)`,
+    `👤 Spieler: ${state.playerName} · Rolle: ${roleDef.name}`,
+    `💰 Startkapital: 10.000 € → Endvermögen: ${totalWealth.toFixed(0)} €`,
+    `📈 Performance: ${performance >= 0 ? '+' : ''}${performance.toFixed(1)}% · Note: ${grade}`,
+    `🏅 Achievements: ${achievementNames}`,
+    '🌐 digitale-zukunftsbildung.vercel.app/aktiengame',
+  ].join('\n')
 
   const handleCopy = () => {
-    navigator.clipboard.writeText(shareText).then(() => {
+    navigator.clipboard.writeText(copyText).then(() => {
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
     })
   }
 
-  // Portfolio allocation bars (improvement 8)
+  // Portfolio allocation bars
   const totalPortValue = calculatePortfolioValue(state.positions, state.currentPrices)
   const allocations = assets.map((asset) => {
     const pos = state.positions.find((p) => p.assetId === asset.id)
@@ -152,6 +204,9 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
   const cashPct = totalPortValue > 0 || state.cash > 0
     ? (state.cash / (totalPortValue + state.cash)) * 100
     : 100
+
+  // Other roles for role switch section (Feature 9)
+  const otherRoles = (Object.keys(PLAYER_ROLES) as PlayerRole[]).filter((r) => r !== state.role).slice(0, 3)
 
   return (
     <div className="space-y-6">
@@ -199,7 +254,70 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
         </button>
       </div>
 
-      {/* Wealth curve (improvement 9) */}
+      {/* Achievements (Feature 2) */}
+      <div className="bg-white rounded-2xl shadow-card p-5">
+        <div className="text-sm font-semibold text-text-primary mb-3">
+          Achievements — {earnedAchievements.length}/{achievements.length} freigeschaltet
+        </div>
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          {achievements.map((ach) => (
+            <div
+              key={ach.id}
+              className={`rounded-xl p-3 border transition-all ${
+                ach.earned
+                  ? 'border-primary-medium bg-primary-50'
+                  : 'border-gray-100 bg-gray-50 opacity-50'
+              }`}
+            >
+              <div className="text-2xl mb-1">{ach.emoji}</div>
+              <div className={`text-xs font-bold ${ach.earned ? 'text-primary-dark' : 'text-text-muted'}`}>
+                {ach.name}
+              </div>
+              <div className="text-xs text-text-muted mt-0.5">{ach.description}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Benchmark Vergleich (Feature 5) */}
+      <div className="bg-white rounded-2xl shadow-card p-5">
+        <div className="text-sm font-semibold text-text-primary mb-4">Vergleich mit typischen Spielern</div>
+        <div className="space-y-4">
+          <BenchmarkBar
+            label="Performance"
+            ownValue={Math.max(0, Math.min(100, performance + 20))}
+            benchmark={BENCHMARKS.performance + 20}
+          />
+          <BenchmarkBar
+            label="Diversifikation"
+            ownValue={diversiScore}
+            benchmark={BENCHMARKS.diversifikation}
+          />
+          <BenchmarkBar
+            label="Reflexion"
+            ownValue={reflectionScore}
+            benchmark={BENCHMARKS.reflexion}
+          />
+        </div>
+        <p className="text-xs text-text-muted mt-3">Ø-Werte basieren auf aggregierten Spielerdaten.</p>
+      </div>
+
+      {/* Konfidenz (Feature 6) */}
+      {avgConf > 0 && (
+        <div className="bg-white rounded-2xl shadow-card p-5 flex items-center gap-4">
+          <div className="text-3xl">
+            {avgConf >= 2.5 ? '💪' : avgConf >= 1.5 ? '🙂' : '😬'}
+          </div>
+          <div>
+            <div className="text-sm font-semibold text-text-primary">Durchschnittliche Entscheidungssicherheit</div>
+            <div className="text-xs text-text-muted">
+              Ø {avgConf.toFixed(1)} / 3 · {avgConf >= 2.5 ? 'Du hast sehr sicher entschieden.' : avgConf >= 1.5 ? 'Mittlere Entscheidungssicherheit.' : 'Du warst oft unsicher – das ist normal beim Investieren!'}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Wealth curve */}
       <div className="bg-white rounded-2xl shadow-card p-5">
         <WealthCurve wealthHistory={state.wealthHistory} startCapital={state.startCapital} totalRounds={state.totalRounds} />
       </div>
@@ -239,7 +357,7 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
         <ScoreCard label="Reflexion" score={reflectionScore} description="Wie oft hast du deine Entscheidungen hinterfragt?" />
       </div>
 
-      {/* Portfolio allocation bars (improvement 8) */}
+      {/* Portfolio allocation bars */}
       {allocations.length > 0 && (
         <div className="bg-white rounded-2xl shadow-card p-5">
           <div className="text-sm font-semibold text-text-primary mb-3">Portfolio-Verteilung am Spielende</div>
@@ -316,11 +434,38 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
         </div>
       )}
 
-      {/* Share with real copy button (improvement 3) */}
+      {/* Andere Rolle ausprobieren (Feature 9) */}
       <div className="bg-white rounded-2xl shadow-card p-5">
-        <div className="text-sm font-semibold text-text-primary mb-2">Ergebnis teilen</div>
-        <div className="bg-gray-50 rounded-xl px-4 py-3 text-sm text-text-secondary mb-3">
-          {shareText}
+        <div className="text-sm font-semibold text-text-primary mb-3">Andere Rolle ausprobieren</div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-3">
+          {otherRoles.map((roleId) => {
+            const role = PLAYER_ROLES[roleId]
+            return (
+              <div
+                key={roleId}
+                className={`rounded-xl border-2 p-4 ${role.bgClass} ${role.borderClass}`}
+              >
+                <div className={`text-xs font-bold uppercase tracking-wide mb-1 ${role.colorClass}`}>
+                  {role.name}
+                </div>
+                <p className="text-xs text-text-muted mb-3">{role.tagline}</p>
+                <button
+                  onClick={onRestart}
+                  className={`w-full text-xs font-semibold py-2 rounded-lg border ${role.borderClass} ${role.colorClass} hover:opacity-80 transition-opacity bg-white/60`}
+                >
+                  Neu starten als {role.name}
+                </button>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+
+      {/* Ergebnis kopieren (Feature 10) */}
+      <div className="bg-white rounded-2xl shadow-card p-5">
+        <div className="text-sm font-semibold text-text-primary mb-2">Ergebnis kopieren</div>
+        <div className="bg-gray-50 rounded-xl px-4 py-3 text-sm text-text-secondary mb-3 whitespace-pre-line font-mono text-xs">
+          {copyText}
         </div>
         <button
           onClick={handleCopy}
@@ -331,7 +476,7 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
           }`}
         >
           {copied ? <CheckIcon /> : <CopyIcon />}
-          {copied ? 'Kopiert!' : 'Text kopieren'}
+          {copied ? 'Kopiert!' : 'Ergebnis kopieren'}
         </button>
       </div>
 

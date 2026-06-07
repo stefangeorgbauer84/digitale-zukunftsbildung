@@ -61,7 +61,7 @@ export default function AktienGame() {
     updateState(initial)
   }
 
-  const handleBuy = (assetId: string, qty: number) => {
+  const handleBuy = (assetId: string, qty: number, confidence = 0) => {
     if (!state) return
     const price = state.currentPrices[assetId] ?? 0
     const cost = price * qty
@@ -78,6 +78,9 @@ export default function AktienGame() {
       newPositions = [...newPositions, { assetId, quantity: qty, avgBuyPrice: price }]
     }
 
+    const newRatings = confidence > 0 ? [...(state.confidenceRatings ?? []), confidence] : (state.confidenceRatings ?? [])
+    const newAvg = newRatings.length > 0 ? newRatings.reduce((a, b) => a + b, 0) / newRatings.length : 0
+
     updateState({
       ...state,
       cash: state.cash - cost,
@@ -86,10 +89,12 @@ export default function AktienGame() {
         ...state.transactions,
         { type: 'buy', assetId, quantity: qty, price, round: state.currentRound },
       ],
+      confidenceRatings: newRatings,
+      avgConfidence: newAvg,
     })
   }
 
-  const handleSell = (assetId: string, qty: number) => {
+  const handleSell = (assetId: string, qty: number, confidence = 0) => {
     if (!state) return
     const price = state.currentPrices[assetId] ?? 0
     const pos = state.positions.find((p) => p.assetId === assetId)
@@ -100,6 +105,9 @@ export default function AktienGame() {
       newPositions = [...newPositions, { ...pos, quantity: pos.quantity - qty }]
     }
 
+    const newRatings = confidence > 0 ? [...(state.confidenceRatings ?? []), confidence] : (state.confidenceRatings ?? [])
+    const newAvg = newRatings.length > 0 ? newRatings.reduce((a, b) => a + b, 0) / newRatings.length : 0
+
     updateState({
       ...state,
       cash: state.cash + price * qty,
@@ -108,6 +116,19 @@ export default function AktienGame() {
         ...state.transactions,
         { type: 'sell', assetId, quantity: qty, price, round: state.currentRound },
       ],
+      confidenceRatings: newRatings,
+      avgConfidence: newAvg,
+    })
+  }
+
+  const handleSetTargetPrice = (assetId: string, price: number) => {
+    if (!state) return
+    updateState({
+      ...state,
+      targetPrices: {
+        ...(state.targetPrices ?? {}),
+        [assetId]: price,
+      },
     })
   }
 
@@ -190,6 +211,7 @@ export default function AktienGame() {
         onBuy={handleBuy}
         onSell={handleSell}
         onEndRound={handleEndRound}
+        onSetTargetPrice={handleSetTargetPrice}
       />
     )
   }
