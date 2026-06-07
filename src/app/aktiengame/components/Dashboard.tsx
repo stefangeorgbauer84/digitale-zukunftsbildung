@@ -6,6 +6,9 @@ import type { Asset, GameState } from '../types'
 function TrendingUpIcon() {
   return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
 }
+function ZapIcon() {
+  return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+}
 function TrendingDownIcon() {
   return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 18 13.5 8.5 8.5 13.5 1 6"/><polyline points="17 18 23 18 23 12"/></svg>
 }
@@ -65,6 +68,147 @@ function Sparkline({ assetId, priceHistory, initialPrice }: { assetId: string; p
   )
 }
 
+// Quick-Invest strategies
+interface QuickStrategy {
+  id: string
+  label: string
+  emoji: string
+  description: string
+  color: string
+  border: string
+  selectAssets: (assets: Asset[]) => Asset[]
+}
+
+const QUICK_STRATEGIES: QuickStrategy[] = [
+  {
+    id: 'sicher',
+    label: 'Sicher & Stabil',
+    emoji: '🛡️',
+    description: 'Niedrig-Risiko Assets',
+    color: 'text-status-teal',
+    border: 'border-status-teal/30 hover:border-status-teal',
+    selectAssets: (assets) => assets.filter((a) => a.risk === 'niedrig'),
+  },
+  {
+    id: 'tech',
+    label: 'Technologie',
+    emoji: '💻',
+    description: 'Tech-Sektor',
+    color: 'text-blue-600',
+    border: 'border-blue-300/40 hover:border-blue-400',
+    selectAssets: (assets) => assets.filter((a) => a.sector === 'Technologie'),
+  },
+  {
+    id: 'nachhaltig',
+    label: 'Nachhaltig',
+    emoji: '🌱',
+    description: 'ESG-konforme Anlagen',
+    color: 'text-green-600',
+    border: 'border-green-300/40 hover:border-green-500',
+    selectAssets: (assets) => assets.filter((a) => a.sustainable),
+  },
+  {
+    id: 'etf',
+    label: 'Nur ETFs',
+    emoji: '📊',
+    description: 'Breit gestreut',
+    color: 'text-status-orange',
+    border: 'border-status-orange/30 hover:border-status-orange',
+    selectAssets: (assets) => assets.filter((a) => a.type === 'ETF'),
+  },
+  {
+    id: 'wachstum',
+    label: 'Wachstum',
+    emoji: '🚀',
+    description: 'Hohe Chance, hohes Risiko',
+    color: 'text-red-500',
+    border: 'border-red-300/40 hover:border-red-400',
+    selectAssets: (assets) => assets.filter((a) => a.risk === 'hoch'),
+  },
+  {
+    id: 'alles',
+    label: 'Alles je 1',
+    emoji: '🎯',
+    description: 'Maximal diversifiziert',
+    color: 'text-primary-dark',
+    border: 'border-primary-light/30 hover:border-primary-medium',
+    selectAssets: (assets) => assets,
+  },
+]
+
+function QuickInvestBar({
+  assets,
+  cash,
+  currentPrices,
+  onBuyMultiple,
+}: {
+  assets: Asset[]
+  cash: number
+  currentPrices: Record<string, number>
+  onBuyMultiple: (buys: { assetId: string; qty: number }[]) => void
+}) {
+  const [feedback, setFeedback] = useState<string | null>(null)
+
+  const handleStrategy = (strategy: QuickStrategy) => {
+    const targets = strategy.selectAssets(assets)
+    const buys: { assetId: string; qty: number }[] = []
+    let remaining = cash
+
+    for (const asset of targets) {
+      const price = currentPrices[asset.id] ?? asset.price
+      if (remaining >= price) {
+        buys.push({ assetId: asset.id, qty: 1 })
+        remaining -= price
+      }
+    }
+
+    if (buys.length === 0) {
+      setFeedback('Nicht genug Cash für diese Strategie.')
+      setTimeout(() => setFeedback(null), 2500)
+      return
+    }
+
+    onBuyMultiple(buys)
+    const names = buys.map((b) => assets.find((a) => a.id === b.assetId)?.symbol ?? b.assetId).join(', ')
+    setFeedback(`Gekauft: ${names}`)
+    setTimeout(() => setFeedback(null), 2500)
+  }
+
+  return (
+    <div className="bg-white rounded-2xl shadow-card p-4">
+      <div className="flex items-center gap-2 mb-3">
+        <span className="text-primary-dark"><ZapIcon /></span>
+        <span className="text-sm font-semibold text-text-primary">Schnell investieren</span>
+        <span className="text-xs text-text-muted ml-1">— je 1 Anteil pro Asset</span>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {QUICK_STRATEGIES.map((s) => {
+          const targets = s.selectAssets(assets)
+          const totalCost = targets.reduce((sum, a) => sum + (currentPrices[a.id] ?? a.price), 0)
+          const canAfford = cash >= Math.min(...targets.map((a) => currentPrices[a.id] ?? a.price))
+          return (
+            <button
+              key={s.id}
+              onClick={() => handleStrategy(s)}
+              disabled={!canAfford || targets.length === 0}
+              title={`${s.description} · ca. ${totalCost.toFixed(0)} € gesamt`}
+              className={`flex items-center gap-1.5 border rounded-xl px-3 py-2 text-xs font-semibold transition-all
+                ${canAfford ? `${s.border} ${s.color} bg-white hover:shadow-sm` : 'border-gray-100 text-text-muted bg-gray-50 cursor-not-allowed'}`}
+            >
+              <span>{s.emoji}</span>
+              <span>{s.label}</span>
+              <span className="font-normal opacity-60">~{totalCost.toFixed(0)} €</span>
+            </button>
+          )
+        })}
+      </div>
+      {feedback && (
+        <div className="mt-2 text-xs text-status-teal font-medium animate-pulse">{feedback}</div>
+      )}
+    </div>
+  )
+}
+
 export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: DashboardProps) {
   const [selectedAsset, setSelectedAsset] = useState<Asset | null>(null)
   const [detailAsset, setDetailAsset] = useState<Asset | null>(null)
@@ -91,6 +235,16 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
     setFlashAssetId(assetId)
     setTimeout(() => setFlashAssetId(null), 600)
   }, [onSell])
+
+  const handleBuyMultiple = useCallback((buys: { assetId: string; qty: number }[]) => {
+    for (const { assetId, qty } of buys) {
+      onBuy(assetId, qty)
+    }
+    if (buys.length > 0) {
+      setFlashAssetId(buys[buys.length - 1].assetId)
+      setTimeout(() => setFlashAssetId(null), 800)
+    }
+  }, [onBuy])
 
   const handleEndRoundClick = () => {
     // Warn if lots of cash and no buys this round
@@ -130,6 +284,14 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
 
       {/* Live-Sektoranalyse */}
       <PortfolioAnalysis state={state} assets={assets} />
+
+      {/* Schnell investieren */}
+      <QuickInvestBar
+        assets={assets}
+        cash={state.cash}
+        currentPrices={state.currentPrices}
+        onBuyMultiple={handleBuyMultiple}
+      />
 
       {/* Stats row */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
