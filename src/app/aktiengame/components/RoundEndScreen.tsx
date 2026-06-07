@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import type { Asset, GameState } from '../types'
-import { REFLECTION_QUESTIONS, ROLE_REFLECTION_QUESTIONS, PLAYER_ROLES, calculatePortfolioValue } from '../lib/gameEngine'
+import { REFLECTION_QUESTIONS, ROLE_REFLECTION_QUESTIONS, PLAYER_ROLES, calculatePortfolioValue, roundToYear } from '../lib/gameEngine'
 import EventImpactHeatmap from './EventImpactHeatmap'
 
 function ChevronDownIcon() {
@@ -94,7 +94,7 @@ export default function RoundEndScreen({ state, assets, onReflectionSubmit, onNe
       {state.currentEvent && (
         <div className="bg-white rounded-2xl shadow-card p-6 border-l-4 border-primary-medium">
           <div className="text-xs font-semibold text-primary-medium uppercase tracking-wide mb-1">
-            Marktereignis Runde {state.currentRound}
+            Marktereignis {roundToYear(state.currentRound)}
           </div>
           <h3 className="font-heading text-xl font-bold text-primary-dark mb-2">
             {state.currentEvent.title}
@@ -132,7 +132,7 @@ export default function RoundEndScreen({ state, assets, onReflectionSubmit, onNe
         return nextRoundTip ? (
           <div className={`rounded-2xl p-4 border ${roleDef.bgClass} ${roleDef.borderClass}`}>
             <div className={`text-xs font-bold uppercase tracking-wide mb-1 ${roleDef.colorClass}`}>
-              Strategietipp für Runde {state.currentRound + 1} — {roleDef.name}
+              Strategietipp für {roundToYear(state.currentRound + 1)} — {roleDef.name}
             </div>
             <p className="text-sm text-text-secondary">{nextRoundTip}</p>
           </div>
@@ -142,7 +142,7 @@ export default function RoundEndScreen({ state, assets, onReflectionSubmit, onNe
       {/* Price changes table */}
       <div className="bg-white rounded-2xl shadow-card overflow-hidden">
         <div className="p-4 border-b border-gray-100">
-          <h3 className="font-heading font-bold text-primary-dark">Kursentwicklung diese Runde</h3>
+          <h3 className="font-heading font-bold text-primary-dark">Kursentwicklung {roundToYear(state.currentRound)}</h3>
         </div>
         <div className="overflow-x-auto">
           <table className="w-full text-sm">
@@ -232,7 +232,7 @@ export default function RoundEndScreen({ state, assets, onReflectionSubmit, onNe
           onClick={onNextRound}
           className="bg-primary-dark text-white font-semibold px-10 py-4 rounded-xl hover:bg-primary-medium transition-colors text-lg"
         >
-          {isLastRound ? 'Zur Auswertung →' : 'Nächste Runde →'}
+          {isLastRound ? 'Zur Auswertung →' : `Weiter zu ${roundToYear(state.currentRound + 1)} →`}
         </button>
       </div>
     </div>

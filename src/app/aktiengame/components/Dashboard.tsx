@@ -22,7 +22,7 @@ function InfoIcon() {
   return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 }
 
-import { calculatePortfolioValue } from '../lib/gameEngine'
+import { calculatePortfolioValue, roundToYear, START_YEAR } from '../lib/gameEngine'
 import TradeModal from './TradeModal'
 import AssetDetailPanel from './AssetDetailPanel'
 import MissionBanner from './MissionBanner'
@@ -264,7 +264,10 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
       <div className="bg-white rounded-2xl shadow-card p-4">
         <div className="flex items-center justify-between mb-2">
           <span className="text-sm font-semibold text-text-secondary">
-            Runde {state.currentRound} von {state.totalRounds}
+            Jahr {roundToYear(state.currentRound)}
+            <span className="ml-2 text-xs font-normal text-text-muted">
+              · {state.currentRound}/{state.totalRounds} · {START_YEAR}–{START_YEAR + state.totalRounds - 1}
+            </span>
             <span className="ml-2 text-xs font-normal text-text-muted capitalize">· {state.difficulty}</span>
           </span>
           <div className="flex items-center gap-3">
@@ -414,7 +417,7 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
                         </span>
                         <div>
                           <div className="text-sm font-semibold text-text-primary">{asset?.name ?? tx.assetId}</div>
-                          <div className="text-xs text-text-muted">Runde {tx.round} · {tx.quantity} Anteile à {tx.price.toFixed(2)} €</div>
+                          <div className="text-xs text-text-muted">Jahr {roundToYear(tx.round)} · {tx.quantity} Anteile à {tx.price.toFixed(2)} €</div>
                         </div>
                       </div>
                       <div className={`font-semibold text-sm ${tx.type === 'buy' ? 'text-red-500' : 'text-status-teal'}`}>
@@ -435,7 +438,7 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
           onClick={handleEndRoundClick}
           className="w-full md:w-auto bg-primary-dark text-white font-semibold px-12 py-4 rounded-xl hover:bg-primary-medium transition-colors text-lg"
         >
-          Runde beenden →
+          Jahr {roundToYear(state.currentRound)} abschließen →
         </button>
         <p className="text-xs text-text-muted text-center max-w-sm">
           Dieses Spiel verwendet ausschließlich fiktive Unternehmen und virtuelles Kapital. Es stellt keine Anlageberatung dar.

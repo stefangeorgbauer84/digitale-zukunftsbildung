@@ -9,6 +9,7 @@ import {
   calcRoleMissionBonus,
   calcGesamtScore,
   PLAYER_ROLES,
+  roundToYear,
 } from '../lib/gameEngine'
 
 interface Props {
@@ -142,7 +143,7 @@ export default function LehrpersonenAuswertung({ state, assets, onClose }: Props
               <div className="space-y-3">
                 {state.reflections.map((r, i) => (
                   <div key={i} className="border border-gray-100 rounded-xl p-4">
-                    <div className="text-xs text-text-muted mb-1">Runde {r.round}</div>
+                    <div className="text-xs text-text-muted mb-1">Jahr {roundToYear(r.round)}</div>
                     <div className="text-sm font-medium text-text-primary mb-2">{r.question}</div>
                     <div className="text-sm text-text-secondary bg-gray-50 rounded-lg px-3 py-2 italic">
                       {r.answer.trim() || <span className="text-text-muted">(keine Antwort gegeben)</span>}

@@ -9,6 +9,15 @@ import type {
 } from '../types'
 
 // ---------------------------------------------------------------------------
+// Spieljahr-Basis (Runde 1 = 2026, Runde 2 = 2027, …)
+// ---------------------------------------------------------------------------
+export const START_YEAR = 2026
+
+export function roundToYear(round: number): number {
+  return START_YEAR + round - 1
+}
+
+// ---------------------------------------------------------------------------
 // Schwierigkeitsgrad-Multiplikatoren
 // ---------------------------------------------------------------------------
 export const DIFFICULTY_MULTIPLIERS: Record<Difficulty, number> = {

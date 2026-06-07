@@ -10,6 +10,8 @@ import {
   calcRoleMissionBonus,
   calcGesamtScore,
   PLAYER_ROLES,
+  roundToYear,
+  START_YEAR,
 } from '../lib/gameEngine'
 import LehrpersonenAuswertung from './LehrpersonenAuswertung'
 
@@ -36,7 +38,7 @@ interface FinalScreenProps {
 }
 
 // Wealth curve over rounds (improvement 9)
-function WealthCurve({ wealthHistory, startCapital }: { wealthHistory: number[]; startCapital: number }) {
+function WealthCurve({ wealthHistory, startCapital, totalRounds }: { wealthHistory: number[]; startCapital: number; totalRounds: number }) {
   if (wealthHistory.length < 2) return null
   const min = Math.min(...wealthHistory, startCapital) * 0.98
   const max = Math.max(...wealthHistory, startCapital) * 1.02
@@ -81,8 +83,8 @@ function WealthCurve({ wealthHistory, startCapital }: { wealthHistory: number[];
         })}
       </svg>
       <div className="flex justify-between text-xs text-text-muted mt-1">
-        <span>Start</span>
-        <span>Ende</span>
+        <span>{START_YEAR}</span>
+        <span>{START_YEAR + totalRounds - 1}</span>
       </div>
     </div>
   )
@@ -155,7 +157,9 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
     <div className="space-y-6">
       {/* Result hero */}
       <div className="bg-white rounded-2xl shadow-card p-8 text-center">
-        <div className="text-sm font-semibold text-text-muted mb-1">Spielergebnis für {state.playerName}</div>
+        <div className="text-sm font-semibold text-text-muted mb-1">
+          Spielergebnis für {state.playerName} · {START_YEAR}–{START_YEAR + state.totalRounds - 1}
+        </div>
         <div className="flex items-center justify-center gap-4 flex-wrap my-4">
           <div className="text-center">
             <div className="text-xs text-text-muted">Startkapital</div>
@@ -197,7 +201,7 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
 
       {/* Wealth curve (improvement 9) */}
       <div className="bg-white rounded-2xl shadow-card p-5">
-        <WealthCurve wealthHistory={state.wealthHistory} startCapital={state.startCapital} />
+        <WealthCurve wealthHistory={state.wealthHistory} startCapital={state.startCapital} totalRounds={state.totalRounds} />
       </div>
 
       {/* Ampel */}
@@ -300,7 +304,7 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
             <div className="px-5 pb-5 space-y-4 border-t border-gray-100">
               {state.reflections.map((r, i) => (
                 <div key={i}>
-                  <div className="text-xs text-text-muted mb-0.5">Runde {r.round}</div>
+                  <div className="text-xs text-text-muted mb-0.5">Jahr {roundToYear(r.round)}</div>
                   <div className="text-sm font-medium text-text-primary mb-1">{r.question}</div>
                   <div className="text-sm text-text-secondary italic bg-gray-50 rounded-lg px-3 py-2">
                     {r.answer.trim() || '(keine Antwort)'}
