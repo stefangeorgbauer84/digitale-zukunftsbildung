@@ -521,6 +521,47 @@ export function calcMissionProgress(state: GameState, assets: Asset[]): number {
   }
 }
 
+/**
+ * Gewichteter Gesamtscore 0–100 mit Schulnote
+ * Performance 40 % | Diversifikation 20 % | Reflexion 20 % | Rolle 15 % | Risikobewusstsein 5 %
+ */
+export function calcGesamtScore(
+  state: GameState,
+  assets: Asset[]
+): { score: number; grade: 'A' | 'B' | 'C' | 'D' | 'E'; breakdown: Record<string, number> } {
+  const portfolioValue = calculatePortfolioValue(state.positions, state.currentPrices)
+  const totalWealth = state.cash + portfolioValue
+  const performancePct = ((totalWealth - state.startCapital) / state.startCapital) * 100
+
+  // Performance: -20 % → 0 Punkte, +20 % → 100 Punkte, linear
+  const perfScore = Math.min(100, Math.max(0, Math.round(((performancePct + 20) / 40) * 100)))
+  const diversiScore = calcDiversificationScore(state.positions, assets, state.currentPrices)
+  const reflScore = calcReflectionScore(state.reflections, state.totalRounds)
+  const { fulfilled } = calcRoleMissionBonus(state, assets)
+  const roleScore = fulfilled ? 100 : 0
+  const riskScore = 100 - calcRiskScore(state.positions, assets, state.currentPrices)
+
+  const score = Math.round(
+    perfScore * 0.4 +
+    diversiScore * 0.2 +
+    reflScore * 0.2 +
+    roleScore * 0.15 +
+    riskScore * 0.05
+  )
+
+  const grade =
+    score >= 87 ? 'A' :
+    score >= 72 ? 'B' :
+    score >= 57 ? 'C' :
+    score >= 42 ? 'D' : 'E'
+
+  return {
+    score,
+    grade,
+    breakdown: { perfScore, diversiScore, reflScore, roleScore, riskScore },
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Initialzustand
 // ---------------------------------------------------------------------------

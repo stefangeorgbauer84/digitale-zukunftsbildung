@@ -2,7 +2,8 @@
 
 import { useState } from 'react'
 import type { Asset, GameState } from '../types'
-import { REFLECTION_QUESTIONS, ROLE_REFLECTION_QUESTIONS, calculatePortfolioValue } from '../lib/gameEngine'
+import { REFLECTION_QUESTIONS, ROLE_REFLECTION_QUESTIONS, PLAYER_ROLES, calculatePortfolioValue } from '../lib/gameEngine'
+import EventImpactHeatmap from './EventImpactHeatmap'
 
 function ChevronDownIcon() {
   return <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -30,6 +31,32 @@ function LernHinweis({ title, children }: { title: string; children: React.React
       )}
     </div>
   )
+}
+
+// Rollenspezifischer Tipp für die nächste Runde basierend auf aktuellem Spielstand
+function getNextRoundTip(state: GameState, assets: Asset[]): string | null {
+  const portfolioValue = calculatePortfolioValue(state.positions, state.currentPrices)
+  const total = portfolioValue + state.cash
+  const cashPct = total > 0 ? (state.cash / total) * 100 : 100
+  const posCount = state.positions.length
+
+  switch (state.role) {
+    case 'sicherheitsdenker':
+      if (cashPct > 50) return `Du hast noch ${cashPct.toFixed(0)} % Cash. Als Sicherheitsdenker könntest du einen defensiven ETF in Betracht ziehen, um dein Kapital arbeiten zu lassen.`
+      if (posCount < 3) return `Du hast erst ${posCount} Position(en). Deine Mission fordert mindestens 3 verschiedene Assets – streue breiter.`
+      return `Dein Portfolio wirkt solide. Überprüfe, ob du zu viel in einem einzelnen Asset hast – auch bei niedrigem Risiko gilt: Streuung schützt.`
+    case 'wachstumssucher':
+      if (cashPct > 40) return `${cashPct.toFixed(0)} % Cash generiert keine Rendite. Als Wachstumssucher solltest du Wachstumswerte konsequenter aufbauen.`
+      return `Halte Wachstumswerte auch bei Kursrückgängen – kurzfristige Verluste gehören zur Strategie. Überprüfe: Hast du Technologie und Mobilität abgedeckt?`
+    case 'nachhaltigkeitsinvestor':
+      if (posCount === 0) return `Noch keine Positionen. Als Nachhaltigkeitsinvestor sind GreenEnergy Europe und der Austria Stability ETF ideal.`
+      return `Prüfe, ob mindestens 50 % deines investierten Kapitals in nachhaltigen Assets liegen – das ist deine Missions-Bedingung.`
+    case 'diversifizierer':
+      if (posCount < 4) return `Du hast ${posCount} Position(en). Deine Mission verlangt mindestens 4 Assets aus 3 verschiedenen Sektoren. Erkunde neue Branchen.`
+      return `Gut gestreut! Stelle sicher, dass kein einzelnes Asset mehr als 30 % deines Portfolios ausmacht.`
+    case 'spekulant':
+      return `Du hast bisher ${state.transactions.length} Transaktionen. Ziel: mindestens 8. Reagiere aktiv auf Ereignisse – aber reflektiere nach jeder Entscheidung.`
+  }
 }
 
 interface RoundEndScreenProps {
@@ -92,6 +119,25 @@ export default function RoundEndScreen({ state, assets, onReflectionSubmit, onNe
           </div>
         </div>
       )}
+
+      {/* Ereignis-Heatmap + Marktstimmung */}
+      {state.currentEvent && (
+        <EventImpactHeatmap event={state.currentEvent} assets={assets} state={state} />
+      )}
+
+      {/* Didaktische Strategie-Empfehlung für nächste Runde */}
+      {!isLastRound && state.currentEvent && (() => {
+        const roleDef = PLAYER_ROLES[state.role]
+        const nextRoundTip = getNextRoundTip(state, assets)
+        return nextRoundTip ? (
+          <div className={`rounded-2xl p-4 border ${roleDef.bgClass} ${roleDef.borderClass}`}>
+            <div className={`text-xs font-bold uppercase tracking-wide mb-1 ${roleDef.colorClass}`}>
+              Strategietipp für Runde {state.currentRound + 1} — {roleDef.name}
+            </div>
+            <p className="text-sm text-text-secondary">{nextRoundTip}</p>
+          </div>
+        ) : null
+      })()}
 
       {/* Price changes table */}
       <div className="bg-white rounded-2xl shadow-card overflow-hidden">

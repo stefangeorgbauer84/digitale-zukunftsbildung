@@ -8,8 +8,10 @@ import {
   calcRiskScore,
   calcReflectionScore,
   calcRoleMissionBonus,
+  calcGesamtScore,
   PLAYER_ROLES,
 } from '../lib/gameEngine'
+import LehrpersonenAuswertung from './LehrpersonenAuswertung'
 
 function ChevronDownIcon() {
   return <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -86,9 +88,18 @@ function WealthCurve({ wealthHistory, startCapital }: { wealthHistory: number[];
   )
 }
 
+const GRADE_CONFIG: Record<string, { label: string; ring: string; text: string; bg: string }> = {
+  A: { label: 'Ausgezeichnet', ring: 'ring-status-teal', text: 'text-status-teal', bg: 'bg-status-teal-light' },
+  B: { label: 'Gut', ring: 'ring-blue-400', text: 'text-blue-600', bg: 'bg-blue-50' },
+  C: { label: 'Befriedigend', ring: 'ring-status-orange', text: 'text-status-orange', bg: 'bg-status-orange-light' },
+  D: { label: 'Genügend', ring: 'ring-orange-400', text: 'text-orange-600', bg: 'bg-orange-50' },
+  E: { label: 'Nicht genügend', ring: 'ring-red-400', text: 'text-red-600', bg: 'bg-red-50' },
+}
+
 export default function FinalScreen({ state, assets, onRestart }: FinalScreenProps) {
   const [openReflections, setOpenReflections] = useState(false)
   const [copied, setCopied] = useState(false)
+  const [showLehrpersonen, setShowLehrpersonen] = useState(false)
 
   const portfolioValue = calculatePortfolioValue(state.positions, state.currentPrices)
   const totalWealth = state.cash + portfolioValue
@@ -99,6 +110,8 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
   const reflectionScore = calcReflectionScore(state.reflections, state.totalRounds)
   const { fulfilled: missionFulfilled, bonusPoints, reason: missionReason } = calcRoleMissionBonus(state, assets)
   const roleDef = PLAYER_ROLES[state.role]
+  const { score: gesamtScore, grade, breakdown } = calcGesamtScore(state, assets)
+  const gradeCfg = GRADE_CONFIG[grade]
 
   // Best/worst position
   const positionsWithGain = state.positions.map((pos) => {
@@ -157,6 +170,29 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
         <div className={`text-5xl font-bold ${performance >= 0 ? 'text-status-teal' : 'text-red-500'}`}>
           {performance >= 0 ? '+' : ''}{performance.toFixed(1)} %
         </div>
+      </div>
+
+      {/* Gesamtscore + Schulnote */}
+      <div className={`bg-white rounded-2xl shadow-card p-5 flex items-center gap-5 ring-2 ${gradeCfg.ring}`}>
+        <div className={`w-16 h-16 rounded-2xl ${gradeCfg.bg} flex flex-col items-center justify-center flex-shrink-0`}>
+          <span className={`text-3xl font-bold ${gradeCfg.text}`}>{grade}</span>
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-baseline gap-2 flex-wrap">
+            <span className={`text-2xl font-bold ${gradeCfg.text}`}>{gesamtScore} / 100</span>
+            <span className="text-sm text-text-muted">Gesamtpunktzahl</span>
+          </div>
+          <div className={`text-sm font-semibold ${gradeCfg.text}`}>{gradeCfg.label}</div>
+          <div className="text-xs text-text-muted mt-1">
+            Performance 40 % · Diversifikation 20 % · Reflexion 20 % · Rolle 15 % · Risiko 5 %
+          </div>
+        </div>
+        <button
+          onClick={() => setShowLehrpersonen(true)}
+          className="flex-shrink-0 text-xs border border-primary-light text-primary-dark hover:bg-primary-50 px-3 py-2 rounded-lg transition-colors font-medium"
+        >
+          Lehrpersonen-Auswertung
+        </button>
       </div>
 
       {/* Wealth curve (improvement 9) */}
@@ -305,6 +341,15 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
           Nochmal spielen
         </button>
       </div>
+
+      {/* Lehrpersonen-Modal */}
+      {showLehrpersonen && (
+        <LehrpersonenAuswertung
+          state={state}
+          assets={assets}
+          onClose={() => setShowLehrpersonen(false)}
+        />
+      )}
     </div>
   )
 }

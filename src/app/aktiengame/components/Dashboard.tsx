@@ -23,6 +23,8 @@ import { calculatePortfolioValue } from '../lib/gameEngine'
 import TradeModal from './TradeModal'
 import AssetDetailPanel from './AssetDetailPanel'
 import MissionBanner from './MissionBanner'
+import PortfolioAnalysis from './PortfolioAnalysis'
+import GlossarModal, { GlossarButton } from './GlossarModal'
 
 interface DashboardProps {
   state: GameState
@@ -69,6 +71,7 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
   const [activeTab, setActiveTab] = useState<'markt' | 'verlauf'>('markt')
   const [flashAssetId, setFlashAssetId] = useState<string | null>(null)
   const [showEndWarning, setShowEndWarning] = useState(false)
+  const [showGlossar, setShowGlossar] = useState(false)
 
   const portfolioValue = calculatePortfolioValue(state.positions, state.currentPrices)
   const totalWealth = state.cash + portfolioValue
@@ -110,9 +113,12 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
             Runde {state.currentRound} von {state.totalRounds}
             <span className="ml-2 text-xs font-normal text-text-muted capitalize">· {state.difficulty}</span>
           </span>
-          <span className="text-sm text-text-muted">
-            Spieler: <strong>{state.playerName}</strong>
-          </span>
+          <div className="flex items-center gap-3">
+            <GlossarButton onClick={() => setShowGlossar(true)} />
+            <span className="text-sm text-text-muted hidden sm:block">
+              <strong>{state.playerName}</strong>
+            </span>
+          </div>
         </div>
         <div className="w-full bg-gray-100 rounded-full h-2">
           <div
@@ -121,6 +127,9 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
           />
         </div>
       </div>
+
+      {/* Live-Sektoranalyse */}
+      <PortfolioAnalysis state={state} assets={assets} />
 
       {/* Stats row */}
       <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
@@ -315,6 +324,9 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
           onClose={() => setSelectedAsset(null)}
         />
       )}
+
+      {/* Glossar */}
+      {showGlossar && <GlossarModal onClose={() => setShowGlossar(false)} />}
 
       {/* Asset detail panel */}
       {detailAsset && (
