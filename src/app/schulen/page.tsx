@@ -36,7 +36,7 @@ const schultypen = [
     gradient: 'linear-gradient(135deg, #2d1b69 0%, #4a2d8a 60%, #6b4db0 100%)',
     schulstufen: '9.–13. Schulstufe',
     fokus: 'Wirtschaft & persönliche Finanzen',
-    teaser: 'Betriebswirtschaftliche Inhalte als persönliche Finanzbildung erleben — vom Lohnzettel bis zum Haushaltsbudget.',
+    teaser: 'Betriebswirtschaftliche Inhalte als persönliche Finanzbildung erleben, vom Lohnzettel bis zum Haushaltsbudget.',
     highlights: ['Lohnabrechnung', 'Haushaltsbudget', 'Investieren', 'Schuldenprävention'],
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -56,7 +56,7 @@ const schultypen = [
     gradient: 'linear-gradient(135deg, #134e4a 0%, #0f766e 60%, #14b8a6 100%)',
     schulstufen: '9.–13. Schulstufe',
     fokus: 'Technik & Berufseinstieg',
-    teaser: 'Technische Karrierechancen finanziell klug nutzen — von der Gehaltsverhandlung bis zum Vermögensaufbau.',
+    teaser: 'Technische Karrierechancen finanziell klug nutzen, von der Gehaltsverhandlung bis zum Vermögensaufbau.',
     highlights: ['Gehaltsverhandlung', 'Sparen & Investieren', 'Digitale Finanztools', 'Versicherungen'],
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -91,7 +91,7 @@ const schultypen = [
     gradient: 'linear-gradient(135deg, #831843 0%, #be185d 60%, #ec4899 100%)',
     schulstufen: '9.–13. Schulstufe',
     fokus: 'Pädagogik & Multiplikator:innen',
-    teaser: 'Eigene Finanzkompetenz stärken und Finanzbildung als Multiplikator:innen weitertragen — in Schule, Familie und Beruf.',
+    teaser: 'Eigene Finanzkompetenz stärken und Finanzbildung als Multiplikator:innen weitertragen, in Schule, Familie und Beruf.',
     highlights: ['Geldbiografie', 'Konsumdruck', 'Pädagogische Methoden', 'Soziale Folgen'],
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -175,7 +175,7 @@ export default function SchulenUebersicht() {
             Skills-UP! unterstützt Schulen dabei, Jugendliche ab 15 Jahren auf reale Finanzentscheidungen vorzubereiten. Praxisnah, digital und sofort einsetzbar.
           </p>
           <p className="text-white/50 font-body text-base max-w-xl mx-auto mb-12">
-            Ob AHS, HAK, HTL, HLW, BAfEP, BASOP, PTS oder Berufsschule — für jede Zielgruppe gibt es passende Inhalte.
+            Ob AHS, HAK, HTL, HLW, BAfEP, BASOP, PTS oder Berufsschule, für jede Zielgruppe gibt es passende Inhalte.
           </p>
 
           {/* Quick jump chips */}

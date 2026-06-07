@@ -3,7 +3,7 @@ import SchulPage from '@/components/SchulPage'
 
 export const metadata: Metadata = {
   title: 'BAfEP & BASOP | Skills-UP! Finanzbildung',
-  description: 'Skills-UP! für BAfEP und BASOP — Finanzkompetenz als persönliche Stärke und als pädagogisches Werkzeug für zukünftige Multiplikator:innen.',
+  description: 'Skills-UP! für BAfEP und BASOP. Finanzkompetenz als persönliche Stärke und als pädagogisches Werkzeug für zukünftige Multiplikator:innen.',
 }
 
 const icon = (
@@ -33,12 +33,12 @@ export default function BafepPage() {
       schulstufen="9.–13. Schulstufe"
       lehrplanFach="Persönlichkeitsbildung · Pädagogik · Praktikum · Projektarbeit"
       icon={icon}
-      lehrerProblem="Ich bilde Erzieher:innen und Sozialpädagog:innen aus. Geld ist in ihrem späteren Berufsfeld ständig ein Thema — aber in der Ausbildung kommt Finanzkompetenz kaum vor."
-      intro="BAfEP und BASOP bilden Menschen aus, die später mit Kindern, Jugendlichen und Familien arbeiten. Skills-UP! ist hier doppelt wirksam: Schüler:innen stärken ihre eigene Finanzkompetenz — und lernen gleichzeitig, wie man über Geld spricht und Finanzkompetenz weitervermittelt."
+      lehrerProblem="Ich bilde Erzieher:innen und Sozialpädagog:innen aus. Geld ist in ihrem späteren Berufsfeld ständig ein Thema, aber in der Ausbildung kommt Finanzkompetenz kaum vor."
+      intro="BAfEP und BASOP bilden Menschen aus, die später mit Kindern, Jugendlichen und Familien arbeiten. Skills-UP! ist hier doppelt wirksam: Schüler:innen stärken ihre eigene Finanzkompetenz, und lernen gleichzeitig, wie man über Geld spricht und Finanzkompetenz weitervermittelt."
       lehrplanPassung={[
         {
           fach: 'Persönlichkeitsbildung & Selbstkompetenz',
-          kontext: 'Die eigene Geldbiografie, finanzielle Glaubenssätze, Konsumgewohnheiten — Skills-UP! bietet Anlässe für tiefe Selbstreflexion, die in der Pädagogik-Ausbildung oft fehlen.',
+          kontext: 'Die eigene Geldbiografie, finanzielle Glaubenssätze, Konsumgewohnheiten. Skills-UP! bietet Anlässe für tiefe Selbstreflexion, die in der Pädagogik-Ausbildung oft fehlen.',
         },
         {
           fach: 'Pädagogik & Didaktik',
@@ -50,27 +50,27 @@ export default function BafepPage() {
         },
         {
           fach: 'Projektarbeit & Abschlussarbeiten',
-          kontext: '"Finanzbildung im Kindergarten — wie man Kindern Geldverständnis beibringt" ist ein starkes Abschlussthema. Skills-UP! liefert die inhaltliche Basis und Praxismethoden.',
+          kontext: '"Finanzbildung im Kindergarten, wie man Kindern Geldverständnis beibringt" ist ein starkes Abschlussthema. Skills-UP! liefert die inhaltliche Basis und Praxismethoden.',
         },
         {
           fach: 'Sozialkunde & Gesellschaft (BASOP)',
-          kontext: 'Armut, soziale Ungleichheit, Schulden als gesellschaftliche Themen — Skills-UP! verbindet persönliche Finanzkompetenz mit sozialer Reflexion.',
+          kontext: 'Armut, soziale Ungleichheit, Schulden als gesellschaftliche Themen. Skills-UP! verbindet persönliche Finanzkompetenz mit sozialer Reflexion.',
         },
       ]}
       unterrichtsEinheiten={[
         {
           schritt: 'Geldbiografie',
-          was: '"Was war deine erste Erinnerung an Geld?" — Schüler:innen reflektieren kurz in der App, dann teilen sie in Kleingruppen. Du moderierst. Kein Wissen nötig, nur ein offenes Setting.',
+          was: '"Was war deine erste Erinnerung an Geld?". Schüler:innen reflektieren kurz in der App, dann teilen sie in Kleingruppen. Du moderierst. Kein Wissen nötig, nur ein offenes Setting.',
           zeitMinuten: 10,
         },
         {
           schritt: 'Modul: Konsumdruck bei Jugendlichen',
-          was: 'Wie wirkt Werbung? Was löst Social Media bei Kaufentscheidungen aus? Schüler:innen erleben das in der Simulation — und reflektieren dann aus pädagogischer Perspektive: Wie würden sie das mit Jugendlichen besprechen?',
+          was: 'Wie wirkt Werbung? Was löst Social Media bei Kaufentscheidungen aus? Schüler:innen erleben das in der Simulation, und reflektieren dann aus pädagogischer Perspektive: Wie würden sie das mit Jugendlichen besprechen?',
           zeitMinuten: 20,
         },
         {
           schritt: 'Methodenwerkzeug: Finanzbildung mit Kindern',
-          was: 'Skills-UP! zeigt einfache Methoden, wie man mit Kindern über Geld spricht — Rollenspiele, Geschichten, Alltagssituationen. Schüler:innen erproben diese Methoden direkt im Unterricht.',
+          was: 'Skills-UP! zeigt einfache Methoden, wie man mit Kindern über Geld spricht. Rollenspiele, Geschichten, Alltagssituationen. Schüler:innen erproben diese Methoden direkt im Unterricht.',
           zeitMinuten: 15,
         },
         {
@@ -80,17 +80,17 @@ export default function BafepPage() {
         },
       ]}
       module={[
-        { titel: 'Konsumfallen', lernziel: 'FOMO, Present Bias, Dark Patterns verstehen — und als pädagogische Fachkraft wissen, wie Konsumpsychologie auf Jugendliche wirkt.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Pädagogik & Konsum', icon: alertIcon },
-        { titel: 'Schulden & Geld leihen', lernziel: 'Soziale Folgen von Schulden verstehen: Inkasso, Eskalationskette, Schuldnerberatung — Gesprächsgrundlage für Familien- und Sozialarbeit.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Soziale Kompetenz', icon: chartIcon },
-        { titel: 'Finanzplanung', lernziel: 'Persönliches Monatsbudget erstellen — und die Methode kennenlernen, um sie später einfach mit Kindern, Jugendlichen oder Familien zu üben.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Lebenskompetenz', icon: bookIcon },
-        { titel: 'Finfluencer in Österreich', lernziel: 'Parasoziale Beziehungen und Medienmanipulation verstehen — FMA-Regulierung und Prebunking als Medienkompetenz für die Arbeit mit Jugendlichen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Medienkompetenz', icon: shieldIcon },
-        { titel: 'Risiko & Krisen', lernziel: 'Notgroschen, Krisenbudget, Eskalationskette — finanzielle Risikolagen frühzeitig erkennen und geeignete Stellen kennen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Krisenmanagement', icon: chartIcon },
+        { titel: 'Konsumfallen', lernziel: 'FOMO, Present Bias, Dark Patterns verstehen, und als pädagogische Fachkraft wissen, wie Konsumpsychologie auf Jugendliche wirkt.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Pädagogik & Konsum', icon: alertIcon },
+        { titel: 'Schulden & Geld leihen', lernziel: 'Soziale Folgen von Schulden verstehen: Inkasso, Eskalationskette, Schuldnerberatung. Gesprächsgrundlage für Familien- und Sozialarbeit.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Soziale Kompetenz', icon: chartIcon },
+        { titel: 'Finanzplanung', lernziel: 'Persönliches Monatsbudget erstellen, und die Methode kennenlernen, um sie später einfach mit Kindern, Jugendlichen oder Familien zu üben.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Lebenskompetenz', icon: bookIcon },
+        { titel: 'Finfluencer in Österreich', lernziel: 'Parasoziale Beziehungen und Medienmanipulation verstehen. FMA-Regulierung und Prebunking als Medienkompetenz für die Arbeit mit Jugendlichen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Medienkompetenz', icon: shieldIcon },
+        { titel: 'Risiko & Krisen', lernziel: 'Notgroschen, Krisenbudget, Eskalationskette, finanzielle Risikolagen frühzeitig erkennen und geeignete Stellen kennen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Krisenmanagement', icon: chartIcon },
         { titel: 'Ratenkauf & BNPL', lernziel: 'BNPL-Risiken mit echten Zahlen verstehen: warum Jugendliche besonders gefährdet sind und wie man das Thema pädagogisch aufgreift.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Konsumentenschutz', icon: alertIcon },
       ]}
       simulationen={[
-        { titel: 'Konsumfallen-Parcours', untertitel: 'FOMO, künstliche Knappheit, Abo-Fallen — als Pädagogin selbst erleben, was Jugendliche täglich erleben.', dauer: '15–20 Min', icon: playIcon },
-        { titel: 'Bank-Simulation', untertitel: 'Girokonto eröffnen, Dauerauftrag einrichten, Überweisung — Grundlagen die man später einfach erklären kann.', dauer: '20–30 Min', icon: homeIcon },
-        { titel: 'Kredit-Falle', untertitel: 'Konsumkredit und BNPL-Szenarien durchspielen — ideale Grundlage für Elterngespräche über Schulden.', dauer: '15–20 Min', icon: alertIcon },
+        { titel: 'Konsumfallen-Parcours', untertitel: 'FOMO, künstliche Knappheit, Abo-Fallen, als Pädagogin selbst erleben, was Jugendliche täglich erleben.', dauer: '15–20 Min', icon: playIcon },
+        { titel: 'Bank-Simulation', untertitel: 'Girokonto eröffnen, Dauerauftrag einrichten, Überweisung. Grundlagen die man später einfach erklären kann.', dauer: '20–30 Min', icon: homeIcon },
+        { titel: 'Kredit-Falle', untertitel: 'Konsumkredit und BNPL-Szenarien durchspielen, ideale Grundlage für Elterngespräche über Schulden.', dauer: '15–20 Min', icon: alertIcon },
         { titel: 'Versicherungs-Entscheider', untertitel: 'Welche Versicherungen braucht man wirklich? Szenarien die man auch mit Familien besprechen kann.', dauer: '15–20 Min', icon: shieldIcon },
       ]}
       themen={[
@@ -112,31 +112,31 @@ export default function BafepPage() {
       features={[
         {
           titel: 'Reflexions-Module',
-          nutzenfuerLehrer: 'Skills-UP! bietet strukturierte Reflexionsaufgaben: eigene Geldbiografie, finanzielle Überzeugungen, Konsumgewohnheiten. Das ist ideal für Persönlichkeitsbildungs-Stunden — du musst die Fragen nicht selbst entwickeln.',
+          nutzenfuerLehrer: 'Skills-UP! bietet strukturierte Reflexionsaufgaben: eigene Geldbiografie, finanzielle Überzeugungen, Konsumgewohnheiten. Das ist ideal für Persönlichkeitsbildungs-Stunden, du musst die Fragen nicht selbst entwickeln.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>,
         },
         {
           titel: 'Pädagogisches Methodenmodul',
-          nutzenfuerLehrer: 'Ein eigener Bereich zeigt, wie man Finanzkompetenz an Kinder und Jugendliche vermittelt — mit einfachen Methoden, Geschichten und Spielen. Das ist Fachdidaktik für einen Bereich, der sonst kaum Materialien hat.',
+          nutzenfuerLehrer: 'Ein eigener Bereich zeigt, wie man Finanzkompetenz an Kinder und Jugendliche vermittelt, mit einfachen Methoden, Geschichten und Spielen. Das ist Fachdidaktik für einen Bereich, der sonst kaum Materialien hat.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
         },
         {
-          titel: 'Peer-Videos — echte Gespräche',
-          nutzenfuerLehrer: 'Gleichaltrige sprechen über ihre Erfahrungen mit Geld, Schulden, Konsumdruck — offen und authentisch. Ideal für BAfEP, weil diese Offenheit im pädagogischen Kontext besonders wertvoll ist.',
+          titel: 'Peer-Videos, echte Gespräche',
+          nutzenfuerLehrer: 'Gleichaltrige sprechen über ihre Erfahrungen mit Geld, Schulden, Konsumdruck, offen und authentisch. Ideal für BAfEP, weil diese Offenheit im pädagogischen Kontext besonders wertvoll ist.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>,
         },
         {
           titel: 'Dashboard für Lernbegleitung',
-          nutzenfuerLehrer: 'Du siehst, wo Schüler:innen stehen — inhaltlich und persönlich. Das ist in einem Ausbildungskontext wichtig: Du erkennst früh, wenn jemand selbst Unsicherheiten hat, die er later im Beruf mitbringt.',
+          nutzenfuerLehrer: 'Du siehst, wo Schüler:innen stehen, inhaltlich und persönlich. Das ist in einem Ausbildungskontext wichtig: Du erkennst früh, wenn jemand selbst Unsicherheiten hat, die er later im Beruf mitbringt.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>,
         },
       ]}
       lehrerZitat={{
-        text: 'Eine Schülerin hat nach der Reflexionseinheit gesagt: Ich glaub, ich hab selbst nie gelernt, wie man über Geld redet. Genau darum geht\'s an dieser Schule — und diesen Satz hätte ich ohne Skills-UP! wahrscheinlich nie gehört.',
+        text: 'Eine Schülerin hat nach der Reflexionseinheit gesagt: Ich glaub, ich hab selbst nie gelernt, wie man über Geld redet. Genau darum geht\'s an dieser Schule, und diesen Satz hätte ich ohne Skills-UP! wahrscheinlich nie gehört.',
         person: 'Pädagogik-Lehrerin, BAfEP Wien',
       }}
       lehrerFoto="/fotos/lehrer/bafep.png"
-      gruenderStatement="Wer als Pädagogin oder Pädagoge arbeitet, prägt früh das Verhältnis von Kindern zu Geld und Konsum. Deshalb ist Finanzbildung an der BAfEP keine nette Ergänzung — sie ist eine professionelle Notwendigkeit. Skills-UP! liefert dafür das Fundament."
+      gruenderStatement="Wer als Pädagogin oder Pädagoge arbeitet, prägt früh das Verhältnis von Kindern zu Geld und Konsum. Deshalb ist Finanzbildung an der BAfEP keine nette Ergänzung, sie ist eine professionelle Notwendigkeit. Skills-UP! liefert dafür das Fundament."
     />
   )
 }

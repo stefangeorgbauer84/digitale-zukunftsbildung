@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Über uns | Skills-UP! – Finanzbildung für Schulen',
-  description: 'Der Verein zur Entwicklung der digitalen Zukunftsbildung steht hinter Skills-UP! — dem Finanzbildungsprogramm für 15- bis 20-Jährige in österreichischen Schulen.',
+  description: 'Der Verein zur Entwicklung der digitalen Zukunftsbildung steht hinter Skills-UP!, dem Finanzbildungsprogramm für 15- bis 20-Jährige in österreichischen Schulen.',
 }
 
 const auszeichnungen = [
@@ -24,7 +24,7 @@ const auszeichnungen = [
     logoAlt: 'Nationale Finanzbildungsstrategie',
     badge: 'Offiziell anerkannt',
     titel: 'Nationale Finanzbildungsstrategie',
-    beschreibung: 'Skills-UP! ist Teil der Nationalen Finanzbildungsstrategie der österreichischen Bundesregierung — koordiniert durch das Bundesministerium für Finanzen.',
+    beschreibung: 'Skills-UP! ist Teil der Nationalen Finanzbildungsstrategie der österreichischen Bundesregierung. Koordiniert wird sie durch das Bundesministerium für Finanzen.',
     accent: '#2A8A76',
     bg: '#e6f4f1',
   },
@@ -97,7 +97,7 @@ export default function UeberUns() {
             <span className="text-primary-light">fit fürs echte Leben.</span>
           </h1>
           <p className="text-white/75 font-body text-xl max-w-2xl leading-relaxed">
-            Der Verein zur Entwicklung der digitalen Zukunftsbildung steht hinter Skills-UP! — dem Finanzbildungsprogramm für Österreichs Schulen.
+            Der Verein zur Entwicklung der digitalen Zukunftsbildung steht hinter Skills-UP!, dem Finanzbildungsprogramm für Österreichs Schulen.
           </p>
         </div>
 
@@ -124,7 +124,7 @@ export default function UeberUns() {
               Jugendliche treffen ab etwa 15 ihre ersten echten Geldentscheidungen: erstes Einkommen, Onlinekäufe, Verträge, Sparziele. Doch wie man mit Geld umgeht, lernt kaum jemand systematisch.
             </p>
             <p className="text-text-muted font-body text-lg leading-relaxed">
-              Genau hier setzt unser Verein an: Mit dem Unterrichtsprogramm <strong className="text-primary-dark">Skills-UP!</strong> bringen wir Finanzbildung praxisnah, digital und lehrplankonform in österreichische Klassenzimmer — von der AHS bis zur Berufsschule.
+              Genau hier setzt unser Verein an: Mit dem Unterrichtsprogramm <strong className="text-primary-dark">Skills-UP!</strong> bringen wir Finanzbildung praxisnah, digital und lehrplankonform in österreichische Klassenzimmer. Von der AHS bis zur Berufsschule.
             </p>
           </div>
 
@@ -138,10 +138,10 @@ export default function UeberUns() {
             </h2>
             <ul className="space-y-4">
               {[
-                { title: 'Praxis statt Theorie', desc: 'Lohnzettel, Budget, Depot, Gehaltsverhandlung — Schüler:innen lernen durch echtes Erleben in Simulationen.' },
+                { title: 'Praxis statt Theorie', desc: 'Lohnzettel, Budget, Depot, Gehaltsverhandlung: Schüler:innen lernen durch echtes Erleben in Simulationen.' },
                 { title: 'Lehrkräfte entlasten', desc: 'Fertige Module ohne Vorbereitungsaufwand und ein Dashboard, das Korrekturarbeit abnimmt.' },
-                { title: 'Österreichischer Kontext', desc: 'FinanzOnline, Kollektivvertrag, FMA, KSV — wir erklären das österreichische Finanzsystem, nicht abstrakte Theorie.' },
-                { title: 'Ehrlichkeit statt Hype', desc: 'Krypto, schnelle Gewinne, Finfluencer — wir vermitteln einen realistischen, kritischen Blick statt leerer Versprechen.' },
+                { title: 'Österreichischer Kontext', desc: 'FinanzOnline, Kollektivvertrag, FMA, KSV: wir erklären das österreichische Finanzsystem, nicht abstrakte Theorie.' },
+                { title: 'Ehrlichkeit statt Hype', desc: 'Krypto, schnelle Gewinne, Finfluencer: wir vermitteln einen realistischen, kritischen Blick statt leerer Versprechen.' },
               ].map((v) => (
                 <li key={v.title} className="flex items-start gap-4 p-4 bg-gray-50 rounded-2xl">
                   <div className="w-8 h-8 bg-primary-50 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
@@ -297,7 +297,7 @@ export default function UeberUns() {
               Skills-UP! an Ihre Schule bringen?
             </h2>
             <p className="text-white/70 font-body text-lg mb-8">
-              Wir richten uns nach Ihrem Schuljahr. Schicken Sie uns eine kurze Nachricht — wir melden uns innerhalb von 24 Stunden.
+              Wir richten uns nach Ihrem Schuljahr. Schicken Sie uns eine kurze Nachricht. Wir melden uns innerhalb von 24 Stunden.
             </p>
             <p className="text-white/40 text-xs font-body mb-6">Skills-UP! wird vom gemeinnützigen Verein zur Entwicklung der digitalen Zukunftsbildung betrieben. Sitz in Wien.</p>
             <Link href="/#kontakt"

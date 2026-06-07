@@ -42,7 +42,7 @@ export default function VideoSection({ variant = 'light', farbe = '#4a2d8a' }: V
             Sieh selbst, wie es funktioniert.
           </h2>
           <p className="font-body text-white/60 text-lg max-w-xl mx-auto">
-            Ein echter Einblick in die Module, Simulationen und das Lehrer-Dashboard — in weniger als 2 Minuten.
+            Ein echter Einblick in die Module, Simulationen und das Lehrer-Dashboard, in weniger als 2 Minuten.
           </p>
         </div>
 

@@ -9,19 +9,19 @@ const faqs = [
   },
   {
     q: 'Wie viel Vorbereitung brauchen Lehrkräfte?',
-    a: 'Keine. Alle Module, Aufgaben und Übungsblätter sind fertig aufbereitet und sofort startbereit. Lehrkräfte öffnen Skills-UP! im Browser, starten ein Modul oder eine Simulation — und die Schüler:innen arbeiten selbstständig. Das Dashboard zeigt den Fortschritt aller Klassen auf einen Blick.',
+    a: 'Keine. Alle Module, Aufgaben und Übungsblätter sind fertig aufbereitet und sofort startbereit. Lehrkräfte öffnen Skills-UP! im Browser, starten ein Modul oder eine Simulation, und die Schüler:innen arbeiten selbstständig. Das Dashboard zeigt den Fortschritt aller Klassen auf einen Blick.',
   },
   {
     q: 'Was sind die Praxissimulationen genau?',
-    a: 'Über 10 interaktive Szenarien aus dem echten Leben: virtuelles Depot eröffnen, Kontoüberweisung, Budgetplanung, Gehaltsverhandlung, Ratenkauf-Falle, Scam erkennen, Krypto-Mythen, Versicherungen und Notgroschen-Aufbau. Alles risikofrei in geschützter Umgebung — Lernen durch echtes Tun.',
+    a: 'Über 10 interaktive Szenarien aus dem echten Leben: virtuelles Depot eröffnen, Kontoüberweisung, Budgetplanung, Gehaltsverhandlung, Ratenkauf-Falle, Scam erkennen, Krypto-Mythen, Versicherungen und Notgroschen-Aufbau. Alles risikofrei in geschützter Umgebung. Lernen durch echtes Tun.',
   },
   {
     q: 'Muss etwas installiert werden? Ist es DSGVO-konform?',
-    a: 'Nein, es muss nichts installiert werden. Skills-UP! läuft direkt im Browser, ist EU-rechtssicher und vollständig DSGVO-konform. Kein IT-Aufwand für die Schule — ein schulweites Rollout ist in wenigen Minuten möglich.',
+    a: 'Nein, es muss nichts installiert werden. Skills-UP! läuft direkt im Browser, ist EU-rechtssicher und vollständig DSGVO-konform. Kein IT-Aufwand für die Schule, ein schulweites Rollout ist in wenigen Minuten möglich.',
   },
   {
     q: 'Wie ist das Programm didaktisch aufgebaut?',
-    a: 'Skills-UP! kombiniert Microlearning (kurze Lerneinheiten), jugendnahe Peer-Videos, Gamification (Punkte, Quizzes, Badges) und ein Lehrer-Dashboard. Jedes der 12+ Module gibt es in einer Kurzversion (15 Minuten) und einer Langversion (50 Minuten) — flexibel für jede Unterrichtssituation.',
+    a: 'Skills-UP! kombiniert Microlearning (kurze Lerneinheiten), jugendnahe Peer-Videos, Gamification (Punkte, Quizzes, Badges) und ein Lehrer-Dashboard. Jedes der 12+ Module gibt es in einer Kurzversion (15 Minuten) und einer Langversion (50 Minuten), flexibel für jede Unterrichtssituation.',
   },
   {
     q: 'Ist Skills-UP! ausgezeichnet oder zertifiziert?',

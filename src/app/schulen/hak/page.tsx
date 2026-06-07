@@ -3,7 +3,7 @@ import SchulPage from '@/components/SchulPage'
 
 export const metadata: Metadata = {
   title: 'HAK & HAS | Skills-UP! Finanzbildung',
-  description: 'Skills-UP! für HAK und HAS — persönliche Finanzkompetenz als Ergänzung zu Betriebswirtschaft und Rechnungswesen. Sofort einsetzbar.',
+  description: 'Skills-UP! für HAK und HAS, persönliche Finanzkompetenz als Ergänzung zu Betriebswirtschaft und Rechnungswesen. Sofort einsetzbar.',
 }
 
 const icon = (
@@ -34,24 +34,24 @@ export default function HakPage() {
       schulstufen="9.–13. Schulstufe"
       lehrplanFach="Betriebswirtschaft · Rechnungswesen · Volkswirtschaft · Projektunterricht"
       icon={icon}
-      lehrerProblem="Meine Schüler:innen können Jahresabschlüsse lesen — aber viele wissen nicht, was nach Abzug auf ihrem eigenen Lohnzettel stehen wird."
-      intro="An der HAK gehört wirtschaftliches Denken zum Alltag. Aber der Sprung vom Betrieb zum persönlichen Haushalt fehlt oft. Skills-UP! macht genau diesen Schritt: Die Inhalte aus BWL und RW werden zu echten Alltagsentscheidungen — für Schüler:innen, die das bald selbst erleben werden."
+      lehrerProblem="Meine Schüler:innen können Jahresabschlüsse lesen, aber viele wissen nicht, was nach Abzug auf ihrem eigenen Lohnzettel stehen wird."
+      intro="An der HAK gehört wirtschaftliches Denken zum Alltag. Aber der Sprung vom Betrieb zum persönlichen Haushalt fehlt oft. Skills-UP! macht genau diesen Schritt: Die Inhalte aus BWL und RW werden zu echten Alltagsentscheidungen, für Schüler:innen, die das bald selbst erleben werden."
       lehrplanPassung={[
         {
           fach: 'Betriebswirtschaft',
-          kontext: 'Haushaltsplanung als Spiegel der Unternehmensplanung: Fixkosten, variable Kosten, Liquidität — dieselben Konzepte, andere Perspektive. Skills-UP! macht BWL-Inhalte persönlich und damit unvergesslich.',
+          kontext: 'Haushaltsplanung als Spiegel der Unternehmensplanung: Fixkosten, variable Kosten, Liquidität, dieselben Konzepte, andere Perspektive. Skills-UP! macht BWL-Inhalte persönlich und damit unvergesslich.',
         },
         {
           fach: 'Rechnungswesen',
-          kontext: 'Was auf dem Lohnzettel steht, wie Abgaben berechnet werden, was Netto und Brutto bedeuten — das ist Rechnungswesen in der Praxis. Skills-UP! bringt das lebendige Zahlenbeispiel in die Stunde.',
+          kontext: 'Was auf dem Lohnzettel steht, wie Abgaben berechnet werden, was Netto und Brutto bedeuten, das ist Rechnungswesen in der Praxis. Skills-UP! bringt das lebendige Zahlenbeispiel in die Stunde.',
         },
         {
           fach: 'Volkswirtschaft',
-          kontext: 'Konsum, Kredit, Zinsen, Inflation — VWL-Theorie trifft in Skills-UP! auf echte Entscheidungen. Schüler:innen verstehen makroökonomische Zusammenhänge durch ihre eigene Lebenssituation.',
+          kontext: 'Konsum, Kredit, Zinsen, Inflation. VWL-Theorie trifft in Skills-UP! auf echte Entscheidungen. Schüler:innen verstehen makroökonomische Zusammenhänge durch ihre eigene Lebenssituation.',
         },
         {
           fach: 'Projektunterricht',
-          kontext: 'Skills-UP! ist ideal als eigenständiges Projekt: "Mein Finanzplan für die ersten zwei Jahre nach der HAK" — strukturiert, digital begleitet, mit Zertifikat am Ende.',
+          kontext: 'Skills-UP! ist ideal als eigenständiges Projekt: "Mein Finanzplan für die ersten zwei Jahre nach der HAK", strukturiert, digital begleitet, mit Zertifikat am Ende.',
         },
         {
           fach: 'Entrepreneurship & Business',
@@ -59,18 +59,18 @@ export default function HakPage() {
         },
         {
           fach: 'Kommunikation & Präsentation',
-          kontext: 'Schüler:innen präsentieren ihre Finanzpläne, diskutieren Entscheidungen, begründen Strategien — ideal für KoP-Stunden mit realem Inhalt.',
+          kontext: 'Schüler:innen präsentieren ihre Finanzpläne, diskutieren Entscheidungen, begründen Strategien, ideal für KoP-Stunden mit realem Inhalt.',
         },
       ]}
       unterrichtsEinheiten={[
         {
           schritt: 'Szenario aufmachen',
-          was: '"Du bekommst heute deinen ersten Lohnzettel. Brutto 2.100 €. Was bleibt übrig?" — Schüler:innen schätzen erst selbst, bevor sie die Simulation starten. Das erzeugt sofort echte Beteiligung.',
+          was: '"Du bekommst heute deinen ersten Lohnzettel. Brutto 2.100 €. Was bleibt übrig?". Schüler:innen schätzen erst selbst, bevor sie die Simulation starten. Das erzeugt sofort echte Beteiligung.',
           zeitMinuten: 5,
         },
         {
           schritt: 'Simulation Lohnzettel',
-          was: 'Die App rechnet Schritt für Schritt: SV-Beiträge, Lohnsteuer, Nettolohn. Schüler:innen sehen, was von 2.100 € tatsächlich übrig bleibt — und staunen. Das ist in 10 Minuten erarbeitet, ohne Tafel, ohne Excel.',
+          was: 'Die App rechnet Schritt für Schritt: SV-Beiträge, Lohnsteuer, Nettolohn. Schüler:innen sehen, was von 2.100 € tatsächlich übrig bleibt, und staunen. Das ist in 10 Minuten erarbeitet, ohne Tafel, ohne Excel.',
           zeitMinuten: 15,
         },
         {
@@ -80,21 +80,21 @@ export default function HakPage() {
         },
         {
           schritt: 'Peer-Video & Diskussion',
-          was: 'Ein Peer-Video zeigt einen Lehrling, der nach dem ersten Monatsgehalt im Minus war — und warum. Das öffnet die Diskussion über Ratenkauf, Abos und Konsumfallen ohne pädagogischen Zeigefinger.',
+          was: 'Ein Peer-Video zeigt einen Lehrling, der nach dem ersten Monatsgehalt im Minus war, und warum. Das öffnet die Diskussion über Ratenkauf, Abos und Konsumfallen ohne pädagogischen Zeigefinger.',
           zeitMinuten: 10,
         },
       ]}
       module={[
-        { titel: 'Gehalt & Einkommen', lernziel: 'Lohnzettel lesen, Brutto-Netto-Berechnung verstehen, Kollektivvertrag nutzen — und die Negativsteuer via FinanzOnline beantragen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Einkommen', icon: moneyIcon },
+        { titel: 'Gehalt & Einkommen', lernziel: 'Lohnzettel lesen, Brutto-Netto-Berechnung verstehen, Kollektivvertrag nutzen, und die Negativsteuer via FinanzOnline beantragen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Einkommen', icon: moneyIcon },
         { titel: 'Finanzplanung', lernziel: 'Vollständigen Monats- und Jahresfinanzplan erstellen: Dauerauftrag vs. Lastschrift, Sonderzahlungen einplanen, 50-30-20-Regel anwenden.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Budgetplanung', icon: bookIcon },
-        { titel: 'Steuern in Österreich', lernziel: 'Lohnsteuer und Sozialversicherung unterscheiden, Arbeitnehmerveranlagung auf FinanzOnline durchführen — bis zu 5 Jahre rückwirkend.', dauer: '15 oder 50 Min', level: 'Mittel', kategorie: 'Steuern', icon: taxIcon },
-        { titel: 'Ratenkauf & BNPL', lernziel: 'Effektivzins berechnen, Klarna & Co. kritisch einschätzen, 14-Tage-Widerrufsrecht kennen — KSV-Eintrag verstehen und vermeiden.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Konsumentenschutz', icon: alertIcon },
-        { titel: 'Sparen & Geldentscheidungen', lernziel: 'Zinseszinseffekt und Inflation verstehen — warum das Sparbuch Kaufkraft verliert und wie ETF-Sparpläne funktionieren.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Sparen', icon: piggyIcon },
+        { titel: 'Steuern in Österreich', lernziel: 'Lohnsteuer und Sozialversicherung unterscheiden, Arbeitnehmerveranlagung auf FinanzOnline durchführen, bis zu 5 Jahre rückwirkend.', dauer: '15 oder 50 Min', level: 'Mittel', kategorie: 'Steuern', icon: taxIcon },
+        { titel: 'Ratenkauf & BNPL', lernziel: 'Effektivzins berechnen, Klarna & Co. kritisch einschätzen, 14-Tage-Widerrufsrecht kennen. KSV-Eintrag verstehen und vermeiden.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Konsumentenschutz', icon: alertIcon },
+        { titel: 'Sparen & Geldentscheidungen', lernziel: 'Zinseszinseffekt und Inflation verstehen, warum das Sparbuch Kaufkraft verliert und wie ETF-Sparpläne funktionieren.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Sparen', icon: piggyIcon },
         { titel: 'Schulden & Geld leihen', lernziel: 'Warnsignale für problematische Schulden erkennen, Inkasso-Rechte kennen und erste Anlaufstellen (AK, Schuldnerberatung) nutzen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Schuldenprävention', icon: chartIcon },
       ]}
       simulationen={[
-        { titel: 'Arbeitnehmerveranlagung', untertitel: 'Steuerausgleich selbst durchführen: Werbungskosten, Sonderausgaben, Negativsteuer — mit FinanzOnline-Simulation.', dauer: '15–25 Min', icon: taxIcon },
-        { titel: 'Gehaltsverhandlung', untertitel: 'KV-Mindestlohn recherchieren, Argumente formulieren, Einwände parieren — auch als Lehrling verhandelbar.', dauer: '15–20 Min', icon: moneyIcon },
+        { titel: 'Arbeitnehmerveranlagung', untertitel: 'Steuerausgleich selbst durchführen: Werbungskosten, Sonderausgaben, Negativsteuer, mit FinanzOnline-Simulation.', dauer: '15–25 Min', icon: taxIcon },
+        { titel: 'Gehaltsverhandlung', untertitel: 'KV-Mindestlohn recherchieren, Argumente formulieren, Einwände parieren, auch als Lehrling verhandelbar.', dauer: '15–20 Min', icon: moneyIcon },
         { titel: 'Kredit-Falle', untertitel: 'Konsumkredit, Ratenkauf, BNPL: Gesamtkosten berechnen, VKrG-Rechte kennen, Schuldenfallen erkennen.', dauer: '15–20 Min', icon: alertIcon },
         { titel: 'Aktienmarkt-Langläufer', untertitel: 'ETF-Sparplan simulieren: Zinseszins über 20 Jahre erleben, Diversifikation verstehen, Rebalancing üben.', dauer: '25–35 Min', icon: chartIcon },
       ]}
@@ -117,17 +117,17 @@ export default function HakPage() {
       features={[
         {
           titel: 'Lohnzettel-Simulation',
-          nutzenfuerLehrer: 'Schüler:innen sehen interaktiv, wie Brutto zu Netto wird: SV-Beiträge, Lohnsteuer, Abzüge. Das ist concretes Rechnungswesen — und du musst keinen einzigen Lohnzettel selbst erklären.',
+          nutzenfuerLehrer: 'Schüler:innen sehen interaktiv, wie Brutto zu Netto wird: SV-Beiträge, Lohnsteuer, Abzüge. Das ist concretes Rechnungswesen, und du musst keinen einzigen Lohnzettel selbst erklären.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>,
         },
         {
           titel: 'Haushaltsbudget-Tool',
-          nutzenfuerLehrer: 'Schüler:innen erstellen in der App ihren eigenen Monatsplan — mit realen Kategorien und automatischer Auswertung. Du siehst über das Dashboard, welche Ausgaben die Klasse systematisch unterschätzt.',
+          nutzenfuerLehrer: 'Schüler:innen erstellen in der App ihren eigenen Monatsplan, mit realen Kategorien und automatischer Auswertung. Du siehst über das Dashboard, welche Ausgaben die Klasse systematisch unterschätzt.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>,
         },
         {
           titel: 'Fertige BWL-nahe Module',
-          nutzenfuerLehrer: 'Die Module bauen auf Konzepten auf, die HAK-Schüler:innen bereits kennen: Kosten, Erträge, Liquidität. Du kannst direkt anknüpfen — ohne Grundlagen neu erklären zu müssen.',
+          nutzenfuerLehrer: 'Die Module bauen auf Konzepten auf, die HAK-Schüler:innen bereits kennen: Kosten, Erträge, Liquidität. Du kannst direkt anknüpfen, ohne Grundlagen neu erklären zu müssen.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>,
         },
         {
@@ -137,21 +137,21 @@ export default function HakPage() {
         },
         {
           titel: 'Schuldenprävention-Modul',
-          nutzenfuerLehrer: 'Kredit, Ratenkauf, Überziehen — die Simulation zeigt, wie Schulden entstehen und eskalieren. Das ist ein sensibles Thema: Die App übernimmt die sachliche Vermittlung, du begleitest das Gespräch.',
+          nutzenfuerLehrer: 'Kredit, Ratenkauf, Überziehen, die Simulation zeigt, wie Schulden entstehen und eskalieren. Das ist ein sensibles Thema: Die App übernimmt die sachliche Vermittlung, du begleitest das Gespräch.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>,
         },
         {
           titel: 'Zertifikat & Portfolionachweis',
-          nutzenfuerLehrer: 'Schüler:innen erhalten nach Abschluss ein Zertifikat. Das ist dokumentierbar, für Portfolios und Bewerbungen geeignet — und gibt deiner Klasse etwas Handfestes mit.',
+          nutzenfuerLehrer: 'Schüler:innen erhalten nach Abschluss ein Zertifikat. Das ist dokumentierbar, für Portfolios und Bewerbungen geeignet, und gibt deiner Klasse etwas Handfestes mit.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>,
         },
       ]}
       lehrerZitat={{
-        text: 'Ich hab Skills-UP! in meiner Betriebswirtschaftsstunde eingesetzt, nachdem wir Kostenrechnung hatten. Die Schüler:innen haben die Verbindung zu ihrem eigenen Leben sofort gezogen — das hätte ich mit Folien nicht geschafft.',
+        text: 'Ich hab Skills-UP! in meiner Betriebswirtschaftsstunde eingesetzt, nachdem wir Kostenrechnung hatten. Die Schüler:innen haben die Verbindung zu ihrem eigenen Leben sofort gezogen, das hätte ich mit Folien nicht geschafft.',
         person: 'BWL-Lehrer, HAK Burgenland, 11. Schulstufe',
       }}
       lehrerFoto="/fotos/lehrer/hak.png"
-      gruenderStatement="Wirtschaft wird an der HAK theoretisch sehr gut vermittelt. Skills-UP! bringt das persönliche Finanzleben der Schüler:innen direkt in die Stunde — und das ist der Unterschied zwischen Wissen und echtem Können."
+      gruenderStatement="Wirtschaft wird an der HAK theoretisch sehr gut vermittelt. Skills-UP! bringt das persönliche Finanzleben der Schüler:innen direkt in die Stunde, und das ist der Unterschied zwischen Wissen und echtem Können."
     />
   )
 }

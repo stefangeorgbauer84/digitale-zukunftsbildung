@@ -155,9 +155,9 @@ export default function SchulPage({
               <p className="text-white/60 text-xs font-body font-700 uppercase tracking-widest mb-5">Was Lehrkräfte sofort haben</p>
               <ul className="space-y-4">
                 {[
-                  { text: '0 Minuten Vorbereitung pro Einheit', detail: 'Fertige Module, Aufgaben und Simulationen — alles startklar.' },
+                  { text: '0 Minuten Vorbereitung pro Einheit', detail: 'Fertige Module, Aufgaben und Simulationen. Alles startklar.' },
                   { text: 'Schüler:innen-Dashboard live im Blick', detail: 'Wer ist wo? Wer braucht Unterstützung? Ein Klick genügt.' },
-                  { text: 'Passt in bestehende Stunden', detail: lehrplanFach + ' — kein Extra-Fach nötig.' },
+                  { text: 'Passt in bestehende Stunden', detail: lehrplanFach + '. Kein Extra-Fach nötig.' },
                   { text: 'Schüler:innen machen freiwillig weiter', detail: 'Gamification und Peer-Videos erzeugen echte Eigenmotivation.' },
                   { text: 'DSGVO-konform, kein IT-Aufwand', detail: 'Kein Antrag, keine Installation, kein Elternbrief zur Datenweitergabe.' },
                 ].map((item) => (
@@ -250,7 +250,7 @@ export default function SchulPage({
               <span style={{ color: farbe }}>Nichts, was du nicht brauchst.</span>
             </h2>
             <p className="font-body text-text-muted text-lg max-w-xl mx-auto">
-              Skills-UP! ist so gebaut, dass du in wenigen Minuten startklar bist — ohne Schulung, ohne IT-Ticket, ohne Vorbereitung.
+              Skills-UP! ist so gebaut, dass du in wenigen Minuten startklar bist. Ohne Schulung, ohne IT-Ticket, ohne Vorbereitung.
             </p>
           </div>
 
@@ -266,7 +266,7 @@ export default function SchulPage({
               <div>
                 <p className="font-heading font-700 text-base mb-2" style={{ color: '#1a1040' }}>12+ fertige Module</p>
                 <p className="font-body text-sm text-text-muted leading-relaxed">
-                  Jedes Modul ist eine komplett ausgearbeitete Unterrichtseinheit — mit Lernzielen, Aufgaben, Reflexionsfragen und Lehrerhinweisen. Kurzversion (15 Min) oder Langversion (50 Min), je nach Stunde.
+                  Jedes Modul ist eine komplett ausgearbeitete Unterrichtseinheit: Lernziele, Aufgaben, Reflexionsfragen und Lehrerhinweise sind dabei. Kurzversion (15 Min) oder Langversion (50 Min), je nach Stunde.
                 </p>
               </div>
               <ul className="space-y-1.5 mt-auto">
@@ -289,7 +289,7 @@ export default function SchulPage({
               <div>
                 <p className="font-heading font-700 text-base mb-2" style={{ color: '#1a1040' }}>10+ Praxissimulationen</p>
                 <p className="font-body text-sm text-text-muted leading-relaxed">
-                  Schüler:innen erleben echte Finanzentscheidungen in einer sicheren Umgebung — vom Gehaltszettel lesen bis zur Gehaltsverhandlung. Du startest die Simulation, der Rest läuft von allein.
+                  Schüler:innen erleben echte Finanzentscheidungen in sicherer Umgebung: vom Gehaltszettel lesen bis zur Gehaltsverhandlung. Du startest die Simulation, der Rest läuft von allein.
                 </p>
               </div>
               <ul className="space-y-1.5 mt-auto">
@@ -312,7 +312,7 @@ export default function SchulPage({
               <div>
                 <p className="font-heading font-700 text-base mb-2" style={{ color: '#1a1040' }}>Automatische Quizze</p>
                 <p className="font-body text-sm text-text-muted leading-relaxed">
-                  Nach jedem Modul folgt ein kurzes Quiz — automatisch ausgewertet, keine Korrektur durch dich. Du siehst sofort, wer was verstanden hat, ohne einen einzigen Test einzusammeln.
+                  Nach jedem Modul folgt ein kurzes Quiz, automatisch ausgewertet, ohne Korrektur durch dich. Du siehst sofort, wer was verstanden hat, ohne einen einzigen Test einzusammeln.
                 </p>
               </div>
               <ul className="space-y-1.5 mt-auto">
@@ -337,9 +337,9 @@ export default function SchulPage({
               </div>
               <div>
                 <span className="inline-block text-xs font-body font-700 px-2.5 py-1 rounded-full mb-3 text-white" style={{ background: farbe }}>Analytics-Dashboard</span>
-                <p className="font-heading font-700 text-lg mb-2" style={{ color: '#1a1040' }}>Wer hat was gelernt — auf einen Blick.</p>
+                <p className="font-heading font-700 text-lg mb-2" style={{ color: '#1a1040' }}>Lernfortschritt auf einen Blick.</p>
                 <p className="font-body text-sm text-text-muted leading-relaxed mb-4">
-                  Dein Dashboard zeigt dir den Lernfortschritt jeder Schüler:in in Echtzeit. Welches Modul wurde abgeschlossen? Welches Quiz hat wer nicht bestanden? Ohne Excel, ohne Nachfragen — einfach öffnen und sehen.
+                  Dein Dashboard zeigt dir den Lernfortschritt jeder Schüler:in in Echtzeit. Welches Modul wurde abgeschlossen? Welches Quiz hat wer nicht bestanden? Einfach öffnen und sehen, ohne Excel, ohne Rückfragen.
                 </p>
                 <div className="grid grid-cols-2 gap-3">
                   {[
@@ -369,7 +369,7 @@ export default function SchulPage({
                 <div>
                   <p className="font-heading font-700 text-base text-white mb-1">Setup in unter 5 Minuten</p>
                   <p className="font-body text-sm text-white/65 leading-relaxed">
-                    Kein IT-Ticket, keine Installation, kein Antrag. Du meldest deine Klasse an, schickst den Link — und am nächsten Tag kann der erste Unterricht starten. Wirklich.
+                    Kein IT-Ticket, keine Installation, kein Antrag. Du meldest deine Klasse an, schickst den Link. Am nächsten Tag kann der erste Unterricht starten. Wirklich.
                   </p>
                   <div className="flex flex-wrap gap-2 mt-3">
                     {['Browser öffnen', 'Klasse anlegen', 'Loslegen'].map((s, i) => (
@@ -392,9 +392,9 @@ export default function SchulPage({
                   </svg>
                 </div>
                 <div>
-                  <p className="font-heading font-700 text-base text-white mb-1">Persönlicher Support — immer erreichbar</p>
+                  <p className="font-heading font-700 text-base text-white mb-1">Persönlicher Support, immer erreichbar</p>
                   <p className="font-body text-sm text-white/65 leading-relaxed">
-                    Fragen zur Lehrplanintegration, zum Rollout oder zu einem bestimmten Modul? Du bekommst eine Antwort — von einem Menschen, innerhalb von 24 Stunden. Kein Helpdesk-Ticket, kein Chatbot.
+                    Fragen zur Lehrplanintegration, zum Rollout oder zu einem bestimmten Modul? Du bekommst eine Antwort von einem Menschen, innerhalb von 24 Stunden. Kein Helpdesk-Ticket, kein Chatbot.
                   </p>
                   <a href="/#kontakt" className="inline-flex items-center gap-1.5 mt-3 text-xs font-body font-700 transition-colors hover:opacity-80" style={{ color: '#9b7ed4' }}>
                     Jetzt anfragen
@@ -465,7 +465,7 @@ export default function SchulPage({
               </div>
               <div>
                 <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#D87228', color: '#fff' }}>Top-3 Österreich</span>
-                <p className="font-body text-sm text-text-muted leading-relaxed">Top-3 Projekt der MEGA Bildungsmillion 2025 — aus hunderten Einreichungen österreichweit.</p>
+                <p className="font-body text-sm text-text-muted leading-relaxed">Top-3 Projekt der MEGA Bildungsmillion 2025, unter hunderten Einreichungen österreichweit.</p>
               </div>
             </div>
           </div>
@@ -584,7 +584,7 @@ export default function SchulPage({
                 <path d="M0 36V21.6C0 9.6 6.4 2.4 19.2 0l2.4 4.8C14.4 6.4 10.4 10.4 10.4 16.8H19.2V36H0ZM28.8 36V21.6C28.8 9.6 35.2 2.4 48 0l2.4 4.8C43.2 6.4 39.2 10.4 39.2 16.8H48V36H28.8Z" fill="white"/>
               </svg>
               <p className="font-body text-lg md:text-xl leading-relaxed text-white/85 italic mb-6">
-                &ldquo;Als Lehrerin habe ich jeden Tag gesehen, wie wenig Zeit ich hatte, Finanzthemen wirklich zu vertiefen. Skills-UP! gibt Lehrkräften genau das Werkzeug, das mir damals gefehlt hat — fertig aufbereitet, sofort einsetzbar.&rdquo;
+                &ldquo;Als Lehrerin habe ich jeden Tag gesehen, wie wenig Zeit ich hatte, Finanzthemen wirklich zu vertiefen. Skills-UP! gibt Lehrkräften genau das Werkzeug, das mir damals gefehlt hat: fertig aufbereitet, sofort einsetzbar.&rdquo;
               </p>
               <div className="flex flex-wrap gap-2">
                 {['Ehemalige Lehrerin', 'Vereinsleitung', 'Kursleitung Skills-UP!'].map((tag) => (
@@ -643,7 +643,7 @@ export default function SchulPage({
           <div className="text-center mb-12">
             <p className="text-xs font-body font-700 uppercase tracking-widest mb-2" style={{ color: farbe }}>Praxisbeispiel</p>
             <h2 className="font-heading text-3xl font-bold mb-3" style={{ color: '#1a1040' }}>
-              Eine Einheit mit Skills-UP! — konkret.
+              Eine echte Unterrichtseinheit mit Skills-UP!.
             </h2>
             <p className="font-body text-text-muted max-w-lg mx-auto">
               So sieht eine typische Unterrichtsstunde aus. Gesamtdauer: {totalMinuten} Minuten. Deine Vorbereitung: 0 Minuten.
@@ -684,14 +684,14 @@ export default function SchulPage({
               Module &amp; Simulationen für {name}
             </h2>
             <p className="font-body text-text-muted text-sm max-w-md mx-auto">
-              Alle Inhalte sind fertig aufbereitet — Lernmodule mit Quiz, Checklisten und Reflexion, plus interaktive Simulationen mit österreichischen Alltagsszenarien.
+              Alle Inhalte sind fertig aufbereitet: Lernmodule mit Quiz, Checklisten und Reflexion, dazu interaktive Simulationen mit österreichischen Alltagsszenarien.
             </p>
           </div>
 
           {/* Module */}
           <div className="mb-14">
             <p className="font-heading font-700 text-sm uppercase tracking-widest mb-5" style={{ color: farbe }}>
-              Lernmodule — je 15 oder 50 Minuten
+              Lernmodule, je 15 oder 50 Minuten
             </p>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {module.map((m) => (
@@ -721,7 +721,7 @@ export default function SchulPage({
           {/* Simulationen */}
           <div>
             <p className="font-heading font-700 text-sm uppercase tracking-widest mb-5" style={{ color: farbe }}>
-              Interaktive Simulationen — österreichische Alltagsszenarien
+              Interaktive Simulationen mit österreichischen Alltagsszenarien
             </p>
             <div className="grid sm:grid-cols-2 gap-4">
               {simulationen.map((s) => (
@@ -815,7 +815,7 @@ export default function SchulPage({
             Bereit für Skills-UP! an deiner Schule?
           </h2>
           <p className="font-body text-white/70 text-lg mb-8 max-w-xl mx-auto">
-            Kein Ausfüllen langer Formulare. Ein kurzes Gespräch genügt — danach weißt du, ob Skills-UP! zu deiner Schule passt.
+            Kein Ausfüllen langer Formulare. Ein kurzes Gespräch reicht, um zu wissen, ob Skills-UP! zu deiner Schule passt.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             <a href="/#kontakt"

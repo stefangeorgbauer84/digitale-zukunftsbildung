@@ -26,7 +26,7 @@ export default function SiteFooter() {
               </div>
             </div>
             <p className="text-sm font-body text-white/55 leading-relaxed mb-5 max-w-xs">
-              Wir bringen echte Finanzkompetenz zu Jugendlichen ab 15 Jahren — praxisnah, digital und sofort einsetzbar für AHS, HAK, HTL, HLW, BAfEP, BASOP, PTS und Berufsschulen.
+              Wir bringen echte Finanzkompetenz zu Jugendlichen ab 15 Jahren, praxisnah, digital und sofort einsetzbar für AHS, HAK, HTL, HLW, BAfEP, BASOP, PTS und Berufsschulen.
             </p>
             <div className="space-y-2">
               <a href="tel:+436502158715"

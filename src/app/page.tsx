@@ -55,7 +55,7 @@ const angebote = [
     zielgruppe: 'Kurz- & Langversion',
     maxPersonen: 'Lehrplankonform',
     foerderbar: true,
-    text: 'Von Geldbiografie und Lohnabrechnung über Budgetplanung bis zu Schuldenprävention und Krypto-Mythen. Jedes Modul in zwei Längen — flexibel einsetzbar.',
+    text: 'Von Geldbiografie und Lohnabrechnung über Budgetplanung bis zu Schuldenprävention und Krypto-Mythen. Jedes Modul gibt es in zwei Längen, flexibel einsetzbar.',
   },
   {
     icon: (
@@ -84,7 +84,7 @@ const angebote = [
     zielgruppe: 'Alle Klassen im Blick',
     maxPersonen: 'Punkte, Quizzes, Badges',
     foerderbar: true,
-    text: 'Fortschritt, Noten und Deadlines aller Klassen auf einen Blick — ideal für Elterngespräche. Gamification hält Schüler:innen motiviert.',
+    text: 'Fortschritt, Noten und Deadlines aller Klassen auf einen Blick. Ideal für Elterngespräche. Gamification hält Schüler:innen motiviert.',
   },
 ]
 
@@ -133,7 +133,7 @@ const trustFacts = [
     accent: '#2A8A76',
     bg: '#e6f4f1',
     headline: 'DSGVO-konform',
-    detail: 'Aus Österreich, für Österreich — keine Daten ins Ausland',
+    detail: 'Aus Österreich, für Österreich. Keine Daten ins Ausland.',
   },
 ]
 
@@ -141,7 +141,7 @@ const trustFacts = [
 const steps = [
   { step: '01', title: 'Im Browser starten', desc: 'Kein IT-Aufwand, keine Installation. Skills-UP! läuft direkt im Browser, DSGVO-sicher und EU-rechtskonform. Schulweites Rollout in Minuten.', color: '#9b7ed4' },
   { step: '02', title: 'Erleben statt zuhören', desc: 'Schüler:innen durchlaufen Module und Praxissimulationen: Depot eröffnen, Gehalt verhandeln, Budget planen. Microlearning, Peer-Videos und Gamification halten die Motivation hoch.', color: '#2a8a76' },
-  { step: '03', title: 'Fortschritt im Dashboard', desc: 'Lehrkräfte sehen Fortschritt, Noten und Deadlines aller Klassen auf einen Blick — ideal für Elterngespräche und ohne zusätzliche Korrekturarbeit.', color: '#D87228' },
+  { step: '03', title: 'Fortschritt im Dashboard', desc: 'Lehrkräfte sehen Fortschritt, Noten und Deadlines aller Klassen auf einen Blick. Ideal für Elterngespräche, ohne zusätzliche Korrekturarbeit.', color: '#D87228' },
 ]
 
 export default function HomePage() {
@@ -156,31 +156,31 @@ export default function HomePage() {
       icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>),
       gradient: 'linear-gradient(135deg, #1a5c4e 0%, #2a8a76 100%)', bg: '#e6f4f1', accent: '#1a5c4e',
       title: 'Peer-Videos', badge: 'Jugendnah',
-      desc: 'Gleichaltrige erklären Gleichaltrigen — authentisch und auf Augenhöhe. Das trifft die Lebenswelt der Schüler:innen besser als jeder Frontalvortrag.',
+      desc: 'Gleichaltrige erklären Gleichaltrigen, authentisch und auf Augenhöhe. Das trifft die Lebenswelt der Schüler:innen besser als jeder Frontalvortrag.',
     },
     {
       icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>),
       gradient: 'linear-gradient(135deg, #1a5c4e 0%, #2a8a76 100%)', bg: '#e6f4f1', accent: '#1a5c4e',
       title: 'Microlearning', badge: 'Kurz & effektiv',
-      desc: 'Kurze Lerneinheiten statt langer Vorträge. Jedes Thema in 15 Minuten erfassbar — perfekt für eine Unterrichtsstunde oder zwischendurch.',
+      desc: 'Kurze Lerneinheiten statt langer Vorträge. Jedes Thema ist in 15 Minuten erfassbar, perfekt für eine Unterrichtsstunde oder zwischendurch.',
     },
     {
       icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>),
       gradient: 'linear-gradient(135deg, #4a2d8a 0%, #6b4db0 100%)', bg: '#f3f1f9', accent: '#4a2d8a',
       title: 'Gamification', badge: 'Motivierend',
-      desc: 'Punkte, Quizzes und Badges halten die Motivation hoch — auch bei Schüler:innen, die sonst schwer zu erreichen sind. Lernen wird zum Wettbewerb.',
+      desc: 'Punkte, Quizzes und Badges halten die Motivation hoch, auch bei Schüler:innen, die sonst schwer zu erreichen sind. Lernen wird zum Wettbewerb.',
     },
     {
       icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>),
       gradient: 'linear-gradient(135deg, #b85e20 0%, #D87228 100%)', bg: '#fdf0e6', accent: '#D87228',
       title: 'Lehrer-Dashboard', badge: 'Für Lehrkräfte',
-      desc: 'Fortschritt, Noten und Deadlines aller Klassen auf einen Blick. Ideal für Elterngespräche — und ohne zusätzliche Korrekturarbeit.',
+      desc: 'Fortschritt, Noten und Deadlines aller Klassen auf einen Blick. Ideal für Elterngespräche, ohne zusätzliche Korrekturarbeit.',
     },
     {
       icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>),
       gradient: 'linear-gradient(135deg, #1a5c4e 0%, #2a8a76 100%)', bg: '#e6f4f1', accent: '#2a8a76',
       title: 'DSGVO-konform', badge: 'Datensicher',
-      desc: 'Im Browser gestartet, keine Installation nötig. EU-rechtssicher und datenschutzkonform — kein IT-Aufwand für die Schule.',
+      desc: 'Im Browser gestartet, keine Installation nötig. EU-rechtssicher, datenschutzkonform, kein IT-Aufwand für die Schule.',
     },
   ]
 
@@ -244,7 +244,7 @@ export default function HomePage() {
           </h1>
 
           <p className="text-white/75 text-xl max-w-2xl mx-auto mb-4 font-body leading-relaxed">
-            12 lehrplankonforme Module, über 10 österreichische Praxissimulationen und ein Dashboard, das Ihnen die Korrekturarbeit abnimmt. Für AHS, HAK, HTL, HLW, BAfEP, BASOP und PTS — browser-basiert, DSGVO-sicher, heute einsetzbar.
+            12 lehrplankonforme Module, über 10 österreichische Praxissimulationen und ein Dashboard, das Ihnen die Korrekturarbeit abnimmt. Für AHS, HAK, HTL, HLW, BAfEP, BASOP und PTS. Browserbasiert, DSGVO-sicher, heute einsetzbar.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
@@ -396,7 +396,7 @@ export default function HomePage() {
               </div>
               <div>
                 <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#4a2d8a', color: '#fff' }}>Qualitätszertifiziert</span>
-                <p className="font-body text-sm text-text-muted leading-relaxed">Erfüllt die Qualitätsstandards für den Einsatz in österreichischen Schulen — pädagogisch geprüft, lehrplankonform, technisch stabil.</p>
+                <p className="font-body text-sm text-text-muted leading-relaxed">Erfüllt die Qualitätsstandards für den Einsatz in österreichischen Schulen. Pädagogisch geprüft, lehrplankonform, technisch stabil.</p>
               </div>
             </div>
             {/* Finanzbildungsstrategie */}
@@ -428,7 +428,7 @@ export default function HomePage() {
               </div>
               <div>
                 <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#D87228', color: '#fff' }}>Top-3 Österreich</span>
-                <p className="font-body text-sm text-text-muted leading-relaxed">Ausgezeichnet unter hunderten Einreichungen österreichweit — von einer unabhängigen Jury für Innovation und pädagogischen Impact.</p>
+                <p className="font-body text-sm text-text-muted leading-relaxed">Ausgezeichnet unter hunderten Einreichungen österreichweit, von einer unabhängigen Jury für Innovation und pädagogischen Impact.</p>
               </div>
             </div>
           </div>
@@ -454,7 +454,7 @@ export default function HomePage() {
               <span style={{ color: '#4a2d8a' }}>jede Schulform.</span>
             </h2>
             <p className="font-body text-text-muted text-lg max-w-2xl mx-auto mb-4">
-              Skills-UP! ist für Jugendliche ab 15 Jahren konzipiert und sofort einsetzbar — für AHS, HAK, HTL, HLW, BAfEP, BASOP, PTS und Berufsschulen.
+              Skills-UP! ist für Jugendliche ab 15 Jahren konzipiert und sofort einsetzbar: für AHS, HAK, HTL, HLW, BAfEP, BASOP, PTS und Berufsschulen.
             </p>
             <Link href="/schulen" className="inline-flex items-center gap-2 font-body font-700 text-sm px-5 py-2.5 rounded-xl transition-all hover:scale-105"
               style={{ background: '#4a2d8a', color: '#fff' }}>
@@ -523,7 +523,7 @@ export default function HomePage() {
             Drei Bausteine, die <span className="text-status-teal">wirken.</span>
           </h2>
           <p className="text-text-muted text-lg max-w-2xl mx-auto font-body">
-            Skills-UP! verbindet fundiertes Finanzwissen mit echtem Erleben — alles fertig aufbereitet, lehrplankonform und ohne Vorbereitungsaufwand für Lehrkräfte.
+            Skills-UP! verbindet fundiertes Finanzwissen mit echtem Erleben. Alles fertig aufbereitet, lehrplankonform und ohne Vorbereitungsaufwand für Lehrkräfte.
           </p>
         </div>
 
@@ -577,7 +577,7 @@ export default function HomePage() {
               So funktioniert<br /><span className="text-primary-medium">das Programm.</span>
             </h2>
             <p className="text-text-muted text-lg max-w-2xl mx-auto font-body">
-              Skills-UP! kombiniert bewährte Didaktik mit moderner Lerntechnologie — Peer-Videos, Microlearning und Gamification, damit Finanzwissen wirklich hängen bleibt.
+              Skills-UP! kombiniert bewährte Didaktik mit moderner Lerntechnologie: Peer-Videos, Microlearning und Gamification, damit Finanzwissen wirklich hängen bleibt.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -653,7 +653,7 @@ export default function HomePage() {
                 Was Schüler:innen danach<br /><span className="text-primary-light">wirklich können.</span>
               </h2>
               <p className="text-white/60 font-body text-lg mb-8 leading-relaxed">
-                Finanzbildung, die nicht im Klassenzimmer bleibt — sondern bei der ersten Lohnabrechnung, beim ersten Onlinekauf und beim ersten Sparziel ankommt.
+                Finanzbildung, die nicht im Klassenzimmer bleibt. Sie kommt an bei der ersten Lohnabrechnung, beim ersten Onlinekauf und beim ersten Sparziel.
               </p>
               <div className="relative">
                 <div className="absolute inset-0 blur-3xl scale-110 pointer-events-none"
@@ -819,10 +819,10 @@ export default function HomePage() {
               </svg>
 
               <p className="font-body text-2xl md:text-3xl leading-relaxed text-white/90 italic mb-6">
-                &ldquo;Junge Menschen treffen heute echte Geldentscheidungen — oft ohne jemanden, der ihnen erklärt wie. Das wollten wir ändern.&rdquo;
+                &ldquo;Junge Menschen treffen heute echte Geldentscheidungen, oft ohne jemanden, der ihnen erklärt wie. Das wollten wir ändern.&rdquo;
               </p>
               <p className="font-body text-lg text-white/70 leading-relaxed mb-10">
-                Skills-UP! ist aus der Überzeugung entstanden, dass Finanzbildung kein Privileg sein darf. Wir haben ein Programm gebaut, das an jeder österreichischen Schule funktioniert — ohne Mehraufwand für Lehrkräfte und mit Inhalten, die wirklich im Leben ankommen.
+                Skills-UP! ist aus der Überzeugung entstanden, dass Finanzbildung kein Privileg sein darf. Wir haben ein Programm gebaut, das an jeder österreichischen Schule funktioniert. Ohne Mehraufwand für Lehrkräfte, mit Inhalten, die wirklich im Leben ankommen.
               </p>
 
               <div className="flex flex-wrap gap-3">
@@ -861,10 +861,10 @@ export default function HomePage() {
               </svg>
 
               <p className="font-body text-2xl md:text-3xl leading-relaxed text-white/90 italic mb-6">
-                &ldquo;Als Lehrerin habe ich jeden Tag gesehen, wie wenig Jugendliche über Geld wissen — und wie wenig Zeit ich hatte, das zu ändern. Skills-UP! gibt Lehrkräften genau das Werkzeug, das mir damals gefehlt hat.&rdquo;
+                &ldquo;Als Lehrerin habe ich jeden Tag gesehen, wie wenig Jugendliche über Geld wissen. Und wie wenig Zeit ich hatte, das zu ändern. Skills-UP! gibt Lehrkräften genau das Werkzeug, das mir damals gefehlt hat.&rdquo;
               </p>
               <p className="font-body text-lg text-white/70 leading-relaxed mb-10">
-                Ich habe selbst im Klasssenzimmer gestanden und gewusst: Die Themen, die junge Menschen wirklich brauchen — Lohnzettel, Budget, Kredit, erste eigene Wohnung — kommen im Lehrplan kaum vor. Deshalb haben wir Skills-UP! gebaut. Für Schüler:innen, die echte Entscheidungen treffen müssen. Und für Lehrkräfte, die ihnen dabei helfen wollen.
+                Ich habe selbst im Klassenzimmer gestanden und gewusst: Die Themen, die junge Menschen wirklich brauchen, Lohnzettel, Budget, Kredit, erste eigene Wohnung, kommen im Lehrplan kaum vor. Deshalb haben wir Skills-UP! gebaut. Für Schüler:innen, die echte Entscheidungen treffen müssen. Und für Lehrkräfte, die ihnen dabei helfen wollen.
               </p>
               <div className="flex flex-wrap gap-3">
                 {[
@@ -995,7 +995,7 @@ export default function HomePage() {
               <h3 className="font-heading text-xl font-bold mb-2" style={{ color: '#1a5c4e' }}>Gefördert durch starke Partner</h3>
               <p className="text-text-muted font-body text-sm leading-relaxed">
                 Skills-UP! wird von der <strong>MEGA Bildungsstiftung</strong> und im Rahmen der <strong>Nationalen Finanzbildungsstrategie</strong> unterstützt.
-                Sprecht uns an — wir finden gemeinsam ein leistbares Modell für eure Schule.
+                Sprecht uns an. Wir finden gemeinsam ein leistbares Modell für eure Schule.
               </p>
             </div>
             <div className="flex flex-wrap gap-3 justify-center md:justify-end shrink-0">
@@ -1030,14 +1030,14 @@ export default function HomePage() {
               color: '#4a2d8a',
             },
             {
-              quote: 'Endlich Material, das ich ohne Vorbereitung sofort einsetzen kann. Die Simulationen nehmen mir die Erklärarbeit ab — und im Dashboard sehe ich auf einen Blick, wo meine Klasse steht.',
+              quote: 'Endlich Material, das ich ohne Vorbereitung sofort einsetzen kann. Die Simulationen nehmen mir die Erklärarbeit ab. Im Dashboard sehe ich auf einen Blick, wo meine Klasse steht.',
               name: 'Mag. Eva R.',
               role: 'Lehrerin, BHS Burgenland',
               initials: 'ER',
               color: '#2a8a76',
             },
             {
-              quote: 'Die Gehaltsverhandlungs-Simulation war ein Augenöffner. Meine Schüler:innen reden jetzt über Kollektivvertrag und Nettolohn — Themen, die vorher kein Thema waren.',
+              quote: 'Die Gehaltsverhandlungs-Simulation war ein Augenöffner. Meine Schüler:innen reden jetzt über Kollektivvertrag und Nettolohn. Themen, die vorher kein Thema waren.',
               name: 'Mag. Thomas K.',
               role: 'Lehrer, HAK Linz',
               initials: 'TK',
@@ -1100,7 +1100,7 @@ export default function HomePage() {
                 Menschen hinter Skills-UP!
               </h2>
               <p className="text-text-muted font-body text-lg leading-relaxed mb-6">
-                Unser Team kommt aus der Praxis — aus Bildung, Wirtschaft und Finanzpädagogik. Wir wissen, was Jugendliche für echte Finanzentscheidungen brauchen, und was Lehrkräften den Alltag erleichtert.
+                Unser Team kommt aus der Praxis: aus Bildung, Wirtschaft und Finanzpädagogik. Wir wissen, was Jugendliche für echte Finanzentscheidungen brauchen, und was Lehrkräften den Alltag erleichtert.
               </p>
               <Link href="/ueber-uns"
                 className="inline-flex items-center gap-2 text-sm font-body font-700 text-primary-dark hover:text-primary-medium transition-colors">
