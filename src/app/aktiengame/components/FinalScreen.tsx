@@ -7,6 +7,8 @@ import {
   calcDiversificationScore,
   calcRiskScore,
   calcReflectionScore,
+  calcRoleMissionBonus,
+  PLAYER_ROLES,
 } from '../lib/gameEngine'
 
 function ChevronDownIcon() {
@@ -95,6 +97,8 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
   const diversiScore = calcDiversificationScore(state.positions, assets, state.currentPrices)
   const riskScore = calcRiskScore(state.positions, assets, state.currentPrices)
   const reflectionScore = calcReflectionScore(state.reflections, state.totalRounds)
+  const { fulfilled: missionFulfilled, bonusPoints, reason: missionReason } = calcRoleMissionBonus(state, assets)
+  const roleDef = PLAYER_ROLES[state.role]
 
   // Best/worst position
   const positionsWithGain = state.positions.map((pos) => {
@@ -166,6 +170,25 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
         <div>
           <div className="font-semibold text-text-primary">{ampelLabel}</div>
           <div className="text-sm text-text-muted">Diversifikations-Score: {diversiScore}/100</div>
+        </div>
+      </div>
+
+      {/* Rollen-Auswertung */}
+      <div className={`rounded-2xl shadow-card p-5 border-2 ${roleDef.bgClass} ${roleDef.borderClass}`}>
+        <div className="flex items-start justify-between gap-3">
+          <div className="flex-1">
+            <div className={`text-xs font-bold uppercase tracking-wide mb-1 ${roleDef.colorClass}`}>
+              Deine Rolle: {roleDef.name}
+            </div>
+            <p className="text-sm font-semibold text-text-primary mb-1">{roleDef.mission}</p>
+            <p className={`text-sm ${missionFulfilled ? 'text-status-teal' : 'text-text-muted'}`}>
+              {missionReason}
+            </p>
+          </div>
+          <div className={`flex-shrink-0 text-center px-3 py-2 rounded-xl ${missionFulfilled ? 'bg-status-teal text-white' : 'bg-white/60 text-text-muted'}`}>
+            <div className="text-xl font-bold">{missionFulfilled ? '+15' : '0'}</div>
+            <div className="text-xs">Bonus</div>
+          </div>
         </div>
       </div>
 

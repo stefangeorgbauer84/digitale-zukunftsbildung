@@ -1,7 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
-import type { Difficulty, GameState } from '../types'
+import type { Difficulty, GameState, PlayerRole } from '../types'
 import {
   SEED_ASSETS,
   REFLECTION_QUESTIONS,
@@ -45,6 +45,7 @@ export default function AktienGame() {
       // Migrate old saves that lack new fields
       if (!saved.difficulty) saved.difficulty = 'fortgeschritten'
       if (!saved.wealthHistory) saved.wealthHistory = [saved.startCapital]
+      if (!saved.role) saved.role = 'diversifizierer'
       setState(saved)
     }
     setHydrated(true)
@@ -55,8 +56,8 @@ export default function AktienGame() {
     saveState(newState)
   }
 
-  const handleStart = (playerName: string, totalRounds: number, difficulty: Difficulty) => {
-    const initial = createInitialState(playerName, totalRounds, difficulty)
+  const handleStart = (playerName: string, totalRounds: number, difficulty: Difficulty, role: PlayerRole) => {
+    const initial = createInitialState(playerName, totalRounds, difficulty, role)
     updateState(initial)
   }
 

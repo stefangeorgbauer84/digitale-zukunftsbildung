@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 import type { Asset, GameState } from '../types'
-import { REFLECTION_QUESTIONS, calculatePortfolioValue } from '../lib/gameEngine'
+import { REFLECTION_QUESTIONS, ROLE_REFLECTION_QUESTIONS, calculatePortfolioValue } from '../lib/gameEngine'
 
 function ChevronDownIcon() {
   return <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -43,7 +43,11 @@ export default function RoundEndScreen({ state, assets, onReflectionSubmit, onNe
   const [answer, setAnswer] = useState('')
   const [submitted, setSubmitted] = useState(false)
 
-  const question = REFLECTION_QUESTIONS[(state.currentRound - 1) % REFLECTION_QUESTIONS.length]
+  // Ab Runde 3 abwechselnd rollenspezifische Fragen einstreuen
+  const isRoleQuestion = state.currentRound >= 3 && state.currentRound % 3 === 0
+  const question = isRoleQuestion
+    ? ROLE_REFLECTION_QUESTIONS[state.role]
+    : REFLECTION_QUESTIONS[(state.currentRound - 1) % REFLECTION_QUESTIONS.length]
 
   const prevPrices = state.priceHistory[state.priceHistory.length - 2]?.prices ?? state.currentPrices
   const currentPortfolioValue = calculatePortfolioValue(state.positions, state.currentPrices)
@@ -142,8 +146,15 @@ export default function RoundEndScreen({ state, assets, onReflectionSubmit, onNe
 
       {/* Reflection */}
       <div className="bg-white rounded-2xl shadow-card p-6">
-        <div className="text-xs font-semibold text-primary-medium uppercase tracking-wide mb-1">
-          Reflexionsfrage
+        <div className="flex items-center gap-2 mb-1">
+          <div className="text-xs font-semibold text-primary-medium uppercase tracking-wide">
+            Reflexionsfrage
+          </div>
+          {isRoleQuestion && (
+            <span className="text-xs bg-primary-dark text-white px-2 py-0.5 rounded-full">
+              Rollenfrage
+            </span>
+          )}
         </div>
         <p className="font-semibold text-text-primary mb-3">{question}</p>
         {!submitted ? (

@@ -22,6 +22,7 @@ function InfoIcon() {
 import { calculatePortfolioValue } from '../lib/gameEngine'
 import TradeModal from './TradeModal'
 import AssetDetailPanel from './AssetDetailPanel'
+import MissionBanner from './MissionBanner'
 
 interface DashboardProps {
   state: GameState
@@ -99,6 +100,9 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
 
   return (
     <div className="space-y-6">
+      {/* Mission Banner */}
+      <MissionBanner state={state} assets={assets} />
+
       {/* Round indicator */}
       <div className="bg-white rounded-2xl shadow-card p-4">
         <div className="flex items-center justify-between mb-2">
@@ -305,6 +309,7 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound }: 
           cash={state.cash}
           position={state.positions.find((p) => p.assetId === selectedAsset.id)}
           portfolioValue={portfolioValue}
+          playerRole={state.role}
           onBuy={(qty) => handleBuyWithFlash(selectedAsset.id, qty)}
           onSell={(qty) => handleSellWithFlash(selectedAsset.id, qty)}
           onClose={() => setSelectedAsset(null)}

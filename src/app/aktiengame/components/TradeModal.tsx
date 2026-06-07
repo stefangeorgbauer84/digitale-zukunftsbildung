@@ -1,7 +1,8 @@
 'use client'
 
 import { useState } from 'react'
-import type { Asset, Position } from '../types'
+import type { Asset, PlayerRole, Position } from '../types'
+import { PLAYER_ROLES } from '../lib/gameEngine'
 
 function XIcon() {
   return (
@@ -17,6 +18,7 @@ interface TradeModalProps {
   cash: number
   position: Position | undefined
   portfolioValue: number
+  playerRole: PlayerRole
   onBuy: (qty: number) => void
   onSell: (qty: number) => void
   onClose: () => void
@@ -34,6 +36,7 @@ export default function TradeModal({
   cash,
   position,
   portfolioValue,
+  playerRole,
   onBuy,
   onSell,
   onClose,
@@ -52,6 +55,11 @@ export default function TradeModal({
       : 100
 
   const showConcentrationWarning = tab === 'buy' && newPortfolioShare > 40
+
+  // Rollen-Hinweis: zeige wenn Asset zum Rollenprofil passt oder widerspricht
+  const roleDef = PLAYER_ROLES[playerRole]
+  const assetFitsRole = roleDef.favoredSectors.includes(asset.sector) && roleDef.favoredRisk.includes(asset.risk)
+  const assetContraRole = !roleDef.favoredSectors.includes(asset.sector) && !roleDef.favoredRisk.includes(asset.risk)
 
   return (
     <div
@@ -141,6 +149,20 @@ export default function TradeModal({
               </div>
             )}
           </div>
+
+          {/* Rollen-Hinweis */}
+          {tab === 'buy' && assetFitsRole && (
+            <div className={`${roleDef.bgClass} border ${roleDef.borderClass} rounded-xl p-3 text-sm`}>
+              <span className={`font-semibold ${roleDef.colorClass}`}>{roleDef.name}: </span>
+              <span className="text-text-secondary">{roleDef.tradeTip}</span>
+            </div>
+          )}
+          {tab === 'buy' && assetContraRole && (
+            <div className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-sm text-text-muted">
+              <span className="font-semibold text-text-secondary">Hinweis: </span>
+              Dieses Asset passt nicht direkt zu deiner {roleDef.name}-Strategie. Überlege, ob es trotzdem Sinn ergibt – und warum.
+            </div>
+          )}
 
           {/* Warning */}
           {showConcentrationWarning && (

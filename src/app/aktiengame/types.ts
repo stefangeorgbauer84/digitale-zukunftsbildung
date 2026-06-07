@@ -3,6 +3,32 @@ export type AssetType = 'Aktie' | 'ETF'
 export type GamePhase = 'SETUP' | 'PLAYING' | 'ROUND_END' | 'GAME_OVER'
 export type Difficulty = 'einsteiger' | 'fortgeschritten' | 'experte'
 
+// Die 5 wählbaren Investoren-Persönlichkeiten
+export type PlayerRole =
+  | 'sicherheitsdenker'
+  | 'wachstumssucher'
+  | 'nachhaltigkeitsinvestor'
+  | 'diversifizierer'
+  | 'spekulant'
+
+export interface RoleDefinition {
+  id: PlayerRole
+  name: string
+  tagline: string
+  description: string
+  mission: string
+  missionShort: string
+  favoredSectors: string[]
+  favoredRisk: RiskLevel[]
+  colorClass: string
+  bgClass: string
+  borderClass: string
+  /** Lernhinweis der in TradeModal angezeigt wird */
+  tradeTip: string
+  /** Wird in der Auswertung angezeigt */
+  bonusLabel: string
+}
+
 export interface Asset {
   id: string
   name: string
@@ -13,6 +39,7 @@ export interface Asset {
   price: number
   volatility: number
   description: string
+  sustainable?: boolean
 }
 
 export interface GameEvent {
@@ -65,4 +92,5 @@ export interface GameState {
   roundChanges: Record<string, number>
   difficulty: Difficulty
   wealthHistory: number[]
+  role: PlayerRole
 }
