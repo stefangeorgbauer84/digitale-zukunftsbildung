@@ -20,7 +20,7 @@ const auszeichnungen = [
     bg: '#f3f1f9',
   },
   {
-    logo: '/fotos/Logo%20Nationale%20Finanzbildungsstrategie.png',
+    logo: '/fotos/logo-finanzbildungsstrategie.png',
     logoAlt: 'Nationale Finanzbildungsstrategie',
     badge: 'Offiziell anerkannt',
     titel: 'Nationale Finanzbildungsstrategie',
@@ -29,7 +29,7 @@ const auszeichnungen = [
     bg: '#e6f4f1',
   },
   {
-    logo: '/fotos/Logo%20G%C3%BCtesiegel%20Lernapps.png',
+    logo: '/fotos/logo-guetesiegel.png',
     logoAlt: 'Gütesiegel Lern-Apps',
     badge: 'Qualitätszertifiziert',
     titel: 'Gütesiegel Qualitäts-Lern-Apps',
@@ -182,14 +182,14 @@ export default function UeberUns() {
               <div key={a.titel} className="rounded-3xl p-7 border border-gray-100 hover:shadow-card-hover transition-all flex flex-col gap-5"
                 style={{ background: a.bg }}>
                 {/* Logo */}
-                <div className="h-16 flex items-center">
+                <div className="h-24 flex items-center w-full">
                   <Image
                     src={a.logo}
                     alt={a.logoAlt}
-                    width={160}
-                    height={64}
-                    className="max-h-14 w-auto object-contain"
-                    style={{ maxWidth: '160px' }}
+                    width={260}
+                    height={96}
+                    className="max-h-24 w-auto object-contain"
+                    style={{ maxWidth: '260px' }}
                   />
                 </div>
                 {/* Badge */}

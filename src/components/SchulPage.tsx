@@ -438,8 +438,8 @@ export default function SchulPage({
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
             <div className="bg-white rounded-3xl p-6 flex flex-col items-center text-center gap-4 shadow-card hover:shadow-card-hover transition-all border-2" style={{ borderColor: '#4a2d8a' }}>
-              <div className="h-16 flex items-center justify-center">
-                <Image src="/fotos/Logo%20G%C3%BCtesiegel%20Lernapps.png" alt="Gütesiegel Qualitäts-Lern-Apps" width={180} height={64} className="max-h-14 w-auto object-contain" />
+              <div className="h-24 flex items-center justify-center bg-primary-50 rounded-2xl w-full px-4">
+                <Image src="/fotos/logo-guetesiegel.png" alt="Gütesiegel Qualitäts-Lern-Apps" width={200} height={96} className="max-h-20 w-auto object-contain" />
               </div>
               <div>
                 <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#4a2d8a', color: '#fff' }}>Qualitätszertifiziert</span>
@@ -447,8 +447,8 @@ export default function SchulPage({
               </div>
             </div>
             <div className="bg-white rounded-3xl p-6 flex flex-col items-center text-center gap-4 shadow-card hover:shadow-card-hover transition-all">
-              <div className="h-16 flex items-center justify-center">
-                <Image src="/fotos/Logo%20Nationale%20Finanzbildungsstrategie.png" alt="Nationale Finanzbildungsstrategie" width={180} height={64} className="max-h-14 w-auto object-contain" />
+              <div className="h-24 flex items-center justify-center w-full px-2">
+                <Image src="/fotos/logo-finanzbildungsstrategie.png" alt="Nationale Finanzbildungsstrategie" width={280} height={96} className="max-h-24 w-auto object-contain" />
               </div>
               <div>
                 <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#2A8A76', color: '#fff' }}>Bundesministerium</span>
@@ -483,8 +483,8 @@ export default function SchulPage({
               { src: '/fotos/Logo%20Hochschule%20Burgenland.jpg', alt: 'Hochschule Burgenland' },
               { src: '/fotos/Logo%20Wko%20Wirtschaftskammer.png', alt: 'WKÖ Wirtschaftskammer' },
               { src: '/fotos/MEGA%20Bildungsstiftung%20Logo.jpeg', alt: 'MEGA Bildungsstiftung' },
-              { src: '/fotos/Logo%20Nationale%20Finanzbildungsstrategie.png', alt: 'Nationale Finanzbildungsstrategie' },
-              { src: '/fotos/Logo%20G%C3%BCtesiegel%20Lernapps.png', alt: 'Gütesiegel Lern-Apps', highlight: true },
+              { src: '/fotos/logo-finanzbildungsstrategie.png', alt: 'Nationale Finanzbildungsstrategie' },
+              { src: '/fotos/logo-guetesiegel.png', alt: 'Gütesiegel Lern-Apps', highlight: true },
               { src: '/fotos/Logo%20Ovos.jpeg', alt: 'Ovos' },
               { src: '/fotos/TGW%20Future%20Wings.png', alt: 'TGW Future Wings' },
               { src: '/fotos/TGW%20Logistics%20Logo.png', alt: 'TGW Logistics' },
