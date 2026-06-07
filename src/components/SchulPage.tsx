@@ -4,6 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
+import VideoSection from '@/components/VideoSection'
 
 export interface UnterrichtsEinheit {
   schritt: string
@@ -235,6 +236,9 @@ export default function SchulPage({
           </div>
         </section>
       )}
+
+      {/* ── Video ───────────────────────────────────────────────── */}
+      <VideoSection variant="dark" farbe={farbe} />
 
       {/* ── Lehrer-Credibility: Plattform aus Lehrersicht ──────── */}
       <section className="py-20 bg-white">
