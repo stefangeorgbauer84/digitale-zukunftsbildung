@@ -7,6 +7,7 @@ import ContactForm from '@/components/ContactForm'
 import BackToTop from '@/components/BackToTop'
 import FaqAccordion from '@/components/FaqAccordion'
 import VideoSection from '@/components/VideoSection'
+import AktiengameCTA from '@/components/AktiengameCTA'
 
 export const metadata: Metadata = {
   title: 'Skills-UP! | Finanzbildung für Schulen in Österreich',
@@ -562,6 +563,11 @@ export default function HomePage() {
           ))}
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════
+          AKTIENGAME CTA
+      ══════════════════════════════════════════════════ */}
+      <AktiengameCTA />
 
       {/* ══════════════════════════════════════════════════
           PLATFORM FEATURES

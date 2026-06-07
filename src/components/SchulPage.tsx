@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import SiteNav from '@/components/SiteNav'
+import AktiengameCTA from '@/components/AktiengameCTA'
 import SiteFooter from '@/components/SiteFooter'
 import VideoSection from '@/components/VideoSection'
 
@@ -612,6 +613,9 @@ export default function SchulPage({
           </div>
         </div>
       </section>
+
+      {/* ── Aktiengame CTA ──────────────────────────────────── */}
+      <AktiengameCTA />
 
       {/* ── Lehrplan-Passung ────────────────────────────────── */}
       <section className="py-16 bg-gray-50">
