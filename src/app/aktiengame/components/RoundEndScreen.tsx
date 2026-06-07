@@ -2,8 +2,118 @@
 
 import { useState } from 'react'
 import type { Asset, GameState } from '../types'
-import { REFLECTION_QUESTIONS, ROLE_REFLECTION_QUESTIONS, PLAYER_ROLES, calculatePortfolioValue, roundToYear } from '../lib/gameEngine'
+import { REFLECTION_QUESTIONS, ROLE_REFLECTION_QUESTIONS, PLAYER_ROLES, calculatePortfolioValue, roundToYear, START_YEAR } from '../lib/gameEngine'
 import EventImpactHeatmap from './EventImpactHeatmap'
+
+// ---------------------------------------------------------------------------
+// Jährliche Lerneinheiten 2026–2035
+// ---------------------------------------------------------------------------
+interface YearlyLearning {
+  year: number
+  title: string
+  concept: string
+  explanation: string
+  tip: string
+  emoji: string
+}
+
+const YEARLY_LEARNINGS: YearlyLearning[] = [
+  {
+    year: 2026,
+    emoji: '🏦',
+    title: 'Wie funktioniert eine Börse?',
+    concept: 'Angebot & Nachfrage',
+    explanation:
+      'Eine Börse ist ein Marktplatz, auf dem Käufer und Verkäufer zusammenkommen. Der Kurs einer Aktie steigt, wenn mehr Menschen kaufen wollen als verkaufen – und fällt, wenn das Gegenteil der Fall ist. Niemand setzt den Preis fest: Er entsteht durch Millionen von Entscheidungen jeden Tag.',
+    tip: 'Merke: Kurse spiegeln Erwartungen wider – nicht die aktuelle Realität, sondern was die meisten für die Zukunft erwarten.',
+  },
+  {
+    year: 2027,
+    emoji: '📈',
+    title: 'Zinseszins – der mächtigste Effekt im Investieren',
+    concept: 'Zinseszins (Compounding)',
+    explanation:
+      'Wenn dein Geld Rendite erwirtschaftet und diese Rendite wieder investiert wird, wächst dein Kapital exponentiell. Aus 10.000 € werden bei 7 % jährlicher Rendite nach 10 Jahren fast 20.000 € – ohne einen Cent zusätzlich einzuzahlen. Je früher man beginnt, desto stärker wirkt dieser Effekt.',
+    tip: 'Faustregel: Teile 72 durch die Rendite in Prozent – so viele Jahre dauert es, bis sich dein Kapital verdoppelt. Bei 7 %: ca. 10 Jahre.',
+  },
+  {
+    year: 2028,
+    emoji: '🌊',
+    title: 'Marktzyklen – Boom und Krise',
+    concept: 'Bullen- und Bärenmärkte',
+    explanation:
+      'Aktienmärkte verlaufen in Zyklen: Aufschwung (Bullenmarkt), Überhitzung, Korrektur, Abschwung (Bärenmarkt), Erholung. Diese Zyklen dauern selten gleich lang – manche Booms halten ein Jahrzehnt, manche Krisen sind in Monaten vorbei. Wer in der Krise verkauft, realisiert Verluste. Wer hält oder sogar nachkauft, profitiert oft von der Erholung.',
+    tip: 'Historisch steigen Aktienmärkte langfristig trotz aller Krisen. Das kürzeste Bärmarkterholung in der Geschichte dauerte nur 33 Tage (Corona-Crash 2020).',
+  },
+  {
+    year: 2029,
+    emoji: '⚖️',
+    title: 'Risiko und Rendite – zwei Seiten einer Medaille',
+    concept: 'Risiko-Rendite-Verhältnis',
+    explanation:
+      'Kein Investment bietet hohe Rendite ohne Risiko. Anleihen und Sparkonten sind sicher, werfen aber kaum Ertrag ab. Aktien schwanken stark, bieten aber langfristig deutlich mehr Wachstum. Das Risiko-Rendite-Verhältnis ist ein Kernprinzip: Wer mehr Risiko trägt, soll dafür langfristig entschädigt werden.',
+    tip: 'Frage dich bei jedem Investment: Wie viel Verlust kann ich verkraften, ohne panisch zu verkaufen? Das bestimmt deinen persönlichen Risikohorizont.',
+  },
+  {
+    year: 2030,
+    emoji: '🗺️',
+    title: 'Diversifikation – nicht alles auf eine Karte',
+    concept: 'Portfoliostreuung',
+    explanation:
+      'Wenn du nur eine Aktie hältst und das Unternehmen Pleite geht, verlierst du alles. Hältst du 20 verschiedene Aktien aus 5 Branchen und 3 Ländern, trifft dich ein Einzelverlust viel schwächer. Diversifikation ist der einzige „Free Lunch" im Investieren – du reduzierst Risiko, ohne automatisch Rendite aufzugeben.',
+    tip: 'ETFs sind der einfachste Weg zur Diversifikation: Ein einziger ETF kann Anteile an Tausenden Unternehmen weltweit enthalten.',
+  },
+  {
+    year: 2031,
+    emoji: '💡',
+    title: 'Behavioral Finance – warum wir irrationale Entscheidungen treffen',
+    concept: 'Kognitive Verzerrungen',
+    explanation:
+      'Menschen sind keine rationalen Investoren. Wir verkaufen in Panik, wenn Kurse fallen (Verlustaversion). Wir halten Verlustpositionen zu lange, weil wir hoffen, sie erholen sich (Sunk-Cost-Fallacy). Wir kaufen was alle kaufen, wenn Kurse steigen (Herdenverhalten). Diese Fehler kosten Rendite – das Wissen darum hilft, sie zu vermeiden.',
+    tip: 'Strategie vor Emotion: Wer einen Plan hat und ihn durchhält, schlägt meist den, der auf Bauchgefühl reagiert.',
+  },
+  {
+    year: 2032,
+    emoji: '🌍',
+    title: 'Nachhaltiges Investieren – ESG und was dahintersteckt',
+    concept: 'ESG (Environment, Social, Governance)',
+    explanation:
+      'ESG-Kriterien bewerten Unternehmen nicht nur nach Gewinn, sondern auch nach Umweltauswirkungen (E), sozialer Verantwortung (S) und guter Unternehmensführung (G). Nachhaltige Fonds wachsen stark – nicht nur aus ethischen, sondern auch aus wirtschaftlichen Gründen: Unternehmen mit schlechtem ESG-Profil tragen oft höhere Regulierungs- und Reputationsrisiken.',
+    tip: 'Achtung: „Greenwashing" ist real. Schau bei nachhaltigen Fonds auf konkrete Kriterien, nicht nur auf das Label.',
+  },
+  {
+    year: 2033,
+    emoji: '💰',
+    title: 'Inflation – die stille Enteignung',
+    concept: 'Kaufkraftverlust',
+    explanation:
+      'Inflation bedeutet, dass Geld über Zeit weniger wert wird. Bei 3 % Inflation pro Jahr kauft dein heutiger 100-€-Schein in 10 Jahren nur noch Waren im Wert von ca. 74 €. Wer sein Erspartes auf dem Sparbuch lässt, verliert real an Kaufkraft. Aktien und Sachwerte gelten deshalb als langfristiger Schutz vor Inflation.',
+    tip: 'Reale Rendite = Nominale Rendite minus Inflation. Bei 7 % Rendite und 3 % Inflation beträgt die reale Rendite ca. 4 %.',
+  },
+  {
+    year: 2034,
+    emoji: '🤖',
+    title: 'Technologie und Märkte – Disruption als Anlage-Chance',
+    concept: 'Technologischer Wandel',
+    explanation:
+      'Neue Technologien schaffen neue Gewinner und zerstören bestehende Branchen. Kodak verpasste die Digitalkamera, Nokia das Smartphone, Blockbuster das Streaming. Wer früh in Disruption investiert, kann stark profitieren – trägt aber auch das Risiko, auf den falschen Durchbruch zu setzen. ETFs auf Technologieindizes bieten hier eine breite Streuung.',
+    tip: 'Nicht jede neue Technologie überlebt den Hype. Viele Internet-Firmen aus dem Jahr 2000 existieren heute nicht mehr – Amazon schon.',
+  },
+  {
+    year: 2035,
+    emoji: '🎯',
+    title: 'Langfristiges Denken – der wichtigste Vorteil privater Investoren',
+    concept: 'Zeit als Wettbewerbsvorteil',
+    explanation:
+      'Professionelle Fondsmanager stehen unter Druck, kurzfristige Quartalsziele zu erfüllen. Private Investoren müssen das nicht. Wer 10, 20 oder 30 Jahre investiert bleibt, hat einen strukturellen Vorteil: Er kann Krisen aussitzen, Volatilität ignorieren und vom langfristigen Wachstum profitieren – ohne auf quartalsweise Berichte reagieren zu müssen.',
+    tip: 'Warren Buffett sagte: „Der Aktienmarkt ist ein Mechanismus zur Umverteilung von Geld von den Ungeduldigen zu den Geduldigen."',
+  },
+]
+
+function getYearlyLearning(round: number): YearlyLearning | null {
+  const year = START_YEAR + round - 1
+  return YEARLY_LEARNINGS.find((l) => l.year === year) ?? null
+}
 
 function ChevronDownIcon() {
   return <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
@@ -119,6 +229,39 @@ export default function RoundEndScreen({ state, assets, onReflectionSubmit, onNe
           </div>
         </div>
       )}
+
+      {/* Jährliches Learning */}
+      {(() => {
+        const learning = getYearlyLearning(state.currentRound)
+        if (!learning) return null
+        return (
+          <div className="bg-white rounded-2xl shadow-card overflow-hidden border border-primary-100">
+            <div className="bg-primary-dark px-6 py-3 flex items-center gap-3">
+              <span className="text-2xl">{learning.emoji}</span>
+              <div>
+                <div className="text-xs font-semibold text-primary-light uppercase tracking-wide">
+                  Lerneinheit {learning.year}
+                </div>
+                <div className="text-white font-heading font-bold text-base leading-tight">
+                  {learning.title}
+                </div>
+              </div>
+            </div>
+            <div className="p-5 space-y-4">
+              <div className="inline-block bg-primary-50 text-primary-dark text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wide">
+                Konzept: {learning.concept}
+              </div>
+              <p className="text-sm text-text-secondary leading-relaxed">
+                {learning.explanation}
+              </p>
+              <div className="bg-status-teal-light border-l-4 border-status-teal rounded-r-xl px-4 py-3">
+                <div className="text-xs font-bold text-status-teal uppercase tracking-wide mb-0.5">Merksatz</div>
+                <p className="text-sm text-text-secondary italic">{learning.tip}</p>
+              </div>
+            </div>
+          </div>
+        )
+      })()}
 
       {/* Ereignis-Heatmap + Marktstimmung */}
       {state.currentEvent && (

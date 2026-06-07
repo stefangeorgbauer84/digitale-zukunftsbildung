@@ -53,7 +53,7 @@ function RoleIcon({ role }: { role: PlayerRole }) {
 
 export default function SetupScreen({ onStart }: SetupScreenProps) {
   const [name, setName] = useState('')
-  const [rounds, setRounds] = useState(8)
+  const [rounds, setRounds] = useState(10)
   const [difficulty, setDifficulty] = useState<Difficulty>('fortgeschritten')
   const [role, setRole] = useState<PlayerRole>('diversifizierer')
   const [step, setStep] = useState<1 | 2>(1)
@@ -89,7 +89,7 @@ export default function SetupScreen({ onStart }: SetupScreenProps) {
         {step === 1 && (
           <div className="space-y-5">
             <p className="text-text-secondary text-sm">
-              Du startest mit 10.000 € virtuellem Kapital und handelst über mehrere Runden.
+              Du startest mit 10.000 € virtuellem Kapital und investierst über mehrere Jahre ab 2026.
             </p>
 
             <div>
@@ -108,9 +108,9 @@ export default function SetupScreen({ onStart }: SetupScreenProps) {
             </div>
 
             <div>
-              <p className="text-sm font-semibold text-text-primary mb-2">Anzahl Runden</p>
+              <p className="text-sm font-semibold text-text-primary mb-2">Simulationszeitraum</p>
               <div className="flex gap-3">
-                {[5, 8, 10].map((r) => (
+                {([5, 7, 10] as const).map((r) => (
                   <button
                     key={r}
                     type="button"
@@ -121,12 +121,16 @@ export default function SetupScreen({ onStart }: SetupScreenProps) {
                         : 'border-gray-200 text-text-secondary hover:border-primary-medium'
                     }`}
                   >
-                    {r} Runden
+                    {r} Jahre
                   </button>
                 ))}
               </div>
               <p className="text-xs text-text-muted mt-2">
-                {rounds === 5 ? '~20 Minuten · Kurzspiel' : rounds === 8 ? '~35 Minuten · Standard für Workshops' : '~50 Minuten · Vertiefte Simulation'}
+                {rounds === 5
+                  ? '2026–2030 · ~20 Minuten · Kurzspiel'
+                  : rounds === 7
+                  ? '2026–2032 · ~30 Minuten · Standard für Workshops'
+                  : '2026–2035 · ~45 Minuten · Vollständige Dekaden-Simulation'}
               </p>
             </div>
 
