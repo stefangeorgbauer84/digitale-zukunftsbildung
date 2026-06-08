@@ -97,7 +97,7 @@ export default function UeberUns() {
             <span className="text-primary-light">fit fürs echte Leben.</span>
           </h1>
           <p className="text-white/75 font-body text-xl max-w-2xl leading-relaxed">
-            Skills-UP! erreicht heute Schüler:innen in mehreren Schulen österreichweit — und wächst. Gegründet 2021, ausgezeichnet 2025.
+            Skills-UP! hat bereits 1.830 junge Menschen erreicht — 443 Lehrlinge direkt, 1.387 Lizenzen über den Marktplatz Lernapps. Gegründet 2021, ausgezeichnet 2025.
           </p>
         </div>
 
@@ -112,52 +112,75 @@ export default function UeberUns() {
       {/* ── Meilensteine / Stats ────────────────────────── */}
       <section className="py-16 bg-white border-b border-gray-100">
         <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+          {/* Haupt-Zahl prominent */}
+          <div className="rounded-3xl p-8 mb-6 text-center"
+            style={{ background: 'linear-gradient(135deg, #4a2d8a 0%, #2a8a76 100%)' }}>
+            <p className="font-heading text-6xl md:text-7xl font-bold text-white leading-none mb-2">1.830</p>
+            <p className="font-heading font-700 text-white/80 text-lg">erreichte junge Menschen</p>
+            <p className="font-body text-white/55 text-sm mt-1">Stand 2026 — Tendenz stark steigend</p>
+          </div>
+
+          {/* Detail-Zahlen 3+3 Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-4">
             {[
               {
-                zahl: '1.200+',
-                label: 'Schüler:innen',
-                sub: 'Aktiv mit Skills-UP! lernend',
+                zahl: '443',
+                label: 'Lehrlinge direkt erreicht',
+                sub: '240 davon allein im Jahr 2026',
                 color: '#4a2d8a', bg: '#f3f1f9',
                 icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
               },
               {
-                zahl: '9+',
-                label: 'Schulen & Partner',
-                sub: 'In mehreren Bundesländern aktiv',
+                zahl: '4',
+                label: 'Berufsschulen',
+                sub: '12 Workshops durchgeführt',
                 color: '#2a8a76', bg: '#e6f4f1',
                 icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
+              },
+              {
+                zahl: '24',
+                label: 'Lehrkräfte eingebunden',
+                sub: 'Aktive Multiplikator:innen',
+                color: '#D87228', bg: '#fdf0e6',
+                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
+              },
+              {
+                zahl: '1.387',
+                label: 'Lizenzen',
+                sub: 'Über Marktplatz Lernapps',
+                color: '#6b4db0', bg: '#ede9f7',
+                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>,
               },
               {
                 zahl: '12+',
                 label: 'Lernmodule',
                 sub: 'Lehrplankonform, sofort einsetzbar',
-                color: '#D87228', bg: '#fdf0e6',
-                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>,
+                color: '#1a5c4e', bg: '#e6f4f1',
+                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>,
               },
               {
-                zahl: '↑ 3×',
-                label: 'Wachstum',
-                sub: 'Seit Launch 2021 — Tendenz steigend',
-                color: '#6b4db0', bg: '#ede9f7',
-                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
+                zahl: '2021',
+                label: 'Gegründet',
+                sub: 'Idee entstanden im Lockdown',
+                color: '#4a2d8a', bg: '#f3f1f9',
+                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>,
               },
             ].map((s) => (
-              <div key={s.label} className="rounded-2xl p-6 flex flex-col gap-3" style={{ background: s.bg }}>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 text-white"
+              <div key={s.label} className="rounded-2xl p-5 flex flex-col gap-3" style={{ background: s.bg }}>
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 text-white"
                   style={{ background: s.color }}>
                   {s.icon}
                 </div>
                 <div>
-                  <p className="font-heading text-3xl font-bold leading-none mb-1" style={{ color: s.color }}>{s.zahl}</p>
+                  <p className="font-heading text-2xl font-bold leading-none mb-1" style={{ color: s.color }}>{s.zahl}</p>
                   <p className="font-heading font-700 text-sm text-text-primary leading-tight">{s.label}</p>
                   <p className="font-body text-xs text-text-muted mt-1 leading-snug">{s.sub}</p>
                 </div>
               </div>
             ))}
           </div>
-          <p className="text-center text-xs font-body text-text-muted mt-6">
-            Schüler:innen-Zahlen und Schulen werden laufend aktualisiert — aktueller Stand auf Anfrage.
+          <p className="text-center text-xs font-body text-text-muted mt-5">
+            Alle Zahlen verfiziert, Stand Juni 2026.
           </p>
         </div>
       </section>
