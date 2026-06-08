@@ -234,9 +234,9 @@ export default function HomePage() {
             <div className="absolute inset-0 blur-3xl scale-125 pointer-events-none"
               style={{ background: 'radial-gradient(circle, rgba(155,126,212,0.4) 0%, transparent 70%)' }} />
             <Image src="/capybara-mascot.png" alt="Skills-UP! Maskottchen" width={140} height={140}
-              className="relative drop-shadow-2xl" priority />
+              className="relative drop-shadow-2xl w-24 md:w-[140px] h-auto" priority />
             <Image src="/fotos/Logo.png" alt="Skills-UP! Digitale Zukunftsbildung" width={80} height={80}
-              className="relative drop-shadow-xl rounded-2xl opacity-90" priority />
+              className="relative drop-shadow-xl rounded-2xl opacity-90 w-16 md:w-20 h-auto" priority />
           </div>
 
           <p className="font-heading text-xl md:text-2xl text-white/80 font-600 mb-4 leading-snug">
@@ -347,7 +347,7 @@ export default function HomePage() {
           {partnerLogos.map((l) => <li key={l.alt}>{l.alt}</li>)}
         </ul>
         <div className="relative marquee-track" aria-hidden="true">
-          <div className="flex animate-marquee gap-24 items-center">
+          <div className="flex animate-marquee gap-12 md:gap-24 items-center">
             {[...partnerLogos, ...partnerLogos].map((logo, i) => (
               <div key={`${logo.alt}-${i}`}
                 className="shrink-0 flex items-center justify-center px-6 rounded-2xl"
@@ -443,7 +443,7 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           SCHULTYPEN ABSPRUNG
       ══════════════════════════════════════════════════ */}
-      <section id="schulen" className="py-24 bg-gray-50">
+      <section id="schulen" className="py-14 md:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
             <div className="flex justify-center mb-4">
@@ -457,14 +457,14 @@ export default function HomePage() {
               </svg>
               9. bis 12. Schulstufe
             </div>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
+            <h2 className="font-heading text-3xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
               Finanzbildung für<br />
               <span style={{ color: '#4a2d8a' }}>jede Schulform.</span>
             </h2>
             <p className="font-body text-text-muted text-lg max-w-2xl mx-auto mb-4">
               Skills-UP! ist für Jugendliche ab 15 Jahren konzipiert und sofort einsetzbar: für AHS, HAK, HTL, HLW, BAfEP, BASOP, PTS und Berufsschulen.
             </p>
-            <Link href="/schulen" className="inline-flex items-center gap-2 font-body font-700 text-sm px-5 py-2.5 rounded-xl transition-all hover:scale-105"
+            <Link href="/schulen" className="inline-flex items-center gap-2 font-body font-700 text-sm px-5 py-3 rounded-xl transition-all hover:scale-105"
               style={{ background: '#4a2d8a', color: '#fff' }}>
               Alle Schultypen entdecken
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -577,13 +577,13 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           ANGEBOTE
       ══════════════════════════════════════════════════ */}
-      <section id="angebote" className="py-28 max-w-7xl mx-auto px-6">
+      <section id="angebote" className="py-16 md:py-28 max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
           <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-primary-medium bg-primary-50 px-4 py-2 rounded-full mb-5">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
             Das Skills-UP! Programm
           </div>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
+          <h2 className="font-heading text-3xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
             Drei Bausteine, die <span className="text-status-teal">wirken.</span>
           </h2>
           <p className="text-text-muted text-lg max-w-2xl mx-auto font-body">
@@ -618,7 +618,7 @@ export default function HomePage() {
               <h3 className="font-heading text-xl font-bold mb-2" style={{ color: '#1a1040' }}>{a.title}</h3>
               <p className="text-xs font-body text-primary-medium font-600 mb-3">{a.zielgruppe}</p>
               <p className="text-text-muted text-sm font-body leading-relaxed flex-1">{a.text}</p>
-              <a href="#kontakt" className="mt-6 inline-flex items-center gap-1.5 text-sm font-body font-700 text-primary-medium hover:text-primary-dark transition-colors">
+              <a href="#kontakt" className="mt-6 inline-flex items-center gap-1.5 text-sm font-body font-700 text-primary-medium hover:text-primary-dark transition-colors py-2.5">
                 Anfragen
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
@@ -635,14 +635,14 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           PLATFORM FEATURES
       ══════════════════════════════════════════════════ */}
-      <section id="plattform" className="py-28" style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)' }}>
+      <section id="plattform" className="py-16 md:py-28" style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)' }}>
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-primary-medium bg-white px-4 py-2 rounded-full mb-5 shadow-sm">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
               Was Skills-UP! einzigartig macht
             </div>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
+            <h2 className="font-heading text-3xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
               So funktioniert<br /><span className="text-primary-medium">das Programm.</span>
             </h2>
             <p className="text-text-muted text-lg max-w-2xl mx-auto font-body">
@@ -672,13 +672,13 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           MODUL-THEMEN
       ══════════════════════════════════════════════════ */}
-      <section className="py-24 max-w-7xl mx-auto px-6">
+      <section className="py-14 md:py-24 max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-status-teal bg-status-teal-light px-4 py-2 rounded-full mb-5">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
             12+ Module für fundiertes Finanzwissen
           </div>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
+          <h2 className="font-heading text-3xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
             Was Schüler:innen lernen.
           </h2>
           <p className="text-text-muted text-lg max-w-2xl mx-auto font-body">
@@ -785,14 +785,14 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           HOW IT WORKS — dark section
       ══════════════════════════════════════════════════ */}
-      <section className="py-28" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 50%, #1a3d34 100%)' }}>
+      <section className="py-16 md:py-28" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 50%, #1a3d34 100%)' }}>
         <div className="max-w-5xl mx-auto px-6">
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-white/50 border border-white/15 px-4 py-2 rounded-full mb-5">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
               So funktioniert Skills-UP!
             </div>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-5">
+            <h2 className="font-heading text-3xl md:text-5xl font-bold text-white mb-5">
               In 3 Schritten zur<br /><span className="text-primary-light">echten Kompetenz.</span>
             </h2>
           </div>
@@ -976,13 +976,13 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           ZIELGRUPPEN
       ══════════════════════════════════════════════════ */}
-      <section className="py-24 max-w-7xl mx-auto px-6">
+      <section className="py-14 md:py-24 max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-primary-medium bg-primary-50 px-4 py-2 rounded-full mb-5">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
             Für wen ist Skills-UP!?
           </div>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold" style={{ color: '#1a1040' }}>
+          <h2 className="font-heading text-3xl md:text-5xl font-bold" style={{ color: '#1a1040' }}>
             Maßgeschneidert für jede Zielgruppe.
           </h2>
         </div>
@@ -1052,7 +1052,7 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           FÜR UNTERNEHMEN
       ══════════════════════════════════════════════════ */}
-      <section id="unternehmen" className="py-24 max-w-7xl mx-auto px-6">
+      <section id="unternehmen" className="py-14 md:py-24 max-w-7xl mx-auto px-6">
         <div className="rounded-3xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 60%, #0f3d2d 100%)' }}>
           <div className="p-10 md:p-16 grid md:grid-cols-2 gap-12 items-center">
             <div>
@@ -1083,7 +1083,7 @@ export default function HomePage() {
                 ))}
               </ul>
               <a href="#kontakt"
-                className="inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl transition-all hover:opacity-90 active:scale-95"
+                className="inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3.5 rounded-xl transition-all hover:opacity-90 active:scale-95"
                 style={{ background: 'linear-gradient(135deg, #6b4db0 0%, #2a8a76 100%)', color: '#fff' }}>
                 Kooperation anfragen
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
@@ -1140,13 +1140,13 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           TESTIMONIALS
       ══════════════════════════════════════════════════ */}
-      <section className="py-24 max-w-7xl mx-auto px-6">
+      <section className="py-14 md:py-24 max-w-7xl mx-auto px-6">
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-status-teal bg-status-teal-light px-4 py-2 rounded-full mb-5">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             Was Teilnehmer:innen sagen
           </div>
-          <h2 className="font-heading text-4xl md:text-5xl font-bold" style={{ color: '#1a1040' }}>
+          <h2 className="font-heading text-3xl md:text-5xl font-bold" style={{ color: '#1a1040' }}>
             Echtes Feedback. Keine Hochglanzbroschüre.
           </h2>
         </div>
@@ -1197,7 +1197,7 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           FAQ
       ══════════════════════════════════════════════════ */}
-      <section className="py-24" style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)' }}>
+      <section className="py-14 md:py-24" style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)' }}>
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-14">
             <div className="flex justify-center mb-4">
@@ -1282,7 +1282,7 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           CTA + CONTACT
       ══════════════════════════════════════════════════ */}
-      <section id="kontakt" className="py-28 relative overflow-hidden">
+      <section id="kontakt" className="py-16 md:py-28 relative overflow-hidden">
         <div className="absolute inset-0 animate-gradient-shift pointer-events-none"
           style={{ background: 'linear-gradient(135deg, #4a2d8a 0%, #6b4db0 45%, #2a8a76 100%)', backgroundSize: '200% 200%' }} />
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
@@ -1307,7 +1307,7 @@ export default function HomePage() {
             Wir antworten innerhalb von 24 Stunden
           </div>
 
-          <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+          <h2 className="font-heading text-3xl md:text-5xl font-bold text-white mb-6 leading-tight">
             Bereit für den nächsten Schritt?
           </h2>
           <p className="text-white/70 font-body text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
@@ -1362,7 +1362,7 @@ export default function HomePage() {
                   {k.icon}
                 </div>
                 <p className="font-heading font-700 text-white text-sm mb-1">{k.title}</p>
-                <p className="font-body text-white/55 text-xs leading-relaxed">{k.text}</p>
+                <p className="font-body text-white/55 text-sm leading-relaxed">{k.text}</p>
                 <div className="flex items-center gap-1 mt-3 text-white/40 group-hover:text-white/80 transition-colors text-xs font-body font-700">
                   E-Mail öffnen
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">

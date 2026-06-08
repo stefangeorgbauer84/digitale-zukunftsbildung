@@ -99,7 +99,7 @@ export default function SiteNav({ dark = false }: { dark?: boolean }) {
         </nav>
 
         <button
-          className={`md:hidden p-2 rounded-xl transition-colors ${solid ? 'text-text-secondary hover:bg-primary-50' : 'text-white hover:bg-white/10'}`}
+          className={`md:hidden p-3 rounded-xl transition-colors ${solid ? 'text-text-secondary hover:bg-primary-50' : 'text-white hover:bg-white/10'}`}
           onClick={() => setOpen(!open)}
           aria-label={open ? 'Menü schließen' : 'Menü öffnen'}
           aria-expanded={open}
@@ -119,7 +119,7 @@ export default function SiteNav({ dark = false }: { dark?: boolean }) {
         <div
           id="mobile-menu"
           ref={menuRef}
-          className="md:hidden bg-white border-t border-gray-200 px-4 pb-4 shadow-lg"
+          className="md:hidden bg-white border-t border-gray-200 px-4 pt-4 pb-4 shadow-lg"
           role="dialog"
           aria-label="Navigation"
           aria-modal="true"

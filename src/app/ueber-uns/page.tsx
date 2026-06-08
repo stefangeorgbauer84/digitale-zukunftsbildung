@@ -83,7 +83,7 @@ export default function UeberUns() {
           style={{ background: 'radial-gradient(circle, rgba(155,126,212,0.25) 0%, transparent 70%)' }} />
 
         {/* Content */}
-        <div className="relative z-10 max-w-5xl mx-auto px-6 pb-16 pt-40">
+        <div className="relative z-10 max-w-5xl mx-auto px-6 pb-16 pt-28 md:pt-40">
           {/* Award badge */}
           <div className="inline-flex items-center gap-2 glass text-white/90 text-xs font-body font-700 px-4 py-2 rounded-full mb-6 border border-white/20">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="#fde68a" stroke="#fde68a" strokeWidth="1">
@@ -92,7 +92,7 @@ export default function UeberUns() {
             Top-3 MEGA Bildungsmillion 2025
           </div>
 
-          <h1 className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Wir machen Jugendliche<br />
             <span className="text-primary-light">fit fürs echte Leben.</span>
           </h1>
@@ -261,7 +261,7 @@ export default function UeberUns() {
       </section>
 
       {/* ── Auszeichnungen & Zertifizierungen ───────────── */}
-      <section className="py-24 bg-white border-t border-gray-100">
+      <section className="py-14 md:py-24 bg-white border-t border-gray-100">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-primary-medium bg-primary-50 px-4 py-2 rounded-full mb-5">
@@ -270,7 +270,7 @@ export default function UeberUns() {
               </svg>
               Auszeichnungen & Zertifizierungen
             </div>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
+            <h2 className="font-heading text-3xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
               Ausgezeichnet.<br />
               <span style={{ color: '#4a2d8a' }}>Von unabhängigen Stellen bestätigt.</span>
             </h2>
@@ -314,7 +314,7 @@ export default function UeberUns() {
       </section>
 
       {/* ── Timeline / Geschichte ────────────────────────── */}
-      <section className="py-24 bg-white">
+      <section className="py-14 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-status-teal bg-status-teal-light px-4 py-2 rounded-full mb-5">
@@ -323,7 +323,7 @@ export default function UeberUns() {
               </svg>
               Geschichte
             </div>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
+            <h2 className="font-heading text-3xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
               Wie alles begann.
             </h2>
             <p className="text-text-muted font-body text-lg max-w-xl mx-auto">
@@ -337,9 +337,19 @@ export default function UeberUns() {
               alt="Timeline Geschichte Skills-UP! Verein"
               width={1600}
               height={800}
-              className="w-full h-auto"
+              className="w-full h-auto hidden md:block"
               style={{ display: 'block' }}
             />
+            <div className="md:hidden p-6 space-y-4 bg-white">
+              <p className="font-heading font-700 text-base" style={{ color: '#1a1040' }}>Unsere Geschichte auf einen Blick</p>
+              <ul className="space-y-3 font-body text-sm text-text-muted">
+                <li className="flex gap-3"><span className="font-700 text-primary-medium shrink-0">2021</span>Idee und Vereinsgründung während des Lockdowns</li>
+                <li className="flex gap-3"><span className="font-700 text-primary-medium shrink-0">2022</span>Entwicklung der ersten Lernmodule</li>
+                <li className="flex gap-3"><span className="font-700 text-primary-medium shrink-0">2023</span>Pilotprogramme an österreichischen Schulen</li>
+                <li className="flex gap-3"><span className="font-700 text-primary-medium shrink-0">2024</span>Top-3 MEGA Bildungsmillion, WKÖ-Zertifizierung</li>
+                <li className="flex gap-3"><span className="font-700 text-primary-medium shrink-0">2025</span>Hochschule Burgenland Kooperation &amp; bundesweiter Rollout</li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>

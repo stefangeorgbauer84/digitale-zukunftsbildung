@@ -3,7 +3,7 @@ import Image from 'next/image'
 
 export default function SiteFooter() {
   return (
-    <footer style={{ background: '#080614' }} className="relative overflow-hidden pt-16 pb-8 px-6">
+    <footer style={{ background: '#080614', paddingBottom: 'max(2rem, env(safe-area-inset-bottom))' }} className="relative overflow-hidden pt-16 px-6">
 
       {/* Subtle background glow */}
       <div className="absolute top-0 left-1/4 w-96 h-48 rounded-full pointer-events-none"
@@ -70,7 +70,7 @@ export default function SiteFooter() {
               ].map((l) => (
                 <li key={l.href}>
                   <Link href={l.href}
-                    className="text-sm font-body text-white/55 hover:text-white transition-colors">
+                    className="text-sm font-body text-white/55 hover:text-white transition-colors py-1 inline-block">
                     {l.label}
                   </Link>
                 </li>
@@ -91,7 +91,7 @@ export default function SiteFooter() {
               ].map((l) => (
                 <li key={l.label}>
                   <Link href={l.href}
-                    className="text-sm font-body text-white/55 hover:text-white transition-colors">
+                    className="text-sm font-body text-white/55 hover:text-white transition-colors py-1 inline-block">
                     {l.label}
                   </Link>
                 </li>
@@ -110,7 +110,7 @@ export default function SiteFooter() {
 
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs font-body text-white/30">
+          <p className="text-xs font-body text-white/30 text-center sm:text-left break-words">
             © {new Date().getFullYear()} Verein zur Entwicklung der digitalen Zukunftsbildung · Straußengasse 12/26, 1050 Wien
           </p>
           <div className="flex items-center gap-4">
