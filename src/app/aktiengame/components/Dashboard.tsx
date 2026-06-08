@@ -22,6 +22,7 @@ function InfoIcon() {
   return <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
 }
 
+import Image from 'next/image'
 import { calculatePortfolioValue, roundToYear, START_YEAR } from '../lib/gameEngine'
 import TradeModal from './TradeModal'
 import AssetDetailPanel from './AssetDetailPanel'
@@ -428,13 +429,16 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound, on
       {/* Round indicator */}
       <div className="bg-white rounded-2xl shadow-card overflow-hidden">
         <div className="flex items-center justify-between p-4 pb-3">
-          <span className="text-sm font-semibold text-text-secondary">
-            Jahr {roundToYear(state.currentRound)}
-            <span className="ml-2 text-xs font-normal text-text-muted">
-              · {state.currentRound}/{state.totalRounds} · {START_YEAR}–{START_YEAR + state.totalRounds - 1}
+          <div className="flex items-center gap-2.5">
+            <Image src="/fotos/Logo.png" alt="Skills-UP!" width={28} height={28} className="rounded-md flex-shrink-0" />
+            <span className="text-sm font-semibold text-text-secondary">
+              Jahr {roundToYear(state.currentRound)}
+              <span className="ml-2 text-xs font-normal text-text-muted">
+                · {state.currentRound}/{state.totalRounds} · {START_YEAR}–{START_YEAR + state.totalRounds - 1}
+              </span>
+              <span className="ml-2 text-xs font-normal text-text-muted capitalize">· {state.difficulty}</span>
             </span>
-            <span className="ml-2 text-xs font-normal text-text-muted capitalize">· {state.difficulty}</span>
-          </span>
+          </div>
           <div className="flex items-center gap-3">
             <GlossarButton onClick={() => setShowGlossar(true)} />
             <span className="text-sm text-text-muted hidden sm:block">

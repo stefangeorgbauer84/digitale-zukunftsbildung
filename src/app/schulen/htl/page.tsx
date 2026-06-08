@@ -25,9 +25,9 @@ export default function HtlPage() {
     <SchulPage
       name="HTL"
       kurzname="HTL"
-      gradient="linear-gradient(135deg, #7a3200 0%, #b85e20 60%, #D87228 100%)"
-      farbe="#D87228"
-      farbeHell="#fdf0e6"
+      gradient="linear-gradient(135deg, #2d1b69 0%, #4a2d8a 60%, #6b4db0 100%)"
+      farbe="#4a2d8a"
+      farbeHell="#f3f1f9"
       schulstufen="9.–13. Schulstufe"
       lehrplanFach="ITPR · Allgemeinbildung · Projektunterricht · Klassenvorstand"
       icon={icon}

@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import type { Asset, GameState, PlayerRole } from '../types'
 import {
   calculatePortfolioValue,
@@ -211,23 +212,41 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
   return (
     <div className="space-y-6">
       {/* Result hero */}
-      <div className="bg-white rounded-2xl shadow-card p-8 text-center">
-        <div className="text-sm font-semibold text-text-muted mb-1">
-          Spielergebnis für {state.playerName} · {START_YEAR}–{START_YEAR + state.totalRounds - 1}
-        </div>
-        <div className="flex items-center justify-center gap-4 flex-wrap my-4">
-          <div className="text-center">
-            <div className="text-xs text-text-muted">Startkapital</div>
-            <div className="text-2xl font-bold text-text-secondary">{state.startCapital.toLocaleString('de-AT')} €</div>
+      <div className="bg-white rounded-2xl shadow-card overflow-hidden">
+        {/* Header mit Logo + Capybara */}
+        <div className="bg-primary-dark px-6 pt-5 pb-0 flex items-end justify-between">
+          <div className="pb-5">
+            <div className="flex items-center gap-2 mb-2">
+              <Image src="/fotos/Logo.png" alt="Skills-UP!" width={28} height={28} className="rounded-md" />
+              <span className="text-xs font-bold uppercase tracking-widest text-white/50">Skills-UP! Investment Spiel</span>
+            </div>
+            <div className="text-white/70 text-sm">{START_YEAR}–{START_YEAR + state.totalRounds - 1} · {state.playerName}</div>
           </div>
-          <div className="text-3xl text-text-muted">→</div>
-          <div className="text-center">
-            <div className="text-xs text-text-muted">Endvermögen</div>
-            <div className="text-2xl font-bold text-primary-dark">{totalWealth.toFixed(0)} €</div>
-          </div>
+          <Image
+            src="/capybara-mascot.png"
+            alt="Capy"
+            width={80}
+            height={80}
+            className="object-contain flex-shrink-0"
+            style={{ marginBottom: '-2px' }}
+          />
         </div>
-        <div className={`text-5xl font-bold ${performance >= 0 ? 'text-status-teal' : 'text-red-500'}`}>
-          {performance >= 0 ? '+' : ''}{performance.toFixed(1)} %
+        {/* Zahlen */}
+        <div className="p-6 text-center">
+          <div className="flex items-center justify-center gap-4 flex-wrap mb-4">
+            <div className="text-center">
+              <div className="text-xs text-text-muted">Startkapital</div>
+              <div className="text-2xl font-bold text-text-secondary">{state.startCapital.toLocaleString('de-AT')} €</div>
+            </div>
+            <div className="text-3xl text-text-muted">→</div>
+            <div className="text-center">
+              <div className="text-xs text-text-muted">Endvermögen</div>
+              <div className="text-2xl font-bold text-primary-dark">{totalWealth.toFixed(0)} €</div>
+            </div>
+          </div>
+          <div className={`text-5xl font-bold ${performance >= 0 ? 'text-status-teal' : 'text-red-500'}`}>
+            {performance >= 0 ? '+' : ''}{performance.toFixed(1)} %
+          </div>
         </div>
       </div>
 

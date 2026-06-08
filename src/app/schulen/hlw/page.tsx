@@ -25,9 +25,9 @@ export default function HlwPage() {
     <SchulPage
       name="HLW & Fachschulen"
       kurzname="HLW"
-      gradient="linear-gradient(135deg, #0f3d32 0%, #1a5c4e 60%, #2A8A76 100%)"
-      farbe="#2A8A76"
-      farbeHell="#e6f4f1"
+      gradient="linear-gradient(135deg, #2d1b69 0%, #4a2d8a 60%, #6b4db0 100%)"
+      farbe="#4a2d8a"
+      farbeHell="#f3f1f9"
       schulstufen="9.–13. Schulstufe"
       lehrplanFach="Ernährung & Haushalt · Wirtschaft · Projektunterricht · BOBI"
       icon={icon}

@@ -27,8 +27,8 @@ export default function BafepPage() {
     <SchulPage
       name="BAfEP & BASOP"
       kurzname="BAfEP"
-      gradient="linear-gradient(135deg, #2d1b69 0%, #6b4db0 60%, #9b7ed4 100%)"
-      farbe="#6b4db0"
+      gradient="linear-gradient(135deg, #2d1b69 0%, #4a2d8a 60%, #6b4db0 100%)"
+      farbe="#4a2d8a"
       farbeHell="#f3f1f9"
       schulstufen="9.–13. Schulstufe"
       lehrplanFach="Persönlichkeitsbildung · Pädagogik · Praktikum · Projektarbeit"

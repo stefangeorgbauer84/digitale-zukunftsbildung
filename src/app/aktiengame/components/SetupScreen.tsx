@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import Image from 'next/image'
 import type { Difficulty, PlayerRole } from '../types'
 import { PLAYER_ROLES } from '../lib/gameEngine'
 
@@ -68,20 +69,39 @@ export default function SetupScreen({ onStart }: SetupScreenProps) {
 
   return (
     <div className="bg-white rounded-2xl shadow-card max-w-xl mx-auto overflow-hidden">
-      {/* Step header */}
-      <div className="bg-primary-dark px-6 py-4 flex items-center justify-between">
-        <h2 className="font-heading text-white font-bold text-lg">Spiel einrichten</h2>
-        <div className="flex gap-2">
-          {[1, 2].map((s) => (
-            <div
-              key={s}
-              className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
-                s === step ? 'bg-white text-primary-dark' : s < step ? 'bg-white/40 text-white' : 'bg-white/20 text-white/60'
-              }`}
-            >
-              {s}
+      {/* Hero header mit Logo + Capybara */}
+      <div className="bg-primary-dark px-6 pt-6 pb-0 flex items-end justify-between">
+        <div className="flex flex-col gap-3 pb-4">
+          <div className="flex items-center gap-3">
+            <Image src="/fotos/Logo.png" alt="Skills-UP!" width={36} height={36} className="rounded-lg" />
+            <div>
+              <div className="text-xs font-bold uppercase tracking-widest text-white/50">Skills-UP!</div>
+              <div className="text-white font-heading font-bold text-lg leading-tight">Investment Spiel</div>
             </div>
-          ))}
+          </div>
+          <div className="flex gap-2">
+            {[1, 2].map((s) => (
+              <div
+                key={s}
+                className={`w-7 h-7 rounded-full flex items-center justify-center text-xs font-bold transition-colors ${
+                  s === step ? 'bg-white text-primary-dark' : s < step ? 'bg-white/40 text-white' : 'bg-white/20 text-white/60'
+                }`}
+              >
+                {s}
+              </div>
+            ))}
+          </div>
+        </div>
+        {/* Capybara Maskottchen */}
+        <div className="relative flex-shrink-0">
+          <Image
+            src="/capybara-mascot.png"
+            alt="Capybara Maskottchen"
+            width={100}
+            height={100}
+            className="object-contain drop-shadow-lg"
+            style={{ marginBottom: '-2px' }}
+          />
         </div>
       </div>
 
