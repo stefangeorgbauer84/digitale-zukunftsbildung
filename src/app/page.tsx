@@ -248,16 +248,43 @@ export default function HomePage() {
             <span className="text-primary-light">Fertig. Sofort. Ohne Vorbereitung.</span>
           </h1>
 
-          <p className="text-white/75 text-xl max-w-2xl mx-auto mb-4 font-body leading-relaxed">
-            12 lehrplankonforme Module, über 10 österreichische Praxissimulationen und ein Dashboard, das Ihnen die Korrekturarbeit abnimmt. Für AHS, HAK, HTL, HLW, BAfEP, BASOP und PTS. Browserbasiert, DSGVO-sicher, heute einsetzbar.
-          </p>
+          {/* Zielgruppen-Split */}
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8 mt-2">
+            {[
+              {
+                href: '/schulen',
+                icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
+                label: 'Ich bin Lehrkraft oder Schulleitung',
+                sub: 'Für Schulen →',
+              },
+              {
+                href: '/#unternehmen',
+                icon: <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>,
+                label: 'Ich bin Unternehmen oder Lehrbetrieb',
+                sub: 'Für Unternehmen →',
+              },
+            ].map((z) => (
+              <a key={z.href} href={z.href}
+                className="group flex items-center gap-3 px-5 py-3.5 rounded-2xl transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] text-left"
+                style={{ background: 'rgba(255,255,255,0.10)', border: '1px solid rgba(255,255,255,0.18)', backdropFilter: 'blur(8px)' }}>
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 text-white"
+                  style={{ background: 'rgba(255,255,255,0.15)' }}>
+                  {z.icon}
+                </div>
+                <div>
+                  <p className="font-body font-700 text-white text-sm leading-tight">{z.label}</p>
+                  <p className="font-body text-white/55 text-xs mt-0.5 group-hover:text-white/80 transition-colors">{z.sub}</p>
+                </div>
+              </a>
+            ))}
+          </div>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
             <a href="#angebote"
               className="inline-flex items-center justify-center gap-2 font-body font-700 text-lg px-8 py-4 rounded-xl shadow-2xl transition-all duration-200 hover:scale-105 active:scale-95 text-white"
               style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #6b4db0 50%, #2a8a76 100%)', boxShadow: '0 8px 32px rgba(107,77,176,0.5)' }}
             >
-              Programm entdecken
+              Bildungsprogramm entdecken
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </a>
             <a href="#kontakt"

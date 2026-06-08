@@ -6,7 +6,7 @@ import Link from 'next/link'
 
 export const metadata: Metadata = {
   title: 'Über uns | Skills-UP! – Finanzbildung für Schulen',
-  description: 'Der Verein zur Entwicklung der digitalen Zukunftsbildung steht hinter Skills-UP!, dem Finanzbildungsprogramm für 15- bis 20-Jährige in österreichischen Schulen.',
+  description: 'Skills-UP! erreicht heute über 1.200 Schüler:innen in österreichischen Schulen. Lern das Team, die Geschichte und die didaktischen Prinzipien hinter dem Bildungsprogramm kennen.',
 }
 
 const auszeichnungen = [
@@ -97,7 +97,7 @@ export default function UeberUns() {
             <span className="text-primary-light">fit fürs echte Leben.</span>
           </h1>
           <p className="text-white/75 font-body text-xl max-w-2xl leading-relaxed">
-            Der Verein zur Entwicklung der digitalen Zukunftsbildung steht hinter Skills-UP!, dem Finanzbildungsprogramm für Österreichs Schulen.
+            Skills-UP! erreicht heute Schüler:innen in mehreren Schulen österreichweit — und wächst. Gegründet 2021, ausgezeichnet 2025.
           </p>
         </div>
 
@@ -115,30 +115,30 @@ export default function UeberUns() {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
             {[
               {
-                zahl: '2021',
-                label: 'Gegründet',
-                sub: 'Idee entstanden im Lockdown',
+                zahl: '1.200+',
+                label: 'Schüler:innen',
+                sub: 'Aktiv mit Skills-UP! lernend',
                 color: '#4a2d8a', bg: '#f3f1f9',
-                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>,
+                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
+              },
+              {
+                zahl: '9+',
+                label: 'Schulen & Partner',
+                sub: 'In mehreren Bundesländern aktiv',
+                color: '#2a8a76', bg: '#e6f4f1',
+                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
               },
               {
                 zahl: '12+',
                 label: 'Lernmodule',
-                sub: 'Fertig ausgearbeitet, sofort einsetzbar',
-                color: '#2a8a76', bg: '#e6f4f1',
+                sub: 'Lehrplankonform, sofort einsetzbar',
+                color: '#D87228', bg: '#fdf0e6',
                 icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>,
               },
               {
-                zahl: '5',
-                label: 'Auszeichnungen',
-                sub: 'Von unabhängigen Stellen geprüft',
-                color: '#D87228', bg: '#fdf0e6',
-                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>,
-              },
-              {
-                zahl: '15 J.',
-                label: 'Erfahrung',
-                sub: 'Marina Winkler, Pädagogische Leitung',
+                zahl: '↑ 3×',
+                label: 'Wachstum',
+                sub: 'Seit Launch 2021 — Tendenz steigend',
                 color: '#6b4db0', bg: '#ede9f7',
                 icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
               },
@@ -211,13 +211,13 @@ export default function UeberUns() {
           <div className="text-center mb-14">
             <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-primary-medium bg-white px-4 py-2 rounded-full mb-5 shadow-sm">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-              Unsere Werte
+              Didaktische Prinzipien
             </div>
             <h2 className="font-heading text-3xl md:text-4xl font-bold" style={{ color: '#1a1040' }}>
-              Daran glauben wir.
+              So lernen Jugendliche wirklich.
             </h2>
             <p className="text-text-muted font-body text-lg max-w-xl mx-auto mt-4">
-              Diese vier Prinzipien stehen hinter jedem Modul, jeder Simulation und jeder Entscheidung, die wir für Skills-UP! treffen.
+              Vier Grundsätze, die hinter jedem Modul, jeder Simulation und jeder Designentscheidung von Skills-UP! stehen.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">

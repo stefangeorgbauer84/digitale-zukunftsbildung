@@ -5,10 +5,10 @@ import Image from 'next/image'
 import { useEffect, useRef, useState } from 'react'
 
 const links = [
-  { href: '/#angebote', label: 'Programm' },
+  { href: '/#angebote', label: 'Bildungsprogramm' },
   { href: '/schulen', label: 'Für Schulen' },
   { href: '/#unternehmen', label: 'Für Unternehmen' },
-  { href: '/#plattform', label: "So funktioniert's" },
+  { href: '/#plattform', label: 'Unser Ansatz' },
   { href: '/ueber-uns', label: 'Über uns' },
 ]
 
