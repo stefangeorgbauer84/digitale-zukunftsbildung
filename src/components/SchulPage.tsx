@@ -29,6 +29,17 @@ export interface Simulation {
   icon: React.ReactNode
 }
 
+export interface HighlightSimulation {
+  titel: string
+  untertitel: string
+  dauer: string
+  icon: React.ReactNode
+  szenario: string
+  schritte: { label: string; beschreibung: string }[]
+  ergebnis: string
+  mockUI: { zeile: string; typ: 'label' | 'wert' | 'bar' | 'divider' | 'highlight' }[]
+}
+
 export interface SchulPageProps {
   name: string
   kurzname: string
@@ -56,6 +67,7 @@ export interface SchulPageProps {
   lehrerFoto?: string
   gruenderStatement: string
   icon: React.ReactNode
+  highlightSimulation?: HighlightSimulation
 }
 
 const checkIcon = (
@@ -75,6 +87,7 @@ export default function SchulPage({
   schulstufen, lehrplanFach, lehrerProblem, intro,
   lehrplanPassung, unterrichtsEinheiten, module, simulationen, themen,
   features, lehrerZitat, lehrerFoto, gruenderStatement, icon,
+  highlightSimulation,
 }: SchulPageProps) {
 
   const totalMinuten = unterrichtsEinheiten.reduce((s, e) => s + e.zeitMinuten, 0)
@@ -748,6 +761,153 @@ export default function SchulPage({
           </div>
         </div>
       </section>
+
+      {/* ── Highlight-Simulation (schul-spezifisch) ─────────── */}
+      {highlightSimulation && (
+        <section className="py-20 overflow-hidden" style={{ background: 'linear-gradient(135deg, #0f0a2e 0%, #1a1040 50%, #0d2e27 100%)' }}>
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-12">
+              <span className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest px-4 py-2 rounded-full mb-4"
+                style={{ background: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.15)' }}>
+                <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+                Simulation im Fokus
+              </span>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-3">
+                {highlightSimulation.titel}
+              </h2>
+              <p className="font-body text-white/60 text-lg max-w-xl mx-auto">{highlightSimulation.untertitel}</p>
+            </div>
+
+            <div className="grid lg:grid-cols-2 gap-8 items-start">
+              {/* Left: Szenario + Schritte */}
+              <div className="flex flex-col gap-6">
+                {/* Szenario-Karte */}
+                <div className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.12)' }}>
+                  <div className="flex items-center gap-2 mb-3">
+                    <div className="w-8 h-8 rounded-xl flex items-center justify-center text-white shrink-0" style={{ background: farbe }}>
+                      {highlightSimulation.icon}
+                    </div>
+                    <span className="text-xs font-body font-700 uppercase tracking-widest text-white/40">Ausgangssituation</span>
+                  </div>
+                  <p className="font-body text-white/80 text-base leading-relaxed italic">
+                    &ldquo;{highlightSimulation.szenario}&rdquo;
+                  </p>
+                </div>
+
+                {/* Schritte */}
+                <div className="space-y-3">
+                  {highlightSimulation.schritte.map((s, i) => (
+                    <div key={i} className="flex gap-4 items-start">
+                      <div className="shrink-0 w-8 h-8 rounded-xl flex items-center justify-center text-white font-700 text-sm"
+                        style={{ background: i === 0 ? farbe : 'rgba(255,255,255,0.1)', border: i === 0 ? 'none' : '1px solid rgba(255,255,255,0.15)' }}>
+                        {i + 1}
+                      </div>
+                      <div className="pt-1">
+                        <p className="font-heading font-700 text-sm text-white leading-tight">{s.label}</p>
+                        <p className="font-body text-xs text-white/50 mt-0.5 leading-relaxed">{s.beschreibung}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Ergebnis */}
+                <div className="rounded-2xl p-5 flex items-start gap-3" style={{ background: `${farbe}22`, border: `1px solid ${farbe}44` }}>
+                  <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={farbe} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-0.5">
+                    <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+                  </svg>
+                  <div>
+                    <p className="font-body font-700 text-sm text-white/80 mb-0.5">Was Schüler:innen mitnehmen</p>
+                    <p className="font-body text-sm leading-relaxed" style={{ color: `${farbe}cc` }}>{highlightSimulation.ergebnis}</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3">
+                  <span className="flex items-center gap-1.5 text-xs font-body text-white/40">
+                    <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    {highlightSimulation.dauer}
+                  </span>
+                  <span className="w-1 h-1 rounded-full bg-white/20" />
+                  <span className="text-xs font-body text-white/40">Kein Vorbereiten nötig</span>
+                  <span className="w-1 h-1 rounded-full bg-white/20" />
+                  <span className="text-xs font-body text-white/40">Sofort einsetzbar</span>
+                </div>
+              </div>
+
+              {/* Right: Mock-UI */}
+              <div className="relative">
+                <div className="absolute -inset-4 rounded-3xl blur-3xl pointer-events-none"
+                  style={{ background: `radial-gradient(circle, ${farbe}30 0%, transparent 70%)` }} />
+                <div className="relative rounded-2xl overflow-hidden shadow-2xl"
+                  style={{ background: '#fff', border: '1px solid rgba(255,255,255,0.15)' }}>
+                  {/* Browser chrome */}
+                  <div className="flex items-center gap-2 px-4 py-3" style={{ background: '#f1f0f8', borderBottom: '1px solid #e0ddf0' }}>
+                    <div className="flex gap-1.5">
+                      <div className="w-3 h-3 rounded-full bg-red-400/60" />
+                      <div className="w-3 h-3 rounded-full bg-yellow-400/60" />
+                      <div className="w-3 h-3 rounded-full bg-green-400/60" />
+                    </div>
+                    <div className="flex-1 mx-2 rounded-md px-3 py-1 text-xs font-body text-gray-400" style={{ background: '#e8e6f5' }}>
+                      skills-up.at / simulation
+                    </div>
+                  </div>
+                  {/* App header */}
+                  <div className="px-5 py-4" style={{ background: gradient }}>
+                    <div className="flex items-center gap-2">
+                      <div className="w-7 h-7 rounded-lg flex items-center justify-center text-white" style={{ background: 'rgba(255,255,255,0.2)' }}>
+                        {highlightSimulation.icon}
+                      </div>
+                      <div>
+                        <p className="font-heading font-700 text-white text-sm leading-tight">{highlightSimulation.titel}</p>
+                        <p className="font-body text-white/60 text-xs">{highlightSimulation.dauer}</p>
+                      </div>
+                    </div>
+                  </div>
+                  {/* Mock content */}
+                  <div className="p-5 space-y-2.5">
+                    {highlightSimulation.mockUI.map((zeile, i) => {
+                      if (zeile.typ === 'divider') return <div key={i} className="border-t border-gray-100 my-1" />
+                      if (zeile.typ === 'label') return (
+                        <p key={i} className="font-body text-xs text-gray-400 font-600 uppercase tracking-wider">{zeile.zeile}</p>
+                      )
+                      if (zeile.typ === 'wert') return (
+                        <div key={i} className="flex items-center justify-between">
+                          <p className="font-body text-sm text-gray-600">{zeile.zeile.split('|')[0]}</p>
+                          <p className="font-body font-700 text-sm text-gray-800">{zeile.zeile.split('|')[1]}</p>
+                        </div>
+                      )
+                      if (zeile.typ === 'bar') return (
+                        <div key={i}>
+                          <div className="flex justify-between mb-1">
+                            <p className="font-body text-xs text-gray-500">{zeile.zeile.split('|')[0]}</p>
+                            <p className="font-body text-xs font-700" style={{ color: farbe }}>{zeile.zeile.split('|')[1]}</p>
+                          </div>
+                          <div className="h-2 rounded-full bg-gray-100">
+                            <div className="h-2 rounded-full transition-all" style={{ width: zeile.zeile.split('|')[2] ?? '60%', background: gradient }} />
+                          </div>
+                        </div>
+                      )
+                      if (zeile.typ === 'highlight') return (
+                        <div key={i} className="rounded-xl p-3 flex items-center justify-between"
+                          style={{ background: farbeHell, border: `1px solid ${farbe}33` }}>
+                          <p className="font-body font-700 text-sm" style={{ color: farbe }}>{zeile.zeile.split('|')[0]}</p>
+                          <p className="font-heading font-800 text-lg" style={{ color: farbe }}>{zeile.zeile.split('|')[1]}</p>
+                        </div>
+                      )
+                      return null
+                    })}
+                    <div className="pt-2">
+                      <div className="w-full rounded-xl py-3 text-center font-body font-700 text-sm text-white"
+                        style={{ background: gradient }}>
+                        Weiter zur nächsten Aufgabe
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* ── Themen ──────────────────────────────────────────── */}
       <section className="py-16 bg-gray-50">

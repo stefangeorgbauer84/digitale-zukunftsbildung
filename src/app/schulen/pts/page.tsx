@@ -131,6 +131,33 @@ export default function PtsPage() {
       }}
       lehrerFoto="/fotos/lehrer/pts.png"
       gruenderStatement="Schüler:innen der PTS stehen kurz vor ihrer Berufswahl und dem ersten echten Einkommen. Skills-UP! gibt ihnen das Handwerkszeug, das kein Beruf automatisch mitliefert: wie man mit Geld wirklich umgeht, und welche Entscheidungen man lieber nicht bereuen möchte."
+      highlightSimulation={{
+        titel: 'Lehrlingslohn-Planer',
+        untertitel: 'Welcher Lehrberuf zahlt was? Lehrlingsgeld nach Lehrjahr simulieren, Budget erstellen und konkrete Sparziele (Führerschein, erste Wohnung) berechnen.',
+        dauer: '20–25 Min',
+        icon: piggyIcon,
+        szenario: 'Du wirst Elektriker-Lehrling. 1. Lehrjahr, 700 € brutto. Nach Abzügen bleibt dir etwas über 600 €. Deine Eltern erwarten 150 € Kostgeld. Was bleibt für dich, und wie lange sparst du für den Führerschein?',
+        schritte: [
+          { label: 'Lehrberuf & Lehrjahr wählen', beschreibung: 'Die App zeigt KV-Mindestlöhne für 50+ Lehrberufe nach Lehrjahr, mit realen Zahlen aus dem aktuellen Kollektivvertrag.' },
+          { label: 'Nettolohn berechnen', beschreibung: 'Lehrlingseinkommen hat andere SV-Sätze. Die Simulation zeigt, was nach Abzügen übrig bleibt.' },
+          { label: 'Monatsbudget erstellen', beschreibung: 'Kostgeld, Handy, Öffis, Freizeit: Schüler:innen setzen ihre Ausgaben und sehen sofort, was zum Sparen bleibt.' },
+          { label: 'Sparziel berechnen', beschreibung: 'Führerschein (2.200 €), erste eigene Wohnung, Motorrad: Die App berechnet, wie viele Monate man bei welcher Rate sparen muss.' },
+        ],
+        ergebnis: 'Schüler:innen kennen ihren künftigen Lehrlingslohn, können ein realistisches Budget erstellen und wissen konkret, wie sie ihr erstes großes Sparziel erreichen.',
+        mockUI: [
+          { zeile: 'Lehrlingslohn Elektrik | 1. Lehrjahr', typ: 'label' },
+          { zeile: 'Bruttolohn|700,00 €', typ: 'wert' },
+          { zeile: 'SV-Abzüge|− 95,00 €', typ: 'wert' },
+          { zeile: 'Nettolohn|605,00 €', typ: 'wert' },
+          { zeile: 'divider', typ: 'divider' },
+          { zeile: 'Budget', typ: 'label' },
+          { zeile: 'Kostgeld|− 150,00 €', typ: 'wert' },
+          { zeile: 'Handy & Öffis|− 85,00 €', typ: 'wert' },
+          { zeile: 'divider', typ: 'divider' },
+          { zeile: 'Für Führerschein (18 Mon.)|370,00 €/Monat', typ: 'highlight' },
+          { zeile: 'Fortschritt Sparziel|61 %|61%', typ: 'bar' },
+        ],
+      }}
     />
   )
 }

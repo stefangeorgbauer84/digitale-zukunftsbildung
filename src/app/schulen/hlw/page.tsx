@@ -135,6 +135,33 @@ export default function HlwPage() {
       }}
       lehrerFoto="/fotos/lehrer/hlw.png"
       gruenderStatement="Wer an der HLW Haushaltsführung und Wirtschaft lehrt, kommt an persönlicher Finanzplanung nicht vorbei. Skills-UP! macht diesen Zusammenhang für Schüler:innen konkret erlebbar, mit österreichischen Alltagsszenarien, die sie direkt betreffen."
+      highlightSimulation={{
+        titel: 'Veranstaltungsbudget-Planer',
+        untertitel: 'Catering, Personal, Location, Technik: Ein Event von 80 Personen vollständig kalkulieren, mit Deckungsbeitrag und Risikopuffer.',
+        dauer: '20–30 Min',
+        icon: bookIcon,
+        szenario: 'Deine Klasse plant ein Schulcafé für den Tag der offenen Tür: 80 Gäste, Fingerfood, Kaffee. Das Budget steht noch nicht fest. Kannst du es gedeckt halten und trotzdem Überschuss machen?',
+        schritte: [
+          { label: 'Kostenarten strukturieren', beschreibung: 'Fixkosten (Personal-Grundzeit, Miete) vs. variable Kosten (Zutaten, Verbrauchsmaterial) erfassen.' },
+          { label: 'Mengenplanung', beschreibung: 'Einkaufsmengen für 80 Personen berechnen: Die App rechnet Verderb-Puffer und Lieferantenvergleich gleich mit.' },
+          { label: 'Deckungsbeitrag berechnen', beschreibung: 'Welcher Preis pro Person deckt die Kosten? Welcher erwirtschaftet einen Überschuss? Schüler:innen setzen den Preis selbst.' },
+          { label: 'Risikoanalyse', beschreibung: '20 Absagen kurzfristig: Was passiert mit dem Budget? Die Simulation zeigt, wie Fixkosten den Break-Even verschieben.' },
+        ],
+        ergebnis: 'Schüler:innen beherrschen Event-Kalkulation mit Deckungsbeitrag, Risikopuffer und Preisgestaltung, direkt anwendbar in Tourismus und Gastgewerbe.',
+        mockUI: [
+          { zeile: 'Schulcafé-Kalkulation', typ: 'label' },
+          { zeile: 'Gästeanzahl|80 Personen', typ: 'wert' },
+          { zeile: 'Zutaten & Einkauf|− 640,00 €', typ: 'wert' },
+          { zeile: 'Personal (4 h)|− 280,00 €', typ: 'wert' },
+          { zeile: 'Verbrauchsmaterial|− 80,00 €', typ: 'wert' },
+          { zeile: 'divider', typ: 'divider' },
+          { zeile: 'Mindestpreis/Person|12,50 €', typ: 'wert' },
+          { zeile: 'Gewählter Preis|15,00 €', typ: 'wert' },
+          { zeile: 'divider', typ: 'divider' },
+          { zeile: 'Überschuss bei 80 Gästen|+ 200,00 €', typ: 'highlight' },
+          { zeile: 'Kostendeckung|83 %|83%', typ: 'bar' },
+        ],
+      }}
     />
   )
 }

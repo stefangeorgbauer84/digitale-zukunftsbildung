@@ -135,6 +135,32 @@ export default function HtlPage() {
       }}
       lehrerFoto="/fotos/lehrer/htl.png"
       gruenderStatement="Technische Kompetenz ist an der HTL gesetzt. Finanzielle Kompetenz nicht, dabei treffen Absolvent:innen schon kurz nach der Matura echte Geldentscheidungen. Skills-UP! bereitet sie konkret darauf vor, ohne dem Lehrplan etwas wegzunehmen."
+      highlightSimulation={{
+        titel: 'Berufseinstieg Budget-Planer',
+        untertitel: 'Erster Job als HTL-Absolvent:in: Nettolohn, Mietwohnung, Auto, Sparplan. Alle Kosten real durchkalkuliert.',
+        dauer: '20–25 Min',
+        icon: carIcon,
+        szenario: 'Du hast den Job. Brutto 3.200 € als Junior-Techniker:in in Linz. Jetzt die große Frage: Wohngemeinschaft oder eigene Wohnung? Leasing oder Bahn? Und wie viel bleibt zum Sparen?',
+        schritte: [
+          { label: 'Nettolohn berechnen', beschreibung: 'Die App rechnet Brutto zu Netto mit KV-Daten aus dem Metallerbereich, dem häufigsten KV für HTL-Absolvent:innen.' },
+          { label: 'Fixkosten setzen', beschreibung: 'Miete, Strom, Internet, Mobilität: Schüler:innen wählen aus realen Optionen und sehen sofort den Effekt auf das Budget.' },
+          { label: 'Sparziel einbauen', beschreibung: 'Wohin mit dem Rest? Notgroschen, ETF-Sparplan, Urlaub oder Auto-Kredit tilgen. Die App zeigt, was in 5 Jahren passiert.' },
+          { label: 'Entscheidung treffen', beschreibung: 'Am Ende trifft jede:r eine persönliche Budgetentscheidung und vergleicht mit dem Klassenquerschnitt.' },
+        ],
+        ergebnis: 'Schüler:innen verstehen, was ein HTL-Gehalt real bedeutet, und können eigenständig ein realistisches Monatsbudget erstellen, bevor sie es wirklich brauchen.',
+        mockUI: [
+          { zeile: 'Mein Berufseinstiegs-Budget', typ: 'label' },
+          { zeile: 'Nettolohn (Metall-KV)|2.058,00 €', typ: 'wert' },
+          { zeile: 'divider', typ: 'divider' },
+          { zeile: 'Fixkosten', typ: 'label' },
+          { zeile: 'Miete (60 m², Linz)|− 890,00 €', typ: 'wert' },
+          { zeile: 'Öffi-Jahreskarte|− 58,00 €', typ: 'wert' },
+          { zeile: 'Lebensmittel|− 320,00 €', typ: 'wert' },
+          { zeile: 'divider', typ: 'divider' },
+          { zeile: 'Verfügbar für Sparen|790,00 €', typ: 'highlight' },
+          { zeile: 'Fixkosten-Anteil|62 %|62%', typ: 'bar' },
+        ],
+      }}
     />
   )
 }

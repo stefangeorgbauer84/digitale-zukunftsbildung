@@ -137,6 +137,32 @@ export default function BafepPage() {
       }}
       lehrerFoto="/fotos/lehrer/bafep.png"
       gruenderStatement="Wer als Pädagogin oder Pädagoge arbeitet, prägt früh das Verhältnis von Kindern zu Geld und Konsum. Deshalb ist Finanzbildung an der BAfEP keine nette Ergänzung, sie ist eine professionelle Notwendigkeit. Skills-UP! liefert dafür das Fundament."
+      highlightSimulation={{
+        titel: 'Karenz & Familienbudget-Rechner',
+        untertitel: 'Wie verändert ein Kind das Haushaltsbudget? Kinderbetreuungskosten, Elterngeld, Karenz und Wiedereinstieg real durchgerechnet.',
+        dauer: '20–25 Min',
+        icon: shieldIcon,
+        szenario: 'Du arbeitest als Kindergartenpädagogin, 1.800 € netto. Du bekommst ein Kind. Wie lange kannst du in Karenz gehen? Was bekommst du an Kinderbetreuungsgeld? Und was kostet die Kinderbetreuung danach wirklich?',
+        schritte: [
+          { label: 'Karenzmodell wählen', beschreibung: 'Die Simulation zeigt alle österreichischen Kinderbetreuungsgeld-Modelle (pauschales KBG, einkommensabhängig) mit konkreten Beträgen.' },
+          { label: 'Einkommensausfall berechnen', beschreibung: 'Nettolohn minus KBG: Was fehlt wirklich? Die App berechnet die Lücke und zeigt Optionen wie Partnerkarenz.' },
+          { label: 'Kinderbetreuungskosten', beschreibung: 'Krippe, Tagesmutter, Kindergarten: Kosten nach Bundesland, Förderhöhe, Wartezeiten. Alles mit Wiener und burgenländischen Werten.' },
+          { label: 'Wiedereinstiegs-Planung', beschreibung: 'Teilzeit vs. Vollzeit: Wie verändert sich das Familienbudget? Schüler:innen entwerfen einen 5-Jahres-Familienfinanzplan.' },
+        ],
+        ergebnis: 'Schüler:innen verstehen die finanzielle Dimension von Elternschaft und können dieses Wissen später als Pädagoginnen professionell in Elterngespräche einbringen.',
+        mockUI: [
+          { zeile: 'Familienbudget-Simulation', typ: 'label' },
+          { zeile: 'Nettolohn vor Karenz|1.800,00 €', typ: 'wert' },
+          { zeile: 'KBG (einkommensabhängig)|+ 1.575,00 €', typ: 'wert' },
+          { zeile: 'divider', typ: 'divider' },
+          { zeile: 'Monatliche Mehrkosten', typ: 'label' },
+          { zeile: 'Kinderbetreuung|− 620,00 €', typ: 'wert' },
+          { zeile: 'Mehrbedarf Baby|− 350,00 €', typ: 'wert' },
+          { zeile: 'divider', typ: 'divider' },
+          { zeile: 'Verfügbar (mit Partner)|1.405,00 €', typ: 'highlight' },
+          { zeile: 'Budgetdeckung Karenz|74 %|74%', typ: 'bar' },
+        ],
+      }}
     />
   )
 }

@@ -151,6 +151,33 @@ export default function AhsPage() {
       }}
       lehrerFoto="/fotos/lehrer/ahs.png"
       gruenderStatement="An der AHS lernen Schüler:innen analytisch zu denken, aber wie man das erste Gehalt einteilt, kommt im Lehrplan kaum vor. Skills-UP! schließt genau diese Lücke. Praxisnah, ohne Mehraufwand für Lehrkräfte, und mit Inhalten, die wirklich im Leben ankommen."
+      highlightSimulation={{
+        titel: 'Studienfinanzierungs-Rechner',
+        untertitel: 'Stipendium, Studiengebühren, WG-Kosten, Nebenjob: Was kostet Studieren in Wien wirklich, und wie finanziert man es?',
+        dauer: '20–25 Min',
+        icon: bookIcon,
+        szenario: 'Du beginnst im Oktober dein Studium in Wien. Eltern können 400 € beisteuern. Stipendium möglich, aber du weißt nicht wie viel. Wie bringst du die nächsten 3 Jahre finanziell auf die Reihe?',
+        schritte: [
+          { label: 'Studienkosten ermitteln', beschreibung: 'ÖH-Beitrag, Studiengebühren (falls zutreffend), Bücher, Software. Die App zeigt Realkosten nach Studienrichtung.' },
+          { label: 'Stipendium berechnen', beschreibung: 'Die Simulation erklärt Studienbeihilfe, Selbsterhalterstipendium und Leistungsstipendium mit konkreten Einkommensgrenzen.' },
+          { label: 'Lebenskosten Wien', beschreibung: 'WG-Zimmer, Mensa, Öffi-Jahreskarte, Handy: Alle typischen Posten für Studierende mit aktuellen Wiener Durchschnittswerten.' },
+          { label: 'Finanzierungsplan erstellen', beschreibung: 'Schüler:innen kombinieren Stipendium, Elternbeitrag und Nebenjob-Stunden zu einem realistischen Jahresplan.' },
+        ],
+        ergebnis: 'Schüler:innen wissen nach der Simulation genau, wie viel ein Studium kostet, welche Förderungen sie beantragen können und wie viel Nebenjob sie wirklich brauchen.',
+        mockUI: [
+          { zeile: 'Studium Wien — Monatsplan', typ: 'label' },
+          { zeile: 'Studienbeihilfe|+ 680,00 €', typ: 'wert' },
+          { zeile: 'Elternbeitrag|+ 400,00 €', typ: 'wert' },
+          { zeile: 'Nebenjob (10 h/Woche)|+ 520,00 €', typ: 'wert' },
+          { zeile: 'divider', typ: 'divider' },
+          { zeile: 'Lebenshaltungskosten', typ: 'label' },
+          { zeile: 'WG-Zimmer Wien|− 720,00 €', typ: 'wert' },
+          { zeile: 'Mensa + Lebensmittel|− 380,00 €', typ: 'wert' },
+          { zeile: 'divider', typ: 'divider' },
+          { zeile: 'Monatliches Polster|500,00 €', typ: 'highlight' },
+          { zeile: 'Finanzierung gesichert|78 %|78%', typ: 'bar' },
+        ],
+      }}
     />
   )
 }

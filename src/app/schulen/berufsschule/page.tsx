@@ -145,6 +145,33 @@ export default function BerufsschulePage() {
       }}
       lehrerFoto="/fotos/lehrer/berufsschule.png"
       gruenderStatement="Lehrlinge verdienen echtes Geld, oft das erste Mal in ihrem Leben. Die meisten haben niemanden, der ihnen erklärt, was man damit macht. Skills-UP! springt genau dort ein: praxisnah, in kurzen Einheiten, und mit Szenarien, die Lehrlinge aus ihrem eigenen Alltag kennen."
+      highlightSimulation={{
+        titel: 'Nebenjob & Geringfügigkeits-Check',
+        untertitel: 'Was passiert, wenn man neben der Lehre dazuverdient? SV-Pflicht, Steuer, Geringfügigkeitsgrenze 2026 — alles in einer Simulation.',
+        dauer: '15–20 Min',
+        icon: moneyIcon,
+        szenario: 'Du machst deine Lehre als Kfz-Techniker und willst am Wochenende im Supermarkt dazuverdienen. 4 Stunden, 12 € / Stunde. Ist das noch geringfügig? Zahlst du Steuern? Und was passiert mit deiner Lehrlingskrankenversicherung?',
+        schritte: [
+          { label: 'Geringfügigkeitsgrenze prüfen', beschreibung: 'Die App zeigt die aktuelle Grenze für 2026 und berechnet sofort, ob der geplante Job darunter oder darüber liegt.' },
+          { label: 'SV-Pflicht verstehen', beschreibung: 'Über der Grenze: Was bedeutet das für Kranken- und Pensionsversicherung bei Mehrfachbeschäftigung?' },
+          { label: 'Lohnzettel vergleichen', beschreibung: 'Nettoverdienst mit und ohne Nebenjob gegenüberstellen. Wie viel kommt wirklich mehr rein?' },
+          { label: 'Steuerausgleich planen', beschreibung: 'Zwei Arbeitgeber? Die App erklärt, wann Arbeitnehmerveranlagung Pflicht wird und wie die Negativsteuer funktioniert.' },
+        ],
+        ergebnis: 'Lehrlinge können eigenständig einschätzen, ob ein Nebenjob geringfügig ist, was er netto bringt und wann sie eine Steuererklärung abgeben müssen.',
+        mockUI: [
+          { zeile: 'Nebenjob-Check 2026', typ: 'label' },
+          { zeile: 'Geringfügigkeitsgrenze|551,10 €/Monat', typ: 'wert' },
+          { zeile: 'Geplanter Verdienst (48 h)|+ 576,00 €', typ: 'wert' },
+          { zeile: 'divider', typ: 'divider' },
+          { zeile: 'Status', typ: 'label' },
+          { zeile: 'SV-pflichtig ab|551,11 €', typ: 'wert' },
+          { zeile: 'Dein Job|über der Grenze', typ: 'wert' },
+          { zeile: 'SV-Abzug Nebenjob|− 115,20 €', typ: 'wert' },
+          { zeile: 'divider', typ: 'divider' },
+          { zeile: 'Netto-Zugewinn|460,80 €', typ: 'highlight' },
+          { zeile: 'Deckung Geringfügigkeit|96 %|96%', typ: 'bar' },
+        ],
+      }}
     />
   )
 }

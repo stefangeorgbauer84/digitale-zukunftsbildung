@@ -152,6 +152,32 @@ export default function HakPage() {
       }}
       lehrerFoto="/fotos/lehrer/hak.png"
       gruenderStatement="Wirtschaft wird an der HAK theoretisch sehr gut vermittelt. Skills-UP! bringt das persönliche Finanzleben der Schüler:innen direkt in die Stunde, und das ist der Unterschied zwischen Wissen und echtem Können."
+      highlightSimulation={{
+        titel: 'Lohnzettel-Simulator',
+        untertitel: 'Brutto zu Netto in Echtzeit: SV-Beiträge, Lohnsteuer, Abzüge. Alles live berechnet, mit österreichischen Werten 2026.',
+        dauer: '15–20 Min',
+        icon: moneyIcon,
+        szenario: 'Du bekommst heute deinen ersten Lohnzettel. Brutto 2.100 €. Was bleibt wirklich übrig, nachdem SV und Lohnsteuer abgezogen sind? Schätz erst, dann rechnet die App.',
+        schritte: [
+          { label: 'Bruttogehalt eingeben', beschreibung: 'Schüler:innen starten mit einem realen Gehalt aus dem Kollektivvertrag ihres Wunschberufs.' },
+          { label: 'Abzüge Schritt für Schritt', beschreibung: 'Die App zeigt SV-Beiträge (Kranken, Unfall, Pension) und Lohnsteuer einzeln, mit Erklärung warum.' },
+          { label: 'Nettolohn sehen', beschreibung: 'Der echte Auszahlungsbetrag erscheint, oft deutlich unter der ersten Schätzung.' },
+          { label: 'Negativsteuer prüfen', beschreibung: 'Liegt das Einkommen unter der Steuergrenze? Die App erklärt automatisch, wie man Geld zurückbekommt.' },
+        ],
+        ergebnis: 'Schüler:innen können nach der Simulation jeden Lohnzettel selbstständig lesen und erklären. Kein Tafelrechnen, kein Excel, keine Theorie ohne Praxis.',
+        mockUI: [
+          { zeile: 'Mein Lohnzettel', typ: 'label' },
+          { zeile: 'Bruttogehalt|2.100,00 €', typ: 'wert' },
+          { zeile: 'divider', typ: 'divider' },
+          { zeile: 'SV-Abzüge gesamt|'  , typ: 'label' },
+          { zeile: 'Krankenversicherung|− 147,00 €', typ: 'wert' },
+          { zeile: 'Pensionsversicherung|− 420,00 €', typ: 'wert' },
+          { zeile: 'Lohnsteuer|− 189,00 €', typ: 'wert' },
+          { zeile: 'divider', typ: 'divider' },
+          { zeile: 'Dein Nettogehalt|1.344,00 €', typ: 'highlight' },
+          { zeile: 'Abzüge gesamt|36 %|36%', typ: 'bar' },
+        ],
+      }}
     />
   )
 }
