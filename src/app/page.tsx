@@ -221,13 +221,6 @@ export default function HomePage() {
 
         {/* Hero content */}
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center max-w-5xl mx-auto px-6 pt-28 pb-16 text-center">
-          {/* Mission statement */}
-          <div className="inline-flex items-center gap-2 text-white/80 text-sm font-body font-700 px-5 py-2.5 rounded-full mb-4"
-            style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)' }}>
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Unabhängige, lebensnahe Finanzbildung für den Schulalltag
-          </div>
-
           {/* Award badge */}
           <div className="inline-flex items-center gap-2 glass text-white/90 text-xs font-body font-700 px-4 py-2 rounded-full mb-8 border border-white/20">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="#fde68a" stroke="#fde68a" strokeWidth="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -245,6 +238,10 @@ export default function HomePage() {
             <Image src="/fotos/Logo.png" alt="Skills-UP! Digitale Zukunftsbildung" width={80} height={80}
               className="relative drop-shadow-xl rounded-2xl opacity-90" priority />
           </div>
+
+          <p className="font-heading text-xl md:text-2xl text-white/80 font-600 mb-4 leading-snug">
+            Unabhängige, lebensnahe Finanzbildung für den Schulalltag
+          </p>
 
           <h1 id="hero-heading" className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Finanzbildung für Ihre Klasse.<br />
