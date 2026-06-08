@@ -6,10 +6,30 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({ error: 'E-Mail-Dienst nicht konfiguriert' }, { status: 503 })
   }
 
-  const { name, email, message } = await req.json()
+  let body: unknown
+  try {
+    body = await req.json()
+  } catch {
+    return NextResponse.json({ error: 'Ungültige Anfrage' }, { status: 400 })
+  }
+
+  const { name, email, message } = body as Record<string, unknown>
 
   if (!name || !email || !message) {
     return NextResponse.json({ error: 'Fehlende Felder' }, { status: 400 })
+  }
+
+  if (
+    typeof name !== 'string' || name.length > 200 ||
+    typeof email !== 'string' || email.length > 200 ||
+    typeof message !== 'string' || message.length > 5000
+  ) {
+    return NextResponse.json({ error: 'Ungültige Eingabe' }, { status: 400 })
+  }
+
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+  if (!emailRegex.test(email)) {
+    return NextResponse.json({ error: 'Ungültige E-Mail-Adresse' }, { status: 400 })
   }
 
   try {

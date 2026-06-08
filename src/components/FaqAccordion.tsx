@@ -60,16 +60,15 @@ export default function FaqAccordion() {
               </svg>
             </span>
           </button>
-          {open === i && (
-            <div
-              id={`faq-panel-${i}`}
-              role="region"
-              aria-labelledby={`faq-btn-${i}`}
-              className="px-6 pb-5"
-            >
-              <p className="text-text-muted font-body text-sm leading-relaxed">{faq.a}</p>
-            </div>
-          )}
+          <div
+            id={`faq-panel-${i}`}
+            role="region"
+            aria-labelledby={`faq-btn-${i}`}
+            hidden={open !== i}
+            className="px-6 pb-5"
+          >
+            <p className="text-text-muted font-body text-sm leading-relaxed">{faq.a}</p>
+          </div>
         </div>
       ))}
     </div>

@@ -266,7 +266,7 @@ export default function HomePage() {
               Kostenloses Beratungsgespräch
             </a>
           </div>
-          <p className="text-white/40 text-sm mb-10 font-body">Kostenlos · Unverbindlich · Kein automatischer Vertrag</p>
+          <p className="text-white/60 text-sm mb-10 font-body">Kostenlos · Unverbindlich · Kein automatischer Vertrag</p>
 
           {/* Trust signals */}
           <div className="flex flex-wrap items-center justify-center gap-6 text-white/55 text-sm font-body">
@@ -286,7 +286,7 @@ export default function HomePage() {
 
         {/* Scroll indicator */}
         <div className="relative z-10 flex justify-center pb-6">
-          <div className="animate-bounce-down flex flex-col items-center gap-1 text-white/40">
+          <div aria-hidden="true" className="animate-bounce-down flex flex-col items-center gap-1 text-white/40">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
               <polyline points="6 9 12 15 18 9" />
             </svg>
@@ -872,7 +872,7 @@ export default function HomePage() {
               <div className="text-center md:text-left">
                 <p className="font-heading font-700 text-white text-lg leading-tight">Stefan Bauer</p>
                 <p className="font-body text-white/60 text-sm mt-0.5">Gründer &amp; Vorstand</p>
-                <p className="font-body text-white/40 text-xs mt-0.5">Verein digitale Zukunftsbildung</p>
+                <p className="font-body text-white/55 text-xs mt-0.5">Verein digitale Zukunftsbildung</p>
               </div>
             </div>
 
@@ -966,7 +966,7 @@ export default function HomePage() {
               <div className="text-center md:text-right">
                 <p className="font-heading font-700 text-white text-lg leading-tight">Marina Winkler</p>
                 <p className="font-body text-white/60 text-sm mt-0.5">Obfrau, Pädagogische Leitung &amp; Finanzbildungsexpertin</p>
-                <p className="font-body text-white/40 text-xs mt-0.5">Bildungsexpertin · Finanzkompetenz · Chancengerechtigkeit</p>
+                <p className="font-body text-white/55 text-xs mt-0.5">Bildungsexpertin · Finanzkompetenz · Chancengerechtigkeit</p>
               </div>
             </div>
           </div>
