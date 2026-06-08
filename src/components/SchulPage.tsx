@@ -29,6 +29,15 @@ export interface Simulation {
   icon: React.ReactNode
 }
 
+export interface LernpfadStufe {
+  stufe: string
+  badge: string
+  icon: React.ReactNode
+  module: string[]
+  zeitMinuten: number
+  ergebnis: string
+}
+
 export interface HighlightSimulation {
   titel: string
   untertitel: string
@@ -68,6 +77,7 @@ export interface SchulPageProps {
   gruenderStatement: string
   icon: React.ReactNode
   highlightSimulation?: HighlightSimulation
+  lernpfad?: LernpfadStufe[]
 }
 
 const checkIcon = (
@@ -87,7 +97,7 @@ export default function SchulPage({
   schulstufen, lehrplanFach, lehrerProblem, intro,
   lehrplanPassung, unterrichtsEinheiten, module, simulationen, themen,
   features, lehrerZitat, lehrerFoto, gruenderStatement, icon,
-  highlightSimulation,
+  highlightSimulation, lernpfad,
 }: SchulPageProps) {
 
   const totalMinuten = unterrichtsEinheiten.reduce((s, e) => s + e.zeitMinuten, 0)
@@ -196,7 +206,7 @@ export default function SchulPage({
       </section>
 
       {/* ── Lehrer-Testimonial ───────────────────────────────── */}
-      {(lehrerFoto || lehrerZitat) && (
+            {(lehrerFoto || lehrerZitat) && (
         <section className="py-16 bg-white">
           <div className="max-w-5xl mx-auto px-6">
             <div className="text-center mb-8">
@@ -250,6 +260,68 @@ export default function SchulPage({
           </div>
         </section>
       )}
+
+      {/* ── Lehrplan-Passung ────────────────────────────────── */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <p className="text-xs font-body font-700 uppercase tracking-widest mb-2" style={{ color: farbe }}>Lehrplan</p>
+            <h2 className="font-heading text-2xl font-bold" style={{ color: '#1a1040' }}>
+              Wo passt Skills-UP! konkret rein?
+            </h2>
+            <p className="font-body text-text-muted text-sm mt-2 max-w-lg mx-auto">
+              Kein extra Fach nötig. Skills-UP! ergänzt bestehende Stunden und Themen, die du ohnehin unterrichtest.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+            {lehrplanPassung.map((lp) => (
+              <div key={lp.fach} className="bg-white rounded-2xl p-5 border-l-4 shadow-sm"
+                style={{ borderColor: farbe }}>
+                <p className="font-heading font-700 text-sm mb-1.5" style={{ color: farbe }}>{lp.fach}</p>
+                <p className="font-body text-sm text-text-muted leading-relaxed">{lp.kontext}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── So läuft eine Unterrichtsstunde ─────────────────── */}
+      <section id="unterricht" className="py-20 bg-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="text-xs font-body font-700 uppercase tracking-widest mb-2" style={{ color: farbe }}>Praxisbeispiel</p>
+            <h2 className="font-heading text-3xl font-bold mb-3" style={{ color: '#1a1040' }}>
+              Eine echte Unterrichtseinheit mit Skills-UP!.
+            </h2>
+            <p className="font-body text-text-muted max-w-lg mx-auto">
+              So sieht eine typische Unterrichtsstunde aus. Gesamtdauer: {totalMinuten} Minuten. Deine Vorbereitung: 0 Minuten.
+            </p>
+          </div>
+
+          <div className="relative">
+            <div className="absolute left-[28px] top-10 bottom-10 w-px" style={{ background: `linear-gradient(to bottom, ${farbe}, ${farbe}44)` }} />
+            <div className="space-y-6">
+              {unterrichtsEinheiten.map((e, i) => (
+                <div key={i} className="flex gap-6 items-start">
+                  <div className="shrink-0 w-14 h-14 rounded-2xl flex flex-col items-center justify-center text-white shadow-md"
+                    style={{ background: i === 0 ? gradient : i === unterrichtsEinheiten.length - 1 ? gradient : `${farbe}22` }}>
+                    <span className="font-heading font-800 text-lg leading-none" style={{ color: i === 0 || i === unterrichtsEinheiten.length - 1 ? '#fff' : farbe }}>
+                      {e.zeitMinuten}
+                    </span>
+                    <span className="text-[9px] font-body" style={{ color: i === 0 || i === unterrichtsEinheiten.length - 1 ? 'rgba(255,255,255,0.7)' : `${farbe}99` }}>
+                      min
+                    </span>
+                  </div>
+                  <div className="bg-gray-50 rounded-2xl p-5 flex-1">
+                    <p className="font-heading font-700 text-sm mb-1" style={{ color: '#1a1040' }}>{e.schritt}</p>
+                    <p className="font-body text-sm text-text-muted leading-relaxed">{e.was}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* ── Video ───────────────────────────────────────────────── */}
       <VideoSection variant="dark" farbe={farbe} />
@@ -416,277 +488,6 @@ export default function SchulPage({
                   </a>
                 </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Trust Stats ─────────────────────────────────────── */}
-      <section className="py-14 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {[
-              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>, accent: '#6b4db0', bg: '#f3f1f9', headline: 'Top-3 Österreich', detail: 'MEGA Bildungsmillion 2025' },
-              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>, accent: '#2a8a76', bg: '#e6f4f1', headline: 'WKÖ zertifiziert', detail: 'Hochschule Burgenland bestätigt Qualität' },
-              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, accent: '#4a2d8a', bg: '#f3f1f9', headline: 'Gütesiegel', detail: 'Qualitäts-Lern-Apps zertifiziert' },
-              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>, accent: '#2A8A76', bg: '#e6f4f1', headline: 'DSGVO-konform', detail: 'Aus Österreich, für Österreich' },
-            ].map((f) => (
-              <div key={f.headline} className="rounded-2xl p-5 flex items-start gap-4" style={{ background: f.bg }}>
-                <div className="shrink-0 w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: f.accent, color: '#fff' }}>
-                  {f.icon}
-                </div>
-                <div>
-                  <p className="font-heading font-700 text-sm leading-tight" style={{ color: f.accent }}>{f.headline}</p>
-                  <p className="font-body text-xs text-text-muted mt-0.5 leading-snug">{f.detail}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Awards Strip ────────────────────────────────────── */}
-      <section className="py-16 bg-white">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <p className="text-xs font-body font-700 uppercase tracking-widest mb-2" style={{ color: '#6b4db0' }}>Ausgezeichnet &amp; zertifiziert</p>
-            <h2 className="font-heading text-2xl md:text-3xl font-bold" style={{ color: '#1a1040' }}>
-              Von unabhängigen Stellen geprüft und empfohlen.
-            </h2>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
-            <div className="bg-white rounded-3xl p-6 flex flex-col items-center text-center gap-4 shadow-card hover:shadow-card-hover transition-all border-2" style={{ borderColor: '#4a2d8a' }}>
-              <div className="h-24 flex items-center justify-center bg-primary-50 rounded-2xl w-full px-4">
-                <Image src="/fotos/logo-guetesiegel.png" alt="Gütesiegel Qualitäts-Lern-Apps" width={200} height={96} className="max-h-20 w-auto object-contain" />
-              </div>
-              <div>
-                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#4a2d8a', color: '#fff' }}>Qualitätszertifiziert</span>
-                <p className="font-body text-sm text-text-muted leading-relaxed">Gütesiegel für digitale Qualitäts-Lern-Apps. Geprüft nach pädagogischen und technischen Qualitätskriterien.</p>
-              </div>
-            </div>
-            <div className="bg-white rounded-3xl p-6 flex flex-col items-center text-center gap-4 shadow-card hover:shadow-card-hover transition-all">
-              <div className="h-24 flex items-center justify-center w-full px-2">
-                <Image src="/fotos/logo-finanzbildungsstrategie.png" alt="Nationale Finanzbildungsstrategie" width={280} height={96} className="max-h-24 w-auto object-contain" />
-              </div>
-              <div>
-                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#2A8A76', color: '#fff' }}>Bundesministerium</span>
-                <p className="font-body text-sm text-text-muted leading-relaxed">Teil der Nationalen Finanzbildungsstrategie der österreichischen Bundesregierung.</p>
-              </div>
-            </div>
-            <div className="bg-white rounded-3xl p-6 flex flex-col items-center text-center gap-4 shadow-card hover:shadow-card-hover transition-all">
-              <div className="h-16 flex items-center justify-center">
-                <Image src="/fotos/MEGA%20Bildungsstiftung%20Logo.jpeg" alt="MEGA Bildungsstiftung" width={180} height={64} className="max-h-14 w-auto object-contain" />
-              </div>
-              <div>
-                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#D87228', color: '#fff' }}>Top-3 Österreich</span>
-                <p className="font-body text-sm text-text-muted leading-relaxed">Top-3 Projekt der MEGA Bildungsmillion 2025, unter hunderten Einreichungen österreichweit.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Partner-Logo-Marquee ─────────────────────────────── */}
-      <section className="py-12 bg-gray-50 overflow-hidden">
-        <div className="max-w-7xl mx-auto px-6 mb-6 text-center">
-          <p className="text-xs font-body font-700 uppercase tracking-widest text-text-muted">Partner &amp; Kooperationen</p>
-        </div>
-        {/* Screen-reader-only partner list */}
-        <ul className="sr-only">
-          {['Hochschule Burgenland','WKÖ Wirtschaftskammer','MEGA Bildungsstiftung','Nationale Finanzbildungsstrategie','Gütesiegel Lern-Apps','Ovos','TGW Future Wings','TGW Logistics','Bildungsdirektion Burgenland'].map((n) => <li key={n}>{n}</li>)}
-        </ul>
-        <div className="relative marquee-track" aria-hidden="true">
-          <div className="flex animate-marquee gap-20 items-center">
-            {[
-              { src: '/fotos/Logo%20Hochschule%20Burgenland.jpg', alt: 'Hochschule Burgenland' },
-              { src: '/fotos/Logo%20Wko%20Wirtschaftskammer.png', alt: 'WKÖ Wirtschaftskammer' },
-              { src: '/fotos/MEGA%20Bildungsstiftung%20Logo.jpeg', alt: 'MEGA Bildungsstiftung' },
-              { src: '/fotos/logo-finanzbildungsstrategie.png', alt: 'Nationale Finanzbildungsstrategie' },
-              { src: '/fotos/logo-guetesiegel.png', alt: 'Gütesiegel Lern-Apps', highlight: true },
-              { src: '/fotos/Logo%20Ovos.jpeg', alt: 'Ovos' },
-              { src: '/fotos/TGW%20Future%20Wings.png', alt: 'TGW Future Wings' },
-              { src: '/fotos/TGW%20Logistics%20Logo.png', alt: 'TGW Logistics' },
-              { src: '/fotos/Bildungsdirketion%20Burgenland.jpg', alt: 'Bildungsdirektion Burgenland' },
-            ].flatMap((logo, _, arr) => [logo, ...arr]).slice(0, 18).map((logo, i) => (
-              <div key={i}
-                className="shrink-0 flex items-center justify-center px-5 rounded-2xl"
-                style={{
-                  height: '80px',
-                  background: logo.alt === 'Gütesiegel Lern-Apps' ? '#f3f1f9' : 'transparent',
-                  padding: logo.alt === 'Gütesiegel Lern-Apps' ? '10px 20px' : '0 20px',
-                }}>
-                <Image
-                  src={logo.src}
-                  alt=""
-                  width={200}
-                  height={logo.alt === 'Gütesiegel Lern-Apps' ? 60 : 80}
-                  style={{
-                    height: logo.alt === 'Gütesiegel Lern-Apps' ? '60px' : '80px',
-                    width: 'auto',
-                    objectFit: 'contain',
-                    filter: 'grayscale(20%)',
-                  }}
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Gründer-Statement ───────────────────────────────── */}
-      <section className="py-20" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 60%, #1a5c4e 100%)' }}>
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="grid md:grid-cols-[260px_1fr] gap-10 items-center">
-            {/* Foto */}
-            <div className="flex flex-col items-center md:items-start gap-4">
-              <div className="relative">
-                <div className="absolute inset-0 rounded-2xl blur-2xl scale-110 pointer-events-none"
-                  style={{ background: 'radial-gradient(circle, rgba(155,126,212,0.4) 0%, transparent 70%)' }} />
-                <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
-                  <Image
-                    src="/fotos/stefan-bauer-alt.jpg"
-                    alt="Stefan Bauer, Gründer Skills-UP!"
-                    fill
-                    className="object-cover object-top"
-                  />
-                </div>
-              </div>
-              <div className="text-center md:text-left">
-                <p className="font-heading font-700 text-white text-base leading-tight">Stefan Bauer</p>
-                <p className="font-body text-white/60 text-xs mt-0.5">Gründer &amp; Vorstand</p>
-                <p className="font-body text-white/40 text-xs">Verein digitale Zukunftsbildung</p>
-              </div>
-            </div>
-
-            {/* Quote */}
-            <div>
-              <div className="flex items-center gap-2 mb-6">
-                <Image src="/fotos/Logo.png" alt="Skills-UP!" width={32} height={32} className="rounded-lg opacity-80" />
-                <span className="text-xs font-body font-700 uppercase tracking-widest text-white/40">Qualitätsversprechen</span>
-              </div>
-              <svg width="44" height="33" viewBox="0 0 48 36" fill="none" className="mb-5 opacity-30">
-                <path d="M0 36V21.6C0 9.6 6.4 2.4 19.2 0l2.4 4.8C14.4 6.4 10.4 10.4 10.4 16.8H19.2V36H0ZM28.8 36V21.6C28.8 9.6 35.2 2.4 48 0l2.4 4.8C43.2 6.4 39.2 10.4 39.2 16.8H48V36H28.8Z" fill="white"/>
-              </svg>
-              <p className="font-body text-xl md:text-2xl leading-relaxed text-white/90 italic mb-8">
-                &ldquo;{gruenderStatement}&rdquo;
-              </p>
-              <div className="flex flex-wrap gap-3">
-                {[
-                  { label: 'Top-3 MEGA Bildungsmillion', icon: '★' },
-                  { label: 'Gütesiegel Lern-Apps', icon: '✓' },
-                  { label: 'Nationale Finanzbildungsstrategie', icon: '⊕' },
-                ].map((b) => (
-                  <span key={b.label} className="inline-flex items-center gap-1.5 text-xs font-body font-700 px-3 py-1.5 rounded-full"
-                    style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.75)', border: '1px solid rgba(255,255,255,0.2)' }}>
-                    <span style={{ color: '#9b7ed4' }}>{b.icon}</span> {b.label}
-                  </span>
-                ))}
-              </div>
-            </div>
-          </div>
-
-          {/* Divider */}
-          <div className="border-t border-white/10 my-14" />
-
-          {/* Marina Winkler */}
-          <div className="grid md:grid-cols-[1fr_220px] gap-10 items-center">
-            <div>
-              <div className="flex items-center gap-2 mb-5">
-                <span className="text-xs font-body font-700 uppercase tracking-widest text-white/40">Aus dem Klassenzimmer</span>
-              </div>
-              <svg width="36" height="27" viewBox="0 0 48 36" fill="none" className="mb-4 opacity-30">
-                <path d="M0 36V21.6C0 9.6 6.4 2.4 19.2 0l2.4 4.8C14.4 6.4 10.4 10.4 10.4 16.8H19.2V36H0ZM28.8 36V21.6C28.8 9.6 35.2 2.4 48 0l2.4 4.8C43.2 6.4 39.2 10.4 39.2 16.8H48V36H28.8Z" fill="white"/>
-              </svg>
-              <p className="font-body text-lg md:text-xl leading-relaxed text-white/85 italic mb-6">
-                &ldquo;Als Lehrerin habe ich jeden Tag gesehen, wie wenig Zeit ich hatte, Finanzthemen wirklich zu vertiefen. Skills-UP! gibt Lehrkräften genau das Werkzeug, das mir damals gefehlt hat: fertig aufbereitet, sofort einsetzbar.&rdquo;
-              </p>
-              <div className="flex flex-wrap gap-2">
-                {['Ehemalige Lehrerin', 'Vereinsleitung', 'Kursleitung Skills-UP!'].map((tag) => (
-                  <span key={tag} className="text-xs font-body font-700 px-3 py-1.5 rounded-full"
-                    style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.15)' }}>
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </div>
-            <div className="flex flex-col items-center md:items-end gap-3">
-              <div className="relative">
-                <div className="absolute inset-0 rounded-2xl blur-2xl scale-110 pointer-events-none"
-                  style={{ background: 'radial-gradient(circle, rgba(42,138,118,0.4) 0%, transparent 70%)' }} />
-                <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden border-2 border-white/15 shadow-xl">
-                  <Image src="/fotos/marina-winkler.jpg" alt="Marina Winkler" fill className="object-cover object-top" />
-                </div>
-              </div>
-              <div className="text-center md:text-right">
-                <p className="font-heading font-700 text-white text-sm leading-tight">Marina Winkler</p>
-                <p className="font-body text-white/55 text-xs mt-0.5">Vereinsleitung &amp; Kursleitung</p>
-                <p className="font-body text-white/35 text-xs">Ehemalige Lehrerin</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Aktiengame CTA ──────────────────────────────────── */}
-      <AktiengameCTA />
-
-      {/* ── Lehrplan-Passung ────────────────────────────────── */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <p className="text-xs font-body font-700 uppercase tracking-widest mb-2" style={{ color: farbe }}>Lehrplan</p>
-            <h2 className="font-heading text-2xl font-bold" style={{ color: '#1a1040' }}>
-              Wo passt Skills-UP! konkret rein?
-            </h2>
-            <p className="font-body text-text-muted text-sm mt-2 max-w-lg mx-auto">
-              Kein extra Fach nötig. Skills-UP! ergänzt bestehende Stunden und Themen, die du ohnehin unterrichtest.
-            </p>
-          </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {lehrplanPassung.map((lp) => (
-              <div key={lp.fach} className="bg-white rounded-2xl p-5 border-l-4 shadow-sm"
-                style={{ borderColor: farbe }}>
-                <p className="font-heading font-700 text-sm mb-1.5" style={{ color: farbe }}>{lp.fach}</p>
-                <p className="font-body text-sm text-text-muted leading-relaxed">{lp.kontext}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ── So läuft eine Unterrichtsstunde ─────────────────── */}
-      <section id="unterricht" className="py-20 bg-white">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-12">
-            <p className="text-xs font-body font-700 uppercase tracking-widest mb-2" style={{ color: farbe }}>Praxisbeispiel</p>
-            <h2 className="font-heading text-3xl font-bold mb-3" style={{ color: '#1a1040' }}>
-              Eine echte Unterrichtseinheit mit Skills-UP!.
-            </h2>
-            <p className="font-body text-text-muted max-w-lg mx-auto">
-              So sieht eine typische Unterrichtsstunde aus. Gesamtdauer: {totalMinuten} Minuten. Deine Vorbereitung: 0 Minuten.
-            </p>
-          </div>
-
-          <div className="relative">
-            <div className="absolute left-[28px] top-10 bottom-10 w-px" style={{ background: `linear-gradient(to bottom, ${farbe}, ${farbe}44)` }} />
-            <div className="space-y-6">
-              {unterrichtsEinheiten.map((e, i) => (
-                <div key={i} className="flex gap-6 items-start">
-                  <div className="shrink-0 w-14 h-14 rounded-2xl flex flex-col items-center justify-center text-white shadow-md"
-                    style={{ background: i === 0 ? gradient : i === unterrichtsEinheiten.length - 1 ? gradient : `${farbe}22` }}>
-                    <span className="font-heading font-800 text-lg leading-none" style={{ color: i === 0 || i === unterrichtsEinheiten.length - 1 ? '#fff' : farbe }}>
-                      {e.zeitMinuten}
-                    </span>
-                    <span className="text-[9px] font-body" style={{ color: i === 0 || i === unterrichtsEinheiten.length - 1 ? 'rgba(255,255,255,0.7)' : `${farbe}99` }}>
-                      min
-                    </span>
-                  </div>
-                  <div className="bg-gray-50 rounded-2xl p-5 flex-1">
-                    <p className="font-heading font-700 text-sm mb-1" style={{ color: '#1a1040' }}>{e.schritt}</p>
-                    <p className="font-body text-sm text-text-muted leading-relaxed">{e.was}</p>
-                  </div>
-                </div>
-              ))}
             </div>
           </div>
         </div>
@@ -909,32 +710,128 @@ export default function SchulPage({
         </section>
       )}
 
-      {/* ── Themen ──────────────────────────────────────────── */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-10">
-            <p className="text-xs font-body font-700 uppercase tracking-widest mb-2" style={{ color: farbe }}>Inhalte</p>
-            <h2 className="font-heading text-2xl font-bold mb-3" style={{ color: '#1a1040' }}>
-              Diese Themen deckt Skills-UP! ab.
-            </h2>
-            <p className="font-body text-text-muted text-sm max-w-md mx-auto">
-              Alle Module sind fertig aufbereitet. Du wählst, welche du wann einsetzen möchtest.
-            </p>
-          </div>
-          <div className="flex flex-wrap justify-center gap-3">
-            {themen.map((t, i) => (
-              <span key={t} className="font-body font-600 text-sm px-4 py-2.5 rounded-full border-2"
-                style={{
-                  borderColor: farbe,
-                  color: i % 3 === 0 ? '#fff' : farbe,
-                  background: i % 3 === 0 ? farbe : (i % 3 === 1 ? farbeHell : 'white'),
-                }}>
-                {t}
+      {/* ── Lernpfad ────────────────────────────────────────── */}
+      {lernpfad && lernpfad.length > 0 && (
+        <section className="py-20 bg-white overflow-hidden">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="text-center mb-14">
+              <span className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest px-4 py-2 rounded-full mb-4"
+                style={{ background: farbeHell, color: farbe, border: `1px solid ${farbe}33` }}>
+                <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                Lernpfad
               </span>
-            ))}
+              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-3" style={{ color: '#1a1040' }}>
+                Von Null zum Finanzprofi.<br />
+                <span style={{ color: farbe }}>In deinem eigenen Tempo.</span>
+              </h2>
+              <p className="font-body text-text-muted text-lg max-w-xl mx-auto">
+                Schüler:innen starten dort, wo sie stehen, und arbeiten sich Schritt für Schritt vor. Jede Stufe baut auf der vorherigen auf.
+              </p>
+            </div>
+
+            {/* Stufen-Grid */}
+            <div className="relative">
+              {/* Verbindungslinie (Desktop) */}
+              <div className="hidden md:block absolute top-[52px] left-[calc(16.67%+20px)] right-[calc(16.67%+20px)] h-0.5 z-0"
+                style={{ background: `linear-gradient(to right, ${farbe}33, ${farbe}, ${farbe}33)` }} />
+
+              <div className="grid md:grid-cols-3 gap-6 relative z-10">
+                {lernpfad.map((stufe, i) => {
+                  const isFirst = i === 0
+                  const isLast = i === lernpfad.length - 1
+                  return (
+                    <div key={stufe.stufe} className="flex flex-col">
+                      {/* Stufen-Nummer oben */}
+                      <div className="flex justify-center mb-6">
+                        <div className="relative">
+                          <div className="w-[104px] h-[104px] rounded-full flex flex-col items-center justify-center shadow-lg border-4"
+                            style={{
+                              background: isFirst ? gradient : isLast ? gradient : '#fff',
+                              borderColor: farbe,
+                              color: isFirst || isLast ? '#fff' : farbe,
+                            }}>
+                            <div className="mb-1">{stufe.icon}</div>
+                            <span className="font-body font-700 text-xs uppercase tracking-wide"
+                              style={{ color: isFirst || isLast ? 'rgba(255,255,255,0.8)' : farbe }}>
+                              {stufe.badge}
+                            </span>
+                          </div>
+                          {/* Checkmark für erste Stufe (sofort machbar) */}
+                          {isFirst && (
+                            <div className="absolute -top-1 -right-1 w-7 h-7 rounded-full flex items-center justify-center shadow-md"
+                              style={{ background: '#34d399' }}>
+                              <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                <polyline points="20 6 9 17 4 12"/>
+                              </svg>
+                            </div>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Karten-Inhalt */}
+                      <div className="flex-1 rounded-2xl p-6 border-2 flex flex-col gap-4"
+                        style={{
+                          borderColor: isFirst ? farbe : `${farbe}44`,
+                          background: isFirst ? farbeHell : '#fafafa',
+                        }}>
+                        <div>
+                          <p className="font-body text-xs font-700 uppercase tracking-widest mb-1" style={{ color: `${farbe}88` }}>Stufe {i + 1}</p>
+                          <p className="font-heading font-700 text-lg leading-tight" style={{ color: '#1a1040' }}>{stufe.stufe}</p>
+                        </div>
+
+                        {/* Module-Pills */}
+                        <div className="flex flex-wrap gap-2">
+                          {stufe.module.map((m) => (
+                            <span key={m} className="text-xs font-body font-600 px-3 py-1.5 rounded-full"
+                              style={{ background: isFirst ? `${farbe}18` : '#efefef', color: isFirst ? farbe : '#555' }}>
+                              {m}
+                            </span>
+                          ))}
+                        </div>
+
+                        {/* Lernziel */}
+                        <div className="flex items-start gap-2.5 mt-auto pt-3 border-t" style={{ borderColor: `${farbe}22` }}>
+                          <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke={farbe} strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-0.5">
+                            <polyline points="20 6 9 17 4 12"/>
+                          </svg>
+                          <p className="font-body text-sm leading-relaxed text-text-muted">{stufe.ergebnis}</p>
+                        </div>
+
+                        {/* Zeit */}
+                        <div className="flex items-center gap-1.5">
+                          <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="text-text-muted">
+                            <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+                          </svg>
+                          <span className="text-xs font-body text-text-muted">{stufe.zeitMinuten} Min. Lernzeit</span>
+                        </div>
+                      </div>
+                    </div>
+                  )
+                })}
+              </div>
+            </div>
+
+            {/* Gesamtzeit + CTA */}
+            <div className="mt-10 rounded-2xl p-6 flex flex-col sm:flex-row items-center justify-between gap-4"
+              style={{ background: farbeHell, border: `1px solid ${farbe}33` }}>
+              <div className="text-center sm:text-left">
+                <p className="font-heading font-700 text-base" style={{ color: '#1a1040' }}>
+                  Vollständiger Lernpfad: {lernpfad.reduce((s, l) => s + l.zeitMinuten, 0)} Minuten
+                </p>
+                <p className="font-body text-sm text-text-muted mt-0.5">
+                  Aufgeteilt in {lernpfad.length} Stufen, je nach Tempo auch über mehrere Unterrichtsstunden verteilt.
+                </p>
+              </div>
+              <a href="/#kontakt"
+                className="shrink-0 inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl text-white transition-all hover:scale-105 active:scale-95"
+                style={{ background: gradient }}>
+                Lernpfad für meine Klasse anfragen
+                {arrowIcon}
+              </a>
+            </div>
           </div>
-        </div>
-      </section>
+        </section>
+      )}
 
       {/* ── Features aus Lehrerperspektive ──────────────────── */}
       <section className="py-20 bg-white">
@@ -962,6 +859,432 @@ export default function SchulPage({
           </div>
         </div>
       </section>
+
+      {/* ── Alle Vorteile ───────────────────────────────────── */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <span className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest px-4 py-2 rounded-full mb-4"
+              style={{ background: farbeHell, color: farbe, border: `1px solid ${farbe}33` }}>
+              <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+              </svg>
+              Alle Vorteile
+            </span>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-3" style={{ color: '#1a1040' }}>
+              Gut für alle Beteiligten.<br />
+              <span style={{ color: farbe }}>Ohne Kompromisse.</span>
+            </h2>
+            <p className="font-body text-text-muted text-lg max-w-xl mx-auto">
+              Skills-UP! wurde so entwickelt, dass alle drei Gruppen profitieren: Schüler:innen, Lehrkräfte und die Schule als Institution.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Schüler:innen */}
+            <div className="rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-card transition-all">
+              <div className="px-6 py-5 flex items-center gap-3" style={{ background: gradient }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(255,255,255,0.2)' }}>
+                  <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-body text-white/60 text-xs font-700 uppercase tracking-widest">Perspektive</p>
+                  <p className="font-heading font-700 text-white text-base leading-tight">Schüler:innen</p>
+                </div>
+              </div>
+              <div className="p-6 bg-white">
+                <ul className="space-y-4">
+                  {[
+                    { titel: 'Eigenes Tempo', text: 'Module in 15 oder 50 Minuten: du entscheidest, wann du wie viel lernst.' },
+                    { titel: 'Echte Szenarien', text: 'Nur österreichische Zahlen, Gesetze und Alltagssituationen, keine Theorie aus dem Lehrbuch.' },
+                    { titel: 'Sicher scheitern', text: 'Fehler machen ohne echtes Geld zu riskieren. Die Simulation zeigt, was im echten Leben passiert wäre.' },
+                    { titel: 'Sofort sichtbarer Fortschritt', text: 'Nach jedem Quiz siehst du direkt, was du kannst und was noch fehlt.' },
+                    { titel: 'Zertifikat', text: 'Nach Abschluss bekommst du ein Zertifikat: für Lebenslauf, Portfolio und Bewerbung.' },
+                    { titel: 'Freiwillig weitermachen', text: 'Gamification und Peer-Videos machen Weitermachen attraktiver als Aufhören.' },
+                  ].map((v) => (
+                    <li key={v.titel} className="flex items-start gap-3">
+                      <div className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5" style={{ background: `${farbe}18` }}>
+                        <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke={farbe} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <span className="font-body font-700 text-sm" style={{ color: '#1a1040' }}>{v.titel}: </span>
+                        <span className="font-body text-sm text-text-muted">{v.text}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Lehrkräfte */}
+            <div className="rounded-3xl overflow-hidden border-2 shadow-card-hover"
+              style={{ borderColor: farbe }}>
+              <div className="px-6 py-5 flex items-center gap-3" style={{ background: gradient }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(255,255,255,0.2)' }}>
+                  <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/>
+                  </svg>
+                </div>
+                <div>
+                  <div className="flex items-center gap-2">
+                    <p className="font-body text-white/60 text-xs font-700 uppercase tracking-widest">Perspektive</p>
+                    <span className="text-xs font-body font-700 px-2 py-0.5 rounded-full" style={{ background: 'rgba(255,255,255,0.25)', color: '#fff' }}>Empfohlen</span>
+                  </div>
+                  <p className="font-heading font-700 text-white text-base leading-tight">Lehrkräfte</p>
+                </div>
+              </div>
+              <div className="p-6 bg-white">
+                <ul className="space-y-4">
+                  {[
+                    { titel: '0 Minuten Vorbereitung', text: 'Jedes Modul ist vollständig ausgearbeitet: Lernziele, Aufgaben, Reflexionsfragen und Lehrerhinweise inklusive.' },
+                    { titel: 'Kein IT-Aufwand', text: 'Kein Ticket, keine Installation, kein Elternbrief. Klasse anmelden, Link schicken, fertig.' },
+                    { titel: 'Live-Dashboard', text: 'Du siehst auf einen Blick, wer wo steht, welche Themen Probleme machen und wer Unterstützung braucht.' },
+                    { titel: 'Keine Korrektur', text: 'Quizze werden automatisch ausgewertet. Kein einziger Test zum Einsammeln oder Korrigieren.' },
+                    { titel: 'Lehrplanbezug dokumentiert', text: 'Jedes Modul ist mit den relevanten Lehrplaninhalten verknüpft, sofort nachweisbar.' },
+                    { titel: 'Persönlicher Support', text: 'Bei Fragen erreichst du einen Menschen, innerhalb von 24 Stunden, kein Chatbot.' },
+                  ].map((v) => (
+                    <li key={v.titel} className="flex items-start gap-3">
+                      <div className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5" style={{ background: `${farbe}18` }}>
+                        <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke={farbe} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <span className="font-body font-700 text-sm" style={{ color: '#1a1040' }}>{v.titel}: </span>
+                        <span className="font-body text-sm text-text-muted">{v.text}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+
+            {/* Schule */}
+            <div className="rounded-3xl overflow-hidden border border-gray-100 shadow-sm hover:shadow-card transition-all">
+              <div className="px-6 py-5 flex items-center gap-3" style={{ background: gradient }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0" style={{ background: 'rgba(255,255,255,0.2)' }}>
+                  <svg aria-hidden="true" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-body text-white/60 text-xs font-700 uppercase tracking-widest">Perspektive</p>
+                  <p className="font-heading font-700 text-white text-base leading-tight">Schule & Institution</p>
+                </div>
+              </div>
+              <div className="p-6 bg-white">
+                <ul className="space-y-4">
+                  {[
+                    { titel: 'DSGVO-konform', text: 'Entwickelt in Österreich, Daten bleiben in der EU. Kein Datenschutz-Risiko für die Schule.' },
+                    { titel: 'Offiziell zertifiziert', text: 'WKÖ-zertifiziert, Gütesiegel für digitale Qualitäts-Lern-Apps, Teil der nationalen Finanzbildungsstrategie.' },
+                    { titel: 'Ausgezeichnet', text: 'Top-3 Projekt der MEGA Bildungsmillion 2025, unter hunderten Einreichungen österreichweit.' },
+                    { titel: 'Kein Extra-Fach', text: 'Skills-UP! ergänzt bestehende Stunden, braucht keine eigene Stunde im Stundenplan.' },
+                    { titel: 'Nachweisbare Wirkung', text: 'Zertifikate für Schüler:innen, Dashboard-Auswertungen für die Schule, alles dokumentierbar.' },
+                    { titel: 'Skalierbar', text: 'Ob eine Klasse oder der ganze Jahrgang: Setup-Aufwand bleibt gleich, egal wie viele mitmachen.' },
+                  ].map((v) => (
+                    <li key={v.titel} className="flex items-start gap-3">
+                      <div className="shrink-0 w-5 h-5 rounded-full flex items-center justify-center mt-0.5" style={{ background: `${farbe}18` }}>
+                        <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke={farbe} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                          <polyline points="20 6 9 17 4 12"/>
+                        </svg>
+                      </div>
+                      <div>
+                        <span className="font-body font-700 text-sm" style={{ color: '#1a1040' }}>{v.titel}: </span>
+                        <span className="font-body text-sm text-text-muted">{v.text}</span>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Vergleichs-Banner */}
+          <div className="mt-10 rounded-2xl overflow-hidden">
+            <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-white/10"
+              style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 100%)' }}>
+              <div className="p-8">
+                <p className="font-body text-white/40 text-xs font-700 uppercase tracking-widest mb-3">Ohne Skills-UP!</p>
+                <ul className="space-y-3">
+                  {[
+                    'Lehrkraft erklärt Lohnzettel selbst von der Tafel',
+                    'Schüler:innen schlafen bei Finanzthemen ein',
+                    'Kein Lehrplanbezug dokumentiert',
+                    'Eltern fragen nach dem Nutzen',
+                    'Kein Nachweis was wirklich gelernt wurde',
+                  ].map((t) => (
+                    <li key={t} className="flex items-start gap-2.5">
+                      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="rgba(255,255,255,0.3)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-0.5">
+                        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+                      </svg>
+                      <span className="font-body text-sm text-white/40">{t}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="p-8">
+                <p className="font-body text-xs font-700 uppercase tracking-widest mb-3" style={{ color: `${farbe}cc` }}>Mit Skills-UP!</p>
+                <ul className="space-y-3">
+                  {[
+                    'Simulation startet, Schüler:innen rechnen selbst',
+                    'Engagement durch Peer-Videos und Gamification',
+                    'Lehrplanbezug für jedes Modul bereits dokumentiert',
+                    'Zertifikat für Schüler:innen als sichtbares Ergebnis',
+                    'Dashboard zeigt live, wer was wirklich gelernt hat',
+                  ].map((t) => (
+                    <li key={t} className="flex items-start gap-2.5">
+                      <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 mt-0.5">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                      <span className="font-body text-sm text-white/80">{t}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Trust Stats ─────────────────────────────────────── */}
+      <section className="py-14 bg-gray-50">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+            {[
+              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>, accent: '#6b4db0', bg: '#f3f1f9', headline: 'Top-3 Österreich', detail: 'MEGA Bildungsmillion 2025' },
+              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>, accent: '#2a8a76', bg: '#e6f4f1', headline: 'WKÖ zertifiziert', detail: 'Hochschule Burgenland bestätigt Qualität' },
+              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, accent: '#4a2d8a', bg: '#f3f1f9', headline: 'Gütesiegel', detail: 'Qualitäts-Lern-Apps zertifiziert' },
+              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>, accent: '#2A8A76', bg: '#e6f4f1', headline: 'DSGVO-konform', detail: 'Aus Österreich, für Österreich' },
+            ].map((f) => (
+              <div key={f.headline} className="rounded-2xl p-5 flex items-start gap-4" style={{ background: f.bg }}>
+                <div className="shrink-0 w-10 h-10 rounded-xl flex items-center justify-center" style={{ background: f.accent, color: '#fff' }}>
+                  {f.icon}
+                </div>
+                <div>
+                  <p className="font-heading font-700 text-sm leading-tight" style={{ color: f.accent }}>{f.headline}</p>
+                  <p className="font-body text-xs text-text-muted mt-0.5 leading-snug">{f.detail}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Awards Strip ────────────────────────────────────── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <p className="text-xs font-body font-700 uppercase tracking-widest mb-2" style={{ color: '#6b4db0' }}>Ausgezeichnet &amp; zertifiziert</p>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold" style={{ color: '#1a1040' }}>
+              Von unabhängigen Stellen geprüft und empfohlen.
+            </h2>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-5">
+            <div className="bg-white rounded-3xl p-6 flex flex-col items-center text-center gap-4 shadow-card hover:shadow-card-hover transition-all border-2" style={{ borderColor: '#4a2d8a' }}>
+              <div className="h-24 flex items-center justify-center bg-primary-50 rounded-2xl w-full px-4">
+                <Image src="/fotos/logo-guetesiegel.png" alt="Gütesiegel Qualitäts-Lern-Apps" width={200} height={96} className="max-h-20 w-auto object-contain" />
+              </div>
+              <div>
+                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#4a2d8a', color: '#fff' }}>Qualitätszertifiziert</span>
+                <p className="font-body text-sm text-text-muted leading-relaxed">Gütesiegel für digitale Qualitäts-Lern-Apps. Geprüft nach pädagogischen und technischen Qualitätskriterien.</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-3xl p-6 flex flex-col items-center text-center gap-4 shadow-card hover:shadow-card-hover transition-all">
+              <div className="h-24 flex items-center justify-center w-full px-2">
+                <Image src="/fotos/logo-finanzbildungsstrategie.png" alt="Nationale Finanzbildungsstrategie" width={280} height={96} className="max-h-24 w-auto object-contain" />
+              </div>
+              <div>
+                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#2A8A76', color: '#fff' }}>Bundesministerium</span>
+                <p className="font-body text-sm text-text-muted leading-relaxed">Teil der Nationalen Finanzbildungsstrategie der österreichischen Bundesregierung.</p>
+              </div>
+            </div>
+            <div className="bg-white rounded-3xl p-6 flex flex-col items-center text-center gap-4 shadow-card hover:shadow-card-hover transition-all">
+              <div className="h-16 flex items-center justify-center">
+                <Image src="/fotos/MEGA%20Bildungsstiftung%20Logo.jpeg" alt="MEGA Bildungsstiftung" width={180} height={64} className="max-h-14 w-auto object-contain" />
+              </div>
+              <div>
+                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#D87228', color: '#fff' }}>Top-3 Österreich</span>
+                <p className="font-body text-sm text-text-muted leading-relaxed">Top-3 Projekt der MEGA Bildungsmillion 2025, unter hunderten Einreichungen österreichweit.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Partner-Logo-Marquee ─────────────────────────────── */}
+      <section className="py-12 bg-gray-50 overflow-hidden">
+        <div className="max-w-7xl mx-auto px-6 mb-6 text-center">
+          <p className="text-xs font-body font-700 uppercase tracking-widest text-text-muted">Partner &amp; Kooperationen</p>
+        </div>
+        {/* Screen-reader-only partner list */}
+        <ul className="sr-only">
+          {['Hochschule Burgenland','WKÖ Wirtschaftskammer','MEGA Bildungsstiftung','Nationale Finanzbildungsstrategie','Gütesiegel Lern-Apps','Ovos','TGW Future Wings','TGW Logistics','Bildungsdirektion Burgenland'].map((n) => <li key={n}>{n}</li>)}
+        </ul>
+        <div className="relative marquee-track" aria-hidden="true">
+          <div className="flex animate-marquee gap-20 items-center">
+            {[
+              { src: '/fotos/Logo%20Hochschule%20Burgenland.jpg', alt: 'Hochschule Burgenland' },
+              { src: '/fotos/Logo%20Wko%20Wirtschaftskammer.png', alt: 'WKÖ Wirtschaftskammer' },
+              { src: '/fotos/MEGA%20Bildungsstiftung%20Logo.jpeg', alt: 'MEGA Bildungsstiftung' },
+              { src: '/fotos/logo-finanzbildungsstrategie.png', alt: 'Nationale Finanzbildungsstrategie' },
+              { src: '/fotos/logo-guetesiegel.png', alt: 'Gütesiegel Lern-Apps', highlight: true },
+              { src: '/fotos/Logo%20Ovos.jpeg', alt: 'Ovos' },
+              { src: '/fotos/TGW%20Future%20Wings.png', alt: 'TGW Future Wings' },
+              { src: '/fotos/TGW%20Logistics%20Logo.png', alt: 'TGW Logistics' },
+              { src: '/fotos/Bildungsdirketion%20Burgenland.jpg', alt: 'Bildungsdirektion Burgenland' },
+            ].flatMap((logo, _, arr) => [logo, ...arr]).slice(0, 18).map((logo, i) => (
+              <div key={i}
+                className="shrink-0 flex items-center justify-center px-5 rounded-2xl"
+                style={{
+                  height: '80px',
+                  background: logo.alt === 'Gütesiegel Lern-Apps' ? '#f3f1f9' : 'transparent',
+                  padding: logo.alt === 'Gütesiegel Lern-Apps' ? '10px 20px' : '0 20px',
+                }}>
+                <Image
+                  src={logo.src}
+                  alt=""
+                  width={200}
+                  height={logo.alt === 'Gütesiegel Lern-Apps' ? 60 : 80}
+                  style={{
+                    height: logo.alt === 'Gütesiegel Lern-Apps' ? '60px' : '80px',
+                    width: 'auto',
+                    objectFit: 'contain',
+                    filter: 'grayscale(20%)',
+                  }}
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Gründer-Statement ───────────────────────────────── */}
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 60%, #1a5c4e 100%)' }}>
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="grid md:grid-cols-[260px_1fr] gap-10 items-center">
+            {/* Foto */}
+            <div className="flex flex-col items-center md:items-start gap-4">
+              <div className="relative">
+                <div className="absolute inset-0 rounded-2xl blur-2xl scale-110 pointer-events-none"
+                  style={{ background: 'radial-gradient(circle, rgba(155,126,212,0.4) 0%, transparent 70%)' }} />
+                <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
+                  <Image
+                    src="/fotos/stefan-bauer-alt.jpg"
+                    alt="Stefan Bauer, Gründer Skills-UP!"
+                    fill
+                    className="object-cover object-top"
+                  />
+                </div>
+              </div>
+              <div className="text-center md:text-left">
+                <p className="font-heading font-700 text-white text-base leading-tight">Stefan Bauer</p>
+                <p className="font-body text-white/60 text-xs mt-0.5">Gründer &amp; Vorstand</p>
+                <p className="font-body text-white/40 text-xs">Verein digitale Zukunftsbildung</p>
+              </div>
+            </div>
+
+            {/* Quote */}
+            <div>
+              <div className="flex items-center gap-2 mb-6">
+                <Image src="/fotos/Logo.png" alt="Skills-UP!" width={32} height={32} className="rounded-lg opacity-80" />
+                <span className="text-xs font-body font-700 uppercase tracking-widest text-white/40">Qualitätsversprechen</span>
+              </div>
+              <svg width="44" height="33" viewBox="0 0 48 36" fill="none" className="mb-5 opacity-30">
+                <path d="M0 36V21.6C0 9.6 6.4 2.4 19.2 0l2.4 4.8C14.4 6.4 10.4 10.4 10.4 16.8H19.2V36H0ZM28.8 36V21.6C28.8 9.6 35.2 2.4 48 0l2.4 4.8C43.2 6.4 39.2 10.4 39.2 16.8H48V36H28.8Z" fill="white"/>
+              </svg>
+              <p className="font-body text-xl md:text-2xl leading-relaxed text-white/90 italic mb-8">
+                &ldquo;{gruenderStatement}&rdquo;
+              </p>
+              <div className="flex flex-wrap gap-3">
+                {[
+                  { label: 'Top-3 MEGA Bildungsmillion', icon: '★' },
+                  { label: 'Gütesiegel Lern-Apps', icon: '✓' },
+                  { label: 'Nationale Finanzbildungsstrategie', icon: '⊕' },
+                ].map((b) => (
+                  <span key={b.label} className="inline-flex items-center gap-1.5 text-xs font-body font-700 px-3 py-1.5 rounded-full"
+                    style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.75)', border: '1px solid rgba(255,255,255,0.2)' }}>
+                    <span style={{ color: '#9b7ed4' }}>{b.icon}</span> {b.label}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="border-t border-white/10 my-14" />
+
+          {/* Marina Winkler */}
+          <div className="grid md:grid-cols-[1fr_220px] gap-10 items-center">
+            <div>
+              <div className="flex items-center gap-2 mb-5">
+                <span className="text-xs font-body font-700 uppercase tracking-widest text-white/40">Aus dem Klassenzimmer</span>
+              </div>
+              <svg width="36" height="27" viewBox="0 0 48 36" fill="none" className="mb-4 opacity-30">
+                <path d="M0 36V21.6C0 9.6 6.4 2.4 19.2 0l2.4 4.8C14.4 6.4 10.4 10.4 10.4 16.8H19.2V36H0ZM28.8 36V21.6C28.8 9.6 35.2 2.4 48 0l2.4 4.8C43.2 6.4 39.2 10.4 39.2 16.8H48V36H28.8Z" fill="white"/>
+              </svg>
+              <p className="font-body text-lg md:text-xl leading-relaxed text-white/85 italic mb-6">
+                &ldquo;Als Lehrerin habe ich jeden Tag gesehen, wie wenig Zeit ich hatte, Finanzthemen wirklich zu vertiefen. Skills-UP! gibt Lehrkräften genau das Werkzeug, das mir damals gefehlt hat: fertig aufbereitet, sofort einsetzbar.&rdquo;
+              </p>
+              <div className="flex flex-wrap gap-2">
+                {['Ehemalige Lehrerin', 'Vereinsleitung', 'Kursleitung Skills-UP!'].map((tag) => (
+                  <span key={tag} className="text-xs font-body font-700 px-3 py-1.5 rounded-full"
+                    style={{ background: 'rgba(255,255,255,0.08)', color: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.15)' }}>
+                    {tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+            <div className="flex flex-col items-center md:items-end gap-3">
+              <div className="relative">
+                <div className="absolute inset-0 rounded-2xl blur-2xl scale-110 pointer-events-none"
+                  style={{ background: 'radial-gradient(circle, rgba(42,138,118,0.4) 0%, transparent 70%)' }} />
+                <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden border-2 border-white/15 shadow-xl">
+                  <Image src="/fotos/marina-winkler.jpg" alt="Marina Winkler" fill className="object-cover object-top" />
+                </div>
+              </div>
+              <div className="text-center md:text-right">
+                <p className="font-heading font-700 text-white text-sm leading-tight">Marina Winkler</p>
+                <p className="font-body text-white/55 text-xs mt-0.5">Vereinsleitung &amp; Kursleitung</p>
+                <p className="font-body text-white/35 text-xs">Ehemalige Lehrerin</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Themen ──────────────────────────────────────────── */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <p className="text-xs font-body font-700 uppercase tracking-widest mb-2" style={{ color: farbe }}>Inhalte</p>
+            <h2 className="font-heading text-2xl font-bold mb-3" style={{ color: '#1a1040' }}>
+              Diese Themen deckt Skills-UP! ab.
+            </h2>
+            <p className="font-body text-text-muted text-sm max-w-md mx-auto">
+              Alle Module sind fertig aufbereitet. Du wählst, welche du wann einsetzen möchtest.
+            </p>
+          </div>
+          <div className="flex flex-wrap justify-center gap-3">
+            {themen.map((t, i) => (
+              <span key={t} className="font-body font-600 text-sm px-4 py-2.5 rounded-full border-2"
+                style={{
+                  borderColor: farbe,
+                  color: i % 3 === 0 ? '#fff' : farbe,
+                  background: i % 3 === 0 ? farbe : (i % 3 === 1 ? farbeHell : 'white'),
+                }}>
+                {t}
+              </span>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ── Aktiengame CTA ──────────────────────────────────── */}
+      <AktiengameCTA />
 
       {/* ── CTA ─────────────────────────────────────────────── */}
       <section className="py-20" style={{ background: 'linear-gradient(135deg, #2d1b69 0%, #4a2d8a 50%, #1a5c4e 100%)' }}>

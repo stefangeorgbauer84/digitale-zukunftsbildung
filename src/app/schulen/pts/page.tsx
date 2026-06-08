@@ -131,6 +131,32 @@ export default function PtsPage() {
       }}
       lehrerFoto="/fotos/lehrer/pts.png"
       gruenderStatement="Schüler:innen der PTS stehen kurz vor ihrer Berufswahl und dem ersten echten Einkommen. Skills-UP! gibt ihnen das Handwerkszeug, das kein Beruf automatisch mitliefert: wie man mit Geld wirklich umgeht, und welche Entscheidungen man lieber nicht bereuen möchte."
+      lernpfad={[
+        {
+          stufe: 'Berufseinstieg',
+          badge: 'Level 1',
+          icon: moneyIcon,
+          module: ['Gehalt & Einkommen', 'Finanzplanung'],
+          zeitMinuten: 40,
+          ergebnis: 'Lehrlingslohn nach Beruf und Lehrjahr kennen und erstes Monatsbudget mit Sparanteil erstellen.',
+        },
+        {
+          stufe: 'Schlaues Konsumieren',
+          badge: 'Level 2',
+          icon: playIcon,
+          module: ['Konsumfallen', 'Ratenkauf & BNPL'],
+          zeitMinuten: 55,
+          ergebnis: 'Handyvertrag, Abo-Fallen und BNPL kritisch bewerten und den echten Preis eines Ratenkaufs kennen.',
+        },
+        {
+          stufe: 'Sparziel erreichen',
+          badge: 'Level 3',
+          icon: piggyIcon,
+          module: ['Sparen & Geldentscheidungen', 'Erste eigene Wohnung'],
+          zeitMinuten: 50,
+          ergebnis: 'Sparziel Führerschein oder Wohnung konkret berechnen und einen Monats-Sparplan einhalten.',
+        },
+      ]}
       highlightSimulation={{
         titel: 'Lehrlingslohn-Planer',
         untertitel: 'Welcher Lehrberuf zahlt was? Lehrlingsgeld nach Lehrjahr simulieren, Budget erstellen und konkrete Sparziele (Führerschein, erste Wohnung) berechnen.',

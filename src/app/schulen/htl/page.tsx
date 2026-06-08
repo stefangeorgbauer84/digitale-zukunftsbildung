@@ -135,6 +135,32 @@ export default function HtlPage() {
       }}
       lehrerFoto="/fotos/lehrer/htl.png"
       gruenderStatement="Technische Kompetenz ist an der HTL gesetzt. Finanzielle Kompetenz nicht, dabei treffen Absolvent:innen schon kurz nach der Matura echte Geldentscheidungen. Skills-UP! bereitet sie konkret darauf vor, ohne dem Lehrplan etwas wegzunehmen."
+      lernpfad={[
+        {
+          stufe: 'Grundlagen',
+          badge: 'Level 1',
+          icon: moneyIcon,
+          module: ['Gehalt & Einkommen', 'Finanzplanung'],
+          zeitMinuten: 50,
+          ergebnis: 'HTL-Techniker-KV kennen, ersten Nettolohn berechnen und Monatsbudget aufstellen.',
+        },
+        {
+          stufe: 'Aufbau',
+          badge: 'Level 2',
+          icon: chartIcon,
+          module: ['Sparen & Investieren', 'Kryptowährungen & Krypto-Assets'],
+          zeitMinuten: 70,
+          ergebnis: 'ETF-Sparplan aufbauen, Krypto-Risiken realistisch einschätzen und Depot diversifizieren.',
+        },
+        {
+          stufe: 'Langfristdenker',
+          badge: 'Level 3',
+          icon: starIcon,
+          module: ['Altersvorsorge', 'Risiko & Krisen'],
+          zeitMinuten: 60,
+          ergebnis: '3-Säulen-Pensionsmodell verstehen, Pensionslücke berechnen und Notgroschen aufbauen.',
+        },
+      ]}
       highlightSimulation={{
         titel: 'Berufseinstieg Budget-Planer',
         untertitel: 'Erster Job als HTL-Absolvent:in: Nettolohn, Mietwohnung, Auto, Sparplan. Alle Kosten real durchkalkuliert.',

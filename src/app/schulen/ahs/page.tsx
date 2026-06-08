@@ -151,6 +151,32 @@ export default function AhsPage() {
       }}
       lehrerFoto="/fotos/lehrer/ahs.png"
       gruenderStatement="An der AHS lernen Schüler:innen analytisch zu denken, aber wie man das erste Gehalt einteilt, kommt im Lehrplan kaum vor. Skills-UP! schließt genau diese Lücke. Praxisnah, ohne Mehraufwand für Lehrkräfte, und mit Inhalten, die wirklich im Leben ankommen."
+      lernpfad={[
+        {
+          stufe: 'Orientierung',
+          badge: 'Level 1',
+          icon: bookIcon,
+          module: ['Gehalt & Einkommen', 'Finanzplanung'],
+          zeitMinuten: 50,
+          ergebnis: 'Ersten Nebenjob-Lohnzettel lesen, Studienbudget erstellen und Stipendiumsoptionen kennen.',
+        },
+        {
+          stufe: 'Kritisches Denken',
+          badge: 'Level 2',
+          icon: alertIcon,
+          module: ['Konsumfallen', 'Ratenkauf & BNPL', 'Kryptowährungen & Krypto-Assets'],
+          zeitMinuten: 75,
+          ergebnis: 'Kauftrigger erkennen, Kreditkosten berechnen und Krypto-Risiken mit der FMA-Warnliste prüfen.',
+        },
+        {
+          stufe: 'Vermögensaufbau',
+          badge: 'Level 3',
+          icon: chartIcon,
+          module: ['Sparen & Investieren', 'Steuern in Österreich'],
+          zeitMinuten: 65,
+          ergebnis: 'ETF-Sparplan als Student starten, Zinseszins über 20 Jahre simulieren und Steuerausgleich beantragen.',
+        },
+      ]}
       highlightSimulation={{
         titel: 'Studienfinanzierungs-Rechner',
         untertitel: 'Stipendium, Studiengebühren, WG-Kosten, Nebenjob: Was kostet Studieren in Wien wirklich, und wie finanziert man es?',

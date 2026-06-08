@@ -145,6 +145,32 @@ export default function BerufsschulePage() {
       }}
       lehrerFoto="/fotos/lehrer/berufsschule.png"
       gruenderStatement="Lehrlinge verdienen echtes Geld, oft das erste Mal in ihrem Leben. Die meisten haben niemanden, der ihnen erklärt, was man damit macht. Skills-UP! springt genau dort ein: praxisnah, in kurzen Einheiten, und mit Szenarien, die Lehrlinge aus ihrem eigenen Alltag kennen."
+      lernpfad={[
+        {
+          stufe: 'Lehrlingseinstieg',
+          badge: 'Level 1',
+          icon: moneyIcon,
+          module: ['Gehalt & Einkommen', 'Finanzplanung'],
+          zeitMinuten: 45,
+          ergebnis: 'Lehrlingslohn nach KV berechnen, Lohnzettel prüfen und ersten Monatsplan erstellen.',
+        },
+        {
+          stufe: 'Alltagskompetenz',
+          badge: 'Level 2',
+          icon: alertIcon,
+          module: ['Ratenkauf & BNPL', 'Konsumfallen', 'Schulden & Geld leihen'],
+          zeitMinuten: 65,
+          ergebnis: 'Konsumfallen und Klarna-Fallen erkennen, Gesamtkosten eines Ratenkaufs selbst ausrechnen.',
+        },
+        {
+          stufe: 'Zukunftssicherung',
+          badge: 'Level 3',
+          icon: taxIcon,
+          module: ['Steuern in Österreich', 'Sparen & Geldentscheidungen'],
+          zeitMinuten: 55,
+          ergebnis: 'Negativsteuer zurückholen, Notgroschen aufbauen und ersten Sparplan in die Praxis umsetzen.',
+        },
+      ]}
       highlightSimulation={{
         titel: 'Nebenjob & Geringfügigkeits-Check',
         untertitel: 'Was passiert, wenn man neben der Lehre dazuverdient? SV-Pflicht, Steuer, Geringfügigkeitsgrenze 2026 — alles in einer Simulation.',

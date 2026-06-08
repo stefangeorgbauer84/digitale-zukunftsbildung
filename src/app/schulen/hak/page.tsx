@@ -152,6 +152,32 @@ export default function HakPage() {
       }}
       lehrerFoto="/fotos/lehrer/hak.png"
       gruenderStatement="Wirtschaft wird an der HAK theoretisch sehr gut vermittelt. Skills-UP! bringt das persönliche Finanzleben der Schüler:innen direkt in die Stunde, und das ist der Unterschied zwischen Wissen und echtem Können."
+      lernpfad={[
+        {
+          stufe: 'Grundlagen',
+          badge: 'Level 1',
+          icon: moneyIcon,
+          module: ['Gehalt & Einkommen', 'Finanzplanung'],
+          zeitMinuten: 50,
+          ergebnis: 'Lohnzettel selbstständig lesen und ein persönliches Monatsbudget erstellen.',
+        },
+        {
+          stufe: 'Vertiefung',
+          badge: 'Level 2',
+          icon: taxIcon,
+          module: ['Steuern in Österreich', 'Ratenkauf & BNPL'],
+          zeitMinuten: 70,
+          ergebnis: 'Arbeitnehmerveranlagung durchführen und Kreditkosten korrekt berechnen.',
+        },
+        {
+          stufe: 'Finanzprofi',
+          badge: 'Level 3',
+          icon: chartIcon,
+          module: ['Sparen & Investieren', 'Schulden & Geld leihen'],
+          zeitMinuten: 60,
+          ergebnis: 'ETF-Sparplan aufsetzen und problematische Schulden frühzeitig erkennen.',
+        },
+      ]}
       highlightSimulation={{
         titel: 'Lohnzettel-Simulator',
         untertitel: 'Brutto zu Netto in Echtzeit: SV-Beiträge, Lohnsteuer, Abzüge. Alles live berechnet, mit österreichischen Werten 2026.',

@@ -135,6 +135,32 @@ export default function HlwPage() {
       }}
       lehrerFoto="/fotos/lehrer/hlw.png"
       gruenderStatement="Wer an der HLW Haushaltsführung und Wirtschaft lehrt, kommt an persönlicher Finanzplanung nicht vorbei. Skills-UP! macht diesen Zusammenhang für Schüler:innen konkret erlebbar, mit österreichischen Alltagsszenarien, die sie direkt betreffen."
+      lernpfad={[
+        {
+          stufe: 'Haushaltsgrundlagen',
+          badge: 'Level 1',
+          icon: homeIcon,
+          module: ['Finanzplanung', 'Konsum & Haushalt'],
+          zeitMinuten: 50,
+          ergebnis: 'Vollständiges Haushaltsbudget erstellen und Fixkosten vs. variable Kosten unterscheiden.',
+        },
+        {
+          stufe: 'Konsumentenschutz',
+          badge: 'Level 2',
+          icon: alertIcon,
+          module: ['Konsumfallen', 'Ratenkauf & BNPL', 'Versicherungen verstehen'],
+          zeitMinuten: 75,
+          ergebnis: 'Dark Patterns erkennen, Kreditkosten berechnen und die richtigen Versicherungen auswählen.',
+        },
+        {
+          stufe: 'Lebensplanung',
+          badge: 'Level 3',
+          icon: shieldIcon,
+          module: ['Erste eigene Wohnung', 'Sparen & Geldentscheidungen'],
+          zeitMinuten: 60,
+          ergebnis: 'Wohnkosten vollständig kalkulieren (Kaution, Provision, Betriebskosten) und Sparziele setzen.',
+        },
+      ]}
       highlightSimulation={{
         titel: 'Veranstaltungsbudget-Planer',
         untertitel: 'Catering, Personal, Location, Technik: Ein Event von 80 Personen vollständig kalkulieren, mit Deckungsbeitrag und Risikopuffer.',

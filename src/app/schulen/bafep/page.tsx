@@ -137,6 +137,32 @@ export default function BafepPage() {
       }}
       lehrerFoto="/fotos/lehrer/bafep.png"
       gruenderStatement="Wer als Pädagogin oder Pädagoge arbeitet, prägt früh das Verhältnis von Kindern zu Geld und Konsum. Deshalb ist Finanzbildung an der BAfEP keine nette Ergänzung, sie ist eine professionelle Notwendigkeit. Skills-UP! liefert dafür das Fundament."
+      lernpfad={[
+        {
+          stufe: 'Eigene Finanzen',
+          badge: 'Level 1',
+          icon: bookIcon,
+          module: ['Gehalt & Einkommen', 'Finanzplanung'],
+          zeitMinuten: 50,
+          ergebnis: 'Pädagoginnen-Gehalt richtig lesen, Monatsbudget aufstellen und Sparziele formulieren.',
+        },
+        {
+          stufe: 'Finanzen im Alltag',
+          badge: 'Level 2',
+          icon: alertIcon,
+          module: ['Konsumfallen', 'Schulden & Geld leihen', 'Ratenkauf & BNPL'],
+          zeitMinuten: 70,
+          ergebnis: 'Konsumpsychologie verstehen und Schuldenprävention als pädagogisches Thema im Unterricht einsetzen.',
+        },
+        {
+          stufe: 'Pädagogische Praxis',
+          badge: 'Level 3',
+          icon: shieldIcon,
+          module: ['Finfluencer in Österreich', 'Kryptowährungen & Krypto-Assets'],
+          zeitMinuten: 60,
+          ergebnis: 'Finanzmythen aus Social Media widerlegen und Medienkompetenz in Elterngesprächen einsetzen.',
+        },
+      ]}
       highlightSimulation={{
         titel: 'Karenz & Familienbudget-Rechner',
         untertitel: 'Wie verändert ein Kind das Haushaltsbudget? Kinderbetreuungskosten, Elterngeld, Karenz und Wiedereinstieg real durchgerechnet.',
