@@ -36,12 +36,12 @@ export default function SiteFooter() {
                 </svg>
                 +43 650 215 8715
               </a>
-              <a href="mailto:marina@digitale-zukunftsbildung.eu"
+              <a href="mailto:info@digitale-zukunftsbildung.eu"
                 className="flex items-center gap-2 text-sm font-body text-white/55 hover:text-white transition-colors group">
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/30 group-hover:text-primary-light transition-colors">
                   <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
                 </svg>
-                marina@digitale-zukunftsbildung.eu
+                info@digitale-zukunftsbildung.eu
               </a>
               <a href="https://linkedin.com/company/verein-zur-entwicklung-der-digitalen-zukunftsbildung"
                 target="_blank" rel="noopener noreferrer"

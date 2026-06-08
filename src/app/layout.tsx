@@ -15,6 +15,10 @@ const nunito = Nunito({
 })
 
 export const metadata: Metadata = {
+  icons: {
+    icon: '/capybara-mascot.png',
+    apple: '/capybara-mascot.png',
+  },
   title: 'Skills-UP! – Finanzbildung für Schulen | Verein zur Entwicklung der digitalen Zukunftsbildung',
   description: 'Skills-UP! – Finanzbildung, die wirklich ankommt. Das Unterrichtsprogramm für 15- bis 20-Jährige: 12+ Module, 10+ Praxissimulationen, lehrplankonform und DSGVO-sicher. Für AHS, BHS und PTS.',
   metadataBase: new URL('https://www.digitale-zukunftsbildung.eu'),

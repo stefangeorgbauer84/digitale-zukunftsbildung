@@ -18,8 +18,8 @@ export async function POST(req: NextRequest) {
       s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 
     await resend.emails.send({
-      from: 'Website <kontakt@digitale-zukunftsbildung.eu>',
-      to: [process.env.CONTACT_EMAIL ?? 'kontakt@digitale-zukunftsbildung.eu'],
+      from: 'Website <info@digitale-zukunftsbildung.eu>',
+      to: [process.env.CONTACT_EMAIL ?? 'info@digitale-zukunftsbildung.eu'],
       replyTo: [email],
       subject: `Neue Kontaktanfrage von ${name}`,
       text: `Name: ${name}\nE-Mail: ${email}\n\nNachricht:\n${message}`,

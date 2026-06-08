@@ -66,7 +66,7 @@ export default function AktiengameCTA() {
             </div>
 
             <div className="flex flex-wrap gap-2 text-xs text-white/40">
-              {['Kein Account nötig', 'Läuft im Browser', 'Keine Kosten', '5 · 7 · 10 Jahre wählbar', 'Druckbarer Lehrerauswertungsbogen'].map((t) => (
+              {['Kein Account nötig', 'Läuft im Browser', 'Keine Kosten', '5 · 7 · 10 Jahre wählbar', 'Auswertungsbogen für Lehrkräfte'].map((t) => (
                 <span key={t} className="flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-white/10"
                   style={{ background: 'rgba(255,255,255,0.05)' }}>
                   <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">

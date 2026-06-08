@@ -109,51 +109,153 @@ export default function UeberUns() {
         </div>
       </section>
 
-      {/* ── Mission & Werte ──────────────────────────────── */}
+      {/* ── Meilensteine / Stats ────────────────────────── */}
+      <section className="py-16 bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+            {[
+              {
+                zahl: '2021',
+                label: 'Gegründet',
+                sub: 'Idee entstanden im Lockdown',
+                color: '#4a2d8a', bg: '#f3f1f9',
+                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>,
+              },
+              {
+                zahl: '12+',
+                label: 'Lernmodule',
+                sub: 'Fertig ausgearbeitet, sofort einsetzbar',
+                color: '#2a8a76', bg: '#e6f4f1',
+                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>,
+              },
+              {
+                zahl: '5',
+                label: 'Auszeichnungen',
+                sub: 'Von unabhängigen Stellen geprüft',
+                color: '#D87228', bg: '#fdf0e6',
+                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>,
+              },
+              {
+                zahl: '15 J.',
+                label: 'Erfahrung',
+                sub: 'Marina Winkler, Pädagogische Leitung',
+                color: '#6b4db0', bg: '#ede9f7',
+                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
+              },
+            ].map((s) => (
+              <div key={s.label} className="rounded-2xl p-6 flex flex-col gap-3" style={{ background: s.bg }}>
+                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0 text-white"
+                  style={{ background: s.color }}>
+                  {s.icon}
+                </div>
+                <div>
+                  <p className="font-heading text-3xl font-bold leading-none mb-1" style={{ color: s.color }}>{s.zahl}</p>
+                  <p className="font-heading font-700 text-sm text-text-primary leading-tight">{s.label}</p>
+                  <p className="font-body text-xs text-text-muted mt-1 leading-snug">{s.sub}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+          <p className="text-center text-xs font-body text-text-muted mt-6">
+            Schüler:innen-Zahlen und Schulen werden laufend aktualisiert — aktueller Stand auf Anfrage.
+          </p>
+        </div>
+      </section>
+
+      {/* ── Was uns antreibt (das Warum) ────────────────── */}
       <section className="max-w-6xl mx-auto px-6 py-20">
-        <div className="grid md:grid-cols-2 gap-16 items-start">
+        <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
             <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-primary-medium bg-primary-50 px-4 py-2 rounded-full mb-5">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
-              Unsere Mission
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+              Was uns antreibt
             </div>
-            <h2 className="font-heading text-3xl font-bold mb-5" style={{ color: '#1a1040' }}>
-              Finanzbildung gehört in die Schule.
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6" style={{ color: '#1a1040' }}>
+              Die Idee entstand im Lockdown.
             </h2>
             <p className="text-text-muted font-body text-lg leading-relaxed mb-4">
-              Jugendliche treffen ab etwa 15 ihre ersten echten Geldentscheidungen: erstes Einkommen, Onlinekäufe, Verträge, Sparziele. Doch wie man mit Geld umgeht, lernt kaum jemand systematisch.
+              Marina Winkler unterrichtete über Teach for Austria und erlebte hautnah, wie wenig Jugendliche über Finanzen wussten. Nicht aus Desinteresse, sondern weil es niemand je erklärt hatte.
+            </p>
+            <p className="text-text-muted font-body text-lg leading-relaxed mb-4">
+              Gleichzeitig sah sie, wie überlastet Lehrkräfte waren. Kein Vorbereitungsaufwand, kein passendes Material, keine Zeit. Das Problem war systemisch.
             </p>
             <p className="text-text-muted font-body text-lg leading-relaxed">
-              Genau hier setzt unser Verein an: Mit dem Unterrichtsprogramm <strong className="text-primary-dark">Skills-UP!</strong> bringen wir Finanzbildung praxisnah, digital und lehrplankonform in österreichische Klassenzimmer. Von der AHS bis zur Berufsschule.
+              Zusammen mit Stefan Bauer entstand die Idee für <strong className="text-primary-dark">Skills-UP!</strong>: Ein Programm, das an jeder österreichischen Schule funktioniert. Ohne Mehraufwand für Lehrkräfte, mit Inhalten, die wirklich ankommen.
             </p>
           </div>
+          <div className="relative">
+            <div className="absolute inset-0 rounded-3xl blur-3xl scale-110 pointer-events-none"
+              style={{ background: 'radial-gradient(circle, rgba(107,77,176,0.15) 0%, transparent 70%)' }} />
+            <div className="relative rounded-3xl overflow-hidden shadow-card-hover">
+              <Image
+                src="/fotos/Marina%20Winkler%20Profilbild.jpeg"
+                alt="Marina Winkler – Gründerin Skills-UP!"
+                width={560}
+                height={420}
+                className="w-full object-cover"
+                style={{ objectPosition: 'center 20%', height: '420px' }}
+              />
+              <div className="absolute bottom-0 left-0 right-0 p-6"
+                style={{ background: 'linear-gradient(to top, rgba(26,16,64,0.85) 0%, transparent 100%)' }}>
+                <p className="font-heading font-700 text-white text-base">Marina Winkler</p>
+                <p className="font-body text-white/70 text-sm">Obfrau & Gründerin, Skills-UP!</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <div>
-            <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-status-teal bg-status-teal-light px-4 py-2 rounded-full mb-5">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+      {/* ── Unsere Werte ────────────────────────────────── */}
+      <section className="py-20" style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)' }}>
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-14">
+            <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-primary-medium bg-white px-4 py-2 rounded-full mb-5 shadow-sm">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
               Unsere Werte
             </div>
-            <h2 className="font-heading text-3xl font-bold mb-5" style={{ color: '#1a1040' }}>
-              Was uns antreibt.
+            <h2 className="font-heading text-3xl md:text-4xl font-bold" style={{ color: '#1a1040' }}>
+              Daran glauben wir.
             </h2>
-            <ul className="space-y-4">
-              {[
-                { title: 'Praxis statt Theorie', desc: 'Lohnzettel, Budget, Depot, Gehaltsverhandlung: Schüler:innen lernen durch echtes Erleben in Simulationen.' },
-                { title: 'Lehrkräfte entlasten', desc: 'Fertige Module ohne Vorbereitungsaufwand und ein Dashboard, das Korrekturarbeit abnimmt.' },
-                { title: 'Österreichischer Kontext', desc: 'FinanzOnline, Kollektivvertrag, FMA, KSV: wir erklären das österreichische Finanzsystem, nicht abstrakte Theorie.' },
-                { title: 'Ehrlichkeit statt Hype', desc: 'Krypto, schnelle Gewinne, Finfluencer: wir vermitteln einen realistischen, kritischen Blick statt leerer Versprechen.' },
-              ].map((v) => (
-                <li key={v.title} className="flex items-start gap-4 p-4 bg-gray-50 rounded-2xl">
-                  <div className="w-8 h-8 bg-primary-50 rounded-xl flex items-center justify-center shrink-0 mt-0.5">
-                    <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#6b4db0" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  </div>
-                  <div>
-                    <p className="font-heading font-700 text-sm text-text-primary">{v.title}</p>
-                    <p className="text-sm font-body text-text-muted mt-0.5">{v.desc}</p>
-                  </div>
-                </li>
-              ))}
-            </ul>
+            <p className="text-text-muted font-body text-lg max-w-xl mx-auto mt-4">
+              Diese vier Prinzipien stehen hinter jedem Modul, jeder Simulation und jeder Entscheidung, die wir für Skills-UP! treffen.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {[
+              {
+                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>,
+                color: '#4a2d8a', bg: '#f3f1f9',
+                title: 'Praxis statt Theorie',
+                desc: 'Lohnzettel, Budget, Depot, Gehaltsverhandlung: Schüler:innen lernen durch echtes Erleben in Simulationen, nicht durch Definitionen.',
+              },
+              {
+                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
+                color: '#2a8a76', bg: '#e6f4f1',
+                title: 'Lehrkräfte entlasten',
+                desc: 'Fertige Module ohne Vorbereitungsaufwand und ein Dashboard, das Korrekturarbeit abnimmt. Mehr Zeit für das, was zählt.',
+              },
+              {
+                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>,
+                color: '#D87228', bg: '#fdf0e6',
+                title: 'Österreichischer Kontext',
+                desc: 'FinanzOnline, Kollektivvertrag, FMA, KSV: wir erklären das österreichische Finanzsystem mit echten Beispielen aus dem Leben.',
+              },
+              {
+                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>,
+                color: '#6b4db0', bg: '#ede9f7',
+                title: 'Ehrlichkeit statt Hype',
+                desc: 'Krypto, schnelle Gewinne, Finfluencer: wir vermitteln einen realistischen, kritischen Blick statt leerer Versprechen.',
+              },
+            ].map((v) => (
+              <div key={v.title} className="bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all group">
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center mb-4 text-white transition-transform duration-300 group-hover:scale-110"
+                  style={{ background: v.color }}>
+                  {v.icon}
+                </div>
+                <h3 className="font-heading font-700 text-base mb-2" style={{ color: v.color }}>{v.title}</h3>
+                <p className="text-sm font-body text-text-muted leading-relaxed">{v.desc}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -248,7 +350,7 @@ export default function UeberUns() {
           <div className="text-center mb-12">
             <p className="text-xs font-body font-700 uppercase tracking-widest text-primary-medium mb-3">Das Team</p>
             <h2 className="font-heading text-3xl md:text-4xl font-bold" style={{ color: '#1a1040' }}>
-              Gegründet von einer Lehrerin und einem Finanzexperten.<br />
+              Aus der Praxis. Für die Praxis.<br />
               <span style={{ color: '#4a2d8a' }}>Entwickelt für den Schulalltag.</span>
             </h2>
           </div>
@@ -262,9 +364,9 @@ export default function UeberUns() {
               </div>
               <div className="p-6">
                 <h3 className="font-heading font-700 text-base text-text-primary mb-1">Marina Winkler</h3>
-                <p className="text-xs font-body text-primary-medium font-700 mb-3">Vereinsleiterin und pädagogische Leiterin</p>
+                <p className="text-xs font-body text-primary-medium font-700 mb-3">Obfrau, Pädagogische Leitung &amp; Finanzbildungsexpertin</p>
                 <p className="text-sm font-body text-text-muted leading-relaxed">
-                  Ehemalige Lehrerin mit jahrelanger Erfahrung im österreichischen Schulsystem. Projektleiterin und Hauptansprechperson des Vereins.
+                  Bildungsexpertin mit Fokus auf Finanzkompetenz, digitalem Lernen und Chancengerechtigkeit. 15 Jahre Erfahrung, von der Bank über internationale Programme bis zum selbst entwickelten Lernprogramm für Jugendliche.
                 </p>
               </div>
             </div>

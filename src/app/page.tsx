@@ -3,7 +3,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
-import ContactForm from '@/components/ContactForm'
 import BackToTop from '@/components/BackToTop'
 import FaqAccordion from '@/components/FaqAccordion'
 import VideoSection from '@/components/VideoSection'
@@ -29,6 +28,7 @@ const partnerLogos = [
   { src: '/fotos/TGW%20Future%20Wings.png', alt: 'TGW Future Wings' },
   { src: '/fotos/TGW%20Logistics%20Logo.png', alt: 'TGW Logistics' },
   { src: '/fotos/Bildungsdirketion%20Burgenland.jpg', alt: 'Bildungsdirektion Burgenland' },
+  { src: '/fotos/Schule%20Morgen%20Privatstifung.png', alt: 'Schule Morgen Privatstiftung' },
 ]
 
 /* ── Program previews ───────────────────────────────────── */
@@ -111,7 +111,7 @@ const trustFacts = [
     accent: '#2a8a76',
     bg: '#e6f4f1',
     headline: 'WKÖ zertifiziert',
-    detail: 'Von der Wirtschaftskammer Österreich empfohlen und durch die Hochschule Burgenland pädagogisch validiert.',
+    detail: 'Von der Wirtschaftskammer Österreich empfohlen. Wissenschaftliche Begleitung durch die Hochschule Burgenland.',
   },
   {
     icon: (
@@ -221,6 +221,13 @@ export default function HomePage() {
 
         {/* Hero content */}
         <div className="relative z-10 flex-1 flex flex-col items-center justify-center max-w-5xl mx-auto px-6 pt-28 pb-16 text-center">
+          {/* Mission statement */}
+          <div className="inline-flex items-center gap-2 text-white/80 text-sm font-body font-700 px-5 py-2.5 rounded-full mb-4"
+            style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)' }}>
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Unabhängige, lebensnahe Finanzbildung für den Schulalltag
+          </div>
+
           {/* Award badge */}
           <div className="inline-flex items-center gap-2 glass text-white/90 text-xs font-body font-700 px-4 py-2 rounded-full mb-8 border border-white/20">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="#fde68a" stroke="#fde68a" strokeWidth="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
@@ -442,6 +449,9 @@ export default function HomePage() {
       <section id="schulen" className="py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-6">
           <div className="text-center mb-14">
+            <div className="flex justify-center mb-4">
+              <Image src="/capybara-mascot.png" alt="" width={64} height={64} className="drop-shadow-lg" aria-hidden="true" />
+            </div>
             <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest px-4 py-2 rounded-full mb-5"
               style={{ background: '#ede9f8', color: '#4a2d8a' }}>
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
@@ -466,48 +476,104 @@ export default function HomePage() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {[
-              { slug: 'ahs', label: 'AHS-Oberstufe', sub: '9.–12. Schulstufe', farbe: '#4a2d8a', bg: '#ede9f8',
-                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> },
-              { slug: 'hak', label: 'HAK & HAS', sub: 'Wirtschaft & Finanzen', farbe: '#6b4db0', bg: '#ede9f7',
-                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg> },
-              { slug: 'htl', label: 'HTL', sub: 'Technik & Beruf', farbe: '#2a8a76', bg: '#e6f4f1',
-                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 17.66l-1.41 1.41M2 12h2m16 0h2M5.34 6.34L3.93 4.93m14.14 14.14l-1.41-1.41M12 2v2m0 16v2"/></svg> },
-              { slug: 'hlw', label: 'HLW & Fachschulen', sub: 'Alltag & Lebensführung', farbe: '#1a5c4e', bg: '#e6f4f1',
-                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> },
-              { slug: 'bafep', label: 'BAfEP & BASOP', sub: 'Pädagogik', farbe: '#4a2d8a', bg: '#f3f1f9',
-                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> },
-              { slug: 'pts', label: 'PTS', sub: '9. Schulstufe', farbe: '#D87228', bg: '#fdf0e6',
-                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg> },
-              { slug: 'berufsschule', label: 'Berufsschulen', sub: 'Lehre & Ausbildung', farbe: '#2A8A76', bg: '#e6f4f1',
-                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> },
-              { slug: null, label: 'Alle Schultypen', sub: 'Übersicht & Vergleich', farbe: '#ffffff', bg: 'linear-gradient(135deg, #4a2d8a, #2A8A76)',
-                icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> },
-            ].map((s) => (
-              <Link key={s.slug ?? 'alle'} href={s.slug ? `/schulen/${s.slug}` : '/schulen'}
-                className="group rounded-2xl p-5 transition-all duration-300 hover:-translate-y-1 hover:shadow-card flex flex-col gap-3"
-                style={{ background: s.slug ? s.bg : s.bg }}>
-                <div className="w-10 h-10 rounded-xl flex items-center justify-center shrink-0"
-                  style={{ background: s.slug ? s.farbe : 'rgba(255,255,255,0.25)', color: s.slug ? '#fff' : '#fff' }}>
-                  {s.icon}
-                </div>
-                <div>
-                  <p className="font-heading font-700 text-sm leading-tight mb-0.5"
-                    style={{ color: s.slug ? '#1a1040' : '#fff' }}>{s.label}</p>
-                  <p className="font-body text-xs"
-                    style={{ color: s.slug ? s.farbe : 'rgba(255,255,255,0.7)' }}>{s.sub}</p>
-                </div>
-                <div className="flex items-center gap-1 text-xs font-body font-700 group-hover:gap-2 transition-all mt-auto"
-                  style={{ color: s.slug ? s.farbe : 'rgba(255,255,255,0.9)' }}>
-                  Mehr
-                  <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-                  </svg>
-                </div>
-              </Link>
-            ))}
+          {/* ── Gruppe 1: Oberstufe ── */}
+          <div className="mb-10">
+            <div className="flex items-center gap-3 mb-5">
+              <div className="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-body font-700"
+                style={{ background: '#4a2d8a', color: '#fff' }}>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+                </svg>
+                Oberstufe — 10. bis 12. Schulstufe
+              </div>
+              <p className="text-xs font-body text-text-muted hidden sm:block">AHS, HAK, HTL, HLW, BAfEP, BASOP</p>
+            </div>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
+              {[
+                { slug: 'ahs', label: 'AHS-Oberstufe', sub: '9.–12. Schulstufe', farbe: '#4a2d8a', bg: '#ede9f8',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> },
+                { slug: 'hak', label: 'HAK & HAS', sub: 'Wirtschaft & Finanzen', farbe: '#6b4db0', bg: '#ede9f7',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg> },
+                { slug: 'htl', label: 'HTL', sub: 'Technik & Beruf', farbe: '#2a8a76', bg: '#e6f4f1',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 17.66l-1.41 1.41M2 12h2m16 0h2M5.34 6.34L3.93 4.93m14.14 14.14l-1.41-1.41M12 2v2m0 16v2"/></svg> },
+                { slug: 'hlw', label: 'HLW & Fachschulen', sub: 'Alltag & Lebensführung', farbe: '#1a5c4e', bg: '#e6f4f1',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> },
+                { slug: 'bafep', label: 'BAfEP & BASOP', sub: 'Pädagogik', farbe: '#4a2d8a', bg: '#f3f1f9',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg> },
+                { slug: null, label: 'Alle Schultypen', sub: 'Übersicht & Vergleich', farbe: '#ffffff', bg: 'linear-gradient(135deg, #4a2d8a, #6b4db0)',
+                  icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg> },
+              ].map((s) => (
+                <Link key={s.slug ?? 'alle-ob'} href={s.slug ? `/schulen/${s.slug}` : '/schulen'}
+                  className="group rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1 hover:shadow-card flex flex-col gap-3"
+                  style={{ background: s.slug ? s.bg : s.bg }}>
+                  <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0"
+                    style={{ background: s.slug ? s.farbe : 'rgba(255,255,255,0.25)', color: '#fff' }}>
+                    {s.icon}
+                  </div>
+                  <div>
+                    <p className="font-heading font-700 text-sm leading-tight mb-0.5"
+                      style={{ color: s.slug ? '#1a1040' : '#fff' }}>{s.label}</p>
+                    <p className="font-body text-xs"
+                      style={{ color: s.slug ? s.farbe : 'rgba(255,255,255,0.7)' }}>{s.sub}</p>
+                  </div>
+                  <div className="flex items-center gap-1 text-xs font-body font-700 group-hover:gap-2 transition-all mt-auto"
+                    style={{ color: s.slug ? s.farbe : 'rgba(255,255,255,0.9)' }}>
+                    Mehr
+                    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                      <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                    </svg>
+                  </div>
+                </Link>
+              ))}
+            </div>
           </div>
+
+          {/* ── Gruppe 2: PTS & Berufsschule ── */}
+          <div className="rounded-3xl p-6 md:p-8" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #0f3d2d 100%)' }}>
+            <div className="flex flex-col md:flex-row md:items-center gap-6 md:gap-10">
+              <div className="shrink-0">
+                <div className="flex items-center gap-2 px-4 py-2 rounded-full text-xs font-body font-700 mb-3 w-fit"
+                  style={{ background: 'rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.85)', border: '1px solid rgba(255,255,255,0.15)' }}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
+                  </svg>
+                  PTS & Berufsschule — 9. Schulstufe & Lehre
+                </div>
+                <h3 className="font-heading text-xl font-bold text-white mb-2">Lernen, das direkt in die Arbeitswelt führt.</h3>
+                <p className="text-white/60 font-body text-sm max-w-md leading-relaxed">
+                  Für PTS-Schüler:innen und Lehrlinge ist Finanzbildung kein abstraktes Thema: Lohnzettel, erster Kredit und Haushaltsgeld sind unmittelbar real. Skills-UP! ist speziell auf diese Lebenswelt zugeschnitten.
+                </p>
+              </div>
+              <div className="grid grid-cols-2 gap-4 shrink-0 md:ml-auto">
+                {[
+                  { slug: 'pts', label: 'PTS', sub: '9. Schulstufe', farbe: '#D87228', bg: 'rgba(255,255,255,0.08)',
+                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg> },
+                  { slug: 'berufsschule', label: 'Berufsschule', sub: 'Lehre & Ausbildung', farbe: '#2A8A76', bg: 'rgba(255,255,255,0.08)',
+                    icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg> },
+                ].map((s) => (
+                  <Link key={s.slug} href={`/schulen/${s.slug}`}
+                    className="group rounded-2xl p-4 transition-all duration-300 hover:-translate-y-1 flex flex-col gap-3"
+                    style={{ background: s.bg, border: '1px solid rgba(255,255,255,0.12)' }}>
+                    <div className="w-9 h-9 rounded-xl flex items-center justify-center shrink-0 text-white"
+                      style={{ background: s.farbe }}>
+                      {s.icon}
+                    </div>
+                    <div>
+                      <p className="font-heading font-700 text-sm text-white leading-tight mb-0.5">{s.label}</p>
+                      <p className="font-body text-xs" style={{ color: s.farbe }}>{s.sub}</p>
+                    </div>
+                    <div className="flex items-center gap-1 text-xs font-body font-700 group-hover:gap-2 transition-all mt-auto text-white/60 group-hover:text-white">
+                      Mehr
+                      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                        <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                      </svg>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -767,7 +833,7 @@ export default function HomePage() {
               Skills-UP! wurde unter hunderten Einreichungen als eines der besten Bildungsprojekte Österreichs ausgezeichnet. Das bestätigt: Unser Ansatz funktioniert.
             </p>
             <div className="flex flex-wrap gap-3">
-              {['WKÖ zertifiziert', 'Hochschule Burgenland', 'DSGVO-konform', 'Made in Austria'].map((tag) => (
+              {['WKÖ zertifiziert', 'Wissenschaftliche Begleitung: Hochschule Burgenland', 'DSGVO-konform', 'Made in Austria'].map((tag) => (
                 <span key={tag} className="px-3 py-1.5 rounded-full text-xs font-body font-700 bg-primary-50 text-primary-dark">
                   {tag}
                 </span>
@@ -859,7 +925,7 @@ export default function HomePage() {
             <div>
               <div className="flex items-center gap-2 mb-6">
                 <Image src="/fotos/Logo.png" alt="Skills-UP!" width={32} height={32} className="rounded-lg opacity-80" />
-                <span className="text-xs font-body font-700 uppercase tracking-widest text-white/40">Aus dem Klassenzimmer</span>
+                <span className="text-xs font-body font-700 uppercase tracking-widest text-white/40">Pädagogische Leitung</span>
               </div>
 
               <svg width="44" height="33" viewBox="0 0 48 36" fill="none" className="mb-5 opacity-30">
@@ -867,16 +933,16 @@ export default function HomePage() {
               </svg>
 
               <p className="font-body text-2xl md:text-3xl leading-relaxed text-white/90 italic mb-6">
-                &ldquo;Als Lehrerin habe ich jeden Tag gesehen, wie wenig Jugendliche über Geld wissen. Und wie wenig Zeit ich hatte, das zu ändern. Skills-UP! gibt Lehrkräften genau das Werkzeug, das mir damals gefehlt hat.&rdquo;
+                &ldquo;Die erste Idee für Skills-UP! entstand während des Lockdowns, als ich über Teach for Austria unterrichtete und hautnah sah, wie wenig Jugendliche über Finanzen wussten.&rdquo;
               </p>
               <p className="font-body text-lg text-white/70 leading-relaxed mb-10">
-                Ich habe selbst im Klassenzimmer gestanden und gewusst: Die Themen, die junge Menschen wirklich brauchen, Lohnzettel, Budget, Kredit, erste eigene Wohnung, kommen im Lehrplan kaum vor. Deshalb haben wir Skills-UP! gebaut. Für Schüler:innen, die echte Entscheidungen treffen müssen. Und für Lehrkräfte, die ihnen dabei helfen wollen.
+                15 Jahre Erfahrung, von der Bank über internationale Bildungsprogramme bis zum selbst entwickelten Lernprogramm für Jugendliche. Als Bildungsexpertin mit Fokus auf Finanzkompetenz, digitalem Lernen und Chancengerechtigkeit weiß ich: Finanzbildung darf kein Privileg sein. Deshalb gibt es Skills-UP!.
               </p>
               <div className="flex flex-wrap gap-3">
                 {[
-                  { label: 'Ehemalige Lehrerin', icon: '◆' },
-                  { label: 'Vereinsleitung', icon: '◆' },
-                  { label: 'Kursleitung Skills-UP!', icon: '◆' },
+                  { label: 'Obfrau & Pädagogische Leitung', icon: '◆' },
+                  { label: 'Finanzbildungsexpertin', icon: '◆' },
+                  { label: '15 Jahre Erfahrung', icon: '◆' },
                 ].map((b) => (
                   <span key={b.label} className="inline-flex items-center gap-1.5 text-xs font-body font-700 px-3 py-1.5 rounded-full"
                     style={{ background: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.75)', border: '1px solid rgba(255,255,255,0.2)' }}>
@@ -902,8 +968,8 @@ export default function HomePage() {
               </div>
               <div className="text-center md:text-right">
                 <p className="font-heading font-700 text-white text-lg leading-tight">Marina Winkler</p>
-                <p className="font-body text-white/60 text-sm mt-0.5">Vereinsleitung &amp; Kursleitung</p>
-                <p className="font-body text-white/40 text-xs mt-0.5">Ehemalige Lehrerin</p>
+                <p className="font-body text-white/60 text-sm mt-0.5">Obfrau, Pädagogische Leitung &amp; Finanzbildungsexpertin</p>
+                <p className="font-body text-white/40 text-xs mt-0.5">Bildungsexpertin · Finanzkompetenz · Chancengerechtigkeit</p>
               </div>
             </div>
           </div>
@@ -987,6 +1053,67 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
+          FÜR UNTERNEHMEN
+      ══════════════════════════════════════════════════ */}
+      <section id="unternehmen" className="py-24 max-w-7xl mx-auto px-6">
+        <div className="rounded-3xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 60%, #0f3d2d 100%)' }}>
+          <div className="p-10 md:p-16 grid md:grid-cols-2 gap-12 items-center">
+            <div>
+              <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest px-4 py-2 rounded-full mb-6"
+                style={{ background: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.7)', border: '1px solid rgba(255,255,255,0.15)' }}>
+                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/>
+                </svg>
+                Für Unternehmen
+              </div>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-5 leading-tight">
+                Finanzbildung als<br /><span style={{ color: '#9b7ed4' }}>Employer Branding.</span>
+              </h2>
+              <p className="text-white/70 font-body text-lg leading-relaxed mb-8">
+                Investieren Sie in die Finanzkompetenzen Ihrer Lehrlinge und Nachwuchskräfte. Skills-UP! ist erprobt in Lehrlingsprogrammen von TGW Logistics und OVOS und passt sich an Ihre Unternehmenskultur an.
+              </p>
+              <ul className="space-y-3 mb-8">
+                {[
+                  'Lehrlingsprogramme mit praxisnahem Finanzwissen',
+                  'Employer Branding durch gesellschaftlichen Mehrwert',
+                  'Maßgeschneiderte Module für Ihre Branche',
+                  'Corporate-Social-Responsibility nachweisbar machen',
+                ].map((p) => (
+                  <li key={p} className="flex items-start gap-3 text-white/75 font-body text-sm">
+                    <svg className="shrink-0 mt-0.5" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                    {p}
+                  </li>
+                ))}
+              </ul>
+              <a href="#kontakt"
+                className="inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl transition-all hover:opacity-90 active:scale-95"
+                style={{ background: 'linear-gradient(135deg, #6b4db0 0%, #2a8a76 100%)', color: '#fff' }}>
+                Kooperation anfragen
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+            <div className="space-y-4">
+              <p className="text-white/40 text-xs font-body font-700 uppercase tracking-widest mb-5">Bereits als Partner dabei</p>
+              {[
+                { name: 'TGW Logistics', sub: 'Lehrlingsprogramm Finanzkompetenzen', icon: '◈' },
+                { name: 'OVOS', sub: 'Bildungspartnerschaft & Kooperation', icon: '◈' },
+                { name: 'Bildungsdirektion Burgenland', sub: 'Regionale Bildungspartnerschaft', icon: '◈' },
+              ].map((r) => (
+                <div key={r.name} className="flex items-center gap-4 p-4 rounded-2xl"
+                  style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.1)' }}>
+                  <span className="text-xl" style={{ color: '#9b7ed4' }}>{r.icon}</span>
+                  <div>
+                    <p className="font-heading font-700 text-white text-sm">{r.name}</p>
+                    <p className="font-body text-white/50 text-xs">{r.sub}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════
           FÖRDERUNG
       ══════════════════════════════════════════════════ */}
       <section className="py-16" style={{ background: 'linear-gradient(135deg, #f0fdf4 0%, #e6f4f1 100%)' }}>
@@ -1020,7 +1147,7 @@ export default function HomePage() {
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-status-teal bg-status-teal-light px-4 py-2 rounded-full mb-5">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            Was Teilnehmerinnen sagen
+            Was Teilnehmer:innen sagen
           </div>
           <h2 className="font-heading text-4xl md:text-5xl font-bold" style={{ color: '#1a1040' }}>
             Echtes Feedback. Keine Hochglanzbroschüre.
@@ -1076,6 +1203,9 @@ export default function HomePage() {
       <section className="py-24" style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)' }}>
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-14">
+            <div className="flex justify-center mb-4">
+              <Image src="/capybara-mascot.png" alt="" width={72} height={72} className="drop-shadow-lg" aria-hidden="true" />
+            </div>
             <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-primary-medium bg-white px-4 py-2 rounded-full mb-5 shadow-sm">
               <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
               Häufige Fragen
@@ -1156,49 +1286,94 @@ export default function HomePage() {
           CTA + CONTACT
       ══════════════════════════════════════════════════ */}
       <section id="kontakt" className="py-28 relative overflow-hidden">
-        <div className="absolute inset-0 animate-gradient-shift"
+        <div className="absolute inset-0 animate-gradient-shift pointer-events-none"
           style={{ background: 'linear-gradient(135deg, #4a2d8a 0%, #6b4db0 45%, #2a8a76 100%)', backgroundSize: '200% 200%' }} />
         <div className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
           style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.07) 0%, transparent 70%)' }} />
         <div className="absolute bottom-0 left-0 w-64 h-64 rounded-full pointer-events-none"
           style={{ background: 'radial-gradient(circle, rgba(42,138,118,0.3) 0%, transparent 70%)' }} />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
-          <div>
-            <div className="mb-6">
-              <Image src="/capybara-mascot.png" alt="Skills-UP! Maskottchen" width={100} height={100}
-                className="drop-shadow-2xl" />
-            </div>
-            <p className="text-white/60 text-xs font-body font-700 uppercase tracking-widest mb-4">Kontakt</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Bereit für den<br />nächsten Schritt?
-            </h2>
-            <p className="text-white/70 font-body text-lg mb-8 leading-relaxed">
-              Skills-UP! an Ihrer Schule einsetzen? Fragen zum Programm, zum Rollout oder einer Kooperation? Wir melden uns innerhalb von 24 Stunden.
-            </p>
-            <div className="space-y-4 mb-8">
-              {[
-                'Unverbindliche Beratung für Ihre Schule',
-                'Schulweites Rollout in Minuten, kein IT-Aufwand',
-                'Schnelle Antwort in unter 24 Stunden',
-              ].map((t) => (
-                <div key={t} className="flex items-center gap-3 text-white/80 font-body text-sm">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  {t}
-                </div>
-              ))}
-            </div>
-            <a href="mailto:kontakt@digitale-zukunftsbildung.eu"
-              className="inline-flex items-center gap-2 text-white/70 hover:text-white font-body text-sm transition-colors">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-              </svg>
-              kontakt@digitale-zukunftsbildung.eu
-            </a>
+        <div className="relative z-10 max-w-4xl mx-auto px-6 text-center">
+
+          {/* Maskottchen */}
+          <div className="flex justify-center mb-8">
+            <Image src="/capybara-mascot.png" alt="Skills-UP! Maskottchen" width={110} height={110}
+              className="drop-shadow-2xl" />
           </div>
 
-          <div className="glass rounded-3xl p-8">
-            <ContactForm light />
+          {/* Badge */}
+          <div className="inline-flex items-center gap-2 text-white/70 text-xs font-body font-700 uppercase tracking-widest px-4 py-2 rounded-full mb-6"
+            style={{ background: 'rgba(255,255,255,0.1)', border: '1px solid rgba(255,255,255,0.15)' }}>
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+            Wir antworten innerhalb von 24 Stunden
+          </div>
+
+          <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
+            Bereit für den nächsten Schritt?
+          </h2>
+          <p className="text-white/70 font-body text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
+            Skills-UP! an Ihrer Schule einsetzen, eine Kooperation starten oder einfach mehr erfahren? Schreiben Sie uns — Marina antwortet persönlich.
+          </p>
+
+          {/* Haupt-CTA */}
+          <a
+            href="mailto:info@digitale-zukunftsbildung.eu?subject=Anfrage%20Skills-UP!&body=Hallo%20Marina%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20Skills-UP!%20und%20m%C3%B6chte%20mehr%20erfahren.%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen"
+            className="inline-flex items-center gap-3 px-8 py-5 rounded-2xl font-heading font-700 text-lg transition-all hover:scale-[1.03] hover:shadow-2xl active:scale-[0.98] mb-4"
+            style={{ background: 'rgba(255,255,255,0.15)', border: '2px solid rgba(255,255,255,0.35)', color: '#fff', backdropFilter: 'blur(8px)' }}
+          >
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+            E-Mail schreiben
+          </a>
+          <p className="text-white/45 text-sm font-body mb-14">
+            info@digitale-zukunftsbildung.eu
+          </p>
+
+          {/* Drei Kontexte */}
+          <div className="grid sm:grid-cols-3 gap-4 text-left">
+            {[
+              {
+                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>,
+                title: 'Für Schulen',
+                text: 'Programm vorstellen, Demo vereinbaren oder direkt mit dem Rollout starten.',
+                subject: 'Anfrage%20f%C3%BCr%20unsere%20Schule',
+              },
+              {
+                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg>,
+                title: 'Für Unternehmen',
+                text: 'Lehrlingsprogramm, Employer Branding oder Kooperationsanfrage.',
+                subject: 'Kooperationsanfrage%20Unternehmen',
+              },
+              {
+                icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 16v-4"/><path d="M12 8h.01"/></svg>,
+                title: 'Allgemeine Fragen',
+                text: 'Pressearbeit, Förderungen, Partnerschaften oder einfach Hallo sagen.',
+                subject: 'Allgemeine%20Anfrage',
+              },
+            ].map((k) => (
+              <a
+                key={k.title}
+                href={`mailto:info@digitale-zukunftsbildung.eu?subject=${k.subject}`}
+                className="group rounded-2xl p-5 transition-all hover:-translate-y-1"
+                style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}
+              >
+                <div className="w-9 h-9 rounded-xl flex items-center justify-center mb-3 text-white"
+                  style={{ background: 'rgba(255,255,255,0.12)' }}>
+                  {k.icon}
+                </div>
+                <p className="font-heading font-700 text-white text-sm mb-1">{k.title}</p>
+                <p className="font-body text-white/55 text-xs leading-relaxed">{k.text}</p>
+                <div className="flex items-center gap-1 mt-3 text-white/40 group-hover:text-white/80 transition-colors text-xs font-body font-700">
+                  E-Mail öffnen
+                  <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+                  </svg>
+                </div>
+              </a>
+            ))}
           </div>
         </div>
       </section>
