@@ -50,10 +50,6 @@ export default function HlwPage() {
           fach: 'Tourismus (HLT)',
           kontext: 'Saisonarbeit, Trinkgeld, unregelmäßiges Einkommen, für HLT-Schüler:innen gibt es spezifische Finanzszenarien rund um Tourismus und Dienstleistung.',
         },
-        {
-          fach: 'Projektunterricht',
-          kontext: '"Nachhaltig wirtschaften, mein Familienbudget im Öko-Check" als Jahresprojekt: Skills-UP! liefert die Datengrundlage, Methoden und digitale Auswertung.',
-        },
       ]}
       unterrichtsEinheiten={[
         {

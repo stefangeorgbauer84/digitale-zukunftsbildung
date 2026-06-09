@@ -274,7 +274,7 @@ export default function SchulPage({
               Kein extra Fach nötig. Skills-UP! ergänzt bestehende Stunden und Themen, die du ohnehin unterrichtest.
             </p>
           </div>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div className={`grid gap-4 ${lehrplanPassung.length === 4 ? 'sm:grid-cols-2' : 'sm:grid-cols-2 lg:grid-cols-3'}`}>
             {lehrplanPassung.map((lp) => (
               <div key={lp.fach} className="bg-white rounded-2xl p-5 border-l-4 shadow-sm"
                 style={{ borderColor: farbe }}>
