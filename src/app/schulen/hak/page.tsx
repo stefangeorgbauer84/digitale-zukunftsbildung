@@ -54,7 +54,7 @@ export default function HakPage() {
           kontext: 'Skills-UP! ist ideal als eigenständiges Projekt: "Mein Finanzplan für die ersten zwei Jahre nach der HAK", strukturiert, digital begleitet, mit Zertifikat am Ende.',
         },
         {
-          fach: 'Entrepreneurship & Business',
+          fach: 'Economic & Financial Literacy',
           kontext: 'Wer selbst gründen oder selbstständig werden will, braucht Finanzkompetenz. Skills-UP! bereitet HAK-Schüler:innen auf die finanzielle Seite von Unternehmertum vor.',
         },
         {
@@ -110,7 +110,7 @@ export default function HakPage() {
         'Konsumverhalten analysieren',
         'Finanzielle Eigenverantwortung',
         'Onlinekäufe und Verträge',
-        'Entrepreneurship & Geld',
+        'Economic & Financial Literacy',
         'Digitale Finanztools',
         'Langfristige Finanzplanung',
       ]}
