@@ -160,10 +160,11 @@ export default function SchulPage({
               <p className="text-white/75 font-body text-lg leading-relaxed mb-8">{intro}</p>
 
               <div className="flex flex-wrap gap-3">
-                <a href="/#kontakt"
+                <a href="https://www.marktplatz-lernapps.at/product-detail?product=859"
+                  target="_blank" rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl text-white transition-all hover:scale-105 active:scale-95"
                   style={{ background: 'rgba(255,255,255,0.25)', border: '1px solid rgba(255,255,255,0.35)' }}>
-                  Schule anmelden
+                  Skills-UP! am Marktplatz Lernapps auswählen
                   {arrowIcon}
                 </a>
                 <a href="#unterricht"
@@ -282,6 +283,33 @@ export default function SchulPage({
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* ── Marktplatz CTA Banner ───────────────────────────── */}
+      <section className="py-10 bg-white">
+        <div className="max-w-4xl mx-auto px-6">
+          <a href="https://www.marktplatz-lernapps.at/product-detail?product=859"
+            target="_blank" rel="noopener noreferrer"
+            className="flex flex-col sm:flex-row items-center justify-between gap-5 rounded-2xl px-8 py-6 transition-all hover:scale-[1.01] active:scale-[0.99]"
+            style={{ background: 'linear-gradient(135deg, #4a2d8a 0%, #2a8a76 100%)', boxShadow: '0 8px 40px rgba(74,45,138,0.25)' }}>
+            <div className="flex items-center gap-4">
+              <div className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.2)' }}>
+                <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                </svg>
+              </div>
+              <div>
+                <p className="font-heading font-700 text-white text-lg leading-tight">Skills-UP! am Marktplatz Lernapps auswählen</p>
+                <p className="font-body text-white/65 text-sm mt-0.5">Offiziell zertifiziert · Sofort verfügbar · Für alle Schultypen</p>
+              </div>
+            </div>
+            <span className="shrink-0 inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl text-white"
+              style={{ background: 'rgba(255,255,255,0.2)', border: '1px solid rgba(255,255,255,0.35)' }}>
+              Jetzt auswählen
+              {arrowIcon}
+            </span>
+          </a>
         </div>
       </section>
 
@@ -822,10 +850,11 @@ export default function SchulPage({
                   Aufgeteilt in {lernpfad.length} Stufen, je nach Tempo auch über mehrere Unterrichtsstunden verteilt.
                 </p>
               </div>
-              <a href="/#kontakt"
+              <a href="https://www.marktplatz-lernapps.at/product-detail?product=859"
+                target="_blank" rel="noopener noreferrer"
                 className="shrink-0 inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl text-white transition-all hover:scale-105 active:scale-95"
                 style={{ background: gradient }}>
-                Lernpfad für meine Klasse anfragen
+                Skills-UP! am Marktplatz Lernapps auswählen
                 {arrowIcon}
               </a>
             </div>
@@ -1305,10 +1334,11 @@ export default function SchulPage({
             Kein Ausfüllen langer Formulare. Ein kurzes Gespräch reicht, um zu wissen, ob Skills-UP! zu deiner Schule passt.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <a href="/#kontakt"
+            <a href="https://www.marktplatz-lernapps.at/product-detail?product=859"
+              target="_blank" rel="noopener noreferrer"
               className="inline-flex items-center gap-2 font-body font-700 text-base px-8 py-4 rounded-xl text-white transition-all hover:scale-105 active:scale-95"
               style={{ background: 'linear-gradient(135deg, #4a2d8a, #2a8a76)', boxShadow: '0 8px 32px rgba(107,77,176,0.4)' }}>
-              Jetzt Kontakt aufnehmen
+              Skills-UP! am Marktplatz Lernapps auswählen
               {arrowIcon}
             </a>
             <Link href="/schulen"
