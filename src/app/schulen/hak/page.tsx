@@ -55,7 +55,8 @@ export default function HakPage() {
         },
         {
           fach: 'Economic & Financial Literacy',
-          kontext: 'Wer selbst gründen oder selbstständig werden will, braucht Finanzkompetenz. Skills-UP! bereitet HAK-Schüler:innen auf die finanzielle Seite von Unternehmertum vor.',
+          badge: '2027 eigenes Fach',
+          kontext: 'Finanzkompetenz ist keine Spezialfähigkeit für Unternehmer, sie ist Grundlage für jeden Erwachsenen. Kontoführung, Budgetplanung, Kreditentscheidungen, Vorsorge: Skills-UP! vermittelt das, was im Leben danach wirklich gebraucht wird.',
         },
         {
           fach: 'Kommunikation & Präsentation',

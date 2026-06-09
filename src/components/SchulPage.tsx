@@ -62,6 +62,7 @@ export interface SchulPageProps {
   lehrplanPassung: {
     fach: string
     kontext: string
+    badge?: string
   }[]
   unterrichtsEinheiten: UnterrichtsEinheit[]
   module: Modul[]            // Passende Lernmodule für diesen Schultyp
@@ -278,6 +279,9 @@ export default function SchulPage({
             {lehrplanPassung.map((lp) => (
               <div key={lp.fach} className="bg-white rounded-2xl p-5 border-l-4 shadow-sm"
                 style={{ borderColor: farbe }}>
+                {lp.badge && (
+                  <span className="inline-block text-xs font-heading font-700 px-2 py-0.5 rounded-full mb-2" style={{ backgroundColor: farbe + '18', color: farbe }}>{lp.badge}</span>
+                )}
                 <p className="font-heading font-700 text-sm mb-1.5" style={{ color: farbe }}>{lp.fach}</p>
                 <p className="font-body text-sm text-text-muted leading-relaxed">{lp.kontext}</p>
               </div>
