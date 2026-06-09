@@ -279,10 +279,12 @@ export default function SchulPage({
             {lehrplanPassung.map((lp) => (
               <div key={lp.fach} className="bg-white rounded-2xl p-5 border-l-4 shadow-sm"
                 style={{ borderColor: farbe }}>
-                {lp.badge && (
-                  <span className="inline-block text-xs font-heading font-700 px-2 py-0.5 rounded-full mb-2" style={{ backgroundColor: farbe + '18', color: farbe }}>{lp.badge}</span>
-                )}
-                <p className="font-heading font-700 text-sm mb-1.5" style={{ color: farbe }}>{lp.fach}</p>
+                <div className="flex items-center justify-between mb-1.5">
+                  <p className="font-heading font-700 text-sm" style={{ color: farbe }}>{lp.fach}</p>
+                  {lp.badge && (
+                    <span className="text-xs font-heading font-700 px-2 py-0.5 rounded-full ml-2 shrink-0" style={{ backgroundColor: farbe + '18', color: farbe }}>{lp.badge}</span>
+                  )}
+                </div>
                 <p className="font-body text-sm text-text-muted leading-relaxed">{lp.kontext}</p>
               </div>
             ))}
