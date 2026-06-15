@@ -4,8 +4,20 @@ import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 
 export const metadata: Metadata = {
-  title: 'Für Schulen | Skills-UP! – Finanzbildung für die 9. bis 12. Schulstufe',
-  description: 'Skills-UP! ist das Finanzbildungsprogramm für AHS, HAK, HTL, HLW, BAfEP, BASOP, PTS und Berufsschulen. Sofort einsetzbar, digital, praxisnah.',
+  title: 'Finanzbildung alle Schultypen Österreich | Skills-UP! – AHS, HAK, HTL, HLW, Tourismus, PTS',
+  description: 'Skills-UP! ist das Finanzbildungsprogramm für AHS, HAK, HTL, HLW, BAfEP, BASOP, Tourismusschulen, PTS und Berufsschulen in Österreich. Lehrplankonform, DSGVO-sicher, sofort einsetzbar.',
+  alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/schulen' },
+  openGraph: {
+    title: 'Finanzbildung für alle Schultypen in Österreich – Skills-UP!',
+    description: 'Das Finanzbildungsprogramm für AHS, HAK, HTL, HLW, BAfEP, Tourismusschulen, PTS und Berufsschulen. Lehrplankonform, sofort einsetzbar.',
+    url: 'https://www.digitale-zukunftsbildung.eu/schulen',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Finanzbildung für alle Schultypen Österreich – Skills-UP!',
+    description: 'AHS, HAK, HTL, HLW, BAfEP, Tourismusschulen, PTS und Berufsschulen. Lehrplankonform, sofort einsetzbar.',
+  },
 }
 
 const schultypen = [
@@ -121,6 +133,25 @@ const schultypen = [
     ),
   },
   {
+    slug: 'tourismus',
+    name: 'Tourismusschulen',
+    kurzname: 'Tourismus',
+    farbe: '#4a2d8a',
+    farbeHell: '#f3f1f9',
+    gradient: 'linear-gradient(135deg, #2d1b69 0%, #4a2d8a 60%, #6b4db0 100%)',
+    schulstufen: '9.–13. Schulstufe',
+    fokus: 'Saisoneinkommen & Selbstständigkeit',
+    teaser: 'Betriebswirtschaftliches Denken aufs eigene Leben übertragen: schwankendes Saisoneinkommen, Trinkgeld und der Weg zum eigenen Betrieb.',
+    highlights: ['Saisoneinkommen', 'Trinkgeld', 'Rücklagen bilden', 'Selbstständigkeit'],
+    icon: (
+      <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+        <rect x="3" y="7" width="18" height="13" rx="2"/>
+        <path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+        <path d="M9 20v-9M15 20v-9"/>
+      </svg>
+    ),
+  },
+  {
     slug: 'berufsschule',
     name: 'Berufsschulen & Lehre',
     kurzname: 'Lehre',
@@ -147,8 +178,57 @@ const schulstufen = [
 ]
 
 export default function SchulenUebersicht() {
+  const itemListJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Skills-UP! Finanzbildung – Schultypen in Österreich',
+    description: 'Übersicht aller Schultypen, für die Skills-UP! lehrplankonformes Finanzbildungsmaterial anbietet.',
+    url: 'https://www.digitale-zukunftsbildung.eu/schulen',
+    numberOfItems: 8,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'AHS-Oberstufe', url: 'https://www.digitale-zukunftsbildung.eu/schulen/ahs' },
+      { '@type': 'ListItem', position: 2, name: 'HAK & HAS', url: 'https://www.digitale-zukunftsbildung.eu/schulen/hak' },
+      { '@type': 'ListItem', position: 3, name: 'HTL', url: 'https://www.digitale-zukunftsbildung.eu/schulen/htl' },
+      { '@type': 'ListItem', position: 4, name: 'HLW & Fachschulen', url: 'https://www.digitale-zukunftsbildung.eu/schulen/hlw' },
+      { '@type': 'ListItem', position: 5, name: 'BAfEP & BASOP', url: 'https://www.digitale-zukunftsbildung.eu/schulen/bafep' },
+      { '@type': 'ListItem', position: 6, name: 'Tourismusschulen', url: 'https://www.digitale-zukunftsbildung.eu/schulen/tourismus' },
+      { '@type': 'ListItem', position: 7, name: 'Polytechnische Schule (PTS)', url: 'https://www.digitale-zukunftsbildung.eu/schulen/pts' },
+      { '@type': 'ListItem', position: 8, name: 'Berufsschule & Lehre', url: 'https://www.digitale-zukunftsbildung.eu/schulen/berufsschule' },
+    ],
+  }
+
+  const courseListJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'Skills-UP! Finanzbildungs-Module',
+    description: '12 fertige Unterrichtsmodule für Finanzbildung an österreichischen Schulen.',
+    numberOfItems: 12,
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, item: { '@type': 'Course', name: 'Geldbiografie & Werte', description: 'Eigene Geldgeschichte reflektieren, Werte und Konsum verstehen.', provider: { '@type': 'Organization', name: 'Digitale Zukunftsbildung' }, inLanguage: 'de-AT', educationalLevel: '9.-13. Schulstufe' } },
+      { '@type': 'ListItem', position: 2, item: { '@type': 'Course', name: 'Haushaltsbudget & Ausgabenkontrolle', description: 'Einnahmen und Ausgaben planen, Budgetfallen erkennen.', provider: { '@type': 'Organization', name: 'Digitale Zukunftsbildung' }, inLanguage: 'de-AT', educationalLevel: '9.-13. Schulstufe' } },
+      { '@type': 'ListItem', position: 3, item: { '@type': 'Course', name: 'Lohnzettel & Sozialversicherung', description: 'Brutto zu netto, Sozialversicherung, Dienstnehmerrechte in Österreich.', provider: { '@type': 'Organization', name: 'Digitale Zukunftsbildung' }, inLanguage: 'de-AT', educationalLevel: '9.-13. Schulstufe' } },
+      { '@type': 'ListItem', position: 4, item: { '@type': 'Course', name: 'Ratenkauf, BNPL & Schuldenprävention', description: 'Konsumkredite und Buy-now-pay-later verstehen, Schuldenfallen erkennen.', provider: { '@type': 'Organization', name: 'Digitale Zukunftsbildung' }, inLanguage: 'de-AT', educationalLevel: '9.-13. Schulstufe' } },
+      { '@type': 'ListItem', position: 5, item: { '@type': 'Course', name: 'Sparen & Vermögensaufbau', description: 'Zinsen, Sparformen, Notgroschen und langfristiger Vermögensaufbau.', provider: { '@type': 'Organization', name: 'Digitale Zukunftsbildung' }, inLanguage: 'de-AT', educationalLevel: '9.-13. Schulstufe' } },
+      { '@type': 'ListItem', position: 6, item: { '@type': 'Course', name: 'Investieren & Depot', description: 'Aktien, ETFs, Depot, Diversifikation und Risikomanagement.', provider: { '@type': 'Organization', name: 'Digitale Zukunftsbildung' }, inLanguage: 'de-AT', educationalLevel: '9.-13. Schulstufe' } },
+      { '@type': 'ListItem', position: 7, item: { '@type': 'Course', name: 'Krypto-Mythen & digitale Finanztools', description: 'Kryptowährungen realistisch einschätzen, Scams erkennen, sichere Finanz-Apps nutzen.', provider: { '@type': 'Organization', name: 'Digitale Zukunftsbildung' }, inLanguage: 'de-AT', educationalLevel: '9.-13. Schulstufe' } },
+      { '@type': 'ListItem', position: 8, item: { '@type': 'Course', name: 'Versicherungen', description: 'Welche Versicherungen brauche ich wirklich? Überblick für Jugendliche.', provider: { '@type': 'Organization', name: 'Digitale Zukunftsbildung' }, inLanguage: 'de-AT', educationalLevel: '9.-13. Schulstufe' } },
+      { '@type': 'ListItem', position: 9, item: { '@type': 'Course', name: 'Steuern & Abgaben', description: 'Lohnsteuer, Negativsteuer, Arbeitnehmerveranlagung und Steuerrückerstattung.', provider: { '@type': 'Organization', name: 'Digitale Zukunftsbildung' }, inLanguage: 'de-AT', educationalLevel: '9.-13. Schulstufe' } },
+      { '@type': 'ListItem', position: 10, item: { '@type': 'Course', name: 'Gehaltsverhandlung & Berufseinstieg', description: 'Kollektivvertrag, Lohnstufen, Gehaltsverhandlung und erster Arbeitsvertrag.', provider: { '@type': 'Organization', name: 'Digitale Zukunftsbildung' }, inLanguage: 'de-AT', educationalLevel: '9.-13. Schulstufe' } },
+      { '@type': 'ListItem', position: 11, item: { '@type': 'Course', name: 'Konsum & Werbepsychologie', description: 'Manipulation erkennen, bewusst konsumieren, nachhaltige Kaufentscheidungen.', provider: { '@type': 'Organization', name: 'Digitale Zukunftsbildung' }, inLanguage: 'de-AT', educationalLevel: '9.-13. Schulstufe' } },
+      { '@type': 'ListItem', position: 12, item: { '@type': 'Course', name: 'Scams & Finanzbetrug erkennen', description: 'Phishing, Investment-Scams und Social Engineering im digitalen Alltag erkennen.', provider: { '@type': 'Organization', name: 'Digitale Zukunftsbildung' }, inLanguage: 'de-AT', educationalLevel: '9.-13. Schulstufe' } },
+    ],
+  }
+
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(courseListJsonLd) }}
+      />
       <SiteNav />
 
       {/* Hero */}
@@ -169,13 +249,13 @@ export default function SchulenUebersicht() {
           </div>
           <h1 className="font-heading text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">
             Finanzbildung für<br />
-            <span className="text-primary-light">jede Schulform.</span>
+            <span className="text-primary-light">jede Schulform in Österreich.</span>
           </h1>
           <p className="text-white/70 font-body text-xl max-w-2xl mx-auto mb-6 leading-relaxed">
             Skills-UP! unterstützt Schulen dabei, Jugendliche ab 15 Jahren auf reale Finanzentscheidungen vorzubereiten. Praxisnah, digital und sofort einsetzbar.
           </p>
           <p className="text-white/50 font-body text-base max-w-xl mx-auto mb-12">
-            Ob AHS, HAK, HTL, HLW, BAfEP, BASOP, PTS oder Berufsschule, für jede Zielgruppe gibt es passende Inhalte.
+            Ob AHS, HAK, HTL, HLW, BAfEP, BASOP, Tourismusschule, PTS oder Berufsschule, für jede Zielgruppe gibt es passende Inhalte.
           </p>
 
           {/* Quick jump chips */}

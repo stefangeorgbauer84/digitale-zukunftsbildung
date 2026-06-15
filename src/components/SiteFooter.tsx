@@ -26,7 +26,7 @@ export default function SiteFooter() {
               </div>
             </div>
             <p className="text-sm font-body text-white/55 leading-relaxed mb-5 max-w-xs">
-              Wir bringen echte Finanzkompetenz zu Jugendlichen ab 15 Jahren, praxisnah, digital und sofort einsetzbar für AHS, HAK, HTL, HLW, BAfEP, BASOP, PTS und Berufsschulen.
+              Wir bringen echte Finanzkompetenz zu Jugendlichen ab 15 Jahren, praxisnah, digital und sofort einsetzbar für AHS, HAK, HTL, HLW, BAfEP, BASOP, Tourismusschulen, PTS und Berufsschulen.
             </p>
             <div className="space-y-2">
               <a href="tel:+436502158715"
@@ -60,11 +60,13 @@ export default function SiteFooter() {
             <ul className="space-y-3">
               {[
                 { label: 'Alle Schultypen', href: '/schulen' },
+                { label: 'Lehrplanmapping', href: '/lehrplan-mapping' },
                 { label: 'AHS-Oberstufe', href: '/schulen/ahs' },
                 { label: 'HAK & HAS', href: '/schulen/hak' },
                 { label: 'HTL', href: '/schulen/htl' },
                 { label: 'HLW & Fachschulen', href: '/schulen/hlw' },
                 { label: 'BAfEP & BASOP', href: '/schulen/bafep' },
+                { label: 'Tourismusschulen', href: '/schulen/tourismus' },
                 { label: 'PTS', href: '/schulen/pts' },
                 { label: 'Berufsschulen', href: '/schulen/berufsschule' },
               ].map((l) => (
@@ -84,8 +86,10 @@ export default function SiteFooter() {
             <ul className="space-y-3 mb-8">
               {[
                 { label: 'Über uns', href: '/ueber-uns' },
+                { label: 'Aktuelles', href: '/aktuelles' },
+                { label: 'Aktiengame', href: '/aktiengame' },
+                { label: 'Demo anfragen', href: '/demo-anfragen' },
                 { label: 'Kurse & Angebote', href: '/#angebote' },
-                { label: 'Kontakt aufnehmen', href: '/#kontakt' },
                 { label: 'Impressum', href: '/impressum' },
                 { label: 'Datenschutz', href: '/impressum#datenschutz' },
               ].map((l) => (
