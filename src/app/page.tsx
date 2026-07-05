@@ -439,6 +439,12 @@ export default function HomePage() {
             >
               Kostenloses Beratungsgespräch
             </a>
+            <Link href="/demo"
+              className="inline-flex items-center justify-center gap-2 text-white font-body font-600 text-base px-6 py-3 rounded-xl transition-all duration-200 hover:scale-105 border border-white/30"
+              style={{ background: 'rgba(200,64,64,0.25)', backdropFilter: 'blur(8px)' }}
+            >
+              🛒 Gratis Demo starten
+            </Link>
           </div>
           <p className="text-white/60 text-sm mb-10 font-body">Kostenlos · Unverbindlich · Kein automatischer Vertrag</p>
 

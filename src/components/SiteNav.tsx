@@ -7,9 +7,12 @@ import { useEffect, useRef, useState } from 'react'
 const links = [
   { href: '/#angebote', label: 'Bildungsprogramm' },
   { href: '/schulen', label: 'Für Schulen' },
+  { href: '/lehrplan-mapping', label: 'Lehrplanmapping' },
+  { href: '/aktiengame', label: 'Aktiengame' },
+  { href: '/demo', label: '🛒 Gratis Demo' },
   { href: '/#unternehmen', label: 'Für Unternehmen' },
-  { href: '/#plattform', label: 'Unser Ansatz' },
   { href: '/ueber-uns', label: 'Über uns' },
+  { href: '/aktuelles', label: 'Aktuelles' },
 ]
 
 export default function SiteNav({ dark = false }: { dark?: boolean }) {
