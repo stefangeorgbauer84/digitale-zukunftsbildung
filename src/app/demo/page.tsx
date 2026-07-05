@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { KonsumfallenDemo } from '@/components/demo/KonsumfallenDemo'
+import KonsumfallenDemoClient from '@/components/demo/KonsumfallenDemoClient'
 
 export const metadata: Metadata = {
   title: 'Konsumfallen-Simulation | Skills-UP! Demo',
@@ -13,5 +13,5 @@ export const metadata: Metadata = {
 }
 
 export default function DemoPage() {
-  return <KonsumfallenDemo />
+  return <KonsumfallenDemoClient />
 }
