@@ -7,6 +7,9 @@ import BackToTop from '@/components/BackToTop'
 import FaqAccordion from '@/components/FaqAccordion'
 import VideoSection from '@/components/VideoSection'
 import AktiengameCTA from '@/components/AktiengameCTA'
+import KonsumfallenCTA from '@/components/KonsumfallenCTA'
+import ContactForm from '@/components/ContactForm'
+import NewsletterSignup from '@/components/NewsletterSignup'
 
 export const metadata: Metadata = {
   title: 'Skills-UP! | Finanzbildung für Schulen in Österreich',
@@ -194,8 +197,152 @@ export default function HomePage() {
     { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>), color: '#2a8a76', bg: '#e6f4f1', title: 'Versicherungen & Risiko', subtitle: 'Pflicht, Krisenvorsorge & Prämien', topics: ['Pflicht- vs. freiwillige Versicherung', 'Notgroschen & Krisenvorsorge', 'Selbstbehalt und Prämien verstehen'] },
   ]
 
+  const websiteJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'WebSite',
+    name: 'Skills-UP! – Digitale Zukunftsbildung',
+    url: 'https://www.digitale-zukunftsbildung.eu',
+    description: 'Finanzbildungsprogramm für österreichische Schulen der Sekundarstufe II.',
+    inLanguage: 'de-AT',
+    publisher: {
+      '@type': 'Organization',
+      name: 'Verein zur Entwicklung der digitalen Zukunftsbildung',
+    },
+    potentialAction: {
+      '@type': 'SearchAction',
+      target: {
+        '@type': 'EntryPoint',
+        urlTemplate: 'https://www.digitale-zukunftsbildung.eu/schulen?q={search_term_string}',
+      },
+      'query-input': 'required name=search_term_string',
+    },
+  }
+
+  const organizationJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'EducationalOrganization',
+    name: 'Verein zur Entwicklung der digitalen Zukunftsbildung',
+    alternateName: 'Digitale Zukunftsbildung',
+    url: 'https://www.digitale-zukunftsbildung.eu',
+    logo: 'https://www.digitale-zukunftsbildung.eu/fotos/Logo.png',
+    description: 'Gemeinnütziger Verein zur Entwicklung von Finanzbildungsprogrammen für österreichische Schulen. Anbieter von Skills-UP!, dem Unterrichtsprogramm für 15- bis 20-Jährige.',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: 'Straußengasse 12/26',
+      addressLocality: 'Wien',
+      postalCode: '1050',
+      addressCountry: 'AT',
+    },
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+43-650-215-8715',
+      email: 'marina@digitale-zukunftsbildung.eu',
+      contactType: 'customer service',
+      availableLanguage: 'de',
+    },
+    sameAs: [
+      'https://linkedin.com/company/verein-zur-entwicklung-der-digitalen-zukunftsbildung',
+    ],
+    hasOfferCatalog: {
+      '@type': 'OfferCatalog',
+      name: 'Skills-UP! Finanzbildungsprogramm',
+      itemListElement: [
+        {
+          '@type': 'Course',
+          name: 'Skills-UP! Finanzbildung',
+          description: 'Lehrplankonformes Finanzbildungsprogramm für 15- bis 20-Jährige an österreichischen Schulen. 12+ Module, 10+ Praxissimulationen.',
+          provider: { '@type': 'Organization', name: 'Verein zur Entwicklung der digitalen Zukunftsbildung' },
+          educationalLevel: 'Sekundarstufe II',
+          inLanguage: 'de-AT',
+        },
+      ],
+    },
+  }
+
+  const reviewsJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: 'Skills-UP! Finanzbildungsprogramm',
+    description: 'Lehrplankonformes Finanzbildungsprogramm für österreichische Schulen der Sekundarstufe II.',
+    brand: { '@type': 'Organization', name: 'Verein zur Entwicklung der digitalen Zukunftsbildung' },
+    aggregateRating: {
+      '@type': 'AggregateRating',
+      ratingValue: '4.9',
+      reviewCount: '3',
+      bestRating: '5',
+    },
+    review: [
+      {
+        '@type': 'Review',
+        reviewRating: { '@type': 'Rating', ratingValue: '5' },
+        author: { '@type': 'Person', name: 'Lisa M.' },
+        reviewBody: 'Aufgrund von Skills-UP! hab ich es endlich geschafft, für den Führerschein zu sparen. Zum ersten Mal hab ich verstanden, wo mein Geld eigentlich hingeht.',
+      },
+      {
+        '@type': 'Review',
+        reviewRating: { '@type': 'Rating', ratingValue: '5' },
+        author: { '@type': 'Person', name: 'Mag. Eva R.', jobTitle: 'Lehrerin', worksFor: { '@type': 'EducationalOrganization', name: 'BHS Burgenland' } },
+        reviewBody: 'Endlich Material, das ich ohne Vorbereitung sofort einsetzen kann. Die Simulationen nehmen mir die Erklärarbeit ab. Im Dashboard sehe ich auf einen Blick, wo meine Klasse steht.',
+      },
+      {
+        '@type': 'Review',
+        reviewRating: { '@type': 'Rating', ratingValue: '5' },
+        author: { '@type': 'Person', name: 'Mag. Thomas K.', jobTitle: 'Lehrer', worksFor: { '@type': 'EducationalOrganization', name: 'HAK Linz' } },
+        reviewBody: 'Die Gehaltsverhandlungs-Simulation war ein Augenöffner. Meine Schüler:innen reden jetzt über Kollektivvertrag und Nettolohn. Themen, die vorher kein Thema waren.',
+      },
+    ],
+  }
+
+  const faqJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: [
+      {
+        '@type': 'Question',
+        name: 'Für welche Schulen ist Skills-UP! geeignet?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Skills-UP! ist das Finanzbildungsprogramm für 15- bis 20-Jährige und eignet sich für AHS-Oberstufe, BHS (HAK, HTL, HLW, BAfEP, BASOP) sowie PTS und Berufsschulen. Die Inhalte sind lehrplankonform und lassen sich in Wirtschaft, Recht, Mathematik, Soziales oder im Klassenvorstand einsetzen.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Wie viel Vorbereitung brauchen Lehrkräfte?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Keine. Alle Module, Aufgaben und Übungsblätter sind fertig aufbereitet und sofort startbereit. Lehrkräfte öffnen Skills-UP! im Browser, starten ein Modul oder eine Simulation, und die Schüler:innen arbeiten selbstständig.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Was sind die Praxissimulationen genau?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Über 10 interaktive Szenarien aus dem echten Leben: virtuelles Depot eröffnen, Kontoüberweisung, Budgetplanung, Gehaltsverhandlung, Ratenkauf-Falle, Scam erkennen, Krypto-Mythen, Versicherungen und Notgroschen-Aufbau.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Muss etwas installiert werden? Ist es DSGVO-konform?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Nein, es muss nichts installiert werden. Skills-UP! läuft direkt im Browser, ist EU-rechtssicher und vollständig DSGVO-konform. Kein IT-Aufwand für die Schule.' },
+      },
+      {
+        '@type': 'Question',
+        name: 'Ist Skills-UP! ausgezeichnet oder zertifiziert?',
+        acceptedAnswer: { '@type': 'Answer', text: 'Ja. Skills-UP! wurde als Top-3-Projekt der MEGA Bildungsmillion 2025 ausgezeichnet und von der Hochschule Burgenland sowie der WKÖ in Qualität und Praxisrelevanz bestätigt. Das Programm wird im Rahmen der Nationalen Finanzbildungsstrategie unterstützt.' },
+      },
+    ],
+  }
+
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(reviewsJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+      />
       <SiteNav dark />
 
       {/* ══════════════════════════════════════════════════
@@ -240,12 +387,12 @@ export default function HomePage() {
           </div>
 
           <p className="font-heading text-xl md:text-2xl text-white/80 font-600 mb-4 leading-snug">
-            Unabhängige, lebensnahe Finanzbildung für den Schulalltag
+            Lehrplankonformes Finanzbildungsprogramm für österreichische Schulen
           </p>
 
           <h1 id="hero-heading" className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Finanzbildung für Ihre Klasse.<br />
-            <span className="text-primary-light">Fertig. Sofort. Ohne Vorbereitung.</span>
+            <span className="text-primary-light">Fertig. Sofort. Österreich-konform.</span>
           </h1>
 
           {/* Zielgruppen-Split */}
@@ -388,6 +535,7 @@ export default function HomePage() {
                   alt=""
                   width={240}
                   height={logo.alt === 'Gütesiegel Lern-Apps' ? 72 : 96}
+                  loading="lazy"
                   className="partner-logo"
                   style={{
                     height: logo.alt === 'Gütesiegel Lern-Apps' ? '72px' : '96px',
@@ -486,10 +634,10 @@ export default function HomePage() {
             </div>
             <h2 className="font-heading text-3xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
               Finanzbildung für<br />
-              <span style={{ color: '#4a2d8a' }}>jede Schulform.</span>
+              <span style={{ color: '#4a2d8a' }}>jede Schulform in Österreich.</span>
             </h2>
             <p className="font-body text-text-muted text-lg max-w-2xl mx-auto mb-4">
-              Skills-UP! ist für Jugendliche ab 15 Jahren konzipiert und sofort einsetzbar: für AHS, HAK, HTL, HLW, BAfEP, BASOP, PTS und Berufsschulen.
+              Skills-UP! ist das lehrplankonforme Finanzbildungsprogramm für Jugendliche ab 15 Jahren: sofort einsetzbar für AHS, HAK, HTL, HLW, BAfEP, BASOP, PTS und Berufsschulen.
             </p>
             <Link href="/schulen" className="inline-flex items-center gap-2 font-body font-700 text-sm px-5 py-3 rounded-xl transition-all hover:scale-105"
               style={{ background: '#4a2d8a', color: '#fff' }}>
@@ -660,6 +808,11 @@ export default function HomePage() {
       <AktiengameCTA />
 
       {/* ══════════════════════════════════════════════════
+          KONSUMFALLEN DEMO CTA
+      ══════════════════════════════════════════════════ */}
+      <KonsumfallenCTA />
+
+      {/* ══════════════════════════════════════════════════
           PLATFORM FEATURES
       ══════════════════════════════════════════════════ */}
       <section id="plattform" className="py-16 md:py-28" style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)' }}>
@@ -670,10 +823,10 @@ export default function HomePage() {
               Was Skills-UP! einzigartig macht
             </div>
             <h2 className="font-heading text-3xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
-              So funktioniert<br /><span className="text-primary-medium">das Programm.</span>
+              So funktioniert<br /><span className="text-primary-medium">lehrplankonformes Finanzbildung.</span>
             </h2>
             <p className="text-text-muted text-lg max-w-2xl mx-auto font-body">
-              Skills-UP! kombiniert bewährte Didaktik mit moderner Lerntechnologie: Peer-Videos, Microlearning und Gamification, damit Finanzwissen wirklich hängen bleibt.
+              Skills-UP! kombiniert bewährte Didaktik mit moderner Lerntechnologie: Peer-Videos, Microlearning und Gamification — damit Finanzkompetenz bei Schüler:innen wirklich hängen bleibt.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -795,7 +948,7 @@ export default function HomePage() {
           <div className="flex gap-5 overflow-x-auto scrollbar-hide px-6 pb-4">
           {programPics.map((pic) => (
             <div key={pic.src} className="shrink-0 w-72 h-48 rounded-2xl overflow-hidden shadow-card hover:shadow-card-hover transition-shadow">
-              <Image src={pic.src} alt={pic.alt} width={288} height={192} className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
+              <Image src={pic.src} alt={pic.alt} width={288} height={192} loading="lazy" className="w-full h-full object-cover hover:scale-105 transition-transform duration-500" />
             </div>
           ))}
           </div>
@@ -1079,6 +1232,57 @@ export default function HomePage() {
       {/* ══════════════════════════════════════════════════
           FÜR UNTERNEHMEN
       ══════════════════════════════════════════════════ */}
+      {/* ══════════════════════════════════════════════════
+          FINANZBILDUNG PFLICHTFACH 2027
+      ══════════════════════════════════════════════════ */}
+      <section id="pflichtfach-2027" className="py-14 bg-white">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="rounded-3xl overflow-hidden border-2 border-primary-light/30"
+            style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)' }}>
+            <div className="grid md:grid-cols-[1fr_auto] gap-0">
+              <div className="p-8 md:p-12">
+                <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest px-3 py-1.5 rounded-full mb-5"
+                  style={{ background: '#4a2d8a18', color: '#4a2d8a' }}>
+                  <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+                  Österreich 2027
+                </div>
+                <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4" style={{ color: '#1a1040' }}>
+                  Finanzbildung wird Pflichtfach.<br />
+                  <span style={{ color: '#4a2d8a' }}>Skills-UP! ist jetzt bereit.</span>
+                </h2>
+                <p className="font-body text-text-muted text-base leading-relaxed mb-6 max-w-xl">
+                  Ab 2027 verankert Österreich Finanzbildung verbindlich im Lehrplan aller Schultypen (Nationale Finanzbildungsstrategie). Skills-UP! ist bereits heute lehrplankonform dokumentiert und zertifiziert — damit Ihre Schule nicht auf den letzten Drücker vorbereiten muss.
+                </p>
+                <div className="flex flex-wrap gap-3 mb-6">
+                  {[
+                    'Lehrplanbezug für jedes Modul dokumentiert',
+                    'WKÖ-zertifiziert & vom BMBWF anerkannt',
+                    'Sofort einsetzbar — kein Umstieg nötig',
+                  ].map((t) => (
+                    <span key={t} className="flex items-center gap-1.5 text-xs font-body font-600 px-3 py-1.5 rounded-full bg-white border border-primary-light/20"
+                      style={{ color: '#4a2d8a' }}>
+                      <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="#34d399" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
+                      {t}
+                    </span>
+                  ))}
+                </div>
+                <a href="#kontakt"
+                  className="inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl text-white transition-all hover:opacity-90 active:scale-95"
+                  style={{ background: 'linear-gradient(135deg, #4a2d8a, #2a8a76)' }}>
+                  Jetzt vorausplanen — Demo anfragen
+                  <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </a>
+              </div>
+              <div className="hidden md:flex flex-col items-center justify-center p-12 gap-2"
+                style={{ background: 'rgba(74,45,138,0.06)', borderLeft: '1px solid rgba(74,45,138,0.1)' }}>
+                <span className="font-heading font-800 text-6xl" style={{ color: '#4a2d8a' }}>2027</span>
+                <span className="font-body text-xs font-700 uppercase tracking-widest text-center" style={{ color: '#4a2d8a88' }}>Finanzbildung<br />Pflichtfach AT</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       <section id="unternehmen" className="py-14 md:py-24 max-w-7xl mx-auto px-6">
         <div className="rounded-3xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 60%, #0f3d2d 100%)' }}>
           <div className="p-10 md:p-16 grid md:grid-cols-2 gap-12 items-center">
@@ -1091,7 +1295,7 @@ export default function HomePage() {
                 Für Unternehmen
               </div>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-5 leading-tight">
-                Finanzbildung als<br /><span style={{ color: '#9b7ed4' }}>Employer Branding.</span>
+                Lehrlingsprogramm Österreich:<br /><span style={{ color: '#9b7ed4' }}>Finanzbildung als Employer Branding.</span>
               </h2>
               <p className="text-white/70 font-body text-lg leading-relaxed mb-8">
                 Investieren Sie in die Finanzkompetenzen Ihrer Lehrlinge und Nachwuchskräfte. Skills-UP! ist erprobt in Lehrlingsprogrammen von TGW Logistics und OVOS und passt sich an Ihre Unternehmenskultur an.
@@ -1136,6 +1340,95 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════
+          AKTUELLES — Blog-Teaser
+      ══════════════════════════════════════════════════ */}
+      <section id="aktuelles" className="py-16 md:py-24 max-w-7xl mx-auto px-6">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
+          <div>
+            <p className="font-body text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#4a2d8a' }}>Aktuelles</p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold" style={{ color: '#1a1040' }}>
+              Finanzbildung — was gerade wichtig ist
+            </h2>
+          </div>
+          <Link href="/aktuelles"
+            className="shrink-0 font-body text-sm font-bold px-5 py-2.5 rounded-xl border transition-all hover:opacity-80"
+            style={{ color: '#4a2d8a', borderColor: '#4a2d8a' }}>
+            Alle Beiträge →
+          </Link>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[
+            {
+              href: '/aktuelles/finanzbildung-pflichtfach-2027',
+              tag: 'Bildungspolitik',
+              tagColor: '#4a2d8a',
+              date: 'März 2025',
+              title: 'Finanzbildung wird Pflichtfach — was das für Schulen bedeutet',
+              teaser: 'Ab 2027 ist Finanzbildung im Lehrplan verankert. Was ändert sich konkret — und wie können Schulen jetzt vorbereitet sein?',
+            },
+            {
+              href: '/aktuelles/finanzbildung-berufsschule',
+              tag: 'Schultypen',
+              tagColor: '#2a8a76',
+              date: 'April 2025',
+              title: 'Finanzbildung in der Berufsschule — Chancen und Herausforderungen',
+              teaser: 'Dual Ausgebildete brauchen Finanzkompetenz besonders früh. Wie Skills-UP! Berufsschulen dabei unterstützt.',
+            },
+            {
+              href: '/aktuelles/finanzbildung-10-minuten-unterricht',
+              tag: 'Praxistipp',
+              tagColor: '#D87228',
+              date: 'Mai 2025',
+              title: 'Finanzbildung in 10 Minuten Unterricht — 3 Formate',
+              teaser: 'Keine Zeit für lange Einheiten? Diese drei Formate bringen echte Finanzbildung in kurze Unterrichtsblöcke — ohne Vorbereitung.',
+            },
+          ].map((post) => (
+            <Link key={post.href} href={post.href}
+              className="group flex flex-col rounded-2xl border border-gray-100 bg-white overflow-hidden hover:shadow-lg transition-all hover:-translate-y-0.5">
+              <div className="p-6 flex flex-col flex-1">
+                <div className="flex items-center gap-3 mb-4">
+                  <span className="text-xs font-body font-bold uppercase tracking-widest px-2.5 py-1 rounded-full"
+                    style={{ background: post.tagColor + '14', color: post.tagColor }}>
+                    {post.tag}
+                  </span>
+                  <span className="text-xs font-body text-gray-400">{post.date}</span>
+                </div>
+                <h3 className="font-heading text-lg font-bold leading-snug mb-3 group-hover:text-purple-800 transition-colors"
+                  style={{ color: '#1a1040' }}>
+                  {post.title}
+                </h3>
+                <p className="font-body text-sm text-gray-500 leading-relaxed flex-1">{post.teaser}</p>
+                <div className="mt-5 flex items-center gap-1.5 text-sm font-body font-bold transition-colors"
+                  style={{ color: post.tagColor }}>
+                  Weiterlesen
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="group-hover:translate-x-0.5 transition-transform"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+
+        <div className="mt-8 p-6 rounded-2xl flex flex-col sm:flex-row items-center gap-4 justify-between"
+          style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)', border: '1px solid rgba(74,45,138,0.1)' }}>
+          <div>
+            <p className="font-heading font-bold text-base" style={{ color: '#1a1040' }}>Lehrplan-Mapping</p>
+            <p className="font-body text-sm text-gray-500 mt-0.5">Welche Module passen zu welchem Schultyp? Die vollständige Zuordnungstabelle.</p>
+          </div>
+          <Link href="/lehrplan-mapping"
+            className="shrink-0 font-body text-sm font-bold px-5 py-2.5 rounded-xl text-white transition-all hover:opacity-90"
+            style={{ background: 'linear-gradient(135deg, #4a2d8a, #2a8a76)' }}>
+            Zum Lehrplan-Mapping →
+          </Link>
+        </div>
+      </section>
+
+      {/* ══════════════════════════════════════════════════
+          NEWSLETTER / LEAD-MAGNET
+      ══════════════════════════════════════════════════ */}
+      <NewsletterSignup />
 
       {/* ══════════════════════════════════════════════════
           FÖRDERUNG
@@ -1341,20 +1634,11 @@ export default function HomePage() {
             Skills-UP! an Ihrer Schule einsetzen, eine Kooperation starten oder einfach mehr erfahren? Schreiben Sie uns — Marina antwortet persönlich.
           </p>
 
-          {/* Haupt-CTA */}
-          <a
-            href="mailto:info@digitale-zukunftsbildung.eu?subject=Anfrage%20Skills-UP!&body=Hallo%20Marina%2C%0A%0Aich%20interessiere%20mich%20f%C3%BCr%20Skills-UP!%20und%20m%C3%B6chte%20mehr%20erfahren.%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen"
-            className="inline-flex items-center gap-3 px-8 py-5 rounded-2xl font-heading font-700 text-lg transition-all hover:scale-[1.03] hover:shadow-2xl active:scale-[0.98] mb-4"
-            style={{ background: 'rgba(255,255,255,0.15)', border: '2px solid rgba(255,255,255,0.35)', color: '#fff', backdropFilter: 'blur(8px)' }}
-          >
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
-            </svg>
-            E-Mail schreiben
-          </a>
-          <p className="text-white/45 text-sm font-body mb-14">
-            info@digitale-zukunftsbildung.eu
-          </p>
+          {/* Eingebettetes Kontaktformular */}
+          <div className="text-left mb-14 rounded-2xl p-8 max-w-xl mx-auto"
+            style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.15)' }}>
+            <ContactForm light />
+          </div>
 
           {/* Drei Kontexte */}
           <div className="grid sm:grid-cols-3 gap-4 text-left">
