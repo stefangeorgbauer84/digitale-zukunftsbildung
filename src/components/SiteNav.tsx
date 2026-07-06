@@ -8,6 +8,7 @@ const links = [
   { href: '/#angebote', label: 'Bildungsprogramm' },
   { href: '/schulen', label: 'Für Schulen' },
   { href: '/lehrplan-mapping', label: 'Lehrplanmapping' },
+  { href: '/lernziele', label: 'Lernziele' },
   { href: '/aktiengame', label: 'Aktiengame' },
   { href: '/demo', label: '🛒 Gratis Demo' },
   { href: '/#unternehmen', label: 'Für Unternehmen' },

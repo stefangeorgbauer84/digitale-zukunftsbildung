@@ -71,6 +71,9 @@
   .font-heading { font-family: 'Baloo 2', sans-serif; }
   .font-body { font-family: 'Nunito', sans-serif; }
 
+  .no-scrollbar { scrollbar-width: none; -ms-overflow-style: none; }
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+
   /* Custom font-weight utilities (Tailwind doesn't ship font-600/700/800 by name) */
   .font-600 { font-weight: 600; }
   .font-700 { font-weight: 700; }
