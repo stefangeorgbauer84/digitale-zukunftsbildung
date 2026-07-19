@@ -2,8 +2,14 @@ import type { Metadata } from 'next'
 import SchulPage from '@/components/SchulPage'
 
 export const metadata: Metadata = {
-  title: 'HAK & HAS | Skills-UP! Finanzbildung',
-  description: 'Skills-UP! für HAK und HAS, persönliche Finanzkompetenz als Ergänzung zu Betriebswirtschaft und Rechnungswesen. Sofort einsetzbar.',
+  title: 'Finanzbildung HAK & HAS Österreich | Skills-UP! – lehrplankonform ab 2027',
+  description: 'Skills-UP! für HAK und HAS (9.–13. Schulstufe, 1.–5. Jahrgang): Finanzbildung als Ergänzung zu Betriebswirtschaft und Rechnungswesen. Lehrplankonform, ab 2027 Pflichtfach. Sofort einsetzbar.',
+  alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/schulen/hak' },
+  openGraph: {
+    title: 'Finanzbildung für HAK & HAS – Skills-UP! Österreich',
+    description: 'Lehrplankonformes Finanzbildungsprogramm für HAK und HAS. Vorbereitung auf Finanzbildung als Pflichtfach ab 2027. 12+ Module, sofort einsetzbar.',
+    url: 'https://www.digitale-zukunftsbildung.eu/schulen/hak',
+  },
 }
 
 const icon = (
@@ -205,6 +211,35 @@ export default function HakPage() {
           { zeile: 'Abzüge gesamt|36 %|36%', typ: 'bar' },
         ],
       }}
+      faqs={[
+        { q: 'Überschneidet sich Skills-UP! mit dem BWL-Unterricht an der HAK?', a: 'Nein — es ergänzt ihn. BWL behandelt Unternehmensfinanzen. Skills-UP! bringt persönliche Finanzkompetenz: eigener Lohnzettel, Haushaltsbudget, Schuldenprävention. Beides ist lehrplankonform und sinnvoll kombinierbar.' },
+        { q: 'Kann ich Skills-UP! im BWRLB-Unterricht oder im Klassenvorstand einsetzen?', a: 'In beidem. Die Kurzmodule (15 Min.) eignen sich für den Einstieg in eine Unterrichtsstunde. Die Langmodule (50 Min.) funktionieren als eigenständige Einheit in BWRLB, PG oder GGP.' },
+        { q: 'Gibt es HAK-spezifische Inhalte?', a: 'Ja. Module wie Lohnzettel, Haushaltsbudget und Investieren sind speziell auf die Lebenssituation von HAK-Schülerinnen zugeschnitten — mit Bezug zu KV-Gehältern, Berufseinstieg und österreichischer Steuergesetzgebung.' },
+      ]}
+      verwandteSchultypen={[
+        { slug: 'ahs', label: 'AHS-Oberstufe', teaser: 'Finanzbildung für GWK, PuG und Klassenvorstand — flexibel in 15 oder 50 Minuten.' },
+        { slug: 'htl', label: 'HTL', teaser: 'Finanzkompetenz für technische Berufe: Gehaltsverhandlung, Depot und Karriereeinstieg.' },
+        { slug: 'berufsschule', label: 'Berufsschule', teaser: 'Lehrlinge verdienen ab Tag 1. Skills-UP! erklärt Lohnzettel, SV und Budget.' },
+      ]}
+      testimonials={[
+        {
+          text: 'Im BWL-Unterricht haben wir Bilanzen gelesen, aber nie den eigenen Lohnzettel. Seit Skills-UP! ist das anders. Die Schüler:innen rechnen ihren Nettolohn selbst durch — und sind jedes Mal überrascht.',
+          person: 'Mag. Thomas W.',
+          rolle: 'BWRLB-Lehrer',
+          schule: 'HAK Graz',
+        },
+        {
+          text: 'Das Modul zur Schuldenprävention hat eine Diskussion ausgelöst, die ich so nicht erwartet habe. Plötzlich reden Schülerinnen über Ratenkäufe ihrer Eltern. Das ist echter Lerneffekt.',
+          person: 'Daniela K.',
+          rolle: 'Klassenlehrerin HAK',
+        },
+        {
+          text: 'Für uns als HAK ist Skills-UP! die perfekte Ergänzung: Fachliches aus dem BWL-Unterricht wird mit persönlicher Finanzkompetenz verbunden. Das hätte ich selbst als Schülerin gebraucht.',
+          person: 'Mag. Petra F.',
+          rolle: 'Direktorin',
+          schule: 'HAS Linz',
+        },
+      ]}
     />
   )
 }

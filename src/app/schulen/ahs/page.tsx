@@ -2,8 +2,14 @@ import type { Metadata } from 'next'
 import SchulPage from '@/components/SchulPage'
 
 export const metadata: Metadata = {
-  title: 'AHS-Oberstufe | Skills-UP! Finanzbildung',
-  description: 'Skills-UP! für die AHS-Oberstufe, fertige Module für GWK, PuG oder Wahlpflichtfach. Null Vorbereitung, echte Finanzkompetenz.',
+  title: 'Finanzbildung AHS-Oberstufe Österreich | Skills-UP! – GWK, PuG, Wahlpflichtfach',
+  description: 'Skills-UP! für die AHS-Oberstufe (9.–12. Schulstufe, 5.–8. Klasse): fertige Module für GWK, PuG oder Wahlpflichtfach. Lehrplankonform, DSGVO-sicher, 0 Minuten Vorbereitung.',
+  alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/schulen/ahs' },
+  openGraph: {
+    title: 'Finanzbildung für die AHS-Oberstufe – Skills-UP! Österreich',
+    description: 'Lehrplankonformes Finanzbildungsprogramm für die AHS. Module für GWK, PuG und Wahlpflichtfach. Sofort einsetzbar.',
+    url: 'https://www.digitale-zukunftsbildung.eu/schulen/ahs',
+  },
 }
 
 const icon = (
@@ -204,6 +210,35 @@ export default function AhsPage() {
           { zeile: 'Finanzierung gesichert|78 %|78%', typ: 'bar' },
         ],
       }}
+      faqs={[
+        { q: 'In welche Fächer der AHS passt Skills-UP! konkret?', a: 'Skills-UP! ist ideal für Geographie und Wirtschaftskunde (GWK), Politische Bildung und Geschichte (PuG), den Klassenvorstand oder als Wahlpflichtfach. Die Module gibt es in 15- und 50-Minuten-Versionen, passend für Einzel- und Doppelstunden.' },
+        { q: 'Müssen Lehrkräfte Finanzwissen mitbringen?', a: 'Nein. Alle Inhalte, Erklärungen, Übungsaufgaben und Musterlösungen sind im Programm enthalten. Lehrkräfte starten ein Modul — die Klasse arbeitet selbstständig. Kein Vorbereitungsaufwand.' },
+        { q: 'Ist Skills-UP! auf die Finanzbildungspflicht 2027 abgestimmt?', a: 'Ja. Alle Module sind auf die Kompetenzziele der Nationalen Finanzbildungsstrategie abgestimmt und werden laufend aktualisiert. Schulen, die jetzt starten, sind für 2027 bestens vorbereitet.' },
+      ]}
+      verwandteSchultypen={[
+        { slug: 'hak', label: 'HAK & HAS', teaser: 'Finanzbildung als Ergänzung zu BWL und Rechnungswesen — lehrplankonform für die 9.–13. Schulstufe.' },
+        { slug: 'hlw', label: 'HLW & Fachschulen', teaser: 'Haushalt, Wirtschaft und Beruf: Finanzkompetenzen für eine frühe Selbstständigkeit.' },
+        { slug: 'bafep', label: 'BAfEP & BASOP', teaser: 'Angehende Pädagoginnen und Sozialberufe: Finanzbildung für Beruf und Alltag.' },
+      ]}
+      testimonials={[
+        {
+          text: 'Die Schüler:innen haben im GWK-Unterricht zum ersten Mal wirklich über ihr eigenes Geld nachgedacht. Nicht über Theorie, sondern über ihre eigene Situation nach der Matura.',
+          person: 'Mag. Sandra H.',
+          rolle: 'GWK-Lehrerin',
+          schule: 'AHS Wien',
+        },
+        {
+          text: 'Ich unterrichte seit 12 Jahren und hatte nie Material, das Jugendliche so direkt abholt. Die Budgetplanungs-Simulation läuft jetzt in jeder Klasse als Einstieg ins Semester.',
+          person: 'Gerhard M.',
+          rolle: 'Klassenvorstand, AHS-Oberstufe',
+        },
+        {
+          text: 'Endlich etwas, das kein Einarbeiten braucht. Modul starten, Klasse arbeitet selbstständig, ich beobachte und diskutiere. Das Dashboard zeigt mir sofort, wer wo hängt.',
+          person: 'Dr. Lisa B.',
+          rolle: 'Lehrerin PuG & Psychologie',
+          schule: 'BRG Niederösterreich',
+        },
+      ]}
     />
   )
 }

@@ -39,11 +39,20 @@ const securityHeaders = [
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",
+      // Modern replacement for X-Frame-Options (kept above for legacy browsers)
+      "frame-ancestors 'self'",
+      // Only in production: would rewrite http://localhost assets in dev
+      ...(process.env.NODE_ENV === 'production' ? ['upgrade-insecure-requests'] : []),
     ].join('; '),
   },
 ]
 
 const nextConfig = {
+  poweredByHeader: false,
+  reactStrictMode: true,
+  images: {
+    formats: ['image/avif', 'image/webp'],
+  },
   async headers() {
     return [
       {

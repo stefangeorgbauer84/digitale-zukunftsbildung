@@ -2,8 +2,14 @@ import type { Metadata } from 'next'
 import SchulPage from '@/components/SchulPage'
 
 export const metadata: Metadata = {
-  title: 'Polytechnische Schule | Skills-UP! Finanzbildung',
-  description: 'Skills-UP! für die PTS, erstes Einkommen, Konsumfallen, Sparziele. Direkt einsetzbar in Berufsorientierung und Lebenskunde.',
+  title: 'Finanzbildung Polytechnische Schule Österreich | Skills-UP! – PTS Berufsorientierung',
+  description: 'Skills-UP! für die PTS in Österreich: erstes Einkommen, Konsumfallen, Sparziele. Direkt einsetzbar in Berufsorientierung und Lebenskunde. 0 Vorbereitung für Lehrkräfte.',
+  alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/schulen/pts' },
+  openGraph: {
+    title: 'Finanzbildung für die PTS – Skills-UP! Österreich',
+    description: 'Praxisnahe Finanzbildung für die Polytechnische Schule. Erstes Einkommen, Konsumfallen, Sparziele. Lehrplankonform.',
+    url: 'https://www.digitale-zukunftsbildung.eu/schulen/pts',
+  },
 }
 
 const icon = (
@@ -127,7 +133,7 @@ export default function PtsPage() {
       ]}
       lehrerZitat={{
         text: 'Ich hab die Simulation mit dem Lehrlingsgeld gestartet, und plötzlich wollten alle wissen: Was verdient man als Elektriker? Und als Friseurin? Das war ein Gespräch über Berufswahl, das ich so nicht geplant hatte, und das war das Beste an der Stunde.',
-        person: 'Lehrerin für Berufsorientierung, PTS Niederösterreich',
+        person: 'Lehrer für Berufsorientierung, PTS Niederösterreich',
       }}
       lehrerFoto="/fotos/lehrer/pts.png"
       gruenderStatement="Schüler:innen der PTS stehen kurz vor ihrer Berufswahl und dem ersten echten Einkommen. Skills-UP! gibt ihnen das Handwerkszeug, das kein Beruf automatisch mitliefert: wie man mit Geld wirklich umgeht, und welche Entscheidungen man lieber nicht bereuen möchte."
@@ -184,6 +190,29 @@ export default function PtsPage() {
           { zeile: 'Fortschritt Sparziel|61 %|61%', typ: 'bar' },
         ],
       }}
+      faqs={[
+        { q: 'In welche PTS-Fächer passt Skills-UP!?', a: 'Berufsorientierung, Lebenskunde und der Klassenvorstand sind die natürlichen Einsatzorte. Die Kurzmodule (15 Min.) sind ideal für Einstiegssequenzen, die Langmodule für projektartige Einheiten.' },
+        { q: 'Ist Skills-UP! für Schülerinnen mit unterschiedlichen Lernständen geeignet?', a: 'Ja. PTS-Klassen sind oft heterogen. Skills-UP! arbeitet mit Videos, interaktiven Szenarien und Gamification — das funktioniert unabhängig vom Lesestand und erreicht auch Jugendliche, die mit klassischen Texten schwerer erreicht werden.' },
+        { q: 'Was passiert nach der PTS? Gibt es Übergangsinhalte zur Berufsschule?', a: 'Die Module zu Lehrlingsentgelt, Lohnzettel und Budgetplanung sind direkt auf die Situation nach der PTS ausgerichtet. Schülerinnen, die in eine Lehre wechseln, lernen genau das, was sie ab dem ersten Arbeitstag brauchen.' },
+      ]}
+      verwandteSchultypen={[
+        { slug: 'berufsschule', label: 'Berufsschule', teaser: 'Duales System: Finanzbildung für Lehrlinge direkt im Betriebsalltag.' },
+        { slug: 'hlw', label: 'HLW & Fachschulen', teaser: 'Praxisorientierte Finanzbildung für soziale und wirtschaftliche Berufe.' },
+        { slug: 'bafep', label: 'BAfEP & BASOP', teaser: 'Pädagogik und Soziales: Finanzbildung für ein selbstbestimmtes Berufsleben.' },
+      ]}
+      testimonials={[
+        {
+          text: 'PTS-Schüler:innen sehen oft wenig Sinn in Schule. Aber wenn es ums eigene Geld geht, sind alle dabei. Die Simulation zum Führerschein-Sparziel hat die Klasse mehr motiviert als jede Übung davor.',
+          person: 'Klaus F.',
+          rolle: 'Berufsorientierungslehrer',
+          schule: 'PTS Oberösterreich',
+        },
+        {
+          text: 'Viele unserer Schüler:innen haben zuhause kein Vorbild für finanzielles Denken. Skills-UP! gibt ihnen Grundlagen, die sie sonst nirgends bekommen würden.',
+          person: 'Renate B.',
+          rolle: 'Klassenlehrerin PTS',
+        },
+      ]}
     />
   )
 }

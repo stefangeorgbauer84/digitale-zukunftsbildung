@@ -2,10 +2,12 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
+import { usePathname } from 'next/navigation'
 import SiteNav from '@/components/SiteNav'
 import AktiengameCTA from '@/components/AktiengameCTA'
 import SiteFooter from '@/components/SiteFooter'
 import VideoSection from '@/components/VideoSection'
+import ContactForm from '@/components/ContactForm'
 
 export interface UnterrichtsEinheit {
   schritt: string
@@ -79,6 +81,10 @@ export interface SchulPageProps {
   icon: React.ReactNode
   highlightSimulation?: HighlightSimulation
   lernpfad?: LernpfadStufe[]
+  kontaktStattMarktplatz?: boolean
+  testimonials?: { text: string; person: string; rolle: string; schule?: string }[]
+  verwandteSchultypen?: { slug: string; label: string; teaser: string }[]
+  faqs?: { q: string; a: string }[]
 }
 
 const checkIcon = (
@@ -98,13 +104,45 @@ export default function SchulPage({
   schulstufen, lehrplanFach, lehrerProblem, intro,
   lehrplanPassung, unterrichtsEinheiten, module, simulationen, themen,
   features, lehrerZitat, lehrerFoto, gruenderStatement, icon,
-  highlightSimulation, lernpfad,
+  highlightSimulation, lernpfad, kontaktStattMarktplatz, testimonials, verwandteSchultypen, faqs,
 }: SchulPageProps) {
 
   const totalMinuten = unterrichtsEinheiten.reduce((s, e) => s + e.zeitMinuten, 0)
+  const pathname = usePathname()
+  const canonicalUrl = `https://www.digitale-zukunftsbildung.eu${pathname}`
+
+  const breadcrumbJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Startseite', item: 'https://www.digitale-zukunftsbildung.eu' },
+      { '@type': 'ListItem', position: 2, name: 'Schultypen', item: 'https://www.digitale-zukunftsbildung.eu/schulen' },
+      { '@type': 'ListItem', position: 3, name: `Skills-UP! für ${name}`, item: canonicalUrl },
+    ],
+  }
+
+  const faqJsonLd = faqs && faqs.length > 0 ? {
+    '@context': 'https://schema.org',
+    '@type': 'FAQPage',
+    mainEntity: faqs.map(f => ({
+      '@type': 'Question',
+      name: f.q,
+      acceptedAnswer: { '@type': 'Answer', text: f.a },
+    })),
+  } : null
 
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+      {faqJsonLd && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+      )}
       <SiteNav />
 
       {/* ── Hero ───────────────────────────────────────────── */}
@@ -161,13 +199,22 @@ export default function SchulPage({
               <p className="text-white/75 font-body text-lg leading-relaxed mb-8">{intro}</p>
 
               <div className="flex flex-wrap gap-3">
-                <a href="https://www.marktplatz-lernapps.at/product-detail?product=859"
-                  target="_blank" rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl text-white transition-all hover:scale-105 active:scale-95"
-                  style={{ background: 'rgba(255,255,255,0.25)', border: '1px solid rgba(255,255,255,0.35)' }}>
-                  Skills-UP! am Marktplatz Lernapps auswählen
-                  {arrowIcon}
-                </a>
+                {kontaktStattMarktplatz ? (
+                  <a href="mailto:info@digitale-zukunftsbildung.eu?subject=Individuelles%20Angebot%20Berufsschule&body=Hallo%2C%0A%0Awir%20interessieren%20uns%20f%C3%BCr%20Skills-UP!%20an%20unserer%20Berufsschule%20und%20m%C3%B6chten%20ein%20individuelles%20Angebot%20erhalten.%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen"
+                    className="inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl text-white transition-all hover:scale-105 active:scale-95"
+                    style={{ background: 'rgba(255,255,255,0.25)', border: '1px solid rgba(255,255,255,0.35)' }}>
+                    Uns kontaktieren für ein individuelles Angebot
+                    {arrowIcon}
+                  </a>
+                ) : (
+                  <a href="https://www.marktplatz-lernapps.at/product-detail?product=859"
+                    target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl text-white transition-all hover:scale-105 active:scale-95"
+                    style={{ background: 'rgba(255,255,255,0.25)', border: '1px solid rgba(255,255,255,0.35)' }}>
+                    Skills-UP! am Marktplatz Lernapps für das Schuljahr 2026/27 auswählen
+                    {arrowIcon}
+                  </a>
+                )}
                 <a href="#unterricht"
                   className="inline-flex items-center gap-2 font-body font-600 text-sm px-6 py-3 rounded-xl text-white/80 hover:text-white transition-all"
                   style={{ border: '1px solid rgba(255,255,255,0.2)' }}>
@@ -295,27 +342,50 @@ export default function SchulPage({
       {/* ── Marktplatz CTA Banner ───────────────────────────── */}
       <section className="py-10 bg-white">
         <div className="max-w-4xl mx-auto px-6">
-          <a href="https://www.marktplatz-lernapps.at/product-detail?product=859"
-            target="_blank" rel="noopener noreferrer"
-            className="flex flex-col sm:flex-row items-center justify-between gap-5 rounded-2xl px-8 py-6 transition-all hover:scale-[1.01] active:scale-[0.99]"
-            style={{ background: 'linear-gradient(135deg, #4a2d8a 0%, #2a8a76 100%)', boxShadow: '0 8px 40px rgba(74,45,138,0.25)' }}>
-            <div className="flex items-center gap-4">
-              <div className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.2)' }}>
-                <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
-                </svg>
+          {kontaktStattMarktplatz ? (
+            <a href="mailto:info@digitale-zukunftsbildung.eu?subject=Individuelles%20Angebot%20Berufsschule&body=Hallo%2C%0A%0Awir%20interessieren%20uns%20f%C3%BCr%20Skills-UP!%20an%20unserer%20Berufsschule%20und%20m%C3%B6chten%20ein%20individuelles%20Angebot%20erhalten.%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen"
+              className="flex flex-col sm:flex-row items-center justify-between gap-5 rounded-2xl px-8 py-6 transition-all hover:scale-[1.01] active:scale-[0.99]"
+              style={{ background: 'linear-gradient(135deg, #4a2d8a 0%, #2a8a76 100%)', boxShadow: '0 8px 40px rgba(74,45,138,0.25)' }}>
+              <div className="flex items-center gap-4">
+                <div className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.2)' }}>
+                  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/><polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-heading font-700 text-white text-lg leading-tight">Uns kontaktieren für ein individuelles Angebot</p>
+                  <p className="font-body text-white/65 text-sm mt-0.5">Kein Marktplatz · Direkte Absprache · Individuell auf eure Schule zugeschnitten</p>
+                </div>
               </div>
-              <div>
-                <p className="font-heading font-700 text-white text-lg leading-tight">Skills-UP! am Marktplatz Lernapps auswählen</p>
-                <p className="font-body text-white/65 text-sm mt-0.5">Offiziell zertifiziert · Sofort verfügbar · Für alle Schultypen</p>
+              <span className="shrink-0 inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl text-white"
+                style={{ background: 'rgba(255,255,255,0.2)', border: '1px solid rgba(255,255,255,0.35)' }}>
+                Jetzt schreiben
+                {arrowIcon}
+              </span>
+            </a>
+          ) : (
+            <a href="https://www.marktplatz-lernapps.at/product-detail?product=859"
+              target="_blank" rel="noopener noreferrer"
+              className="flex flex-col sm:flex-row items-center justify-between gap-5 rounded-2xl px-8 py-6 transition-all hover:scale-[1.01] active:scale-[0.99]"
+              style={{ background: 'linear-gradient(135deg, #4a2d8a 0%, #2a8a76 100%)', boxShadow: '0 8px 40px rgba(74,45,138,0.25)' }}>
+              <div className="flex items-center gap-4">
+                <div className="shrink-0 w-12 h-12 rounded-xl flex items-center justify-center" style={{ background: 'rgba(255,255,255,0.2)' }}>
+                  <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/>
+                  </svg>
+                </div>
+                <div>
+                  <p className="font-heading font-700 text-white text-lg leading-tight">Skills-UP! am Marktplatz Lernapps für das Schuljahr 2026/27 auswählen</p>
+                  <p className="font-body text-white/65 text-sm mt-0.5">Offiziell zertifiziert · Sofort verfügbar · Für alle Schultypen</p>
+                </div>
               </div>
-            </div>
-            <span className="shrink-0 inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl text-white"
-              style={{ background: 'rgba(255,255,255,0.2)', border: '1px solid rgba(255,255,255,0.35)' }}>
-              Jetzt auswählen
-              {arrowIcon}
-            </span>
-          </a>
+              <span className="shrink-0 inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl text-white"
+                style={{ background: 'rgba(255,255,255,0.2)', border: '1px solid rgba(255,255,255,0.35)' }}>
+                Jetzt auswählen
+                {arrowIcon}
+              </span>
+            </a>
+          )}
         </div>
       </section>
 
@@ -516,10 +586,10 @@ export default function SchulPage({
                   <p className="font-body text-sm text-white/65 leading-relaxed">
                     Fragen zur Lehrplanintegration, zum Rollout oder zu einem bestimmten Modul? Du bekommst eine Antwort von einem Menschen, innerhalb von 24 Stunden. Kein Helpdesk-Ticket, kein Chatbot.
                   </p>
-                  <a href="/#kontakt" className="inline-flex items-center gap-1.5 mt-3 text-xs font-body font-700 transition-colors hover:opacity-80" style={{ color: '#9b7ed4' }}>
+                  <Link href="/#kontakt" className="inline-flex items-center gap-1.5 mt-3 text-xs font-body font-700 transition-colors hover:opacity-80" style={{ color: '#9b7ed4' }}>
                     Jetzt anfragen
                     <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -856,13 +926,22 @@ export default function SchulPage({
                   Aufgeteilt in {lernpfad.length} Stufen, je nach Tempo auch über mehrere Unterrichtsstunden verteilt.
                 </p>
               </div>
-              <a href="https://www.marktplatz-lernapps.at/product-detail?product=859"
-                target="_blank" rel="noopener noreferrer"
-                className="shrink-0 inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl text-white transition-all hover:scale-105 active:scale-95"
-                style={{ background: gradient }}>
-                Skills-UP! am Marktplatz Lernapps auswählen
-                {arrowIcon}
-              </a>
+              {kontaktStattMarktplatz ? (
+                <a href="mailto:info@digitale-zukunftsbildung.eu?subject=Individuelles%20Angebot%20Berufsschule&body=Hallo%2C%0A%0Awir%20interessieren%20uns%20f%C3%BCr%20Skills-UP!%20an%20unserer%20Berufsschule%20und%20m%C3%B6chten%20ein%20individuelles%20Angebot%20erhalten.%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen"
+                  className="shrink-0 inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl text-white transition-all hover:scale-105 active:scale-95"
+                  style={{ background: gradient }}>
+                  Uns kontaktieren für ein individuelles Angebot
+                  {arrowIcon}
+                </a>
+              ) : (
+                <a href="https://www.marktplatz-lernapps.at/product-detail?product=859"
+                  target="_blank" rel="noopener noreferrer"
+                  className="shrink-0 inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl text-white transition-all hover:scale-105 active:scale-95"
+                  style={{ background: gradient }}>
+                  Skills-UP! am Marktplatz Lernapps für das Schuljahr 2026/27 auswählen
+                  {arrowIcon}
+                </a>
+              )}
             </div>
           </div>
         </section>
@@ -1340,13 +1419,22 @@ export default function SchulPage({
             Kein Ausfüllen langer Formulare. Ein kurzes Gespräch reicht, um zu wissen, ob Skills-UP! zu deiner Schule passt.
           </p>
           <div className="flex flex-wrap justify-center gap-4 mb-12">
-            <a href="https://www.marktplatz-lernapps.at/product-detail?product=859"
-              target="_blank" rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 font-body font-700 text-base px-8 py-4 rounded-xl text-white transition-all hover:scale-105 active:scale-95"
-              style={{ background: 'linear-gradient(135deg, #4a2d8a, #2a8a76)', boxShadow: '0 8px 32px rgba(107,77,176,0.4)' }}>
-              Skills-UP! am Marktplatz Lernapps auswählen
-              {arrowIcon}
-            </a>
+            {kontaktStattMarktplatz ? (
+              <a href="mailto:info@digitale-zukunftsbildung.eu?subject=Individuelles%20Angebot%20Berufsschule&body=Hallo%2C%0A%0Awir%20interessieren%20uns%20f%C3%BCr%20Skills-UP!%20an%20unserer%20Berufsschule%20und%20m%C3%B6chten%20ein%20individuelles%20Angebot%20erhalten.%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen"
+                className="inline-flex items-center gap-2 font-body font-700 text-base px-8 py-4 rounded-xl text-white transition-all hover:scale-105 active:scale-95"
+                style={{ background: 'linear-gradient(135deg, #4a2d8a, #2a8a76)', boxShadow: '0 8px 32px rgba(107,77,176,0.4)' }}>
+                Uns kontaktieren für ein individuelles Angebot
+                {arrowIcon}
+              </a>
+            ) : (
+              <a href="https://www.marktplatz-lernapps.at/product-detail?product=859"
+                target="_blank" rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 font-body font-700 text-base px-8 py-4 rounded-xl text-white transition-all hover:scale-105 active:scale-95"
+                style={{ background: 'linear-gradient(135deg, #4a2d8a, #2a8a76)', boxShadow: '0 8px 32px rgba(107,77,176,0.4)' }}>
+                Skills-UP! am Marktplatz Lernapps für das Schuljahr 2026/27 auswählen
+                {arrowIcon}
+              </a>
+            )}
             <Link href="/schulen"
               className="inline-flex items-center gap-2 font-body font-600 text-base px-8 py-4 rounded-xl text-white/80 hover:text-white transition-all"
               style={{ border: '1px solid rgba(255,255,255,0.2)' }}>
@@ -1354,25 +1442,126 @@ export default function SchulPage({
             </Link>
           </div>
 
-          {/* Andere Schultypen mini-nav */}
+          {/* Verwandte Schultypen */}
           <div className="border-t border-white/10 pt-10">
-            <p className="text-white/40 text-xs font-body uppercase tracking-widest mb-5">Skills-UP! auch für andere Schultypen</p>
-            <div className="flex flex-wrap justify-center gap-3">
-              {[
-                { slug: 'ahs', label: 'AHS' },
-                { slug: 'hak', label: 'HAK & HAS' },
-                { slug: 'htl', label: 'HTL' },
-                { slug: 'hlw', label: 'HLW' },
-                { slug: 'bafep', label: 'BAfEP & BASOP' },
-                { slug: 'pts', label: 'PTS' },
-                { slug: 'berufsschule', label: 'Berufsschule' },
-              ].map((s) => (
-                <Link key={s.slug} href={`/schulen/${s.slug}`}
-                  className="text-white/60 hover:text-white text-sm font-body font-600 px-4 py-2 rounded-xl hover:bg-white/10 transition-all">
-                  {s.label}
-                </Link>
+            <p className="text-white/40 text-xs font-body uppercase tracking-widest mb-5 text-center">Skills-UP! auch für andere Schultypen</p>
+            {verwandteSchultypen && verwandteSchultypen.length > 0 ? (
+              <div className="grid sm:grid-cols-3 gap-4">
+                {verwandteSchultypen.map((s) => (
+                  <Link key={s.slug} href={`/schulen/${s.slug}`}
+                    className="rounded-2xl p-5 flex flex-col gap-2 transition-all hover:scale-[1.02]"
+                    style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.12)' }}>
+                    <p className="font-heading font-700 text-white text-sm">{s.label}</p>
+                    <p className="font-body text-white/50 text-xs leading-relaxed">{s.teaser}</p>
+                    <span className="text-xs font-body font-700 mt-1 flex items-center gap-1" style={{ color: '#9b7ed4' }}>
+                      Mehr erfahren
+                      <svg aria-hidden="true" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div className="flex flex-wrap justify-center gap-3">
+                {[
+                  { slug: 'ahs', label: 'AHS' },
+                  { slug: 'hak', label: 'HAK & HAS' },
+                  { slug: 'htl', label: 'HTL' },
+                  { slug: 'hlw', label: 'HLW' },
+                  { slug: 'bafep', label: 'BAfEP & BASOP' },
+                  { slug: 'pts', label: 'PTS' },
+                  { slug: 'berufsschule', label: 'Berufsschule' },
+                ].map((s) => (
+                  <Link key={s.slug} href={`/schulen/${s.slug}`}
+                    className="text-white/60 hover:text-white text-sm font-body font-600 px-4 py-2 rounded-xl hover:bg-white/10 transition-all">
+                    {s.label}
+                  </Link>
+                ))}
+              </div>
+            )}
+          </div>
+        </div>
+      </section>
+
+      {/* ── FAQ ──────────────────────────────────────────────── */}
+      {faqs && faqs.length > 0 && (
+        <section className="py-14" style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)' }}>
+          <div className="max-w-3xl mx-auto px-6">
+            <p className="text-center text-xs font-body font-700 uppercase tracking-widest mb-6" style={{ color: farbe }}>
+              Häufige Fragen
+            </p>
+            <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-8" style={{ color: '#1a1040' }}>
+              Skills-UP! für {name} — die wichtigsten Fragen.
+            </h2>
+            <div className="space-y-4">
+              {faqs.map((faq, i) => (
+                <div key={i} className="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm">
+                  <p className="font-heading font-700 text-base mb-2" style={{ color: '#1a1040' }}>{faq.q}</p>
+                  <p className="font-body text-gray-600 text-sm leading-relaxed">{faq.a}</p>
+                </div>
               ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Testimonials ─────────────────────────────────────── */}
+      {testimonials && testimonials.length > 0 && (
+        <section className="py-14 bg-white">
+          <div className="max-w-5xl mx-auto px-6">
+            <p className="text-center text-xs font-body font-700 uppercase tracking-widest mb-8" style={{ color: farbe }}>
+              Was Lehrkräfte sagen
+            </p>
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {testimonials.map((t, i) => (
+                <div key={i} className="rounded-2xl p-6 border border-gray-100 bg-gray-50 flex flex-col gap-4">
+                  <svg aria-hidden="true" width="28" height="22" viewBox="0 0 48 36" fill="none">
+                    <path d="M0 36V21.6C0 9.6 6.4 2.4 19.2 0l2.4 4.8C14.4 6.4 10.4 10.4 10.4 16.8H19.2V36H0ZM28.8 36V21.6C28.8 9.6 35.2 2.4 48 0l2.4 4.8C43.2 6.4 39.2 10.4 39.2 16.8H48V36H28.8Z"
+                      fill={farbe} opacity="0.2"/>
+                  </svg>
+                  <p className="font-body text-gray-700 text-sm leading-relaxed flex-1 italic">&ldquo;{t.text}&rdquo;</p>
+                  <div>
+                    <p className="font-heading font-700 text-sm" style={{ color: '#1a1040' }}>{t.person}</p>
+                    <p className="font-body text-xs text-gray-400 mt-0.5">{t.rolle}{t.schule ? ` · ${t.schule}` : ''}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* ── Kontakt direkt auf der Schulseite ───────────────── */}
+      <section
+        id="kontakt"
+        className="py-20"
+        style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 60%, #1a5c4e 100%)' }}
+      >
+        <div className="max-w-2xl mx-auto px-6">
+          <div className="text-center mb-10">
+            <span className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest px-4 py-2 rounded-full mb-4"
+              style={{ background: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.6)', border: '1px solid rgba(255,255,255,0.15)' }}>
+              <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/><polyline points="22,6 12,13 2,6"/>
+              </svg>
+              Direkt anfragen
+            </span>
+            <h2 className="font-heading text-3xl font-bold text-white mb-3">
+              Skills-UP! für {name} starten?
+            </h2>
+            <p className="font-body text-white/60 text-base max-w-md mx-auto mb-6">
+              Meld dich direkt bei uns — wir antworten innerhalb von 24 Stunden. Kein Chatbot, kein Helpdesk.
+            </p>
+            <a
+              href={`mailto:info@digitale-zukunftsbildung.eu?subject=Demo-Anfrage%20Skills-UP!%20f%C3%BCr%20${encodeURIComponent(name)}&body=Hallo%20Marina%2C%0A%0Awir%20unterrichten%20an%20einer%20${encodeURIComponent(name)}%20und%20m%C3%B6chten%20gerne%20eine%20kurze%20Demo%20von%20Skills-UP!%20vereinbaren.%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen`}
+              className="inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl text-white transition-all hover:opacity-90 active:scale-95 mb-8"
+              style={{ background: farbe, border: `1px solid ${farbe}` }}
+            >
+              <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+              Kostenlose Demo für {kurzname} anfragen
+            </a>
+          </div>
+          <div className="rounded-2xl p-8" style={{ background: 'rgba(255,255,255,0.07)', border: '1px solid rgba(255,255,255,0.12)' }}>
+            <ContactForm light />
           </div>
         </div>
       </section>

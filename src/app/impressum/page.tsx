@@ -6,6 +6,7 @@ import SiteFooter from '@/components/SiteFooter'
 export const metadata: Metadata = {
   title: 'Impressum | Verein zur Entwicklung der digitalen Zukunftsbildung',
   description: 'Impressum und Datenschutzerklärung des Vereins zur Entwicklung der digitalen Zukunftsbildung.',
+  alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/impressum' },
 }
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
@@ -110,7 +111,7 @@ export default function Impressum() {
           </Section>
 
           <Section title="Vereinsregister">
-            <p>ZVR-Zahl (Zentrales Vereinsregister): wird nachgereicht</p>
+            <p>ZVR-Zahl (Zentrales Vereinsregister): <strong className="text-text-primary">[Bitte vor Launch eintragen]</strong></p>
           </Section>
 
           <Section title="Haftungsausschluss">
@@ -156,26 +157,55 @@ export default function Impressum() {
               <p>
                 Wir erheben nur jene personenbezogenen Daten, die du uns im Rahmen des Kontaktformulars
                 freiwillig mitteilst: Name, E-Mail-Adresse und Nachrichteninhalt. Diese Daten werden
-                ausschließlich zur Beantwortung deiner Anfrage verwendet und danach gelöscht.
+                ausschließlich zur Beantwortung deiner Anfrage verwendet. Die Daten werden nach Abschluss
+                der Bearbeitung innerhalb von 30 Tagen aus den Systemen unseres E-Mail-Dienstleisters gelöscht.
+                Anfragen auf Löschung nach Art. 17 DSGVO können jederzeit per E-Mail an
+                marina@digitale-zukunftsbildung.eu gestellt werden.
               </p>
             </Sub>
 
-            <Sub title="E-Mail-Versand">
+            <Sub title="E-Mail-Versand (Resend)">
               <p>
-                Nachrichten aus dem Kontaktformular werden über den Dienst Resend (Resend Inc., USA)
+                Nachrichten aus dem Kontaktformular werden über den Dienst{' '}
+                <strong>Resend</strong> (Resend Inc., 2261 Market Street #5039, San Francisco, CA 94114, USA)
                 versendet. Resend verarbeitet die von dir übermittelten Daten als Auftragsverarbeiter
-                gemäß Art. 28 DSGVO. Weitere Informationen:{' '}
+                gemäß Art. 28 DSGVO auf Grundlage eines abgeschlossenen
+                Auftragsverarbeitungsvertrags (DPA). Die Übermittlung in die USA erfolgt auf Grundlage
+                der EU-Standardvertragsklauseln (SCCs) gemäß Art. 46 Abs. 2 lit. c DSGVO.{' '}
+                <a href="https://resend.com/dpa" target="_blank" rel="noopener noreferrer"
+                  className="hover:underline" style={{ color: '#4a2d8a' }}>DPA ansehen</a>{' '}·{' '}
                 <a href="https://resend.com/privacy" target="_blank" rel="noopener noreferrer"
-                  className="hover:underline" style={{ color: '#4a2d8a' }}>resend.com/privacy</a>
+                  className="hover:underline" style={{ color: '#4a2d8a' }}>Datenschutzerklärung Resend</a>
               </p>
             </Sub>
 
-            <Sub title="Hosting">
+            <Sub title="Hosting (Vercel)">
               <p>
-                Diese Website wird über Vercel (Vercel Inc., USA) gehostet. Vercel kann dabei technische
-                Zugriffsdaten kurzzeitig speichern. Weitere Informationen:{' '}
+                Diese Website wird über{' '}
+                <strong>Vercel</strong> (Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA)
+                gehostet. Beim Aufruf der Website verarbeitet Vercel technische Zugriffsdaten
+                (IP-Adresse, Zeitstempel, aufgerufene Seite) zur Bereitstellung des Dienstes.
+                Die Übermittlung in die USA erfolgt auf Grundlage der EU-Standardvertragsklauseln
+                (SCCs) gemäß Art. 46 Abs. 2 lit. c DSGVO.{' '}
+                <a href="https://vercel.com/legal/dpa" target="_blank" rel="noopener noreferrer"
+                  className="hover:underline" style={{ color: '#4a2d8a' }}>DPA ansehen</a>{' '}·{' '}
                 <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer"
-                  className="hover:underline" style={{ color: '#4a2d8a' }}>vercel.com/legal/privacy-policy</a>
+                  className="hover:underline" style={{ color: '#4a2d8a' }}>Datenschutzerklärung Vercel</a>
+              </p>
+            </Sub>
+
+            <Sub title="YouTube-Videos">
+              <p>
+                Auf dieser Website werden Videos von{' '}
+                <strong>YouTube</strong> (Google LLC, 1600 Amphitheatre Parkway, Mountain View, CA 94043, USA)
+                eingebunden. Videos werden erst nach deiner ausdrücklichen Zustimmung geladen
+                (Zwei-Klick-Lösung). Beim Abspielen überträgt dein Browser Daten (u.a. IP-Adresse,
+                Geräteinformationen) an Google. Wir verwenden den datenschutzfreundlichen Modus
+                (youtube-nocookie.com). Die Übermittlung in die USA erfolgt auf Grundlage der
+                EU-Standardvertragsklauseln gemäß Art. 46 Abs. 2 lit. c DSGVO.
+                Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).{' '}
+                <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer"
+                  className="hover:underline" style={{ color: '#4a2d8a' }}>Datenschutzerklärung Google</a>
               </p>
             </Sub>
 

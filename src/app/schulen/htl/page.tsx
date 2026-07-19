@@ -2,8 +2,14 @@ import type { Metadata } from 'next'
 import SchulPage from '@/components/SchulPage'
 
 export const metadata: Metadata = {
-  title: 'HTL | Skills-UP! Finanzbildung',
-  description: 'Skills-UP! für die HTL. Finanzkompetenz für den Berufseinstieg. Gehaltsverhandlung, Sparen, Investieren. Fertige Module, null Vorbereitung.',
+  title: 'Finanzbildung HTL Österreich | Skills-UP! – Berufseinstieg, Gehaltsverhandlung',
+  description: 'Skills-UP! für die HTL (9.–13. Schulstufe, 1.–5. Jahrgang): Finanzkompetenz für den Berufseinstieg. Gehaltsverhandlung, Sparen, Investieren – österreichische Alltagsszenarien. Fertige Module, 0 Vorbereitung.',
+  alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/schulen/htl' },
+  openGraph: {
+    title: 'Finanzbildung für die HTL – Skills-UP! Österreich',
+    description: 'Praxisnahe Finanzbildung für HTL-Schüler:innen. Berufseinstieg, Gehaltsverhandlung, Investieren. Lehrplankonform, sofort einsetzbar.',
+    url: 'https://www.digitale-zukunftsbildung.eu/schulen/htl',
+  },
 }
 
 const icon = (
@@ -187,6 +193,29 @@ export default function HtlPage() {
           { zeile: 'Fixkosten-Anteil|62 %|62%', typ: 'bar' },
         ],
       }}
+      faqs={[
+        { q: 'In welchen HTL-Fächern ist Skills-UP! einsetzbar?', a: 'Angewandte Mathematik, Unternehmensführung, Betriebswirtschaft oder im Klassenvorstand. Die Module sind flexibel — 15 oder 50 Minuten, ohne Vorbereitungsaufwand für die Lehrkraft.' },
+        { q: 'Ist Finanzbildung für HTL-Schüler relevant?', a: 'Absolut. HTL-Absolventinnen und -Absolventen starten mit überdurchschnittlichen Einstiegsgehältern — aber oft ohne Wissen über Lohnzettel, Steuer oder Investieren. Skills-UP! schließt genau diese Lücke.' },
+        { q: 'Wie viel technisches Setup ist nötig?', a: 'Keines. Skills-UP! läuft im Browser, ist DSGVO-konform und braucht keine Installation, kein IT-Ticket und keinen Admin-Zugang. Start in unter 2 Minuten.' },
+      ]}
+      verwandteSchultypen={[
+        { slug: 'hak', label: 'HAK & HAS', teaser: 'Betriebswirtschaft persönlich gemacht — Lohnzettel, Budget, Investieren.' },
+        { slug: 'berufsschule', label: 'Berufsschule', teaser: 'Duale Ausbildung: Finanzbildung für Lehrlinge mit echtem Gehalt ab Tag 1.' },
+        { slug: 'ahs', label: 'AHS-Oberstufe', teaser: 'Allgemeinbildung und Finanzkompetenz — für Studium, Beruf und selbstständiges Leben.' },
+      ]}
+      testimonials={[
+        {
+          text: 'HTL-Schüler denken technisch, nicht finanziell. Die Gehaltsverhandlungs-Simulation hat das geändert. Plötzlich recherchieren sie Kollektivverträge und fragen nach Lohnstufen. Das ist Berufsvorbereitung.',
+          person: 'DI Klaus M.',
+          rolle: 'Lehrer Unternehmensführung',
+          schule: 'HTL Salzburg',
+        },
+        {
+          text: 'Wir haben Skills-UP! als Projekt im Klassenvorstand eingesetzt. Kein Aufwand für mich, die Schüler:innen haben 50 Minuten konzentriert gearbeitet — das passiert selten.',
+          person: 'Ing. Maria S.',
+          rolle: 'Klassenlehrerin HTL',
+        },
+      ]}
     />
   )
 }

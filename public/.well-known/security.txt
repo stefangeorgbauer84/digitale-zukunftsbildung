@@ -1,0 +1,4 @@
+Contact: mailto:info@digitale-zukunftsbildung.eu
+Expires: 2027-07-31T22:00:00.000Z
+Preferred-Languages: de, en
+Canonical: https://www.digitale-zukunftsbildung.eu/.well-known/security.txt

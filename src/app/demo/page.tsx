@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: 'Konsumfallen-Simulation | Skills-UP! Demo',
   description:
     'Teste gratis die Konsumfallen-Simulation von Skills-UP!: 10 realistische Szenarien mit Netflix-Fallen, Fake-Countdowns, Gaming-Mikrotransaktionen und mehr. Keine Anmeldung nötig.',
+  alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/demo' },
   openGraph: {
     title: 'Konsumfallen-Parcours — Gratis Demo | Skills-UP!',
     description:

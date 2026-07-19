@@ -90,7 +90,7 @@ export default function SiteNav({ dark = false }: { dark?: boolean }) {
               {l.label}
             </Link>
           ))}
-          <a
+          <Link
             href="/#kontakt"
             className={`ml-2 px-5 py-2.5 rounded-xl text-sm font-body font-700 transition-all active:scale-95 ${
               solid
@@ -99,7 +99,7 @@ export default function SiteNav({ dark = false }: { dark?: boolean }) {
             }`}
           >
             Kontakt
-          </a>
+          </Link>
         </nav>
 
         <button
@@ -139,13 +139,13 @@ export default function SiteNav({ dark = false }: { dark?: boolean }) {
                 {l.label}
               </Link>
             ))}
-            <a
+            <Link
               href="/#kontakt"
               onClick={() => setOpen(false)}
               className="mt-3 block text-center bg-primary-dark text-white px-5 py-3 rounded-xl text-sm font-body font-700"
             >
               Kontakt aufnehmen
-            </a>
+            </Link>
           </nav>
         </div>
       )}

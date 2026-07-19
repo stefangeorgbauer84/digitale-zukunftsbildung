@@ -24,6 +24,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/lehrplan-mapping`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/lernziele`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/demo-anfragen`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/demo`, lastModified: now, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/aktiengame`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${base}/impressum`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ]

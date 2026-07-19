@@ -5,8 +5,20 @@ import SiteFooter from '@/components/SiteFooter'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Über uns | Skills-UP! – Finanzbildung für Schulen',
-  description: 'Skills-UP! erreicht heute über 1.200 Schüler:innen in österreichischen Schulen. Lern das Team, die Geschichte und die didaktischen Prinzipien hinter dem Bildungsprogramm kennen.',
+  title: 'Über uns – Team & Mission | Skills-UP! Finanzbildung Österreich',
+  description: 'Skills-UP! erreicht heute über 1.830 Schüler:innen in österreichischen Schulen. WKÖ-zertifiziert, Top-3 MEGA Bildungsmillion 2025. Lern das Team und die Mission hinter dem Programm kennen.',
+  alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/ueber-uns' },
+  openGraph: {
+    title: 'Über uns – Team & Mission | Skills-UP! Österreich',
+    description: 'Über 1.830 Schüler:innen, WKÖ-zertifiziert, Top-3 MEGA Bildungsmillion 2025. Das Team hinter Skills-UP!',
+    url: 'https://www.digitale-zukunftsbildung.eu/ueber-uns',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Über uns – Skills-UP! Finanzbildung Österreich',
+    description: 'Über 1.830 Schüler:innen. WKÖ-zertifiziert. Top-3 MEGA Bildungsmillion 2025.',
+  },
 }
 
 const auszeichnungen = [
@@ -57,9 +69,51 @@ const auszeichnungen = [
   },
 ]
 
+const orgJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'EducationalOrganization',
+  name: 'Verein zur Entwicklung der digitalen Zukunftsbildung',
+  alternateName: 'Digitale Zukunftsbildung',
+  url: 'https://www.digitale-zukunftsbildung.eu',
+  logo: 'https://www.digitale-zukunftsbildung.eu/fotos/Logo.png',
+  description: 'Österreichischer gemeinnütziger Verein für Finanzbildung an Schulen. Betreiber des Programms Skills-UP!',
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: 'Straußengasse 12/26',
+    addressLocality: 'Wien',
+    postalCode: '1050',
+    addressCountry: 'AT',
+  },
+  sameAs: [
+    'https://www.linkedin.com/company/verein-zur-entwicklung-der-digitalen-zukunftsbildung',
+  ],
+  member: [
+    {
+      '@type': 'Person',
+      name: 'Marina Winkler',
+      jobTitle: 'Pädagogische Leitung',
+      url: 'https://www.digitale-zukunftsbildung.eu/ueber-uns',
+      sameAs: ['https://www.linkedin.com/in/marina-winkler-finanzbildung/'],
+      worksFor: { '@type': 'Organization', name: 'Verein zur Entwicklung der digitalen Zukunftsbildung' },
+      knowsAbout: ['Finanzbildung', 'Pädagogik', 'Unterrichtsentwicklung', 'Österreich'],
+    },
+    {
+      '@type': 'Person',
+      name: 'Stefan Bauer',
+      honorificPrefix: 'Dr.',
+      jobTitle: 'Gründer & Vorstand',
+      url: 'https://www.digitale-zukunftsbildung.eu/ueber-uns',
+      sameAs: ['https://www.linkedin.com/in/stefangeorgbauer/'],
+      worksFor: { '@type': 'Organization', name: 'Verein zur Entwicklung der digitalen Zukunftsbildung' },
+      knowsAbout: ['Finanzbildung', 'EdTech', 'Bildungsinnovation', 'Österreich'],
+    },
+  ],
+}
+
 export default function UeberUns() {
   return (
     <div className="min-h-screen bg-white overflow-x-hidden">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
       <SiteNav />
 
       {/* ── Hero mit MEGA Award Foto ─────────────────────── */}
@@ -398,9 +452,16 @@ export default function UeberUns() {
               <div className="p-6">
                 <h3 className="font-heading font-700 text-base text-text-primary mb-1">Marina Winkler</h3>
                 <p className="text-xs font-body text-primary-medium font-700 mb-3">Obfrau, Pädagogische Leitung &amp; Finanzbildungsexpertin</p>
-                <p className="text-sm font-body text-text-muted leading-relaxed">
+                <p className="text-sm font-body text-text-muted leading-relaxed mb-4">
                   Bildungsexpertin mit Fokus auf Finanzkompetenz, digitalem Lernen und Chancengerechtigkeit. 15 Jahre Erfahrung, von der Bank über internationale Programme bis zum selbst entwickelten Lernprogramm für Jugendliche.
                 </p>
+                <a href="https://www.linkedin.com/in/marina-winkler-finanzbildung/"
+                  target="_blank" rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-body font-700 transition-colors hover:opacity-80"
+                  style={{ color: '#4a2d8a' }}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                  LinkedIn-Profil
+                </a>
               </div>
             </div>
 
@@ -414,9 +475,16 @@ export default function UeberUns() {
               <div className="p-6">
                 <h3 className="font-heading font-700 text-base text-text-primary mb-1">Dr. Stefan Bauer</h3>
                 <p className="text-xs font-body text-primary-medium font-700 mb-3">Vorstand & Finanzbildung</p>
-                <p className="text-sm font-body text-text-muted leading-relaxed">
+                <p className="text-sm font-body text-text-muted leading-relaxed mb-4">
                   Mitglied des Vereinsvorstands. Verbindet wirtschaftliche Expertise mit der Mission, jungen Menschen echte Finanzkompetenz zu vermitteln.
                 </p>
+                <a href="https://www.linkedin.com/in/stefangeorgbauer/"
+                  target="_blank" rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs font-body font-700 transition-colors hover:opacity-80"
+                  style={{ color: '#4a2d8a' }}>
+                  <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+                  LinkedIn-Profil
+                </a>
               </div>
             </div>
           </div>

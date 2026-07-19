@@ -110,7 +110,7 @@ export default function EventImpactHeatmap({ event, assets, state }: Props) {
           })}
         </div>
         <p className="text-xs text-text-muted mt-4 italic">
-          „Ereignis"-Markierung = Sektor direkt durch das Marktereignis beeinflusst. Alle anderen Veränderungen kommen aus der simulierten Marktvolatilität.
+          „Ereignis“-Markierung = Sektor direkt durch das Marktereignis beeinflusst. Alle anderen Veränderungen kommen aus der simulierten Marktvolatilität.
         </p>
       </div>
     </div>

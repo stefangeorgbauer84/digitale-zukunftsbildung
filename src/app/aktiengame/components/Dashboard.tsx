@@ -637,7 +637,7 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound, on
               Unangelegtes Geld kann sich im Lauf der Zeit weniger entwickeln als ein investiertes Portfolio.
             </p>
             <p className="text-xs text-text-muted italic">
-              Lernhinweis: Das nennt man „Cash drag" – zu viel Bargeld reduziert oft die langfristige Rendite.
+              Lernhinweis: Das nennt man „Cash drag“ – zu viel Bargeld reduziert oft die langfristige Rendite.
             </p>
             <div className="flex gap-3">
               <button

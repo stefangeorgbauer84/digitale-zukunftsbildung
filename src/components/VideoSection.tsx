@@ -14,6 +14,25 @@ interface VideoSectionProps {
 
 export default function VideoSection({ variant = 'light', farbe = '#4a2d8a' }: VideoSectionProps) {
   const [playing, setPlaying] = useState(false)
+  const [consentGiven, setConsentGiven] = useState(false)
+
+  const videoJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'VideoObject',
+    name: 'Skills-UP! Produktvideo – Module, Simulationen und Lehrer-Dashboard',
+    description: 'Ein echter Einblick in die Skills-UP! Module, Simulationen und das Lehrer-Dashboard. Finanzbildungsprogramm für österreichische Schulen (AHS, HAK, HTL, HLW, PTS, Berufsschulen).',
+    thumbnailUrl: `https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`,
+    uploadDate: '2025-01-01',
+    duration: 'PT2M',
+    embedUrl: `https://www.youtube-nocookie.com/embed/${VIDEO_ID}`,
+    url: `https://www.youtube.com/watch?v=${VIDEO_ID}`,
+    publisher: {
+      '@type': 'Organization',
+      name: 'Verein zur Entwicklung der digitalen Zukunftsbildung',
+      url: 'https://www.digitale-zukunftsbildung.eu',
+    },
+    inLanguage: 'de-AT',
+  }
 
   const bg =
     variant === 'dark'
@@ -22,6 +41,10 @@ export default function VideoSection({ variant = 'light', farbe = '#4a2d8a' }: V
 
   return (
     <section className="py-20 relative overflow-hidden" style={{ background: bg }}>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(videoJsonLd) }}
+      />
       {/* Orbs */}
       <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(155,126,212,0.15) 0%, transparent 70%)' }} />
@@ -58,7 +81,13 @@ export default function VideoSection({ variant = 'light', farbe = '#4a2d8a' }: V
             {!playing ? (
               /* ── Thumbnail + Play Button ── */
               <button
-                onClick={() => setPlaying(true)}
+                onClick={() => {
+                  if (consentGiven) {
+                    setPlaying(true)
+                  } else {
+                    setConsentGiven(true)
+                  }
+                }}
                 className="w-full h-full relative block group/btn focus:outline-none focus-visible:ring-4 focus-visible:ring-white/40"
                 aria-label="Skills-UP! Video abspielen"
               >
@@ -117,7 +146,7 @@ export default function VideoSection({ variant = 'light', farbe = '#4a2d8a' }: V
                   </span>
                 </div>
               </button>
-            ) : (
+            ) : consentGiven ? (
               /* ── Embedded YouTube Player ── */
               <iframe
                 src={`https://www.youtube-nocookie.com/embed/${VIDEO_ID}?start=${START_SECOND}&autoplay=1&rel=0&modestbranding=1&color=white`}
@@ -126,6 +155,34 @@ export default function VideoSection({ variant = 'light', farbe = '#4a2d8a' }: V
                 allowFullScreen
                 className="w-full h-full"
               />
+            ) : (
+              /* ── YouTube Consent Overlay (DSGVO Two-Click) ── */
+              <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 px-8 text-center"
+                style={{ background: 'rgba(10,5,30,0.92)' }}>
+                <svg aria-hidden="true" width="36" height="36" viewBox="0 0 24 24" fill="none"
+                  stroke="rgba(255,255,255,0.5)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/>
+                  <line x1="12" y1="16" x2="12.01" y2="16"/>
+                </svg>
+                <p className="text-white/80 font-body text-sm max-w-sm leading-relaxed">
+                  Beim Abspielen werden Daten (IP-Adresse, Geräteinformationen) an{' '}
+                  <strong className="text-white">Google LLC (USA)</strong> übertragen.
+                  Google kann dabei Cookies setzen, auch ohne YouTube-Konto.
+                </p>
+                <button
+                  onClick={() => setPlaying(true)}
+                  className="px-6 py-2.5 rounded-xl text-sm font-body font-700 text-white transition-all hover:opacity-90 active:scale-95"
+                  style={{ background: farbe }}
+                >
+                  Video laden und abspielen
+                </button>
+                <p className="text-white/30 font-body text-xs">
+                  Weitere Infos in unserer{' '}
+                  <a href="/impressum#datenschutz" className="underline hover:text-white/60">
+                    Datenschutzerklärung
+                  </a>
+                </p>
+              </div>
             )}
           </div>
         </div>

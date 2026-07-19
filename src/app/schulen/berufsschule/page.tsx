@@ -2,8 +2,14 @@ import type { Metadata } from 'next'
 import SchulPage from '@/components/SchulPage'
 
 export const metadata: Metadata = {
-  title: 'Berufsschulen & Lehre | Skills-UP! Finanzbildung',
-  description: 'Skills-UP! für Berufsschulen und Lehrbetriebe. Lehrlingseinkommen, Ratenkauf, Schuldenprävention und finanzielle Selbstständigkeit. Kurze Module, hohe Relevanz.',
+  title: 'Finanzbildung Berufsschule & Lehre Österreich | Skills-UP! – Schuldenprävention',
+  description: 'Skills-UP! für Berufsschulen und Lehrbetriebe in Österreich: Lehrlingseinkommen, Ratenkauf, Schuldenprävention, finanzielle Selbstständigkeit. Kurze Module, 0 Vorbereitung.',
+  alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/schulen/berufsschule' },
+  openGraph: {
+    title: 'Finanzbildung für Berufsschulen – Skills-UP! Österreich',
+    description: 'Praxisnahe Finanzbildung für Lehrlinge und Berufsschüler:innen. Schuldenprävention, Lehrlingseinkommen, Ratenkauf. Sofort einsetzbar.',
+    url: 'https://www.digitale-zukunftsbildung.eu/schulen/berufsschule',
+  },
 }
 
 const icon = (
@@ -29,7 +35,7 @@ export default function BerufsschulePage() {
       farbe="#4a2d8a"
       farbeHell="#f3f1f9"
       schulstufen="Lehre / 9.–12. Schulstufe"
-      lehrplanFach="Politische Bildung · Lebenskunde · Projektunterricht · Marktplatz Lern-Apps"
+      lehrplanFach="Politische Bildung · Lebenskunde · AWL – Angewandte Wirtschaftslehre"
       icon={icon}
       lehrerProblem="Meine Lehrlinge verdienen schon Geld, aber am Ende des Monats weiß die Hälfte nicht mehr, wo es geblieben ist. Und ich hab kaum Zeit und kein fertiges Material, das das wirklich ändert."
       intro="Lehrlinge stehen nicht kurz vor dem Berufsleben, sie sind bereits mittendrin. Sie verdienen echtes Geld, schließen Verträge ab und treffen täglich finanzielle Entscheidungen. Skills-UP! trifft diese Zielgruppe genau dort: praxisnah, kurz, digital und ohne Vorbereitung für Lehrkräfte. Im Unterschied zur PTS sind Lehrlinge nicht mehr in der Vorbereitung. Sie handeln bereits. Skills-UP! setzt dort an, wo die Fehler schon passieren."
@@ -43,16 +49,8 @@ export default function BerufsschulePage() {
           kontext: 'Eigenverantwortung, Entscheidungskompetenz, kritisches Denken, das sind Kernziele der Berufsschule. Skills-UP! übt genau das mit echten Geldsituationen.',
         },
         {
-          fach: 'Projektunterricht / Projektwochen',
-          kontext: '"Mein Finanzplan für das erste Lehrjahr" als Kleingruppenprojekt: strukturiert, digital begleitet, mit messbarem Ergebnis. Ideal für Blockwochen an der Berufsschule.',
-        },
-        {
-          fach: 'Marktplatz Lern-Apps',
-          kontext: 'Skills-UP! ist über den offiziellen Marktplatz Lern-Apps verfügbar, das vereinfacht den Zugang für Berufsschulen erheblich. Kein Sonderantrag, keine Zusatzinstallation.',
-        },
-        {
-          fach: 'Betriebliche Ausbildung',
-          kontext: 'Lehrbetriebe können Skills-UP! als Teil der betrieblichen Ausbildung einsetzen, als begleitendes Programm zwischen Berufsschulblöcken oder als Onboarding-Baustein.',
+          fach: 'AWL – Angewandte Wirtschaftslehre',
+          kontext: 'Lohnabrechnung, Kaufvertrag, Bankkonto, Versicherung – AWL ist der Lehrplan, der am direktesten auf das Berufsleben vorbereitet. Skills-UP! macht diese Inhalte greifbar: Schüler:innen simulieren echte Entscheidungen statt Begriffe auswendig zu lernen.',
         },
       ]}
       unterrichtsEinheiten={[
@@ -114,9 +112,9 @@ export default function BerufsschulePage() {
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>,
         },
         {
-          titel: 'Marktplatz Lern-Apps Zugang',
-          nutzenfuerLehrer: 'Skills-UP! ist über den offiziellen Marktplatz Lern-Apps zugänglich. Das bedeutet: kein Datenschutzantrag, keine eigene IT-Installation, kein langer Genehmigungsprozess. Du kannst morgen starten.',
-          icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>,
+          titel: 'Individuelles Angebot für eure Schule',
+          nutzenfuerLehrer: 'Berufsschulen sind über den Marktplatz Lern-Apps nicht zugänglich. Wir erstellen euch ein individuelles Angebot, das auf eure Schule, euren Lehrplan und eure Lehrlinge zugeschnitten ist. Einfach kurz schreiben.',
+          icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2z"/><polyline points="22,6 12,13 2,6"/></svg>,
         },
         {
           titel: 'Lehrlings-spezifische Szenarien',
@@ -171,6 +169,7 @@ export default function BerufsschulePage() {
           ergebnis: 'Negativsteuer zurückholen, Notgroschen aufbauen und ersten Sparplan in die Praxis umsetzen.',
         },
       ]}
+      kontaktStattMarktplatz
       highlightSimulation={{
         titel: 'Nebenjob & Geringfügigkeits-Check',
         untertitel: 'Was passiert, wenn man neben der Lehre dazuverdient? SV-Pflicht, Steuer, Geringfügigkeitsgrenze 2026 — alles in einer Simulation.',
@@ -198,6 +197,35 @@ export default function BerufsschulePage() {
           { zeile: 'Deckung Geringfügigkeit|96 %|96%', typ: 'bar' },
         ],
       }}
+      faqs={[
+        { q: 'Eignet sich Skills-UP! für Berufsschulen mit Blockwochen-Unterricht?', a: 'Besonders gut. In Block-Schulwochen fehlt die Zeit für lange Vorbereitung. Skills-UP! ist sofort startbereit — Modul öffnen, Klasse starten lassen, fertig. Die Kurzversion dauert 15 Minuten, die Langversion 50 Minuten.' },
+        { q: 'Gibt es Inhalte speziell für Lehrlinge?', a: 'Ja. Lohnzettel und Sozialversicherung, Geringfügigkeitsgrenze, Lehrlingsentgelt nach KV, Schuldenprävention und Notgroschen — das sind Module, die gezielt auf die Lebenssituation von Lehrlingen ausgerichtet sind.' },
+        { q: 'Können auch Ausbildungsbetriebe Skills-UP! nutzen?', a: 'Ja. Für Unternehmen mit Lehrlingsprogrammen gibt es ein eigenes Angebot. TGW Logistics und OVOS nutzen Skills-UP! bereits im betrieblichen Lehrlingsprogramm.' },
+      ]}
+      verwandteSchultypen={[
+        { slug: 'pts', label: 'PTS', teaser: 'Ein Jahr Übergang: Berufsorientierung und Finanzbildung für den nächsten Schritt.' },
+        { slug: 'hak', label: 'HAK & HAS', teaser: 'Betriebswirtschaftliche Grundlagen persönlich gemacht — Lohnzettel bis Investieren.' },
+        { slug: 'htl', label: 'HTL', teaser: 'Technische Karriere finanziell klug planen — Gehaltsverhandlung bis Depot.' },
+      ]}
+      testimonials={[
+        {
+          text: 'Lehrlinge bekommen von Tag 1 Geld, aber niemand erklärt ihnen Lohnzettel oder Sozialversicherung. Skills-UP! füllt genau diese Lücke — in 15 Minuten, ohne dass ich etwas vorbereiten muss.',
+          person: 'Josef K.',
+          rolle: 'Berufsschullehrer Politische Bildung',
+          schule: 'BS Tirol',
+        },
+        {
+          text: 'Die Krypto-Simulation war ein Augenöffner. Meine Lehrlinge haben alle schon über Krypto geredet, aber niemand hat je gefragt: "Wie viel verlierst du, wenn der Kurs 40% fällt?" Jetzt wissen sie es.',
+          person: 'Ing. Walter P.',
+          rolle: 'Fachlehrer Berufsschule',
+        },
+        {
+          text: 'Ich unterrichte in Block-Schulwochen. Mit Skills-UP! kann ich ein Modul starten und die Lehrlinge arbeiten selbstständig. Das gibt mir Raum, individuelle Fragen zu beantworten.',
+          person: 'Mag. Susanne E.',
+          rolle: 'Klassenlehrerin Berufsschule',
+          schule: 'BS Steiermark',
+        },
+      ]}
     />
   )
 }

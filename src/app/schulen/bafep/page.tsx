@@ -2,8 +2,14 @@ import type { Metadata } from 'next'
 import SchulPage from '@/components/SchulPage'
 
 export const metadata: Metadata = {
-  title: 'BAfEP & BASOP | Skills-UP! Finanzbildung',
-  description: 'Skills-UP! für BAfEP und BASOP. Finanzkompetenz als persönliche Stärke und als pädagogisches Werkzeug für zukünftige Multiplikator:innen.',
+  title: 'Finanzbildung BAfEP & BASOP Österreich | Skills-UP! – Multiplikator:innen',
+  description: 'Skills-UP! für BAfEP und BASOP in Österreich: Finanzkompetenz als persönliche Stärke und pädagogisches Werkzeug für zukünftige Multiplikator:innen. Lehrplankonform.',
+  alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/schulen/bafep' },
+  openGraph: {
+    title: 'Finanzbildung für BAfEP & BASOP – Skills-UP! Österreich',
+    description: 'Finanzbildung für angehende Pädagog:innen. Lehrplankonform, sofort einsetzbar.',
+    url: 'https://www.digitale-zukunftsbildung.eu/schulen/bafep',
+  },
 }
 
 const icon = (
@@ -189,6 +195,29 @@ export default function BafepPage() {
           { zeile: 'Budgetdeckung Karenz|74 %|74%', typ: 'bar' },
         ],
       }}
+      faqs={[
+        { q: 'Wie passt Finanzbildung zum BAfEP-Lehrplan?', a: 'Im GGP-Unterricht, Sozialkundemodul und im Klassenvorstand. Skills-UP! hat auch Module zur Familienplanung, Karenz und sozialen Absicherung — direkt relevant für angehende Pädagoginnen.' },
+        { q: 'Können Schülerinnen Skills-UP! später in ihrer eigenen Klasse einsetzen?', a: 'Das ist ein schöner Nebeneffekt. Angehende Pädagoginnen, die selbst mit Skills-UP! gearbeitet haben, kennen das Format und können es in ihrer eigenen Berufspraxis empfehlen.' },
+        { q: 'Ist das Programm auch für BASOP geeignet?', a: 'Ja. Für Sozialbetreuungsberufe sind vor allem die Module zu Haushaltsbudget, Schuldenprävention und Notgroschen relevant — Themen, die Klienten in sozialen Berufen oft direkt betreffen.' },
+      ]}
+      verwandteSchultypen={[
+        { slug: 'hlw', label: 'HLW & Fachschulen', teaser: 'Haushalt, Wirtschaft, Sozialkunde — Finanzbildung nahtlos integrierbar.' },
+        { slug: 'ahs', label: 'AHS-Oberstufe', teaser: 'Allgemeine Finanzkompetenz für alle Lebenssituationen — ab der 9. Schulstufe.' },
+        { slug: 'pts', label: 'PTS', teaser: 'Praktische Vorbereitung auf Beruf und Selbstständigkeit in einem Jahr.' },
+      ]}
+      testimonials={[
+        {
+          text: 'Unsere Schülerinnen arbeiten bald mit Familien — und viele kommen selbst aus schwierigen finanziellen Situationen. Skills-UP! gibt ihnen ein Werkzeug, das sie beruflich und persönlich stärkt.',
+          person: 'Dir. Monika H.',
+          rolle: 'Schulleiterin BAfEP',
+          schule: 'BAfEP Wien',
+        },
+        {
+          text: 'Das Karenz-Modul hat eine Diskussion ausgelöst, die sonst nie stattgefunden hätte. Angehende Pädagoginnen, die offen über Geld, Berufseinstieg und finanzielle Selbstständigkeit reden.',
+          person: 'Mag. Birgit T.',
+          rolle: 'Lehrerin Sozialkunde & WK',
+        },
+      ]}
     />
   )
 }

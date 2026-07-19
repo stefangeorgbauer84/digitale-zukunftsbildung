@@ -402,14 +402,14 @@ export default function SchulenUebersicht() {
           </div>
 
           <div className="text-center mt-12">
-            <a href="/#kontakt"
+            <Link href="/#kontakt"
               className="inline-flex items-center gap-2 font-body font-700 text-base px-8 py-4 rounded-xl text-white transition-all hover:scale-105 active:scale-95"
               style={{ background: 'linear-gradient(135deg, #7c3aed, #2a8a76)', boxShadow: '0 8px 32px rgba(107,77,176,0.4)' }}>
               Jetzt Kontakt aufnehmen
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
