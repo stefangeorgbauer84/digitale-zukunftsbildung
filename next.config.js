@@ -35,7 +35,8 @@ const securityHeaders = [
       "font-src 'self'",
       "img-src 'self' data: https://img.youtube.com",
       "frame-src https://www.youtube-nocookie.com",
-      "connect-src 'self' https://o*.ingest.sentry.io",
+      // 'o*.ingest…' ist keine gültige CSP-Wildcard — Browser verwarf die ganze Quelle
+      "connect-src 'self' https://*.sentry.io",
       "object-src 'none'",
       "base-uri 'self'",
       "form-action 'self'",

@@ -3,7 +3,7 @@ import SchulPage from '@/components/SchulPage'
 
 export const metadata: Metadata = {
   title: 'Finanzbildung HTL Österreich | Skills-UP! – Berufseinstieg, Gehaltsverhandlung',
-  description: 'Skills-UP! für die HTL (9.–13. Schulstufe, 1.–5. Jahrgang): Finanzkompetenz für den Berufseinstieg. Gehaltsverhandlung, Sparen, Investieren – österreichische Alltagsszenarien. Fertige Module, 0 Vorbereitung.',
+  description: 'Skills-UP! für die HTL: Finanzkompetenz für den Berufseinstieg – Gehaltsverhandlung, Sparen, Investieren. Fertige Module, 0 Vorbereitung.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/schulen/htl' },
   openGraph: {
     title: 'Finanzbildung für die HTL – Skills-UP! Österreich',

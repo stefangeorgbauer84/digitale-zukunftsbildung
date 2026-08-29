@@ -4,7 +4,7 @@ import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 
 export const metadata: Metadata = {
-  title: 'Finanzbildung alle Schultypen Österreich | Skills-UP! – AHS, HAK, HTL, HLW, Tourismus, PTS',
+  title: 'Finanzbildung für alle Schultypen in Österreich | Skills-UP!',
   description: 'Skills-UP! ist das Finanzbildungsprogramm für AHS, HAK, HTL, HLW, BAfEP, BASOP, Tourismusschulen, PTS und Berufsschulen in Österreich. Lehrplankonform, DSGVO-sicher, sofort einsetzbar.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/schulen' },
   openGraph: {

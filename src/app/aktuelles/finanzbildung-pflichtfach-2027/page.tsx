@@ -5,7 +5,7 @@ import SiteFooter from '@/components/SiteFooter'
 import NewsletterSignup from '@/components/NewsletterSignup'
 
 export const metadata: Metadata = {
-  title: 'Finanzbildung wird Pflichtfach 2027 – Was das für österreichische Schulen bedeutet | Skills-UP!',
+  title: 'Finanzbildung Pflichtfach 2027: Das müssen Schulen wissen | Skills-UP!',
   description: 'Ab 2027/28 ist Finanzbildung in Österreich lehrplanmäßig verankert. Wir erklären, was das konkret bedeutet, welche Schultypen betroffen sind und wie Schulen jetzt vorbereitet sein können.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/aktuelles/finanzbildung-pflichtfach-2027' },
   openGraph: {

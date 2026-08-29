@@ -5,7 +5,7 @@ import SiteFooter from '@/components/SiteFooter'
 import NewsletterSignup from '@/components/NewsletterSignup'
 
 export const metadata: Metadata = {
-  title: 'Was kostet Finanzbildung für Schulen? Skills-UP! Kosten & Förderung | Digitale Zukunftsbildung',
+  title: 'Was kostet Finanzbildung für Schulen? | Skills-UP!',
   description: 'Was kostet Skills-UP! für Schulen wirklich? Vollständige Kostenübersicht, Förderungsmöglichkeiten durch WKÖ und Bildungsstiftungen, und wie Schulen das Programm kostenlos oder vergünstigt erhalten.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/aktuelles/finanzbildung-kosten-schule' },
   openGraph: {

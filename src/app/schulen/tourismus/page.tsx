@@ -2,8 +2,8 @@ import type { Metadata } from 'next'
 import SchulPage from '@/components/SchulPage'
 
 export const metadata: Metadata = {
-  title: 'Finanzbildung Tourismusschulen Österreich | Skills-UP! – Saisoneinkommen, Trinkgeld, Selbstständigkeit',
-  description: 'Skills-UP! für Tourismusschulen (HLT, Hotelfachschule, Tourismusfachschule): Finanzkompetenz für schwankendes Saisoneinkommen, Trinkgeld, Pflichtpraktikum und den Traum vom eigenen Betrieb. Fertige Module, 0 Vorbereitung.',
+  title: 'Finanzbildung Tourismusschulen Österreich | Skills-UP!',
+  description: 'Skills-UP! für Tourismusschulen: Finanzkompetenz für Saisoneinkommen, Trinkgeld, Pflichtpraktikum und den eigenen Betrieb. Fertige Module, 0 Vorbereitung.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/schulen/tourismus' },
   openGraph: {
     title: 'Finanzbildung für Tourismusschulen – Skills-UP! Österreich',

@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     apple: '/capybara-mascot.png',
     shortcut: '/favicon.ico',
   },
-  title: 'Skills-UP! – Finanzbildung für Schulen | Verein zur Entwicklung der digitalen Zukunftsbildung',
+  title: 'Skills-UP! – Finanzbildung für Schulen | Digitale Zukunftsbildung',
   description: 'Skills-UP! – Finanzbildung, die wirklich ankommt. Das Unterrichtsprogramm für 15- bis 20-Jährige: 12+ Module, 10+ Praxissimulationen, lehrplankonform und DSGVO-sicher. Für AHS, BHS und PTS.',
   metadataBase: new URL('https://www.digitale-zukunftsbildung.eu'),
   alternates: {

@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import SchulPage from '@/components/SchulPage'
 
 export const metadata: Metadata = {
-  title: 'Finanzbildung HLW & Fachschulen Österreich | Skills-UP! – Alltag, Konsum, Lebensführung',
+  title: 'Finanzbildung HLW & Fachschulen Österreich | Skills-UP!',
   description: 'Skills-UP! für HLW, HLT und wirtschaftliche Fachschulen in Österreich: Finanzbildung trifft Alltag, Konsum und Lebensführung. Lehrplankonform, sofort einsetzbar.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/schulen/hlw' },
   openGraph: {

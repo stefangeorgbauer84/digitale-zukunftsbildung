@@ -491,8 +491,8 @@ export default function HomePage() {
                   {f.icon}
                 </div>
                 <div>
-                  <p className="font-heading font-700 text-sm leading-tight mb-1" style={{ color: f.accent }}>{f.headline}</p>
-                  <p className="text-xs font-body text-text-muted leading-snug">{f.detail}</p>
+                  <p className="font-heading font-700 text-sm leading-tight mb-1" style={{ color: '#1a1040' }}>{f.headline}</p>
+                  <p className="text-xs font-body text-text-secondary leading-snug">{f.detail}</p>
                 </div>
               </div>
             ))}

@@ -7,7 +7,7 @@ import AktienGame from './components/AktienGame'
 export const metadata: Metadata = {
   title: 'Aktiengame – Börsenplanspiel für Schulen & Workshops | Skills-UP! Österreich',
   description:
-    'Kostenloses Börsensimulation für Schulen und Workshops: virtuelles Kapital, Aktien, ETFs, Risiko, Diversifikation. Lehrplankonform, sofort spielbar im Browser. Für AHS, HAK, HTL und mehr.',
+    'Kostenlose Börsensimulation für Schulen und Workshops: virtuelles Kapital, Aktien, ETFs, Risiko, Diversifikation. Lehrplankonform, sofort spielbar im Browser. Für AHS, HAK, HTL und mehr.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/aktiengame' },
   openGraph: {
     title: 'Aktiengame – Kostenloses Börsenplanspiel für Schulen',
