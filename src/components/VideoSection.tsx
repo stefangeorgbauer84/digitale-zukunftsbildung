@@ -89,7 +89,6 @@ export default function VideoSection({ variant = 'light', farbe = '#4a2d8a' }: V
                   }
                 }}
                 className="w-full h-full relative block group/btn focus:outline-none focus-visible:ring-4 focus-visible:ring-white/40"
-                aria-label="Skills-UP! Produktvideo abspielen"
               >
                 {/* YouTube thumbnail */}
                 <Image

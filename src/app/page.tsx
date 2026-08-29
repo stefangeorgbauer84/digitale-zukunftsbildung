@@ -143,9 +143,9 @@ const trustFacts = [
 
 /* ── How it works ───────────────────────────────────────── */
 const steps = [
-  { step: '01', title: 'Im Browser starten', desc: 'Kein IT-Aufwand, keine Installation. Skills-UP! läuft direkt im Browser, DSGVO-sicher und EU-rechtskonform. Schulweites Rollout in Minuten.', color: '#9b7ed4' },
-  { step: '02', title: 'Erleben statt zuhören', desc: 'Schüler:innen durchlaufen Module und Praxissimulationen: Depot eröffnen, Gehalt verhandeln, Budget planen. Microlearning, Peer-Videos und Gamification halten die Motivation hoch.', color: '#2a8a76' },
-  { step: '03', title: 'Fortschritt im Dashboard', desc: 'Lehrkräfte sehen Fortschritt, Noten und Deadlines aller Klassen auf einen Blick. Ideal für Elterngespräche, ohne zusätzliche Korrekturarbeit.', color: '#D87228' },
+  { step: '01', title: 'Im Browser starten', desc: 'Kein IT-Aufwand, keine Installation. Skills-UP! läuft direkt im Browser, DSGVO-sicher und EU-rechtskonform. Schulweites Rollout in Minuten.', color: '#6b4db0' },
+  { step: '02', title: 'Erleben statt zuhören', desc: 'Schüler:innen durchlaufen Module und Praxissimulationen: Depot eröffnen, Gehalt verhandeln, Budget planen. Microlearning, Peer-Videos und Gamification halten die Motivation hoch.', color: '#1E6B5B' },
+  { step: '03', title: 'Fortschritt im Dashboard', desc: 'Lehrkräfte sehen Fortschritt, Noten und Deadlines aller Klassen auf einen Blick. Ideal für Elterngespräche, ohne zusätzliche Korrekturarbeit.', color: '#A84E12' },
 ]
 
 export default function HomePage() {
@@ -176,13 +176,13 @@ export default function HomePage() {
     },
     {
       icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>),
-      gradient: 'linear-gradient(135deg, #b85e20 0%, #D87228 100%)', bg: '#fdf0e6', accent: '#D87228',
+      gradient: 'linear-gradient(135deg, #b85e20 0%, #D87228 100%)', bg: '#fdf0e6', accent: '#A84E12',
       title: 'Lehrer-Dashboard', badge: 'Für Lehrkräfte',
       desc: 'Fortschritt, Noten und Deadlines aller Klassen auf einen Blick. Ideal für Elterngespräche, ohne zusätzliche Korrekturarbeit.',
     },
     {
       icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>),
-      gradient: 'linear-gradient(135deg, #1a5c4e 0%, #2a8a76 100%)', bg: '#e6f4f1', accent: '#2a8a76',
+      gradient: 'linear-gradient(135deg, #1a5c4e 0%, #2a8a76 100%)', bg: '#e6f4f1', accent: '#1E6B5B',
       title: 'DSGVO-konform', badge: 'Datensicher',
       desc: 'Im Browser gestartet, keine Installation nötig. EU-rechtssicher, datenschutzkonform, kein IT-Aufwand für die Schule.',
     },
@@ -191,10 +191,10 @@ export default function HomePage() {
   const modulThemen = [
     { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>), color: '#4a2d8a', bg: '#f3f1f9', title: 'Persönlichkeitsbildung', subtitle: 'Finanzielle Glaubenssätze & Geldbiografie', topics: ['Finanzielle Glaubenssätze erkennen', 'Eigene Geldbiografie reflektieren', 'Persönliche Finanzziele definieren'] },
     { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>), color: '#6b4db0', bg: '#ede9f7', title: 'Basiswissen', subtitle: 'Alltagsbegriffe aus dem echten Leben', topics: ['Nettolohn berechnen & verstehen', 'Steuern & Sozialversicherung', 'Inflation und Lohnabrechnung'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>), color: '#2a8a76', bg: '#e6f4f1', title: 'Praxis & Planung', subtitle: 'Persönliches Finanzmanagement', topics: ['Haushaltsbudget & Notgroschen', 'Virtuelles Depot eröffnen', 'Kurz- & langfristige Ziele setzen'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>), color: '#D87228', bg: '#fdf0e6', title: 'Schutzwissen', subtitle: 'Schuldenprävention & Konsumkritik', topics: ['Ratenkauf & Buy-Now-Pay-Later', 'Krypto-Mythen, Scams & Impulskäufe', 'Schulden vermeiden durch Strategie'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>), color: '#1E6B5B', bg: '#e6f4f1', title: 'Praxis & Planung', subtitle: 'Persönliches Finanzmanagement', topics: ['Haushaltsbudget & Notgroschen', 'Virtuelles Depot eröffnen', 'Kurz- & langfristige Ziele setzen'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>), color: '#A84E12', bg: '#fdf0e6', title: 'Schutzwissen', subtitle: 'Schuldenprävention & Konsumkritik', topics: ['Ratenkauf & Buy-Now-Pay-Later', 'Krypto-Mythen, Scams & Impulskäufe', 'Schulden vermeiden durch Strategie'] },
     { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>), color: '#4a2d8a', bg: '#f3f1f9', title: 'Investieren & Vorsorge', subtitle: 'Aktien, ETFs & Altersvorsorge', topics: ['Aktien, ETFs & Zinseszins', 'Krypto realistisch einschätzen', 'Altersvorsorge & 3-Säulen-Modell'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>), color: '#2a8a76', bg: '#e6f4f1', title: 'Versicherungen & Risiko', subtitle: 'Pflicht, Krisenvorsorge & Prämien', topics: ['Pflicht- vs. freiwillige Versicherung', 'Notgroschen & Krisenvorsorge', 'Selbstbehalt und Prämien verstehen'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>), color: '#1E6B5B', bg: '#e6f4f1', title: 'Versicherungen & Risiko', subtitle: 'Pflicht, Krisenvorsorge & Prämien', topics: ['Pflicht- vs. freiwillige Versicherung', 'Notgroschen & Krisenvorsorge', 'Selbstbehalt und Prämien verstehen'] },
   ]
 
   const websiteJsonLd = {
@@ -510,7 +510,7 @@ export default function HomePage() {
       ══════════════════════════════════════════════════ */}
       <section id="partner" className="py-14 bg-white overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-8 text-center">
-          <p className="text-xs font-body font-700 uppercase tracking-widest text-text-muted">
+          <p className="text-xs font-body font-700 uppercase tracking-widest text-text-secondary">
             Unsere Partner &amp; Auszeichnungen
           </p>
         </div>
@@ -589,7 +589,7 @@ export default function HomePage() {
                 />
               </div>
               <div>
-                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#2A8A76', color: '#fff' }}>Bundesministerium</span>
+                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#1E6B5B', color: '#fff' }}>Bundesministerium</span>
                 <p className="font-body text-sm text-text-muted leading-relaxed">Teil der Nationalen Finanzbildungsstrategie der österreichischen Bundesregierung.</p>
               </div>
             </div>
@@ -605,7 +605,7 @@ export default function HomePage() {
                 />
               </div>
               <div>
-                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#D87228', color: '#fff' }}>Top-3 Österreich</span>
+                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#A84E12', color: '#fff' }}>Top-3 Österreich</span>
                 <p className="font-body text-sm text-text-muted leading-relaxed">Ausgezeichnet unter hunderten Einreichungen österreichweit, von einer unabhängigen Jury für Innovation und pädagogischen Impact.</p>
               </div>
             </div>
@@ -634,7 +634,7 @@ export default function HomePage() {
               Finanzbildung für<br />
               <span style={{ color: '#4a2d8a' }}>jede Schulform in Österreich.</span>
             </h2>
-            <p className="font-body text-text-muted text-lg max-w-2xl mx-auto mb-4">
+            <p className="font-body text-text-secondary text-lg max-w-2xl mx-auto mb-4">
               Skills-UP! ist das lehrplankonforme Finanzbildungsprogramm für Jugendliche ab 15 Jahren: sofort einsetzbar für AHS, HAK, HTL, HLW, BAfEP, BASOP, PTS und Berufsschulen.
             </p>
             <Link href="/schulen" className="inline-flex items-center gap-2 font-body font-700 text-sm px-5 py-3 rounded-xl transition-all hover:scale-105"
@@ -664,7 +664,7 @@ export default function HomePage() {
                   icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg> },
                 { slug: 'hak', label: 'HAK & HAS', sub: 'Wirtschaft & Finanzen', farbe: '#6b4db0', bg: '#ede9f7',
                   icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2"/></svg> },
-                { slug: 'htl', label: 'HTL', sub: 'Technik & Beruf', farbe: '#2a8a76', bg: '#e6f4f1',
+                { slug: 'htl', label: 'HTL', sub: 'Technik & Beruf', farbe: '#1E6B5B', bg: '#e6f4f1',
                   icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.07 4.93l-1.41 1.41M5.34 17.66l-1.41 1.41M2 12h2m16 0h2M5.34 6.34L3.93 4.93m14.14 14.14l-1.41-1.41M12 2v2m0 16v2"/></svg> },
                 { slug: 'hlw', label: 'HLW & Fachschulen', sub: 'Alltag & Lebensführung', farbe: '#1a5c4e', bg: '#e6f4f1',
                   icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg> },
@@ -783,7 +783,7 @@ export default function HomePage() {
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
                   {a.tag}
                 </span>
-                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-body font-700 bg-gray-50 text-text-muted">
+                <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full text-xs font-body font-700 bg-gray-50 text-text-secondary">
                   <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
                   {a.maxPersonen}
                 </span>
@@ -872,7 +872,7 @@ export default function HomePage() {
                 </div>
                 <div>
                   <h3 className="font-heading font-700 text-base leading-tight" style={{ color: m.color }}>{m.title}</h3>
-                  {'subtitle' in m && <p className="font-body text-xs text-text-muted mt-0.5">{(m as typeof m & { subtitle: string }).subtitle}</p>}
+                  {'subtitle' in m && <p className="font-body text-xs text-text-secondary mt-0.5">{(m as typeof m & { subtitle: string }).subtitle}</p>}
                 </div>
               </div>
               <ul className="space-y-2">
@@ -1193,7 +1193,7 @@ export default function HomePage() {
             {
               emoji: '🏫',
               title: 'Schulleitung',
-              color: '#D87228', bg: 'linear-gradient(135deg, #b85e20 0%, #D87228 100%)',
+              color: '#A84E12', bg: 'linear-gradient(135deg, #b85e20 0%, #D87228 100%)',
               points: [
                 'Schulweites Rollout in Minuten',
                 'Kein IT-Aufwand, im Browser gestartet',
@@ -1370,7 +1370,7 @@ export default function HomePage() {
             {
               href: '/aktuelles/finanzbildung-berufsschule',
               tag: 'Schultypen',
-              tagColor: '#2a8a76',
+              tagColor: '#1E6B5B',
               date: 'April 2025',
               title: 'Finanzbildung in der Berufsschule — Chancen und Herausforderungen',
               teaser: 'Dual Ausgebildete brauchen Finanzkompetenz besonders früh. Wie Skills-UP! Berufsschulen dabei unterstützt.',
@@ -1378,7 +1378,7 @@ export default function HomePage() {
             {
               href: '/aktuelles/finanzbildung-10-minuten-unterricht',
               tag: 'Praxistipp',
-              tagColor: '#D87228',
+              tagColor: '#A84E12',
               date: 'Mai 2025',
               title: 'Finanzbildung in 10 Minuten Unterricht — 3 Formate',
               teaser: 'Keine Zeit für lange Einheiten? Diese drei Formate bringen echte Finanzbildung in kurze Unterrichtsblöcke — ohne Vorbereitung.',
@@ -1392,13 +1392,13 @@ export default function HomePage() {
                     style={{ background: post.tagColor + '14', color: post.tagColor }}>
                     {post.tag}
                   </span>
-                  <span className="text-xs font-body text-gray-400">{post.date}</span>
+                  <span className="text-xs font-body text-gray-500">{post.date}</span>
                 </div>
                 <h3 className="font-heading text-lg font-bold leading-snug mb-3 group-hover:text-purple-800 transition-colors"
                   style={{ color: '#1a1040' }}>
                   {post.title}
                 </h3>
-                <p className="font-body text-sm text-gray-500 leading-relaxed flex-1">{post.teaser}</p>
+                <p className="font-body text-sm text-gray-600 leading-relaxed flex-1">{post.teaser}</p>
                 <div className="mt-5 flex items-center gap-1.5 text-sm font-body font-bold transition-colors"
                   style={{ color: post.tagColor }}>
                   Weiterlesen
@@ -1413,7 +1413,7 @@ export default function HomePage() {
           style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)', border: '1px solid rgba(74,45,138,0.1)' }}>
           <div>
             <p className="font-heading font-bold text-base" style={{ color: '#1a1040' }}>Lehrplan-Mapping</p>
-            <p className="font-body text-sm text-gray-500 mt-0.5">Welche Module passen zu welchem Schultyp? Die vollständige Zuordnungstabelle.</p>
+            <p className="font-body text-sm text-gray-600 mt-0.5">Welche Module passen zu welchem Schultyp? Die vollständige Zuordnungstabelle.</p>
           </div>
           <Link href="/lehrplan-mapping"
             className="shrink-0 font-body text-sm font-bold px-5 py-2.5 rounded-xl text-white transition-all hover:opacity-90"
@@ -1482,7 +1482,7 @@ export default function HomePage() {
               name: 'Mag. Eva R.',
               role: 'Lehrerin, BHS Burgenland',
               initials: 'ER',
-              color: '#2a8a76',
+              color: '#1E6B5B',
             },
             {
               quote: 'Die Gehaltsverhandlungs-Simulation war ein Augenöffner. Meine Schüler:innen reden jetzt über Kollektivvertrag und Nettolohn. Themen, die vorher kein Thema waren.',

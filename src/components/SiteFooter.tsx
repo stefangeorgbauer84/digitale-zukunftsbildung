@@ -56,7 +56,7 @@ export default function SiteFooter() {
 
           {/* Schulen */}
           <div>
-            <p className="font-heading font-700 text-xs uppercase tracking-widest text-white/35 mb-5">Für Schulen</p>
+            <p className="font-heading font-700 text-xs uppercase tracking-widest text-white/55 mb-5">Für Schulen</p>
             <ul className="space-y-3">
               {[
                 { label: 'Alle Schultypen', href: '/schulen' },
@@ -82,7 +82,7 @@ export default function SiteFooter() {
 
           {/* Links */}
           <div>
-            <p className="font-heading font-700 text-xs uppercase tracking-widest text-white/35 mb-5">Verein</p>
+            <p className="font-heading font-700 text-xs uppercase tracking-widest text-white/55 mb-5">Verein</p>
             <ul className="space-y-3 mb-8">
               {[
                 { label: 'Über uns', href: '/ueber-uns' },
@@ -115,14 +115,14 @@ export default function SiteFooter() {
 
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs font-body text-white/30 text-center sm:text-left break-words">
+          <p className="text-xs font-body text-white/50 text-center sm:text-left break-words">
             © {new Date().getFullYear()} Verein zur Entwicklung der digitalen Zukunftsbildung · Straußengasse 12/26, 1050 Wien
           </p>
           <div className="flex items-center gap-4">
-            <span className="text-xs font-body text-white/25">Zertifiziert von</span>
-            <span className="text-xs font-body text-white/40 font-600">Hochschule Burgenland</span>
-            <span className="text-white/20 text-xs">·</span>
-            <span className="text-xs font-body text-white/40 font-600">WKÖ</span>
+            <span className="text-xs font-body text-white/50">Zertifiziert von</span>
+            <span className="text-xs font-body text-white/60 font-600">Hochschule Burgenland</span>
+            <span className="text-white/40 text-xs">·</span>
+            <span className="text-xs font-body text-white/60 font-600">WKÖ</span>
           </div>
         </div>
       </div>

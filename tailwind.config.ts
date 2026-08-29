@@ -13,9 +13,10 @@ const config: Config = {
           100: '#e8e5f4',
         },
         status: {
-          teal: '#2A8A76',
+          // abgedunkelt für WCAG-AA-Kontrast als Text/Pill-BG (waren #2A8A76/#D87228)
+          teal: '#1E6B5B',
           'teal-light': '#E6F4F1',
-          orange: '#D87228',
+          orange: '#A84E12',
           'orange-light': '#FDF0E6',
         },
         gray: {

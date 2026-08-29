@@ -1212,7 +1212,7 @@ export default function SchulPage({
                 <Image src="/fotos/logo-finanzbildungsstrategie.png" alt="Nationale Finanzbildungsstrategie" width={280} height={96} className="max-h-24 w-auto object-contain" />
               </div>
               <div>
-                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#2A8A76', color: '#fff' }}>Bundesministerium</span>
+                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#1E6B5B', color: '#fff' }}>Bundesministerium</span>
                 <p className="font-body text-sm text-text-muted leading-relaxed">Teil der Nationalen Finanzbildungsstrategie der österreichischen Bundesregierung.</p>
               </div>
             </div>
@@ -1221,7 +1221,7 @@ export default function SchulPage({
                 <Image src="/fotos/MEGA%20Bildungsstiftung%20Logo.jpeg" alt="MEGA Bildungsstiftung" width={180} height={64} className="max-h-14 w-auto object-contain" />
               </div>
               <div>
-                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#D87228', color: '#fff' }}>Top-3 Österreich</span>
+                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full mb-2" style={{ background: '#A84E12', color: '#fff' }}>Top-3 Österreich</span>
                 <p className="font-body text-sm text-text-muted leading-relaxed">Top-3 Projekt der MEGA Bildungsmillion 2025, unter hunderten Einreichungen österreichweit.</p>
               </div>
             </div>
