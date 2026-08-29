@@ -60,6 +60,7 @@ export default function SiteFooter() {
             <ul className="space-y-3">
               {[
                 { label: 'Alle Schultypen', href: '/schulen' },
+                { label: 'FAQ für Lehrkräfte', href: '/faq' },
                 { label: 'Lehrplanmapping', href: '/lehrplan-mapping' },
                 { label: 'AHS-Oberstufe', href: '/schulen/ahs' },
                 { label: 'HAK & HAS', href: '/schulen/hak' },

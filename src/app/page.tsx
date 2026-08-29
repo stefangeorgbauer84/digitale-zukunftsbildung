@@ -418,27 +418,42 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-6">
-            <a href="#angebote"
-              className="inline-flex items-center justify-center gap-2 font-body font-700 text-lg px-8 py-4 rounded-xl shadow-2xl transition-all duration-200 hover:scale-105 active:scale-95 text-white"
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
+            <Link href="/demo"
+              className="inline-flex items-center justify-center gap-2 font-body font-700 text-lg px-9 py-4 rounded-xl shadow-2xl transition-all duration-200 hover:scale-105 active:scale-95 text-white"
               style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #6b4db0 50%, #2a8a76 100%)', boxShadow: '0 8px 32px rgba(107,77,176,0.5)' }}
             >
-              Bildungsprogramm entdecken
+              Gratis Demo starten
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </a>
-            <a href="#kontakt"
+            </Link>
+            <a href="#angebote"
               className="glass inline-flex items-center justify-center gap-2 text-white font-body font-600 text-lg px-8 py-4 rounded-xl hover:bg-white/15 transition-all duration-200 border border-white/20"
             >
-              Kostenloses Beratungsgespräch
+              Bildungsprogramm entdecken
             </a>
-            <Link href="/demo"
-              className="inline-flex items-center justify-center gap-2 text-white font-body font-600 text-base px-6 py-3 rounded-xl transition-all duration-200 hover:scale-105 border border-white/30"
-              style={{ background: 'rgba(200,64,64,0.25)', backdropFilter: 'blur(8px)' }}
-            >
-              🛒 Gratis Demo starten
-            </Link>
           </div>
-          <p className="text-white/60 text-sm mb-10 font-body">Kostenlos · Unverbindlich · Kein automatischer Vertrag</p>
+          <p className="text-white/60 text-sm mb-7 font-body">Kostenlos · Keine Anmeldung · Kein automatischer Vertrag</p>
+
+          {/* Quick-Start für gestresste Lehrkräfte */}
+          <div className="glass rounded-2xl border border-white/15 px-5 py-4 mb-10 max-w-2xl mx-auto">
+            <div className="grid sm:grid-cols-3 gap-3 text-left">
+              {[
+                { nr: '1', fett: 'Ohne Vorbereitung.', rest: 'Demo öffnen, Klasse loslegen lassen.' },
+                { nr: '2', fett: 'Klick-fertig.', rest: 'Module und Simulationen starten sofort.' },
+                { nr: '3', fett: 'Direkt im Browser.', rest: 'Keine Installation, kein IT-Antrag.' },
+              ].map((s) => (
+                <div key={s.nr} className="flex items-start gap-2.5">
+                  <span className="shrink-0 w-6 h-6 rounded-full flex items-center justify-center text-xs font-heading font-800 text-white"
+                    style={{ background: 'linear-gradient(135deg, #6b4db0, #2a8a76)' }}>
+                    {s.nr}
+                  </span>
+                  <p className="font-body text-sm leading-snug text-white/75">
+                    <strong className="text-white">{s.fett}</strong> {s.rest}
+                  </p>
+                </div>
+              ))}
+            </div>
+          </div>
 
           {/* Trust signals */}
           <div className="flex flex-wrap items-center justify-center gap-6 text-white/55 text-sm font-body">
@@ -1530,12 +1545,21 @@ export default function HomePage() {
             </h2>
           </div>
           <FaqAccordion />
-          <p className="text-center text-sm font-body text-text-muted mt-8">
-            Weitere Fragen?{' '}
-            <a href="#kontakt" className="text-primary-medium font-600 hover:text-primary-dark transition-colors">
-              Schreib uns direkt.
-            </a>
-          </p>
+          <div className="text-center mt-8">
+            <Link href="/faq"
+              className="inline-flex items-center gap-2 text-sm font-body font-700 text-primary-dark hover:text-primary-medium transition-colors">
+              Alle 100 Fragen &amp; Antworten für Lehrkräfte ansehen
+              <svg aria-hidden="true" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+              </svg>
+            </Link>
+            <p className="text-sm font-body text-text-muted mt-3">
+              Oder{' '}
+              <a href="#kontakt" className="text-primary-medium font-600 hover:text-primary-dark transition-colors">
+                schreib uns direkt.
+              </a>
+            </p>
+          </div>
         </div>
       </section>
 
