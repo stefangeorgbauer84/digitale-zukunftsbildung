@@ -1392,7 +1392,7 @@ export default function HomePage() {
                     style={{ background: post.tagColor + '14', color: post.tagColor }}>
                     {post.tag}
                   </span>
-                  <span className="text-xs font-body text-gray-500">{post.date}</span>
+                  <span className="text-xs font-body text-gray-600">{post.date}</span>
                 </div>
                 <h3 className="font-heading text-lg font-bold leading-snug mb-3 group-hover:text-purple-800 transition-colors"
                   style={{ color: '#1a1040' }}>
