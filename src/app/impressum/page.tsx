@@ -209,6 +209,19 @@ export default function Impressum() {
               </p>
             </Sub>
 
+            <Sub title="Videos (bunny.net)">
+              <p>
+                Ausgewählte Kursvideos werden über <strong>Bunny Stream</strong> (BunnyWay d.o.o.,
+                Cesta komandanta Staneta 4A, 1215 Medvode, Slowenien / EU) bereitgestellt. Die Videos
+                werden erst nach deiner ausdrücklichen Zustimmung geladen (Zwei-Klick-Lösung). Beim
+                Abspielen überträgt dein Browser Daten (u.a. IP-Adresse, Geräteinformationen) an
+                bunny.net. Die Verarbeitung erfolgt innerhalb der EU; eine Übermittlung in Drittländer
+                findet nicht statt. Rechtsgrundlage: Art. 6 Abs. 1 lit. a DSGVO (Einwilligung).{' '}
+                <a href="https://bunny.net/privacy" target="_blank" rel="noopener noreferrer"
+                  className="hover:underline" style={{ color: '#4a2d8a' }}>Datenschutzerklärung bunny.net</a>
+              </p>
+            </Sub>
+
             <Sub title="Cookies">
               <p>
                 Diese Website verwendet keine Tracking-Cookies und kein Analytics. Es werden
