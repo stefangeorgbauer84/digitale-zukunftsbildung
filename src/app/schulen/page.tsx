@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
+import ItDsgvoFaq from '@/components/ItDsgvoFaq'
 
 export const metadata: Metadata = {
   title: 'Finanzbildung für alle Schultypen in Österreich | Skills-UP!',
@@ -411,6 +412,93 @@ export default function SchulenUebersicht() {
               </svg>
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Argumentarium für Schulleitungen — der ROI der Schule */}
+      <section className="py-20 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <p className="text-xs font-body font-700 uppercase tracking-widest mb-3" style={{ color: '#6b4db0' }}>
+              Argumente für die Direktion
+            </p>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4" style={{ color: '#1a1040' }}>
+              Was hat die Schule davon?
+            </h2>
+            <p className="font-body text-text-muted text-lg max-w-2xl mx-auto">
+              Drei Gründe, warum sich Skills-UP! für die Schule als Ganzes rechnet — nicht nur für die einzelne Klasse.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                icon: (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
+                  </svg>
+                ),
+                color: '#4a2d8a', bg: '#f3f1f9',
+                title: 'Profilierung als moderne Schule',
+                text: 'Ein zertifiziertes digitales Finanzbildungsprogramm ist ein sichtbares Signal an Eltern, Schulaufsicht und künftige Schüler:innen: Diese Schule bereitet aufs echte Leben vor. Ideal für Tag der offenen Tür, Schulhomepage und Schulprofil.',
+              },
+              {
+                icon: (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/>
+                  </svg>
+                ),
+                color: '#1E6B5B', bg: '#e6f4f1',
+                title: 'Einfache Finanzierung',
+                text: 'Skills-UP! zahlt direkt auf die digitale Grundbildung und das Unterrichtsprinzip Wirtschafts- und Verbraucher:innenbildung ein. Förderwege über MEGA Bildungsstiftung und die Nationale Finanzbildungsstrategie — wir finden gemeinsam ein leistbares Modell.',
+              },
+              {
+                icon: (
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                  </svg>
+                ),
+                color: '#A84E12', bg: '#fdf0e6',
+                title: 'Bereit für das Pflichtfach 2027',
+                text: 'Ab 2027/28 ist Finanzbildung verbindlich im Lehrplan. Schulen, die jetzt starten, haben eingespielte Abläufe, geschulte Lehrkräfte und dokumentierten Lehrplanbezug — statt Zeitdruck auf den letzten Metern.',
+              },
+            ].map((r) => (
+              <div key={r.title} className="rounded-2xl p-7 flex flex-col gap-4" style={{ background: r.bg }}>
+                <div className="w-12 h-12 rounded-xl flex items-center justify-center text-white" style={{ background: r.color }}>
+                  {r.icon}
+                </div>
+                <h3 className="font-heading font-700 text-lg leading-tight" style={{ color: '#1a1040' }}>{r.title}</h3>
+                <p className="font-body text-sm text-text-secondary leading-relaxed">{r.text}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* IT & DSGVO — FAQ für Schul-IT-Kustod:innen */}
+      <section className="py-20 bg-gray-50">
+        <div className="max-w-3xl mx-auto px-6">
+          <div className="text-center mb-12">
+            <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-status-teal bg-status-teal-light px-4 py-2 rounded-full mb-5">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              IT &amp; Datenschutz
+            </div>
+            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4" style={{ color: '#1a1040' }}>
+              Antworten für die Schul-IT.
+            </h2>
+            <p className="font-body text-text-muted text-lg max-w-xl mx-auto">
+              Die Fragen, die IT-Kustod:innen und Direktionen vor der Freigabe stellen — hier vorab beantwortet.
+            </p>
+          </div>
+          <ItDsgvoFaq />
+          <p className="text-center text-sm font-body text-text-muted mt-8">
+            Detailfragen zu AVV, TOMs oder Hosting?{' '}
+            <Link href="/#kontakt" className="text-primary-medium font-600 hover:text-primary-dark transition-colors">
+              Wir schicken die Unterlagen.
+            </Link>
+          </p>
         </div>
       </section>
 

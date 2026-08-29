@@ -212,6 +212,108 @@ export default function LehrplanMappingPage() {
           </div>
         </section>
 
+        {/* Nationale Finanzbildungsstrategie — Kompetenz-Mapping */}
+        <section className="py-16 px-6 bg-white border-t border-gray-100">
+          <div className="max-w-6xl mx-auto">
+            <div className="text-center mb-12">
+              <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest px-4 py-2 rounded-full mb-5"
+                style={{ background: '#f3f1f9', color: '#4a2d8a' }}>
+                <svg aria-hidden="true" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/>
+                </svg>
+                Nationale Finanzbildungsstrategie
+              </div>
+              <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4" style={{ color: '#1a1040' }}>
+                Skills-UP! deckt alle vier<br className="hidden md:block" /> Kompetenzbereiche der Strategie ab.
+              </h2>
+              <p className="font-body text-gray-600 text-lg max-w-2xl mx-auto">
+                Die Nationale Finanzbildungsstrategie Österreichs baut auf dem Kompetenzrahmen der OECD/INFE auf —
+                mit vier Kernbereichen. Jeder davon ist mit fertigen Skills-UP!-Modulen abgedeckt, dokumentiert und ab dem Pflichtfach 2027 direkt einsetzbar.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-6 mb-10">
+              {[
+                {
+                  nr: '01',
+                  feld: 'Geld & Zahlungsverkehr',
+                  desc: 'Zahlungsformen, Konto und Einkommen verstehen und sicher nutzen.',
+                  color: '#4a2d8a', bg: '#f3f1f9',
+                  module: ['Lohnzettel & Sozialversicherung', 'Gehaltsverhandlung & Berufseinstieg', 'Geldbiografie & Werte'],
+                },
+                {
+                  nr: '02',
+                  feld: 'Planen & Haushalten',
+                  desc: 'Budget erstellen, Sparziele setzen und finanzielle Entscheidungen vorausplanen.',
+                  color: '#1E6B5B', bg: '#e6f4f1',
+                  module: ['Haushaltsbudget & Ausgabenkontrolle', 'Sparen & Vermögensaufbau', 'Steuern & Abgaben'],
+                },
+                {
+                  nr: '03',
+                  feld: 'Risiko & Ertrag',
+                  desc: 'Chancen und Risiken von Anlage, Kredit und Absicherung realistisch einschätzen.',
+                  color: '#6b4db0', bg: '#ede9f7',
+                  module: ['Investieren & Depot', 'Krypto-Mythen & digitale Finanztools', 'Versicherungen'],
+                },
+                {
+                  nr: '04',
+                  feld: 'Finanzlandschaft & Konsumentenschutz',
+                  desc: 'Anbieter, Werbung und Betrugsmaschen durchschauen — Rechte als Konsument:in kennen.',
+                  color: '#A84E12', bg: '#fdf0e6',
+                  module: ['Ratenkauf, BNPL & Schuldenprävention', 'Konsum & Werbepsychologie', 'Scams & Finanzbetrug erkennen'],
+                },
+              ].map((k) => (
+                <div key={k.nr} className="rounded-2xl p-7 flex flex-col gap-4" style={{ background: k.bg }}>
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="font-heading font-800 text-3xl leading-none mb-2" style={{ color: k.color }}>{k.nr}</p>
+                      <h3 className="font-heading font-700 text-lg leading-tight" style={{ color: '#1a1040' }}>{k.feld}</h3>
+                    </div>
+                    <span className="shrink-0 inline-flex items-center gap-1.5 text-xs font-body font-700 px-3 py-1.5 rounded-full bg-white"
+                      style={{ color: k.color }}>
+                      <svg aria-hidden="true" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                        <polyline points="20 6 9 17 4 12"/>
+                      </svg>
+                      abgedeckt
+                    </span>
+                  </div>
+                  <p className="font-body text-sm text-gray-600 leading-relaxed">{k.desc}</p>
+                  <div className="flex flex-wrap gap-2 mt-auto">
+                    {k.module.map((m) => (
+                      <span key={m} className="text-xs font-body font-600 px-3 py-1.5 rounded-full bg-white text-gray-700 border border-black/5">
+                        {m}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* WKÖ-Zertifizierung */}
+            <div className="rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6"
+              style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 60%, #0f3d2d 100%)' }}>
+              <div className="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center"
+                style={{ background: 'rgba(255,255,255,0.12)' }}>
+                <svg aria-hidden="true" width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#fde68a" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+                </svg>
+              </div>
+              <div className="flex-1 text-center md:text-left">
+                <p className="font-heading font-700 text-white text-lg mb-1">WKÖ-zertifiziert und extern geprüft.</p>
+                <p className="font-body text-white/60 text-sm leading-relaxed">
+                  Die Wirtschaftskammer Österreich bestätigt Qualität und Praxisrelevanz der Inhalte, die Hochschule Burgenland
+                  begleitet das Programm wissenschaftlich. Skills-UP! wird im Rahmen der Nationalen Finanzbildungsstrategie unterstützt —
+                  Ihre Schule setzt damit auf ein geprüftes, ministeriumsnah verankertes Programm.
+                </p>
+              </div>
+              <Link href="/ueber-uns"
+                className="shrink-0 font-body font-700 text-sm px-5 py-3 rounded-xl text-white/90 border border-white/25 hover:bg-white/10 transition-all">
+                Alle Auszeichnungen →
+              </Link>
+            </div>
+          </div>
+        </section>
+
         {/* CTA */}
         <section className="py-14 px-6 bg-white">
           <div className="max-w-3xl mx-auto text-center">
