@@ -36,7 +36,7 @@ export default function DemoForm() {
         body: JSON.stringify({
           name,
           email,
-          message: `Schultyp: ${schultyp}\n\n${nachricht}`,
+          message: `Demo-Anfrage${schultyp ? ` — Schultyp: ${schultyp}` : ''}\n\n${nachricht}`,
           website: honeypot,
           consent: true,
         }),
@@ -67,6 +67,16 @@ export default function DemoForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-5">
+      {/* Friction-Killer Microcopy */}
+      <div className="flex flex-wrap gap-2 -mt-1">
+        {['⚡ In 10 Sekunden startklar', '🖥️ Keine Installation', '💳 Keine Kreditkarte nötig'].map((t) => (
+          <span key={t} className="text-xs font-body font-600 px-3 py-1.5 rounded-full"
+            style={{ background: 'rgba(52,211,153,0.12)', color: '#a7f3d0', border: '1px solid rgba(52,211,153,0.25)' }}>
+            {t}
+          </span>
+        ))}
+      </div>
+
       {/* Honeypot */}
       <input
         type="text"
@@ -80,10 +90,9 @@ export default function DemoForm() {
       {/* Schultyp */}
       <div>
         <label className="block text-xs font-body font-700 text-white/60 uppercase tracking-widest mb-2">
-          Schultyp *
+          Schultyp <span className="font-400 normal-case tracking-normal opacity-60">(optional)</span>
         </label>
         <select
-          required
           value={schultyp}
           onChange={(e) => setSchultyp(e.target.value)}
           className={inputClass}

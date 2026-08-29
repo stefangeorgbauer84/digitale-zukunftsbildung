@@ -10,10 +10,10 @@ const links = [
   { href: '/lehrplan-mapping', label: 'Lehrplanmapping' },
   { href: '/lernziele', label: 'Lernziele' },
   { href: '/aktiengame', label: 'Aktiengame' },
-  { href: '/demo', label: '🛒 Gratis Demo' },
   { href: '/#unternehmen', label: 'Für Unternehmen' },
   { href: '/ueber-uns', label: 'Über uns' },
   { href: '/aktuelles', label: 'Aktuelles' },
+  { href: '/#kontakt', label: 'Kontakt' },
 ]
 
 export default function SiteNav({ dark = false }: { dark?: boolean }) {
@@ -91,14 +91,11 @@ export default function SiteNav({ dark = false }: { dark?: boolean }) {
             </Link>
           ))}
           <Link
-            href="/#kontakt"
-            className={`ml-2 px-5 py-2.5 rounded-xl text-sm font-body font-700 transition-all active:scale-95 ${
-              solid
-                ? 'bg-primary-dark text-white hover:bg-primary-medium'
-                : 'glass text-white border border-white/25 hover:bg-white/15'
-            }`}
+            href="/demo"
+            className="ml-2 px-5 py-2.5 rounded-xl text-sm font-body font-700 text-white transition-all hover:opacity-90 active:scale-95 shadow-lg"
+            style={{ background: 'linear-gradient(135deg, #4a2d8a, #2a8a76)', boxShadow: '0 4px 16px rgba(74,45,138,0.35)' }}
           >
-            Kontakt
+            Gratis Demo starten
           </Link>
         </nav>
 
@@ -140,11 +137,12 @@ export default function SiteNav({ dark = false }: { dark?: boolean }) {
               </Link>
             ))}
             <Link
-              href="/#kontakt"
+              href="/demo"
               onClick={() => setOpen(false)}
-              className="mt-3 block text-center bg-primary-dark text-white px-5 py-3 rounded-xl text-sm font-body font-700"
+              className="mt-3 block text-center text-white px-5 py-3 rounded-xl text-sm font-body font-700"
+              style={{ background: 'linear-gradient(135deg, #4a2d8a, #2a8a76)' }}
             >
-              Kontakt aufnehmen
+              Gratis Demo starten
             </Link>
           </nav>
         </div>
