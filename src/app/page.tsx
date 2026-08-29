@@ -384,7 +384,7 @@ export default function HomePage() {
 
           <h1 id="hero-heading" className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             Finanzbildung für Ihre Klasse.<br />
-            <span className="text-primary-light">Fertig. Sofort. Österreich-konform.</span>
+            <span className="text-primary-light">Fertig. Sofort.</span>
           </h1>
 
           {/* Zielgruppen-Split */}
