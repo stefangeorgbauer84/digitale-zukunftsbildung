@@ -61,6 +61,17 @@ const nextConfig = {
       },
     ]
   },
+  async redirects() {
+    return [
+      {
+        // Vercel-Deployment-URL ist sonst als Duplikat der Domain indexierbar
+        source: '/:path*',
+        has: [{ type: 'host', value: 'digitale-zukunftsbildung.vercel.app' }],
+        destination: 'https://www.digitale-zukunftsbildung.eu/:path*',
+        permanent: true,
+      },
+    ]
+  },
 }
 
 module.exports = withSentryConfig(nextConfig, {

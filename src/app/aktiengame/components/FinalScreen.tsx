@@ -182,7 +182,7 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
     `💰 Startkapital: 10.000 € → Endvermögen: ${totalWealth.toFixed(0)} €`,
     `📈 Performance: ${performance >= 0 ? '+' : ''}${performance.toFixed(1)}% · Note: ${grade}`,
     `🏅 Achievements: ${achievementNames}`,
-    '🌐 digitale-zukunftsbildung.vercel.app/aktiengame',
+    '🌐 www.digitale-zukunftsbildung.eu/aktiengame',
   ].join('\n')
 
   const handleCopy = () => {

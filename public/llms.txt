@@ -19,13 +19,13 @@ Skills-UP! bietet 12 lehrplankonforme Module, über 10 interaktive Praxissimulat
 
 ## Schultypen
 
-- [AHS-Oberstufe](https://digitale-zukunftsbildung.vercel.app/schulen/ahs) – GWK, PuG, Mathematik, Wahlpflichtfach
-- [HAK & HAS](https://digitale-zukunftsbildung.vercel.app/schulen/hak) – Betriebswirtschaft, Rechnungswesen, Volkswirtschaft
-- [HTL](https://digitale-zukunftsbildung.vercel.app/schulen/htl) – Allgemeinbildung, Mathematik, Projektunterricht
-- [HLW & Fachschulen](https://digitale-zukunftsbildung.vercel.app/schulen/hlw) – Ernährung, Gesundheit, Konsum, Lebensführung
-- [BAfEP & BASOP](https://digitale-zukunftsbildung.vercel.app/schulen/bafep) – Pädagogik, Psychologie, Hort und Kindergarten
-- [PTS](https://digitale-zukunftsbildung.vercel.app/schulen/pts) – Berufsorientierung, Lebenskunde, Soziales Lernen
-- [Berufsschule](https://digitale-zukunftsbildung.vercel.app/schulen/berufsschule) – Politische Bildung, Lebenskunde, Projektunterricht
+- [AHS-Oberstufe](https://www.digitale-zukunftsbildung.eu/schulen/ahs) – GWK, PuG, Mathematik, Wahlpflichtfach
+- [HAK & HAS](https://www.digitale-zukunftsbildung.eu/schulen/hak) – Betriebswirtschaft, Rechnungswesen, Volkswirtschaft
+- [HTL](https://www.digitale-zukunftsbildung.eu/schulen/htl) – Allgemeinbildung, Mathematik, Projektunterricht
+- [HLW & Fachschulen](https://www.digitale-zukunftsbildung.eu/schulen/hlw) – Ernährung, Gesundheit, Konsum, Lebensführung
+- [BAfEP & BASOP](https://www.digitale-zukunftsbildung.eu/schulen/bafep) – Pädagogik, Psychologie, Hort und Kindergarten
+- [PTS](https://www.digitale-zukunftsbildung.eu/schulen/pts) – Berufsorientierung, Lebenskunde, Soziales Lernen
+- [Berufsschule](https://www.digitale-zukunftsbildung.eu/schulen/berufsschule) – Politische Bildung, Lebenskunde, Projektunterricht
 
 ## Inhalte & Module
 
@@ -35,10 +35,10 @@ Simulationen: Gehaltsverhandlung, Budgetplanung, Bank-Simulation, Konsumfallen-P
 
 ## Kontakt
 
-- Website: https://digitale-zukunftsbildung.vercel.app
+- Website: https://www.digitale-zukunftsbildung.eu
 - E-Mail: kontakt@digitale-zukunftsbildung.eu
 - Verein: Verein zur Entwicklung der digitalen Zukunftsbildung, Wien, Österreich
 
 ## Sitemap
 
-- https://digitale-zukunftsbildung.vercel.app/sitemap.xml
+- https://www.digitale-zukunftsbildung.eu/sitemap.xml

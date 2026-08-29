@@ -208,14 +208,6 @@ export default function HomePage() {
       '@type': 'Organization',
       name: 'Verein zur Entwicklung der digitalen Zukunftsbildung',
     },
-    potentialAction: {
-      '@type': 'SearchAction',
-      target: {
-        '@type': 'EntryPoint',
-        urlTemplate: 'https://www.digitale-zukunftsbildung.eu/schulen?q={search_term_string}',
-      },
-      'query-input': 'required name=search_term_string',
-    },
   }
 
   const organizationJsonLd = {
