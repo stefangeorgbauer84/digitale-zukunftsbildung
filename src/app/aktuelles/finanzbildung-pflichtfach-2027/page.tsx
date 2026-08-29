@@ -160,7 +160,7 @@ export default function FinanzbildungPflichtfach2027() {
 
             <div className="not-prose rounded-2xl p-8 mb-8" style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)' }}>
               <p className="font-heading text-lg font-bold mb-3" style={{ color: '#1a1040' }}>
-                „Fertig. Sofort. Österreich-konform.“
+                „Fertig. Sofort.“
               </p>
               <p className="font-body text-gray-700 text-sm leading-relaxed mb-4">
                 Genau hier setzt Skills-UP! an. Alle Module sind lehrplankonform, didaktisch aufbereitet und können ohne Vorbereitungsaufwand eingesetzt werden. Lehrkräfte laden das Programm im Lehrer-Dashboard und unterrichten sofort.
