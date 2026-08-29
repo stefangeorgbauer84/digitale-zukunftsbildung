@@ -88,6 +88,7 @@ export default function SiteFooter() {
               {[
                 { label: 'Über uns', href: '/ueber-uns' },
                 { label: 'Aktuelles', href: '/aktuelles' },
+                { label: 'Materialien & Tipps', href: '/blog' },
                 { label: 'Aktiengame', href: '/aktiengame' },
                 { label: 'Alle Lernziele', href: '/lernziele' },
                 { label: 'Demo anfragen', href: '/demo-anfragen' },

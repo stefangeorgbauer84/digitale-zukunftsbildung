@@ -248,16 +248,16 @@ export default function UeberUns() {
               Was uns antreibt
             </div>
             <h2 className="font-heading text-3xl md:text-4xl font-bold mb-6" style={{ color: '#1a1040' }}>
-              Die Idee entstand im Lockdown.
+              Diese Geschichte beginnt<br />in Ihrem Klassenzimmer.
             </h2>
             <p className="text-text-muted font-body text-lg leading-relaxed mb-4">
-              Marina Winkler unterrichtete über Teach for Austria und erlebte hautnah, wie wenig Jugendliche über Finanzen wussten. Nicht aus Desinteresse, sondern weil es niemand je erklärt hatte.
+              Sie kennen den Moment: Die Klasse fragt nach Krypto, Klarna und dem ersten Gehalt — und Sie wissen, wie wichtig diese Fragen sind. Aber zwischen Korrekturen, Konferenzen und Supplierstunden bleibt keine Zeit, aus Broschüren und PDFs echten Unterricht zu bauen. Nicht am Willen scheitert es. An den Stunden im Tag.
             </p>
             <p className="text-text-muted font-body text-lg leading-relaxed mb-4">
-              Gleichzeitig sah sie, wie überlastet Lehrkräfte waren. Kein Vorbereitungsaufwand, kein passendes Material, keine Zeit. Das Problem war systemisch.
+              Genau diesen Moment hat Marina Winkler im Lockdown selbst erlebt, als sie über Teach for Austria unterrichtete: Jugendliche, die nichts über Geld wussten — nicht aus Desinteresse, sondern weil es ihnen nie jemand erklärt hatte. Und daneben Lehrkräfte, die helfen wollten, aber mit leeren Händen dastanden.
             </p>
             <p className="text-text-muted font-body text-lg leading-relaxed">
-              Zusammen mit Stefan Bauer entstand die Idee für <strong className="text-primary-dark">Skills-UP!</strong>: Ein Programm, das an jeder österreichischen Schule funktioniert. Ohne Mehraufwand für Lehrkräfte, mit Inhalten, die wirklich ankommen.
+              Aus dieser doppelten Lücke entstand <strong className="text-primary-dark">Skills-UP!</strong> — als Verbündeter an Ihrer Seite: Sie öffnen den Browser, die Klasse legt los. Und ein paar Wochen später diskutieren Ihre Schüler:innen über Kollektivverträge, Notgroschen und Ratenkauf-Fallen, als hätten sie nie etwas anderes getan. Der Held dieser Geschichte sind Sie. Wir liefern das Werkzeug.
             </p>
           </div>
           <div className="relative">

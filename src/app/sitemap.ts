@@ -21,6 +21,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/aktuelles/finanzbildung-10-minuten-unterricht`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/aktuelles/finanzbildung-kosten-schule`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/faq`, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/blog`, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${base}/blog/inflation-einfach-erklaert-unterrichtsmaterial`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/lehrplan-mapping`, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/lernziele`, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/demo-anfragen`, changeFrequency: 'monthly', priority: 0.9 },
