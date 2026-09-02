@@ -6,6 +6,7 @@ import SiteFooter from '@/components/SiteFooter'
 import BackToTop from '@/components/BackToTop'
 import FaqAccordion from '@/components/FaqAccordion'
 import VideoSection from '@/components/VideoSection'
+import WillkommenVideos from '@/components/WillkommenVideos'
 import AktiengameCTA from '@/components/AktiengameCTA'
 import KonsumfallenCTA from '@/components/KonsumfallenCTA'
 import ContactForm from '@/components/ContactForm'
@@ -1165,6 +1166,11 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ══════════════════════════════════════════════════
+          WILLKOMMENSVIDEOS (Bunny Stream, Two-Click)
+      ══════════════════════════════════════════════════ */}
+      <WillkommenVideos />
 
       {/* ══════════════════════════════════════════════════
           ZIELGRUPPEN

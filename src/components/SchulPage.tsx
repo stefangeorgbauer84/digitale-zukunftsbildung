@@ -7,6 +7,7 @@ import SiteNav from '@/components/SiteNav'
 import AktiengameCTA from '@/components/AktiengameCTA'
 import SiteFooter from '@/components/SiteFooter'
 import VideoSection from '@/components/VideoSection'
+import WillkommenVideos from '@/components/WillkommenVideos'
 import ContactForm from '@/components/ContactForm'
 
 export interface UnterrichtsEinheit {
@@ -1369,6 +1370,9 @@ export default function SchulPage({
           </div>
         </div>
       </section>
+
+      {/* ── Willkommensvideos (Bunny Stream, Two-Click) ──────── */}
+      <WillkommenVideos anrede="du" />
 
       {/* ── Themen ──────────────────────────────────────────── */}
       <section className="py-16 bg-gray-50">

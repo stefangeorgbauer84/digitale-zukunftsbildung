@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import DemoForm from './DemoForm'
+import VorstellungVideo from '@/components/VorstellungVideo'
 
 export const metadata: Metadata = {
   title: 'Demo anfragen – Skills-UP! Finanzbildung für Schulen | Österreich',
@@ -98,6 +99,9 @@ export default function DemoAnfragenPage() {
             </div>
           </div>
         </section>
+
+        {/* Vorstellungsvideo 16.2 (Bunny Stream, Two-Click) */}
+        <VorstellungVideo />
       </main>
       <SiteFooter />
     </>
