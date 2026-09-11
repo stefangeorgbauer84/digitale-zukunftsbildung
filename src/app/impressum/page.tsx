@@ -106,8 +106,8 @@ export default function Impressum() {
           </Section>
 
           <Section title="Vertretungsberechtigte Personen (Vorstand)">
-            <p>Marina Winkler, BA MA – Projektleiterin &amp; Hauptansprechperson</p>
-            <p>Dr. Stefan Bauer</p>
+            <p>Marina Winkler, BA MA – Obfrau (Vorsitzende) &amp; Projektleiterin</p>
+            <p>Dr. Stefan Bauer – Obmann-Stellvertreter (stellv. Vorsitzender)</p>
           </Section>
 
           <Section title="Vereinsregister">
