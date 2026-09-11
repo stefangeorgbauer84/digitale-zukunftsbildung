@@ -111,7 +111,7 @@ export default function Impressum() {
           </Section>
 
           <Section title="Vereinsregister">
-            <p>ZVR-Zahl (Zentrales Vereinsregister): <strong className="text-text-primary">[Bitte vor Launch eintragen]</strong></p>
+            <p>ZVR-Zahl (Zentrales Vereinsregister): <strong className="text-text-primary">1093499022</strong></p>
           </Section>
 
           <Section title="Haftungsausschluss">
