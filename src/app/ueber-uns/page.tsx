@@ -268,7 +268,7 @@ export default function UeberUns() {
               style={{ background: 'radial-gradient(circle, rgba(107,77,176,0.15) 0%, transparent 70%)' }} />
             <div className="relative rounded-3xl overflow-hidden shadow-card-hover">
               <Image
-                src="/fotos/skillsUP-12.jpg"
+                src="/fotos/skillsUP-6.jpg"
                 alt="Marina Winkler – Gründerin Skills-UP!"
                 width={560}
                 height={420}
@@ -447,7 +447,7 @@ export default function UeberUns() {
           <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <div className="bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all group">
               <div className="h-64 overflow-hidden">
-                <Image src="/fotos/skillsUP-3.jpg" alt="Marina Winkler"
+                <Image src="/fotos/skillsUP-7.jpg" alt="Marina Winkler"
                   width={400} height={256}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   style={{ objectPosition: 'center 20%' }} />
@@ -470,7 +470,7 @@ export default function UeberUns() {
 
             <div className="bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all group">
               <div className="h-64 overflow-hidden">
-                <Image src="/fotos/skillsUP-4.jpg" alt="Dr. Stefan Bauer"
+                <Image src="/fotos/skillsUP-10.jpg" alt="Dr. Stefan Bauer"
                   width={400} height={256}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   style={{ objectPosition: 'center 20%' }} />
@@ -499,8 +499,7 @@ export default function UeberUns() {
         <div className="max-w-6xl mx-auto px-6">
           <p className="text-center text-xs font-body font-700 uppercase tracking-widest text-primary-medium mb-10">Skills-UP! in Aktion</p>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
-            {['/fotos/skillsUP-1.jpg', '/fotos/skillsUP-2.jpg', '/fotos/skillsUP-5.jpg', '/fotos/skillsUP-6.jpg',
-              '/fotos/skillsUP-7.jpg', '/fotos/skillsUP-8.jpg', '/fotos/skillsUP-9.jpg', '/fotos/skillsUP-10.jpg'].map((src, i) => (
+            {['/fotos/skillsUP-1.jpg', '/fotos/skillsUP-2.jpg', '/fotos/skillsUP-6.jpg', '/fotos/skillsUP-10.jpg'].map((src, i) => (
               <div key={src} className="rounded-2xl overflow-hidden aspect-square shadow-card hover:shadow-card-hover transition-all hover:scale-[1.02]">
                 <Image src={src} alt={`Skills-UP! Team Impression ${i + 1}`}
                   width={300} height={300}
