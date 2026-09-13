@@ -55,7 +55,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'Was ist der Unterschied zwischen dem Aktiengame und Skills-UP!?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Das Aktiengame ist eine kostenlose Einzelsimulation zum Thema Börse und Investieren. Skills-UP! ist das vollständige Finanzbildungsprogramm mit 12+ Modulen, Praxissimulationen, Lehrer-Dashboard und Gamification für alle Schultypen.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Das Aktiengame ist eine kostenlose Einzelsimulation zum Thema Börse und Investieren. Skills-UP! ist das vollständige Finanzbildungsprogramm mit 15 Modulen, Praxissimulationen, Lehrer-Dashboard und Gamification für alle Schultypen.' },
     },
     {
       '@type': 'Question',
@@ -187,7 +187,7 @@ export default function AktienGamePage() {
             },
             {
               q: 'Was ist der Unterschied zu Skills-UP!?',
-              a: 'Das Aktiengame ist eine kostenlose Einzelsimulation. Skills-UP! ist das vollständige Programm mit 12+ Modulen, Lehrer-Dashboard und Praxissimulationen für alle Schultypen.',
+              a: 'Das Aktiengame ist eine kostenlose Einzelsimulation. Skills-UP! ist das vollständige Programm mit 15 Modulen, Lehrer-Dashboard und Praxissimulationen für alle Schultypen.',
             },
             {
               q: 'Brauche ich als Lehrkraft Börsenwissen?',
@@ -213,7 +213,7 @@ export default function AktienGamePage() {
                 Mehr als Börse — Skills-UP! deckt alle Finanzthemen ab.
               </h2>
               <p className="font-body text-white/60 text-sm leading-relaxed mb-6">
-                12+ Module, Lohnzettel bis Krypto, Lehrer-Dashboard, lehrplankonform für AHS, HAK, HTL, HLW, PTS und Berufsschulen.
+                15 Module, Lohnzettel bis Krypto, Lehrer-Dashboard, lehrplankonform für AHS, HAK, HTL, HLW, PTS und Berufsschulen.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link href="/schulen"
@@ -228,7 +228,7 @@ export default function AktienGamePage() {
               </div>
             </div>
             <div className="shrink-0 hidden md:grid grid-cols-2 gap-3">
-              {['12+ Module', '10+ Simulationen', 'Lehrer-Dashboard', 'DSGVO-konform'].map((f) => (
+              {['15 Module', '17 Simulationen', 'Lehrer-Dashboard', 'DSGVO-konform'].map((f) => (
                 <div key={f} className="px-4 py-3 rounded-xl text-center text-xs font-body font-700 text-white/70"
                   style={{ background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.12)' }}>
                   {f}

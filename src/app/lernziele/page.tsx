@@ -25,19 +25,19 @@ import {
 export const metadata: Metadata = {
   title: 'Alle Lernziele | Skills-UP! — Finanzbildung Österreich',
   description:
-    'Jedes Modul, jede Simulation, jedes Lernziel von Skills-UP! auf einen Blick — 37 Lernmodule und 12 interaktive Simulationen für Finanzbildung an österreichischen Schulen.',
+    'Jedes Modul, jede Simulation, jedes Lernziel von Skills-UP! auf einen Blick — 15 Lernmodule und 17 Simulationen für Finanzbildung an österreichischen Schulen.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/lernziele' },
   openGraph: {
     title: 'Alle Lernziele auf einen Blick — Skills-UP!',
     description:
-      '37 Lernmodule, 12 Simulationen: das vollständige Lernziel-Verzeichnis von Skills-UP! für Finanzbildung an österreichischen Schulen.',
+      '15 Lernmodule, 17 Simulationen: das vollständige Lernziel-Verzeichnis von Skills-UP! für Finanzbildung an österreichischen Schulen.',
     url: 'https://www.digitale-zukunftsbildung.eu/lernziele',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Alle Lernziele auf einen Blick — Skills-UP!',
-    description: '37 Lernmodule, 12 Simulationen — das vollständige Lernziel-Verzeichnis von Skills-UP!.',
+    description: '15 Lernmodule, 17 Simulationen — das vollständige Lernziel-Verzeichnis von Skills-UP!.',
   },
 }
 
@@ -471,7 +471,7 @@ export default function LernzielePage() {
                 Die Simulationen
               </h2>
               <p className="font-body text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Statt nur zu lesen, entscheiden Schüler:innen selbst — in 11 interaktiven Simulationen mit
+                Statt nur zu lesen, entscheiden Schüler:innen selbst — in 17 Simulationen mit
                 jeweils eigenen Lernzielen für Schüler:innen und für Lehrpersonen.
               </p>
             </div>

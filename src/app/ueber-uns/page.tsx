@@ -4,6 +4,7 @@ import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import Link from 'next/link'
 import WillkommenVideos from '@/components/WillkommenVideos'
+import BunnyVideoSektion, { type BunnyVideo } from '@/components/BunnyVideoSektion'
 
 export const metadata: Metadata = {
   title: 'Über uns – Team & Mission | Skills-UP! Finanzbildung Österreich',
@@ -207,7 +208,7 @@ export default function UeberUns() {
                 icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>,
               },
               {
-                zahl: '12+',
+                zahl: '15',
                 label: 'Lernmodule',
                 sub: 'Lehrplankonform, sofort einsetzbar',
                 color: '#1a5c4e', bg: '#e6f4f1',
@@ -252,16 +253,16 @@ export default function UeberUns() {
               Diese Geschichte beginnt<br />in Ihrem Klassenzimmer.
             </h2>
             <p className="text-text-muted font-body text-lg leading-relaxed mb-4">
-              Sie kennen den Moment vielleicht: Die Klasse fragt nach Krypto, Klarna und dem ersten Gehalt – und Sie wissen, wie wichtig diese Fragen sind. Aber zwischen Korrekturen, Konferenzen und Supplierstunden bleibt keine Zeit, aus Broschüren und PDFs echten Unterricht zu bauen. Und vielleicht auch daran, dass Sie selbst nie ausreichend über das Thema gelernt haben.
+              Sie kennen den Moment vielleicht: Die Klasse fragt nach Krypto, Klarna und dem ersten Gehalt, und Sie wissen: wie wichtig diese Fragen sind. Aber zwischen Korrekturen, Konferenzen und Supplierstunden bleibt keine Zeit, aus Broschüren und PDFs echten Unterricht zu bauen. Und vielleicht auch daran, dass Sie selbst nie ausreichend über das Thema gelernt haben.
             </p>
             <p className="text-text-muted font-body text-lg leading-relaxed mb-4">
-              Während ihrer Zeit bei Teach For Austria hat Marina immer wieder dasselbe erlebt: Lernende, die kaum etwas über Geld wussten – nicht aus Desinteresse, sondern weil es ihnen nie jemand erklärt hatte. Und Lehrpersonen, die das gerne ändern wollten, aber keine Zeit hatten, selbst Materialien zu entwickeln.
+              Während ihrer Zeit bei Teach For Austria hat Marina immer wieder dasselbe erlebt: Lernende, die kaum etwas über Geld wussten, nicht aus Desinteresse, sondern weil es ihnen nie jemand erklärt hatte. Und Lehrpersonen, die das gerne ändern wollten, aber keine Zeit hatten, selbst Materialien zu entwickeln.
             </p>
             <p className="text-text-muted font-body text-lg leading-relaxed mb-4">
-              Genau diese Erfahrung steckt heute in <strong className="text-primary-dark">Skills-UP!</strong> – als Verbündeter an Ihrer Seite: Sie öffnen den Browser, die Klasse legt los.
+              Genau diese Erfahrung steckt heute in <strong className="text-primary-dark">Skills-UP!</strong>: Ihr Verbündeter an Ihrer Seite. Sie öffnen den Browser, die Klasse legt los.
             </p>
             <p className="text-text-muted font-body text-lg leading-relaxed">
-              <strong className="text-primary-dark">Unsere Vision:</strong> Geld und Finanzen gehören in den Schulalltag. Keine Lernende soll die Schule ohne ein gewisses Basisgrundwissen verlassen – Jugendliche sollen gestärkt ins &bdquo;echte Leben&ldquo; starten.
+              <strong className="text-primary-dark">Unsere Vision:</strong> Geld und Finanzen gehören in den Schulalltag. Keine Lernende soll die Schule ohne ein gewisses Basisgrundwissen verlassen. Jugendliche sollen gestärkt ins &bdquo;echte Leben&ldquo; starten.
             </p>
           </div>
           <div className="relative">
@@ -269,8 +270,8 @@ export default function UeberUns() {
               style={{ background: 'radial-gradient(circle, rgba(107,77,176,0.15) 0%, transparent 70%)' }} />
             <div className="relative rounded-3xl overflow-hidden shadow-card-hover">
               <Image
-                src="/fotos/skillsUP-6.jpg"
-                alt="Marina Winkler – Gründerin Skills-UP!"
+                src="/fotos/skillsUP-8.jpg"
+                alt="Marina Winkler, Gründerin Skills-UP!"
                 width={560}
                 height={420}
                 className="w-full object-cover"
@@ -285,6 +286,23 @@ export default function UeberUns() {
           </div>
         </div>
       </section>
+
+      {/* ── Vorstellungsvideo Skills-UP! ─────────────────── */}
+      <BunnyVideoSektion
+        eyebrow="Skills-UP! vorgestellt"
+        headline="Das ist der Anlass. Das ist die Antwort."
+        lead="Jede dritte Person in der Schuldnerberatung ist unter 30 und im Schnitt mit 30.000 Euro verschuldet. Deshalb gibt es Skills-UP!"
+        variante="dunkel"
+        videos={[{
+          guid: 'c73a50dd-401c-4556-a4b2-defe15c29303',
+          badge: 'Hintergrund',
+          titel: 'Skills-UP! vorgestellt',
+          beschreibung: 'Jede dritte Person in der Schuldnerberatung ist unter 30 und im Schnitt mit 30.000 Euro verschuldet. Das ist der Anlass — und das ist die Antwort.',
+          sekunden: 63,
+          akzent: '#2a8a76',
+          poster: '/willkommen/vertrieb.jpg',
+        } satisfies BunnyVideo]}
+      />
 
       {/* ── Unsere Werte ────────────────────────────────── */}
       <section className="py-20" style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)' }}>
@@ -512,7 +530,6 @@ export default function UeberUns() {
         </div>
       </section>
 
-      <WillkommenVideos anrede="sie" />
 
       {/* ── CTA ──────────────────────────────────────────── */}
       <section className="py-20 px-6">

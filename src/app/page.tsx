@@ -1593,8 +1593,8 @@ export default function HomePage() {
             </div>
             <div className="rounded-2xl overflow-hidden shadow-md">
               <Image
-                src="/fotos/skillsUP-6.jpg"
-                alt="Marina Winkler – Skills-UP! Team"
+                src="/fotos/skillsUP-8.jpg"
+                alt="Marina Winkler, Skills-UP! Team"
                 width={600}
                 height={288}
                 className="w-full h-72 object-cover"
