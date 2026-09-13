@@ -478,7 +478,7 @@ export default function SchulPage({
                 </svg>
               </div>
               <div>
-                <p className="font-heading font-700 text-base mb-2" style={{ color: '#1a1040' }}>10+ Praxissimulationen</p>
+                <p className="font-heading font-700 text-base mb-2" style={{ color: '#1a1040' }}>17 Simulationen</p>
                 <p className="font-body text-sm text-text-muted leading-relaxed">
                   Schüler:innen erleben echte Finanzentscheidungen in sicherer Umgebung: vom Gehaltszettel lesen bis zur Gehaltsverhandlung. Du startest die Simulation, der Rest läuft von allein.
                 </p>

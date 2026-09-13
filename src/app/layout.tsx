@@ -32,7 +32,7 @@ export const metadata: Metadata = {
     shortcut: '/favicon.ico',
   },
   title: 'Skills-UP! – Finanzbildung für Schulen | Digitale Zukunftsbildung',
-  description: 'Skills-UP! – Finanzbildung, die wirklich ankommt. Das Unterrichtsprogramm für 15- bis 20-Jährige: 12+ Module, 10+ Praxissimulationen, lehrplankonform und DSGVO-sicher. Für AHS, BHS und PTS.',
+  description: 'Skills-UP! – Finanzbildung, die wirklich ankommt. Das Unterrichtsprogramm für 15- bis 20-Jährige: 15 Module, 17 Simulationen, lehrplankonform und DSGVO-sicher. Für AHS, BHS und PTS.',
   metadataBase: new URL('https://www.digitale-zukunftsbildung.eu'),
   alternates: {
     canonical: 'https://www.digitale-zukunftsbildung.eu',
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: 'Skills-UP! – Finanzbildung, die wirklich ankommt',
-    description: 'Das Unterrichtsprogramm für 15- bis 20-Jährige. 12+ Module, 10+ Praxissimulationen, lehrplankonform und sofort einsetzbar.',
+    description: 'Das Unterrichtsprogramm für 15- bis 20-Jährige. 15 Module, 17 Simulationen, lehrplankonform und sofort einsetzbar.',
     url: 'https://www.digitale-zukunftsbildung.eu',
     siteName: 'Skills-UP! – Digitale Zukunftsbildung',
     locale: 'de_AT',

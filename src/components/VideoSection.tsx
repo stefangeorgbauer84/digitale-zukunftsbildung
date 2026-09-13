@@ -190,7 +190,7 @@ export default function VideoSection({ variant = 'light', farbe = '#4a2d8a' }: V
         <div className="flex flex-wrap justify-center gap-3 mt-8">
           {[
             '12+ Module fertig aufbereitet',
-            '10+ Praxissimulationen',
+            '17 Simulationen',
             'Setup in 5 Minuten',
             'Kein IT-Aufwand',
           ].map((t) => (

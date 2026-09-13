@@ -91,7 +91,7 @@ export default function OgImage() {
             lineHeight: 1.4,
           }}
         >
-          12+ Module · 10+ Praxissimulationen · lehrplankonform · für AHS, BHS &amp; PTS
+          12+ Module · 17 Simulationen · lehrplankonform · für AHS, BHS &amp; PTS
         </div>
 
         {/* Footer row */}

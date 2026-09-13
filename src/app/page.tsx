@@ -57,7 +57,7 @@ const angebote = [
       </svg>
     ),
     gradient: 'linear-gradient(135deg, #4a2d8a 0%, #6b4db0 100%)',
-    title: '12+ Module Finanzwissen',
+    title: '15 Module Finanzwissen',
     tag: '15 oder 50 Min',
     zielgruppe: 'Kurz- & Langversion',
     maxPersonen: 'Lehrplankonform',
@@ -71,7 +71,7 @@ const angebote = [
       </svg>
     ),
     gradient: 'linear-gradient(135deg, #1a5c4e 0%, #2a8a76 100%)',
-    title: '10+ Praxissimulationen',
+    title: '17 Simulationen',
     tag: 'Das Herzstück',
     zielgruppe: 'Risikofrei & interaktiv',
     maxPersonen: 'Lernen durch Tun',
@@ -245,7 +245,7 @@ export default function HomePage() {
         {
           '@type': 'Course',
           name: 'Skills-UP! Finanzbildung',
-          description: 'Lehrplankonformes Finanzbildungsprogramm für 15- bis 20-Jährige an österreichischen Schulen. 12+ Module, 10+ Praxissimulationen.',
+          description: 'Lehrplankonformes Finanzbildungsprogramm für 15- bis 20-Jährige an österreichischen Schulen. 15 Module, 17 Simulationen.',
           provider: { '@type': 'Organization', name: 'Verein zur Entwicklung der digitalen Zukunftsbildung' },
           educationalLevel: 'Sekundarstufe II',
           inLanguage: 'de-AT',
@@ -462,7 +462,7 @@ export default function HomePage() {
           <div className="flex flex-wrap items-center justify-center gap-6 text-white/55 text-sm font-body">
             {[
               '12+ interaktive Module',
-              '10+ Praxissimulationen',
+              '17 Simulationen',
               'Lehrplankonform',
               'DSGVO-konform aus Österreich',
             ].map((t) => (
@@ -872,7 +872,7 @@ export default function HomePage() {
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-status-teal bg-status-teal-light px-4 py-2 rounded-full mb-5">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
-            12+ Module für fundiertes Finanzwissen
+            15 Module für fundiertes Finanzwissen
           </div>
           <h2 className="font-heading text-3xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
             Was Schüler:innen lernen.
@@ -1206,7 +1206,7 @@ export default function HomePage() {
               title: 'Schüler:innen',
               color: '#1a5c4e', bg: 'linear-gradient(135deg, #1a5c4e 0%, #2a8a76 100%)',
               points: [
-                'Über 10 Praxissimulationen aus dem echten Leben',
+                '17 Simulationen aus dem echten Leben',
                 'Peer-Videos auf Augenhöhe, jugendnah',
                 'Gamification mit Punkten, Quizzes und Badges',
                 'Finanzwissen, das im Alltag wirklich ankommt',
