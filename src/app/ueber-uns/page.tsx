@@ -466,7 +466,7 @@ export default function UeberUns() {
           <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <div className="bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all group">
               <div className="h-64 overflow-hidden">
-                <Image src="/fotos/skillsUP-7.jpg" alt="Marina Winkler"
+                <Image src="/fotos/skillsUP-8.jpg" alt="Marina Winkler"
                   width={400} height={256}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   style={{ objectPosition: 'center 20%' }} />

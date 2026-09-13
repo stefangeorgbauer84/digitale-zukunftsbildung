@@ -1152,7 +1152,7 @@ export default function HomePage() {
                   style={{ background: 'radial-gradient(circle, rgba(42,138,118,0.45) 0%, transparent 70%)' }} />
                 <div className="relative w-52 h-52 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
                   <Image
-                    src="/fotos/marina-winkler.jpg"
+                    src="/fotos/skillsUP-8.jpg"
                     alt="Marina Winkler, Vereinsleitung Skills-UP!"
                     fill
                     className="object-cover object-top"

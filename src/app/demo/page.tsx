@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import KonsumfallenDemoClient from '@/components/demo/KonsumfallenDemoClient'
 import ModulVideos from '@/components/ModulVideos'
+import BunnyVideoSektion, { type BunnyVideo } from '@/components/BunnyVideoSektion'
 
 export const metadata: Metadata = {
   title: 'Konsumfallen-Simulation | Skills-UP! Demo',
@@ -24,6 +25,23 @@ export default function DemoPage() {
 
       {/* Originalvideos aus den Lernmodulen (Bunny Stream, Two-Click) */}
       <ModulVideos />
+
+      {/* ── Willkommensvideo für Lehrkräfte ───────────────── */}
+      <BunnyVideoSektion
+        eyebrow="Für Lehrkräfte"
+        headline="So funktioniert Skills-UP! in deiner Klasse."
+        lead="Kein Installationsaufwand, kein Vorbereitungsaufwand — einfach einloggen und loslegen. Hier siehst du, wie es geht."
+        variante="hell"
+        videos={[{
+          guid: '507846d7-3838-4e35-96e6-cb18f6d1b3d2',
+          badge: 'Für Lehrkräfte',
+          titel: 'Willkommen bei Skills-UP!',
+          beschreibung: 'Wie Lehrkräfte Skills-UP! in ihrem Unterricht einsetzen — schnell, einfach, ohne Vorbereitung.',
+          sekunden: 23,
+          akzent: '#4a2d8a',
+          poster: '/willkommen/vertrieb.jpg',
+        } satisfies BunnyVideo]}
+      />
 
       {/* CTA */}
       <section className="py-16 px-6 bg-white">
@@ -49,6 +67,23 @@ export default function DemoPage() {
           </div>
         </div>
       </section>
+
+      {/* ── Video: Skills-UP! für deine Klasse ───────────── */}
+      <BunnyVideoSektion
+        eyebrow="Für deine Klasse"
+        headline="Was Jugendliche über Skills-UP! sagen."
+        lead="Echte Schülerinnen und Schüler, echte Reaktionen — so erlebt die Klasse Skills-UP!."
+        variante="dunkel"
+        videos={[{
+          guid: 'a214e3cf-15b9-4aa2-979b-7b84d18ded51',
+          badge: 'Für deine Klasse',
+          titel: 'Skills-UP! aus Schülerperspektive',
+          beschreibung: 'Wie Jugendliche über Skills-UP! und Finanzbildung sprechen.',
+          sekunden: 54,
+          akzent: '#2a8a76',
+          poster: '/willkommen/vertrieb.jpg',
+        } satisfies BunnyVideo]}
+      />
     </>
   )
 }
