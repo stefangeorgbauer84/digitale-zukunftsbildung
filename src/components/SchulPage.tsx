@@ -1230,6 +1230,32 @@ export default function SchulPage({
         </div>
       </section>
 
+      {/* ── Award Photo ─────────────────────────────────────── */}
+      <section className="py-16 bg-gray-50">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="rounded-3xl overflow-hidden shadow-2xl relative">
+            <Image
+              src="/fotos/Top 3 MEGA Bildungsstiftung.jpg"
+              alt="Skills-UP! gewinnt Top-3 MEGA Bildungsmillion 2025 — das Team auf der Bühne mit dem Preischeck"
+              width={1200}
+              height={675}
+              className="w-full object-cover"
+              style={{ maxHeight: '480px' }}
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-8">
+              <div className="flex items-center gap-3 mb-2">
+                <span className="inline-block text-xs font-body font-700 px-3 py-1 rounded-full" style={{ background: '#A84E12', color: '#fff' }}>Top-3 Österreich</span>
+                <span className="text-white/80 text-xs font-body">MEGA Bildungsmillion 2025</span>
+              </div>
+              <p className="font-heading text-white text-xl md:text-2xl font-bold leading-snug max-w-xl">
+                Skills-UP! überzeugt die Jury: Top-3 unter hunderten Bildungsprojekten österreichweit.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* ── Partner-Logo-Marquee ─────────────────────────────── */}
       <section className="py-12 bg-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto px-6 mb-6 text-center">
