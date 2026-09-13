@@ -3,6 +3,7 @@ import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import ItDsgvoFaq from '@/components/ItDsgvoFaq'
+import WillkommenVideos from '@/components/WillkommenVideos'
 
 export const metadata: Metadata = {
   title: 'Finanzbildung für alle Schultypen in Österreich | Skills-UP!',
@@ -474,6 +475,9 @@ export default function SchulenUebersicht() {
           </div>
         </div>
       </section>
+
+      {/* Vorstellungsvideos */}
+      <WillkommenVideos anrede="du" />
 
       {/* IT & DSGVO — FAQ für Schul-IT-Kustod:innen */}
       <section className="py-20 bg-gray-50">

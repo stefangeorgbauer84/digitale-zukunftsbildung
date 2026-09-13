@@ -22,11 +22,10 @@ const anredeTexte = (a: Anrede) =>
       }
 
 // Bunny-Library 722507, Collection 16_VORSTELLUNG (7c06221f-c1ce-451b-9d53-2744f62ef67d).
-// 16.2 steht nicht hier, sondern auf /demo-anfragen (VorstellungVideo.tsx): es endet mit
-// einem Bestellappell und gehört damit dorthin, wo bestellt wird.
+// 16.2 erscheint auf der Startseite (anrede='sie') und auf /demo-anfragen (VorstellungVideo.tsx).
 const videoListe = (a: Anrede): BunnyVideo[] => {
   const t = anredeTexte(a)
-  return [
+  const basis: BunnyVideo[] = [
     {
       guid: '507846d7-3838-4e35-96e6-cb18f6d1b3d2',
       badge: 'Für Lehrkräfte',
@@ -46,6 +45,18 @@ const videoListe = (a: Anrede): BunnyVideo[] => {
       poster: '/willkommen/schueler.jpg',
     },
   ]
+  if (a === 'sie') {
+    basis.push({
+      guid: 'c73a50dd-401c-4556-a4b2-defe15c29303',
+      badge: 'Hintergrund',
+      titel: 'Skills-UP! vorgestellt',
+      beschreibung: 'Jede dritte Person in der Schuldnerberatung ist unter 30 und im Schnitt mit 30.000 Euro verschuldet. Das ist der Anlass — und das ist die Antwort.',
+      sekunden: 63,
+      akzent: '#2a8a76',
+      poster: '/willkommen/vertrieb.jpg',
+    })
+  }
+  return basis
 }
 
 export default function WillkommenVideos({ anrede = 'sie' }: { anrede?: Anrede }) {

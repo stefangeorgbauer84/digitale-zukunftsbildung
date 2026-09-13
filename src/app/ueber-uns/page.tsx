@@ -251,13 +251,16 @@ export default function UeberUns() {
               Diese Geschichte beginnt<br />in Ihrem Klassenzimmer.
             </h2>
             <p className="text-text-muted font-body text-lg leading-relaxed mb-4">
-              Sie kennen den Moment: Die Klasse fragt nach Krypto, Klarna und dem ersten Gehalt — und Sie wissen, wie wichtig diese Fragen sind. Aber zwischen Korrekturen, Konferenzen und Supplierstunden bleibt keine Zeit, aus Broschüren und PDFs echten Unterricht zu bauen. Nicht am Willen scheitert es. An den Stunden im Tag.
+              Sie kennen den Moment vielleicht: Die Klasse fragt nach Krypto, Klarna und dem ersten Gehalt – und Sie wissen, wie wichtig diese Fragen sind. Aber zwischen Korrekturen, Konferenzen und Supplierstunden bleibt keine Zeit, aus Broschüren und PDFs echten Unterricht zu bauen. Und vielleicht auch daran, dass Sie selbst nie ausreichend über das Thema gelernt haben.
             </p>
             <p className="text-text-muted font-body text-lg leading-relaxed mb-4">
-              Genau diesen Moment hat Marina Winkler im Lockdown selbst erlebt, als sie über Teach for Austria unterrichtete: Jugendliche, die nichts über Geld wussten — nicht aus Desinteresse, sondern weil es ihnen nie jemand erklärt hatte. Und daneben Lehrkräfte, die helfen wollten, aber mit leeren Händen dastanden.
+              Während ihrer Zeit bei Teach For Austria hat Marina immer wieder dasselbe erlebt: Lernende, die kaum etwas über Geld wussten – nicht aus Desinteresse, sondern weil es ihnen nie jemand erklärt hatte. Und Lehrpersonen, die das gerne ändern wollten, aber keine Zeit hatten, selbst Materialien zu entwickeln.
+            </p>
+            <p className="text-text-muted font-body text-lg leading-relaxed mb-4">
+              Genau diese Erfahrung steckt heute in <strong className="text-primary-dark">Skills-UP!</strong> – als Verbündeter an Ihrer Seite: Sie öffnen den Browser, die Klasse legt los.
             </p>
             <p className="text-text-muted font-body text-lg leading-relaxed">
-              Aus dieser doppelten Lücke entstand <strong className="text-primary-dark">Skills-UP!</strong> — als Verbündeter an Ihrer Seite: Sie öffnen den Browser, die Klasse legt los. Und ein paar Wochen später diskutieren Ihre Schüler:innen über Kollektivverträge, Notgroschen und Ratenkauf-Fallen, als hätten sie nie etwas anderes getan. Der Held dieser Geschichte sind Sie. Wir liefern das Werkzeug.
+              <strong className="text-primary-dark">Unsere Vision:</strong> Geld und Finanzen gehören in den Schulalltag. Keine Lernende soll die Schule ohne ein gewisses Basisgrundwissen verlassen – Jugendliche sollen gestärkt ins „echte Leben" starten.
             </p>
           </div>
           <div className="relative">
@@ -265,7 +268,7 @@ export default function UeberUns() {
               style={{ background: 'radial-gradient(circle, rgba(107,77,176,0.15) 0%, transparent 70%)' }} />
             <div className="relative rounded-3xl overflow-hidden shadow-card-hover">
               <Image
-                src="/fotos/Marina%20Winkler%20Profilbild.jpeg"
+                src="/fotos/skillsUP-12.jpg"
                 alt="Marina Winkler – Gründerin Skills-UP!"
                 width={560}
                 height={420}
@@ -444,7 +447,7 @@ export default function UeberUns() {
           <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <div className="bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all group">
               <div className="h-64 overflow-hidden">
-                <Image src="/fotos/Marina%20Winkler%20Profilbild.jpeg" alt="Marina Winkler"
+                <Image src="/fotos/skillsUP-3.jpg" alt="Marina Winkler"
                   width={400} height={256}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   style={{ objectPosition: 'center 20%' }} />
@@ -467,7 +470,7 @@ export default function UeberUns() {
 
             <div className="bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all group">
               <div className="h-64 overflow-hidden">
-                <Image src="/fotos/stefan-bauer-alt.jpg" alt="Dr. Stefan Bauer"
+                <Image src="/fotos/skillsUP-4.jpg" alt="Dr. Stefan Bauer"
                   width={400} height={256}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   style={{ objectPosition: 'center 20%' }} />
@@ -487,6 +490,24 @@ export default function UeberUns() {
                 </a>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── Impressionen ─────────────────────────────────── */}
+      <section className="py-16 bg-white">
+        <div className="max-w-6xl mx-auto px-6">
+          <p className="text-center text-xs font-body font-700 uppercase tracking-widest text-primary-medium mb-10">Skills-UP! in Aktion</p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {['/fotos/skillsUP-1.jpg', '/fotos/skillsUP-2.jpg', '/fotos/skillsUP-5.jpg', '/fotos/skillsUP-6.jpg',
+              '/fotos/skillsUP-7.jpg', '/fotos/skillsUP-8.jpg', '/fotos/skillsUP-9.jpg', '/fotos/skillsUP-10.jpg'].map((src, i) => (
+              <div key={src} className="rounded-2xl overflow-hidden aspect-square shadow-card hover:shadow-card-hover transition-all hover:scale-[1.02]">
+                <Image src={src} alt={`Skills-UP! Team Impression ${i + 1}`}
+                  width={300} height={300}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
           </div>
         </div>
       </section>

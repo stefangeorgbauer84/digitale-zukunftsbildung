@@ -1056,7 +1056,7 @@ export default function HomePage() {
                   style={{ background: 'radial-gradient(circle, rgba(155,126,212,0.45) 0%, transparent 70%)' }} />
                 <div className="relative w-52 h-52 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
                   <Image
-                    src="/fotos/stefan-bauer-alt.jpg"
+                    src="/fotos/skillsUP-4.jpg"
                     alt="Stefan Bauer, Gründer Skills-UP!"
                     fill
                     className="object-cover object-top"
@@ -1591,7 +1591,7 @@ export default function HomePage() {
             </div>
             <div className="rounded-2xl overflow-hidden shadow-md">
               <Image
-                src="/fotos/Marina%20Winkler%20Profilbild.jpeg"
+                src="/fotos/skillsUP-11.jpg"
                 alt="Marina Winkler – Skills-UP! Team"
                 width={600}
                 height={288}
