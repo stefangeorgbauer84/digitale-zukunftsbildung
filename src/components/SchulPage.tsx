@@ -7,7 +7,7 @@ import SiteNav from '@/components/SiteNav'
 import AktiengameCTA from '@/components/AktiengameCTA'
 import SiteFooter from '@/components/SiteFooter'
 import VideoSection from '@/components/VideoSection'
-import WillkommenVideos from '@/components/WillkommenVideos'
+import BunnyVideoSektion, { type BunnyVideo } from '@/components/BunnyVideoSektion'
 import ContactForm from '@/components/ContactForm'
 
 export interface UnterrichtsEinheit {
@@ -254,6 +254,23 @@ export default function SchulPage({
           </svg>
         </div>
       </section>
+
+      {/* ── Video 16.1: Willkommen für Lehrkräfte ───────────── */}
+      <BunnyVideoSektion
+        eyebrow="Für Lehrkräfte"
+        headline="So funktioniert Skills-UP! in deiner Klasse."
+        lead="Kein Installationsaufwand, kein Vorbereitungsaufwand — einfach einloggen und loslegen. Hier siehst du, wie es geht."
+        variante="hell"
+        videos={[{
+          guid: '507846d7-3838-4e35-96e6-cb18f6d1b3d2',
+          badge: 'Für Lehrkräfte',
+          titel: 'Willkommen bei Skills-UP!',
+          beschreibung: '15 Module, fix und fertig, flexibel über das ganze Jahr. Dazu didaktische Materialien und Simulationen für deine Klasse.',
+          sekunden: 23,
+          akzent: '#4a2d8a',
+          poster: '/willkommen/lehrkraft.jpg',
+        } satisfies BunnyVideo]}
+      />
 
       {/* ── Lehrer-Testimonial ───────────────────────────────── */}
             {(lehrerFoto || lehrerZitat) && (
@@ -1384,7 +1401,7 @@ export default function SchulPage({
                 <div className="absolute inset-0 rounded-2xl blur-2xl scale-110 pointer-events-none"
                   style={{ background: 'radial-gradient(circle, rgba(42,138,118,0.4) 0%, transparent 70%)' }} />
                 <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden border-2 border-white/15 shadow-xl">
-                  <Image src="/fotos/marina-winkler.jpg" alt="Marina Winkler" fill className="object-cover object-top" />
+                  <Image src="/fotos/skillsUP-8.jpg" alt="Marina Winkler" fill className="object-cover object-top" />
                 </div>
               </div>
               <div className="text-center md:text-right">
@@ -1397,8 +1414,22 @@ export default function SchulPage({
         </div>
       </section>
 
-      {/* ── Willkommensvideos (Bunny Stream, Two-Click) ──────── */}
-      <WillkommenVideos anrede="du" />
+      {/* ── Video 16.3: Für deine Klasse ────────────────────── */}
+      <BunnyVideoSektion
+        eyebrow="Für deine Klasse"
+        headline="Was Jugendliche über Skills-UP! sagen."
+        lead="Echte Schülerinnen und Schüler, echte Reaktionen — so erlebt die Klasse Skills-UP!."
+        variante="dunkel"
+        videos={[{
+          guid: 'a214e3cf-15b9-4aa2-979b-7b84d18ded51',
+          badge: 'Für deine Klasse',
+          titel: 'Skills-UP! aus Schülerperspektive',
+          beschreibung: 'Wie Jugendliche über Skills-UP! und Finanzbildung sprechen.',
+          sekunden: 54,
+          akzent: '#2a8a76',
+          poster: '/willkommen/schueler.jpg',
+        } satisfies BunnyVideo]}
+      />
 
       {/* ── Themen ──────────────────────────────────────────── */}
       <section className="py-16 bg-gray-50">
