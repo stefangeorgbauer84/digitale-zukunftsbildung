@@ -2,7 +2,6 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import KonsumfallenDemoClient from '@/components/demo/KonsumfallenDemoClient'
 import ModulVideos from '@/components/ModulVideos'
-import WillkommenVideos from '@/components/WillkommenVideos'
 
 export const metadata: Metadata = {
   title: 'Konsumfallen-Simulation | Skills-UP! Demo',
@@ -50,7 +49,6 @@ export default function DemoPage() {
           </div>
         </div>
       </section>
-      <WillkommenVideos anrede="sie" />
     </>
   )
 }
