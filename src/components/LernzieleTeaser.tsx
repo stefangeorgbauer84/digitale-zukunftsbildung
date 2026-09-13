@@ -59,8 +59,9 @@ export default function LernzieleTeaser({
               {/* Farbstreifen links */}
               <div className="absolute left-0 top-0 bottom-0 w-1 rounded-l-2xl" style={{ background: lz.farbe }} />
               <p className="text-xs font-body font-700 uppercase tracking-widest mb-1 pl-3" style={{ color: lz.farbe }}>
-                {lz.modul}
+                Modul: {lz.modul}
               </p>
+              <p className="font-body font-600 text-gray-500 text-xs mb-1 pl-3">Ihre Schüler:innen können danach:</p>
               <p className="font-body text-gray-700 text-sm leading-relaxed pl-3">
                 {lz.ziel}
               </p>

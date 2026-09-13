@@ -101,7 +101,7 @@ const orgJsonLd = {
     },
     {
       '@type': 'Person',
-      name: 'Stefan Bauer',
+      name: 'Dr. Stefan Bauer',
       honorificPrefix: 'Dr.',
       jobTitle: 'Gründer & Vorstand',
       url: 'https://www.digitale-zukunftsbildung.eu/ueber-uns',

@@ -1068,14 +1068,14 @@ export default function HomePage() {
                 <div className="relative w-52 h-52 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
                   <Image
                     src="/fotos/skillsUP-10.jpg"
-                    alt="Stefan Bauer, Gründer Skills-UP!"
+                    alt="Dr. Stefan Bauer, Gründer Skills-UP!"
                     fill
                     className="object-cover object-top"
                   />
                 </div>
               </div>
               <div className="text-center md:text-left">
-                <p className="font-heading font-700 text-white text-lg leading-tight">Stefan Bauer</p>
+                <p className="font-heading font-700 text-white text-lg leading-tight">Dr. Stefan Bauer</p>
                 <p className="font-body text-white/60 text-sm mt-0.5">Gründer &amp; Vorstand</p>
                 <p className="font-body text-white/55 text-xs mt-0.5">Verein digitale Zukunftsbildung</p>
               </div>

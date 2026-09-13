@@ -225,7 +225,7 @@ export default function BunnyVideoSektion({
                     {/* Sprecher:innen-Leiste */}
                     <span className="absolute inset-x-0 bottom-0 px-4 py-4">
                       <span className="block font-body font-700 text-white text-sm leading-tight">
-                        Marina Winkler &amp; Stefan Bauer
+                        Marina Winkler &amp; Dr. Stefan Bauer
                       </span>
                       <span className="block font-body text-white/80 text-xs mt-0.5">
                         Untertitel fest im Bild

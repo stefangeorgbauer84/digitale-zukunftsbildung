@@ -1085,7 +1085,7 @@ export default function SchulPage({
                     { titel: 'Kein IT-Aufwand', text: 'Kein Ticket, keine Installation, kein Elternbrief. Klasse anmelden, Link schicken, fertig.' },
                     { titel: 'Live-Dashboard', text: 'Du siehst auf einen Blick, wer wo steht, welche Themen Probleme machen und wer Unterstützung braucht.' },
                     { titel: 'Keine Korrektur', text: 'Quizze werden automatisch ausgewertet. Kein einziger Test zum Einsammeln oder Korrigieren.' },
-                    { titel: 'Lehrplanbezug dokumentiert', text: 'Jedes Modul ist mit den relevanten Lehrplaninhalten verknüpft, sofort nachweisbar.' },
+                    { titel: 'Lernziele & Lehrplanbezug', text: 'Jedes Modul hat klare, messbare Lernziele — für Schulberichte, Elterngespräche und den Lehrplannachweis.' },
                     { titel: 'Persönlicher Support', text: 'Bei Fragen erreichst du einen Menschen, innerhalb von 24 Stunden, kein Chatbot.' },
                   ].map((v) => (
                     <li key={v.titel} className="flex items-start gap-3">
@@ -1173,7 +1173,7 @@ export default function SchulPage({
                   {[
                     'Simulation startet, Schüler:innen rechnen selbst',
                     'Engagement durch Peer-Videos und Gamification',
-                    'Lehrplanbezug für jedes Modul bereits dokumentiert',
+                    '15 messbare Lernziele + Lehrplanbezug bereits dokumentiert',
                     'Zertifikat für Schüler:innen als sichtbares Ergebnis',
                     'Dashboard zeigt live, wer was wirklich gelernt hat',
                   ].map((t) => (
@@ -1340,15 +1340,15 @@ export default function SchulPage({
                   style={{ background: 'radial-gradient(circle, rgba(155,126,212,0.4) 0%, transparent 70%)' }} />
                 <div className="relative w-48 h-48 md:w-56 md:h-56 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
                   <Image
-                    src="/fotos/stefan-bauer-alt.jpg"
-                    alt="Stefan Bauer, Gründer Skills-UP!"
+                    src="/fotos/skillsUP-10.jpg"
+                    alt="Dr. Stefan Bauer, Gründer Skills-UP!"
                     fill
                     className="object-cover object-top"
                   />
                 </div>
               </div>
               <div className="text-center md:text-left">
-                <p className="font-heading font-700 text-white text-base leading-tight">Stefan Bauer</p>
+                <p className="font-heading font-700 text-white text-base leading-tight">Dr. Stefan Bauer</p>
                 <p className="font-body text-white/60 text-xs mt-0.5">Gründer &amp; Vorstand</p>
                 <p className="font-body text-white/40 text-xs">Verein digitale Zukunftsbildung</p>
               </div>
