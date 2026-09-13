@@ -1349,7 +1349,7 @@ export default function SchulPage({
               </div>
               <div className="text-center md:text-left">
                 <p className="font-heading font-700 text-white text-base leading-tight">Dr. Stefan Bauer</p>
-                <p className="font-body text-white/60 text-xs mt-0.5">Gründer &amp; Vorstand</p>
+                <p className="font-body text-white/60 text-xs mt-0.5">Obfrau-StV. &amp; Vorstand</p>
                 <p className="font-body text-white/40 text-xs">Verein digitale Zukunftsbildung</p>
               </div>
             </div>

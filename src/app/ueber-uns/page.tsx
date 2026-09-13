@@ -103,7 +103,7 @@ const orgJsonLd = {
       '@type': 'Person',
       name: 'Dr. Stefan Bauer',
       honorificPrefix: 'Dr.',
-      jobTitle: 'Gründer & Vorstand',
+      jobTitle: 'Obfrau-StV. & Vorstand',
       url: 'https://www.digitale-zukunftsbildung.eu/ueber-uns',
       sameAs: ['https://www.linkedin.com/in/stefangeorgbauer/'],
       worksFor: { '@type': 'Organization', name: 'Verein zur Entwicklung der digitalen Zukunftsbildung' },

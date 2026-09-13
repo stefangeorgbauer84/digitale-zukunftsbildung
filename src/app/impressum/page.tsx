@@ -107,7 +107,7 @@ export default function Impressum() {
 
           <Section title="Vertretungsberechtigte Personen (Vorstand)">
             <p>Marina Winkler, BA MA – Obfrau (Vorsitzende) &amp; Projektleiterin</p>
-            <p>Dr. Stefan Bauer – Obmann-Stellvertreter (stellv. Vorsitzender)</p>
+            <p>Dr. Stefan Bauer, Obfrau-StV. &amp; Vorstand, Verein digitale Zukunftsbildung</p>
           </Section>
 
           <Section title="Vereinsregister">
