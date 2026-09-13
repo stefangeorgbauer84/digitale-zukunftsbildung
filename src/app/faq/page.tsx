@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Finanzbildung unterrichten: 100 Fragen & Antworten für Lehrkräfte',
     description:
-      'Der große FAQ-Wissenshub für Lehrkräfte: Lehrplan, Didaktik, Unterrichtsthemen, Betrugsschutz und Materialien — alle Antworten für den Finanzbildungsunterricht in Österreich.',
+      'Der große FAQ-Wissenshub für Lehrkräfte: Lehrplan, Didaktik, Unterrichtsthemen, Betrugsschutz und Materialien: alle Antworten für den Finanzbildungsunterricht in Österreich.',
     url: 'https://www.digitale-zukunftsbildung.eu/faq',
     type: 'website',
   },
@@ -99,7 +99,7 @@ export default function FaqPage() {
               Vom Lehrplan über Didaktik bis zu Krypto, Betrugsschutz und Materialien: Hier beantworten wir die häufigsten Fragen, die uns Lehrer:innen zur Finanzbildung an österreichischen Schulen stellen.
             </p>
             <p className="font-body text-white/50 text-base leading-relaxed">
-              Kompakt, anbieterneutral und ohne Anlageberatung — zum Nachschlagen, Weiterleiten und direkt Einsetzen im Unterricht.
+              Kompakt, anbieterneutral und ohne Anlageberatung: zum Nachschlagen, Weiterleiten und direkt Einsetzen im Unterricht.
             </p>
           </div>
         </section>
@@ -190,7 +190,7 @@ export default function FaqPage() {
               Ihre Frage war nicht dabei?
             </h2>
             <p className="font-body text-text-muted text-lg leading-relaxed mb-8 max-w-xl mx-auto">
-              Wir antworten persönlich — und in der Gratis-Demo sehen Sie in wenigen Minuten, wie Finanzbildung mit Skills-UP! in Ihrer Klasse aussieht.
+              Wir antworten persönlich, und in der Gratis-Demo sehen Sie in wenigen Minuten, wie Finanzbildung mit Skills-UP! in Ihrer Klasse aussieht.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
               <Link href="/demo"

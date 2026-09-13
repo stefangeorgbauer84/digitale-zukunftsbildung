@@ -6,10 +6,10 @@ import SiteFooter from '@/components/SiteFooter'
 export const metadata: Metadata = {
   title: 'Materialien & Tipps für Lehrkräfte | Skills-UP! Finanzbildung Blog',
   description:
-    'Unterrichtsmaterialien, Erklärungen und Praxistipps für Finanzbildung an österreichischen Schulen: Inflation, Budget, Konsumfallen & mehr — fertig für den Unterricht aufbereitet.',
+    'Unterrichtsmaterialien, Erklärungen und Praxistipps für Finanzbildung an österreichischen Schulen: Inflation, Budget, Konsumfallen & mehr: fertig für den Unterricht aufbereitet.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/blog' },
   openGraph: {
-    title: 'Materialien & Tipps für Lehrkräfte — Skills-UP! Blog',
+    title: 'Materialien & Tipps für Lehrkräfte: Skills-UP! Blog',
     description:
       'Unterrichtsmaterialien und Praxistipps für Finanzbildung an österreichischen Schulen, fertig für den Unterricht aufbereitet.',
     url: 'https://www.digitale-zukunftsbildung.eu/blog',
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
 }
 
-// Statisches, hartkodiertes JSON-LD ohne User-Input — gleiches Muster wie alle anderen Seiten.
+// Statisches, hartkodiertes JSON-LD ohne User-Input: gleiches Muster wie alle anderen Seiten.
 const pageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Blog',
@@ -37,9 +37,9 @@ const posts = [
     slug: 'inflation-einfach-erklaert-unterrichtsmaterial',
     date: 'August 2026',
     category: 'Unterrichtsmaterial',
-    title: 'Inflation einfach erklärt — fertiges Unterrichtsmaterial für Ihre Klasse.',
+    title: 'Inflation einfach erklärt: fertiges Unterrichtsmaterial für Ihre Klasse.',
     excerpt:
-      'Wie Sie Inflation in 10, 15 oder 50 Minuten unterrichten: die einfachste Erklärung, Alltagsbeispiele aus Österreich und drei fertige Stundenideen — ohne Vorbereitung.',
+      'Wie Sie Inflation in 10, 15 oder 50 Minuten unterrichten: die einfachste Erklärung, Alltagsbeispiele aus Österreich und drei fertige Stundenideen, ohne Vorbereitung.',
     readingTime: '6 Min. Lesedauer',
   },
 ]
@@ -64,7 +64,7 @@ export default function BlogIndex() {
               Materialien &amp; Tipps
             </h1>
             <p className="font-body text-white/60 text-lg max-w-2xl mx-auto">
-              Fertige Unterrichtsideen, einfache Erklärungen und Praxismaterial für Finanzbildung an österreichischen Schulen — zum direkten Einsetzen.
+              Fertige Unterrichtsideen, einfache Erklärungen und Praxismaterial für Finanzbildung an österreichischen Schulen: zum direkten Einsetzen.
             </p>
           </div>
         </section>

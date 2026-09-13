@@ -67,14 +67,14 @@ export default function KonsumfallenCTA() {
           {/* Left: Text & Lernziele */}
           <div>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-              10 Fallen — erkennst du
+              10 Fallen: erkennst du
               <br />
               <span style={{ color: '#7ed4c8' }}>alle bevor es zu spät ist?</span>
             </h2>
             <p className="text-white/70 text-base leading-relaxed mb-8">
               Der Konsumfallen-Parcours simuliert 10 realistische Situationen: Netflix-Abofallen,
               Fake-Countdowns, Gaming-Mikrotransaktionen, Klarna-Fallen und mehr. Kostenlos,
-              ohne Anmeldung — direkt im Browser.
+              ohne Anmeldung: direkt im Browser.
             </p>
 
             <div className="space-y-3 mb-8">

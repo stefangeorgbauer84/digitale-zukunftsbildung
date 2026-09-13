@@ -416,7 +416,7 @@ export default function SchulenUebersicht() {
         </div>
       </section>
 
-      {/* Argumentarium für Schulleitungen — der ROI der Schule */}
+      {/* Argumentarium für Schulleitungen, der ROI der Schule */}
       <section className="py-20 bg-white">
         <div className="max-w-6xl mx-auto px-6">
           <div className="text-center mb-12">
@@ -427,7 +427,7 @@ export default function SchulenUebersicht() {
               Was hat die Schule davon?
             </h2>
             <p className="font-body text-text-muted text-lg max-w-2xl mx-auto">
-              Drei Gründe, warum sich Skills-UP! für die Schule als Ganzes rechnet — nicht nur für die einzelne Klasse.
+              Drei Gründe, warum sich Skills-UP! für die Schule als Ganzes rechnet: nicht nur für die einzelne Klasse.
             </p>
           </div>
 
@@ -451,7 +451,7 @@ export default function SchulenUebersicht() {
                 ),
                 color: '#1E6B5B', bg: '#e6f4f1',
                 title: 'Einfache Finanzierung',
-                text: 'Skills-UP! zahlt direkt auf die digitale Grundbildung und das Unterrichtsprinzip Wirtschafts- und Verbraucher:innenbildung ein. Förderwege über MEGA Bildungsstiftung und die Nationale Finanzbildungsstrategie — wir finden gemeinsam ein leistbares Modell.',
+                text: 'Skills-UP! zahlt direkt auf die digitale Grundbildung und das Unterrichtsprinzip Wirtschafts- und Verbraucher:innenbildung ein. Förderwege über MEGA Bildungsstiftung und die Nationale Finanzbildungsstrategie: wir finden gemeinsam ein leistbares Modell.',
               },
               {
                 icon: (
@@ -461,7 +461,7 @@ export default function SchulenUebersicht() {
                 ),
                 color: '#A84E12', bg: '#fdf0e6',
                 title: 'Bereit für das Pflichtfach 2027',
-                text: 'Ab 2027/28 ist Finanzbildung verbindlich im Lehrplan. Schulen, die jetzt starten, haben eingespielte Abläufe, geschulte Lehrkräfte und dokumentierten Lehrplanbezug — statt Zeitdruck auf den letzten Metern.',
+                text: 'Ab 2027/28 ist Finanzbildung verbindlich im Lehrplan. Schulen, die jetzt starten, haben eingespielte Abläufe, geschulte Lehrkräfte und dokumentierten Lehrplanbezug, statt Zeitdruck auf den letzten Metern.',
               },
             ].map((r) => (
               <div key={r.title} className="rounded-2xl p-7 flex flex-col gap-4" style={{ background: r.bg }}>
@@ -479,7 +479,7 @@ export default function SchulenUebersicht() {
       {/* Vorstellungsvideos */}
       <WillkommenVideos anrede="du" />
 
-      {/* IT & DSGVO — FAQ für Schul-IT-Kustod:innen */}
+      {/* IT & DSGVO: FAQ für Schul-IT-Kustod:innen */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-12">
@@ -493,7 +493,7 @@ export default function SchulenUebersicht() {
               Antworten für die Schul-IT.
             </h2>
             <p className="font-body text-text-muted text-lg max-w-xl mx-auto">
-              Die Fragen, die IT-Kustod:innen und Direktionen vor der Freigabe stellen — hier vorab beantwortet.
+              Die Fragen, die IT-Kustod:innen und Direktionen vor der Freigabe stellen: hier vorab beantwortet.
             </p>
           </div>
           <ItDsgvoFaq />

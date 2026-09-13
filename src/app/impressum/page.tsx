@@ -197,7 +197,7 @@ export default function Impressum() {
             <Sub title="Reichweitenmessung (Vercel Analytics)">
               <p>
                 Zur Auswertung der Websitenutzung setzen wir <strong>Vercel Web Analytics</strong> und
-                <strong> Vercel Speed Insights</strong> ein — Dienste desselben Anbieters, der die Website
+                <strong> Vercel Speed Insights</strong> ein: Dienste desselben Anbieters, der die Website
                 hostet (siehe oben). Erfasst werden die aufgerufene Seite, die verweisende Seite,
                 Gerätetyp und Browser, das Herkunftsland sowie Messwerte zur Ladegeschwindigkeit.
                 Die Messung arbeitet <strong>ohne Cookies</strong> und ohne Kennungen im Browser-Speicher;
@@ -206,7 +206,7 @@ export default function Impressum() {
                 statt, ein Nutzungsprofil wird nicht gebildet. Die Verarbeitung erfolgt im Rahmen des
                 oben verlinkten Auftragsverarbeitungsvertrags mit Vercel.
               </p>
-              {/* TODO Stefan: Rechtsgrundlage-Satz — siehe Notiz in der Session. Nicht deployen, solange dieser Kommentar steht. */}
+              {/* TODO Stefan: Rechtsgrundlage-Satz: siehe Notiz in der Session. Nicht deployen, solange dieser Kommentar steht. */}
             </Sub>
 
             <Sub title="YouTube-Videos">

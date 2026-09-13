@@ -5,7 +5,7 @@ import { makeOgImage } from '@/lib/og-image'
 export default function Image() {
   return makeOgImage(
     'Finanzbildung für jede Schulform',
-    'Skills-UP! — passend für AHS, HAK, HTL, HLW, BAfEP, PTS und Berufsschulen. Jetzt Schultyp auswählen.',
+    'Skills-UP!: passend für AHS, HAK, HTL, HLW, BAfEP, PTS und Berufsschulen. Jetzt Schultyp auswählen.',
     'Skills-UP! für Schulen',
   )
 }

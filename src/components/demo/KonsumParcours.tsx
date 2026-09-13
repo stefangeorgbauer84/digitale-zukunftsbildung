@@ -172,7 +172,7 @@ export function KonsumParcours({ state, onDecide, onBack }: Props) {
           <div className="flex items-center gap-1.5 mt-3 justify-center">
             <Info size={12} className="text-gray-400" />
             <p className="text-gray-400 text-xs">
-              Tipp: Erst &ldquo;Genauer hinschauen&rdquo; — dann entscheiden
+              Tipp: Erst &ldquo;Genauer hinschauen&rdquo;: dann entscheiden
             </p>
           </div>
         )}
@@ -370,7 +370,7 @@ function InfluencerMockup({ timer, timerActive }: { timer: number; timerActive: 
           </span>
         </div>
         <p className="text-white/90 text-xs leading-relaxed mb-2">
-          &ldquo;Leute, BITTE holt euch das schnell! Exklusiv nur für meine Community — heute
+          &ldquo;Leute, BITTE holt euch das schnell! Exklusiv nur für meine Community: heute
           letzter Tag! 🔥&rdquo;
         </p>
       </div>
@@ -411,10 +411,10 @@ function InfluencerMockup({ timer, timerActive }: { timer: number; timerActive: 
       )}
       <div className="px-3 pb-3">
         <button className="w-full bg-white text-[#ee5a24] font-black py-3 rounded-xl text-sm hover:bg-white/90 transition active:scale-95">
-          JETZT KAUFEN — SOLANGE VORRAT REICHT!
+          JETZT KAUFEN: SOLANGE VORRAT REICHT!
         </button>
         <p className="text-white/30 text-[9px] text-center mt-1">
-          *Affiliate-Link — @LucaFinds erhält Provision bei Kauf
+          *Affiliate-Link: @LucaFinds erhält Provision bei Kauf
         </p>
       </div>
     </div>
@@ -613,7 +613,7 @@ function SupermarktMockup() {
         </div>
         <div className="bg-blue-50 rounded-lg p-2">
           <p className="text-blue-700 text-[10px]">
-            💡 Österreich: Grundpreisangabe (per 100g/100ml) ist Pflicht — immer vergleichen!
+            💡 Österreich: Grundpreisangabe (per 100g/100ml) ist Pflicht: immer vergleichen!
           </p>
         </div>
       </div>
@@ -667,7 +667,7 @@ function HandyMockup() {
           </p>
         </div>
         <button className="w-full bg-[#e2001a] text-white py-3 rounded-xl text-sm font-bold hover:bg-[#c0001a] transition active:scale-95">
-          Jetzt bestellen — iPhone gratis sichern!
+          Jetzt bestellen: iPhone gratis sichern!
         </button>
       </div>
     </div>
@@ -715,7 +715,7 @@ function FlugMockup() {
           </div>
           <div className="flex-1">
             <p className="font-semibold text-gray-800 text-xs">
-              ✅ Reiseversicherung Premium — Für Ihre Sicherheit!
+              ✅ Reiseversicherung Premium: Für Ihre Sicherheit!
             </p>
             <p className="text-gray-400 text-[10px]">
               Umfassender Schutz bei Stornierung, Gepäckverlust & Krankheit
@@ -779,11 +779,11 @@ function SocialMockup({ timer, timerActive }: { timer: number; timerActive: bool
         </div>
         <p className="text-gray-800 text-xs mb-0.5">
           <span className="font-bold">SneakrDrop.at</span> ⚡ NUR HEUTE! Die Collab die alle wollten
-          — jetzt LIVE! Nur 100 Paar, wenn weg dann weg 🔥
+         : jetzt LIVE! Nur 100 Paar, wenn weg dann weg 🔥
         </p>
         <p className="text-gray-400 text-[10px]">847 Kommentare · vor 2 Stunden</p>
         <button className="w-full mt-2 bg-[#4a2d8a] text-white py-2.5 rounded-xl text-xs font-bold hover:bg-[#6b4db0] transition active:scale-95">
-          Jetzt kaufen — Bevor es zu spät ist!
+          Jetzt kaufen: Bevor es zu spät ist!
         </button>
       </div>
     </div>

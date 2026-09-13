@@ -153,7 +153,7 @@ export default function UeberUns() {
             <span className="text-primary-light">fit fürs echte Leben.</span>
           </h1>
           <p className="text-white/75 font-body text-xl max-w-2xl leading-relaxed">
-            Skills-UP! hat bereits 1.830 junge Menschen erreicht — 443 Lehrlinge direkt, 1.387 Lizenzen über den Marktplatz Lernapps. Gegründet 2021, ausgezeichnet 2025.
+            Skills-UP! hat bereits 1.830 junge Menschen erreicht: 443 Lehrlinge direkt, 1.387 Lizenzen über den Marktplatz Lernapps. Gegründet 2021, ausgezeichnet 2025.
           </p>
         </div>
 
@@ -173,7 +173,7 @@ export default function UeberUns() {
             style={{ background: 'linear-gradient(135deg, #4a2d8a 0%, #2a8a76 100%)' }}>
             <p className="font-heading text-6xl md:text-7xl font-bold text-white leading-none mb-2">1.830</p>
             <p className="font-heading font-700 text-white/80 text-lg">erreichte junge Menschen</p>
-            <p className="font-body text-white/55 text-sm mt-1">Stand 2026 — Tendenz stark steigend</p>
+            <p className="font-body text-white/55 text-sm mt-1">Stand 2026: Tendenz stark steigend</p>
           </div>
 
           {/* Detail-Zahlen 3+3 Grid */}
@@ -297,7 +297,7 @@ export default function UeberUns() {
           guid: 'c73a50dd-401c-4556-a4b2-defe15c29303',
           badge: 'Hintergrund',
           titel: 'Skills-UP! vorgestellt',
-          beschreibung: 'Jede dritte Person in der Schuldnerberatung ist unter 30 und im Schnitt mit 30.000 Euro verschuldet. Das ist der Anlass — und das ist die Antwort.',
+          beschreibung: 'Jede dritte Person in der Schuldnerberatung ist unter 30 und im Schnitt mit 30.000 Euro verschuldet. Das ist der Anlass, und das ist die Antwort.',
           sekunden: 63,
           akzent: '#2a8a76',
           poster: '/willkommen/vertrieb.jpg',

@@ -233,7 +233,7 @@ export function KonsumIntro({ onStart, onBack }: Props) {
           className="w-full bg-gradient-to-r from-[#4a2d8a] to-[#6b4db0] hover:from-[#5a3d9a] hover:to-[#7b5dc0] text-white font-bold py-4 rounded-2xl text-base transition-all duration-200 flex items-center justify-center gap-2 shadow-lg shadow-[#4a2d8a]/25 active:scale-95"
         >
           <ShoppingCart size={18} />
-          Parcours starten — 10 Fallen warten
+          Parcours starten: 10 Fallen warten
         </button>
         <p className="text-white/50 text-xs mt-2 text-center">
           Ca. 10 Minuten · Kein echtes Geld · Nur zu Lernzwecken

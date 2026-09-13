@@ -198,18 +198,18 @@ export default function BafepPage() {
         ],
       }}
       faqs={[
-        { q: 'Wie passt Finanzbildung zum BAfEP-Lehrplan?', a: 'Im GGP-Unterricht, Sozialkundemodul und im Klassenvorstand. Skills-UP! hat auch Module zur Familienplanung, Karenz und sozialen Absicherung — direkt relevant für angehende Pädagoginnen.' },
+        { q: 'Wie passt Finanzbildung zum BAfEP-Lehrplan?', a: 'Im GGP-Unterricht, Sozialkundemodul und im Klassenvorstand. Skills-UP! hat auch Module zur Familienplanung, Karenz und sozialen Absicherung: direkt relevant für angehende Pädagoginnen.' },
         { q: 'Können Schülerinnen Skills-UP! später in ihrer eigenen Klasse einsetzen?', a: 'Das ist ein schöner Nebeneffekt. Angehende Pädagoginnen, die selbst mit Skills-UP! gearbeitet haben, kennen das Format und können es in ihrer eigenen Berufspraxis empfehlen.' },
-        { q: 'Ist das Programm auch für BASOP geeignet?', a: 'Ja. Für Sozialbetreuungsberufe sind vor allem die Module zu Haushaltsbudget, Schuldenprävention und Notgroschen relevant — Themen, die Klienten in sozialen Berufen oft direkt betreffen.' },
+        { q: 'Ist das Programm auch für BASOP geeignet?', a: 'Ja. Für Sozialbetreuungsberufe sind vor allem die Module zu Haushaltsbudget, Schuldenprävention und Notgroschen relevant: Themen, die Klienten in sozialen Berufen oft direkt betreffen.' },
       ]}
       verwandteSchultypen={[
-        { slug: 'hlw', label: 'HLW & Fachschulen', teaser: 'Haushalt, Wirtschaft, Sozialkunde — Finanzbildung nahtlos integrierbar.' },
-        { slug: 'ahs', label: 'AHS-Oberstufe', teaser: 'Allgemeine Finanzkompetenz für alle Lebenssituationen — ab der 9. Schulstufe.' },
+        { slug: 'hlw', label: 'HLW & Fachschulen', teaser: 'Haushalt, Wirtschaft, Sozialkunde: Finanzbildung nahtlos integrierbar.' },
+        { slug: 'ahs', label: 'AHS-Oberstufe', teaser: 'Allgemeine Finanzkompetenz für alle Lebenssituationen: ab der 9. Schulstufe.' },
         { slug: 'pts', label: 'PTS', teaser: 'Praktische Vorbereitung auf Beruf und Selbstständigkeit in einem Jahr.' },
       ]}
       testimonials={[
         {
-          text: 'Unsere Schülerinnen arbeiten bald mit Familien — und viele kommen selbst aus schwierigen finanziellen Situationen. Skills-UP! gibt ihnen ein Werkzeug, das sie beruflich und persönlich stärkt.',
+          text: 'Unsere Schülerinnen arbeiten bald mit Familien, und viele kommen selbst aus schwierigen finanziellen Situationen. Skills-UP! gibt ihnen ein Werkzeug, das sie beruflich und persönlich stärkt.',
           person: 'Dir. Monika H.',
           rolle: 'Schulleiterin BAfEP',
           schule: 'BAfEP Wien',

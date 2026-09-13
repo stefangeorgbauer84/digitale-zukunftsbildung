@@ -36,7 +36,7 @@ export default function DemoForm() {
         body: JSON.stringify({
           name,
           email,
-          message: `Demo-Anfrage${schultyp ? ` — Schultyp: ${schultyp}` : ''}\n\n${nachricht}`,
+          message: `Demo-Anfrage${schultyp ? `: Schultyp: ${schultyp}` : ''}\n\n${nachricht}`,
           website: honeypot,
           consent: true,
         }),

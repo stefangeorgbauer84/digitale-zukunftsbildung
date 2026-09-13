@@ -196,14 +196,14 @@ export default function HtlPage() {
         ],
       }}
       faqs={[
-        { q: 'In welchen HTL-Fächern ist Skills-UP! einsetzbar?', a: 'Angewandte Mathematik, Unternehmensführung, Betriebswirtschaft oder im Klassenvorstand. Die Module sind flexibel — 15 oder 50 Minuten, ohne Vorbereitungsaufwand für die Lehrkraft.' },
-        { q: 'Ist Finanzbildung für HTL-Schüler relevant?', a: 'Absolut. HTL-Absolventinnen und -Absolventen starten mit überdurchschnittlichen Einstiegsgehältern — aber oft ohne Wissen über Lohnzettel, Steuer oder Investieren. Skills-UP! schließt genau diese Lücke.' },
+        { q: 'In welchen HTL-Fächern ist Skills-UP! einsetzbar?', a: 'Angewandte Mathematik, Unternehmensführung, Betriebswirtschaft oder im Klassenvorstand. Die Module sind flexibel: 15 oder 50 Minuten, ohne Vorbereitungsaufwand für die Lehrkraft.' },
+        { q: 'Ist Finanzbildung für HTL-Schüler relevant?', a: 'Absolut. HTL-Absolventinnen und -Absolventen starten mit überdurchschnittlichen Einstiegsgehältern, aber oft ohne Wissen über Lohnzettel, Steuer oder Investieren. Skills-UP! schließt genau diese Lücke.' },
         { q: 'Wie viel technisches Setup ist nötig?', a: 'Keines. Skills-UP! läuft im Browser, ist DSGVO-konform und braucht keine Installation, kein IT-Ticket und keinen Admin-Zugang. Start in unter 2 Minuten.' },
       ]}
       verwandteSchultypen={[
-        { slug: 'hak', label: 'HAK & HAS', teaser: 'Betriebswirtschaft persönlich gemacht — Lohnzettel, Budget, Investieren.' },
+        { slug: 'hak', label: 'HAK & HAS', teaser: 'Betriebswirtschaft persönlich gemacht: Lohnzettel, Budget, Investieren.' },
         { slug: 'berufsschule', label: 'Berufsschule', teaser: 'Duale Ausbildung: Finanzbildung für Lehrlinge mit echtem Gehalt ab Tag 1.' },
-        { slug: 'ahs', label: 'AHS-Oberstufe', teaser: 'Allgemeinbildung und Finanzkompetenz — für Studium, Beruf und selbstständiges Leben.' },
+        { slug: 'ahs', label: 'AHS-Oberstufe', teaser: 'Allgemeinbildung und Finanzkompetenz: für Studium, Beruf und selbstständiges Leben.' },
       ]}
       testimonials={[
         {
@@ -213,7 +213,7 @@ export default function HtlPage() {
           schule: 'HTL Salzburg',
         },
         {
-          text: 'Wir haben Skills-UP! als Projekt im Klassenvorstand eingesetzt. Kein Aufwand für mich, die Schüler:innen haben 50 Minuten konzentriert gearbeitet — das passiert selten.',
+          text: 'Wir haben Skills-UP! als Projekt im Klassenvorstand eingesetzt. Kein Aufwand für mich, die Schüler:innen haben 50 Minuten konzentriert gearbeitet, das passiert selten.',
           person: 'Ing. Maria S.',
           rolle: 'Klassenlehrerin HTL',
         },

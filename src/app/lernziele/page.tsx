@@ -23,12 +23,12 @@ import {
 } from 'lucide-react'
 
 export const metadata: Metadata = {
-  title: 'Alle Lernziele | Skills-UP! — Finanzbildung Österreich',
+  title: 'Alle Lernziele | Skills-UP!: Finanzbildung Österreich',
   description:
-    'Jedes Modul, jede Simulation, jedes Lernziel von Skills-UP! auf einen Blick — 15 Lernmodule und 17 Simulationen für Finanzbildung an österreichischen Schulen.',
+    'Jedes Modul, jede Simulation, jedes Lernziel von Skills-UP! auf einen Blick: 15 Lernmodule und 17 Simulationen für Finanzbildung an österreichischen Schulen.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/lernziele' },
   openGraph: {
-    title: 'Alle Lernziele auf einen Blick — Skills-UP!',
+    title: 'Alle Lernziele auf einen Blick: Skills-UP!',
     description:
       '15 Lernmodule, 17 Simulationen: das vollständige Lernziel-Verzeichnis von Skills-UP! für Finanzbildung an österreichischen Schulen.',
     url: 'https://www.digitale-zukunftsbildung.eu/lernziele',
@@ -36,12 +36,12 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Alle Lernziele auf einen Blick — Skills-UP!',
-    description: '15 Lernmodule, 17 Simulationen — das vollständige Lernziel-Verzeichnis von Skills-UP!.',
+    title: 'Alle Lernziele auf einen Blick: Skills-UP!',
+    description: '15 Lernmodule, 17 Simulationen, das vollständige Lernziel-Verzeichnis von Skills-UP!.',
   },
 }
 
-// Static, hardcoded structured data (no user input) — same pattern as /lehrplan-mapping.
+// Static, hardcoded structured data (no user input): same pattern as /lehrplan-mapping.
 const pageJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'WebPage',
@@ -69,13 +69,13 @@ const bloecke: Block[] = [
       'Die wichtigsten Finanz-Grundlagen für Lehrlinge: Wie du dein Geld planst, was auf dem Lohnzettel steht, wie du sparst und was du über Schulden wissen musst.',
     modules: [
       { title: 'Finanzplanung', duration: '15 min', objective: 'Du kannst deine Einnahmen und Ausgaben in einem einfachen Monatsbudget erfassen und weißt, wie du fixe von variablen Kosten unterscheidest.' },
-      { title: 'Finanzplanung — Vertiefung', duration: '50 min', objective: 'Du erstellst einen vollständigen Wochen-, Monats- und Jahresfinanzplan, kennst den Unterschied zwischen Dauerauftrag und Lastschrift und kannst Sonderzahlungen strategisch einplanen.' },
+      { title: 'Finanzplanung: Vertiefung', duration: '50 min', objective: 'Du erstellst einen vollständigen Wochen-, Monats- und Jahresfinanzplan, kennst den Unterschied zwischen Dauerauftrag und Lastschrift und kannst Sonderzahlungen strategisch einplanen.' },
       { title: 'Gehalt & Einkommen', duration: '15 min', objective: 'Du kannst einen Lohnzettel lesen, verstehst den Unterschied zwischen Brutto und Netto und weißt, welche Abzüge als Lehrling anfallen.' },
-      { title: 'Gehalt & Einkommen — Vertiefung', duration: '50 min', objective: 'Du beherrschst die vollständige Brutto-Netto-Berechnung für Lehrlinge, verstehst den Jahreslohnzettel L16, weißt wie die Arbeitnehmerveranlagung funktioniert und kannst deinen Kollektivvertrag nutzen.' },
+      { title: 'Gehalt & Einkommen: Vertiefung', duration: '50 min', objective: 'Du beherrschst die vollständige Brutto-Netto-Berechnung für Lehrlinge, verstehst den Jahreslohnzettel L16, weißt wie die Arbeitnehmerveranlagung funktioniert und kannst deinen Kollektivvertrag nutzen.' },
       { title: 'Sparen & Geldentscheidungen', duration: '15 min', objective: 'Du verstehst den Unterschied zwischen Nominalzins und Realzins, kennst den Zinseszinseffekt und weißt, warum Inflation dein Erspartes auffressen kann.' },
-      { title: 'Sparen & Geldentscheidungen — Vertiefung', duration: '50 min', objective: 'Du kennst verschiedene Sparprodukte und ihre Vor- und Nachteile, kannst Zinsen und Realzins berechnen, verstehst ETF-Grundlagen und weißt, wie du systematisch einen Notgroschen aufbaust.' },
+      { title: 'Sparen & Geldentscheidungen: Vertiefung', duration: '50 min', objective: 'Du kennst verschiedene Sparprodukte und ihre Vor- und Nachteile, kannst Zinsen und Realzins berechnen, verstehst ETF-Grundlagen und weißt, wie du systematisch einen Notgroschen aufbaust.' },
       { title: 'Schulden & Geld leihen', duration: '15 min', objective: 'Du kennst die Warnsignale für problematische Schulden, weißt was Inkasso wirklich darf und kennst erste Anlaufstellen bei Schuldenproblemen.' },
-      { title: 'Schulden & Geld leihen — Vertiefung', duration: '50 min', objective: 'Du kennst die Schritte von einer unbezahlten Rechnung bis zur Pfändung, verstehst das Mahnverfahren und den Privatkonkurs und weißt, wann und wie du eine staatlich anerkannte Schuldenberatung nutzt.' },
+      { title: 'Schulden & Geld leihen: Vertiefung', duration: '50 min', objective: 'Du kennst die Schritte von einer unbezahlten Rechnung bis zur Pfändung, verstehst das Mahnverfahren und den Privatkonkurs und weißt, wann und wie du eine staatlich anerkannte Schuldenberatung nutzt.' },
     ],
   },
   {
@@ -86,11 +86,11 @@ const bloecke: Block[] = [
       'Was der Staat mit deinem Geld macht: Steuern, Sozialversicherung, Versicherungen und warum Altersvorsorge auch mit 16 relevant ist.',
     modules: [
       { title: 'Steuern in Österreich', duration: '15 min', objective: 'Du verstehst den Unterschied zwischen Lohnsteuer, Sozialversicherung und Gebühren, kennst die Lohnsteuergrenze 2026 und weißt wann sich die Arbeitnehmerveranlagung lohnt.' },
-      { title: 'Steuern in Österreich — Vertiefung', duration: '50 min', objective: 'Du verstehst das österreichische Steuersystem, Einkommensteuer-Tarife und Grenzsteuersatz, weißt wann du eine Steuererklärung einreichen musst und kannst FinanzOnline selbstständig bedienen.' },
+      { title: 'Steuern in Österreich: Vertiefung', duration: '50 min', objective: 'Du verstehst das österreichische Steuersystem, Einkommensteuer-Tarife und Grenzsteuersatz, weißt wann du eine Steuererklärung einreichen musst und kannst FinanzOnline selbstständig bedienen.' },
       { title: 'Versicherungen verstehen', duration: '15 min', objective: 'Du kennst den Unterschied zwischen Pflicht- und freiwilligen Versicherungen, weißt was Selbstbehalt und Ausschlüsse bedeuten und kannst entscheiden, welche Versicherungen als Lehrling sinnvoll sind.' },
-      { title: 'Versicherungen verstehen — Vertiefung', duration: '50 min', objective: 'Du kannst Versicherungsverträge lesen und bewerten, kennst alle relevanten Versicherungen für Lehrlinge und Junge Erwachsene und weißt, wie du Versicherungen sinnvoll vergleichst.' },
+      { title: 'Versicherungen verstehen: Vertiefung', duration: '50 min', objective: 'Du kannst Versicherungsverträge lesen und bewerten, kennst alle relevanten Versicherungen für Lehrlinge und Junge Erwachsene und weißt, wie du Versicherungen sinnvoll vergleichst.' },
       { title: 'Altersvorsorge', duration: '15 min', objective: 'Du kennst das österreichische 3-Säulen-Modell der Altersvorsorge und verstehst, warum früh privat vorzusorgen entscheidend ist.' },
-      { title: 'Altersvorsorge — Vertiefung', duration: '50 min', objective: 'Du verstehst das österreichische Pensionssystem vollständig, kennst die demografischen Herausforderungen und kannst eine persönliche Pensionsstrategie entwickeln.' },
+      { title: 'Altersvorsorge: Vertiefung', duration: '50 min', objective: 'Du verstehst das österreichische Pensionssystem vollständig, kennst die demografischen Herausforderungen und kannst eine persönliche Pensionsstrategie entwickeln.' },
       { title: 'Das österreichische Sozialsystem', duration: '15 min', objective: 'Du verstehst warum du Sozialversicherungsbeiträge zahlst, weißt welche Leistungen dir das Sozialsystem im Bedarfsfall bietet und kennst die wichtigsten Anlaufstellen.' },
       { title: 'Nebenjob & Geringfügige Beschäftigung', duration: '15 min', objective: 'Du weißt, ab welcher Grenze ein Nebenjob sozialversicherungspflichtig wird, kennst deine Rechte und Pflichten und kannst einschätzen, wann ein Dienst- oder Werkvertrag gilt.' },
     ],
@@ -103,11 +103,11 @@ const bloecke: Block[] = [
       'Wie Werbung und BNPL dich beeinflussen, was Ratenkauf wirklich kostet und was von Kryptowährungen zu halten ist.',
     modules: [
       { title: 'Konsumfallen', duration: '15 min', objective: 'Du erkennst die häufigsten psychologischen Konsumfallen und kennst einfache Strategien, um bewusster Kaufentscheidungen zu treffen.' },
-      { title: 'Konsumfallen — Vertiefung', duration: '50 min', objective: 'Du kennst die Psychologie hinter Konsumentscheidungen, verstehst BNPL-Risiken mit Zahlen und entwickelst eine persönliche Anti-Konsum-Strategie.' },
+      { title: 'Konsumfallen: Vertiefung', duration: '50 min', objective: 'Du kennst die Psychologie hinter Konsumentscheidungen, verstehst BNPL-Risiken mit Zahlen und entwickelst eine persönliche Anti-Konsum-Strategie.' },
       { title: 'Ratenkauf & BNPL', duration: '15 min', objective: 'Du verstehst, wie Ratenkauf und BNPL wirklich funktionieren, kennst die versteckten Kosten und weißt, wann du ein gesetzliches Rücktrittsrecht hast.' },
-      { title: 'Ratenkauf & BNPL — Vertiefung', duration: '50 min', objective: 'Du berechnest Kreditkosten, kennst alle Schutzrechte und die EU-Richtlinie 2023/2225 und kannst entscheiden, wann ein Ratenkauf vertretbar ist.' },
+      { title: 'Ratenkauf & BNPL: Vertiefung', duration: '50 min', objective: 'Du berechnest Kreditkosten, kennst alle Schutzrechte und die EU-Richtlinie 2023/2225 und kannst entscheiden, wann ein Ratenkauf vertretbar ist.' },
       { title: 'Kryptowährungen & Krypto-Assets', duration: '15 min', objective: 'Du verstehst Grundbegriffe wie Blockchain, Bitcoin und Stablecoins, kennst die wichtigsten Risiken und weißt, dass Krypto in Österreich steuerpflichtig ist.' },
-      { title: 'Kryptowährungen & Krypto-Assets — Vertiefung', duration: '50 min', objective: 'Du verstehst wie Blockchain und Bitcoin funktionieren, kennst die EU-Regulierung (MiCA) und österreichische Steuerregeln und kannst Investitionsangebote kritisch prüfen.' },
+      { title: 'Kryptowährungen & Krypto-Assets: Vertiefung', duration: '50 min', objective: 'Du verstehst wie Blockchain und Bitcoin funktionieren, kennst die EU-Regulierung (MiCA) und österreichische Steuerregeln und kannst Investitionsangebote kritisch prüfen.' },
       { title: 'ETF & Aktien für Einsteiger', duration: '15 min', objective: 'Du verstehst was ein ETF ist und warum er für Einsteiger besser geeignet ist als Einzelaktien, und weißt wie du in Österreich legal und steuerkorrekt ein Depot eröffnest.' },
       { title: 'Handy- & Abo-Verträge', duration: '15 min', objective: 'Du kannst Handy- und Abo-Verträge vergleichen, kennst deine Kündigungsrechte und erkennst Abofallen bevor du drauftrittst.' },
     ],
@@ -117,14 +117,14 @@ const bloecke: Block[] = [
     icon: ShieldAlert,
     title: '4. Medienkompetenz & Krisenprävention',
     intro:
-      'Finfluencer kritisch beurteilen, finanzielle Krisen früh erkennen — und wie du dich vor Betrug schützt.',
+      'Finfluencer kritisch beurteilen, finanzielle Krisen früh erkennen, und wie du dich vor Betrug schützt.',
     modules: [
       { title: 'Finfluencer in Österreich', duration: '15 min', objective: 'Du kannst seriöse Finanzinformationen von problematischer Finfluencer-Werbung unterscheiden und weißt, welche Regulierungen gelten.' },
-      { title: 'Finfluencer in Österreich — Vertiefung', duration: '50 min', objective: 'Du verstehst parasoziale Beziehungen und deren Einfluss auf Finanzentscheidungen, kennst ESMA-Leitlinien und FMA-Regulierung und kannst Prebunking-Strategien anwenden.' },
+      { title: 'Finfluencer in Österreich: Vertiefung', duration: '50 min', objective: 'Du verstehst parasoziale Beziehungen und deren Einfluss auf Finanzentscheidungen, kennst ESMA-Leitlinien und FMA-Regulierung und kannst Prebunking-Strategien anwenden.' },
       { title: 'Risiko & Krisen', duration: '15 min', objective: 'Du erkennst finanzielle Risikolagen frühzeitig, kennst die Eskalationskette von Verzug bis Pfändung und weißt, was ein Notgroschen ist.' },
-      { title: 'Risiko & Krisen — Vertiefung', duration: '50 min', objective: 'Du kannst ein persönliches Krisenbudget erstellen und weißt, welche österreichischen Stellen dir in einer Krise kostenlos helfen.' },
-      { title: 'Phishing & Finanzbetrug — Kompaktkurs', duration: '15 min', objective: 'Du erkennst die sechs wichtigsten Angriffsformen (Phishing, Smishing, Vishing, CEO-Fraud, Rechnungsbetrug, Investment-Scam) und kennst die korrekten Schritte nach einem Vorfall.' },
-      { title: 'Phishing & Finanzbetrug — Deep Dive', duration: '50 min', objective: 'Du verstehst alle acht aktuellen Betrugstypen im Detail, erkennst die psychologischen Manipulationsmechanismen und kennst alle österreichischen Meldewege.' },
+      { title: 'Risiko & Krisen: Vertiefung', duration: '50 min', objective: 'Du kannst ein persönliches Krisenbudget erstellen und weißt, welche österreichischen Stellen dir in einer Krise kostenlos helfen.' },
+      { title: 'Phishing & Finanzbetrug: Kompaktkurs', duration: '15 min', objective: 'Du erkennst die sechs wichtigsten Angriffsformen (Phishing, Smishing, Vishing, CEO-Fraud, Rechnungsbetrug, Investment-Scam) und kennst die korrekten Schritte nach einem Vorfall.' },
+      { title: 'Phishing & Finanzbetrug: Deep Dive', duration: '50 min', objective: 'Du verstehst alle acht aktuellen Betrugstypen im Detail, erkennst die psychologischen Manipulationsmechanismen und kennst alle österreichischen Meldewege.' },
     ],
   },
   {
@@ -155,7 +155,7 @@ const simulationen: SimGoals[] = [
     ],
     lehrer: [
       'Aktienmarkt-Grundlagen und Börsenmechanismen (AT: Wiener Börse)',
-      'Risikobewertung und Risikotoleranz — Verhaltensökonomie',
+      'Risikobewertung und Risikotoleranz: Verhaltensökonomie',
       'Steuerliche Behandlung von Kursgewinnen und Dividenden (KESt 27,5 %)',
       'Lehrplanbezug: Wirtschaft & Recht, Finanzbildung, BIST 8',
     ],
@@ -197,11 +197,11 @@ const simulationen: SimGoals[] = [
     schueler: [
       'Was der Kollektivvertrag ist und warum er für dein Gehalt gilt',
       'Wie du dich auf ein Gehaltsgespräch vorbereitest',
-      'Welche Argumente wirklich überzeugen — und welche schaden',
+      'Welche Argumente wirklich überzeugen, und welche schaden',
       'Wie du mit Einwänden deiner Vorgesetzten umgehst',
     ],
     lehrer: [
-      'Kollektivvertrag Einzelhandel AT — Mindestgehälter und Gehaltsbestandteile',
+      'Kollektivvertrag Einzelhandel AT: Mindestgehälter und Gehaltsbestandteile',
       'Verhandlungstaktiken: BATNA, Ankern, Stufenmodell',
       'Österreichisches Arbeitsrecht bei Gehaltsverhandlungen',
       'Lehrplanbezug: Wirtschaft & Recht / Betriebswirtschaft',
@@ -227,7 +227,7 @@ const simulationen: SimGoals[] = [
     icon: Car,
     title: 'Auto-Simulation',
     schueler: [
-      'Die Gesamtkosten eines Autos über 5 Jahre berechnen — nicht nur den Kaufpreis',
+      'Die Gesamtkosten eines Autos über 5 Jahre berechnen: nicht nur den Kaufpreis',
       'Unterschied zwischen Kauf, Kredit und Leasing',
       'Österreichische Spezifika: NoVA, §57a-Pickerl, Vignette, Pendlerpauschale',
       'Wertverlust und Finanzierungskosten in die Entscheidung einbeziehen',
@@ -279,7 +279,7 @@ const simulationen: SimGoals[] = [
       'Wann ein Notfallpuffer sinnvoll ist',
     ],
     lehrer: [
-      'Realzins vs. Nominalzins — österreichische Statistik',
+      'Realzins vs. Nominalzins: österreichische Statistik',
       'Finanzielle Resilienz: Notfallpuffer, Liquiditätsplanung',
       'Vergleich Sparmöglichkeiten AT: Bausparvertrag, Wertpapiersparpläne',
     ],
@@ -324,7 +324,7 @@ const bankZiele = [
   'Ein monatliches Ausgabenlimit festlegen',
   'Den Kontoauszug öffnen und die eigenen Buchungen überblicken',
   'Einen Finanz-Check durchführen und die finanzielle Gesundheit bewerten',
-  'Die Karte sperren — die wichtigste Sicherheitsfunktion bei Verlust oder Diebstahl',
+  'Die Karte sperren, die wichtigste Sicherheitsfunktion bei Verlust oder Diebstahl',
 ]
 
 const chips = [
@@ -365,7 +365,7 @@ export default function LernzielePage() {
               Jedes Modul.<br />Jede Simulation.<br />Jedes Lernziel.
             </h1>
             <p className="font-body text-white/65 text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-              Skills-UP! macht Finanzbildung greifbar — hier siehst du transparent, was Schüler:innen in jedem
+              Skills-UP! macht Finanzbildung greifbar: hier siehst du transparent, was Schüler:innen in jedem
               Modul und jeder interaktiven Simulation tatsächlich lernen.
             </p>
 
@@ -418,7 +418,7 @@ export default function LernzielePage() {
                 Die Lernmodule
               </h2>
               <p className="font-body text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Jedes Thema gibt es als 15-minütige Kurzversion und — für den vertiefenden Unterricht — als
+                Jedes Thema gibt es als 15-minütige Kurzversion und: für den vertiefenden Unterricht: als
                 50-minütige Vertiefung.
               </p>
             </div>
@@ -471,7 +471,7 @@ export default function LernzielePage() {
                 Die Simulationen
               </h2>
               <p className="font-body text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Statt nur zu lesen, entscheiden Schüler:innen selbst — in 17 Simulationen mit
+                Statt nur zu lesen, entscheiden Schüler:innen selbst: in 17 Simulationen mit
                 jeweils eigenen Lernzielen für Schüler:innen und für Lehrpersonen.
               </p>
             </div>
@@ -554,7 +554,7 @@ export default function LernzielePage() {
               Passt das zu deinem Unterricht?
             </h2>
             <p className="font-body text-gray-600 leading-relaxed mb-8">
-              Sieh dir an, welche Module zu welchem Schultyp und Fach passen — oder frag direkt eine
+              Sieh dir an, welche Module zu welchem Schultyp und Fach passen, oder frag direkt eine
               kostenlose Demo für deine Klasse an.
             </p>
             <div className="flex justify-center gap-4 flex-wrap">

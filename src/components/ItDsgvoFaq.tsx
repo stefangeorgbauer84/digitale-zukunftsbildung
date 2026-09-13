@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-// Fakten-FAQ für Schul-IT-Kustod:innen und Direktionen — bewusst technisch-konkret.
+// Fakten-FAQ für Schul-IT-Kustod:innen und Direktionen: bewusst technisch-konkret.
 const items = [
   {
     q: 'Wo werden die Daten gehostet?',
@@ -10,23 +10,23 @@ const items = [
   },
   {
     q: 'Ist Skills-UP! DSGVO-konform? Gibt es einen AVV?',
-    a: 'Ja. Skills-UP! ist vollständig DSGVO-konform aufgebaut: Datenminimierung (nur lernnotwendige Daten), keine Tracking-Cookies, keine Werbung, kein Verkauf von Daten. Für Schulen stellen wir einen fertigen Auftragsverarbeitungsvertrag (AVV) nach Art. 28 DSGVO bereit — einfach anfragen, unterschreiben, fertig.',
+    a: 'Ja. Skills-UP! ist vollständig DSGVO-konform aufgebaut: Datenminimierung (nur lernnotwendige Daten), keine Tracking-Cookies, keine Werbung, kein Verkauf von Daten. Für Schulen stellen wir einen fertigen Auftragsverarbeitungsvertrag (AVV) nach Art. 28 DSGVO bereit: einfach anfragen, unterschreiben, fertig.',
   },
   {
     q: 'Müssen Schüler:innen ihre Klarnamen angeben?',
-    a: 'Nein. Schüler:innen treten der Klasse über einen anonymen Zugangscode bei und können mit Spitznamen arbeiten. Es werden weder Schüler-E-Mail-Adressen noch Klarnamen benötigt. Die Zuordnung zur echten Person bleibt bei der Lehrkraft — nicht bei uns.',
+    a: 'Nein. Schüler:innen treten der Klasse über einen anonymen Zugangscode bei und können mit Spitznamen arbeiten. Es werden weder Schüler-E-Mail-Adressen noch Klarnamen benötigt. Die Zuordnung zur echten Person bleibt bei der Lehrkraft: nicht bei uns.',
   },
   {
     q: 'Gibt es Single Sign-On (SSO)?',
-    a: 'Der Standard-Zugang funktioniert bewusst ohne Accounts-Verwaltung: Klassencode eingeben, loslegen — kein Passwort-Reset-Support für die Schul-IT. Eine SSO-Anbindung an bestehende Schul-Accounts richten wir bei schulweitem Rollout auf Anfrage ein.',
+    a: 'Der Standard-Zugang funktioniert bewusst ohne Accounts-Verwaltung: Klassencode eingeben, loslegen: kein Passwort-Reset-Support für die Schul-IT. Eine SSO-Anbindung an bestehende Schul-Accounts richten wir bei schulweitem Rollout auf Anfrage ein.',
   },
   {
     q: 'Was muss die Schul-IT installieren oder freigeben?',
-    a: 'Nichts. Skills-UP! läuft komplett im Browser (aktuelle Versionen von Chrome, Firefox, Safari, Edge) — keine App-Verteilung, kein MDM-Eintrag, keine lokalen Installationen. Einzige Voraussetzung: Internetzugang. Funktioniert auf Schul-PCs, Tablets und privaten Smartphones.',
+    a: 'Nichts. Skills-UP! läuft komplett im Browser (aktuelle Versionen von Chrome, Firefox, Safari, Edge): keine App-Verteilung, kein MDM-Eintrag, keine lokalen Installationen. Einzige Voraussetzung: Internetzugang. Funktioniert auf Schul-PCs, Tablets und privaten Smartphones.',
   },
   {
     q: 'Werden Nutzungsdaten getrackt oder an Dritte weitergegeben?',
-    a: 'Nein. Kein Werbe-Tracking, keine Analyse-Cookies von Drittanbietern, keine Datenweitergabe zu kommerziellen Zwecken. Erhoben wird nur der Lernfortschritt, den die Lehrkraft im Dashboard sieht. Skills-UP! wird von einem gemeinnützigen Verein betrieben — es gibt kein Geschäftsmodell mit Daten.',
+    a: 'Nein. Kein Werbe-Tracking, keine Analyse-Cookies von Drittanbietern, keine Datenweitergabe zu kommerziellen Zwecken. Erhoben wird nur der Lernfortschritt, den die Lehrkraft im Dashboard sieht. Skills-UP! wird von einem gemeinnützigen Verein betrieben: es gibt kein Geschäftsmodell mit Daten.',
   },
 ]
 

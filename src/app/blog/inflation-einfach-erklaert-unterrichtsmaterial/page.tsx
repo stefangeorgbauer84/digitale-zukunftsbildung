@@ -7,27 +7,27 @@ import NewsletterSignup from '@/components/NewsletterSignup'
 export const metadata: Metadata = {
   title: 'Inflation einfach erklärt: Unterrichtsmaterial für Lehrkräfte | Skills-UP!',
   description:
-    'Inflation im Unterricht erklären — ohne Vorbereitung: die einfachste Definition, österreichische Alltagsbeispiele (VPI, Warenkorb) und 3 fertige Stundenideen für 10, 15 und 50 Minuten.',
+    'Inflation im Unterricht erklären, ohne Vorbereitung: die einfachste Definition, österreichische Alltagsbeispiele (VPI, Warenkorb) und 3 fertige Stundenideen für 10, 15 und 50 Minuten.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/blog/inflation-einfach-erklaert-unterrichtsmaterial' },
   openGraph: {
-    title: 'Inflation einfach erklärt — Unterrichtsmaterial für Lehrkräfte',
+    title: 'Inflation einfach erklärt: Unterrichtsmaterial für Lehrkräfte',
     description:
-      'Die einfachste Inflation-Erklärung für den Unterricht, Alltagsbeispiele aus Österreich und 3 fertige Stundenideen — für 10, 15 und 50 Minuten.',
+      'Die einfachste Inflation-Erklärung für den Unterricht, Alltagsbeispiele aus Österreich und 3 fertige Stundenideen: für 10, 15 und 50 Minuten.',
     url: 'https://www.digitale-zukunftsbildung.eu/blog/inflation-einfach-erklaert-unterrichtsmaterial',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Inflation einfach erklärt — Unterrichtsmaterial für Lehrkräfte',
+    title: 'Inflation einfach erklärt: Unterrichtsmaterial für Lehrkräfte',
     description: 'Einfachste Erklärung, österreichische Beispiele und 3 fertige Stundenideen für den Unterricht.',
   },
 }
 
-// Statisches, hartkodiertes JSON-LD ohne User-Input — gleiches Muster wie /aktuelles-Artikel.
+// Statisches, hartkodiertes JSON-LD ohne User-Input: gleiches Muster wie /aktuelles-Artikel.
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Inflation einfach erklärt — fertiges Unterrichtsmaterial für Ihre Klasse',
+  headline: 'Inflation einfach erklärt: fertiges Unterrichtsmaterial für Ihre Klasse',
   description:
     'Die einfachste Inflation-Erklärung für den Unterricht, österreichische Alltagsbeispiele und drei fertige Stundenideen für 10, 15 und 50 Minuten.',
   author: { '@type': 'Organization', name: 'Digitale Zukunftsbildung' },
@@ -86,10 +86,10 @@ export default function InflationUnterrichtsmaterial() {
             </div>
 
             <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Inflation einfach erklärt — fertiges Unterrichtsmaterial für Ihre Klasse.
+              Inflation einfach erklärt: fertiges Unterrichtsmaterial für Ihre Klasse.
             </h1>
             <p className="font-body text-white/70 text-xl leading-relaxed">
-              Inflation betrifft jede:n Schüler:in beim nächsten Einkauf — und ist trotzdem eines der am schlechtesten verstandenen Finanzkonzepte. Hier finden Sie die einfachste Erklärung, österreichische Alltagsbeispiele und drei fertige Stundenideen.
+              Inflation betrifft jede:n Schüler:in beim nächsten Einkauf, und ist trotzdem eines der am schlechtesten verstandenen Finanzkonzepte. Hier finden Sie die einfachste Erklärung, österreichische Alltagsbeispiele und drei fertige Stundenideen.
             </p>
           </div>
         </section>
@@ -101,15 +101,15 @@ export default function InflationUnterrichtsmaterial() {
             <H2>Was ist Inflation? Die einfachste Erklärung für den Unterricht</H2>
             <P>
               Die kürzeste Definition, die im Unterricht funktioniert: <strong>Inflation bedeutet, dass dasselbe Geld
-              über die Zeit weniger kaufen kann.</strong> Der Zehner in der Geldbörse bleibt ein Zehner — aber was man
+              über die Zeit weniger kaufen kann.</strong> Der Zehner in der Geldbörse bleibt ein Zehner, aber was man
               dafür bekommt, wird weniger. Nicht das Geld verschwindet, seine Kaufkraft schrumpft.
             </P>
             <P>
               Gemessen wird das in Österreich über den <strong>Verbraucherpreisindex (VPI)</strong> der Statistik Austria:
-              Ein fixer „Warenkorb“ aus hunderten Gütern und Dienstleistungen — von Lebensmitteln über Miete bis zum
-              Kinoticket — wird laufend neu bepreist. Steigt der Warenkorbpreis binnen eines Jahres um zwei Prozent,
+              Ein fixer „Warenkorb“ aus hunderten Gütern und Dienstleistungen: von Lebensmitteln über Miete bis zum
+              Kinoticket: wird laufend neu bepreist. Steigt der Warenkorbpreis binnen eines Jahres um zwei Prozent,
               beträgt die Inflationsrate zwei Prozent. Die Europäische Zentralbank strebt mittelfristig genau diese
-              zwei Prozent an — ein bisschen Inflation ist gewollt, zu viel wird zum Problem.
+              zwei Prozent an: ein bisschen Inflation ist gewollt, zu viel wird zum Problem.
             </P>
 
             <div className="rounded-2xl p-6 mb-8" style={{ background: '#f3f1f9', border: '1px solid rgba(74,45,138,0.12)' }}>
@@ -121,14 +121,14 @@ export default function InflationUnterrichtsmaterial() {
 
             <H2>Inflation greifbar machen: Alltagsbeispiele, die in Österreich funktionieren</H2>
             <P>
-              Abstrakte Prozentsätze bleiben nicht hängen — die Preise aus dem eigenen Alltag schon.
+              Abstrakte Prozentsätze bleiben nicht hängen, die Preise aus dem eigenen Alltag schon.
               Diese drei Zugänge haben sich im Unterricht bewährt:
             </P>
             <ul className="font-body text-gray-700 leading-relaxed mb-6 space-y-3">
               {[
-                ['Der Snack-Index:', 'Was kostete die Leberkäsesemmel, der Kebab oder das Lieblingsgetränk vor fünf Jahren — und was heute? Schüler:innen recherchieren oder fragen zu Hause nach. Die eigene Preiserfahrung schlägt jede Statistik.'],
+                ['Der Snack-Index:', 'Was kostete die Leberkäsesemmel, der Kebab oder das Lieblingsgetränk vor fünf Jahren, und was heute? Schüler:innen recherchieren oder fragen zu Hause nach. Die eigene Preiserfahrung schlägt jede Statistik.'],
                 ['Das Taschengeld-Experiment:', '20 Euro Taschengeld heute vs. 20 Euro in zehn Jahren bei 2 % Inflation: Was kann man sich dann noch davon leisten? Die Rechnung ist einfach und der Effekt verblüfft.'],
-                ['Das Sparbuch-Paradox:', '1.000 Euro liegen fünf Jahre unverzinst am Konto. Bei laufender Inflation sind sie danach nominal gleich viel — real aber spürbar weniger wert. Die Kernfrage für die Diskussion: Ist Nichtstun mit Geld wirklich „sicher“?'],
+                ['Das Sparbuch-Paradox:', '1.000 Euro liegen fünf Jahre unverzinst am Konto. Bei laufender Inflation sind sie danach nominal gleich viel: real aber spürbar weniger wert. Die Kernfrage für die Diskussion: Ist Nichtstun mit Geld wirklich „sicher“?'],
               ].map(([fett, rest]) => (
                 <li key={fett} className="flex items-start gap-3">
                   <svg className="shrink-0 mt-1" aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#1E6B5B" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
@@ -148,7 +148,7 @@ export default function InflationUnterrichtsmaterial() {
                 {
                   zeit: '10 Min',
                   titel: 'Der Preis-Schätz-Opener',
-                  text: 'Drei Alltagsprodukte an die Wand projizieren, Klasse schätzt die Preise von vor zehn Jahren. Auflösung, kurze Diskussion: Warum steigen Preise überhaupt? Perfekt als Stundeneinstieg oder für den Stundenrest — null Vorbereitung.',
+                  text: 'Drei Alltagsprodukte an die Wand projizieren, Klasse schätzt die Preise von vor zehn Jahren. Auflösung, kurze Diskussion: Warum steigen Preise überhaupt? Perfekt als Stundeneinstieg oder für den Stundenrest: null Vorbereitung.',
                 },
                 {
                   zeit: '15 Min',
@@ -158,7 +158,7 @@ export default function InflationUnterrichtsmaterial() {
                 {
                   zeit: '50 Min',
                   titel: 'Warenkorb-Projekt: Die Klasse baut ihren eigenen VPI',
-                  text: 'Gruppen definieren einen „Jugend-Warenkorb“ (Handytarif, Öffi-Ticket, Streaming, Snacks), recherchieren aktuelle Preise und vergleichen mit Werten von früher. Abschluss: Welche Preise stiegen am stärksten — und wen trifft das am meisten? Deckt Recherche-, Rechen- und Diskussionskompetenz in einer Stunde ab.',
+                  text: 'Gruppen definieren einen „Jugend-Warenkorb“ (Handytarif, Öffi-Ticket, Streaming, Snacks), recherchieren aktuelle Preise und vergleichen mit Werten von früher. Abschluss: Welche Preise stiegen am stärksten, und wen trifft das am meisten? Deckt Recherche-, Rechen- und Diskussionskompetenz in einer Stunde ab.',
                 },
               ].map((idee) => (
                 <div key={idee.zeit} className="rounded-2xl border border-gray-100 p-6 shadow-sm bg-white flex gap-5">
@@ -173,20 +173,20 @@ export default function InflationUnterrichtsmaterial() {
               ))}
             </div>
 
-            <H2>Häufige Schülerfragen — und Antworten, die sitzen</H2>
+            <H2>Häufige Schülerfragen, und Antworten, die sitzen</H2>
             <P>
-              <strong>„Warum druckt der Staat nicht einfach mehr Geld?“</strong> — Weil mehr Geld bei gleich vielen
+              <strong>„Warum druckt der Staat nicht einfach mehr Geld?“</strong>: Weil mehr Geld bei gleich vielen
               Waren die Preise erst recht treibt: Wenn alle mehr zahlen können, verlangen alle mehr. Das historische
               Extrembeispiel Hyperinflation (etwa Österreich in den 1920ern) macht das eindrucksvoll greifbar.
             </P>
             <P>
-              <strong>„Ist Inflation immer schlecht?“</strong> — Nein. Leichte, stabile Inflation gilt als gesund,
+              <strong>„Ist Inflation immer schlecht?“</strong>: Nein. Leichte, stabile Inflation gilt als gesund,
               weil sie Konsum und Investitionen am Laufen hält. Problematisch wird es, wenn Preise schneller steigen
-              als Löhne — dann verlieren vor allem Menschen mit wenig Einkommen.
+              als Löhne: dann verlieren vor allem Menschen mit wenig Einkommen.
             </P>
             <P>
-              <strong>„Was kann ich dagegen tun?“</strong> — Die ehrliche Antwort: Inflation selbst kann niemand
-              abstellen. Aber man kann sein Geld so organisieren, dass sie weniger schadet — Preise vergleichen,
+              <strong>„Was kann ich dagegen tun?“</strong>, Die ehrliche Antwort: Inflation selbst kann niemand
+              abstellen. Aber man kann sein Geld so organisieren, dass sie weniger schadet: Preise vergleichen,
               nicht alles unverzinst liegen lassen, langfristig denken. Genau hier setzen die Skills-UP!-Module an.
             </P>
 
@@ -202,7 +202,7 @@ export default function InflationUnterrichtsmaterial() {
               style={{ background: 'linear-gradient(135deg, #4a2d8a 0%, #6b4db0 50%, #2a8a76 100%)' }}>
               <h3 className="font-heading text-2xl font-bold mb-3">Inflation nächste Woche unterrichten?</h3>
               <p className="font-body text-white/75 mb-6 max-w-xl mx-auto">
-                Testen Sie die Skills-UP!-Module und Simulationen kostenlos — im Browser, ohne Installation, ohne Vorbereitung.
+                Testen Sie die Skills-UP!-Module und Simulationen kostenlos: im Browser, ohne Installation, ohne Vorbereitung.
               </p>
               <div className="flex justify-center gap-3 flex-wrap">
                 <Link href="/demo"

@@ -194,7 +194,7 @@ export default function PtsPage() {
       }}
       faqs={[
         { q: 'In welche PTS-Fächer passt Skills-UP!?', a: 'Berufsorientierung, Lebenskunde und der Klassenvorstand sind die natürlichen Einsatzorte. Die Kurzmodule (15 Min.) sind ideal für Einstiegssequenzen, die Langmodule für projektartige Einheiten.' },
-        { q: 'Ist Skills-UP! für Schülerinnen mit unterschiedlichen Lernständen geeignet?', a: 'Ja. PTS-Klassen sind oft heterogen. Skills-UP! arbeitet mit Videos, interaktiven Szenarien und Gamification — das funktioniert unabhängig vom Lesestand und erreicht auch Jugendliche, die mit klassischen Texten schwerer erreicht werden.' },
+        { q: 'Ist Skills-UP! für Schülerinnen mit unterschiedlichen Lernständen geeignet?', a: 'Ja. PTS-Klassen sind oft heterogen. Skills-UP! arbeitet mit Videos, interaktiven Szenarien und Gamification, das funktioniert unabhängig vom Lesestand und erreicht auch Jugendliche, die mit klassischen Texten schwerer erreicht werden.' },
         { q: 'Was passiert nach der PTS? Gibt es Übergangsinhalte zur Berufsschule?', a: 'Die Module zu Lehrlingsentgelt, Lohnzettel und Budgetplanung sind direkt auf die Situation nach der PTS ausgerichtet. Schülerinnen, die in eine Lehre wechseln, lernen genau das, was sie ab dem ersten Arbeitstag brauchen.' },
       ]}
       verwandteSchultypen={[

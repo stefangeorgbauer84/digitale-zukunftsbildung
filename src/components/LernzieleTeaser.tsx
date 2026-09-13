@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 
-// Aus skillsUP LernzieleOverview.tsx — publizierte Lernziele der 15 Live-Module.
+// Aus skillsUP LernzieleOverview.tsx: publizierte Lernziele der 15 Live-Module.
 // Je Themenblock ein repräsentatives Lernziel (jeweils das greifbarste).
 const LERNZIELE = [
   { modul: 'Finanzplanung', thema: 'Grundlagen', ziel: 'Fixkosten von variablen Kosten unterscheiden und typische Kostenfallen im Alltag erkennen', farbe: '#4a2d8a' },
@@ -46,7 +46,7 @@ export default function LernzieleTeaser({
             {headline}
           </h2>
           <p className="font-body text-gray-500 text-sm max-w-lg mx-auto">
-            Jedes Modul hat klare, messbare Lernziele — kein Wischiwaschi, sondern was Schüler:innen danach wirklich können.
+            Jedes Modul hat klare, messbare Lernziele: kein Wischiwaschi, sondern was Schüler:innen danach wirklich können.
           </p>
         </div>
 

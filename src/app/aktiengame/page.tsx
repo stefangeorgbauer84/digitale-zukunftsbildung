@@ -45,7 +45,7 @@ const faqJsonLd = {
     {
       '@type': 'Question',
       name: 'Ist das Aktiengame kostenlos?',
-      acceptedAnswer: { '@type': 'Answer', text: 'Ja, das Aktiengame ist vollständig kostenlos und läuft direkt im Browser — keine Registrierung, kein Download, keine App notwendig.' },
+      acceptedAnswer: { '@type': 'Answer', text: 'Ja, das Aktiengame ist vollständig kostenlos und läuft direkt im Browser: keine Registrierung, kein Download, keine App notwendig.' },
     },
     {
       '@type': 'Question',
@@ -191,7 +191,7 @@ export default function AktienGamePage() {
             },
             {
               q: 'Brauche ich als Lehrkraft Börsenwissen?',
-              a: 'Nein. Das Spiel erklärt alles im Spielverlauf selbst. Starten, spielen lassen, gemeinsam reflektieren — das reicht.',
+              a: 'Nein. Das Spiel erklärt alles im Spielverlauf selbst. Starten, spielen lassen, gemeinsam reflektieren, das reicht.',
             },
           ].map((item, i) => (
             <div key={i} className="rounded-2xl border border-gray-100 bg-gray-50 p-6">
@@ -210,7 +210,7 @@ export default function AktienGamePage() {
             <div className="flex-1">
               <p className="text-xs font-body font-700 uppercase tracking-widest text-white/40 mb-3">Das vollständige Programm</p>
               <h2 className="font-heading text-2xl md:text-3xl font-bold text-white mb-3 leading-tight">
-                Mehr als Börse — Skills-UP! deckt alle Finanzthemen ab.
+                Mehr als Börse: Skills-UP! deckt alle Finanzthemen ab.
               </h2>
               <p className="font-body text-white/60 text-sm leading-relaxed mb-6">
                 15 Module, Lohnzettel bis Krypto, Lehrer-Dashboard, lehrplankonform für AHS, HAK, HTL, HLW, PTS und Berufsschulen.

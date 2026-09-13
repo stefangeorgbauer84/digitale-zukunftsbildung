@@ -3,7 +3,7 @@
 import BunnyVideoSektion, { type BunnyVideo } from '@/components/BunnyVideoSektion'
 
 // 16.2 aus Bunny-Collection 16_VORSTELLUNG. Steht bewusst nur hier: das Video endet mit
-// „Bestellen Sie Skills-UP! jetzt am Marktplatz Lernapps" — ein Bestellappell gehört auf
+// „Bestellen Sie Skills-UP! jetzt am Marktplatz Lernapps": ein Bestellappell gehört auf
 // die Seite, auf der bestellt wird, nicht auf die Startseite neben das Produktvideo.
 const video: BunnyVideo[] = [
   {
@@ -24,9 +24,9 @@ export default function VorstellungVideo() {
       variante="dunkel"
       eyebrow="Eine Minute Hintergrund"
       headline="Warum es Skills-UP! überhaupt gibt."
-      lead="Marina und Stefan erzählen, was Finanzbildung mit Chancengerechtigkeit zu tun hat — und was du bekommst, wenn du Skills-UP! an deine Schule holst."
+      lead="Marina und Stefan erzählen, was Finanzbildung mit Chancengerechtigkeit zu tun hat, und was du bekommst, wenn du Skills-UP! an deine Schule holst."
       videos={video}
-      fussnote="Im Video wird der Marktplatz Lernapps als Bestellweg genannt. Über das Formular oben geht es genauso — Marina antwortet persönlich."
+      fussnote="Im Video wird der Marktplatz Lernapps als Bestellweg genannt. Über das Formular oben geht es genauso: Marina antwortet persönlich."
     />
   )
 }

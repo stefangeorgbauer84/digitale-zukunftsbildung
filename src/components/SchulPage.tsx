@@ -260,7 +260,7 @@ export default function SchulPage({
       <BunnyVideoSektion
         eyebrow="Für Lehrkräfte"
         headline="So funktioniert Skills-UP! in deiner Klasse."
-        lead="Kein Installationsaufwand, kein Vorbereitungsaufwand — einfach einloggen und loslegen. Hier siehst du, wie es geht."
+        lead="Kein Installationsaufwand, kein Vorbereitungsaufwand: einfach einloggen und loslegen. Hier siehst du, wie es geht."
         variante="hell"
         videos={[{
           guid: '507846d7-3838-4e35-96e6-cb18f6d1b3d2',
@@ -1085,7 +1085,7 @@ export default function SchulPage({
                     { titel: 'Kein IT-Aufwand', text: 'Kein Ticket, keine Installation, kein Elternbrief. Klasse anmelden, Link schicken, fertig.' },
                     { titel: 'Live-Dashboard', text: 'Du siehst auf einen Blick, wer wo steht, welche Themen Probleme machen und wer Unterstützung braucht.' },
                     { titel: 'Keine Korrektur', text: 'Quizze werden automatisch ausgewertet. Kein einziger Test zum Einsammeln oder Korrigieren.' },
-                    { titel: 'Lernziele & Lehrplanbezug', text: 'Jedes Modul hat klare, messbare Lernziele — für Schulberichte, Elterngespräche und den Lehrplannachweis.' },
+                    { titel: 'Lernziele & Lehrplanbezug', text: 'Jedes Modul hat klare, messbare Lernziele: für Schulberichte, Elterngespräche und den Lehrplannachweis.' },
                     { titel: 'Persönlicher Support', text: 'Bei Fragen erreichst du einen Menschen, innerhalb von 24 Stunden, kein Chatbot.' },
                   ].map((v) => (
                     <li key={v.titel} className="flex items-start gap-3">
@@ -1262,7 +1262,7 @@ export default function SchulPage({
           <div className="rounded-3xl overflow-hidden shadow-2xl relative">
             <Image
               src="/fotos/Top 3 MEGA Bildungsstiftung.jpg"
-              alt="Skills-UP! gewinnt Top-3 MEGA Bildungsmillion 2025 — das Team auf der Bühne mit dem Preischeck"
+              alt="Skills-UP! gewinnt Top-3 MEGA Bildungsmillion 2025, das Team auf der Bühne mit dem Preischeck"
               width={1200}
               height={675}
               className="w-full object-cover"
@@ -1427,7 +1427,7 @@ export default function SchulPage({
       <BunnyVideoSektion
         eyebrow="Für deine Klasse"
         headline="Was Jugendliche über Skills-UP! sagen."
-        lead="Echte Schülerinnen und Schüler, echte Reaktionen — so erlebt die Klasse Skills-UP!."
+        lead="Echte Schülerinnen und Schüler, echte Reaktionen, so erlebt die Klasse Skills-UP!."
         variante="dunkel"
         videos={[{
           guid: 'a214e3cf-15b9-4aa2-979b-7b84d18ded51',
@@ -1560,7 +1560,7 @@ export default function SchulPage({
               Häufige Fragen
             </p>
             <h2 className="font-heading text-2xl md:text-3xl font-bold text-center mb-8" style={{ color: '#1a1040' }}>
-              Skills-UP! für {name} — die wichtigsten Fragen.
+              Skills-UP! für {name}, die wichtigsten Fragen.
             </h2>
             <div className="space-y-4">
               {faqs.map((faq, i) => (
@@ -1619,7 +1619,7 @@ export default function SchulPage({
               Skills-UP! für {name} starten?
             </h2>
             <p className="font-body text-white/60 text-base max-w-md mx-auto mb-6">
-              Meld dich direkt bei uns — wir antworten innerhalb von 24 Stunden. Kein Chatbot, kein Helpdesk.
+              Meld dich direkt bei uns: wir antworten innerhalb von 24 Stunden. Kein Chatbot, kein Helpdesk.
             </p>
             <a
               href={`mailto:info@digitale-zukunftsbildung.eu?subject=Demo-Anfrage%20Skills-UP!%20f%C3%BCr%20${encodeURIComponent(name)}&body=Hallo%20Marina%2C%0A%0Awir%20unterrichten%20an%20einer%20${encodeURIComponent(name)}%20und%20m%C3%B6chten%20gerne%20eine%20kurze%20Demo%20von%20Skills-UP!%20vereinbaren.%0A%0AMit%20freundlichen%20Gr%C3%BC%C3%9Fen`}

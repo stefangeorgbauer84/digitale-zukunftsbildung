@@ -214,18 +214,18 @@ export default function HakPage() {
         ],
       }}
       faqs={[
-        { q: 'Überschneidet sich Skills-UP! mit dem BWL-Unterricht an der HAK?', a: 'Nein — es ergänzt ihn. BWL behandelt Unternehmensfinanzen. Skills-UP! bringt persönliche Finanzkompetenz: eigener Lohnzettel, Haushaltsbudget, Schuldenprävention. Beides ist lehrplankonform und sinnvoll kombinierbar.' },
+        { q: 'Überschneidet sich Skills-UP! mit dem BWL-Unterricht an der HAK?', a: 'Nein: es ergänzt ihn. BWL behandelt Unternehmensfinanzen. Skills-UP! bringt persönliche Finanzkompetenz: eigener Lohnzettel, Haushaltsbudget, Schuldenprävention. Beides ist lehrplankonform und sinnvoll kombinierbar.' },
         { q: 'Kann ich Skills-UP! im BWRLB-Unterricht oder im Klassenvorstand einsetzen?', a: 'In beidem. Die Kurzmodule (15 Min.) eignen sich für den Einstieg in eine Unterrichtsstunde. Die Langmodule (50 Min.) funktionieren als eigenständige Einheit in BWRLB, PG oder GGP.' },
-        { q: 'Gibt es HAK-spezifische Inhalte?', a: 'Ja. Module wie Lohnzettel, Haushaltsbudget und Investieren sind speziell auf die Lebenssituation von HAK-Schülerinnen zugeschnitten — mit Bezug zu KV-Gehältern, Berufseinstieg und österreichischer Steuergesetzgebung.' },
+        { q: 'Gibt es HAK-spezifische Inhalte?', a: 'Ja. Module wie Lohnzettel, Haushaltsbudget und Investieren sind speziell auf die Lebenssituation von HAK-Schülerinnen zugeschnitten: mit Bezug zu KV-Gehältern, Berufseinstieg und österreichischer Steuergesetzgebung.' },
       ]}
       verwandteSchultypen={[
-        { slug: 'ahs', label: 'AHS-Oberstufe', teaser: 'Finanzbildung für GWK, PuG und Klassenvorstand — flexibel in 15 oder 50 Minuten.' },
+        { slug: 'ahs', label: 'AHS-Oberstufe', teaser: 'Finanzbildung für GWK, PuG und Klassenvorstand: flexibel in 15 oder 50 Minuten.' },
         { slug: 'htl', label: 'HTL', teaser: 'Finanzkompetenz für technische Berufe: Gehaltsverhandlung, Depot und Karriereeinstieg.' },
         { slug: 'berufsschule', label: 'Berufsschule', teaser: 'Lehrlinge verdienen ab Tag 1. Skills-UP! erklärt Lohnzettel, SV und Budget.' },
       ]}
       testimonials={[
         {
-          text: 'Im BWL-Unterricht haben wir Bilanzen gelesen, aber nie den eigenen Lohnzettel. Seit Skills-UP! ist das anders. Die Schüler:innen rechnen ihren Nettolohn selbst durch — und sind jedes Mal überrascht.',
+          text: 'Im BWL-Unterricht haben wir Bilanzen gelesen, aber nie den eigenen Lohnzettel. Seit Skills-UP! ist das anders. Die Schüler:innen rechnen ihren Nettolohn selbst durch, und sind jedes Mal überrascht.',
           person: 'Mag. Thomas W.',
           rolle: 'BWRLB-Lehrer',
           schule: 'HAK Graz',

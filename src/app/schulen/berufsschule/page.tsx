@@ -174,7 +174,7 @@ export default function BerufsschulePage() {
       kontaktStattMarktplatz
       highlightSimulation={{
         titel: 'Nebenjob & Geringfügigkeits-Check',
-        untertitel: 'Was passiert, wenn man neben der Lehre dazuverdient? SV-Pflicht, Steuer, Geringfügigkeitsgrenze 2026 — alles in einer Simulation.',
+        untertitel: 'Was passiert, wenn man neben der Lehre dazuverdient? SV-Pflicht, Steuer, Geringfügigkeitsgrenze 2026: alles in einer Simulation.',
         dauer: '15–20 Min',
         icon: moneyIcon,
         szenario: 'Du machst deine Lehre als Kfz-Techniker und willst am Wochenende im Supermarkt dazuverdienen. 4 Stunden, 12 € / Stunde. Ist das noch geringfügig? Zahlst du Steuern? Und was passiert mit deiner Lehrlingskrankenversicherung?',
@@ -200,18 +200,18 @@ export default function BerufsschulePage() {
         ],
       }}
       faqs={[
-        { q: 'Eignet sich Skills-UP! für Berufsschulen mit Blockwochen-Unterricht?', a: 'Besonders gut. In Block-Schulwochen fehlt die Zeit für lange Vorbereitung. Skills-UP! ist sofort startbereit — Modul öffnen, Klasse starten lassen, fertig. Die Kurzversion dauert 15 Minuten, die Langversion 50 Minuten.' },
-        { q: 'Gibt es Inhalte speziell für Lehrlinge?', a: 'Ja. Lohnzettel und Sozialversicherung, Geringfügigkeitsgrenze, Lehrlingsentgelt nach KV, Schuldenprävention und Notgroschen — das sind Module, die gezielt auf die Lebenssituation von Lehrlingen ausgerichtet sind.' },
+        { q: 'Eignet sich Skills-UP! für Berufsschulen mit Blockwochen-Unterricht?', a: 'Besonders gut. In Block-Schulwochen fehlt die Zeit für lange Vorbereitung. Skills-UP! ist sofort startbereit: Modul öffnen, Klasse starten lassen, fertig. Die Kurzversion dauert 15 Minuten, die Langversion 50 Minuten.' },
+        { q: 'Gibt es Inhalte speziell für Lehrlinge?', a: 'Ja. Lohnzettel und Sozialversicherung, Geringfügigkeitsgrenze, Lehrlingsentgelt nach KV, Schuldenprävention und Notgroschen, das sind Module, die gezielt auf die Lebenssituation von Lehrlingen ausgerichtet sind.' },
         { q: 'Können auch Ausbildungsbetriebe Skills-UP! nutzen?', a: 'Ja. Für Unternehmen mit Lehrlingsprogrammen gibt es ein eigenes Angebot. TGW Logistics und OVOS nutzen Skills-UP! bereits im betrieblichen Lehrlingsprogramm.' },
       ]}
       verwandteSchultypen={[
         { slug: 'pts', label: 'PTS', teaser: 'Ein Jahr Übergang: Berufsorientierung und Finanzbildung für den nächsten Schritt.' },
-        { slug: 'hak', label: 'HAK & HAS', teaser: 'Betriebswirtschaftliche Grundlagen persönlich gemacht — Lohnzettel bis Investieren.' },
-        { slug: 'htl', label: 'HTL', teaser: 'Technische Karriere finanziell klug planen — Gehaltsverhandlung bis Depot.' },
+        { slug: 'hak', label: 'HAK & HAS', teaser: 'Betriebswirtschaftliche Grundlagen persönlich gemacht: Lohnzettel bis Investieren.' },
+        { slug: 'htl', label: 'HTL', teaser: 'Technische Karriere finanziell klug planen: Gehaltsverhandlung bis Depot.' },
       ]}
       testimonials={[
         {
-          text: 'Lehrlinge bekommen von Tag 1 Geld, aber niemand erklärt ihnen Lohnzettel oder Sozialversicherung. Skills-UP! füllt genau diese Lücke — in 15 Minuten, ohne dass ich etwas vorbereiten muss.',
+          text: 'Lehrlinge bekommen von Tag 1 Geld, aber niemand erklärt ihnen Lohnzettel oder Sozialversicherung. Skills-UP! füllt genau diese Lücke: in 15 Minuten, ohne dass ich etwas vorbereiten muss.',
           person: 'Josef K.',
           rolle: 'Berufsschullehrer Politische Bildung',
           schule: 'BS Tirol',

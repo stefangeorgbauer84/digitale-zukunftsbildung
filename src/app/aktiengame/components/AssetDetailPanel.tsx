@@ -171,7 +171,7 @@ export default function AssetDetailPanel({
               {targetPrice != null && (
                 <p className="text-xs text-text-muted mt-1.5">
                   Aktuell: {targetPrice.toFixed(2)} € Ziel
-                  {currentPrice >= targetPrice ? ' ✅ Erreicht!' : ` — noch ${(targetPrice - currentPrice).toFixed(2)} € bis Ziel`}
+                  {currentPrice >= targetPrice ? ' ✅ Erreicht!' : `: noch ${(targetPrice - currentPrice).toFixed(2)} € bis Ziel`}
                 </p>
               )}
             </div>

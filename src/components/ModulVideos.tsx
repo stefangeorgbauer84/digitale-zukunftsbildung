@@ -39,7 +39,7 @@ const videos: ModulVideo[] = [
   },
 ]
 
-// Statisches JSON-LD aus hartkodierten Videodaten — kein User-Input.
+// Statisches JSON-LD aus hartkodierten Videodaten: kein User-Input.
 const videoJsonLd = (v: ModulVideo) => ({
   '@context': 'https://schema.org',
   '@type': 'VideoObject',
@@ -87,7 +87,7 @@ export default function ModulVideos() {
             Reinschauen: Originalvideos aus den Modulen.
           </h2>
           <p className="font-body text-text-muted text-lg max-w-2xl mx-auto">
-            So klingen die Skills-UP!-Videos wirklich — drei Clips aus den Lernmodulen, ungekürzt und im Original-Ton der Plattform.
+            So klingen die Skills-UP!-Videos wirklich: drei Clips aus den Lernmodulen, ungekürzt und im Original-Ton der Plattform.
           </p>
         </div>
 

@@ -193,12 +193,12 @@ export default function HomePage() {
   ]
 
   const modulThemen = [
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>), color: '#4a2d8a', bg: '#f3f1f9', title: 'Persönlichkeitsbildung', subtitle: 'Dein Geld-Mindset, entschlüsselt', topics: ['Checken, warum du kaufst, was du kaufst', 'Deine Geldgeschichte — und was sie über dich verrät', 'Ziele setzen, die du wirklich durchziehst'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>), color: '#6b4db0', bg: '#ede9f7', title: 'Basiswissen', subtitle: 'Die Begriffe, die dir sonst keiner erklärt', topics: ['Brutto vs. netto: was wirklich am Konto landet', 'Wohin deine Steuern und SV-Beiträge fließen', 'Warum alles teurer wird — Inflation durchschauen'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>), color: '#1E6B5B', bg: '#e6f4f1', title: 'Praxis & Planung', subtitle: 'Dein Geld im Griff — nicht umgekehrt', topics: ['Ein Budget, das bis Monatsende hält', 'Erstes Depot eröffnen — risikofrei in der Simulation', 'Sparziel Führerschein: so lange dauert es wirklich'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>), color: '#4a2d8a', bg: '#f3f1f9', title: 'Persönlichkeitsbildung', subtitle: 'Dein Geld-Mindset, entschlüsselt', topics: ['Checken, warum du kaufst, was du kaufst', 'Deine Geldgeschichte, und was sie über dich verrät', 'Ziele setzen, die du wirklich durchziehst'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>), color: '#6b4db0', bg: '#ede9f7', title: 'Basiswissen', subtitle: 'Die Begriffe, die dir sonst keiner erklärt', topics: ['Brutto vs. netto: was wirklich am Konto landet', 'Wohin deine Steuern und SV-Beiträge fließen', 'Warum alles teurer wird: Inflation durchschauen'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>), color: '#1E6B5B', bg: '#e6f4f1', title: 'Praxis & Planung', subtitle: 'Dein Geld im Griff: nicht umgekehrt', topics: ['Ein Budget, das bis Monatsende hält', 'Erstes Depot eröffnen: risikofrei in der Simulation', 'Sparziel Führerschein: so lange dauert es wirklich'] },
     { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>), color: '#A84E12', bg: '#fdf0e6', title: 'Schutzwissen', subtitle: 'Die Fallen, die auf dich warten', topics: ['Klarna & Co: was „in 3 Raten“ wirklich kostet', 'Scams und Fake-Deals in Sekunden entlarven', 'Schuldenspirale stoppen, bevor sie startet'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>), color: '#4a2d8a', bg: '#f3f1f9', title: 'Investieren & Vorsorge', subtitle: 'Lass dein Geld für dich arbeiten', topics: ['Aktien & ETFs verstehen — ohne Fachchinesisch', 'Krypto: Hype von Substanz trennen', 'Zinseszins: warum früh anfangen alles ändert'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>), color: '#1E6B5B', bg: '#e6f4f1', title: 'Versicherungen & Risiko', subtitle: 'Absichern ohne Abzocke', topics: ['Welche Versicherungen du brauchst — und welche nicht', 'Notgroschen: dein Puffer, wenn’s kracht', 'Selbstbehalt & Prämie in zwei Minuten kapiert'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>), color: '#4a2d8a', bg: '#f3f1f9', title: 'Investieren & Vorsorge', subtitle: 'Lass dein Geld für dich arbeiten', topics: ['Aktien & ETFs verstehen, ohne Fachchinesisch', 'Krypto: Hype von Substanz trennen', 'Zinseszins: warum früh anfangen alles ändert'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>), color: '#1E6B5B', bg: '#e6f4f1', title: 'Versicherungen & Risiko', subtitle: 'Absichern ohne Abzocke', topics: ['Welche Versicherungen du brauchst, und welche nicht', 'Notgroschen: dein Puffer, wenn’s kracht', 'Selbstbehalt & Prämie in zwei Minuten kapiert'] },
   ]
 
   const websiteJsonLd = {
@@ -533,7 +533,7 @@ export default function HomePage() {
             Unsere Partner &amp; Auszeichnungen
           </p>
         </div>
-        {/* Screen-reader-only partner list — no duplicates */}
+        {/* Screen-reader-only partner list: no duplicates */}
         <ul className="sr-only">
           {partnerLogos.map((l) => <li key={l.alt}>{l.alt}</li>)}
         </ul>
@@ -580,7 +580,7 @@ export default function HomePage() {
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            {/* Gütesiegel — highlight */}
+            {/* Gütesiegel: highlight */}
             <div className="bg-white rounded-3xl p-7 flex flex-col items-center text-center gap-4 shadow-card hover:shadow-card-hover transition-all border-2" style={{ borderColor: '#4a2d8a' }}>
               <div className="h-28 flex items-center justify-center bg-primary-50 rounded-2xl w-full px-4">
                 <Image
@@ -673,7 +673,7 @@ export default function HomePage() {
                 <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
                 </svg>
-                Oberstufe — 10. bis 12. Schulstufe
+                Oberstufe: 10. bis 12. Schulstufe
               </div>
               <p className="text-xs font-body text-text-muted hidden sm:block">AHS, HAK, HTL, HLW, BAfEP, BASOP</p>
             </div>
@@ -726,7 +726,7 @@ export default function HomePage() {
                   <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                     <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
                   </svg>
-                  PTS & Berufsschule — 9. Schulstufe & Lehre
+                  PTS & Berufsschule: 9. Schulstufe & Lehre
                 </div>
                 <h3 className="font-heading text-xl font-bold text-white mb-2">Lernen, das direkt in die Arbeitswelt führt.</h3>
                 <p className="text-white/60 font-body text-sm max-w-md leading-relaxed">
@@ -851,7 +851,7 @@ export default function HomePage() {
               So funktioniert<br /><span className="text-primary-medium">lehrplankonformes Finanzbildung.</span>
             </h2>
             <p className="text-text-muted text-lg max-w-2xl mx-auto font-body">
-              Skills-UP! kombiniert bewährte Didaktik mit moderner Lerntechnologie: Peer-Videos, Microlearning und Gamification — damit Finanzkompetenz bei Schüler:innen wirklich hängen bleibt.
+              Skills-UP! kombiniert bewährte Didaktik mit moderner Lerntechnologie: Peer-Videos, Microlearning und Gamification, damit Finanzkompetenz bei Schüler:innen wirklich hängen bleibt.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -988,7 +988,7 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          HOW IT WORKS — dark section
+          HOW IT WORKS: dark section
       ══════════════════════════════════════════════════ */}
       <section className="py-16 md:py-28" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 50%, #1a3d34 100%)' }}>
         <div className="max-w-5xl mx-auto px-6">
@@ -1123,7 +1123,7 @@ export default function HomePage() {
       <section className="py-20" style={{ background: 'linear-gradient(135deg, #0f3d32 0%, #1a5c4e 60%, #2d1b69 100%)' }}>
         <div className="max-w-6xl mx-auto px-6">
           <div className="grid md:grid-cols-[1fr_280px] gap-12 items-center">
-            {/* Quote — links */}
+            {/* Quote: links */}
             <div>
               <div className="flex items-center gap-2 mb-6">
                 <Image src="/fotos/Logo.png" alt="Skills-UP!" width={32} height={32} className="rounded-lg opacity-80" />
@@ -1154,7 +1154,7 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Foto — rechts */}
+            {/* Foto: rechts */}
             <div className="flex flex-col items-center md:items-end gap-5">
               <div className="relative">
                 <div className="absolute inset-0 rounded-2xl blur-3xl scale-125 pointer-events-none"
@@ -1200,7 +1200,7 @@ export default function HomePage() {
             guid: 'c73a50dd-401c-4556-a4b2-defe15c29303',
             badge: 'Hintergrund',
             titel: 'Skills-UP! vorgestellt',
-            beschreibung: 'Jede dritte Person in der Schuldnerberatung ist unter 30 und im Schnitt mit 30.000 Euro verschuldet. Das ist der Anlass — und das ist die Antwort.',
+            beschreibung: 'Jede dritte Person in der Schuldnerberatung ist unter 30 und im Schnitt mit 30.000 Euro verschuldet. Das ist der Anlass, und das ist die Antwort.',
             sekunden: 63,
             akzent: '#2a8a76',
             poster: '/willkommen/vertrieb.jpg',
@@ -1309,13 +1309,13 @@ export default function HomePage() {
                   <span style={{ color: '#4a2d8a' }}>Skills-UP! ist jetzt bereit.</span>
                 </h2>
                 <p className="font-body text-text-muted text-base leading-relaxed mb-6 max-w-xl">
-                  Ab 2027 verankert Österreich Finanzbildung verbindlich im Lehrplan aller Schultypen (Nationale Finanzbildungsstrategie). Skills-UP! ist bereits heute lehrplankonform dokumentiert und zertifiziert — damit Ihre Schule nicht auf den letzten Drücker vorbereiten muss.
+                  Ab 2027 verankert Österreich Finanzbildung verbindlich im Lehrplan aller Schultypen (Nationale Finanzbildungsstrategie). Skills-UP! ist bereits heute lehrplankonform dokumentiert und zertifiziert, damit Ihre Schule nicht auf den letzten Drücker vorbereiten muss.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-6">
                   {[
                     'Lehrplanbezug für jedes Modul dokumentiert',
                     'WKÖ-zertifiziert & vom BMBWF anerkannt',
-                    'Sofort einsetzbar — kein Umstieg nötig',
+                    'Sofort einsetzbar: kein Umstieg nötig',
                   ].map((t) => (
                     <span key={t} className="flex items-center gap-1.5 text-xs font-body font-600 px-3 py-1.5 rounded-full bg-white border border-primary-light/20"
                       style={{ color: '#4a2d8a' }}>
@@ -1327,7 +1327,7 @@ export default function HomePage() {
                 <a href="#kontakt"
                   className="inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl text-white transition-all hover:opacity-90 active:scale-95"
                   style={{ background: 'linear-gradient(135deg, #4a2d8a, #2a8a76)' }}>
-                  Jetzt vorausplanen — Demo anfragen
+                  Jetzt vorausplanen: Demo anfragen
                   <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
                 </a>
               </div>
@@ -1400,14 +1400,14 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          AKTUELLES — Blog-Teaser
+          AKTUELLES: Blog-Teaser
       ══════════════════════════════════════════════════ */}
       <section id="aktuelles" className="py-16 md:py-24 max-w-7xl mx-auto px-6">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-10">
           <div>
             <p className="font-body text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#4a2d8a' }}>Aktuelles</p>
             <h2 className="font-heading text-3xl md:text-4xl font-bold" style={{ color: '#1a1040' }}>
-              Finanzbildung — was gerade wichtig ist
+              Finanzbildung: was gerade wichtig ist
             </h2>
           </div>
           <Link href="/aktuelles"
@@ -1424,15 +1424,15 @@ export default function HomePage() {
               tag: 'Bildungspolitik',
               tagColor: '#4a2d8a',
               date: 'März 2025',
-              title: 'Finanzbildung wird Pflichtfach — was das für Schulen bedeutet',
-              teaser: 'Ab 2027 ist Finanzbildung im Lehrplan verankert. Was ändert sich konkret — und wie können Schulen jetzt vorbereitet sein?',
+              title: 'Finanzbildung wird Pflichtfach: was das für Schulen bedeutet',
+              teaser: 'Ab 2027 ist Finanzbildung im Lehrplan verankert. Was ändert sich konkret, und wie können Schulen jetzt vorbereitet sein?',
             },
             {
               href: '/aktuelles/finanzbildung-berufsschule',
               tag: 'Schultypen',
               tagColor: '#1E6B5B',
               date: 'April 2025',
-              title: 'Finanzbildung in der Berufsschule — Chancen und Herausforderungen',
+              title: 'Finanzbildung in der Berufsschule: Chancen und Herausforderungen',
               teaser: 'Dual Ausgebildete brauchen Finanzkompetenz besonders früh. Wie Skills-UP! Berufsschulen dabei unterstützt.',
             },
             {
@@ -1440,8 +1440,8 @@ export default function HomePage() {
               tag: 'Praxistipp',
               tagColor: '#A84E12',
               date: 'Mai 2025',
-              title: 'Finanzbildung in 10 Minuten Unterricht — 3 Formate',
-              teaser: 'Keine Zeit für lange Einheiten? Diese drei Formate bringen echte Finanzbildung in kurze Unterrichtsblöcke — ohne Vorbereitung.',
+              title: 'Finanzbildung in 10 Minuten Unterricht: 3 Formate',
+              teaser: 'Keine Zeit für lange Einheiten? Diese drei Formate bringen echte Finanzbildung in kurze Unterrichtsblöcke, ohne Vorbereitung.',
             },
           ].map((post) => (
             <Link key={post.href} href={post.href}
@@ -1609,7 +1609,7 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          ÜBER UNS TEASER — with team photo
+          ÜBER UNS TEASER: with team photo
       ══════════════════════════════════════════════════ */}
       <section className="py-20" style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)' }}>
         <div className="max-w-7xl mx-auto px-6">
@@ -1643,7 +1643,7 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          PARTNER GRID — full detail
+          PARTNER GRID: full detail
       ══════════════════════════════════════════════════ */}
       <section className="py-20 max-w-7xl mx-auto px-6">
         <div className="text-center mb-12">
@@ -1698,7 +1698,7 @@ export default function HomePage() {
             Bereit für den nächsten Schritt?
           </h2>
           <p className="text-white/70 font-body text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
-            Skills-UP! an Ihrer Schule einsetzen, eine Kooperation starten oder einfach mehr erfahren? Schreiben Sie uns — Marina antwortet persönlich.
+            Skills-UP! an Ihrer Schule einsetzen, eine Kooperation starten oder einfach mehr erfahren? Schreiben Sie uns: Marina antwortet persönlich.
           </p>
 
           {/* Eingebettetes Kontaktformular */}

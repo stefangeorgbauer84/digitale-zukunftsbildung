@@ -42,10 +42,10 @@ export default function NewsletterSignup() {
           </div>
 
           <h2 className="font-heading text-2xl md:text-3xl font-bold text-white mb-3">
-            Lehrplanmapping PDF — kostenlos.
+            Lehrplanmapping PDF: kostenlos.
           </h2>
           <p className="font-body text-white/60 text-base mb-8 max-w-xl mx-auto leading-relaxed">
-            Welche Skills-UP!-Module passen zu welchem Fach und welcher Schulstufe? Das vollständige Lehrplanmapping für AHS, HAK, HTL, HLW, PTS und Berufsschule — als druckbares PDF, gratis.
+            Welche Skills-UP!-Module passen zu welchem Fach und welcher Schulstufe? Das vollständige Lehrplanmapping für AHS, HAK, HTL, HLW, PTS und Berufsschule: als druckbares PDF, gratis.
           </p>
 
           {status === 'success' ? (
@@ -110,7 +110,7 @@ export default function NewsletterSignup() {
 
           {status === 'error' && (
             <p role="alert" aria-live="assertive" className="mt-3 text-red-300 text-xs font-body">
-              Etwas hat nicht geklappt — schreib uns direkt: info@digitale-zukunftsbildung.eu
+              Etwas hat nicht geklappt: schreib uns direkt: info@digitale-zukunftsbildung.eu
             </p>
           )}
 

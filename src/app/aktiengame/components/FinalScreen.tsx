@@ -276,7 +276,7 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
       {/* Achievements (Feature 2) */}
       <div className="bg-white rounded-2xl shadow-card p-5">
         <div className="text-sm font-semibold text-text-primary mb-3">
-          Achievements — {earnedAchievements.length}/{achievements.length} freigeschaltet
+          Achievements: {earnedAchievements.length}/{achievements.length} freigeschaltet
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {achievements.map((ach) => (

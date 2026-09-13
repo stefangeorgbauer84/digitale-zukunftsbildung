@@ -77,7 +77,7 @@ export default function FinanzbildungPflichtfach2027() {
             </div>
 
             <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Finanzbildung wird Pflichtfach 2027 — was das für österreichische Schulen bedeutet.
+              Finanzbildung wird Pflichtfach 2027: was das für österreichische Schulen bedeutet.
             </h1>
             <p className="font-body text-white/70 text-xl leading-relaxed">
               Ab dem Schuljahr 2027/28 ist Finanzbildung im österreichischen Lehrplan verankert. Was das konkret bedeutet, welche Schultypen betroffen sind und wie Schulen jetzt die Weichen stellen können.
@@ -194,10 +194,10 @@ export default function FinanzbildungPflichtfach2027() {
 
             <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4 mt-10" style={{ color: '#1a1040' }}>Fazit</h2>
             <p className="font-body text-gray-700 leading-relaxed mb-4">
-              Die Lehrplanverankerung von Finanzbildung ist ein richtiger und überfälliger Schritt. Österreich liegt im OECD-Vergleich bei Financial Literacy im Mittelfeld — ein strukturiertes Pflichtangebot kann das ändern.
+              Die Lehrplanverankerung von Finanzbildung ist ein richtiger und überfälliger Schritt. Österreich liegt im OECD-Vergleich bei Financial Literacy im Mittelfeld: ein strukturiertes Pflichtangebot kann das ändern.
             </p>
             <p className="font-body text-gray-700 leading-relaxed mb-8">
-              Für Schulen bedeutet das aber auch: Die Zeit für eine unverbindliche „Wir machen das irgendwann mal“ ist vorbei. Wer 2027 nicht ins Schwimmen kommen möchte, braucht jetzt ein verlässliches Programm — eins, das ohne großen Aufwand von Lehrkräften jedes Fachs eingesetzt werden kann.
+              Für Schulen bedeutet das aber auch: Die Zeit für eine unverbindliche „Wir machen das irgendwann mal“ ist vorbei. Wer 2027 nicht ins Schwimmen kommen möchte, braucht jetzt ein verlässliches Programm: eins, das ohne großen Aufwand von Lehrkräften jedes Fachs eingesetzt werden kann.
             </p>
 
             {/* CTA */}

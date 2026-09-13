@@ -6,25 +6,25 @@ import NewsletterSignup from '@/components/NewsletterSignup'
 
 export const metadata: Metadata = {
   title: 'Finanzbildung in der dualen Ausbildung Österreich | Skills-UP! für Berufsschulen',
-  description: 'Warum Finanzbildung in der Berufsschule und der dualen Ausbildung besonders wichtig ist — und wie Lehrkräfte ohne Mehraufwand praktisches Finanzwissen in den Unterricht bringen.',
+  description: 'Warum Finanzbildung in der Berufsschule und der dualen Ausbildung besonders wichtig ist, und wie Lehrkräfte ohne Mehraufwand praktisches Finanzwissen in den Unterricht bringen.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/aktuelles/finanzbildung-berufsschule' },
   openGraph: {
     title: 'Finanzbildung duale Ausbildung Österreich: Was Berufsschulen jetzt brauchen',
-    description: 'Lehrlinge verdienen ab Tag 1 echtes Geld — aber niemand erklärt ihnen Lohnzettel, Sozialversicherung oder Budgetplanung. Wie Berufsschulen das ändern können.',
+    description: 'Lehrlinge verdienen ab Tag 1 echtes Geld, aber niemand erklärt ihnen Lohnzettel, Sozialversicherung oder Budgetplanung. Wie Berufsschulen das ändern können.',
     url: 'https://www.digitale-zukunftsbildung.eu/aktuelles/finanzbildung-berufsschule',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Finanzbildung duale Ausbildung Österreich — Skills-UP! für Berufsschulen',
-    description: 'Lehrlinge verdienen ab Tag 1 Geld — aber niemand erklärt ihnen den Lohnzettel. Was Berufsschulen jetzt tun können.',
+    title: 'Finanzbildung duale Ausbildung Österreich: Skills-UP! für Berufsschulen',
+    description: 'Lehrlinge verdienen ab Tag 1 Geld, aber niemand erklärt ihnen den Lohnzettel. Was Berufsschulen jetzt tun können.',
   },
 }
 
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Finanzbildung in der dualen Ausbildung Österreich — Was Berufsschulen jetzt brauchen',
+  headline: 'Finanzbildung in der dualen Ausbildung Österreich: Was Berufsschulen jetzt brauchen',
   description: 'Warum Finanzbildung in der Berufsschule besonders wichtig ist und wie Lehrkräfte sie ohne Mehraufwand einsetzen können.',
   author: { '@type': 'Organization', name: 'Digitale Zukunftsbildung' },
   publisher: { '@type': 'Organization', name: 'Digitale Zukunftsbildung', url: 'https://www.digitale-zukunftsbildung.eu' },
@@ -64,7 +64,7 @@ export default function FinanzbildungBerufsschulePage() {
               Praxis · April 2025
             </div>
             <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Duale Ausbildung und Finanzbildung — warum gerade Lehrlinge das Programm brauchen.
+              Duale Ausbildung und Finanzbildung: warum gerade Lehrlinge das Programm brauchen.
             </h1>
             <p className="font-body text-white/70 text-xl leading-relaxed">
               Lehrlinge verdienen ab dem ersten Ausbildungstag echtes Geld. Aber wer erklärt ihnen den Lohnzettel, die Sozialversicherung oder was ein Kollektivvertrag ist? Berufsschulen haben hier eine einmalige Chance.
@@ -82,7 +82,7 @@ export default function FinanzbildungBerufsschulePage() {
               Das österreichische duale Ausbildungssystem gilt international als Vorbild. Rund 200 anerkannte Lehrberufe, 40 % der Schulabgänger wählen diesen Weg, Betriebe investieren erheblich in die fachliche Ausbildung. Was dabei fast vollständig fehlt: persönliche Finanzbildung.
             </p>
             <p className="font-body text-gray-700 leading-relaxed mb-6">
-              Ein 15-jähriger Lehrling in einer Kfz-Werkstatt lernt in den ersten Wochen, wie man einen Ölwechsel durchführt. Dass er gleichzeitig monatlich ein Lehrlingsentgelt bekommt — und wie er damit umgeht — bleibt sich selbst überlassen. Die Berufsschule hat selten Zeit und Material, das aufzufangen.
+              Ein 15-jähriger Lehrling in einer Kfz-Werkstatt lernt in den ersten Wochen, wie man einen Ölwechsel durchführt. Dass er gleichzeitig monatlich ein Lehrlingsentgelt bekommt, und wie er damit umgeht: bleibt sich selbst überlassen. Die Berufsschule hat selten Zeit und Material, das aufzufangen.
             </p>
 
             <div className="bg-purple-50 border border-purple-100 rounded-2xl p-6 mb-8">
@@ -109,7 +109,7 @@ export default function FinanzbildungBerufsschulePage() {
               Berufsschulen haben etwas, das andere Schulformen nicht haben: Lehrlinge, die bereits im Arbeitsverhältnis stehen. Finanzbildung ist für sie kein abstraktes Zukunftsthema, sondern sofort anwendbar. Wenn jemand in der Schule lernt, wie er seinen Lohnzettel liest, und am nächsten Tag die erste Abrechnung vom Betrieb bekommt, entsteht ein Lerneffekt, der sitzt.
             </p>
             <p className="font-body text-gray-700 leading-relaxed mb-6">
-              Die Herausforderung: Berufsschulen haben wenig Unterrichtszeit — oft nur ein paar Wochen im Jahr, in denen Lehrlinge überhaupt in der Schule sind. Das schafft Druck. Es braucht Material, das in 15 oder 50 Minuten funktioniert, ohne dass Lehrkräfte stundenlang vorbereiten müssen.
+              Die Herausforderung: Berufsschulen haben wenig Unterrichtszeit: oft nur ein paar Wochen im Jahr, in denen Lehrlinge überhaupt in der Schule sind. Das schafft Druck. Es braucht Material, das in 15 oder 50 Minuten funktioniert, ohne dass Lehrkräfte stundenlang vorbereiten müssen.
             </p>
 
             <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4 mt-10" style={{ color: '#1a1040' }}>
@@ -120,7 +120,7 @@ export default function FinanzbildungBerufsschulePage() {
             </p>
             <div className="not-prose grid sm:grid-cols-2 gap-4 mb-8">
               {[
-                { title: 'Lohnzettel verstehen', desc: 'Brutto, netto, Sozialversicherungsbeiträge, Lohnsteuer — erklärt am realen Lehrlingslohnzettel' },
+                { title: 'Lohnzettel verstehen', desc: 'Brutto, netto, Sozialversicherungsbeiträge, Lohnsteuer: erklärt am realen Lehrlingslohnzettel' },
                 { title: 'Budgetplanung', desc: 'Einnahmen und Ausgaben realistisch planen, typische Fallen von Lehrlingen im 1. Lehrjahr' },
                 { title: 'Ratenkauf & BNPL', desc: 'Wie Ratenkauf wirklich funktioniert, was BNPL kostet, Schuldfallen erkennen' },
                 { title: 'Krypto & Scams', desc: 'Warum Jugendliche besonders oft Ziel von Finanzbetrug sind und wie man Scams erkennt' },
@@ -148,7 +148,7 @@ export default function FinanzbildungBerufsschulePage() {
               <div className="p-8 md:p-10 flex flex-col md:flex-row items-center gap-6">
                 <div className="flex-1">
                   <p className="font-heading text-xl font-bold text-white mb-2">Für Berufsschulen: Demo anfordern</p>
-                  <p className="font-body text-white/60 text-sm leading-relaxed">Skills-UP! hat spezifische Module für Berufsschulen und das duale System. Jetzt Demo anfragen — kostenlos und unverbindlich.</p>
+                  <p className="font-body text-white/60 text-sm leading-relaxed">Skills-UP! hat spezifische Module für Berufsschulen und das duale System. Jetzt Demo anfragen: kostenlos und unverbindlich.</p>
                 </div>
                 <div className="flex gap-3 shrink-0 flex-wrap justify-center">
                   <Link href="/schulen/berufsschule"

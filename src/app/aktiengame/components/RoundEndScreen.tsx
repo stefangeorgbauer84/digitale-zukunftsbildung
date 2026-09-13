@@ -444,7 +444,7 @@ export default function RoundEndScreen({ state, assets, onReflectionSubmit, onNe
         return nextRoundTip ? (
           <div className={`rounded-2xl p-4 border ${roleDef.bgClass} ${roleDef.borderClass}`}>
             <div className={`text-xs font-bold uppercase tracking-wide mb-1 ${roleDef.colorClass}`}>
-              Strategietipp für {roundToYear(state.currentRound + 1)} — {roleDef.name}
+              Strategietipp für {roundToYear(state.currentRound + 1)}: {roleDef.name}
             </div>
             <p className="text-sm text-text-secondary">{nextRoundTip}</p>
           </div>

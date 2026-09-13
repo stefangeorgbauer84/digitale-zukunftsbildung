@@ -36,7 +36,7 @@ const GOLDENE_REGELN = [
   {
     emoji: '🔍',
     title: 'Gesamtkosten berechnen',
-    text: 'Nie Monatsrate × Laufzeit vergessen. "Gratis" und "0% Zinsen" immer nachrechnen — Gesamtkosten zählen.',
+    text: 'Nie Monatsrate × Laufzeit vergessen. "Gratis" und "0% Zinsen" immer nachrechnen: Gesamtkosten zählen.',
   },
   {
     emoji: '📋',
@@ -46,7 +46,7 @@ const GOLDENE_REGELN = [
   {
     emoji: '📊',
     title: 'Preise vergleichen',
-    text: 'idealo.at, willhaben.at, Zalando — immer auf 3 Plattformen vergleichen. Streichpreise sind oft gefälscht.',
+    text: 'idealo.at, willhaben.at, Zalando: immer auf 3 Plattformen vergleichen. Streichpreise sind oft gefälscht.',
   },
   {
     emoji: '🎮',
@@ -60,7 +60,7 @@ const QUIZ_FRAGEN = [
     frage: 'Was bedeutet "monatlich kündbar" bei einem Fitness-Abo in Österreich?',
     optionen: [
       'Du kannst sofort per E-Mail kündigen',
-      'Es gibt eine Frist — oft 1 Monat, oft nur per Post',
+      'Es gibt eine Frist: oft 1 Monat, oft nur per Post',
       'Das Abo endet automatisch',
       'Du musst persönlich erscheinen',
     ],
@@ -83,7 +83,7 @@ const QUIZ_FRAGEN = [
   {
     frage:
       'Ein Handy kostet "gratis" mit €65/Monat × 24 Monate. Der Tarif ohne Handy kostet €25/Monat. Was zahlst du effektiv für das Handy?',
-    optionen: ['€0 — es ist wirklich gratis', '€960', '€1.560', '€999'],
+    optionen: ['€0: es ist wirklich gratis', '€960', '€1.560', '€999'],
     richtig: 1,
     erklaerung: '(€65 − €25) × 24 = €40 × 24 = €960. Das ist der echte Preis des "gratis" Handys.',
   },
@@ -377,7 +377,7 @@ export function KonsumResult({ state, onReset, onBack }: Props) {
               <p className="text-gray-600 text-xs mt-0.5">
                 {quizScore === 3
                   ? 'Perfekt! Du bist gut vorbereitet.'
-                  : 'Lies die Erklärungen durch — das Wissen schützt dich!'}
+                  : 'Lies die Erklärungen durch, das Wissen schützt dich!'}
               </p>
             </div>
           )}
@@ -413,7 +413,7 @@ export function KonsumResult({ state, onReset, onBack }: Props) {
         </div>
 
         <p className="text-gray-400 text-xs text-center mt-4">
-          Teile dein Ergebnis mit Freunden — schütze sie vor Konsumfallen!
+          Teile dein Ergebnis mit Freunden: schütze sie vor Konsumfallen!
         </p>
       </div>
     </div>

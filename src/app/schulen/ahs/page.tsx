@@ -199,7 +199,7 @@ export default function AhsPage() {
         ],
         ergebnis: 'Schüler:innen wissen nach der Simulation genau, wie viel ein Studium kostet, welche Förderungen sie beantragen können und wie viel Nebenjob sie wirklich brauchen.',
         mockUI: [
-          { zeile: 'Studium Wien — Monatsplan', typ: 'label' },
+          { zeile: 'Studium Wien: Monatsplan', typ: 'label' },
           { zeile: 'Studienbeihilfe|+ 680,00 €', typ: 'wert' },
           { zeile: 'Elternbeitrag|+ 400,00 €', typ: 'wert' },
           { zeile: 'Nebenjob (10 h/Woche)|+ 520,00 €', typ: 'wert' },
@@ -214,11 +214,11 @@ export default function AhsPage() {
       }}
       faqs={[
         { q: 'In welche Fächer der AHS passt Skills-UP! konkret?', a: 'Skills-UP! ist ideal für Geographie und Wirtschaftskunde (GWK), Politische Bildung und Geschichte (PuG), den Klassenvorstand oder als Wahlpflichtfach. Die Module gibt es in 15- und 50-Minuten-Versionen, passend für Einzel- und Doppelstunden.' },
-        { q: 'Müssen Lehrkräfte Finanzwissen mitbringen?', a: 'Nein. Alle Inhalte, Erklärungen, Übungsaufgaben und Musterlösungen sind im Programm enthalten. Lehrkräfte starten ein Modul — die Klasse arbeitet selbstständig. Kein Vorbereitungsaufwand.' },
+        { q: 'Müssen Lehrkräfte Finanzwissen mitbringen?', a: 'Nein. Alle Inhalte, Erklärungen, Übungsaufgaben und Musterlösungen sind im Programm enthalten. Lehrkräfte starten ein Modul, die Klasse arbeitet selbstständig. Kein Vorbereitungsaufwand.' },
         { q: 'Ist Skills-UP! auf die Finanzbildungspflicht 2027 abgestimmt?', a: 'Ja. Alle Module sind auf die Kompetenzziele der Nationalen Finanzbildungsstrategie abgestimmt und werden laufend aktualisiert. Schulen, die jetzt starten, sind für 2027 bestens vorbereitet.' },
       ]}
       verwandteSchultypen={[
-        { slug: 'hak', label: 'HAK & HAS', teaser: 'Finanzbildung als Ergänzung zu BWL und Rechnungswesen — lehrplankonform für die 9.–13. Schulstufe.' },
+        { slug: 'hak', label: 'HAK & HAS', teaser: 'Finanzbildung als Ergänzung zu BWL und Rechnungswesen: lehrplankonform für die 9.–13. Schulstufe.' },
         { slug: 'hlw', label: 'HLW & Fachschulen', teaser: 'Haushalt, Wirtschaft und Beruf: Finanzkompetenzen für eine frühe Selbstständigkeit.' },
         { slug: 'bafep', label: 'BAfEP & BASOP', teaser: 'Angehende Pädagoginnen und Sozialberufe: Finanzbildung für Beruf und Alltag.' },
       ]}

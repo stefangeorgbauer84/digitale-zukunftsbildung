@@ -74,7 +74,7 @@ const kostenModelle = [
   {
     titel: 'Schulstufe oder Schulbund',
     preis: 'Rabattiert',
-    beschreibung: 'Für mehrere Schulen gemeinsam — Bildungsdirektion, Schulverbund oder Förderpartner.',
+    beschreibung: 'Für mehrere Schulen gemeinsam: Bildungsdirektion, Schulverbund oder Förderpartner.',
     enthalten: [
       'Mengenrabatt ab 3 Schulen',
       'Zentrale Verwaltung & Reporting',
@@ -113,7 +113,7 @@ export default function FinanzbildungKostenPage() {
               Was kostet Skills-UP! für Schulen?
             </h1>
             <p className="font-body text-white/70 text-xl leading-relaxed">
-              Transparente Antwort auf die häufigste Frage von Schulleitungen und Lehrkräften — inklusive Förderoptionen, Gratiseinstieg und einem Vergleich mit anderen Angeboten.
+              Transparente Antwort auf die häufigste Frage von Schulleitungen und Lehrkräften: inklusive Förderoptionen, Gratiseinstieg und einem Vergleich mit anderen Angeboten.
             </p>
           </div>
         </section>
@@ -122,7 +122,7 @@ export default function FinanzbildungKostenPage() {
           <div className="max-w-3xl mx-auto">
 
             <p className="font-body text-gray-700 leading-relaxed mb-6">
-              Finanzbildung hat einen Ruf: teuer, aufwendig, nicht budgetierbar. Das ist oft der Grund, warum Schulen trotz Interesse nichts unternehmen. Deshalb beantworten wir die Kostenfrage direkt und vollständig — ohne Kleingedrucktes.
+              Finanzbildung hat einen Ruf: teuer, aufwendig, nicht budgetierbar. Das ist oft der Grund, warum Schulen trotz Interesse nichts unternehmen. Deshalb beantworten wir die Kostenfrage direkt und vollständig, ohne Kleingedrucktes.
             </p>
 
             <h2 className="font-heading text-2xl font-bold mb-6 mt-10" style={{ color: '#1a1040' }}>
@@ -164,11 +164,11 @@ export default function FinanzbildungKostenPage() {
               Welche Förderungen gibt es?
             </h2>
             <p className="font-body text-gray-700 leading-relaxed mb-6">
-              Mehrere österreichische Institutionen fördern Finanzbildungsprojekte an Schulen. Skills-UP! ist bereits mit der Wirtschaftskammer Österreich (WKÖ), der Hochschule Burgenland und der MEGA Bildungsstiftung vernetzt — was die Finanzierung in vielen Fällen vereinfacht.
+              Mehrere österreichische Institutionen fördern Finanzbildungsprojekte an Schulen. Skills-UP! ist bereits mit der Wirtschaftskammer Österreich (WKÖ), der Hochschule Burgenland und der MEGA Bildungsstiftung vernetzt: was die Finanzierung in vielen Fällen vereinfacht.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
               {[
-                { name: 'WKÖ Wirtschaftskammer', detail: 'Fördert Wirtschaftsbildung an BHS und Berufsschulen direkt — Anfrage über die jeweilige Landeskammer.' },
+                { name: 'WKÖ Wirtschaftskammer', detail: 'Fördert Wirtschaftsbildung an BHS und Berufsschulen direkt: Anfrage über die jeweilige Landeskammer.' },
                 { name: 'MEGA Bildungsstiftung', detail: 'Skills-UP! war Top-3 bei der MEGA Bildungsmillion 2025. Stiftungsförderung für gemeinnützige Bildungsprojekte möglich.' },
                 { name: 'Hochschule Burgenland', detail: 'Akademische Zertifizierung des Programms. Kooperation ermöglicht günstigere Konditionen für Schulen im Burgenland.' },
                 { name: 'Bildungsdirektionen', detail: 'Mehrere Bildungsdirektionen haben bereits Pilotprojekte mitfinanziert. Kontaktiert uns für eine Einschätzung eurer Region.' },
@@ -184,17 +184,17 @@ export default function FinanzbildungKostenPage() {
               Was kostet es im Vergleich?
             </h2>
             <p className="font-body text-gray-700 leading-relaxed mb-6">
-              Zum Vergleich: Ein externer Workshop-Tag zur Finanzbildung kostet in Österreich typischerweise zwischen 800 € und 2.500 € — für eine einzige Schulstunde mit einer einzigen Klasse, ohne Nachbereitung, ohne digitale Materialien, ohne Wiederholbarkeit.
+              Zum Vergleich: Ein externer Workshop-Tag zur Finanzbildung kostet in Österreich typischerweise zwischen 800 € und 2.500 €: für eine einzige Schulstunde mit einer einzigen Klasse, ohne Nachbereitung, ohne digitale Materialien, ohne Wiederholbarkeit.
             </p>
             <p className="font-body text-gray-700 leading-relaxed mb-10">
-              Skills-UP! ist ein Jahresprogramm, das jede Klasse, jede Woche, ohne Mehraufwand für Lehrkräfte, nutzen kann. Der Preis pro Unterrichtseinheit liegt damit in einem Bereich, der mit anderen digitalen Lernplattformen vergleichbar ist — bei gleichzeitig deutlich höherem Österreich-Bezug und Lehrplankonformität.
+              Skills-UP! ist ein Jahresprogramm, das jede Klasse, jede Woche, ohne Mehraufwand für Lehrkräfte, nutzen kann. Der Preis pro Unterrichtseinheit liegt damit in einem Bereich, der mit anderen digitalen Lernplattformen vergleichbar ist: bei gleichzeitig deutlich höherem Österreich-Bezug und Lehrplankonformität.
             </p>
 
             {/* CTA */}
             <div className="not-prose rounded-2xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 60%, #1a5c4e 100%)' }}>
               <div className="p-8 md:p-10 flex flex-col md:flex-row items-center gap-6">
                 <div className="flex-1">
-                  <p className="font-heading text-xl font-bold text-white mb-2">Kostenlos starten — jetzt Demo anfragen.</p>
+                  <p className="font-heading text-xl font-bold text-white mb-2">Kostenlos starten: jetzt Demo anfragen.</p>
                   <p className="font-body text-white/60 text-sm leading-relaxed">Wir zeigen euch das Programm live, besprechen Förderoptionen und erstellen ein individuelles Angebot. Unverbindlich, kostenlos.</p>
                 </div>
                 <Link href="/demo-anfragen"

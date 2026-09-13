@@ -4,7 +4,7 @@ import BunnyVideoSektion, { type BunnyVideo } from '@/components/BunnyVideoSekti
 
 type Anrede = 'sie' | 'du'
 
-// Startseite siezt, die Schultyp-Seiten duzen durchgehend — beide Fassungen
+// Startseite siezt, die Schultyp-Seiten duzen durchgehend: beide Fassungen
 // nutzen dasselbe Bauteil, also muss die Anrede mitwandern.
 const anredeTexte = (a: Anrede) =>
   a === 'du'
@@ -39,7 +39,7 @@ const videoListe = (a: Anrede): BunnyVideo[] => {
       guid: 'a214e3cf-15b9-4aa2-979b-7b84d18ded51',
       badge: t.badgeKlasse,
       titel: 'Finanzbildung ist ein Life-Skill',
-      beschreibung: `${t.hoeren}: warum uns beiden in der Schule niemand Geld erklärt hat — und was in den Modulen wirklich vorkommt.`,
+      beschreibung: `${t.hoeren}: warum uns beiden in der Schule niemand Geld erklärt hat, und was in den Modulen wirklich vorkommt.`,
       sekunden: 54,
       akzent: '#1a5c4e',
       poster: '/willkommen/schueler.jpg',
@@ -50,7 +50,7 @@ const videoListe = (a: Anrede): BunnyVideo[] => {
       guid: 'c73a50dd-401c-4556-a4b2-defe15c29303',
       badge: 'Hintergrund',
       titel: 'Skills-UP! vorgestellt',
-      beschreibung: 'Jede dritte Person in der Schuldnerberatung ist unter 30 und im Schnitt mit 30.000 Euro verschuldet. Das ist der Anlass — und das ist die Antwort.',
+      beschreibung: 'Jede dritte Person in der Schuldnerberatung ist unter 30 und im Schnitt mit 30.000 Euro verschuldet. Das ist der Anlass, und das ist die Antwort.',
       sekunden: 63,
       akzent: '#2a8a76',
       poster: '/willkommen/vertrieb.jpg',

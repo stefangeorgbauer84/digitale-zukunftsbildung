@@ -5,18 +5,18 @@ import SiteFooter from '@/components/SiteFooter'
 import WillkommenVideos from '@/components/WillkommenVideos'
 
 export const metadata: Metadata = {
-  title: 'Lehrplanmapping Finanzbildung Österreich | Skills-UP! — AHS, HAK, HTL, HLW, PTS',
+  title: 'Lehrplanmapping Finanzbildung Österreich | Skills-UP!: AHS, HAK, HTL, HLW, PTS',
   description: 'Vollständiges Lehrplanmapping: Welche Skills-UP!-Module passen zu welchem Fach und welcher Schulstufe? Übersicht für AHS, HAK, HTL, HLW, BAfEP, PTS und Berufsschulen.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/lehrplan-mapping' },
   openGraph: {
-    title: 'Lehrplanmapping Finanzbildung Österreich — Skills-UP!',
-    description: 'Welche Module passen zu welchem Fach? Das vollständige Mapping für alle österreichischen Schultypen — AHS, HAK, HTL, HLW, BAfEP, PTS, Berufsschule.',
+    title: 'Lehrplanmapping Finanzbildung Österreich: Skills-UP!',
+    description: 'Welche Module passen zu welchem Fach? Das vollständige Mapping für alle österreichischen Schultypen: AHS, HAK, HTL, HLW, BAfEP, PTS, Berufsschule.',
     url: 'https://www.digitale-zukunftsbildung.eu/lehrplan-mapping',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Lehrplanmapping Finanzbildung Österreich — Skills-UP!',
+    title: 'Lehrplanmapping Finanzbildung Österreich: Skills-UP!',
     description: 'Vollständiges Mapping: Welche Module passen zu AHS, HAK, HTL, HLW, PTS, Berufsschule?',
   },
 }
@@ -115,7 +115,7 @@ export default function LehrplanMappingPage() {
               Welches Modul passt<br />in welches Fach?
             </h1>
             <p className="font-body text-white/65 text-xl max-w-2xl mx-auto leading-relaxed mb-8">
-              Das vollständige Mapping aller Skills-UP!-Module nach Schultyp, Fach und Schulstufe — für AHS, HAK, HTL, HLW, BAfEP, PTS und Berufsschulen.
+              Das vollständige Mapping aller Skills-UP!-Module nach Schultyp, Fach und Schulstufe: für AHS, HAK, HTL, HLW, BAfEP, PTS und Berufsschulen.
             </p>
             <div className="flex justify-center gap-4 flex-wrap">
               <Link href="/demo-anfragen"
@@ -141,7 +141,7 @@ export default function LehrplanMappingPage() {
           </div>
         </section>
 
-        {/* Table — desktop */}
+        {/* Table: desktop */}
         <section className="py-12 px-6 bg-gray-50">
           <div className="max-w-7xl mx-auto">
             <div className="hidden lg:block overflow-x-auto rounded-2xl border border-gray-200 shadow-sm bg-white">
@@ -181,7 +181,7 @@ export default function LehrplanMappingPage() {
               </table>
             </div>
 
-            {/* Cards — mobile */}
+            {/* Cards: mobile */}
             <div className="lg:hidden space-y-6">
               {mapping.map((row) => (
                 <div key={row.slug} className="bg-white rounded-2xl border border-gray-100 overflow-hidden shadow-sm">
@@ -213,7 +213,7 @@ export default function LehrplanMappingPage() {
           </div>
         </section>
 
-        {/* Nationale Finanzbildungsstrategie — Kompetenz-Mapping */}
+        {/* Nationale Finanzbildungsstrategie: Kompetenz-Mapping */}
         <section className="py-16 px-6 bg-white border-t border-gray-100">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12">
@@ -259,7 +259,7 @@ export default function LehrplanMappingPage() {
                 {
                   nr: '04',
                   feld: 'Finanzlandschaft & Konsumentenschutz',
-                  desc: 'Anbieter, Werbung und Betrugsmaschen durchschauen — Rechte als Konsument:in kennen.',
+                  desc: 'Anbieter, Werbung und Betrugsmaschen durchschauen: Rechte als Konsument:in kennen.',
                   color: '#A84E12', bg: '#fdf0e6',
                   module: ['Ratenkauf, BNPL & Schuldenprävention', 'Konsum & Werbepsychologie', 'Scams & Finanzbetrug erkennen'],
                 },

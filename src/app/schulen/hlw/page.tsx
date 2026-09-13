@@ -195,16 +195,16 @@ export default function HlwPage() {
       faqs={[
         { q: 'Welche HLW-Fächer eignen sich für Skills-UP!?', a: 'Betriebs- und Volkswirtschaftliche Grundlagen (BWK), Geographie, Geschichte und Politische Bildung (GGP) sowie der Klassenvorstand. Die Module passen nahtlos in bestehende Stundenpläne.' },
         { q: 'Warum ist Finanzbildung für HLW-Schülerinnen besonders wichtig?', a: 'Viele HLW-Absolventinnen starten in sozialen oder touristischen Berufen mit geringeren Einstiegsgehältern. Finanzbildung gibt ihnen Werkzeuge, trotzdem finanziell stabil und selbstständig zu leben.' },
-        { q: 'Gibt es Module zu Themen wie Karenz oder Haushalt?', a: 'Ja. Skills-UP! hat Module zu Haushaltsbudget, Karenzgeld, Familienplanung und Lebenshaltungskosten — Themen, die für HLW-Schülerinnen besonders relevant sind.' },
+        { q: 'Gibt es Module zu Themen wie Karenz oder Haushalt?', a: 'Ja. Skills-UP! hat Module zu Haushaltsbudget, Karenzgeld, Familienplanung und Lebenshaltungskosten: Themen, die für HLW-Schülerinnen besonders relevant sind.' },
       ]}
       verwandteSchultypen={[
         { slug: 'bafep', label: 'BAfEP & BASOP', teaser: 'Für angehende Pädagoginnen: Finanzbildung für Beruf und Familienleben.' },
-        { slug: 'ahs', label: 'AHS-Oberstufe', teaser: 'Breite Allgemeinbildung trifft persönliche Finanzkompetenz — GWK und PuG.' },
-        { slug: 'hak', label: 'HAK & HAS', teaser: 'Wirtschaftliche Grundlagen persönlich anwenden — Lohnzettel, Budget, Kredit.' },
+        { slug: 'ahs', label: 'AHS-Oberstufe', teaser: 'Breite Allgemeinbildung trifft persönliche Finanzkompetenz: GWK und PuG.' },
+        { slug: 'hak', label: 'HAK & HAS', teaser: 'Wirtschaftliche Grundlagen persönlich anwenden: Lohnzettel, Budget, Kredit.' },
       ]}
       testimonials={[
         {
-          text: 'HLW-Schülerinnen stehen früh vor dem Berufseinstieg im Tourismus oder Sozialbereich — mit unterdurchschnittlichen Einstiegsgehältern. Skills-UP! gibt ihnen Werkzeuge, trotzdem finanziell stabil zu starten.',
+          text: 'HLW-Schülerinnen stehen früh vor dem Berufseinstieg im Tourismus oder Sozialbereich: mit unterdurchschnittlichen Einstiegsgehältern. Skills-UP! gibt ihnen Werkzeuge, trotzdem finanziell stabil zu starten.',
           person: 'Mag. Andrea L.',
           rolle: 'GGP-Lehrerin',
           schule: 'HLW Steiermark',

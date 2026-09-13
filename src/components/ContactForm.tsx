@@ -93,7 +93,7 @@ export default function ContactForm({ light = false }: { light?: boolean }) {
           className={`${inputCls} resize-none`} placeholder="Wie kann Skills-UP! helfen?" />
       </div>
 
-      {/* Honeypot — hidden from real users, bots fill it */}
+      {/* Honeypot: hidden from real users, bots fill it */}
       <input
         type="text"
         name="website"

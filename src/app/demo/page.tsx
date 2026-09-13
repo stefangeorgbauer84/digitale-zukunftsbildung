@@ -10,7 +10,7 @@ export const metadata: Metadata = {
     'Teste gratis die Konsumfallen-Simulation von Skills-UP!: 10 realistische Szenarien mit Netflix-Fallen, Fake-Countdowns, Gaming-Mikrotransaktionen und mehr. Keine Anmeldung nötig.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/demo' },
   openGraph: {
-    title: 'Konsumfallen-Parcours — Gratis Demo | Skills-UP!',
+    title: 'Konsumfallen-Parcours: Gratis Demo | Skills-UP!',
     description:
       '10 realistische Fallen: Abos, Influencer, Gaming, Klarna & mehr. Erkennst du sie alle?',
     images: ['/fotos/skillsUP-1.jpg'],
@@ -30,13 +30,13 @@ export default function DemoPage() {
       <BunnyVideoSektion
         eyebrow="Für Lehrkräfte"
         headline="So funktioniert Skills-UP! in deiner Klasse."
-        lead="Kein Installationsaufwand, kein Vorbereitungsaufwand — einfach einloggen und loslegen. Hier siehst du, wie es geht."
+        lead="Kein Installationsaufwand, kein Vorbereitungsaufwand: einfach einloggen und loslegen. Hier siehst du, wie es geht."
         variante="hell"
         videos={[{
           guid: '507846d7-3838-4e35-96e6-cb18f6d1b3d2',
           badge: 'Für Lehrkräfte',
           titel: 'Willkommen bei Skills-UP!',
-          beschreibung: 'Wie Lehrkräfte Skills-UP! in ihrem Unterricht einsetzen — schnell, einfach, ohne Vorbereitung.',
+          beschreibung: 'Wie Lehrkräfte Skills-UP! in ihrem Unterricht einsetzen: schnell, einfach, ohne Vorbereitung.',
           sekunden: 23,
           akzent: '#4a2d8a',
           poster: '/willkommen/vertrieb.jpg',
@@ -90,7 +90,7 @@ export default function DemoPage() {
       <BunnyVideoSektion
         eyebrow="Für deine Klasse"
         headline="Was Jugendliche über Skills-UP! sagen."
-        lead="Echte Schülerinnen und Schüler, echte Reaktionen — so erlebt die Klasse Skills-UP!."
+        lead="Echte Schülerinnen und Schüler, echte Reaktionen, so erlebt die Klasse Skills-UP!."
         variante="dunkel"
         videos={[{
           guid: 'a214e3cf-15b9-4aa2-979b-7b84d18ded51',

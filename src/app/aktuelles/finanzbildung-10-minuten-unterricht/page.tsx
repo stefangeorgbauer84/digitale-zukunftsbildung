@@ -5,18 +5,18 @@ import SiteFooter from '@/components/SiteFooter'
 import NewsletterSignup from '@/components/NewsletterSignup'
 
 export const metadata: Metadata = {
-  title: "Finanzbildung in 10 Minuten Unterricht — So geht's | Skills-UP!",
-  description: 'Keine Zeit für lange Vorbereitungen? Diese 3 Formate bringen echte Finanzbildung in 10 bis 15 Minuten Unterricht — ohne Fachkenntnisse, sofort einsetzbar für AHS, HAK, HTL und Berufsschulen.',
+  title: "Finanzbildung in 10 Minuten Unterricht, So geht's | Skills-UP!",
+  description: 'Keine Zeit für lange Vorbereitungen? Diese 3 Formate bringen echte Finanzbildung in 10 bis 15 Minuten Unterricht, ohne Fachkenntnisse, sofort einsetzbar für AHS, HAK, HTL und Berufsschulen.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/aktuelles/finanzbildung-10-minuten-unterricht' },
   openGraph: {
-    title: 'Finanzbildung in 10 Minuten Unterricht — 3 Formate die wirklich funktionieren',
-    description: 'So funktioniert kurze, wirkungsvolle Finanzbildung in der Schule — ohne Vorbereitung, ohne Fachkenntnisse, sofort startbereit.',
+    title: 'Finanzbildung in 10 Minuten Unterricht: 3 Formate die wirklich funktionieren',
+    description: 'So funktioniert kurze, wirkungsvolle Finanzbildung in der Schule, ohne Vorbereitung, ohne Fachkenntnisse, sofort startbereit.',
     url: 'https://www.digitale-zukunftsbildung.eu/aktuelles/finanzbildung-10-minuten-unterricht',
     type: 'article',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Finanzbildung in 10 Minuten — 3 Formate für Lehrkräfte',
+    title: 'Finanzbildung in 10 Minuten: 3 Formate für Lehrkräfte',
     description: 'Kurze, wirkungsvolle Finanzbildung ohne Vorbereitung. Sofort einsetzbar für alle Schultypen.',
   },
 }
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 const articleJsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Article',
-  headline: 'Finanzbildung in 10 Minuten Unterricht — 3 Formate die wirklich funktionieren',
+  headline: 'Finanzbildung in 10 Minuten Unterricht: 3 Formate die wirklich funktionieren',
   description: '3 Formate für kurze, wirkungsvolle Finanzbildung ohne Vorbereitung.',
   author: { '@type': 'Organization', name: 'Digitale Zukunftsbildung' },
   publisher: { '@type': 'Organization', name: 'Digitale Zukunftsbildung', url: 'https://www.digitale-zukunftsbildung.eu' },
@@ -48,7 +48,7 @@ const formate = [
     titel: 'Die Einstiegs-Frage (5–10 Min.)',
     beschreibung: 'Eine provokante Frage zu Beginn der Stunde, die sofort Diskussion auslöst. Kein Material nötig.',
     beispiele: [
-      '"Was kostet es wirklich, ein Auto zu haben — über 10 Jahre gerechnet?"',
+      '"Was kostet es wirklich, ein Auto zu haben: über 10 Jahre gerechnet?"',
       '"Was glaubt ihr: Wie viel zahlt ihr insgesamt für euer erstes Smartphone-Abo in 2 Jahren?"',
       '"Hat jemand schon mal auf TikTok einen Finanztipp gesehen? War der gut oder eine Falle?"',
     ],
@@ -60,8 +60,8 @@ const formate = [
     titel: 'Das Kurzmodul (15 Min.)',
     beschreibung: 'Skills-UP! hat alle Module in einer 15-Minuten-Version. Schülerinnen und Schüler arbeiten digital, selbstständig.',
     beispiele: [
-      'Lohnzettel lesen: 3 Lohnzettel, 3 Fehler finden — wer findet alle?',
-      'Budgetplanung: Mit 1.200 € Netto auskommen — was passt, was nicht?',
+      'Lohnzettel lesen: 3 Lohnzettel, 3 Fehler finden: wer findet alle?',
+      'Budgetplanung: Mit 1.200 € Netto auskommen: was passt, was nicht?',
       'Scam erkennen: 5 Screenshots, 5 echte oder gefälschte Angebote bewerten',
     ],
     tipp: 'Kein Login nötig für die Demo. Einfach starten, Klasse mitmachen lassen, Ergebnisse besprechen.',
@@ -103,10 +103,10 @@ export default function Finanzbildung10MinutenPage() {
               Praxistipp · Mai 2025
             </div>
             <h1 className="font-heading text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">
-              Finanzbildung in 10 Minuten Unterricht — 3 Formate, die wirklich funktionieren.
+              Finanzbildung in 10 Minuten Unterricht: 3 Formate, die wirklich funktionieren.
             </h1>
             <p className="font-body text-white/70 text-xl leading-relaxed">
-              Keine Zeit für lange Einheiten? Kein Problem. Diese drei Formate bringen echte Finanzbildung in kurze Unterrichtsblöcke — ohne Vorbereitung, ohne Fachkenntnisse, sofort einsetzbar.
+              Keine Zeit für lange Einheiten? Kein Problem. Diese drei Formate bringen echte Finanzbildung in kurze Unterrichtsblöcke, ohne Vorbereitung, ohne Fachkenntnisse, sofort einsetzbar.
             </p>
           </div>
         </section>
@@ -115,10 +115,10 @@ export default function Finanzbildung10MinutenPage() {
           <div className="max-w-3xl mx-auto">
 
             <p className="font-body text-gray-700 leading-relaxed mb-6">
-              Das häufigste Argument gegen Finanzbildung im Unterricht: „Dafür haben wir keine Zeit.“ Lehrpläne sind voll, Schulstunden kurz, Vorbereitungszeit Mangelware. Was viele Lehrkräfte aber unterschätzen: Finanzbildung muss nicht in langen Einheiten stattfinden. Manchmal reichen 10 Minuten — wenn das Format stimmt.
+              Das häufigste Argument gegen Finanzbildung im Unterricht: „Dafür haben wir keine Zeit.“ Lehrpläne sind voll, Schulstunden kurz, Vorbereitungszeit Mangelware. Was viele Lehrkräfte aber unterschätzen: Finanzbildung muss nicht in langen Einheiten stattfinden. Manchmal reichen 10 Minuten: wenn das Format stimmt.
             </p>
             <p className="font-body text-gray-700 leading-relaxed mb-10">
-              Hier sind drei Formate, die erfahrene Lehrkräfte tatsächlich einsetzen — ohne großen Aufwand, mit echtem Lerneffekt.
+              Hier sind drei Formate, die erfahrene Lehrkräfte tatsächlich einsetzen, ohne großen Aufwand, mit echtem Lerneffekt.
             </p>
 
             <div className="space-y-10">
@@ -158,16 +158,16 @@ export default function Finanzbildung10MinutenPage() {
               Das Prinzip dahinter: Anknüpfen, nicht belehren
             </h2>
             <p className="font-body text-gray-700 leading-relaxed mb-6">
-              Alle drei Formate haben eines gemeinsam: Sie holen Jugendliche dort ab, wo sie bereits sind. Handy-Abo, erster Lohnzettel, Krypto-Hype auf TikTok — das sind keine abstrakten Lernziele, sondern echte Momente aus dem Leben 15- bis 20-Jähriger in Österreich. Finanzbildung, die daran anknüpft, bleibt.
+              Alle drei Formate haben eines gemeinsam: Sie holen Jugendliche dort ab, wo sie bereits sind. Handy-Abo, erster Lohnzettel, Krypto-Hype auf TikTok, das sind keine abstrakten Lernziele, sondern echte Momente aus dem Leben 15- bis 20-Jähriger in Österreich. Finanzbildung, die daran anknüpft, bleibt.
             </p>
             <p className="font-body text-gray-700 leading-relaxed mb-10">
-              Lehrkräfte müssen dafür keine Finanzexpertinnen oder -experten sein. Das Programm übernimmt den fachlichen Teil. Die Lehrkraft moderiert, stellt Fragen, lässt diskutieren — das reicht.
+              Lehrkräfte müssen dafür keine Finanzexpertinnen oder -experten sein. Das Programm übernimmt den fachlichen Teil. Die Lehrkraft moderiert, stellt Fragen, lässt diskutieren, das reicht.
             </p>
 
             <div className="not-prose rounded-2xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 60%, #1a5c4e 100%)' }}>
               <div className="p-8 md:p-10 flex flex-col md:flex-row items-center gap-6">
                 <div className="flex-1">
-                  <p className="font-heading text-xl font-bold text-white mb-2">Module für alle drei Formate — fertig aufbereitet.</p>
+                  <p className="font-heading text-xl font-bold text-white mb-2">Module für alle drei Formate: fertig aufbereitet.</p>
                   <p className="font-body text-white/60 text-sm leading-relaxed">Skills-UP! liefert alle Materialien für Kurzmodule, Einstiegsfragen und Rückfragerunden. Sofort, ohne Vorbereitung.</p>
                 </div>
                 <div className="flex gap-3 shrink-0 flex-wrap justify-center">
