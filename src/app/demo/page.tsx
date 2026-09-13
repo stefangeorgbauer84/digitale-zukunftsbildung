@@ -68,6 +68,24 @@ export default function DemoPage() {
         </div>
       </section>
 
+      {/* ── Marktplatz Lernapps CTA ───────────────────────── */}
+      <section className="py-10 px-6" style={{ background: 'linear-gradient(135deg, #4a2d8a, #2a8a76)' }}>
+        <div className="max-w-3xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-6">
+          <div>
+            <p className="font-body text-white/70 text-xs font-700 uppercase tracking-widest mb-1">Österreichischer Marktplatz Lernapps</p>
+            <p className="font-heading text-white text-xl font-bold leading-snug">Skills-UP! für das Schuljahr 2026/27 auswählen</p>
+            <p className="font-body text-white/65 text-sm mt-1">Direkt über den offiziellen Marktplatz Lernapps buchen</p>
+          </div>
+          <a
+            href="https://www.marktplatz-lernapps.at/product-detail?product=859"
+            target="_blank" rel="noopener noreferrer"
+            className="shrink-0 inline-flex items-center gap-2 font-body font-700 text-sm px-6 py-3 rounded-xl bg-white text-[#4a2d8a] hover:bg-white/90 transition-all whitespace-nowrap">
+            Jetzt auswählen
+            <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </a>
+        </div>
+      </section>
+
       {/* ── Video: Skills-UP! für deine Klasse ───────────── */}
       <BunnyVideoSektion
         eyebrow="Für deine Klasse"
