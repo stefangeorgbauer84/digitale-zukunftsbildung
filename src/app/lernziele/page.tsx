@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
+import WillkommenVideos from '@/components/WillkommenVideos'
 import {
   BookOpen,
   Landmark,
@@ -571,6 +572,7 @@ export default function LernzielePage() {
           </div>
         </section>
       </main>
+      <WillkommenVideos anrede="sie" />
       <SiteFooter />
     </>
   )

@@ -3,6 +3,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
+import WillkommenVideos from '@/components/WillkommenVideos'
 import { faqCategories, faqTotalCount } from '@/lib/faq-data'
 
 export const metadata: Metadata = {
@@ -211,6 +212,7 @@ export default function FaqPage() {
         </section>
       </main>
 
+      <WillkommenVideos anrede="sie" />
       <SiteFooter />
     </>
   )

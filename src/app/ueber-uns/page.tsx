@@ -3,6 +3,7 @@ import Image from 'next/image'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import Link from 'next/link'
+import WillkommenVideos from '@/components/WillkommenVideos'
 
 export const metadata: Metadata = {
   title: 'Über uns – Team & Mission | Skills-UP! Finanzbildung Österreich',
@@ -510,6 +511,8 @@ export default function UeberUns() {
           </div>
         </div>
       </section>
+
+      <WillkommenVideos anrede="sie" />
 
       {/* ── CTA ──────────────────────────────────────────── */}
       <section className="py-20 px-6">

@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Link from 'next/link'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
+import WillkommenVideos from '@/components/WillkommenVideos'
 
 export const metadata: Metadata = {
   title: 'Lehrplanmapping Finanzbildung Österreich | Skills-UP! — AHS, HAK, HTL, HLW, PTS',
@@ -332,6 +333,7 @@ export default function LehrplanMappingPage() {
           </div>
         </section>
       </main>
+      <WillkommenVideos anrede="sie" />
       <SiteFooter />
     </>
   )
