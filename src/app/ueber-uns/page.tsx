@@ -261,7 +261,7 @@ export default function UeberUns() {
               Genau diese Erfahrung steckt heute in <strong className="text-primary-dark">Skills-UP!</strong> – als Verbündeter an Ihrer Seite: Sie öffnen den Browser, die Klasse legt los.
             </p>
             <p className="text-text-muted font-body text-lg leading-relaxed">
-              <strong className="text-primary-dark">Unsere Vision:</strong> Geld und Finanzen gehören in den Schulalltag. Keine Lernende soll die Schule ohne ein gewisses Basisgrundwissen verlassen – Jugendliche sollen gestärkt ins „echte Leben" starten.
+              <strong className="text-primary-dark">Unsere Vision:</strong> Geld und Finanzen gehören in den Schulalltag. Keine Lernende soll die Schule ohne ein gewisses Basisgrundwissen verlassen – Jugendliche sollen gestärkt ins &bdquo;echte Leben&ldquo; starten.
             </p>
           </div>
           <div className="relative">
