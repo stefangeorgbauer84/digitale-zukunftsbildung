@@ -9,7 +9,9 @@ export const metadata: Metadata = {
     title: 'Finanzbildung für die AHS-Oberstufe – Skills-UP! Österreich',
     description: 'Lehrplankonformes Finanzbildungsprogramm für die AHS. Module für GWK, PuG und Wahlpflichtfach. Sofort einsetzbar.',
     url: 'https://www.digitale-zukunftsbildung.eu/schulen/ahs',
+    images: ['/fotos/skillsUP-1.jpg'],
   },
+  twitter: { card: 'summary_large_image' },
 }
 
 const icon = (

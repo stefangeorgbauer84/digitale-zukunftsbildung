@@ -1,4 +1,5 @@
 const { withSentryConfig } = require('@sentry/nextjs')
+const { buildContentSecurityPolicy } = require('./src/lib/csp')
 
 /** @type {import('next').NextConfig} */
 const securityHeaders = [
@@ -25,26 +26,9 @@ const securityHeaders = [
   {
     // Google Fonts are self-hosted via next/font (no CDN request at runtime).
     // 'unsafe-inline' for scripts/styles is required by Next.js hydration.
+    // Quelle und Guard-Test: src/lib/csp.js + src/lib/csp.test.ts
     key: 'Content-Security-Policy',
-    value: [
-      "default-src 'self'",
-      process.env.NODE_ENV === 'development'
-        ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://browser.sentry-cdn.com https://js.sentry-cdn.com"
-        : "script-src 'self' 'unsafe-inline' https://browser.sentry-cdn.com https://js.sentry-cdn.com",
-      "style-src 'self' 'unsafe-inline'",
-      "font-src 'self'",
-      "img-src 'self' data: https://img.youtube.com https://vz-b03180be-aa5.b-cdn.net",
-      "frame-src https://www.youtube-nocookie.com https://iframe.mediadelivery.net",
-      // 'o*.ingest…' ist keine gültige CSP-Wildcard — Browser verwarf die ganze Quelle
-      "connect-src 'self' https://*.sentry.io",
-      "object-src 'none'",
-      "base-uri 'self'",
-      "form-action 'self'",
-      // Modern replacement for X-Frame-Options (kept above for legacy browsers)
-      "frame-ancestors 'self'",
-      // Only in production: would rewrite http://localhost assets in dev
-      ...(process.env.NODE_ENV === 'production' ? ['upgrade-insecure-requests'] : []),
-    ].join('; '),
+    value: buildContentSecurityPolicy(process.env.NODE_ENV),
   },
 ]
 

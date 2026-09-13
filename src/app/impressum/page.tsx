@@ -194,6 +194,21 @@ export default function Impressum() {
               </p>
             </Sub>
 
+            <Sub title="Reichweitenmessung (Vercel Analytics)">
+              <p>
+                Zur Auswertung der Websitenutzung setzen wir <strong>Vercel Web Analytics</strong> und
+                <strong> Vercel Speed Insights</strong> ein — Dienste desselben Anbieters, der die Website
+                hostet (siehe oben). Erfasst werden die aufgerufene Seite, die verweisende Seite,
+                Gerätetyp und Browser, das Herkunftsland sowie Messwerte zur Ladegeschwindigkeit.
+                Die Messung arbeitet <strong>ohne Cookies</strong> und ohne Kennungen im Browser-Speicher;
+                Vercel bildet stattdessen eine täglich wechselnde, nicht rückrechenbare Prüfsumme.
+                Eine Wiedererkennung über mehrere Tage oder über andere Websites hinweg findet nicht
+                statt, ein Nutzungsprofil wird nicht gebildet. Die Verarbeitung erfolgt im Rahmen des
+                oben verlinkten Auftragsverarbeitungsvertrags mit Vercel.
+              </p>
+              {/* TODO Stefan: Rechtsgrundlage-Satz — siehe Notiz in der Session. Nicht deployen, solange dieser Kommentar steht. */}
+            </Sub>
+
             <Sub title="YouTube-Videos">
               <p>
                 Auf dieser Website werden Videos von{' '}
@@ -224,9 +239,9 @@ export default function Impressum() {
 
             <Sub title="Cookies">
               <p>
-                Diese Website verwendet keine Tracking-Cookies und kein Analytics. Es werden
-                ausschließlich technisch notwendige Cookies gesetzt, die für den Betrieb der
-                Website erforderlich sind.
+                Diese Website verwendet keine Tracking-Cookies. Es werden ausschließlich technisch
+                notwendige Cookies gesetzt, die für den Betrieb der Website erforderlich sind.
+                Auch die Reichweitenmessung (siehe oben) kommt ohne Cookies aus.
               </p>
             </Sub>
 

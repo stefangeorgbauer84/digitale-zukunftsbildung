@@ -9,7 +9,9 @@ export const metadata: Metadata = {
     title: 'Finanzbildung für BAfEP & BASOP – Skills-UP! Österreich',
     description: 'Finanzbildung für angehende Pädagog:innen. Lehrplankonform, sofort einsetzbar.',
     url: 'https://www.digitale-zukunftsbildung.eu/schulen/bafep',
+    images: ['/fotos/skillsUP-1.jpg'],
   },
+  twitter: { card: 'summary_large_image' },
 }
 
 const icon = (

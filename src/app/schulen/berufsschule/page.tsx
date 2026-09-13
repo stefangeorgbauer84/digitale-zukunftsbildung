@@ -9,7 +9,9 @@ export const metadata: Metadata = {
     title: 'Finanzbildung für Berufsschulen – Skills-UP! Österreich',
     description: 'Praxisnahe Finanzbildung für Lehrlinge und Berufsschüler:innen. Schuldenprävention, Lehrlingseinkommen, Ratenkauf. Sofort einsetzbar.',
     url: 'https://www.digitale-zukunftsbildung.eu/schulen/berufsschule',
+    images: ['/fotos/skillsUP-1.jpg'],
   },
+  twitter: { card: 'summary_large_image' },
 }
 
 const icon = (

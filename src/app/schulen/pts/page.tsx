@@ -9,7 +9,9 @@ export const metadata: Metadata = {
     title: 'Finanzbildung für die PTS – Skills-UP! Österreich',
     description: 'Praxisnahe Finanzbildung für die Polytechnische Schule. Erstes Einkommen, Konsumfallen, Sparziele. Lehrplankonform.',
     url: 'https://www.digitale-zukunftsbildung.eu/schulen/pts',
+    images: ['/fotos/skillsUP-1.jpg'],
   },
+  twitter: { card: 'summary_large_image' },
 }
 
 const icon = (

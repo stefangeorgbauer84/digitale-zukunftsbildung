@@ -13,7 +13,9 @@ export const metadata: Metadata = {
     title: 'Konsumfallen-Parcours — Gratis Demo | Skills-UP!',
     description:
       '10 realistische Fallen: Abos, Influencer, Gaming, Klarna & mehr. Erkennst du sie alle?',
+    images: ['/fotos/skillsUP-1.jpg'],
   },
+  twitter: { card: 'summary_large_image' },
 }
 
 export default function DemoPage() {

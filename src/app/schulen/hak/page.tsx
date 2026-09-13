@@ -9,7 +9,9 @@ export const metadata: Metadata = {
     title: 'Finanzbildung für HAK & HAS – Skills-UP! Österreich',
     description: 'Lehrplankonformes Finanzbildungsprogramm für HAK und HAS. Vorbereitung auf Finanzbildung als Pflichtfach ab 2027. 12+ Module, sofort einsetzbar.',
     url: 'https://www.digitale-zukunftsbildung.eu/schulen/hak',
+    images: ['/fotos/skillsUP-1.jpg'],
   },
+  twitter: { card: 'summary_large_image' },
 }
 
 const icon = (

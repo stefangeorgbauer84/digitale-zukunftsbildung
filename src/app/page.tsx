@@ -17,8 +17,10 @@ export const metadata: Metadata = {
   description: 'Fertige Unterrichtsmodule, Praxissimulationen und ein Lehrer-Dashboard für AHS, HAK, HTL, HLW, BAfEP, BASOP und PTS. Lehrplankonform, DSGVO-sicher, sofort einsetzbar.',
   openGraph: {
     title: 'Skills-UP! | Finanzbildung für österreichische Schulen',
-    description: 'Top-3 MEGA Bildungsmillion. 12 Module, 10+ Simulationen. Kein Vorbereitungsaufwand für Lehrkräfte.',
+    description: 'Fertige Unterrichtsmodule, Praxissimulationen und ein Lehrer-Dashboard. Lehrplankonform, DSGVO-sicher, sofort einsetzbar. Für AHS, HAK, HTL, HLW, BAfEP, PTS und Berufsschulen.',
+    images: ['/fotos/skillsUP-1.jpg'],
   },
+  twitter: { card: 'summary_large_image' },
 }
 
 /* ── Partner / Award logos ─────────────────────────────── */

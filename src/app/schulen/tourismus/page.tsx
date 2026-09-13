@@ -9,7 +9,9 @@ export const metadata: Metadata = {
     title: 'Finanzbildung für Tourismusschulen – Skills-UP! Österreich',
     description: 'Praxisnahe Finanzbildung für Schüler:innen an Tourismusschulen. Saisoneinkommen, Trinkgeld, Selbstständigkeit, Auslandsarbeit. Lehrplankonform, sofort einsetzbar.',
     url: 'https://www.digitale-zukunftsbildung.eu/schulen/tourismus',
+    images: ['/fotos/skillsUP-1.jpg'],
   },
+  twitter: { card: 'summary_large_image' },
 }
 
 const icon = (

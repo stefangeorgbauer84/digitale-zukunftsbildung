@@ -9,7 +9,9 @@ export const metadata: Metadata = {
     title: 'Finanzbildung für HLW & Fachschulen – Skills-UP! Österreich',
     description: 'Praxisnahe Finanzbildung für HLW und wirtschaftliche Fachschulen. Lehrplankonform, sofort einsetzbar.',
     url: 'https://www.digitale-zukunftsbildung.eu/schulen/hlw',
+    images: ['/fotos/skillsUP-1.jpg'],
   },
+  twitter: { card: 'summary_large_image' },
 }
 
 const icon = (
