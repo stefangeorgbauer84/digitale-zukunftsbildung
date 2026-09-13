@@ -8,6 +8,7 @@ import AktiengameCTA from '@/components/AktiengameCTA'
 import SiteFooter from '@/components/SiteFooter'
 import VideoSection from '@/components/VideoSection'
 import BunnyVideoSektion, { type BunnyVideo } from '@/components/BunnyVideoSektion'
+import LernzieleTeaser from '@/components/LernzieleTeaser'
 import ContactForm from '@/components/ContactForm'
 
 export interface UnterrichtsEinheit {
@@ -270,6 +271,14 @@ export default function SchulPage({
           akzent: '#4a2d8a',
           poster: '/willkommen/lehrkraft.jpg',
         } satisfies BunnyVideo]}
+      />
+
+      {/* ── Lernziele Teaser ────────────────────────────────── */}
+      <LernzieleTeaser
+        anzahl={6}
+        offset={3}
+        headline="Was Schüler:innen nach Skills-UP! wirklich können."
+        eyebrow="Konkrete Lernziele aus den Modulen"
       />
 
       {/* ── Lehrer-Testimonial ───────────────────────────────── */}

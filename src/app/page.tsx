@@ -8,6 +8,7 @@ import FaqAccordion from '@/components/FaqAccordion'
 import VideoSection from '@/components/VideoSection'
 import BunnyVideoSektion, { type BunnyVideo } from '@/components/BunnyVideoSektion'
 import AktiengameCTA from '@/components/AktiengameCTA'
+import LernzieleTeaser from '@/components/LernzieleTeaser'
 import KonsumfallenCTA from '@/components/KonsumfallenCTA'
 import ContactForm from '@/components/ContactForm'
 import NewsletterSignup from '@/components/NewsletterSignup'
@@ -818,6 +819,14 @@ export default function HomePage() {
         </div>
       </section>
 
+      {/* ── Lernziele Teaser (weitere 6, andere Themen) ─── */}
+      <LernzieleTeaser
+        anzahl={6}
+        offset={6}
+        headline="Von Steuern bis Investieren: alles was zählt."
+        eyebrow="Lernziele aus 15 Modulen"
+      />
+
       {/* ══════════════════════════════════════════════════
           AKTIENGAME CTA
       ══════════════════════════════════════════════════ */}
@@ -1198,6 +1207,9 @@ export default function HomePage() {
           } satisfies BunnyVideo]}
         />
       </div>
+
+      {/* ── Lernziele Teaser (erste 6) ───────────────────── */}
+      <LernzieleTeaser anzahl={6} offset={0} />
 
       {/* ══════════════════════════════════════════════════
           ZIELGRUPPEN
