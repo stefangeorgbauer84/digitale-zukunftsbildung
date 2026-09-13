@@ -6,7 +6,7 @@ import SiteFooter from '@/components/SiteFooter'
 import BackToTop from '@/components/BackToTop'
 import FaqAccordion from '@/components/FaqAccordion'
 import VideoSection from '@/components/VideoSection'
-import WillkommenVideos from '@/components/WillkommenVideos'
+import BunnyVideoSektion, { type BunnyVideo } from '@/components/BunnyVideoSektion'
 import AktiengameCTA from '@/components/AktiengameCTA'
 import KonsumfallenCTA from '@/components/KonsumfallenCTA'
 import ContactForm from '@/components/ContactForm'
@@ -1170,9 +1170,34 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          WILLKOMMENSVIDEOS (Bunny Stream, Two-Click)
+          VORSTELLUNGSVIDEO (Bunny Stream, Two-Click)
       ══════════════════════════════════════════════════ */}
-      <WillkommenVideos />
+      <div className="relative overflow-hidden">
+        {/* Capybara Watermark */}
+        <Image
+          src="/capybara-mascot.png"
+          alt=""
+          width={320}
+          height={320}
+          aria-hidden="true"
+          className="absolute -bottom-8 -right-8 opacity-[0.07] pointer-events-none select-none rotate-12 hidden md:block"
+        />
+        <BunnyVideoSektion
+          eyebrow="Skills-UP! vorgestellt"
+          headline="Das ist der Anlass. Das ist die Antwort."
+          lead="Jede dritte Person in der Schuldnerberatung ist unter 30 und im Schnitt mit 30.000 Euro verschuldet. Deshalb haben wir Skills-UP! entwickelt."
+          variante="dunkel"
+          videos={[{
+            guid: 'c73a50dd-401c-4556-a4b2-defe15c29303',
+            badge: 'Hintergrund',
+            titel: 'Skills-UP! vorgestellt',
+            beschreibung: 'Jede dritte Person in der Schuldnerberatung ist unter 30 und im Schnitt mit 30.000 Euro verschuldet. Das ist der Anlass — und das ist die Antwort.',
+            sekunden: 63,
+            akzent: '#2a8a76',
+            poster: '/willkommen/vertrieb.jpg',
+          } satisfies BunnyVideo]}
+        />
+      </div>
 
       {/* ══════════════════════════════════════════════════
           ZIELGRUPPEN
