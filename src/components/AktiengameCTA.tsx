@@ -46,7 +46,7 @@ export default function AktiengameCTA() {
           {/* Left: Text & Lernziele */}
           <div>
             <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-              10 Jahre Börse spielen —<br />
+              10 Jahre Börse spielen,<br />
               <span style={{ color: '#7ed4c8' }}>ohne echtes Geld zu riskieren.</span>
             </h2>
             <p className="text-white/70 text-base leading-relaxed mb-8">

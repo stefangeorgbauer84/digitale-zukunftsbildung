@@ -344,7 +344,7 @@ function QuickInvestBar({
       <div className="flex items-center gap-2 mb-3">
         <span className="text-primary-dark"><ZapIcon /></span>
         <span className="text-sm font-semibold text-text-primary">Schnell investieren</span>
-        <span className="text-xs text-text-muted ml-1">— je 1 Anteil pro Asset</span>
+        <span className="text-xs text-text-muted ml-1">(je 1 Anteil pro Asset)</span>
       </div>
       <div className="flex flex-wrap gap-2">
         {QUICK_STRATEGIES.map((s) => {

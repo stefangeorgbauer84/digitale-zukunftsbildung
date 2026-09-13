@@ -228,7 +228,7 @@ export default function LehrplanMappingPage() {
                 Skills-UP! deckt alle vier<br className="hidden md:block" /> Kompetenzbereiche der Strategie ab.
               </h2>
               <p className="font-body text-gray-600 text-lg max-w-2xl mx-auto">
-                Die Nationale Finanzbildungsstrategie Österreichs baut auf dem Kompetenzrahmen der OECD/INFE auf —
+                Die Nationale Finanzbildungsstrategie Österreichs baut auf dem Kompetenzrahmen der OECD/INFE auf,
                 mit vier Kernbereichen. Jeder davon ist mit fertigen Skills-UP!-Modulen abgedeckt, dokumentiert und ab dem Pflichtfach 2027 direkt einsetzbar.
               </p>
             </div>
@@ -303,7 +303,7 @@ export default function LehrplanMappingPage() {
                 <p className="font-heading font-700 text-white text-lg mb-1">WKÖ-zertifiziert und extern geprüft.</p>
                 <p className="font-body text-white/60 text-sm leading-relaxed">
                   Die Wirtschaftskammer Österreich bestätigt Qualität und Praxisrelevanz der Inhalte, die Hochschule Burgenland
-                  begleitet das Programm wissenschaftlich. Skills-UP! wird im Rahmen der Nationalen Finanzbildungsstrategie unterstützt —
+                  begleitet das Programm wissenschaftlich. Skills-UP! wird im Rahmen der Nationalen Finanzbildungsstrategie unterstützt.
                   Ihre Schule setzt damit auf ein geprüftes, ministeriumsnah verankertes Programm.
                 </p>
               </div>

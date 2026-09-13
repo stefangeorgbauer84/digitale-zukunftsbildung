@@ -137,7 +137,7 @@ export default function InflationUnterrichtsmaterial() {
               ))}
             </ul>
             <P>
-              Aktuelle österreichische Inflationswerte finden Sie tagesaktuell bei der Statistik Austria —
+              Aktuelle österreichische Inflationswerte finden Sie tagesaktuell bei der Statistik Austria,
               ideal als Rechercheauftrag für die Klasse, statt veralteter Zahlen am Arbeitsblatt.
             </P>
 

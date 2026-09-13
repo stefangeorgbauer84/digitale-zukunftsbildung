@@ -50,7 +50,7 @@ export default function DemoPage() {
             So arbeitet deine Klasse mit Skills-UP!.
           </h2>
           <p className="font-body text-gray-600 leading-relaxed mb-8 max-w-xl mx-auto">
-            Simulation ausprobiert, Videos gesehen? Dann hol dir den vollen Zugang für deine Schule —
+            Simulation ausprobiert, Videos gesehen? Dann hol dir den vollen Zugang für deine Schule:
             kostenlos testen, ohne Installation, Antwort innerhalb von 24 Stunden.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
