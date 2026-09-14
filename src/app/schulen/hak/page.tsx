@@ -3,7 +3,7 @@ import SchulPage from '@/components/SchulPage'
 
 export const metadata: Metadata = {
   title: 'Finanzbildung HAK & HAS Österreich | Skills-UP! – lehrplankonform ab 2027',
-  description: 'Skills-UP! für HAK und HAS (9.–13. Schulstufe, 1.–5. Jahrgang): Finanzbildung als Ergänzung zu Betriebswirtschaft und Rechnungswesen. Lehrplankonform, ab 2027 Pflichtfach. Sofort einsetzbar.',
+  description: 'Skills-UP! für HAK & HAS: Finanzbildung als Ergänzung zu BW und RW. Lehrplankonform, ab 2027 Pflichtfach. 12+ Module, sofort einsetzbar.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/schulen/hak' },
   openGraph: {
     title: 'Finanzbildung für HAK & HAS – Skills-UP! Österreich',
