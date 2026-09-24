@@ -27,7 +27,7 @@ const videoListe = (a: Anrede): BunnyVideo[] => {
   const t = anredeTexte(a)
   const basis: BunnyVideo[] = [
     {
-      guid: '507846d7-3838-4e35-96e6-cb18f6d1b3d2',
+      guid: '1c0ebf68-0799-42f2-a324-cbbbd936b333',
       badge: 'Für Lehrkräfte',
       titel: 'Willkommen bei Skills-UP!',
       beschreibung: `15 Module, fix und fertig, flexibel über das ganze Jahr. Dazu didaktische Materialien und Simulationen ${t.fuerKlasse}.`,
