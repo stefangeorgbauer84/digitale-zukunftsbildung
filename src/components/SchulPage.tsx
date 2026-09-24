@@ -263,7 +263,7 @@ export default function SchulPage({
         lead="Kein Installationsaufwand, kein Vorbereitungsaufwand: einfach einloggen und loslegen. Hier siehst du, wie es geht."
         variante="hell"
         videos={[{
-          guid: '1c0ebf68-0799-42f2-a324-cbbbd936b333',
+          guid: 'a214e3cf-15b9-4aa2-979b-7b84d18ded51',
           badge: 'Für Lehrkräfte',
           titel: 'Willkommen bei Skills-UP!',
           beschreibung: '15 Module, fix und fertig, flexibel über das ganze Jahr. Dazu didaktische Materialien und Simulationen für deine Klasse.',
@@ -1430,7 +1430,7 @@ export default function SchulPage({
         lead="Echte Schülerinnen und Schüler, echte Reaktionen, so erlebt die Klasse Skills-UP!."
         variante="dunkel"
         videos={[{
-          guid: 'a214e3cf-15b9-4aa2-979b-7b84d18ded51',
+          guid: '1c0ebf68-0799-42f2-a324-cbbbd936b333',
           badge: 'Für deine Klasse',
           titel: 'Skills-UP! aus Schülerperspektive',
           beschreibung: 'Wie Jugendliche über Skills-UP! und Finanzbildung sprechen.',

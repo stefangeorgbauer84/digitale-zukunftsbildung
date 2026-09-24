@@ -27,7 +27,7 @@ const videoListe = (a: Anrede): BunnyVideo[] => {
   const t = anredeTexte(a)
   const basis: BunnyVideo[] = [
     {
-      guid: '1c0ebf68-0799-42f2-a324-cbbbd936b333',
+      guid: 'a214e3cf-15b9-4aa2-979b-7b84d18ded51',
       badge: 'Für Lehrkräfte',
       titel: 'Willkommen bei Skills-UP!',
       beschreibung: `15 Module, fix und fertig, flexibel über das ganze Jahr. Dazu didaktische Materialien und Simulationen ${t.fuerKlasse}.`,
@@ -36,7 +36,7 @@ const videoListe = (a: Anrede): BunnyVideo[] => {
       poster: '/willkommen/lehrkraft.jpg',
     },
     {
-      guid: 'a214e3cf-15b9-4aa2-979b-7b84d18ded51',
+      guid: '1c0ebf68-0799-42f2-a324-cbbbd936b333',
       badge: t.badgeKlasse,
       titel: 'Finanzbildung ist ein Life-Skill',
       beschreibung: `${t.hoeren}: warum uns beiden in der Schule niemand Geld erklärt hat, und was in den Modulen wirklich vorkommt.`,
