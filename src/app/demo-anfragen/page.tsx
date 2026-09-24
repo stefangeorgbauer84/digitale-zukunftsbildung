@@ -3,6 +3,19 @@ import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import DemoForm from './DemoForm'
 import VorstellungVideo from '@/components/VorstellungVideo'
+import BunnyVideoSektion, { type BunnyVideo } from '@/components/BunnyVideoSektion'
+
+const lehrkraftVideo: BunnyVideo[] = [
+  {
+    guid: 'a214e3cf-15b9-4aa2-979b-7b84d18ded51',
+    badge: 'Für Lehrkräfte',
+    titel: 'Skills-UP! in 23 Sekunden',
+    beschreibung: '15 Module, fix und fertig, flexibel über das ganze Jahr. Didaktische Materialien und Simulationen für deine Klasse — kein Vorbereitungsaufwand.',
+    sekunden: 23,
+    akzent: '#4a2d8a',
+    poster: '/willkommen/lehrkraft.jpg',
+  },
+]
 
 export const metadata: Metadata = {
   title: 'Demo anfragen – Skills-UP! Finanzbildung für Schulen | Österreich',
@@ -100,7 +113,16 @@ export default function DemoAnfragenPage() {
           </div>
         </section>
 
-        {/* Vorstellungsvideo 16.2 (Bunny Stream, Two-Click) */}
+        {/* Lehrkraft-Video 16.2 (23 s, Bunny Stream, Two-Click) */}
+        <BunnyVideoSektion
+          eyebrow="Für Lehrkräfte"
+          headline="Skills-UP! in 23 Sekunden erklärt."
+          lead="15 Module, fix und fertig — hier siehst du kurz, was dich und deine Klasse erwartet."
+          variante="hell"
+          videos={lehrkraftVideo}
+        />
+
+        {/* Vorstellungsvideo 16.1 — langer Hintergrund-Pitch (Bunny Stream, Two-Click) */}
         <VorstellungVideo />
       </main>
       <SiteFooter />
