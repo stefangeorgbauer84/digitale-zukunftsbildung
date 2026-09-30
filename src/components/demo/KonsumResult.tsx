@@ -393,7 +393,7 @@ export function KonsumResult({ state, onReset, onBack }: Props) {
             Nochmal spielen
           </button>
           <a
-            href="https://app.skills-up.eu"
+            href="https://skillsup.digitale-zukunftsbildung.eu"
             target="_blank"
             rel="noopener noreferrer"
             className="w-full flex items-center justify-center gap-2 py-3 bg-white border border-gray-200 text-gray-600 font-medium rounded-xl text-sm hover:bg-gray-50 transition active:scale-95"
