@@ -12,13 +12,13 @@ const anredeTexte = (a: Anrede) =>
         lead: 'eines für dich als Lehrkraft, eines für deine Klasse',
         badgeKlasse: 'Für deine Klasse',
         fuerKlasse: 'für deine Klasse',
-        hoeren: 'Das hören deine Schüler:innen zum Start',
+        hoeren: 'Das hört deine Klasse zum Start',
       }
     : {
         lead: 'eines für Sie als Lehrkraft, eines für Ihre Klasse',
         badgeKlasse: 'Für Ihre Klasse',
         fuerKlasse: 'für Ihre Klasse',
-        hoeren: 'Das hören Ihre Schüler:innen zum Start',
+        hoeren: 'Das hört Ihre Klasse zum Start',
       }
 
 // Bunny-Library 722507, Collection 16_VORSTELLUNG (7c06221f-c1ce-451b-9d53-2744f62ef67d).

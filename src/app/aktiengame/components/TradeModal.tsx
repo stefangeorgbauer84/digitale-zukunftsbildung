@@ -245,7 +245,7 @@ export default function TradeModal({
               {tab === 'buy' && assetContraRole && (
                 <div className="bg-gray-50 border border-gray-200 rounded-xl p-3 text-sm text-text-muted">
                   <span className="font-semibold text-text-secondary">Hinweis: </span>
-                  Dieses Asset passt nicht direkt zu deiner {roleDef.name}-Strategie. Überlege, ob es trotzdem Sinn ergibt – und warum.
+                  Dieses Asset passt nicht direkt zu deiner Strategie ({roleDef.name}). Überlege, ob es trotzdem Sinn ergibt – und warum.
                 </div>
               )}
 

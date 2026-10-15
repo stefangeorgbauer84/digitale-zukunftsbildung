@@ -259,7 +259,7 @@ export default function LehrplanMappingPage() {
                 {
                   nr: '04',
                   feld: 'Finanzlandschaft & Konsumentenschutz',
-                  desc: 'Anbieter, Werbung und Betrugsmaschen durchschauen: Rechte als Konsument:in kennen.',
+                  desc: 'Anbieter, Werbung und Betrugsmaschen durchschauen: Rechte beim Einkaufen kennen.',
                   color: '#A84E12', bg: '#fdf0e6',
                   module: ['Ratenkauf, BNPL & Schuldenprävention', 'Konsum & Werbepsychologie', 'Scams & Finanzbetrug erkennen'],
                 },

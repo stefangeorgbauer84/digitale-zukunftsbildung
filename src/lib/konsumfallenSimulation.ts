@@ -75,8 +75,8 @@ export const KONSUMFALLEN: KonsumFalle[] = [
     category: 'influencer',
     icon: '⏱️',
     scenario:
-      'Dein Lieblings-TikTok-Creator postet einen "exklusiven" Deal: Sneaker um 50% reduziert — "NUR HEUTE, 23:59 Uhr ist Schluss!" Ein Countdown läuft. Originalpreis: €199, jetzt €99.',
-    trap: 'Der Countdown startet bei jedem Website-Besuch neu. Der "Originalpreis" von €199 war nie der echte Preis — das Modell wurde noch nie teurer als €99 verkauft. Influencer bekommt Provision für jeden Kauf.',
+      'Ein TikTok-Account, dem du gerne folgst, postet einen "exklusiven" Deal: Sneaker um 50% reduziert — "NUR HEUTE, 23:59 Uhr ist Schluss!" Ein Countdown läuft. Originalpreis: €199, jetzt €99.',
+    trap: 'Der Countdown startet bei jedem Website-Besuch neu. Der "Originalpreis" von €199 war nie der echte Preis — das Modell wurde noch nie teurer als €99 verkauft. Die Person im Video bekommt Provision für jeden Kauf.',
     correctAction:
       'Preis auf anderen Plattformen vergleichen (idealo.at, willhaben). Countdown-Timer in neuem Browser-Tab öffnen — wenn er neustartet, ist er fake. Gesetz: Preisangabenverordnung verlangt echten Vorpreis.',
     wrongAction: 'Aus FOMO sofort kaufen ohne Preisvergleich, weil der "Timer" Druck macht.',
@@ -84,7 +84,7 @@ export const KONSUMFALLEN: KonsumFalle[] = [
     timePressure: 30,
     clues: [
       'Countdown startet immer wieder von vorne (teste: Seite neu laden)',
-      'Influencer-Link enthält Affiliate-Code — Creator verdient an jedem Kauf',
+      'Influencer-Link enthält Affiliate-Code — Der Account verdient an jedem Kauf',
       '"Originalpreis €199" lässt sich nirgendwo verifizieren',
     ],
     mockupType: 'influencer',
@@ -96,7 +96,7 @@ export const KONSUMFALLEN: KonsumFalle[] = [
     icon: '🎮',
     scenario:
       'Ein neues Mobile-Game im AppStore: "Starter-Pack — Nur heute €0,99!" Du kaufst, spielst und merkst: Um weiterzukommen, brauchst du Gems. 500 Gems = €4,99. Du spielst jeden Tag...',
-    trap: 'Das Spiel ist um Mikrotransaktionen herum designed (Pay-to-Win). Der "Starter-Pack" ist ein Haken. Durchschnittliche Ausgaben in Gratis-Games mit In-App-Käufen: €30–200/Monat bei regelmäßigen Spielern.',
+    trap: 'Das Spiel ist um Mikrotransaktionen herum designed (Pay-to-Win). Der "Starter-Pack" ist ein Haken. Durchschnittliche Ausgaben in Gratis-Games mit In-App-Käufen: €30–200/Monat bei regelmäßigem Spielen.',
     correctAction:
       'Vor dem Download: AppStore-Eintrag zeigt "In-App-Käufe" an. Reviews nach "Pay-to-Win" durchsuchen. Budget für In-App-Käufe fix setzen (z.B. €5/Monat) und nie überschreiten.',
     wrongAction:
@@ -106,7 +106,7 @@ export const KONSUMFALLEN: KonsumFalle[] = [
     clues: [
       '"In-App-Käufe" im AppStore-Eintrag sichtbar — bedeutet: Game verdient an Käufen',
       'Gratis-Spiele mit zu perfektem Design sind meist Pay-to-Win',
-      '"Nur heute"-Starter-Pack erscheint für neue Spieler immer',
+      '"Nur heute"-Starter-Pack erscheint für neue Accounts immer',
     ],
     mockupType: 'gaming',
   },
@@ -271,14 +271,14 @@ export function getRanking(score: number): {
 } {
   if (score >= 80)
     return {
-      title: 'Finanz-Detektiv',
+      title: 'Finanz-Spürnase',
       emoji: '🔍',
       description: 'Ausgezeichnet! Du erkennst Fallen fast immer. Gib dein Wissen weiter!',
       color: '#2A8A76',
     }
   if (score >= 50)
     return {
-      title: 'Wachsamer Konsument',
+      title: 'Wachsam beim Konsum',
       emoji: '🛡️',
       description: 'Gut! Du erkennst viele Fallen, aber einige erwischen dich noch.',
       color: '#D87228',

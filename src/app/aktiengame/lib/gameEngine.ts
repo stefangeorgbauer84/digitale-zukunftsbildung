@@ -26,13 +26,20 @@ export const DIFFICULTY_MULTIPLIERS: Record<Difficulty, number> = {
   experte: 1.8,
 }
 
+/** Sichtbare Bezeichnung der Schwierigkeit; die internen Werte bleiben. */
+export const DIFFICULTY_LABELS: Record<Difficulty, string> = {
+  einsteiger: 'Einstieg',
+  fortgeschritten: 'Fortgeschritten',
+  experte: 'Profi-Modus',
+}
+
 // ---------------------------------------------------------------------------
-// Investoren-Rollen — die 5 wählbaren Persönlichkeiten
+// Anlagetypen: die 5 wählbaren Rollen
 // ---------------------------------------------------------------------------
 export const PLAYER_ROLES: Record<PlayerRole, RoleDefinition> = {
   sicherheitsdenker: {
     id: 'sicherheitsdenker',
-    name: 'Sicherheitsdenker',
+    name: 'Sicherheitsorientiert',
     tagline: 'Stabilität vor Rendite',
     description:
       'Du setzt auf ETFs und defensive Werte. Für dich ist Kapitalerhalt wichtiger als maximale Rendite. Du schläfst nachts ruhig, auch wenn die Märkte schwanken.',
@@ -45,12 +52,12 @@ export const PLAYER_ROLES: Record<PlayerRole, RoleDefinition> = {
     bgClass: 'bg-status-teal-light',
     borderClass: 'border-status-teal',
     tradeTip:
-      'Als Sicherheitsdenker profitierst du von ETFs: Sie streuen das Risiko automatisch über viele Unternehmen.',
+      'Mit Fokus auf Sicherheit profitierst du von ETFs: Sie streuen das Risiko automatisch über viele Unternehmen.',
     bonusLabel: 'Sicherheitsstrategie erfüllt (+15 Punkte)',
   },
   wachstumssucher: {
     id: 'wachstumssucher',
-    name: 'Wachstumssucher',
+    name: 'Wachstumsorientiert',
     tagline: 'Hohe Chance, hohes Risiko',
     description:
       'Technologie und Innovation faszinieren dich. Du nimmst höhere Schwankungen in Kauf, weil du an langfristiges Wachstum glaubst. Geduld und Nerven sind deine Stärke.',
@@ -63,12 +70,12 @@ export const PLAYER_ROLES: Record<PlayerRole, RoleDefinition> = {
     bgClass: 'bg-primary-50',
     borderClass: 'border-primary-medium',
     tradeTip:
-      'Als Wachstumssucher lohnen sich Wachstumswerte – aber plane Schwankungen ein und verkaufe nicht panisch bei kurzfristigen Verlusten.',
+      'Wenn du auf Wachstum setzt, lohnen sich Wachstumswerte – aber plane Schwankungen ein und verkaufe nicht panisch bei kurzfristigen Verlusten.',
     bonusLabel: 'Wachstumsstrategie erfüllt (+15 Punkte)',
   },
   nachhaltigkeitsinvestor: {
     id: 'nachhaltigkeitsinvestor',
-    name: 'Nachhaltigkeitsinvestor',
+    name: 'Nachhaltigkeitsorientiert',
     tagline: 'Rendite mit Verantwortung',
     description:
       'Für dich müssen Investments einen positiven Beitrag leisten. Du bevorzugst Unternehmen, die ökologisch und sozial verantwortlich handeln – und glaubst, dass Nachhaltigkeit sich langfristig auszahlt.',
@@ -81,12 +88,12 @@ export const PLAYER_ROLES: Record<PlayerRole, RoleDefinition> = {
     bgClass: 'bg-green-50',
     borderClass: 'border-green-500',
     tradeTip:
-      'Als Nachhaltigkeitsinvestor achte auf GreenEnergy Europe und den Austria Stability ETF – beide gelten in dieser Simulation als nachhaltigkeitsorientiert.',
+      'Wenn du nachhaltig investierst, achte auf GreenEnergy Europe und den Austria Stability ETF – beide gelten in dieser Simulation als nachhaltigkeitsorientiert.',
     bonusLabel: 'Nachhaltigkeitsstrategie erfüllt (+15 Punkte)',
   },
   diversifizierer: {
     id: 'diversifizierer',
-    name: 'Diversifizierer',
+    name: 'Breite Streuung',
     tagline: 'Nicht alles auf eine Karte',
     description:
       'Du weißt: Niemand kann die Zukunft vorhersagen. Deshalb streust du breit über Sektoren, Risikoklassen und Asset-Typen. Dein Ziel ist ein ausgewogenes Portfolio, das verschiedene Szenarien übersteht.',
@@ -99,12 +106,12 @@ export const PLAYER_ROLES: Record<PlayerRole, RoleDefinition> = {
     bgClass: 'bg-status-orange-light',
     borderClass: 'border-status-orange',
     tradeTip:
-      'Als Diversifizierer gilt: Kein einzelnes Asset sollte mehr als 25 % deines Gesamtportfolios ausmachen.',
+      'Für breite Streuung gilt: Kein einzelnes Asset sollte mehr als 25 % deines Gesamtportfolios ausmachen.',
     bonusLabel: 'Diversifikationsstrategie erfüllt (+15 Punkte)',
   },
   spekulant: {
     id: 'spekulant',
-    name: 'Spekulant',
+    name: 'Spekulativ',
     tagline: 'Mut zur Volatilität',
     description:
       'Du liebst Bewegung an den Märkten. Hohe Schwankungen sind für dich Chancen, keine Gefahren. Du reagierst schnell auf Ereignisse – und lernst dabei viel über Marktpsychologie und Risiko.',
@@ -117,7 +124,7 @@ export const PLAYER_ROLES: Record<PlayerRole, RoleDefinition> = {
     bgClass: 'bg-red-50',
     borderClass: 'border-red-400',
     tradeTip:
-      'Als Spekulant: Reagiere auf Marktereignisse – aber reflektiere danach, ob die Entscheidung auf Analyse oder Emotion beruhte.',
+      'Spekulativ heißt: Reagiere auf Marktereignisse – aber reflektiere danach, ob die Entscheidung auf Analyse oder Emotion beruhte.',
     bonusLabel: 'Spekulationsstrategie erfüllt (+15 Punkte)',
   },
 }
@@ -240,7 +247,7 @@ export const EVENTS: GameEvent[] = [
     title: 'EU-Förderung Erneuerbare',
     description: 'Die EU beschließt ein 200-Milliarden-Paket für grüne Energie.',
     explanation:
-      'Staatliche Förderungen steigern direkt die Umsätze von Unternehmen in der Energiewende. Investoren reagieren positiv auf sichere Zukunftsperspektiven.',
+      'Staatliche Förderungen steigern direkt die Umsätze von Unternehmen in der Energiewende. Der Markt reagiert positiv auf sichere Zukunftsperspektiven.',
     affectedSectors: ['Energie', 'Mobilität'],
     impact: 0.08,
   },
@@ -277,7 +284,7 @@ export const EVENTS: GameEvent[] = [
     title: 'Inflation überraschend hoch',
     description: 'Die Inflation steigt stärker als erwartet – Kaufkraft sinkt.',
     explanation:
-      'Hohe Inflation belastet Unternehmen mit hohen Kosten und Verbraucher mit weniger Kaufkraft. Sachwerte und Rohstoffe gelten oft als Schutz vor Inflation – ETFs können stabilisierend wirken.',
+      'Hohe Inflation belastet Unternehmen mit hohen Kosten und Haushalte mit weniger Kaufkraft. Sachwerte und Rohstoffe gelten oft als Schutz vor Inflation – ETFs können stabilisierend wirken.',
     affectedSectors: ['Diversifiziert', 'Anleihen', 'Österreich'],
     impact: -0.04,
   },
@@ -587,7 +594,7 @@ export function calcAchievements(state: GameState, assets: Asset[]): Achievement
   // "Erstkäufer" — mind. 1 Transaktion
   const erstkäufer = state.transactions.length >= 1
 
-  // "Diversifikations-Profi" — mind. 4 verschiedene Assets gehalten (je gekauft)
+  // "Breit gestreut" — mind. 4 verschiedene Assets gehalten (je gekauft)
   const uniqueAssetsBought = new Set(state.transactions.filter((t) => t.type === 'buy').map((t) => t.assetId))
   const diversiProfi = uniqueAssetsBought.size >= 4
 
@@ -600,7 +607,7 @@ export function calcAchievements(state: GameState, assets: Asset[]): Achievement
   const performance = totalWealth - state.startCapital
   const krisengewinner = avgChange < 0 && performance > 0
 
-  // "Langzeit-Investor" — alle 10 Runden gespielt
+  // "Langfristig investiert" — alle 10 Runden gespielt
   const langezeit = state.currentRound >= state.totalRounds
 
   // "Mission erfüllt" — Rollenmission abgeschlossen
@@ -621,7 +628,7 @@ export function calcAchievements(state: GameState, assets: Asset[]): Achievement
     {
       id: 'diversi-profi',
       emoji: '🌐',
-      name: 'Diversifikations-Profi',
+      name: 'Breit gestreut',
       description: 'Mind. 4 verschiedene Assets gekauft',
       earned: diversiProfi,
     },
@@ -635,7 +642,7 @@ export function calcAchievements(state: GameState, assets: Asset[]): Achievement
     {
       id: 'langezeit',
       emoji: '⏳',
-      name: 'Langzeit-Investor',
+      name: 'Langfristig investiert',
       description: 'Alle 10 Runden gespielt',
       earned: langezeit,
     },

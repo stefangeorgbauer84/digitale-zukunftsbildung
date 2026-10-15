@@ -3,7 +3,7 @@ export type AssetType = 'Aktie' | 'ETF'
 export type GamePhase = 'SETUP' | 'PLAYING' | 'ROUND_END' | 'GAME_OVER'
 export type Difficulty = 'einsteiger' | 'fortgeschritten' | 'experte'
 
-// Die 5 wählbaren Investoren-Persönlichkeiten
+// Die 5 wählbaren Anlagetypen
 export type PlayerRole =
   | 'sicherheitsdenker'
   | 'wachstumssucher'

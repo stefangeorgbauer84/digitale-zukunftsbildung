@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/schulen/htl' },
   openGraph: {
     title: 'Finanzbildung für die HTL – Skills-UP! Österreich',
-    description: 'Praxisnahe Finanzbildung für HTL-Schüler:innen. Berufseinstieg, Gehaltsverhandlung, Investieren. Lehrplankonform, sofort einsetzbar.',
+    description: 'Praxisnahe Finanzbildung für Jugendliche an der HTL. Berufseinstieg, Gehaltsverhandlung, Investieren. Lehrplankonform, sofort einsetzbar.',
     url: 'https://www.digitale-zukunftsbildung.eu/schulen/htl',
     images: ['/fotos/skillsUP-1.jpg'],
   },
@@ -39,20 +39,20 @@ export default function HtlPage() {
       schulstufen="9.–13. Schulstufe"
       lehrplanFach="ITPR · Allgemeinbildung · Projektunterricht · Klassenvorstand"
       icon={icon}
-      lehrerProblem="Meine Schüler:innen kriegen nach der HTL 3.500 € brutto, und viele wissen nicht, was das bedeutet. Nicht was übrig bleibt, nicht wie sie damit bauen."
-      intro="HTL-Absolvent:innen starten in technische Berufe mit überdurchschnittlichen Gehältern, oft direkt nach der Matura. Skills-UP! bereitet sie darauf vor, diesen Vorteil finanziell klug zu nutzen: klar strukturiert, datenbasiert und ohne Finanzmärchen."
+      lehrerProblem="Nach der HTL kriegen meine Jugendlichen 3.500 € brutto, und viele wissen nicht, was das bedeutet. Nicht was übrig bleibt, nicht wie sie damit bauen."
+      intro="Wer die HTL abschließt, startet in technische Berufe mit überdurchschnittlichen Gehältern, oft direkt nach der Matura. Skills-UP! bereitet die Jugendlichen darauf vor, diesen Vorteil finanziell klug zu nutzen: klar strukturiert, datenbasiert und ohne Finanzmärchen."
       lehrplanPassung={[
         {
           fach: 'ITPR (Informationsmanagement & Projektentwicklung)',
-          kontext: 'Finanzplanung als Projekt: Schüler:innen entwickeln ihren persönlichen Finanzplan für die ersten zwei Jahre nach der HTL, mit realen Zahlen, strukturiert wie ein technisches Projekt.',
+          kontext: 'Finanzplanung als Projekt: Die Jugendlichen entwickeln ihren persönlichen Finanzplan für die ersten zwei Jahre nach der HTL, mit realen Zahlen, strukturiert wie ein technisches Projekt.',
         },
         {
           fach: 'Allgemeinbildung (AB)',
-          kontext: 'Skills-UP! passt ideal in AB-Stunden: gesellschaftliche Relevanz, persönliche Kompetenz, kein Lehraufwand. Du öffnest die App, die Schüler:innen arbeiten selbstständig.',
+          kontext: 'Skills-UP! passt ideal in AB-Stunden: gesellschaftliche Relevanz, persönliche Kompetenz, kein Lehraufwand. Du öffnest die App, die Jugendlichen arbeiten selbstständig.',
         },
         {
           fach: 'Projektunterricht (5. Jahrgang)',
-          kontext: '"Mein Finanzstart nach der HTL" als Abschlussprojekt: Schüler:innen kalkulieren Gehalt, Miete, Sparziele, Investitionsmöglichkeiten. Praxisnah, messbar, präsentierbar.',
+          kontext: '"Mein Finanzstart nach der HTL" als Abschlussprojekt: Die Jugendlichen kalkulieren Gehalt, Miete, Sparziele, Investitionsmöglichkeiten. Praxisnah, messbar, präsentierbar.',
         },
         {
           fach: 'Klassenvorstand / Abschlussklasse',
@@ -60,41 +60,41 @@ export default function HtlPage() {
         },
         {
           fach: 'Mathematik (Anwendung)',
-          kontext: 'Zinseszins, Investitionsrechnung, Prozentrechnung, in Skills-UP! haben diese Konzepte echte Bedeutung. Ideal als Anwendungsaufgabe für mathematisch starke Schüler:innen.',
+          kontext: 'Zinseszins, Investitionsrechnung, Prozentrechnung, in Skills-UP! haben diese Konzepte echte Bedeutung. Ideal als Anwendungsaufgabe für mathematisch starke Jugendliche.',
         },
       ]}
       unterrichtsEinheiten={[
         {
           schritt: 'Einstieg: Gehaltscheck',
-          was: '"Du fängst nach der HTL an, 3.400 € brutto. Was bleibt dir?". Schüler:innen schätzen zuerst selbst. Dann öffnen sie die Simulation. Die Unterschiede zu den eigenen Schätzungen lösen sofort Diskussionen aus.',
+          was: '"Du fängst nach der HTL an, 3.400 € brutto. Was bleibt dir?". Die Jugendlichen schätzen zuerst selbst. Dann öffnen sie die Simulation. Die Unterschiede zu den eigenen Schätzungen lösen sofort Diskussionen aus.',
           zeitMinuten: 10,
         },
         {
           schritt: 'Simulation Berufseinstieg',
-          was: 'Die App führt Schüler:innen durch ein vollständiges Einstiegsjahr: Gehalt, Wohnung, Auto, Versicherungen, Notgroschen, Altersvorsorge. Du musst kein Finanzexperte sein, die App erklärt alles.',
+          was: 'Die App führt die Jugendlichen durch ein vollständiges Einstiegsjahr: Gehalt, Wohnung, Auto, Versicherungen, Notgroschen, Altersvorsorge. Finanzwissen brauchst du dafür keines, die App erklärt alles.',
           zeitMinuten: 20,
         },
         {
           schritt: 'Krypto und Spekulation',
-          was: 'Ein eigenes Modul zu Krypto-Versprechen und schnellen Gewinnen, besonders relevant für technikbegeisterte HTL-Schüler:innen. Die Simulation zeigt realistische Szenarien ohne Panikmache.',
+          was: 'Ein eigenes Modul zu Krypto-Versprechen und schnellen Gewinnen, besonders relevant für technikbegeisterte Jugendliche an der HTL. Die Simulation zeigt realistische Szenarien ohne Panikmache.',
           zeitMinuten: 15,
         },
         {
           schritt: 'Finanzplan präsentieren',
-          was: 'Optional: Schüler:innen präsentieren ihren persönlichen Finanzplan in Kurzform. Das trainiert Präsentationskompetenz und gibt dir einen direkten Einblick ins Verständnis, ohne schriftliche Prüfung.',
+          was: 'Optional: Die Jugendlichen präsentieren ihren persönlichen Finanzplan in Kurzform. Das trainiert Präsentationskompetenz und gibt dir einen direkten Einblick ins Verständnis, ohne schriftliche Prüfung.',
           zeitMinuten: 5,
         },
       ]}
       module={[
-        { titel: 'Gehalt & Einkommen', lernziel: 'Brutto-Netto-Berechnung meistern, Kollektivvertrag für den Technikbereich kennen, Lohnzettel prüfen und Negativsteuer zurückholen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Einkommen', icon: moneyIcon },
-        { titel: 'Sparen & Geldentscheidungen', lernziel: 'Zinseszinseffekt und Inflation: warum früh Investieren entscheidend ist. ETF-Sparplan als konkretes Werkzeug.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Investieren', icon: piggyIcon },
-        { titel: 'Kryptowährungen & Krypto-Assets', lernziel: 'Blockchain, Bitcoin und Stablecoins technisch verstehen, und gleichzeitig Risiken, Steuerpflicht und MiCA-Regulierung in Österreich kennen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Tech & Finanzen', icon: chartIcon },
-        { titel: 'Altersvorsorge', lernziel: '3-Säulen-Modell kennen, Pensionslücke berechnen, ETF-Sparplan vs. staatliche Pension vergleichen, je früher, desto mehr.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Vorsorge', icon: starIcon },
-        { titel: 'Versicherungen verstehen', lernziel: 'Pflicht- von freiwilligen Versicherungen unterscheiden: Was braucht man beim Berufseinstieg wirklich? Selbstbehalt und Prämien verstehen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Versicherungen', icon: shieldIcon },
-        { titel: 'Risiko & Krisen', lernziel: 'Notgroschen aufbauen (3 Monatsgehälter), Eskalationskette von Verzug bis Pfändung kennen. Krisenbudget für den Ernstfall erstellen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Krisenmanagement', icon: chartIcon },
+        { titel: 'Gehalt & Einkommen', lernziel: 'Brutto-Netto-Berechnung meistern, Kollektivvertrag für den Technikbereich kennen, Lohnzettel prüfen und Negativsteuer zurückholen.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Einkommen', icon: moneyIcon },
+        { titel: 'Sparen & Geldentscheidungen', lernziel: 'Zinseszinseffekt und Inflation: warum früh Investieren entscheidend ist. ETF-Sparplan als konkretes Werkzeug.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Investieren', icon: piggyIcon },
+        { titel: 'Kryptowährungen & Krypto-Assets', lernziel: 'Blockchain, Bitcoin sowie Stablecoins technisch verstehen, und gleichzeitig Risiken, Steuerpflicht und MiCA-Regulierung in Österreich kennen.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Tech & Finanzen', icon: chartIcon },
+        { titel: 'Altersvorsorge', lernziel: '3-Säulen-Modell kennen, Pensionslücke berechnen, ETF-Sparplan vs. staatliche Pension vergleichen, je früher, desto mehr.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Vorsorge', icon: starIcon },
+        { titel: 'Versicherungen verstehen', lernziel: 'Pflicht- von freiwilligen Versicherungen unterscheiden: Was braucht man beim Berufseinstieg wirklich? Selbstbehalt und Prämien verstehen.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Versicherungen', icon: shieldIcon },
+        { titel: 'Risiko & Krisen', lernziel: 'Notgroschen aufbauen (3 Monatsgehälter), Eskalationskette von Verzug bis Pfändung kennen. Krisenbudget für den Ernstfall erstellen.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Krisenmanagement', icon: chartIcon },
       ]}
       simulationen={[
-        { titel: 'Gehaltsverhandlung', untertitel: 'Marktwert recherchieren, KV-Grenzen kennen, Argumente formulieren, dein Gehalt als HTL-Absolvent ist verhandelbar.', dauer: '15–20 Min', icon: moneyIcon },
+        { titel: 'Gehaltsverhandlung', untertitel: 'Marktwert recherchieren, KV-Grenzen kennen, Argumente formulieren, dein Gehalt nach der HTL ist verhandelbar.', dauer: '15–20 Min', icon: moneyIcon },
         { titel: 'Aktienmarkt-Langläufer', untertitel: 'Simulation eines 20-Jahres-Portfolios: ETF-Sparplan, Zinseszins und Marktvolatilität hautnah erleben.', dauer: '25–35 Min', icon: chartIcon },
         { titel: 'Krypto-Handel', untertitel: 'Bitcoin/ETH kaufen und verkaufen, Wallet-Verwaltung, Portfoliorisiko einschätzen. MiCA-Regulierung und FMA-Warnliste kennenlernen.', dauer: '30–45 Min', icon: starIcon },
         { titel: 'Auto-Kauf-Kalkulator', untertitel: 'Gesamtkosten eines Fahrzeugs berechnen: Kaufpreis, Versicherung, Steuer, Service, Wertverlust. Kauf vs. Leasing vs. Kredit.', dauer: '15–20 Min', icon: carIcon },
@@ -107,7 +107,7 @@ export default function HtlPage() {
         'Sparen & Vermögensaufbau',
         'Notgroschen aufbauen',
         'Versicherungen & Absicherung',
-        'Investieren für Einsteiger',
+        'Einstieg ins Investieren',
         'Digitale Finanztools',
         'Krypto-Risiken realistisch einschätzen',
         'Steuer & Abgaben',
@@ -118,22 +118,22 @@ export default function HtlPage() {
       features={[
         {
           titel: 'Berufseinstieg-Simulation',
-          nutzenfuerLehrer: 'Schüler:innen erleben virtuell ihr erstes Berufsjahr. Gehalt, Miete, Ausgaben, unerwartete Kosten. Das ist realistischer als jedes Fallbeispiel aus dem Lehrbuch, und du hast es in 2 Minuten gestartet.',
+          nutzenfuerLehrer: 'Die Jugendlichen erleben virtuell ihr erstes Berufsjahr. Gehalt, Miete, Ausgaben, unerwartete Kosten. Das ist realistischer als jedes Fallbeispiel aus dem Lehrbuch, und du hast es in 2 Minuten gestartet.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>,
         },
         {
           titel: 'Krypto & Spekulations-Modul',
-          nutzenfuerLehrer: 'Gerade HTL-Schüler:innen interessieren sich für Blockchain, Krypto und Tech-Investments. Das Modul behandelt das sachlich. Chancen, Risiken, Fakten. Du musst kein Krypto-Experte sein.',
+          nutzenfuerLehrer: 'Gerade Jugendliche an der HTL interessieren sich für Blockchain, Krypto und Tech-Investments. Das Modul behandelt das sachlich. Chancen, Risiken, Fakten. Vorwissen zu Krypto brauchst du keines.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>,
         },
         {
           titel: 'Datenbasiertes Lerndesign',
-          nutzenfuerLehrer: 'HTL-Schüler:innen schätzen Logik und Daten. Skills-UP! arbeitet mit realen Zahlen, echten Szenarien und messbaren Ergebnissen, kein Motivationsgeschwätz, keine leeren Versprechen.',
+          nutzenfuerLehrer: 'An der HTL zählen Logik und Daten. Skills-UP! arbeitet mit realen Zahlen, echten Szenarien und messbaren Ergebnissen, kein Motivationsgeschwätz, keine leeren Versprechen.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>,
         },
         {
           titel: 'Selbstständige Module',
-          nutzenfuerLehrer: 'Schüler:innen arbeiten eigenständig und im eigenen Tempo. Das passt perfekt zu technischen Schulen, wo Selbstorganisation ohnehin ein Ziel ist, und spart dir Moderationszeit.',
+          nutzenfuerLehrer: 'Die Jugendlichen arbeiten eigenständig und im eigenen Tempo. Das passt perfekt zu technischen Schulen, wo Selbstorganisation ohnehin ein Ziel ist, und spart dir Moderationszeit.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
         },
       ]}
@@ -142,7 +142,7 @@ export default function HtlPage() {
         person: 'Allgemeinbildungs-Lehrer, HTL Steyr, 12. Schulstufe',
       }}
       lehrerFoto="/fotos/lehrer/htl.png"
-      gruenderStatement="Technische Kompetenz ist an der HTL gesetzt. Finanzielle Kompetenz nicht, dabei treffen Absolvent:innen schon kurz nach der Matura echte Geldentscheidungen. Skills-UP! bereitet sie konkret darauf vor, ohne dem Lehrplan etwas wegzunehmen."
+      gruenderStatement="Technische Kompetenz ist an der HTL gesetzt. Finanzielle Kompetenz nicht, dabei fallen schon kurz nach der Matura echte Geldentscheidungen an. Skills-UP! bereitet die Jugendlichen konkret darauf vor, ohne dem Lehrplan etwas wegzunehmen."
       lernpfad={[
         {
           stufe: 'Grundlagen',
@@ -161,7 +161,7 @@ export default function HtlPage() {
           ergebnis: 'ETF-Sparplan aufbauen, Krypto-Risiken realistisch einschätzen und Depot diversifizieren.',
         },
         {
-          stufe: 'Langfristdenker',
+          stufe: 'Langfristig planen',
           badge: 'Level 3',
           icon: starIcon,
           module: ['Altersvorsorge', 'Risiko & Krisen'],
@@ -171,17 +171,17 @@ export default function HtlPage() {
       ]}
       highlightSimulation={{
         titel: 'Berufseinstieg Budget-Planer',
-        untertitel: 'Erster Job als HTL-Absolvent:in: Nettolohn, Mietwohnung, Auto, Sparplan. Alle Kosten real durchkalkuliert.',
+        untertitel: 'Erster Job nach der HTL: Nettolohn, Mietwohnung, Auto, Sparplan. Alle Kosten real durchkalkuliert.',
         dauer: '20–25 Min',
         icon: carIcon,
-        szenario: 'Du hast den Job. Brutto 3.200 € als Junior-Techniker:in in Linz. Jetzt die große Frage: Wohngemeinschaft oder eigene Wohnung? Leasing oder Bahn? Und wie viel bleibt zum Sparen?',
+        szenario: 'Du hast den Job: Einstiegsstelle in einem Technikbetrieb in Linz, 3.200 € brutto. Jetzt die große Frage: Wohngemeinschaft oder eigene Wohnung? Leasing oder Bahn? Und wie viel bleibt zum Sparen?',
         schritte: [
-          { label: 'Nettolohn berechnen', beschreibung: 'Die App rechnet Brutto zu Netto mit KV-Daten aus dem Metallerbereich, dem häufigsten KV für HTL-Absolvent:innen.' },
-          { label: 'Fixkosten setzen', beschreibung: 'Miete, Strom, Internet, Mobilität: Schüler:innen wählen aus realen Optionen und sehen sofort den Effekt auf das Budget.' },
+          { label: 'Nettolohn berechnen', beschreibung: 'Die App rechnet Brutto zu Netto mit KV-Daten aus dem Metallerbereich, dem häufigsten KV nach dem HTL-Abschluss.' },
+          { label: 'Fixkosten setzen', beschreibung: 'Miete, Strom, Internet, Mobilität: Die Jugendlichen wählen aus realen Optionen und sehen sofort den Effekt auf das Budget.' },
           { label: 'Sparziel einbauen', beschreibung: 'Wohin mit dem Rest? Notgroschen, ETF-Sparplan, Urlaub oder Auto-Kredit tilgen. Die App zeigt, was in 5 Jahren passiert.' },
-          { label: 'Entscheidung treffen', beschreibung: 'Am Ende trifft jede:r eine persönliche Budgetentscheidung und vergleicht mit dem Klassenquerschnitt.' },
+          { label: 'Entscheidung treffen', beschreibung: 'Am Ende trifft jede Person eine persönliche Budgetentscheidung und vergleicht mit dem Klassenquerschnitt.' },
         ],
-        ergebnis: 'Schüler:innen verstehen, was ein HTL-Gehalt real bedeutet, und können eigenständig ein realistisches Monatsbudget erstellen, bevor sie es wirklich brauchen.',
+        ergebnis: 'Die Jugendlichen verstehen, was ein HTL-Gehalt real bedeutet, und können eigenständig ein realistisches Monatsbudget erstellen, bevor sie es wirklich brauchen.',
         mockUI: [
           { zeile: 'Mein Berufseinstiegs-Budget', typ: 'label' },
           { zeile: 'Nettolohn (Metall-KV)|2.058,00 €', typ: 'wert' },
@@ -197,7 +197,7 @@ export default function HtlPage() {
       }}
       faqs={[
         { q: 'In welchen HTL-Fächern ist Skills-UP! einsetzbar?', a: 'Angewandte Mathematik, Unternehmensführung, Betriebswirtschaft oder im Klassenvorstand. Die Module sind flexibel: 15 oder 50 Minuten, ohne Vorbereitungsaufwand für die Lehrkraft.' },
-        { q: 'Ist Finanzbildung für HTL-Schüler relevant?', a: 'Absolut. HTL-Absolventinnen und -Absolventen starten mit überdurchschnittlichen Einstiegsgehältern, aber oft ohne Wissen über Lohnzettel, Steuer oder Investieren. Skills-UP! schließt genau diese Lücke.' },
+        { q: 'Ist Finanzbildung an der HTL relevant?', a: 'Absolut. Wer von der HTL kommt, startet mit überdurchschnittlichen Einstiegsgehältern, aber oft ohne Wissen über Lohnzettel, Steuer oder Investieren. Skills-UP! schließt genau diese Lücke.' },
         { q: 'Wie viel technisches Setup ist nötig?', a: 'Keines. Skills-UP! läuft im Browser, ist DSGVO-konform und braucht keine Installation, kein IT-Ticket und keinen Admin-Zugang. Start in unter 2 Minuten.' },
       ]}
       verwandteSchultypen={[
@@ -207,13 +207,13 @@ export default function HtlPage() {
       ]}
       testimonials={[
         {
-          text: 'HTL-Schüler denken technisch, nicht finanziell. Die Gehaltsverhandlungs-Simulation hat das geändert. Plötzlich recherchieren sie Kollektivverträge und fragen nach Lohnstufen. Das ist Berufsvorbereitung.',
+          text: 'Jugendliche an der HTL denken technisch, nicht finanziell. Die Gehaltsverhandlungs-Simulation hat das geändert. Plötzlich recherchieren sie Kollektivverträge und fragen nach Lohnstufen. Das ist Berufsvorbereitung.',
           person: 'DI Klaus M.',
           rolle: 'Lehrer Unternehmensführung',
           schule: 'HTL Salzburg',
         },
         {
-          text: 'Wir haben Skills-UP! als Projekt im Klassenvorstand eingesetzt. Kein Aufwand für mich, die Schüler:innen haben 50 Minuten konzentriert gearbeitet, das passiert selten.',
+          text: 'Wir haben Skills-UP! als Projekt im Klassenvorstand eingesetzt. Kein Aufwand für mich, die Jugendlichen haben 50 Minuten konzentriert gearbeitet, das passiert selten.',
           person: 'Ing. Maria S.',
           rolle: 'Klassenlehrerin HTL',
         },

@@ -90,12 +90,12 @@ export default function DemoPage() {
       <BunnyVideoSektion
         eyebrow="Für deine Klasse"
         headline="Was Jugendliche über Skills-UP! sagen."
-        lead="Echte Schülerinnen und Schüler, echte Reaktionen, so erlebt die Klasse Skills-UP!."
+        lead="Echte Jugendliche, echte Reaktionen, so erlebt die Klasse Skills-UP!."
         variante="dunkel"
         videos={[{
           guid: '1c0ebf68-0799-42f2-a324-cbbbd936b333',
           badge: 'Für deine Klasse',
-          titel: 'Skills-UP! aus Schülerperspektive',
+          titel: 'Skills-UP! aus Sicht der Jugendlichen',
           beschreibung: 'Wie Jugendliche über Skills-UP! und Finanzbildung sprechen.',
           sekunden: 54,
           akzent: '#2a8a76',

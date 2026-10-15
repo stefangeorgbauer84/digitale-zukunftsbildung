@@ -2,7 +2,7 @@
 
 > Skills-UP! ist ein fertiges Unterrichtsprogramm für Finanzbildung, entwickelt für Jugendliche ab 15 Jahren an österreichischen Schulen. Betrieben vom gemeinnützigen Verein zur Entwicklung der digitalen Zukunftsbildung, Sitz in Wien.
 
-Skills-UP! bietet 12 lehrplankonforme Module, über 10 interaktive Praxissimulationen und ein Lehrer-Dashboard. Das Programm ist browser-basiert, DSGVO-konform und ohne IT-Aufwand sofort einsetzbar. Es richtet sich an Lehrkräfte der AHS-Oberstufe, HAK, HTL, HLW, BAfEP, BASOP, PTS und Berufsschulen.
+Skills-UP! bietet 12 lehrplankonforme Module, über 10 interaktive Praxissimulationen und ein Lehrkräfte-Dashboard. Das Programm ist browser-basiert, DSGVO-konform und ohne IT-Aufwand sofort einsetzbar. Es richtet sich an Lehrkräfte der AHS-Oberstufe, HAK, HTL, HLW, BAfEP, BASOP, PTS und Berufsschulen.
 
 ## Auszeichnungen & Zertifizierungen
 

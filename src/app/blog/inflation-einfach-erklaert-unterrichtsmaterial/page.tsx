@@ -89,7 +89,7 @@ export default function InflationUnterrichtsmaterial() {
               Inflation einfach erklärt: fertiges Unterrichtsmaterial für Ihre Klasse.
             </h1>
             <p className="font-body text-white/70 text-xl leading-relaxed">
-              Inflation betrifft jede:n Schüler:in beim nächsten Einkauf, und ist trotzdem eines der am schlechtesten verstandenen Finanzkonzepte. Hier finden Sie die einfachste Erklärung, österreichische Alltagsbeispiele und drei fertige Stundenideen.
+              Inflation betrifft alle Jugendlichen beim nächsten Einkauf, und ist trotzdem eines der am schlechtesten verstandenen Finanzkonzepte. Hier finden Sie die einfachste Erklärung, österreichische Alltagsbeispiele und drei fertige Stundenideen.
             </p>
           </div>
         </section>
@@ -126,7 +126,7 @@ export default function InflationUnterrichtsmaterial() {
             </P>
             <ul className="font-body text-gray-700 leading-relaxed mb-6 space-y-3">
               {[
-                ['Der Snack-Index:', 'Was kostete die Leberkäsesemmel, der Kebab oder das Lieblingsgetränk vor fünf Jahren, und was heute? Schüler:innen recherchieren oder fragen zu Hause nach. Die eigene Preiserfahrung schlägt jede Statistik.'],
+                ['Der Snack-Index:', 'Was kostete die Leberkäsesemmel, der Kebab oder das Lieblingsgetränk vor fünf Jahren, und was heute? Die Jugendlichen recherchieren oder fragen zu Hause nach. Die eigene Preiserfahrung schlägt jede Statistik.'],
                 ['Das Taschengeld-Experiment:', '20 Euro Taschengeld heute vs. 20 Euro in zehn Jahren bei 2 % Inflation: Was kann man sich dann noch davon leisten? Die Rechnung ist einfach und der Effekt verblüfft.'],
                 ['Das Sparbuch-Paradox:', '1.000 Euro liegen fünf Jahre unverzinst am Konto. Bei laufender Inflation sind sie danach nominal gleich viel: real aber spürbar weniger wert. Die Kernfrage für die Diskussion: Ist Nichtstun mit Geld wirklich „sicher“?'],
               ].map(([fett, rest]) => (
@@ -153,7 +153,7 @@ export default function InflationUnterrichtsmaterial() {
                 {
                   zeit: '15 Min',
                   titel: 'Skills-UP!-Modul „Sparen & Geldentscheidungen“',
-                  text: 'Das fertige 15-Minuten-Modul erklärt Nominalzins vs. Realzins und zeigt, warum Inflation Erspartes „auffrisst“. Schüler:innen arbeiten selbstständig im Browser, das Quiz sichert das Verständnis. Sie starten es mit einem Klick.',
+                  text: 'Das fertige 15-Minuten-Modul erklärt Nominalzins vs. Realzins und zeigt, warum Inflation Erspartes „auffrisst“. Die Jugendlichen arbeiten selbstständig im Browser, das Quiz sichert das Verständnis. Sie starten es mit einem Klick.',
                 },
                 {
                   zeit: '50 Min',
@@ -173,7 +173,7 @@ export default function InflationUnterrichtsmaterial() {
               ))}
             </div>
 
-            <H2>Häufige Schülerfragen, und Antworten, die sitzen</H2>
+            <H2>Häufige Fragen aus der Klasse, und Antworten, die sitzen</H2>
             <P>
               <strong>„Warum druckt der Staat nicht einfach mehr Geld?“</strong>: Weil mehr Geld bei gleich vielen
               Waren die Preise erst recht treibt: Wenn alle mehr zahlen können, verlangen alle mehr. Das historische

@@ -41,16 +41,16 @@ export default function AhsPage() {
       schulstufen="9.–12. Schulstufe"
       lehrplanFach="GWK · PuG · Wahlpflichtfach · Projektunterricht"
       icon={icon}
-      lehrerProblem="Ich bringe meinen Schüler:innen Demokratie, Geschichte und Wirtschaft bei, aber niemand erklärt ihnen, wie sie nächsten Monat ihr Geld einteilen sollen."
+      lehrerProblem="Ich bringe meiner Klasse Demokratie, Geschichte und Wirtschaft bei, aber niemand erklärt den Jugendlichen, wie sie nächsten Monat ihr Geld einteilen sollen."
       intro="Die AHS bildet hervorragend, aber Finanzkompetenz ist keine Selbstverständlichkeit im Lehrplan. Skills-UP! schließt diese Lücke, ohne dass du ein neues Fach erfinden musst. Die Module passen in GWK, PuG oder als Wahlpflichtfach, du entscheidest."
       lehrplanPassung={[
         {
           fach: 'GWK (Geographie, Wirtschaft, Kultur)',
-          kontext: 'Konsum, Wirtschaftssysteme, Geldwirtschaft. Skills-UP! macht diese Themen mit persönlichen Finanzentscheidungen der Schüler:innen greifbar: Budgetplanung, Ratenkauf, Investieren.',
+          kontext: 'Konsum, Wirtschaftssysteme, Geldwirtschaft. Skills-UP! macht diese Themen mit persönlichen Finanzentscheidungen der Jugendlichen greifbar: Budgetplanung, Ratenkauf, Investieren.',
         },
         {
           fach: 'PuG (Politische Bildung und Geschichte)',
-          kontext: 'Soziale Ungleichheit, Verschuldung, Konsumdruck. Skills-UP! gibt Schüler:innen Werkzeuge, um gesellschaftliche Zusammenhänge auch finanziell zu verstehen.',
+          kontext: 'Soziale Ungleichheit, Verschuldung, Konsumdruck. Skills-UP! gibt Jugendlichen Werkzeuge, um gesellschaftliche Zusammenhänge auch finanziell zu verstehen.',
         },
         {
           fach: 'Wahlpflichtfach oder Projektunterricht',
@@ -66,38 +66,38 @@ export default function AhsPage() {
         },
         {
           fach: 'VWA-Vorbereitung',
-          kontext: 'Schüler:innen mit wirtschaftlichen oder sozialen VWA-Themen profitieren von der inhaltlichen Tiefe, die Skills-UP! zu Finanzen und Gesellschaft bietet.',
+          kontext: 'Wer ein wirtschaftliches oder soziales VWA-Thema wählt, profitiert von der inhaltlichen Tiefe, die Skills-UP! zu Finanzen und Gesellschaft bietet.',
         },
       ]}
       unterrichtsEinheiten={[
         {
           schritt: 'Einstieg mit Simulation',
-          was: 'Du startest die Stunde. Schüler:innen öffnen die App und starten direkt eine kurze Simulation. Kein Erklärvideo von dir nötig. Das Szenario heute: "Du bekommst dein erstes Gehalt. Was jetzt?"',
+          was: 'Du startest die Stunde. Die Jugendlichen öffnen die App und starten direkt eine kurze Simulation. Kein Erklärvideo von dir nötig. Das Szenario heute: "Du bekommst dein erstes Gehalt. Was jetzt?"',
           zeitMinuten: 10,
         },
         {
           schritt: 'Selbstständige Bearbeitung',
-          was: 'Schüler:innen durchlaufen interaktive Module, Quizze und Entscheidungsszenarien. Du gehst durch die Klasse, das Dashboard zeigt dir live, wer wo steht.',
+          was: 'Die Jugendlichen durchlaufen interaktive Module, Quizze und Entscheidungsszenarien. Du gehst durch die Klasse, das Dashboard zeigt dir live, wer wo steht.',
           zeitMinuten: 25,
         },
         {
           schritt: 'Peer-Video und Diskussion',
-          was: 'Ein kurzes Peer-Video zeigt, wie ein Gleichaltriger dieselbe Entscheidung getroffen hat, und was dabei schiefgelaufen ist. Das löst echte Diskussionen aus, ohne dass du moderieren musst.',
+          was: 'Ein kurzes Peer-Video zeigt, wie jemand im gleichen Alter dieselbe Entscheidung getroffen hat, und was dabei schiefgelaufen ist. Das löst echte Diskussionen aus, ohne dass du moderieren musst.',
           zeitMinuten: 10,
         },
         {
           schritt: 'Reflexion und Abschluss',
-          was: 'Jede Schüler:in beantwortet eine Reflexionsfrage in der App. Du siehst die Antworten im Dashboard, idealer Einstieg für die nächste Stunde.',
+          was: 'Jede Person in der Klasse beantwortet eine Reflexionsfrage in der App. Du siehst die Antworten im Dashboard, idealer Einstieg für die nächste Stunde.',
           zeitMinuten: 5,
         },
       ]}
       module={[
-        { titel: 'Finfluencer in Österreich', lernziel: 'Seriöse Finanzinformationen von problematischer Werbung unterscheiden. FMA, WAG 2018 und parasoziale Beziehungen verstehen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Medienkompetenz', icon: shieldIcon },
-        { titel: 'Konsumfallen', lernziel: 'FOMO, Anchoring und Present Bias als psychologische Kauftrigger erkennen, und die 24-Stunden-Regel als einfache Gegenmaßnahme einsetzen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Konsumpsychologie', icon: alertIcon },
-        { titel: 'Sparen & Geldentscheidungen', lernziel: 'Nominalzins vs. Realzins verstehen, Zinseszinseffekt berechnen und begreifen, warum Inflation Erspartes auffressen kann.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Sparen', icon: piggyIcon },
-        { titel: 'Kryptowährungen & Krypto-Assets', lernziel: 'Blockchain-Grundlagen, Bitcoin-Risiken und österreichische Steuerpflicht kennen. MiCA-Regulierung und FMA-Warnliste verstehen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Investieren', icon: chartIcon },
-        { titel: 'Finanzplanung', lernziel: 'Erstes Monatsbudget erstellen: Fixkosten vs. variable Kosten, 50-30-20-Regel und "Pay yourself first" als Sparstrategie.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Budgetplanung', icon: bookIcon },
-        { titel: 'Altersvorsorge', lernziel: 'Das österreichische 3-Säulen-Modell kennen und verstehen, warum früh privat vorzusorgen entscheidend ist. Zinseszins und Pensionslücke berechnen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Vorsorge', icon: starIcon },
+        { titel: 'Finfluencer in Österreich', lernziel: 'Seriöse Finanzinformationen von problematischer Werbung unterscheiden. FMA, WAG 2018 und parasoziale Beziehungen verstehen.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Medienkompetenz', icon: shieldIcon },
+        { titel: 'Konsumfallen', lernziel: 'FOMO, Anchoring und Present Bias als psychologische Kauftrigger erkennen, und die 24-Stunden-Regel als einfache Gegenmaßnahme einsetzen.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Konsumpsychologie', icon: alertIcon },
+        { titel: 'Sparen & Geldentscheidungen', lernziel: 'Nominalzins vs. Realzins verstehen, Zinseszinseffekt berechnen und begreifen, warum Inflation Erspartes auffressen kann.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Sparen', icon: piggyIcon },
+        { titel: 'Kryptowährungen & Krypto-Assets', lernziel: 'Blockchain-Grundlagen, Bitcoin-Risiken und österreichische Steuerpflicht kennen. MiCA-Regulierung und FMA-Warnliste verstehen.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Investieren', icon: chartIcon },
+        { titel: 'Finanzplanung', lernziel: 'Erstes Monatsbudget erstellen: Fixkosten vs. variable Kosten, 50-30-20-Regel und "Pay yourself first" als Sparstrategie.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Budgetplanung', icon: bookIcon },
+        { titel: 'Altersvorsorge', lernziel: 'Das österreichische 3-Säulen-Modell kennen und verstehen, warum früh privat vorzusorgen entscheidend ist. Zinseszins und Pensionslücke berechnen.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Vorsorge', icon: starIcon },
       ]}
       simulationen={[
         { titel: 'Konsumfallen-Parcours', untertitel: 'Erkenne FOMO, Dark Patterns, künstliche Knappheit und Abo-Fallen, mit 14-Tage-Widerrufsrecht nach FAGG.', dauer: '15–20 Min', icon: playIcon },
@@ -123,7 +123,7 @@ export default function AhsPage() {
       ]}
       features={[
         {
-          titel: 'Lehrer-Dashboard',
+          titel: 'Lehrkräfte-Dashboard',
           nutzenfuerLehrer: 'Du siehst auf einen Blick: Wer hat welches Modul abgeschlossen? Wer ist beim Thema Ratenkauf besonders unsicher? Das Dashboard zeigt Lernfortschritt in Echtzeit, ohne dass du selbst etwas nachverfolgen musst.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>,
         },
@@ -134,31 +134,31 @@ export default function AhsPage() {
         },
         {
           titel: 'Simulationen',
-          nutzenfuerLehrer: 'Schüler:innen treffen echte Entscheidungen in sicherer Umgebung, und erleben die Konsequenzen. Das erzeugt Lernerlebnisse, die du mit Frontalunterricht nicht erreichst. Und du musst dabei nichts erklären.',
+          nutzenfuerLehrer: 'Die Jugendlichen treffen echte Entscheidungen in sicherer Umgebung, und erleben die Konsequenzen. Das erzeugt Lernerlebnisse, die du mit Frontalunterricht nicht erreichst. Und du musst dabei nichts erklären.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>,
         },
         {
           titel: 'Gamification & Punktesystem',
-          nutzenfuerLehrer: 'Schüler:innen sammeln Punkte, vergleichen sich mit der Klasse und machen Module freiwillig weiter, auch zuhause. Das ist kein Trick, das ist gutes Lerndesign. Und es spart dir Motivationsarbeit.',
+          nutzenfuerLehrer: 'Die Jugendlichen sammeln Punkte, vergleichen sich mit der Klasse und machen Module freiwillig weiter, auch zuhause. Das ist kein Trick, das ist gutes Lerndesign. Und es spart dir Motivationsarbeit.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>,
         },
         {
           titel: 'Peer-Videos',
-          nutzenfuerLehrer: 'Gleichaltrige erklären Gleichaltrigen, das funktioniert besser als jeder Erwachsene. Die Videos sind kurz, authentisch und lösen Diskussionen aus. Du moderierst, du erklärst nicht.',
+          nutzenfuerLehrer: 'Gleichaltrige erklären Gleichaltrigen, das funktioniert besser als jede Erklärung von Erwachsenen. Die Videos sind kurz, authentisch und lösen Diskussionen aus. Du moderierst, du erklärst nicht.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>,
         },
         {
-          titel: 'Zertifikat für Schüler:innen',
-          nutzenfuerLehrer: 'Nach Abschluss erhalten Schüler:innen ein Zertifikat, das motiviert und gibt dir etwas Dokumentierbares für Zeugnisbemerkungen, Portfolios oder Bewerbungsunterlagen.',
+          titel: 'Zertifikat für Jugendliche',
+          nutzenfuerLehrer: 'Nach Abschluss erhalten die Jugendlichen ein Zertifikat, das motiviert und gibt dir etwas Dokumentierbares für Zeugnisbemerkungen, Portfolios oder Bewerbungsunterlagen.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>,
         },
       ]}
       lehrerZitat={{
-        text: 'Ich hab die Stunde mit einer kurzen Erklärung eröffnet, dann haben die Schüler:innen 30 Minuten selbstständig gearbeitet. Am Ende wollten viele weitermachen. So eine Stunde hatte ich schon lange nicht mehr.',
+        text: 'Ich hab die Stunde mit einer kurzen Erklärung eröffnet, dann haben die Jugendlichen 30 Minuten selbstständig gearbeitet. Am Ende wollten viele weitermachen. So eine Stunde hatte ich schon lange nicht mehr.',
         person: 'GWK-Lehrerin, AHS Wien, nach dem ersten Piloteinsatz',
       }}
       lehrerFoto="/fotos/lehrer/ahs.png"
-      gruenderStatement="An der AHS lernen Schüler:innen analytisch zu denken, aber wie man das erste Gehalt einteilt, kommt im Lehrplan kaum vor. Skills-UP! schließt genau diese Lücke. Praxisnah, ohne Mehraufwand für Lehrkräfte, und mit Inhalten, die wirklich im Leben ankommen."
+      gruenderStatement="An der AHS lernen Jugendliche analytisch zu denken, aber wie man das erste Gehalt einteilt, kommt im Lehrplan kaum vor. Skills-UP! schließt genau diese Lücke. Praxisnah, ohne Mehraufwand für Lehrkräfte, und mit Inhalten, die wirklich im Leben ankommen."
       lernpfad={[
         {
           stufe: 'Orientierung',
@@ -182,7 +182,7 @@ export default function AhsPage() {
           icon: chartIcon,
           module: ['Sparen & Investieren', 'Steuern in Österreich'],
           zeitMinuten: 65,
-          ergebnis: 'ETF-Sparplan als Student starten, Zinseszins über 20 Jahre simulieren und Steuerausgleich beantragen.',
+          ergebnis: 'ETF-Sparplan im Studium starten, Zinseszins über 20 Jahre simulieren und Steuerausgleich beantragen.',
         },
       ]}
       highlightSimulation={{
@@ -195,9 +195,9 @@ export default function AhsPage() {
           { label: 'Studienkosten ermitteln', beschreibung: 'ÖH-Beitrag, Studiengebühren (falls zutreffend), Bücher, Software. Die App zeigt Realkosten nach Studienrichtung.' },
           { label: 'Stipendium berechnen', beschreibung: 'Die Simulation erklärt Studienbeihilfe, Selbsterhalterstipendium und Leistungsstipendium mit konkreten Einkommensgrenzen.' },
           { label: 'Lebenskosten Wien', beschreibung: 'WG-Zimmer, Mensa, Öffi-Jahreskarte, Handy: Alle typischen Posten für Studierende mit aktuellen Wiener Durchschnittswerten.' },
-          { label: 'Finanzierungsplan erstellen', beschreibung: 'Schüler:innen kombinieren Stipendium, Elternbeitrag und Nebenjob-Stunden zu einem realistischen Jahresplan.' },
+          { label: 'Finanzierungsplan erstellen', beschreibung: 'Die Jugendlichen kombinieren Stipendium, Elternbeitrag und Nebenjob-Stunden zu einem realistischen Jahresplan.' },
         ],
-        ergebnis: 'Schüler:innen wissen nach der Simulation genau, wie viel ein Studium kostet, welche Förderungen sie beantragen können und wie viel Nebenjob sie wirklich brauchen.',
+        ergebnis: 'Die Jugendlichen wissen nach der Simulation genau, wie viel ein Studium kostet, welche Förderungen sie beantragen können und wie viel Nebenjob sie wirklich brauchen.',
         mockUI: [
           { zeile: 'Studium Wien: Monatsplan', typ: 'label' },
           { zeile: 'Studienbeihilfe|+ 680,00 €', typ: 'wert' },
@@ -220,11 +220,11 @@ export default function AhsPage() {
       verwandteSchultypen={[
         { slug: 'hak', label: 'HAK & HAS', teaser: 'Finanzbildung als Ergänzung zu BWL und Rechnungswesen: lehrplankonform für die 9.–13. Schulstufe.' },
         { slug: 'hlw', label: 'HLW & Fachschulen', teaser: 'Haushalt, Wirtschaft und Beruf: Finanzkompetenzen für eine frühe Selbstständigkeit.' },
-        { slug: 'bafep', label: 'BAfEP & BASOP', teaser: 'Angehende Pädagoginnen und Sozialberufe: Finanzbildung für Beruf und Alltag.' },
+        { slug: 'bafep', label: 'BAfEP & BASOP', teaser: 'Elementarpädagogik und Sozialberufe: Finanzbildung für Beruf und Alltag.' },
       ]}
       testimonials={[
         {
-          text: 'Die Schüler:innen haben im GWK-Unterricht zum ersten Mal wirklich über ihr eigenes Geld nachgedacht. Nicht über Theorie, sondern über ihre eigene Situation nach der Matura.',
+          text: 'Die Jugendlichen haben im GWK-Unterricht zum ersten Mal wirklich über ihr eigenes Geld nachgedacht. Nicht über Theorie, sondern über ihre eigene Situation nach der Matura.',
           person: 'Mag. Sandra H.',
           rolle: 'GWK-Lehrerin',
           schule: 'AHS Wien',

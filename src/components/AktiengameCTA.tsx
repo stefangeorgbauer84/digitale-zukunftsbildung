@@ -50,13 +50,13 @@ export default function AktiengameCTA() {
               <span style={{ color: '#7ed4c8' }}>ohne echtes Geld zu riskieren.</span>
             </h2>
             <p className="text-white/70 text-base leading-relaxed mb-8">
-              Das Skills-UP! Aktiengame simuliert die Jahre 2026 bis 2035. Schüler:innen
+              Das Skills-UP! Aktiengame simuliert die Jahre 2026 bis 2035. Jugendliche
               investieren virtuell 10.000 €, erleben echte Marktereignisse und bekommen
               nach jedem Jahr eine Lerneinheit zu einem Finanzkonzept.
             </p>
 
             <div className="space-y-3 mb-8">
-              <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-4">Was Schüler:innen lernen</p>
+              <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-4">Was Jugendliche lernen</p>
               {LERNZIELE.map((z) => (
                 <div key={z.text} className="flex items-start gap-3">
                   <span className="text-lg flex-shrink-0 mt-0.5">{z.emoji}</span>

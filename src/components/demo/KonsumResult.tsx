@@ -413,7 +413,7 @@ export function KonsumResult({ state, onReset, onBack }: Props) {
         </div>
 
         <p className="text-gray-400 text-xs text-center mt-4">
-          Teile dein Ergebnis mit Freunden: schütze sie vor Konsumfallen!
+          Teile dein Ergebnis mit deinem Freundeskreis: schütze ihn vor Konsumfallen!
         </p>
       </div>
     </div>

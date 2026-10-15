@@ -9,6 +9,7 @@ import {
   calcRoleMissionBonus,
   calcGesamtScore,
   PLAYER_ROLES,
+  DIFFICULTY_LABELS,
   roundToYear,
 } from '../lib/gameEngine'
 
@@ -77,9 +78,9 @@ export default function LehrpersonenAuswertung({ state, assets, onClose }: Props
         <div className="p-6 space-y-6">
           {/* Spieler-Info */}
           <div className="bg-gray-50 rounded-xl p-4 grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-            <div><div className="text-xs text-text-muted">Spieler</div><div className="font-semibold">{state.playerName}</div></div>
+            <div><div className="text-xs text-text-muted">Spielname</div><div className="font-semibold">{state.playerName}</div></div>
             <div><div className="text-xs text-text-muted">Rolle</div><div className="font-semibold">{roleDef.name}</div></div>
-            <div><div className="text-xs text-text-muted">Schwierigkeit</div><div className="font-semibold capitalize">{state.difficulty}</div></div>
+            <div><div className="text-xs text-text-muted">Schwierigkeit</div><div className="font-semibold">{DIFFICULTY_LABELS[state.difficulty]}</div></div>
             <div><div className="text-xs text-text-muted">Runden</div><div className="font-semibold">{state.totalRounds}</div></div>
           </div>
 
@@ -162,7 +163,7 @@ export default function LehrpersonenAuswertung({ state, assets, onClose }: Props
                 <li>• <strong>Negative Performance:</strong> Diskutieren Sie, welche Entscheidungen zum Verlust geführt haben. Lag es an einzelnen Assets, am Timing oder am Ereigniseinfluss?</li>
               )}
               {diversiScore < 40 && (
-                <li>• <strong>Geringe Diversifikation:</strong> Die Teilnehmerin/der Teilnehmer hat wenig gestreut. Fragen Sie: Warum? War es Absicht (Spekulant) oder fehlte das Verständnis für Klumpenrisiko?</li>
+                <li>• <strong>Geringe Diversifikation:</strong> Hier wurde wenig gestreut. Fragen Sie: Warum? War es Absicht (spekulative Rolle) oder fehlte das Verständnis für Klumpenrisiko?</li>
               )}
               {state.reflections.filter(r => r.answer.trim().length > 10).length < state.totalRounds / 2 && (
                 <li>• <strong>Wenig Reflexion:</strong> Nur {state.reflections.filter(r => r.answer.trim().length > 10).length} Fragen beantwortet. Ermutigen Sie in der nächsten Runde zum Schreiben – auch kurze Antworten helfen.</li>

@@ -9,7 +9,7 @@ const faqs = [
   },
   {
     q: 'Wie viel Vorbereitung brauchen Lehrkräfte?',
-    a: 'Keine. Alle Module, Aufgaben und Übungsblätter sind fertig aufbereitet und sofort startbereit. Lehrkräfte öffnen Skills-UP! im Browser, starten ein Modul oder eine Simulation, und die Schüler:innen arbeiten selbstständig. Das Dashboard zeigt den Fortschritt aller Klassen auf einen Blick.',
+    a: 'Keine. Alle Module, Aufgaben und Übungsblätter sind fertig aufbereitet und sofort startbereit. Lehrkräfte öffnen Skills-UP! im Browser, starten ein Modul oder eine Simulation, und die Jugendlichen arbeiten selbstständig. Das Dashboard zeigt den Fortschritt aller Klassen auf einen Blick.',
   },
   {
     q: 'Was sind die Praxissimulationen genau?',
@@ -21,7 +21,7 @@ const faqs = [
   },
   {
     q: 'Wie ist das Programm didaktisch aufgebaut?',
-    a: 'Skills-UP! kombiniert Microlearning (kurze Lerneinheiten), jugendnahe Peer-Videos, Gamification (Punkte, Quizzes, Badges) und ein Lehrer-Dashboard. Jedes der 12+ Module gibt es in einer Kurzversion (15 Minuten) und einer Langversion (50 Minuten), flexibel für jede Unterrichtssituation.',
+    a: 'Skills-UP! kombiniert Microlearning (kurze Lerneinheiten), jugendnahe Peer-Videos, Gamification (Punkte, Quizzes, Badges) und ein Lehrkräfte-Dashboard. Jedes der 12+ Module gibt es in einer Kurzversion (15 Minuten) und einer Langversion (50 Minuten), flexibel für jede Unterrichtssituation.',
   },
   {
     q: 'Ist Skills-UP! ausgezeichnet oder zertifiziert?',

@@ -19,8 +19,8 @@ export default function VideoSection({ variant = 'light', farbe = '#4a2d8a' }: V
   const videoJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'VideoObject',
-    name: 'Skills-UP! Produktvideo – Module, Simulationen und Lehrer-Dashboard',
-    description: 'Ein echter Einblick in die Skills-UP! Module, Simulationen und das Lehrer-Dashboard. Finanzbildungsprogramm für österreichische Schulen (AHS, HAK, HTL, HLW, PTS, Berufsschulen).',
+    name: 'Skills-UP! Produktvideo – Module, Simulationen und Lehrkräfte-Dashboard',
+    description: 'Ein echter Einblick in die Skills-UP! Module, Simulationen und das Lehrkräfte-Dashboard. Finanzbildungsprogramm für österreichische Schulen (AHS, HAK, HTL, HLW, PTS, Berufsschulen).',
     thumbnailUrl: `https://img.youtube.com/vi/${VIDEO_ID}/maxresdefault.jpg`,
     uploadDate: '2025-01-01',
     duration: 'PT2M',
@@ -65,7 +65,7 @@ export default function VideoSection({ variant = 'light', farbe = '#4a2d8a' }: V
             Sieh selbst, wie es funktioniert.
           </h2>
           <p className="font-body text-white/60 text-lg max-w-xl mx-auto">
-            Ein echter Einblick in die Module, Simulationen und das Lehrer-Dashboard, in weniger als 2 Minuten.
+            Ein echter Einblick in die Module, Simulationen und das Lehrkräfte-Dashboard, in weniger als 2 Minuten.
           </p>
         </div>
 

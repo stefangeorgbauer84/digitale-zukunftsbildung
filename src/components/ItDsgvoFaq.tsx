@@ -13,8 +13,8 @@ const items = [
     a: 'Ja. Skills-UP! ist vollständig DSGVO-konform aufgebaut: Datenminimierung (nur lernnotwendige Daten), keine Tracking-Cookies, keine Werbung, kein Verkauf von Daten. Für Schulen stellen wir einen fertigen Auftragsverarbeitungsvertrag (AVV) nach Art. 28 DSGVO bereit: einfach anfragen, unterschreiben, fertig.',
   },
   {
-    q: 'Müssen Schüler:innen ihre Klarnamen angeben?',
-    a: 'Nein. Schüler:innen treten der Klasse über einen anonymen Zugangscode bei und können mit Spitznamen arbeiten. Es werden weder Schüler-E-Mail-Adressen noch Klarnamen benötigt. Die Zuordnung zur echten Person bleibt bei der Lehrkraft: nicht bei uns.',
+    q: 'Müssen Jugendliche ihre Klarnamen angeben?',
+    a: 'Nein. Die Jugendlichen treten der Klasse über einen anonymen Zugangscode bei und können mit Spitznamen arbeiten. Es werden weder E-Mail-Adressen der Jugendlichen noch Klarnamen benötigt. Die Zuordnung zur echten Person bleibt bei der Lehrkraft: nicht bei uns.',
   },
   {
     q: 'Gibt es Single Sign-On (SSO)?',

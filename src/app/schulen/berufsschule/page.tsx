@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/schulen/berufsschule' },
   openGraph: {
     title: 'Finanzbildung für Berufsschulen – Skills-UP! Österreich',
-    description: 'Praxisnahe Finanzbildung für Lehrlinge und Berufsschüler:innen. Schuldenprävention, Lehrlingseinkommen, Ratenkauf. Sofort einsetzbar.',
+    description: 'Praxisnahe Finanzbildung für Lehrlinge in Berufsschule und Betrieb. Schuldenprävention, Lehrlingseinkommen, Ratenkauf. Sofort einsetzbar.',
     url: 'https://www.digitale-zukunftsbildung.eu/schulen/berufsschule',
     images: ['/fotos/skillsUP-1.jpg'],
   },
@@ -52,13 +52,13 @@ export default function BerufsschulePage() {
         },
         {
           fach: 'AWL – Angewandte Wirtschaftslehre',
-          kontext: 'Lohnabrechnung, Kaufvertrag, Bankkonto, Versicherung – AWL ist der Lehrplan, der am direktesten auf das Berufsleben vorbereitet. Skills-UP! macht diese Inhalte greifbar: Schüler:innen simulieren echte Entscheidungen statt Begriffe auswendig zu lernen.',
+          kontext: 'Lohnabrechnung, Kaufvertrag, Bankkonto, Versicherung – AWL ist der Lehrplan, der am direktesten auf das Berufsleben vorbereitet. Skills-UP! macht diese Inhalte greifbar: Lehrlinge simulieren echte Entscheidungen statt Begriffe auswendig zu lernen.',
         },
       ]}
       unterrichtsEinheiten={[
         {
           schritt: 'Wo ist dein Geld geblieben?',
-          was: 'Schüler:innen rekonstruieren ihren letzten Monat in der App: Was haben sie eingenommen, was ausgegeben? Kategorisch aufgelistet. Viele sind überrascht. Das ist der Einstieg, und er braucht keine Vorbereitung.',
+          was: 'Lehrlinge rekonstruieren ihren letzten Monat in der App: Was haben sie eingenommen, was ausgegeben? Kategorisch aufgelistet. Viele sind überrascht. Das ist der Einstieg, und er braucht keine Vorbereitung.',
           zeitMinuten: 10,
         },
         {
@@ -73,17 +73,17 @@ export default function BerufsschulePage() {
         },
         {
           schritt: 'Notgroschen-Ziel',
-          was: 'Schüler:innen legen fest, wie viel sie bis Ende des Lehrjahres ansparen wollen. Die App zeigt den Weg dorthin und schickt optional Erinnerungen. Ein kleiner Abschluss mit großer Wirkung.',
+          was: 'Die Lehrlinge legen fest, wie viel sie bis Ende des Lehrjahres ansparen wollen. Die App zeigt den Weg dorthin und schickt optional Erinnerungen. Ein kleiner Abschluss mit großer Wirkung.',
           zeitMinuten: 10,
         },
       ]}
       module={[
-        { titel: 'Gehalt & Einkommen', lernziel: 'Lohnzettel lesen, Brutto-Netto mit österreichischen Zahlen berechnen, Kollektivvertrag kennen, und die Negativsteuer (bis €110) via FinanzOnline holen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Einkommen', icon: moneyIcon },
+        { titel: 'Gehalt & Einkommen', lernziel: 'Lohnzettel lesen, Brutto-Netto mit österreichischen Zahlen berechnen, Kollektivvertrag kennen, und die Negativsteuer (bis €110) via FinanzOnline holen.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Einkommen', icon: moneyIcon },
         { titel: 'Steuern in Österreich', lernziel: 'Arbeitnehmerveranlagung selbst durchführen: Was ist die Lohnsteuergrenze? Was ist die Negativsteuer? FinanzOnline in 10 Minuten nutzen.', dauer: '15 oder 50 Min', level: 'Mittel', kategorie: 'Steuern', icon: taxIcon },
-        { titel: 'Ratenkauf & BNPL', lernziel: 'Klarna, Afterpay und Ratenkauf mit realen Zahlen durchrechnen: Effektivzins, Mahngebühren, KSV-Eintrag, und Widerrufsrecht als Schutz.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Konsumentenschutz', icon: alertIcon },
-        { titel: 'Risiko & Krisen', lernziel: 'Notgroschen aufbauen (3 Monatsgehälter), Eskalationskette von Mahnung bis Pfändung kennen, und wissen, wo man kostenlos Hilfe bekommt.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Krisenmanagement', icon: piggyIcon },
-        { titel: 'Schulden & Geld leihen', lernziel: 'Warnsignale für problematische Schulden früh erkennen: Was darf Inkasso wirklich? Welche Schulden sind gefährlich? AK und Schuldnerberatung als Anlaufstelle.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Schuldenprävention', icon: chartIcon },
-        { titel: 'Finanzplanung', lernziel: 'Monatlichen Finanzplan für Lehrlinge erstellen: Lehrlingslohn einteilen, Dauerauftrag fürs Sparen einrichten, Fixkosten im Griff behalten.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Budgetplanung', icon: bookIcon },
+        { titel: 'Ratenkauf & BNPL', lernziel: 'Klarna, Afterpay und Ratenkauf mit realen Zahlen durchrechnen: Effektivzins, Mahngebühren, KSV-Eintrag, und Widerrufsrecht als Schutz.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Konsumentenschutz', icon: alertIcon },
+        { titel: 'Risiko & Krisen', lernziel: 'Notgroschen aufbauen (3 Monatsgehälter), Eskalationskette von Mahnung bis Pfändung kennen, und wissen, wo man kostenlos Hilfe bekommt.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Krisenmanagement', icon: piggyIcon },
+        { titel: 'Schulden & Geld leihen', lernziel: 'Warnsignale für problematische Schulden früh erkennen: Was darf Inkasso wirklich? Welche Schulden sind gefährlich? AK und Schuldnerberatung als Anlaufstelle.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Schuldenprävention', icon: chartIcon },
+        { titel: 'Finanzplanung', lernziel: 'Monatlichen Finanzplan für Lehrlinge erstellen: Lehrlingslohn einteilen, Dauerauftrag fürs Sparen einrichten, Fixkosten im Griff behalten.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Budgetplanung', icon: bookIcon },
       ]}
       simulationen={[
         { titel: 'Arbeitnehmerveranlagung', untertitel: 'Steuerausgleich Schritt für Schritt durchführen: Negativsteuer beantragen, Werbungskosten eintragen, mit FinanzOnline-Simulation.', dauer: '15–25 Min', icon: taxIcon },
@@ -120,7 +120,7 @@ export default function BerufsschulePage() {
         },
         {
           titel: 'Lehrlings-spezifische Szenarien',
-          nutzenfuerLehrer: 'Die Inhalte sind nicht für Schüler:innen allgemein, sie sind auf Lehrlinge zugeschnitten: Lehrlingsentschädigung, Berufsschulalltag, Moped-Finanzierung, WG-Zimmer. Das erkennen Lehrlinge sofort.',
+          nutzenfuerLehrer: 'Die Inhalte sind nicht allgemein für Jugendliche gedacht, sie sind auf Lehrlinge zugeschnitten: Lehrlingsentschädigung, Berufsschulalltag, Moped-Finanzierung, WG-Zimmer. Das erkennen Lehrlinge sofort.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg>,
         },
         {
@@ -177,12 +177,12 @@ export default function BerufsschulePage() {
         untertitel: 'Was passiert, wenn man neben der Lehre dazuverdient? SV-Pflicht, Steuer, Geringfügigkeitsgrenze 2026: alles in einer Simulation.',
         dauer: '15–20 Min',
         icon: moneyIcon,
-        szenario: 'Du machst deine Lehre als Kfz-Techniker und willst am Wochenende im Supermarkt dazuverdienen. 4 Stunden, 12 € / Stunde. Ist das noch geringfügig? Zahlst du Steuern? Und was passiert mit deiner Lehrlingskrankenversicherung?',
+        szenario: 'Du machst deine Lehre in der Kfz-Technik und willst am Wochenende im Supermarkt dazuverdienen. 4 Stunden, 12 € / Stunde. Ist das noch geringfügig? Zahlst du Steuern? Und was passiert mit deiner Lehrlingskrankenversicherung?',
         schritte: [
           { label: 'Geringfügigkeitsgrenze prüfen', beschreibung: 'Die App zeigt die aktuelle Grenze für 2026 und berechnet sofort, ob der geplante Job darunter oder darüber liegt.' },
           { label: 'SV-Pflicht verstehen', beschreibung: 'Über der Grenze: Was bedeutet das für Kranken- und Pensionsversicherung bei Mehrfachbeschäftigung?' },
           { label: 'Lohnzettel vergleichen', beschreibung: 'Nettoverdienst mit und ohne Nebenjob gegenüberstellen. Wie viel kommt wirklich mehr rein?' },
-          { label: 'Steuerausgleich planen', beschreibung: 'Zwei Arbeitgeber? Die App erklärt, wann Arbeitnehmerveranlagung Pflicht wird und wie die Negativsteuer funktioniert.' },
+          { label: 'Steuerausgleich planen', beschreibung: 'Zwei Dienstverhältnisse? Die App erklärt, wann Arbeitnehmerveranlagung Pflicht wird und wie die Negativsteuer funktioniert.' },
         ],
         ergebnis: 'Lehrlinge können eigenständig einschätzen, ob ein Nebenjob geringfügig ist, was er netto bringt und wann sie eine Steuererklärung abgeben müssen.',
         mockUI: [

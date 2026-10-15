@@ -3,16 +3,16 @@
 import { useState } from 'react'
 import Image from 'next/image'
 import type { Difficulty, PlayerRole } from '../types'
-import { PLAYER_ROLES } from '../lib/gameEngine'
+import { PLAYER_ROLES, DIFFICULTY_LABELS } from '../lib/gameEngine'
 
 interface SetupScreenProps {
   onStart: (playerName: string, totalRounds: number, difficulty: Difficulty, role: PlayerRole) => void
 }
 
 const DIFFICULTY_OPTIONS: { value: Difficulty; label: string; hint: string; color: string }[] = [
-  { value: 'einsteiger', label: 'Einsteiger', hint: 'Kleine Schwankungen – zum Kennenlernen', color: 'border-status-teal text-status-teal bg-status-teal-light' },
-  { value: 'fortgeschritten', label: 'Fortgeschritten', hint: 'Realistisch – für Workshops empfohlen', color: 'border-primary-medium text-primary-dark bg-primary-50' },
-  { value: 'experte', label: 'Experte', hint: 'Starke Volatilität – für Erfahrene', color: 'border-status-orange text-status-orange bg-status-orange-light' },
+  { value: 'einsteiger', label: DIFFICULTY_LABELS.einsteiger, hint: 'Kleine Schwankungen – zum Kennenlernen', color: 'border-status-teal text-status-teal bg-status-teal-light' },
+  { value: 'fortgeschritten', label: DIFFICULTY_LABELS.fortgeschritten, hint: 'Realistisch – für Workshops empfohlen', color: 'border-primary-medium text-primary-dark bg-primary-50' },
+  { value: 'experte', label: DIFFICULTY_LABELS.experte, hint: 'Starke Volatilität – für Erfahrene', color: 'border-status-orange text-status-orange bg-status-orange-light' },
 ]
 
 const ROLE_ORDER: PlayerRole[] = [
@@ -122,7 +122,7 @@ export default function SetupScreen({ onStart }: SetupScreenProps) {
                 required
                 value={name}
                 onChange={(e) => setName(e.target.value)}
-                placeholder="z. B. InvestorMax"
+                placeholder="z. B. Börsenfuchs"
                 className="w-full border border-gray-200 rounded-xl px-4 py-3 text-text-primary focus:outline-none focus:ring-2 focus:ring-primary-medium"
               />
             </div>
@@ -179,7 +179,7 @@ export default function SetupScreen({ onStart }: SetupScreenProps) {
               onClick={() => setStep(2)}
               className="w-full bg-primary-dark text-white font-semibold py-3 rounded-xl hover:bg-primary-medium transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
             >
-              Weiter → Investoren-Persönlichkeit wählen
+              Weiter → Anlagetyp wählen
             </button>
           </div>
         )}
@@ -187,7 +187,7 @@ export default function SetupScreen({ onStart }: SetupScreenProps) {
         {step === 2 && (
           <form onSubmit={handleSubmit} className="space-y-4">
             <p className="text-sm text-text-secondary">
-              Wähle deine Investoren-Persönlichkeit. Sie gibt dir eine Missions-Aufgabe und spezifische Lernhinweise.
+              Wähle deinen Anlagetyp. Er gibt dir eine Missions-Aufgabe und spezifische Lernhinweise.
             </p>
 
             <div className="grid grid-cols-1 gap-2">

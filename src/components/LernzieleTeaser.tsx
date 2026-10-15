@@ -46,7 +46,7 @@ export default function LernzieleTeaser({
             {headline}
           </h2>
           <p className="font-body text-gray-500 text-sm max-w-lg mx-auto">
-            Jedes Modul hat klare, messbare Lernziele: kein Wischiwaschi, sondern was Schüler:innen danach wirklich können.
+            Jedes Modul hat klare, messbare Lernziele: kein Wischiwaschi, sondern was die Jugendlichen danach wirklich können.
           </p>
         </div>
 
@@ -61,7 +61,7 @@ export default function LernzieleTeaser({
               <p className="text-xs font-body font-700 uppercase tracking-widest mb-1 pl-3" style={{ color: lz.farbe }}>
                 Modul: {lz.modul}
               </p>
-              <p className="font-body font-600 text-gray-500 text-xs mb-1 pl-3">Ihre Schüler:innen können danach:</p>
+              <p className="font-body font-600 text-gray-500 text-xs mb-1 pl-3">Ihre Klasse kann danach:</p>
               <p className="font-body text-gray-700 text-sm leading-relaxed pl-3">
                 {lz.ziel}
               </p>

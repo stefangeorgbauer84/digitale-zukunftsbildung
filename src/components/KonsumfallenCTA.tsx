@@ -79,7 +79,7 @@ export default function KonsumfallenCTA() {
 
             <div className="space-y-3 mb-8">
               <p className="text-xs font-bold uppercase tracking-widest text-white/40 mb-4">
-                Was Schüler:innen lernen
+                Was Jugendliche lernen
               </p>
               {LERNZIELE.map((z) => (
                 <div key={z.text} className="flex items-start gap-3">

@@ -104,8 +104,8 @@ const schultypen = [
     farbeHell: '#f3f1f9',
     gradient: 'linear-gradient(135deg, #2d1b69 0%, #4a2d8a 60%, #6b4db0 100%)',
     schulstufen: '9.–13. Schulstufe',
-    fokus: 'Pädagogik & Multiplikator:innen',
-    teaser: 'Eigene Finanzkompetenz stärken und Finanzbildung als Multiplikator:innen weitertragen, in Schule, Familie und Beruf.',
+    fokus: 'Pädagogik & Wissen weitergeben',
+    teaser: 'Eigene Finanzkompetenz stärken und Finanzbildung weitergeben, in Schule, Familie und Beruf.',
     highlights: ['Geldbiografie', 'Konsumdruck', 'Pädagogische Methoden', 'Soziale Folgen'],
     icon: (
       <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
@@ -380,7 +380,7 @@ export default function SchulenUebersicht() {
               {
                 icon: <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
                 title: 'Für Schulleitungen',
-                punkte: ['Schulweites Rollout möglich', 'DSGVO-konform aus Österreich', 'Kein IT-Aufwand', 'Lehrplankonform integrierbar', 'Zertifikat für Schüler:innen'],
+                punkte: ['Schulweites Rollout möglich', 'DSGVO-konform aus Österreich', 'Kein IT-Aufwand', 'Lehrplankonform integrierbar', 'Zertifikat für Jugendliche'],
               },
             ].map((block) => (
               <div key={block.title} className="glass rounded-2xl p-8 border border-white/20">
@@ -441,7 +441,7 @@ export default function SchulenUebersicht() {
                 ),
                 color: '#4a2d8a', bg: '#f3f1f9',
                 title: 'Profilierung als moderne Schule',
-                text: 'Ein zertifiziertes digitales Finanzbildungsprogramm ist ein sichtbares Signal an Eltern, Schulaufsicht und künftige Schüler:innen: Diese Schule bereitet aufs echte Leben vor. Ideal für Tag der offenen Tür, Schulhomepage und Schulprofil.',
+                text: 'Ein zertifiziertes digitales Finanzbildungsprogramm ist ein sichtbares Signal an Eltern, Schulaufsicht und Jugendliche, die eine Schule suchen: Diese Schule bereitet aufs echte Leben vor. Ideal für Tag der offenen Tür, Schulhomepage und Schulprofil.',
               },
               {
                 icon: (
@@ -451,7 +451,7 @@ export default function SchulenUebersicht() {
                 ),
                 color: '#1E6B5B', bg: '#e6f4f1',
                 title: 'Einfache Finanzierung',
-                text: 'Skills-UP! zahlt direkt auf die digitale Grundbildung und das Unterrichtsprinzip Wirtschafts- und Verbraucher:innenbildung ein. Förderwege über MEGA Bildungsstiftung und die Nationale Finanzbildungsstrategie: wir finden gemeinsam ein leistbares Modell.',
+                text: 'Skills-UP! zahlt direkt auf die digitale Grundbildung und das Unterrichtsprinzip „Wirtschafts- und Verbraucher/innenbildung“ ein. Förderwege über MEGA Bildungsstiftung und die Nationale Finanzbildungsstrategie: wir finden gemeinsam ein leistbares Modell.',
               },
               {
                 icon: (
@@ -479,7 +479,7 @@ export default function SchulenUebersicht() {
       {/* Vorstellungsvideos */}
       <WillkommenVideos anrede="du" />
 
-      {/* IT & DSGVO: FAQ für Schul-IT-Kustod:innen */}
+      {/* IT & DSGVO: FAQ für die Schul-IT */}
       <section className="py-20 bg-gray-50">
         <div className="max-w-3xl mx-auto px-6">
           <div className="text-center mb-12">
@@ -493,7 +493,7 @@ export default function SchulenUebersicht() {
               Antworten für die Schul-IT.
             </h2>
             <p className="font-body text-text-muted text-lg max-w-xl mx-auto">
-              Die Fragen, die IT-Kustod:innen und Direktionen vor der Freigabe stellen: hier vorab beantwortet.
+              Die Fragen, die das IT-Kustodiat und die Direktionen vor der Freigabe stellen: hier vorab beantwortet.
             </p>
           </div>
           <ItDsgvoFaq />

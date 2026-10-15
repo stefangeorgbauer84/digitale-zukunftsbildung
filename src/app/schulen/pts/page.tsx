@@ -39,8 +39,8 @@ export default function PtsPage() {
       schulstufen="9. Schulstufe"
       lehrplanFach="Berufsorientierung · Lebenskunde · Klassenvorstand · Soziales Lernen"
       icon={icon}
-      lehrerProblem="Viele meiner Schüler:innen fangen in wenigen Monaten eine Lehre an. Aber sie haben keine Ahnung, was sie mit ihrem ersten Lehrlingsgeld machen sollen, und ich hab kein fertiges Material dafür."
-      intro="Die PTS ist die letzte Station vor dem Berufsleben. Genau hier sitzt Skills-UP! perfekt: Die Module treffen Jugendliche in dem Moment, wo Finanzkompetenz plötzlich keine Schulübung mehr ist, sondern echte Lebensrealität, die in Wochen beginnt. Der Unterschied zur Berufsschule: PTS-Schüler:innen stehen noch davor. Skills-UP! gibt ihnen einen Vorsprung, bevor das erste Lehrlingsgeld ankommt."
+      lehrerProblem="Viele in meiner Klasse fangen in wenigen Monaten eine Lehre an. Aber sie haben keine Ahnung, was sie mit ihrem ersten Lehrlingsgeld machen sollen, und ich hab kein fertiges Material dafür."
+      intro="Die PTS ist die letzte Station vor dem Berufsleben. Genau hier sitzt Skills-UP! perfekt: Die Module treffen Jugendliche in dem Moment, wo Finanzkompetenz plötzlich keine Schulübung mehr ist, sondern echte Lebensrealität, die in Wochen beginnt. Der Unterschied zur Berufsschule: Die Jugendlichen an der PTS stehen noch davor. Skills-UP! gibt ihnen einen Vorsprung, bevor das erste Lehrlingsgeld ankommt."
       lehrplanPassung={[
         {
           fach: 'Berufsorientierung (BOK)',
@@ -52,7 +52,7 @@ export default function PtsPage() {
         },
         {
           fach: 'Klassenvorstand',
-          kontext: '"Was erwarten dich in der Lehre finanziell?" ist ein perfektes Klassenvorstands-Thema, ohne dass du selbst ein Finanzexperte sein musst. Skills-UP! liefert die Inhalte, du begleitest das Gespräch.',
+          kontext: '"Was erwarten dich in der Lehre finanziell?" ist ein perfektes Klassenvorstands-Thema, auch ganz ohne Vorwissen in Finanzthemen. Skills-UP! liefert die Inhalte, du begleitest das Gespräch.',
         },
         {
           fach: 'Deutsch (Bewerbung & Vorbereitung)',
@@ -62,32 +62,32 @@ export default function PtsPage() {
       unterrichtsEinheiten={[
         {
           schritt: 'Einstieg: Was verdienst du als Lehrling?',
-          was: 'Schüler:innen wählen in der App ihren Wunschberuf und sehen sofort das realistische Lehrlingseinkommen im 1. Lehrjahr. Der erste Schock ist meistens lehrreich, und erzeugt sofort echte Diskussion.',
+          was: 'Die Jugendlichen wählen in der App ihren Wunschberuf und sehen sofort das realistische Lehrlingseinkommen im 1. Lehrjahr. Der erste Schock ist meistens lehrreich, und erzeugt sofort echte Diskussion.',
           zeitMinuten: 10,
         },
         {
           schritt: 'Simulation: Erster Monat',
-          was: 'Mit dem Lehrlingseinkommen planen Schüler:innen ihren ersten Monat: Handy, Öffis oder Moped, Mittagessen, Freizeitausgaben, eventuell Miete. Die App zeigt, was am Ende des Monats übrig bleibt.',
+          was: 'Mit dem Lehrlingseinkommen planen die Jugendlichen ihren ersten Monat: Handy, Öffis oder Moped, Mittagessen, Freizeitausgaben, eventuell Miete. Die App zeigt, was am Ende des Monats übrig bleibt.',
           zeitMinuten: 20,
         },
         {
           schritt: 'Ratenkauf und die Handy-Falle',
-          was: 'Ein kurzes Peer-Video zeigt eine:n Lehrling, der/die sich auf Raten ein neues Handy gekauft hat, und jetzt nicht mehr weiß, wie er/sie die Rechnung bezahlen soll. Das kennen viele.',
+          was: 'Ein kurzes Peer-Video zeigt einen Lehrling, der sich auf Raten ein neues Handy gekauft hat, und jetzt nicht mehr weiß, wie die Rechnung bezahlt werden soll. Das kennen viele.',
           zeitMinuten: 10,
         },
         {
           schritt: 'Sparziel setzen',
-          was: 'Führerschein, Urlaub, eigene Wohnung. Schüler:innen definieren ihr persönliches Sparziel und die App berechnet, wie lange sie mit welchem monatlichen Betrag dafür brauchen. Konkret und motivierend.',
+          was: 'Führerschein, Urlaub, eigene Wohnung. Die Jugendlichen definieren ihr persönliches Sparziel und die App berechnet, wie lange sie mit welchem monatlichen Betrag dafür brauchen. Konkret und motivierend.',
           zeitMinuten: 10,
         },
       ]}
       module={[
-        { titel: 'Gehalt & Einkommen', lernziel: 'Lohnzettel lesen, Brutto-Netto verstehen, und mit der Negativsteuer bis zu €110 vom Finanzamt zurückbekommen. Für Lehrlinge direkt relevant.', dauer: '15 Min', level: 'Einsteiger', kategorie: 'Einkommen', icon: moneyIcon },
-        { titel: 'Finanzplanung', lernziel: 'Ersten Monatsplan erstellen: Lehrlingslohn, Fixkosten, Freizeit, Sparen. Die 50-30-20-Regel und "Pay yourself first" als einfache Strategie.', dauer: '15 Min', level: 'Einsteiger', kategorie: 'Budgetplanung', icon: bookIcon },
-        { titel: 'Ratenkauf & BNPL', lernziel: 'Klarna und Co. mit echten Zahlen bewerten: Effektivzins, Mahngebühren, KSV-Eintrag, und das 14-Tage-Widerrufsrecht als Schutz kennen.', dauer: '15 Min', level: 'Einsteiger', kategorie: 'Konsumentenschutz', icon: alertIcon },
-        { titel: 'Konsumfallen', lernziel: 'FOMO, Ankerpreise und Flash-Sales erkennen, 24-Stunden-Regel als einfachste Gegenstrategie für Impulskäufe.', dauer: '15 Min', level: 'Einsteiger', kategorie: 'Konsumpsychologie', icon: alertIcon },
-        { titel: 'Sparen & Geldentscheidungen', lernziel: 'Zinseszins verstehen und Sparziel berechnen: Führerschein, Moped, erste Wohnung, wie lange dauert das beim aktuellen Lehrlingslohn?', dauer: '15 Min', level: 'Einsteiger', kategorie: 'Sparziele', icon: piggyIcon },
-        { titel: 'Risiko & Krisen', lernziel: 'Notgroschen aufbauen: Was ist ein Notgroschen? Warum braucht man ihn? Wie baut man ihn realistisch mit einem Lehrlingslohn auf?', dauer: '15 Min', level: 'Einsteiger', kategorie: 'Krisenvorsorge', icon: piggyIcon },
+        { titel: 'Gehalt & Einkommen', lernziel: 'Lohnzettel lesen, Brutto-Netto verstehen, und mit der Negativsteuer bis zu €110 vom Finanzamt zurückbekommen. Für Lehrlinge direkt relevant.', dauer: '15 Min', level: 'Einstieg', kategorie: 'Einkommen', icon: moneyIcon },
+        { titel: 'Finanzplanung', lernziel: 'Ersten Monatsplan erstellen: Lehrlingslohn, Fixkosten, Freizeit, Sparen. Die 50-30-20-Regel und "Pay yourself first" als einfache Strategie.', dauer: '15 Min', level: 'Einstieg', kategorie: 'Budgetplanung', icon: bookIcon },
+        { titel: 'Ratenkauf & BNPL', lernziel: 'Klarna und Co. mit echten Zahlen bewerten: Effektivzins, Mahngebühren, KSV-Eintrag, und das 14-Tage-Widerrufsrecht als Schutz kennen.', dauer: '15 Min', level: 'Einstieg', kategorie: 'Konsumentenschutz', icon: alertIcon },
+        { titel: 'Konsumfallen', lernziel: 'FOMO, Ankerpreise und Flash-Sales erkennen, 24-Stunden-Regel als einfachste Gegenstrategie für Impulskäufe.', dauer: '15 Min', level: 'Einstieg', kategorie: 'Konsumpsychologie', icon: alertIcon },
+        { titel: 'Sparen & Geldentscheidungen', lernziel: 'Zinseszins verstehen und Sparziel berechnen: Führerschein, Moped, erste Wohnung, wie lange dauert das beim aktuellen Lehrlingslohn?', dauer: '15 Min', level: 'Einstieg', kategorie: 'Sparziele', icon: piggyIcon },
+        { titel: 'Risiko & Krisen', lernziel: 'Notgroschen aufbauen: Was ist ein Notgroschen? Warum braucht man ihn? Wie baut man ihn realistisch mit einem Lehrlingslohn auf?', dauer: '15 Min', level: 'Einstieg', kategorie: 'Krisenvorsorge', icon: piggyIcon },
       ]}
       simulationen={[
         { titel: 'Gehaltsverhandlung', untertitel: 'KV-Mindestlohn für 50+ Lehrberufe recherchieren, Argumente formulieren, dein Gehalt als Lehrling ist verhandelbar.', dauer: '15–20 Min', icon: moneyIcon },
@@ -114,17 +114,17 @@ export default function PtsPage() {
       features={[
         {
           titel: 'Lehrlings-Einkommens-Simulation',
-          nutzenfuerLehrer: 'Schüler:innen sehen das reale Lehrlingseinkommen für über 50 Lehrberufe, inklusive Abzüge. Das ist sachlich, konkret und startet sofort echte Gespräche über Berufswahl und Lebensplanung. Du brauchst keine Zahlen selbst recherchieren.',
+          nutzenfuerLehrer: 'Die Jugendlichen sehen das reale Lehrlingseinkommen für über 50 Lehrberufe, inklusive Abzüge. Das ist sachlich, konkret und startet sofort echte Gespräche über Berufswahl und Lebensplanung. Du brauchst keine Zahlen selbst recherchieren.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>,
         },
         {
           titel: 'Modul: Erste Wohnung & Eigenständigkeit',
-          nutzenfuerLehrer: 'Was kostet eine WG-Zimmer in der Nähe der Berufsschule? Was kostet Wohnen alleine? Skills-UP! macht das konkret und berechenbar, ideal für Schüler:innen, die kurz vor dem Auszug stehen.',
+          nutzenfuerLehrer: 'Was kostet eine WG-Zimmer in der Nähe der Berufsschule? Was kostet Wohnen alleine? Skills-UP! macht das konkret und berechenbar, ideal für Jugendliche, die kurz vor dem Auszug stehen.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>,
         },
         {
-          titel: 'Gamification für wenig motivierte Schüler:innen',
-          nutzenfuerLehrer: 'PTS-Schüler:innen sind oft schwer zu motivieren. Punkte, Levels und kurze Challenges ändern das. Skills-UP! ist so gestaltet, dass Schüler:innen, die sonst wenig mitmachen, aktiv dabei sind.',
+          titel: 'Gamification für wenig motivierte Klassen',
+          nutzenfuerLehrer: 'Jugendliche an der PTS sind oft schwer zu motivieren. Punkte, Levels und kurze Challenges ändern das. Skills-UP! ist so gestaltet, dass auch Jugendliche, die sonst wenig mitmachen, aktiv dabei sind.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>,
         },
         {
@@ -138,7 +138,7 @@ export default function PtsPage() {
         person: 'Lehrer für Berufsorientierung, PTS Niederösterreich',
       }}
       lehrerFoto="/fotos/lehrer/pts.png"
-      gruenderStatement="Schüler:innen der PTS stehen kurz vor ihrer Berufswahl und dem ersten echten Einkommen. Skills-UP! gibt ihnen das Handwerkszeug, das kein Beruf automatisch mitliefert: wie man mit Geld wirklich umgeht, und welche Entscheidungen man lieber nicht bereuen möchte."
+      gruenderStatement="Jugendliche an der PTS stehen kurz vor ihrer Berufswahl und dem ersten echten Einkommen. Skills-UP! gibt ihnen das Handwerkszeug, das kein Beruf automatisch mitliefert: wie man mit Geld wirklich umgeht, und welche Entscheidungen man lieber nicht bereuen möchte."
       lernpfad={[
         {
           stufe: 'Berufseinstieg',
@@ -162,7 +162,7 @@ export default function PtsPage() {
           icon: piggyIcon,
           module: ['Sparen & Geldentscheidungen', 'Erste eigene Wohnung'],
           zeitMinuten: 50,
-          ergebnis: 'Sparziel Führerschein oder Wohnung konkret berechnen und einen Monats-Sparplan einhalten.',
+          ergebnis: 'Sparziel für Wohnung oder Führerschein konkret berechnen und einen Monats-Sparplan einhalten.',
         },
       ]}
       highlightSimulation={{
@@ -170,14 +170,14 @@ export default function PtsPage() {
         untertitel: 'Welcher Lehrberuf zahlt was? Lehrlingsgeld nach Lehrjahr simulieren, Budget erstellen und konkrete Sparziele (Führerschein, erste Wohnung) berechnen.',
         dauer: '20–25 Min',
         icon: piggyIcon,
-        szenario: 'Du wirst Elektriker-Lehrling. 1. Lehrjahr, 700 € brutto. Nach Abzügen bleibt dir etwas über 600 €. Deine Eltern erwarten 150 € Kostgeld. Was bleibt für dich, und wie lange sparst du für den Führerschein?',
+        szenario: 'Du beginnst eine Lehre in der Elektrotechnik. 1. Lehrjahr, 700 € brutto. Nach Abzügen bleibt dir etwas über 600 €. Deine Eltern erwarten 150 € Kostgeld. Was bleibt für dich, und wie lange sparst du für den Führerschein?',
         schritte: [
           { label: 'Lehrberuf & Lehrjahr wählen', beschreibung: 'Die App zeigt KV-Mindestlöhne für 50+ Lehrberufe nach Lehrjahr, mit realen Zahlen aus dem aktuellen Kollektivvertrag.' },
           { label: 'Nettolohn berechnen', beschreibung: 'Lehrlingseinkommen hat andere SV-Sätze. Die Simulation zeigt, was nach Abzügen übrig bleibt.' },
-          { label: 'Monatsbudget erstellen', beschreibung: 'Kostgeld, Handy, Öffis, Freizeit: Schüler:innen setzen ihre Ausgaben und sehen sofort, was zum Sparen bleibt.' },
+          { label: 'Monatsbudget erstellen', beschreibung: 'Kostgeld, Handy, Öffis, Freizeit: Die Jugendlichen setzen ihre Ausgaben und sehen sofort, was zum Sparen bleibt.' },
           { label: 'Sparziel berechnen', beschreibung: 'Führerschein (2.200 €), erste eigene Wohnung, Motorrad: Die App berechnet, wie viele Monate man bei welcher Rate sparen muss.' },
         ],
-        ergebnis: 'Schüler:innen kennen ihren künftigen Lehrlingslohn, können ein realistisches Budget erstellen und wissen konkret, wie sie ihr erstes großes Sparziel erreichen.',
+        ergebnis: 'Die Jugendlichen kennen ihren künftigen Lehrlingslohn, können ein realistisches Budget erstellen und wissen konkret, wie sie ihr erstes großes Sparziel erreichen.',
         mockUI: [
           { zeile: 'Lehrlingslohn Elektrik | 1. Lehrjahr', typ: 'label' },
           { zeile: 'Bruttolohn|700,00 €', typ: 'wert' },
@@ -194,8 +194,8 @@ export default function PtsPage() {
       }}
       faqs={[
         { q: 'In welche PTS-Fächer passt Skills-UP!?', a: 'Berufsorientierung, Lebenskunde und der Klassenvorstand sind die natürlichen Einsatzorte. Die Kurzmodule (15 Min.) sind ideal für Einstiegssequenzen, die Langmodule für projektartige Einheiten.' },
-        { q: 'Ist Skills-UP! für Schülerinnen mit unterschiedlichen Lernständen geeignet?', a: 'Ja. PTS-Klassen sind oft heterogen. Skills-UP! arbeitet mit Videos, interaktiven Szenarien und Gamification, das funktioniert unabhängig vom Lesestand und erreicht auch Jugendliche, die mit klassischen Texten schwerer erreicht werden.' },
-        { q: 'Was passiert nach der PTS? Gibt es Übergangsinhalte zur Berufsschule?', a: 'Die Module zu Lehrlingsentgelt, Lohnzettel und Budgetplanung sind direkt auf die Situation nach der PTS ausgerichtet. Schülerinnen, die in eine Lehre wechseln, lernen genau das, was sie ab dem ersten Arbeitstag brauchen.' },
+        { q: 'Ist Skills-UP! für Klassen mit unterschiedlichen Lernständen geeignet?', a: 'Ja. PTS-Klassen sind oft heterogen. Skills-UP! arbeitet mit Videos, interaktiven Szenarien und Gamification, das funktioniert unabhängig vom Lesestand und erreicht auch Jugendliche, die mit klassischen Texten schwerer erreicht werden.' },
+        { q: 'Was passiert nach der PTS? Gibt es Übergangsinhalte zur Berufsschule?', a: 'Die Module zu Lehrlingsentgelt, Lohnzettel und Budgetplanung sind direkt auf die Situation nach der PTS ausgerichtet. Jugendliche, die in eine Lehre wechseln, lernen genau das, was sie ab dem ersten Arbeitstag brauchen.' },
       ]}
       verwandteSchultypen={[
         { slug: 'berufsschule', label: 'Berufsschule', teaser: 'Duales System: Finanzbildung für Lehrlinge direkt im Betriebsalltag.' },
@@ -204,13 +204,13 @@ export default function PtsPage() {
       ]}
       testimonials={[
         {
-          text: 'PTS-Schüler:innen sehen oft wenig Sinn in Schule. Aber wenn es ums eigene Geld geht, sind alle dabei. Die Simulation zum Führerschein-Sparziel hat die Klasse mehr motiviert als jede Übung davor.',
+          text: 'Jugendliche an der PTS sehen oft wenig Sinn in Schule. Aber wenn es ums eigene Geld geht, sind alle dabei. Die Simulation zum Führerschein-Sparziel hat die Klasse mehr motiviert als jede Übung davor.',
           person: 'Klaus F.',
           rolle: 'Berufsorientierungslehrer',
           schule: 'PTS Oberösterreich',
         },
         {
-          text: 'Viele unserer Schüler:innen haben zuhause kein Vorbild für finanzielles Denken. Skills-UP! gibt ihnen Grundlagen, die sie sonst nirgends bekommen würden.',
+          text: 'Viele unserer Jugendlichen haben zuhause kein Vorbild für finanzielles Denken. Skills-UP! gibt ihnen Grundlagen, die sie sonst nirgends bekommen würden.',
           person: 'Renate B.',
           rolle: 'Klassenlehrerin PTS',
         },

@@ -67,7 +67,7 @@ export const GLOSSAR: GlossarEintrag[] = [
   },
   {
     term: 'Dividende',
-    definition: 'Ein Teil des Unternehmensgewinns, der an Aktionärinnen und Aktionäre ausgeschüttet wird. In dieser Simulation spielen Dividenden keine Rolle – in der Realität sind sie ein wichtiger Renditebestandteil.',
+    definition: 'Ein Teil des Unternehmensgewinns, der an alle ausgeschüttet wird, die Aktien des Unternehmens halten. In dieser Simulation spielen Dividenden keine Rolle – in der Realität sind sie ein wichtiger Renditebestandteil.',
     example: 'Ein Unternehmen zahlt 2 € Dividende je Aktie. Wer 100 Aktien hält, erhält 200 € – unabhängig vom Kursverlauf.',
     related: ['Aktie', 'Rendite'],
   },

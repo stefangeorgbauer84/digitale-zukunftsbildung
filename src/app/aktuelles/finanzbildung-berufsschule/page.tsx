@@ -106,7 +106,7 @@ export default function FinanzbildungBerufsschulePage() {
               Warum Berufsschulen die ideale Plattform sind
             </h2>
             <p className="font-body text-gray-700 leading-relaxed mb-6">
-              Berufsschulen haben etwas, das andere Schulformen nicht haben: Lehrlinge, die bereits im Arbeitsverhältnis stehen. Finanzbildung ist für sie kein abstraktes Zukunftsthema, sondern sofort anwendbar. Wenn jemand in der Schule lernt, wie er seinen Lohnzettel liest, und am nächsten Tag die erste Abrechnung vom Betrieb bekommt, entsteht ein Lerneffekt, der sitzt.
+              Berufsschulen haben etwas, das andere Schulformen nicht haben: Lehrlinge, die bereits im Arbeitsverhältnis stehen. Finanzbildung ist für sie kein abstraktes Zukunftsthema, sondern sofort anwendbar. Wenn Lehrlinge in der Schule lernen, wie sie ihren Lohnzettel lesen, und am nächsten Tag die erste Abrechnung vom Betrieb bekommen, entsteht ein Lerneffekt, der sitzt.
             </p>
             <p className="font-body text-gray-700 leading-relaxed mb-6">
               Die Herausforderung: Berufsschulen haben wenig Unterrichtszeit: oft nur ein paar Wochen im Jahr, in denen Lehrlinge überhaupt in der Schule sind. Das schafft Druck. Es braucht Material, das in 15 oder 50 Minuten funktioniert, ohne dass Lehrkräfte stundenlang vorbereiten müssen.
@@ -141,7 +141,7 @@ export default function FinanzbildungBerufsschulePage() {
               Berufsschullehrkräfte sind Spezialisten in ihrem Fachbereich, nicht in Finanzbildung. Ein gutes Finanzbildungsprogramm für Berufsschulen muss deshalb ohne Fachkenntnisse der Lehrkraft funktionieren. Alle Inhalte, Erklärungen, Übungsaufgaben und Korrekturen müssen im System enthalten sein.
             </p>
             <p className="font-body text-gray-700 leading-relaxed mb-8">
-              Skills-UP! ist genau so aufgebaut: Lehrkräfte starten ein Modul, die Schülerinnen und Schüler arbeiten selbstständig oder in Gruppen, das Dashboard zeigt den Fortschritt. Kein Vorbereitungsaufwand, keine Notwendigkeit, Finanzexpertin oder Finanzexperte zu sein.
+              Skills-UP! ist genau so aufgebaut: Lehrkräfte starten ein Modul, die Jugendlichen arbeiten selbstständig oder in Gruppen, das Dashboard zeigt den Fortschritt. Kein Vorbereitungsaufwand, kein Vorwissen in Finanzthemen nötig.
             </p>
 
             <div className="not-prose rounded-2xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 60%, #1a5c4e 100%)' }}>

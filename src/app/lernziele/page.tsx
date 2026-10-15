@@ -106,9 +106,9 @@ const bloecke: Block[] = [
       { title: 'Konsumfallen: Vertiefung', duration: '50 min', objective: 'Du kennst die Psychologie hinter Konsumentscheidungen, verstehst BNPL-Risiken mit Zahlen und entwickelst eine persönliche Anti-Konsum-Strategie.' },
       { title: 'Ratenkauf & BNPL', duration: '15 min', objective: 'Du verstehst, wie Ratenkauf und BNPL wirklich funktionieren, kennst die versteckten Kosten und weißt, wann du ein gesetzliches Rücktrittsrecht hast.' },
       { title: 'Ratenkauf & BNPL: Vertiefung', duration: '50 min', objective: 'Du berechnest Kreditkosten, kennst alle Schutzrechte und die EU-Richtlinie 2023/2225 und kannst entscheiden, wann ein Ratenkauf vertretbar ist.' },
-      { title: 'Kryptowährungen & Krypto-Assets', duration: '15 min', objective: 'Du verstehst Grundbegriffe wie Blockchain, Bitcoin und Stablecoins, kennst die wichtigsten Risiken und weißt, dass Krypto in Österreich steuerpflichtig ist.' },
-      { title: 'Kryptowährungen & Krypto-Assets: Vertiefung', duration: '50 min', objective: 'Du verstehst wie Blockchain und Bitcoin funktionieren, kennst die EU-Regulierung (MiCA) und österreichische Steuerregeln und kannst Investitionsangebote kritisch prüfen.' },
-      { title: 'ETF & Aktien für Einsteiger', duration: '15 min', objective: 'Du verstehst was ein ETF ist und warum er für Einsteiger besser geeignet ist als Einzelaktien, und weißt wie du in Österreich legal und steuerkorrekt ein Depot eröffnest.' },
+      { title: 'Kryptowährungen & Krypto-Assets', duration: '15 min', objective: 'Du verstehst Grundbegriffe wie Blockchain, Stablecoins und Bitcoin, kennst die wichtigsten Risiken und weißt, dass Krypto in Österreich steuerpflichtig ist.' },
+      { title: 'Kryptowährungen & Krypto-Assets: Vertiefung', duration: '50 min', objective: 'Du verstehst wie Blockchain-Technologie und Bitcoin funktionieren, kennst die EU-Regulierung (MiCA) und österreichische Steuerregeln und kannst Investitionsangebote kritisch prüfen.' },
+      { title: 'ETF & Aktien zum Einstieg', duration: '15 min', objective: 'Du verstehst was ein ETF ist und warum er sich für den Einstieg besser eignet als Einzelaktien, und weißt wie du in Österreich legal und steuerkorrekt ein Depot eröffnest.' },
       { title: 'Handy- & Abo-Verträge', duration: '15 min', objective: 'Du kannst Handy- und Abo-Verträge vergleichen, kennst deine Kündigungsrechte und erkennst Abofallen bevor du drauftrittst.' },
     ],
   },
@@ -156,7 +156,7 @@ const simulationen: SimGoals[] = [
     lehrer: [
       'Aktienmarkt-Grundlagen und Börsenmechanismen (AT: Wiener Börse)',
       'Risikobewertung und Risikotoleranz: Verhaltensökonomie',
-      'Steuerliche Behandlung von Kursgewinnen und Dividenden (KESt 27,5 %)',
+      'Steuerliche Behandlung von Dividenden und Kursgewinnen (KESt 27,5 %)',
       'Lehrplanbezug: Wirtschaft & Recht, Finanzbildung, BIST 8',
     ],
   },
@@ -260,7 +260,7 @@ const simulationen: SimGoals[] = [
     schueler: [
       'Wie viel eine erste eigene Wohnung wirklich kostet (Kaution, Provision, Ausstattung)',
       'Unterschied Kaltmiete, Warmmiete und Betriebskosten',
-      'Was das MRG (Mietrechtsgesetz) für Mieter bedeutet',
+      'Was das MRG (Mietrechtsgesetz) für dich bedeutet, wenn du mietest',
       'Ein realistisches Wohnbudget planen',
     ],
     lehrer: [
@@ -365,7 +365,7 @@ export default function LernzielePage() {
               Jedes Modul.<br />Jede Simulation.<br />Jedes Lernziel.
             </h1>
             <p className="font-body text-white/65 text-xl max-w-2xl mx-auto leading-relaxed mb-10">
-              Skills-UP! macht Finanzbildung greifbar: hier siehst du transparent, was Schüler:innen in jedem
+              Skills-UP! macht Finanzbildung greifbar: hier siehst du transparent, was Jugendliche in jedem
               Modul und jeder interaktiven Simulation tatsächlich lernen.
             </p>
 
@@ -471,8 +471,8 @@ export default function LernzielePage() {
                 Die Simulationen
               </h2>
               <p className="font-body text-gray-600 max-w-2xl mx-auto leading-relaxed">
-                Statt nur zu lesen, entscheiden Schüler:innen selbst: in 17 Simulationen mit
-                jeweils eigenen Lernzielen für Schüler:innen und für Lehrpersonen.
+                Statt nur zu lesen, entscheiden Jugendliche selbst: in 17 Simulationen mit
+                jeweils eigenen Lernzielen für Jugendliche und für Lehrpersonen.
               </p>
             </div>
 
@@ -489,7 +489,7 @@ export default function LernzielePage() {
                     <div className="grid sm:grid-cols-2 divide-y sm:divide-y-0 sm:divide-x divide-gray-100">
                       <div className="p-5">
                         <p className="text-[11px] font-body font-700 uppercase tracking-widest text-primary-dark mb-3">
-                          Für Schüler:innen
+                          Für Jugendliche
                         </p>
                         <ul className="space-y-2">
                           {sim.schueler.map((z) => (

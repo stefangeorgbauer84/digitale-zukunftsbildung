@@ -102,7 +102,7 @@ export default function FinanzbildungPflichtfach2027() {
 
             <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4" style={{ color: '#1a1040' }}>Was genau ändert sich ab 2027?</h2>
             <p className="font-body text-gray-700 leading-relaxed mb-6">
-              Österreich hat sich im Rahmen der <strong>Nationalen Finanzbildungsstrategie</strong> verpflichtet, Finanzbildung als fächerübergreifendes Thema in alle weiterführenden Schulen zu integrieren. Das bedeutet konkret: Ab dem Schuljahr 2027/28 sollen Schülerinnen und Schüler aller Schultypen strukturiert auf finanzielle Alltagsentscheidungen vorbereitet werden.
+              Österreich hat sich im Rahmen der <strong>Nationalen Finanzbildungsstrategie</strong> verpflichtet, Finanzbildung als fächerübergreifendes Thema in alle weiterführenden Schulen zu integrieren. Das bedeutet konkret: Ab dem Schuljahr 2027/28 sollen Jugendliche aller Schultypen strukturiert auf finanzielle Alltagsentscheidungen vorbereitet werden.
             </p>
             <p className="font-body text-gray-700 leading-relaxed mb-6">
               Finanzbildung wird dabei nicht als eigenes Fach eingeführt, sondern in bestehende Fächer wie <em>Wirtschaft und Recht</em>, <em>Geographie und Wirtschaftskunde</em>, <em>Ethik</em> und <em>Berufsvorbereitung</em> integriert. Für Lehrkräfte bedeutet das: Mehr Pflichtinhalte in denselben Unterrichtsstunden.
@@ -131,7 +131,7 @@ export default function FinanzbildungPflichtfach2027() {
 
             <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4 mt-10" style={{ color: '#1a1040' }}>Was konkret unterrichtet werden soll</h2>
             <p className="font-body text-gray-700 leading-relaxed mb-4">
-              Die Nationale Finanzbildungsstrategie definiert sieben Kernkompetenzen, die Schülerinnen und Schüler bis zum Ende ihrer Schullaufbahn erwerben sollen:
+              Die Nationale Finanzbildungsstrategie definiert sieben Kernkompetenzen, die Jugendliche bis zum Ende ihrer Schullaufbahn erwerben sollen:
             </p>
             <div className="not-prose grid sm:grid-cols-2 gap-4 mb-8">
               {[
@@ -152,7 +152,7 @@ export default function FinanzbildungPflichtfach2027() {
 
             <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4 mt-10" style={{ color: '#1a1040' }}>Die Herausforderung für Lehrkräfte</h2>
             <p className="font-body text-gray-700 leading-relaxed mb-6">
-              Das ehrgeizige Ziel stellt Lehrerinnen und Lehrer vor eine reale Herausforderung: Finanzbildung soll fächerübergreifend unterrichtet werden, aber kaum ein Lehramt-Studium hat bisher praxisnahe Finanzbildung als Pflichtinhalt. Eine Umfrage des OECD INFE (International Network on Financial Education) zeigt, dass nur 23 % der österreichischen Lehrkräfte sich sicher fühlen, Finanzthemen kompetent zu unterrichten.
+              Das ehrgeizige Ziel stellt Lehrkräfte vor eine reale Herausforderung: Finanzbildung soll fächerübergreifend unterrichtet werden, aber kaum ein Lehramt-Studium hat bisher praxisnahe Finanzbildung als Pflichtinhalt. Eine Umfrage des OECD INFE (International Network on Financial Education) zeigt, dass nur 23 % der österreichischen Lehrkräfte sich sicher fühlen, Finanzthemen kompetent zu unterrichten.
             </p>
             <p className="font-body text-gray-700 leading-relaxed mb-6">
               Hinzu kommt: Unterrichtsmaterialien, die wirklich praxisnah, aktuell und für Jugendliche verständlich aufbereitet sind, fehlen an den meisten Schulen noch. Viele Lehrkräfte greifen auf veraltete Schulbuch-Kapitel zurück, die weder digitale Finanztools noch aktuelle Themen wie Buy-now-pay-later oder Kryptowährungen abdecken.
@@ -163,7 +163,7 @@ export default function FinanzbildungPflichtfach2027() {
                 „Fertig. Sofort.“
               </p>
               <p className="font-body text-gray-700 text-sm leading-relaxed mb-4">
-                Genau hier setzt Skills-UP! an. Alle Module sind lehrplankonform, didaktisch aufbereitet und können ohne Vorbereitungsaufwand eingesetzt werden. Lehrkräfte laden das Programm im Lehrer-Dashboard und unterrichten sofort.
+                Genau hier setzt Skills-UP! an. Alle Module sind lehrplankonform, didaktisch aufbereitet und können ohne Vorbereitungsaufwand eingesetzt werden. Lehrkräfte laden das Programm im Lehrkräfte-Dashboard und unterrichten sofort.
               </p>
               <Link href="/schulen"
                 className="inline-flex items-center gap-2 font-body font-700 text-sm px-5 py-3 rounded-xl text-white transition-all hover:opacity-90"
@@ -175,7 +175,7 @@ export default function FinanzbildungPflichtfach2027() {
 
             <h2 className="font-heading text-2xl md:text-3xl font-bold mb-4 mt-10" style={{ color: '#1a1040' }}>Was Schulen jetzt tun können</h2>
             <p className="font-body text-gray-700 leading-relaxed mb-4">
-              2027 klingt weit entfernt, aber Pilotprogramme, Lehrerdiskussionen und erste Curricula-Überarbeitungen laufen bereits jetzt. Schulen, die früh starten, haben mehrere Vorteile:
+              2027 klingt weit entfernt, aber Pilotprogramme, Diskussionen in den Kollegien und erste Curricula-Überarbeitungen laufen bereits jetzt. Schulen, die früh starten, haben mehrere Vorteile:
             </p>
             <ul className="font-body text-gray-700 leading-relaxed mb-6 space-y-3">
               <li className="flex items-start gap-3">

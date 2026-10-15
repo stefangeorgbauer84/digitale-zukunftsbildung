@@ -23,7 +23,7 @@ function InfoIcon() {
 }
 
 import Image from 'next/image'
-import { calculatePortfolioValue, roundToYear, START_YEAR } from '../lib/gameEngine'
+import { calculatePortfolioValue, roundToYear, START_YEAR, DIFFICULTY_LABELS } from '../lib/gameEngine'
 import TradeModal from './TradeModal'
 import AssetDetailPanel from './AssetDetailPanel'
 import MissionBanner from './MissionBanner'
@@ -75,14 +75,14 @@ const EVENT_HEADLINES: Record<string, string[]> = {
     'Konjunktursorgen belasten zyklische Branchen',
     'Defensive Sektoren zeigen sich krisenresistent',
     'Rückgang der Konsumausgaben trübt Unternehmensaussichten',
-    'Analysten empfehlen Portfolioabsicherung bei Abschwung',
+    'Analysehäuser empfehlen Portfolioabsicherung bei Abschwung',
   ],
   gesundheit: [
     'Neue Studie bestätigt Wirksamkeit digitaler Diagnostik',
     'HealthCare-Sektor zeigt Stärke in unsicherem Markt',
     'Telemedizin-Nachfrage steigt – Branche wächst',
     'Medizintechnik gilt als defensiver Hafen in volatilen Zeiten',
-    'Investoren setzen auf defensive Qualitätswerte im Gesundheitssektor',
+    'Der Markt setzt auf defensive Qualitätswerte im Gesundheitssektor',
   ],
   inflation: [
     'Inflation übersteigt Erwartungen – Kaufkraft sinkt',
@@ -436,7 +436,7 @@ export default function Dashboard({ state, assets, onBuy, onSell, onEndRound, on
               <span className="ml-2 text-xs font-normal text-text-muted">
                 · {state.currentRound}/{state.totalRounds} · {START_YEAR}–{START_YEAR + state.totalRounds - 1}
               </span>
-              <span className="ml-2 text-xs font-normal text-text-muted capitalize">· {state.difficulty}</span>
+              <span className="ml-2 text-xs font-normal text-text-muted">· {DIFFICULTY_LABELS[state.difficulty]}</span>
             </span>
           </div>
           <div className="flex items-center gap-3">

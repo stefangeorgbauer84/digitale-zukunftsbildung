@@ -49,7 +49,7 @@ const kostenModelle = [
     beschreibung: 'Demo-Zugang für eine Klasse, ein Modul, unbegrenzte Zeit.',
     enthalten: [
       '1 Modul vollständig freigeschalten',
-      'Bis zu 35 Schülerinnen und Schüler',
+      'Bis zu 35 Jugendliche',
       'Demo-Dashboard für Lehrkräfte',
       'Kein Kreditkarte, kein Vertrag',
     ],
@@ -63,8 +63,8 @@ const kostenModelle = [
     beschreibung: 'Vollzugang für alle Klassen einer Schule, ein Schuljahr.',
     enthalten: [
       'Alle 12+ Module freigeschaltet',
-      'Unbegrenzte Schüleranzahl',
-      'Vollständiges Lehrer-Dashboard',
+      'Unbegrenzt viele Jugendliche',
+      'Vollständiges Lehrkräfte-Dashboard',
       'Onboarding & Support inklusive',
     ],
     farbe: '#4a2d8a',

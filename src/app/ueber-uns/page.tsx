@@ -8,18 +8,18 @@ import BunnyVideoSektion, { type BunnyVideo } from '@/components/BunnyVideoSekti
 
 export const metadata: Metadata = {
   title: 'Über uns – Team & Mission | Skills-UP! Finanzbildung Österreich',
-  description: 'Skills-UP! erreicht heute über 1.830 Schüler:innen in österreichischen Schulen. WKÖ-zertifiziert, Top-3 MEGA Bildungsmillion 2025. Lern das Team und die Mission hinter dem Programm kennen.',
+  description: 'Skills-UP! erreicht heute über 1.830 Jugendliche in österreichischen Schulen. WKÖ-zertifiziert, Top-3 MEGA Bildungsmillion 2025. Lern das Team und die Mission hinter dem Programm kennen.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/ueber-uns' },
   openGraph: {
     title: 'Über uns – Team & Mission | Skills-UP! Österreich',
-    description: 'Über 1.830 Schüler:innen, WKÖ-zertifiziert, Top-3 MEGA Bildungsmillion 2025. Das Team hinter Skills-UP!',
+    description: 'Über 1.830 Jugendliche, WKÖ-zertifiziert, Top-3 MEGA Bildungsmillion 2025. Das Team hinter Skills-UP!',
     url: 'https://www.digitale-zukunftsbildung.eu/ueber-uns',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Über uns – Skills-UP! Finanzbildung Österreich',
-    description: 'Über 1.830 Schüler:innen. WKÖ-zertifiziert. Top-3 MEGA Bildungsmillion 2025.',
+    description: 'Über 1.830 Jugendliche. WKÖ-zertifiziert. Top-3 MEGA Bildungsmillion 2025.',
   },
 }
 
@@ -103,7 +103,7 @@ const orgJsonLd = {
       '@type': 'Person',
       name: 'Dr. Stefan Bauer',
       honorificPrefix: 'Dr.',
-      jobTitle: 'Obfrau-StV. & Vorstand',
+      jobTitle: 'Stellvertretender Vorsitz & Vorstand',
       url: 'https://www.digitale-zukunftsbildung.eu/ueber-uns',
       sameAs: ['https://www.linkedin.com/in/stefangeorgbauer/'],
       worksFor: { '@type': 'Organization', name: 'Verein zur Entwicklung der digitalen Zukunftsbildung' },
@@ -196,7 +196,7 @@ export default function UeberUns() {
               {
                 zahl: '24',
                 label: 'Lehrkräfte eingebunden',
-                sub: 'Aktive Multiplikator:innen',
+                sub: 'Geben Finanzbildung aktiv weiter',
                 color: '#D87228', bg: '#fdf0e6',
                 icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,
               },
@@ -262,7 +262,7 @@ export default function UeberUns() {
               Genau diese Erfahrung steckt heute in <strong className="text-primary-dark">Skills-UP!</strong>: Ihr Verbündeter an Ihrer Seite. Sie öffnen den Browser, die Klasse legt los.
             </p>
             <p className="text-text-muted font-body text-lg leading-relaxed">
-              <strong className="text-primary-dark">Unsere Vision:</strong> Geld und Finanzen gehören in den Schulalltag. Keine Lernende soll die Schule ohne ein gewisses Basisgrundwissen verlassen. Jugendliche sollen gestärkt ins &bdquo;echte Leben&ldquo; starten.
+              <strong className="text-primary-dark">Unsere Vision:</strong> Geld und Finanzen gehören in den Schulalltag. Niemand soll die Schule ohne ein gewisses Basisgrundwissen verlassen. Jugendliche sollen gestärkt ins &bdquo;echte Leben&ldquo; starten.
             </p>
           </div>
           <div className="relative">
@@ -325,7 +325,7 @@ export default function UeberUns() {
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="5 3 19 12 5 21 5 3"/></svg>,
                 color: '#4a2d8a', bg: '#f3f1f9',
                 title: 'Praxis statt Theorie',
-                desc: 'Lohnzettel, Budget, Depot, Gehaltsverhandlung: Schüler:innen lernen durch echtes Erleben in Simulationen, nicht durch Definitionen.',
+                desc: 'Lohnzettel, Budget, Depot, Gehaltsverhandlung: Jugendliche lernen durch echtes Erleben in Simulationen, nicht durch Definitionen.',
               },
               {
                 icon: <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>,

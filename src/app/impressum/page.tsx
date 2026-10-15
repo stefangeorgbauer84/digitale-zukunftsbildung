@@ -107,7 +107,7 @@ export default function Impressum() {
 
           <Section title="Vertretungsberechtigte Personen (Vorstand)">
             <p>Marina Winkler, BA MA – Obfrau (Vorsitzende) &amp; Projektleiterin</p>
-            <p>Dr. Stefan Bauer, Obfrau-StV. &amp; Vorstand, Verein digitale Zukunftsbildung</p>
+            <p>Dr. Stefan Bauer, Stellvertretender Vorsitz &amp; Vorstand, Verein digitale Zukunftsbildung</p>
           </Section>
 
           <Section title="Vereinsregister">
@@ -117,8 +117,8 @@ export default function Impressum() {
           <Section title="Haftungsausschluss">
             <p>
               Trotz sorgfältiger inhaltlicher Kontrolle übernehmen wir keine Haftung für die Inhalte
-              externer Links. Für den Inhalt verlinkter Seiten sind ausschließlich deren Betreiber:innen
-              verantwortlich. Alle Angaben auf dieser Website erfolgen ohne Gewähr; eine Haftung für
+              externer Links. Für den Inhalt verlinkter Seiten ist ausschließlich verantwortlich,
+              wer sie betreibt. Alle Angaben auf dieser Website erfolgen ohne Gewähr; eine Haftung für
               Schäden, die sich aus der Nutzung der veröffentlichten Inhalte ergeben, ist ausgeschlossen.
             </p>
           </Section>

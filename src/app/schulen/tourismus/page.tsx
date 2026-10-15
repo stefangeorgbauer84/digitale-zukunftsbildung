@@ -7,7 +7,7 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/schulen/tourismus' },
   openGraph: {
     title: 'Finanzbildung für Tourismusschulen – Skills-UP! Österreich',
-    description: 'Praxisnahe Finanzbildung für Schüler:innen an Tourismusschulen. Saisoneinkommen, Trinkgeld, Selbstständigkeit, Auslandsarbeit. Lehrplankonform, sofort einsetzbar.',
+    description: 'Praxisnahe Finanzbildung für Jugendliche an Tourismusschulen. Saisoneinkommen, Trinkgeld, Selbstständigkeit, Auslandsarbeit. Lehrplankonform, sofort einsetzbar.',
     url: 'https://www.digitale-zukunftsbildung.eu/schulen/tourismus',
     images: ['/fotos/skillsUP-1.jpg'],
   },
@@ -41,12 +41,12 @@ export default function TourismusPage() {
       schulstufen="9.–13. Schulstufe"
       lehrplanFach="Betriebswirtschaft · Rechnungswesen & Controlling · Tourismusmarketing · Persönlichkeitsbildung · Pflichtpraktikum"
       icon={icon}
-      lehrerProblem="Meine Schüler:innen lernen, wie man einen Betrieb kalkuliert. Aber wenn das erste Trinkgeld da ist und die Saison im April endet, wissen viele nicht, wie sie ihr eigenes Geld über den Sommer bringen."
-      intro="An Tourismusschulen lernen Schüler:innen Betriebswirtschaft, Rechnungswesen und Kalkulation für den Betrieb. Skills-UP! überträgt genau dieses Denken auf das eigene Leben: schwankendes Saisoneinkommen planen, Trinkgeld klug nutzen, Rücklagen für die Zwischensaison bilden und den Weg in die Selbstständigkeit finanziell vorbereiten."
+      lehrerProblem="Meine Klasse lernt, wie man einen Betrieb kalkuliert. Aber wenn das erste Trinkgeld da ist und die Saison im April endet, wissen viele nicht, wie sie ihr eigenes Geld über den Sommer bringen."
+      intro="An Tourismusschulen lernen Jugendliche Betriebswirtschaft, Rechnungswesen und Kalkulation für den Betrieb. Skills-UP! überträgt genau dieses Denken auf das eigene Leben: schwankendes Saisoneinkommen planen, Trinkgeld klug nutzen, Rücklagen für die Zwischensaison bilden und den Weg in die Selbstständigkeit finanziell vorbereiten."
       lehrplanPassung={[
         {
           fach: 'Betriebswirtschaft (BW)',
-          kontext: 'Schüler:innen kalkulieren bereits Deckungsbeiträge und Kosten für den Betrieb. Skills-UP! macht den Transfer: Dieselben Werkzeuge auf das eigene Haushaltsbudget angewendet. Vom Betriebsergebnis zur persönlichen Bilanz.',
+          kontext: 'Die Jugendlichen kalkulieren bereits Deckungsbeiträge und Kosten für den Betrieb. Skills-UP! macht den Transfer: Dieselben Werkzeuge auf das eigene Haushaltsbudget angewendet. Vom Betriebsergebnis zur persönlichen Bilanz.',
         },
         {
           fach: 'Rechnungswesen & Controlling (RWC)',
@@ -68,32 +68,32 @@ export default function TourismusPage() {
       unterrichtsEinheiten={[
         {
           schritt: 'Einstieg: Die Saison-Rechnung',
-          was: '"Du verdienst von Juni bis September gut, samt Trinkgeld. Dann ist drei Monate Flaute. Wie viel darfst du im Sommer wirklich ausgeben?". Schüler:innen schätzen zuerst, dann zeigt die Simulation die Realität. Das löst sofort Diskussionen aus.',
+          was: '"Du verdienst von Juni bis September gut, samt Trinkgeld. Dann ist drei Monate Flaute. Wie viel darfst du im Sommer wirklich ausgeben?". Die Jugendlichen schätzen zuerst, dann zeigt die Simulation die Realität. Das löst sofort Diskussionen aus.',
           zeitMinuten: 10,
         },
         {
           schritt: 'Simulation Saisoneinkommen',
-          was: 'Die App führt durch eine komplette Tourismus-Saison: Grundlohn nach Gastgewerbe-KV, Trinkgeld, Überstunden, dann die einkommensschwache Zwischensaison. Schüler:innen erleben, warum Rücklagen hier überlebenswichtig sind.',
+          was: 'Die App führt durch eine komplette Tourismus-Saison: Grundlohn nach Gastgewerbe-KV, Trinkgeld, Überstunden, dann die einkommensschwache Zwischensaison. Die Jugendlichen erleben, warum Rücklagen hier überlebenswichtig sind.',
           zeitMinuten: 20,
         },
         {
           schritt: 'Trinkgeld & Auslandsarbeit',
-          was: 'Ein eigenes Modul zu Trinkgeld in Österreich und zur Saison im Ausland (Hotel, Kreuzfahrt, Skigebiet). Was ist beim Trinkgeld steuerlich zu beachten, was bei Arbeit über die Grenze? Die App erklärt alles, du musst kein Experte sein.',
+          was: 'Ein eigenes Modul zu Trinkgeld in Österreich und zur Saison im Ausland (Hotel, Kreuzfahrt, Skigebiet). Was ist beim Trinkgeld steuerlich zu beachten, was bei Arbeit über die Grenze? Die App erklärt alles, Vorwissen brauchst du keines.',
           zeitMinuten: 15,
         },
         {
           schritt: 'Eigener Betrieb: erster Finanzplan',
-          was: 'Optional: Schüler:innen skizzieren in Kurzform die Finanzen einer eigenen Geschäftsidee und vergleichen sie mit dem privaten Budget. Das trainiert genau das unternehmerische Denken, das an Tourismusschulen ohnehin Ziel ist.',
+          was: 'Optional: Die Jugendlichen skizzieren in Kurzform die Finanzen einer eigenen Geschäftsidee und vergleichen sie mit dem privaten Budget. Das trainiert genau das unternehmerische Denken, das an Tourismusschulen ohnehin Ziel ist.',
           zeitMinuten: 5,
         },
       ]}
       module={[
-        { titel: 'Saisoneinkommen & Budget', lernziel: 'Schwankendes Einkommen über das Jahr planen, Gastgewerbe-KV verstehen, Rücklagen für die Zwischensaison berechnen. Liquidität wie im Betrieb, nur fürs eigene Leben.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Einkommen', icon: sunIcon },
-        { titel: 'Trinkgeld & Zusatzeinkommen', lernziel: 'Trinkgeld richtig einordnen: steuerliche Behandlung in Österreich, faire Aufteilung im Team, und warum man es nicht als Dauereinkommen verplanen sollte.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Einkommen', icon: moneyIcon },
-        { titel: 'Sparen & Rücklagen', lernziel: 'Zinseszins, Inflation und der Notgroschen für die Off-Season. Warum Tourismusbeschäftigte größere Reserven brauchen und wie ein Sparplan trotz schwankendem Einkommen funktioniert.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Vorsorge', icon: piggyIcon },
+        { titel: 'Saisoneinkommen & Budget', lernziel: 'Schwankendes Einkommen über das Jahr planen, Gastgewerbe-KV verstehen, Rücklagen für die Zwischensaison berechnen. Liquidität wie im Betrieb, nur fürs eigene Leben.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Einkommen', icon: sunIcon },
+        { titel: 'Trinkgeld & Zusatzeinkommen', lernziel: 'Trinkgeld richtig einordnen: steuerliche Behandlung in Österreich, faire Aufteilung im Team, und warum man es nicht als Dauereinkommen verplanen sollte.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Einkommen', icon: moneyIcon },
+        { titel: 'Sparen & Rücklagen', lernziel: 'Zinseszins, Inflation und der Notgroschen für die Off-Season. Warum Tourismusbeschäftigte größere Reserven brauchen und wie ein Sparplan trotz schwankendem Einkommen funktioniert.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Vorsorge', icon: piggyIcon },
         { titel: 'Arbeiten im Ausland', lernziel: 'Saison im Ausland, Kreuzfahrt oder Hotelkette: Währung, Lebenshaltungskosten, Steuer und Sozialversicherung über die Grenze realistisch einschätzen.', dauer: '15 oder 50 Min', level: 'Mittel', kategorie: 'Karriere', icon: globeIcon },
         { titel: 'Selbstständigkeit & eigener Betrieb', lernziel: 'Vom Traum zum Plan: Eigenkapital, laufende Kosten, Privatentnahme. Wie hängt das Betriebsergebnis mit dem eigenen Lebensunterhalt zusammen?', dauer: '15 oder 50 Min', level: 'Mittel', kategorie: 'Unternehmertum', icon: chartIcon },
-        { titel: 'Versicherungen & Absicherung', lernziel: 'Welche Versicherungen brauchen Beschäftigte mit Saisonverträgen wirklich? Arbeitslosengeld in der Zwischensaison, Selbstbehalt und Prämien verstehen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Versicherungen', icon: shieldIcon },
+        { titel: 'Versicherungen & Absicherung', lernziel: 'Welche Versicherungen brauchen Beschäftigte mit Saisonverträgen wirklich? Arbeitslosengeld in der Zwischensaison, Selbstbehalt und Prämien verstehen.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Versicherungen', icon: shieldIcon },
       ]}
       simulationen={[
         { titel: 'Saison-Budget-Planer', untertitel: 'Einkommen über eine ganze Saison verteilen, Trinkgeld einplanen und Rücklagen für die Flaute bilden. Liquiditätsplanung fürs eigene Leben.', dauer: '20–25 Min', icon: sunIcon },
@@ -120,30 +120,30 @@ export default function TourismusPage() {
       features={[
         {
           titel: 'Saison-Einkommen-Simulation',
-          nutzenfuerLehrer: 'Schüler:innen erleben virtuell eine komplette Tourismus-Saison samt Flaute danach. Das ist realistischer als jedes Lehrbuchbeispiel und macht sofort klar, warum Rücklagen in dieser Branche kein Luxus sind. Gestartet in 2 Minuten.',
+          nutzenfuerLehrer: 'Die Jugendlichen erleben virtuell eine komplette Tourismus-Saison samt Flaute danach. Das ist realistischer als jedes Lehrbuchbeispiel und macht sofort klar, warum Rücklagen in dieser Branche kein Luxus sind. Gestartet in 2 Minuten.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M4.93 4.93l1.41 1.41m11.32 11.32l1.41 1.41M2 12h2m16 0h2M4.93 19.07l1.41-1.41m11.32-11.32l1.41-1.41"/></svg>,
         },
         {
           titel: 'BWL trifft eigenes Leben',
-          nutzenfuerLehrer: 'Deine Schüler:innen können bereits kalkulieren und Einnahmen-Ausgaben-Rechnungen lesen. Skills-UP! überträgt dieses Wissen direkt aufs Privatleben. Du baust auf dem auf, was im BW- und RW-Unterricht ohnehin gelehrt wird.',
+          nutzenfuerLehrer: 'Deine Klasse kann bereits kalkulieren und Einnahmen-Ausgaben-Rechnungen lesen. Skills-UP! überträgt dieses Wissen direkt aufs Privatleben. Du baust auf dem auf, was im BW- und RW-Unterricht ohnehin gelehrt wird.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>,
         },
         {
           titel: 'Auslands- & Selbstständigkeits-Module',
-          nutzenfuerLehrer: 'Viele Tourismusschüler:innen wollen ins Ausland oder später einen eigenen Betrieb. Eigene Module behandeln genau diese Wege sachlich: Chancen, Kosten, Risiken. Du musst weder Steuerberater noch Auswanderungsexperte sein.',
+          nutzenfuerLehrer: 'Viele Jugendliche an Tourismusschulen wollen ins Ausland oder später einen eigenen Betrieb. Eigene Module behandeln genau diese Wege sachlich: Chancen, Kosten, Risiken. Steuer- oder Auswanderungswissen brauchst du dafür keines.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>,
         },
         {
           titel: 'Selbstständige Module',
-          nutzenfuerLehrer: 'Schüler:innen arbeiten eigenständig und im eigenen Tempo, gerade in der Praktikumsvorbereitung oder in Randstunden ideal. Das spart dir Moderationszeit und passt zur Eigenverantwortung, die an Tourismusschulen ohnehin Ziel ist.',
+          nutzenfuerLehrer: 'Die Jugendlichen arbeiten eigenständig und im eigenen Tempo, gerade in der Praktikumsvorbereitung oder in Randstunden ideal. Das spart dir Moderationszeit und passt zur Eigenverantwortung, die an Tourismusschulen ohnehin Ziel ist.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>,
         },
       ]}
       lehrerZitat={{
-        text: 'Wir rechnen im Unterricht ständig Betriebsergebnisse. Aber als ich gefragt habe, wer von einem Sommer-Trinkgeld auch im November noch was hat, war es still. Nach der Saison-Simulation kam eine Schülerin und meinte, sie habe zum ersten Mal verstanden, warum ihre Mutter im Gastgewerbe immer vom Zurücklegen redet.',
+        text: 'Wir rechnen im Unterricht ständig Betriebsergebnisse. Aber als ich gefragt habe, wer von einem Sommer-Trinkgeld auch im November noch was hat, war es still. Nach der Saison-Simulation kam eine Jugendliche aus der Klasse und meinte, sie habe zum ersten Mal verstanden, warum ihre Mutter im Gastgewerbe immer vom Zurücklegen redet.',
         person: 'Lehrkraft Betriebswirtschaft, Tourismusschule Salzburg, 11. Schulstufe',
       }}
-      gruenderStatement="Tourismusschüler:innen lernen, einen Betrieb zu führen, bevor viele von ihnen ihr eigenes Geld führen. Genau dieser Branche fehlt oft die private Finanzbildung: schwankendes Einkommen, Trinkgeld, Saisonarbeit. Skills-UP! schließt diese Lücke und baut dabei auf dem betriebswirtschaftlichen Denken auf, das die Schule ohnehin vermittelt."
+      gruenderStatement="An Tourismusschulen lernen Jugendliche, einen Betrieb zu führen, bevor viele von ihnen ihr eigenes Geld führen. Genau dieser Branche fehlt oft die private Finanzbildung: schwankendes Einkommen, Trinkgeld, Saisonarbeit. Skills-UP! schließt diese Lücke und baut dabei auf dem betriebswirtschaftlichen Denken auf, das die Schule ohnehin vermittelt."
       lernpfad={[
         {
           stufe: 'Grundlagen',
@@ -178,11 +178,11 @@ export default function TourismusPage() {
         szenario: 'Sommersaison im Hotel am See. Vier Monate gutes Einkommen plus Trinkgeld. Aber im Oktober ist Schluss, und bis zur Wintersaison sind es drei Monate. Die große Frage: Wie viel vom Sommergeld darfst du wirklich ausgeben?',
         schritte: [
           { label: 'Saison-Einkommen erfassen', beschreibung: 'Die App rechnet Grundlohn nach Gastgewerbe-KV plus Trinkgeld und Überstunden über die vier Monate zusammen.' },
-          { label: 'Off-Season einplanen', beschreibung: 'Schüler:innen sehen die drei einkommensschwachen Monate danach und wie viel Geld pro Monat dann fehlt.' },
+          { label: 'Off-Season einplanen', beschreibung: 'Die Jugendlichen sehen die drei einkommensschwachen Monate danach und wie viel Geld pro Monat dann fehlt.' },
           { label: 'Rücklage festlegen', beschreibung: 'Wie viel muss aus jedem Saison-Monat zurückgelegt werden, damit die Flaute gedeckt ist? Die App zeigt den Effekt sofort.' },
           { label: 'Entscheidung treffen', beschreibung: 'Am Ende steht ein realistischer Ausgabenrahmen für den Sommer, der den ganzen Jahresverlauf berücksichtigt.' },
         ],
-        ergebnis: 'Schüler:innen verstehen, dass ein gutes Saisongehalt kein Monatsgehalt ist, und können ihr Einkommen über das ganze Jahr verteilen, bevor sie zum ersten Mal in der Saison stehen.',
+        ergebnis: 'Die Jugendlichen verstehen, dass ein gutes Saisongehalt kein Monatsgehalt ist, und können ihr Einkommen über das ganze Jahr verteilen, bevor sie zum ersten Mal in der Saison stehen.',
         mockUI: [
           { zeile: 'Mein Saison-Budget', typ: 'label' },
           { zeile: 'Saison-Einkommen (4 Monate)|9.200,00 €', typ: 'wert' },
@@ -198,8 +198,8 @@ export default function TourismusPage() {
       }}
       faqs={[
         { q: 'In welchen Fächern der Tourismusschule ist Skills-UP! einsetzbar?', a: 'Betriebswirtschaft, Rechnungswesen und Controlling, Tourismusmarketing, Persönlichkeitsbildung oder in der Begleitung zum Pflichtpraktikum. Die Module sind flexibel, 15 oder 50 Minuten, ohne Vorbereitungsaufwand für die Lehrkraft.' },
-        { q: 'Warum braucht es eigene Finanzbildung für den Tourismus?', a: 'Weil das Einkommen in dieser Branche anders funktioniert: Saisonarbeit, Trinkgeld, Off-Season und oft Arbeit im Ausland. Schüler:innen lernen zwar, einen Betrieb zu kalkulieren, aber selten, wie sie ihr eigenes schwankendes Einkommen über das Jahr managen. Genau das deckt Skills-UP! ab.' },
-        { q: 'Baut das auf dem betriebswirtschaftlichen Unterricht auf?', a: 'Ja. Schüler:innen können bereits kalkulieren und Einnahmen-Ausgaben-Rechnungen lesen. Skills-UP! überträgt dieses Denken direkt auf die private Finanzplanung, vom Betriebsergebnis zur eigenen Liquidität.' },
+        { q: 'Warum braucht es eigene Finanzbildung für den Tourismus?', a: 'Weil das Einkommen in dieser Branche anders funktioniert: Saisonarbeit, Trinkgeld, Off-Season und oft Arbeit im Ausland. Jugendliche lernen zwar, einen Betrieb zu kalkulieren, aber selten, wie sie ihr eigenes schwankendes Einkommen über das Jahr managen. Genau das deckt Skills-UP! ab.' },
+        { q: 'Baut das auf dem betriebswirtschaftlichen Unterricht auf?', a: 'Ja. Die Klasse kann bereits kalkulieren und Einnahmen-Ausgaben-Rechnungen lesen. Skills-UP! überträgt dieses Denken direkt auf die private Finanzplanung, vom Betriebsergebnis zur eigenen Liquidität.' },
         { q: 'Wie viel technisches Setup ist nötig?', a: 'Keines. Skills-UP! läuft im Browser, ist DSGVO-konform und braucht keine Installation, kein IT-Ticket und keinen Admin-Zugang. Start in unter 2 Minuten.' },
       ]}
       verwandteSchultypen={[
@@ -209,13 +209,13 @@ export default function TourismusPage() {
       ]}
       testimonials={[
         {
-          text: 'Im Tourismus ist das Einkommen ein Auf und Ab. Die Saison-Simulation hat meinen Schüler:innen das erste Mal greifbar gemacht, warum man nicht das ganze Sommergeld verleben darf. Das ist Lebensvorbereitung, nicht nur Unterricht.',
+          text: 'Im Tourismus ist das Einkommen ein Auf und Ab. Die Saison-Simulation hat meiner Klasse das erste Mal greifbar gemacht, warum man nicht das ganze Sommergeld verleben darf. Das ist Lebensvorbereitung, nicht nur Unterricht.',
           person: 'Mag. Birgit H.',
           rolle: 'Lehrerin Rechnungswesen & Controlling',
           schule: 'Tourismusschule Tirol',
         },
         {
-          text: 'Viele meiner Schüler:innen wollen später ein eigenes Lokal. Mit dem Selbstständigkeits-Modul haben sie zum ersten Mal verstanden, dass Betriebsergebnis und Privatentnahme zwei verschiedene Dinge sind. Kein Aufwand für mich, volle Konzentration bei ihnen.',
+          text: 'Viele in meiner Klasse wollen später ein eigenes Lokal. Mit dem Selbstständigkeits-Modul haben sie zum ersten Mal verstanden, dass Betriebsergebnis und Privatentnahme zwei verschiedene Dinge sind. Kein Aufwand für mich, volle Konzentration bei ihnen.',
           person: 'Mag. Thomas R.',
           rolle: 'Lehrer Betriebswirtschaft',
         },

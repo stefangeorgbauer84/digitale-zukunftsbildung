@@ -21,7 +21,7 @@ export interface Modul {
   titel: string
   lernziel: string
   dauer: string
-  level: 'Einsteiger' | 'Mittel'
+  level: 'Einstieg' | 'Mittel'
   kategorie: string
   icon: React.ReactNode
 }
@@ -231,9 +231,9 @@ export default function SchulPage({
               <ul className="space-y-4">
                 {[
                   { text: '0 Minuten Vorbereitung pro Einheit', detail: 'Fertige Module, Aufgaben und Simulationen. Alles startklar.' },
-                  { text: 'Schüler:innen-Dashboard live im Blick', detail: 'Wer ist wo? Wer braucht Unterstützung? Ein Klick genügt.' },
+                  { text: 'Klassen-Dashboard live im Blick', detail: 'Wer ist wo? Wer braucht Unterstützung? Ein Klick genügt.' },
                   { text: 'Passt in bestehende Stunden', detail: lehrplanFach + '. Kein Extra-Fach nötig.' },
-                  { text: 'Schüler:innen machen freiwillig weiter', detail: 'Gamification und Peer-Videos erzeugen echte Eigenmotivation.' },
+                  { text: 'Jugendliche machen freiwillig weiter', detail: 'Gamification und Peer-Videos erzeugen echte Eigenmotivation.' },
                   { text: 'DSGVO-konform, kein IT-Aufwand', detail: 'Kein Antrag, keine Installation, kein Elternbrief zur Datenweitergabe.' },
                 ].map((item) => (
                   <li key={item.text} className="flex items-start gap-3">
@@ -277,7 +277,7 @@ export default function SchulPage({
       <LernzieleTeaser
         anzahl={6}
         offset={3}
-        headline="Was Schüler:innen nach Skills-UP! wirklich können."
+        headline="Was Jugendliche nach Skills-UP! wirklich können."
         eyebrow="Konkrete Lernziele aus den Modulen"
       />
 
@@ -483,7 +483,7 @@ export default function SchulPage({
               <div>
                 <p className="font-heading font-700 text-base mb-2" style={{ color: '#1a1040' }}>12+ fertige Module</p>
                 <p className="font-body text-sm text-text-muted leading-relaxed">
-                  Jedes Modul ist eine komplett ausgearbeitete Unterrichtseinheit: Lernziele, Aufgaben, Reflexionsfragen und Lehrerhinweise sind dabei. Kurzversion (15 Min) oder Langversion (50 Min), je nach Stunde.
+                  Jedes Modul ist eine komplett ausgearbeitete Unterrichtseinheit: Lernziele, Aufgaben, Reflexionsfragen und Hinweise für Lehrkräfte sind dabei. Kurzversion (15 Min) oder Langversion (50 Min), je nach Stunde.
                 </p>
               </div>
               <ul className="space-y-1.5 mt-auto">
@@ -506,7 +506,7 @@ export default function SchulPage({
               <div>
                 <p className="font-heading font-700 text-base mb-2" style={{ color: '#1a1040' }}>17 Simulationen</p>
                 <p className="font-body text-sm text-text-muted leading-relaxed">
-                  Schüler:innen erleben echte Finanzentscheidungen in sicherer Umgebung: vom Gehaltszettel lesen bis zur Gehaltsverhandlung. Du startest die Simulation, der Rest läuft von allein.
+                  Jugendliche erleben echte Finanzentscheidungen in sicherer Umgebung: vom Gehaltszettel lesen bis zur Gehaltsverhandlung. Du startest die Simulation, der Rest läuft von allein.
                 </p>
               </div>
               <ul className="space-y-1.5 mt-auto">
@@ -556,11 +556,11 @@ export default function SchulPage({
                 <span className="inline-block text-xs font-body font-700 px-2.5 py-1 rounded-full mb-3 text-white" style={{ background: farbe }}>Analytics-Dashboard</span>
                 <p className="font-heading font-700 text-lg mb-2" style={{ color: '#1a1040' }}>Lernfortschritt auf einen Blick.</p>
                 <p className="font-body text-sm text-text-muted leading-relaxed mb-4">
-                  Dein Dashboard zeigt dir den Lernfortschritt jeder Schüler:in in Echtzeit. Welches Modul wurde abgeschlossen? Welches Quiz hat wer nicht bestanden? Einfach öffnen und sehen, ohne Excel, ohne Rückfragen.
+                  Dein Dashboard zeigt dir den Lernfortschritt deiner ganzen Klasse, Person für Person, in Echtzeit. Welches Modul wurde abgeschlossen? Welches Quiz hat wer nicht bestanden? Einfach öffnen und sehen, ohne Excel, ohne Rückfragen.
                 </p>
                 <div className="grid grid-cols-2 gap-3">
                   {[
-                    { label: 'Fortschritt pro Schüler:in', icon: '📊' },
+                    { label: 'Fortschritt pro Person', icon: '📊' },
                     { label: 'Quiz-Ergebnisse live', icon: '✅' },
                     { label: 'Klassenvergleich', icon: '🏫' },
                     { label: 'Export für Zeugnis', icon: '📄' },
@@ -748,7 +748,7 @@ export default function SchulPage({
                     <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
                   </svg>
                   <div>
-                    <p className="font-body font-700 text-sm text-white/80 mb-0.5">Was Schüler:innen mitnehmen</p>
+                    <p className="font-body font-700 text-sm text-white/80 mb-0.5">Was Jugendliche mitnehmen</p>
                     <p className="font-body text-sm leading-relaxed" style={{ color: `${farbe}cc` }}>{highlightSimulation.ergebnis}</p>
                   </div>
                 </div>
@@ -856,7 +856,7 @@ export default function SchulPage({
                 <span style={{ color: farbe }}>In deinem eigenen Tempo.</span>
               </h2>
               <p className="font-body text-text-muted text-lg max-w-xl mx-auto">
-                Schüler:innen starten dort, wo sie stehen, und arbeiten sich Schritt für Schritt vor. Jede Stufe baut auf der vorherigen auf.
+                Jugendliche starten dort, wo sie stehen, und arbeiten sich Schritt für Schritt vor. Jede Stufe baut auf der vorherigen auf.
               </p>
             </div>
 
@@ -1017,7 +1017,7 @@ export default function SchulPage({
               <span style={{ color: farbe }}>Ohne Kompromisse.</span>
             </h2>
             <p className="font-body text-text-muted text-lg max-w-xl mx-auto">
-              Skills-UP! wurde so entwickelt, dass alle drei Gruppen profitieren: Schüler:innen, Lehrkräfte und die Schule als Institution.
+              Skills-UP! wurde so entwickelt, dass alle drei Gruppen profitieren: Jugendliche, Lehrkräfte und die Schule als Institution.
             </p>
           </div>
 
@@ -1032,7 +1032,7 @@ export default function SchulPage({
                 </div>
                 <div>
                   <p className="font-body text-white/60 text-xs font-700 uppercase tracking-widest">Perspektive</p>
-                  <p className="font-heading font-700 text-white text-base leading-tight">Schüler:innen</p>
+                  <p className="font-heading font-700 text-white text-base leading-tight">Jugendliche</p>
                 </div>
               </div>
               <div className="p-6 bg-white">
@@ -1081,7 +1081,7 @@ export default function SchulPage({
               <div className="p-6 bg-white">
                 <ul className="space-y-4">
                   {[
-                    { titel: '0 Minuten Vorbereitung', text: 'Jedes Modul ist vollständig ausgearbeitet: Lernziele, Aufgaben, Reflexionsfragen und Lehrerhinweise inklusive.' },
+                    { titel: '0 Minuten Vorbereitung', text: 'Jedes Modul ist vollständig ausgearbeitet: Lernziele, Aufgaben, Reflexionsfragen und Hinweise für Lehrkräfte inklusive.' },
                     { titel: 'Kein IT-Aufwand', text: 'Kein Ticket, keine Installation, kein Elternbrief. Klasse anmelden, Link schicken, fertig.' },
                     { titel: 'Live-Dashboard', text: 'Du siehst auf einen Blick, wer wo steht, welche Themen Probleme machen und wer Unterstützung braucht.' },
                     { titel: 'Keine Korrektur', text: 'Quizze werden automatisch ausgewertet. Kein einziger Test zum Einsammeln oder Korrigieren.' },
@@ -1124,7 +1124,7 @@ export default function SchulPage({
                     { titel: 'Offiziell zertifiziert', text: 'WKÖ-zertifiziert, Gütesiegel für digitale Qualitäts-Lern-Apps, Teil der nationalen Finanzbildungsstrategie.' },
                     { titel: 'Ausgezeichnet', text: 'Top-3 Projekt der MEGA Bildungsmillion 2025, unter hunderten Einreichungen österreichweit.' },
                     { titel: 'Kein Extra-Fach', text: 'Skills-UP! ergänzt bestehende Stunden, braucht keine eigene Stunde im Stundenplan.' },
-                    { titel: 'Nachweisbare Wirkung', text: 'Zertifikate für Schüler:innen, Dashboard-Auswertungen für die Schule, alles dokumentierbar.' },
+                    { titel: 'Nachweisbare Wirkung', text: 'Zertifikate für Jugendliche, Dashboard-Auswertungen für die Schule, alles dokumentierbar.' },
                     { titel: 'Skalierbar', text: 'Ob eine Klasse oder der ganze Jahrgang: Setup-Aufwand bleibt gleich, egal wie viele mitmachen.' },
                   ].map((v) => (
                     <li key={v.titel} className="flex items-start gap-3">
@@ -1153,7 +1153,7 @@ export default function SchulPage({
                 <ul className="space-y-3">
                   {[
                     'Lehrkraft erklärt Lohnzettel selbst von der Tafel',
-                    'Schüler:innen schlafen bei Finanzthemen ein',
+                    'Die Klasse schläft bei Finanzthemen ein',
                     'Kein Lehrplanbezug dokumentiert',
                     'Eltern fragen nach dem Nutzen',
                     'Kein Nachweis was wirklich gelernt wurde',
@@ -1171,10 +1171,10 @@ export default function SchulPage({
                 <p className="font-body text-xs font-700 uppercase tracking-widest mb-3" style={{ color: `${farbe}cc` }}>Mit Skills-UP!</p>
                 <ul className="space-y-3">
                   {[
-                    'Simulation startet, Schüler:innen rechnen selbst',
+                    'Simulation startet, Jugendliche rechnen selbst',
                     'Engagement durch Peer-Videos und Gamification',
                     '15 messbare Lernziele + Lehrplanbezug bereits dokumentiert',
-                    'Zertifikat für Schüler:innen als sichtbares Ergebnis',
+                    'Zertifikat für Jugendliche als sichtbares Ergebnis',
                     'Dashboard zeigt live, wer was wirklich gelernt hat',
                   ].map((t) => (
                     <li key={t} className="flex items-start gap-2.5">
@@ -1349,7 +1349,7 @@ export default function SchulPage({
               </div>
               <div className="text-center md:text-left">
                 <p className="font-heading font-700 text-white text-base leading-tight">Dr. Stefan Bauer</p>
-                <p className="font-body text-white/60 text-xs mt-0.5">Obfrau-StV. &amp; Vorstand</p>
+                <p className="font-body text-white/60 text-xs mt-0.5">Stellvertretender Vorsitz &amp; Vorstand</p>
                 <p className="font-body text-white/40 text-xs">Verein digitale Zukunftsbildung</p>
               </div>
             </div>
@@ -1427,12 +1427,12 @@ export default function SchulPage({
       <BunnyVideoSektion
         eyebrow="Für deine Klasse"
         headline="Was Jugendliche über Skills-UP! sagen."
-        lead="Echte Schülerinnen und Schüler, echte Reaktionen, so erlebt die Klasse Skills-UP!."
+        lead="Echte Stimmen, echte Reaktionen, so erlebt die Klasse Skills-UP!."
         variante="dunkel"
         videos={[{
           guid: '1c0ebf68-0799-42f2-a324-cbbbd936b333',
           badge: 'Für deine Klasse',
-          titel: 'Skills-UP! aus Schülerperspektive',
+          titel: 'Skills-UP! aus Sicht der Jugendlichen',
           beschreibung: 'Wie Jugendliche über Skills-UP! und Finanzbildung sprechen.',
           sekunden: 54,
           akzent: '#2a8a76',

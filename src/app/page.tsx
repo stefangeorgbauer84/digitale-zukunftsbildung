@@ -15,10 +15,10 @@ import NewsletterSignup from '@/components/NewsletterSignup'
 
 export const metadata: Metadata = {
   title: 'Skills-UP! | Finanzbildung für Schulen in Österreich',
-  description: 'Fertige Unterrichtsmodule, Praxissimulationen und ein Lehrer-Dashboard für AHS, HAK, HTL, HLW, BAfEP, BASOP und PTS. Lehrplankonform, DSGVO-sicher, sofort einsetzbar.',
+  description: 'Fertige Unterrichtsmodule, Praxissimulationen und ein Lehrkräfte-Dashboard für AHS, HAK, HTL, HLW, BAfEP, BASOP und PTS. Lehrplankonform, DSGVO-sicher, sofort einsetzbar.',
   openGraph: {
     title: 'Skills-UP! | Finanzbildung für österreichische Schulen',
-    description: 'Fertige Unterrichtsmodule, Praxissimulationen und ein Lehrer-Dashboard. Lehrplankonform, DSGVO-sicher, sofort einsetzbar. Für AHS, HAK, HTL, HLW, BAfEP, PTS und Berufsschulen.',
+    description: 'Fertige Unterrichtsmodule, Praxissimulationen und ein Lehrkräfte-Dashboard. Lehrplankonform, DSGVO-sicher, sofort einsetzbar. Für AHS, HAK, HTL, HLW, BAfEP, PTS und Berufsschulen.',
     images: ['/fotos/skillsUP-1.jpg'],
   },
   twitter: { card: 'summary_large_image' },
@@ -41,7 +41,7 @@ const partnerLogos = [
 /* ── Program previews ───────────────────────────────────── */
 const programPics = [
   { src: '/fotos/Einblick%20ins%20Programm%201.png', alt: 'Interaktive Gruppenübung im Skills-UP! Kurs' },
-  { src: '/fotos/Einblick%20ins%20Programm%202.png', alt: 'Teilnehmerinnen beim digitalen Lernpfad' },
+  { src: '/fotos/Einblick%20ins%20Programm%202.png', alt: 'Jugendliche beim digitalen Lernpfad' },
   { src: '/fotos/Einblick%20ins%20Programm%203.png', alt: 'KI-Simulation im Skills-UP! Workshop' },
   { src: '/fotos/Einblick%20ins%20Programm%204.png', alt: 'Gruppenarbeit zu digitalen Werkzeugen' },
   { src: '/fotos/Einblick%20ins%20Programm%205.png', alt: 'Präsentation im Skills-UP! Training' },
@@ -92,7 +92,7 @@ const angebote = [
     zielgruppe: 'Alle Klassen im Blick',
     maxPersonen: 'Punkte, Quizzes, Badges',
     foerderbar: true,
-    text: 'Fortschritt, Noten und Deadlines aller Klassen auf einen Blick. Ideal für Elterngespräche. Gamification hält Schüler:innen motiviert.',
+    text: 'Fortschritt, Noten und Deadlines aller Klassen auf einen Blick. Ideal für Elterngespräche. Gamification hält die Klasse motiviert.',
   },
 ]
 
@@ -148,7 +148,7 @@ const trustFacts = [
 /* ── How it works ───────────────────────────────────────── */
 const steps = [
   { step: '01', title: 'Im Browser starten', desc: 'Kein IT-Aufwand, keine Installation. Skills-UP! läuft direkt im Browser, DSGVO-sicher und EU-rechtskonform. Schulweites Rollout in Minuten.', color: '#6b4db0' },
-  { step: '02', title: 'Erleben statt zuhören', desc: 'Schüler:innen durchlaufen Module und Praxissimulationen: Depot eröffnen, Gehalt verhandeln, Budget planen. Microlearning, Peer-Videos und Gamification halten die Motivation hoch.', color: '#1E6B5B' },
+  { step: '02', title: 'Erleben statt zuhören', desc: 'Jugendliche durchlaufen Module und Praxissimulationen: Depot eröffnen, Gehalt verhandeln, Budget planen. Microlearning, Peer-Videos und Gamification halten die Motivation hoch.', color: '#1E6B5B' },
   { step: '03', title: 'Fortschritt im Dashboard', desc: 'Lehrkräfte sehen Fortschritt, Noten und Deadlines aller Klassen auf einen Blick. Ideal für Elterngespräche, ohne zusätzliche Korrekturarbeit.', color: '#A84E12' },
 ]
 
@@ -164,7 +164,7 @@ export default function HomePage() {
       icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>),
       gradient: 'linear-gradient(135deg, #1a5c4e 0%, #2a8a76 100%)', bg: '#e6f4f1', accent: '#1a5c4e',
       title: 'Peer-Videos', badge: 'Jugendnah',
-      desc: 'Gleichaltrige erklären Gleichaltrigen, authentisch und auf Augenhöhe. Das trifft die Lebenswelt der Schüler:innen besser als jeder Frontalvortrag.',
+      desc: 'Gleichaltrige erklären Gleichaltrigen, authentisch und auf Augenhöhe. Das trifft die Lebenswelt der Jugendlichen besser als jeder Frontalvortrag.',
     },
     {
       icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>),
@@ -176,12 +176,12 @@ export default function HomePage() {
       icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>),
       gradient: 'linear-gradient(135deg, #4a2d8a 0%, #6b4db0 100%)', bg: '#f3f1f9', accent: '#4a2d8a',
       title: 'Gamification', badge: 'Motivierend',
-      desc: 'Punkte, Quizzes und Badges halten die Motivation hoch, auch bei Schüler:innen, die sonst schwer zu erreichen sind. Lernen wird zum Wettbewerb.',
+      desc: 'Punkte, Quizzes und Badges halten die Motivation hoch, auch bei Jugendlichen, die sonst schwer zu erreichen sind. Lernen wird zum Wettbewerb.',
     },
     {
       icon: (<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>),
       gradient: 'linear-gradient(135deg, #b85e20 0%, #D87228 100%)', bg: '#fdf0e6', accent: '#A84E12',
-      title: 'Lehrer-Dashboard', badge: 'Für Lehrkräfte',
+      title: 'Lehrkräfte-Dashboard', badge: 'Für Lehrkräfte',
       desc: 'Fortschritt, Noten und Deadlines aller Klassen auf einen Blick. Ideal für Elterngespräche, ohne zusätzliche Korrekturarbeit.',
     },
     {
@@ -194,7 +194,7 @@ export default function HomePage() {
 
   const modulThemen = [
     { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>), color: '#4a2d8a', bg: '#f3f1f9', title: 'Persönlichkeitsbildung', subtitle: 'Dein Geld-Mindset, entschlüsselt', topics: ['Checken, warum du kaufst, was du kaufst', 'Deine Geldgeschichte, und was sie über dich verrät', 'Ziele setzen, die du wirklich durchziehst'] },
-    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>), color: '#6b4db0', bg: '#ede9f7', title: 'Basiswissen', subtitle: 'Die Begriffe, die dir sonst keiner erklärt', topics: ['Brutto vs. netto: was wirklich am Konto landet', 'Wohin deine Steuern und SV-Beiträge fließen', 'Warum alles teurer wird: Inflation durchschauen'] },
+    { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>), color: '#6b4db0', bg: '#ede9f7', title: 'Basiswissen', subtitle: 'Die Begriffe, die dir sonst niemand erklärt', topics: ['Brutto vs. netto: was wirklich am Konto landet', 'Wohin deine Steuern und SV-Beiträge fließen', 'Warum alles teurer wird: Inflation durchschauen'] },
     { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>), color: '#1E6B5B', bg: '#e6f4f1', title: 'Praxis & Planung', subtitle: 'Dein Geld im Griff: nicht umgekehrt', topics: ['Ein Budget, das bis Monatsende hält', 'Erstes Depot eröffnen: risikofrei in der Simulation', 'Sparziel Führerschein: so lange dauert es wirklich'] },
     { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>), color: '#A84E12', bg: '#fdf0e6', title: 'Schutzwissen', subtitle: 'Die Fallen, die auf dich warten', topics: ['Klarna & Co: was „in 3 Raten“ wirklich kostet', 'Scams und Fake-Deals in Sekunden entlarven', 'Schuldenspirale stoppen, bevor sie startet'] },
     { icon: (<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>), color: '#4a2d8a', bg: '#f3f1f9', title: 'Investieren & Vorsorge', subtitle: 'Lass dein Geld für dich arbeiten', topics: ['Aktien & ETFs verstehen, ohne Fachchinesisch', 'Krypto: Hype von Substanz trennen', 'Zinseszins: warum früh anfangen alles ändert'] },
@@ -284,7 +284,7 @@ export default function HomePage() {
         '@type': 'Review',
         reviewRating: { '@type': 'Rating', ratingValue: '5' },
         author: { '@type': 'Person', name: 'Mag. Thomas K.', jobTitle: 'Lehrer', worksFor: { '@type': 'EducationalOrganization', name: 'HAK Linz' } },
-        reviewBody: 'Die Gehaltsverhandlungs-Simulation war ein Augenöffner. Meine Schüler:innen reden jetzt über Kollektivvertrag und Nettolohn. Themen, die vorher kein Thema waren.',
+        reviewBody: 'Die Gehaltsverhandlungs-Simulation war ein Augenöffner. Meine Klassen reden jetzt über Kollektivvertrag und Nettolohn. Themen, die vorher kein Thema waren.',
       },
     ],
   }
@@ -301,7 +301,7 @@ export default function HomePage() {
       {
         '@type': 'Question',
         name: 'Wie viel Vorbereitung brauchen Lehrkräfte?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Keine. Alle Module, Aufgaben und Übungsblätter sind fertig aufbereitet und sofort startbereit. Lehrkräfte öffnen Skills-UP! im Browser, starten ein Modul oder eine Simulation, und die Schüler:innen arbeiten selbstständig.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'Keine. Alle Module, Aufgaben und Übungsblätter sind fertig aufbereitet und sofort startbereit. Lehrkräfte öffnen Skills-UP! im Browser, starten ein Modul oder eine Simulation, und die Jugendlichen arbeiten selbstständig.' },
       },
       {
         '@type': 'Question',
@@ -730,7 +730,7 @@ export default function HomePage() {
                 </div>
                 <h3 className="font-heading text-xl font-bold text-white mb-2">Lernen, das direkt in die Arbeitswelt führt.</h3>
                 <p className="text-white/60 font-body text-sm max-w-md leading-relaxed">
-                  Für PTS-Schüler:innen und Lehrlinge ist Finanzbildung kein abstraktes Thema: Lohnzettel, erster Kredit und Haushaltsgeld sind unmittelbar real. Skills-UP! ist speziell auf diese Lebenswelt zugeschnitten.
+                  Für Jugendliche an der PTS und für Lehrlinge ist Finanzbildung kein abstraktes Thema: Lohnzettel, erster Kredit und Haushaltsgeld sind unmittelbar real. Skills-UP! ist speziell auf diese Lebenswelt zugeschnitten.
                 </p>
               </div>
               <div className="grid grid-cols-2 gap-4 shrink-0 md:ml-auto">
@@ -851,7 +851,7 @@ export default function HomePage() {
               So funktioniert<br /><span className="text-primary-medium">lehrplankonformes Finanzbildung.</span>
             </h2>
             <p className="text-text-muted text-lg max-w-2xl mx-auto font-body">
-              Skills-UP! kombiniert bewährte Didaktik mit moderner Lerntechnologie: Peer-Videos, Microlearning und Gamification, damit Finanzkompetenz bei Schüler:innen wirklich hängen bleibt.
+              Skills-UP! kombiniert bewährte Didaktik mit moderner Lerntechnologie: Peer-Videos, Microlearning und Gamification, damit Finanzkompetenz bei Jugendlichen wirklich hängen bleibt.
             </p>
           </div>
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -884,7 +884,7 @@ export default function HomePage() {
             15 Module für fundiertes Finanzwissen
           </div>
           <h2 className="font-heading text-3xl md:text-5xl font-bold mb-5" style={{ color: '#1a1040' }}>
-            Was Schüler:innen lernen.
+            Was Jugendliche lernen.
           </h2>
           <p className="text-text-muted text-lg max-w-2xl mx-auto font-body">
             Sechs Themenbereiche, aufgebaut auf dem, was junge Menschen ab 15 für echte Finanzentscheidungen wirklich brauchen.
@@ -924,7 +924,7 @@ export default function HomePage() {
             <div>
               <p className="text-white/50 text-xs font-body font-700 uppercase tracking-widest mb-4">Lernziele</p>
               <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-                Was Schüler:innen danach<br /><span className="text-primary-light">wirklich können.</span>
+                Was Jugendliche danach<br /><span className="text-primary-light">wirklich können.</span>
               </h2>
               <p className="text-white/60 font-body text-lg mb-8 leading-relaxed">
                 Finanzbildung, die nicht im Klassenzimmer bleibt. Sie kommt an bei der ersten Lohnabrechnung, beim ersten Onlinekauf und beim ersten Sparziel.
@@ -1076,7 +1076,7 @@ export default function HomePage() {
               </div>
               <div className="text-center md:text-left">
                 <p className="font-heading font-700 text-white text-lg leading-tight">Dr. Stefan Bauer</p>
-                <p className="font-body text-white/60 text-sm mt-0.5">Obfrau-StV. &amp; Vorstand</p>
+                <p className="font-body text-white/60 text-sm mt-0.5">Stellvertretender Vorsitz &amp; Vorstand</p>
                 <p className="font-body text-white/55 text-xs mt-0.5">Verein digitale Zukunftsbildung</p>
               </div>
             </div>
@@ -1240,7 +1240,7 @@ export default function HomePage() {
             },
             {
               emoji: '🧑‍🎓',
-              title: 'Schüler:innen',
+              title: 'Jugendliche',
               color: '#1a5c4e', bg: 'linear-gradient(135deg, #1a5c4e 0%, #2a8a76 100%)',
               points: [
                 '17 Simulationen aus dem echten Leben',
@@ -1248,7 +1248,7 @@ export default function HomePage() {
                 'Gamification mit Punkten, Quizzes und Badges',
                 'Finanzwissen, das im Alltag wirklich ankommt',
               ],
-              cta: 'Mehr für Schüler:innen',
+              cta: 'Mehr für Jugendliche',
             },
             {
               emoji: '🏫',
@@ -1522,7 +1522,7 @@ export default function HomePage() {
         <div className="text-center mb-14">
           <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-status-teal bg-status-teal-light px-4 py-2 rounded-full mb-5">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-            Was Teilnehmer:innen sagen
+            Stimmen aus der Praxis
           </div>
           <h2 className="font-heading text-3xl md:text-5xl font-bold" style={{ color: '#1a1040' }}>
             Echtes Feedback. Keine Hochglanzbroschüre.
@@ -1545,7 +1545,7 @@ export default function HomePage() {
               color: '#1E6B5B',
             },
             {
-              quote: 'Die Gehaltsverhandlungs-Simulation war ein Augenöffner. Meine Schüler:innen reden jetzt über Kollektivvertrag und Nettolohn. Themen, die vorher kein Thema waren.',
+              quote: 'Die Gehaltsverhandlungs-Simulation war ein Augenöffner. Meine Klassen reden jetzt über Kollektivvertrag und Nettolohn. Themen, die vorher kein Thema waren.',
               name: 'Mag. Thomas K.',
               role: 'Lehrer, HAK Linz',
               initials: 'TK',

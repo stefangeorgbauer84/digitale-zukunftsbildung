@@ -18,7 +18,7 @@ interface Props {
 }
 
 const SELF_ASSESSMENT_OPTIONS = [
-  { value: 1, label: 'Totaler Anfänger', emoji: '🎯' },
+  { value: 1, label: 'Ich fange gerade an', emoji: '🎯' },
   { value: 2, label: 'Ich bin vorsichtig', emoji: '🛡️' },
   { value: 3, label: 'Ich erkenne die meisten', emoji: '🔍' },
   { value: 4, label: 'Bin fast untrüglich!', emoji: '🏆' },
@@ -159,7 +159,7 @@ export function KonsumIntro({ onStart, onBack }: Props) {
                   : 'bg-gray-100 text-gray-500 hover:bg-gray-200'
               }`}
             >
-              👤 Schüler
+              👤 Klasse
             </button>
             <button
               onClick={() => setActiveTab('lehrer')}
@@ -170,7 +170,7 @@ export function KonsumIntro({ onStart, onBack }: Props) {
               }`}
             >
               <Users size={11} className="inline mr-1" />
-              Lehrer
+              Lehrkraft
             </button>
           </div>
 

@@ -27,7 +27,7 @@ const YEARLY_LEARNINGS: YearlyLearning[] = [
     title: 'Wie funktioniert eine Börse?',
     concept: 'Angebot & Nachfrage',
     explanation:
-      'Eine Börse ist ein Marktplatz, auf dem Käufer und Verkäufer zusammenkommen. Der Kurs einer Aktie steigt, wenn mehr Menschen kaufen wollen als verkaufen – und fällt, wenn das Gegenteil der Fall ist. Niemand setzt den Preis fest: Er entsteht durch Millionen von Entscheidungen jeden Tag.',
+      'Eine Börse ist ein Marktplatz, auf dem Kauf- und Verkaufsangebote zusammenkommen. Der Kurs einer Aktie steigt, wenn mehr Menschen kaufen wollen als verkaufen – und fällt, wenn das Gegenteil der Fall ist. Niemand setzt den Preis fest: Er entsteht durch Millionen von Entscheidungen jeden Tag.',
     deepDive: [
       'Aktien werden in Millisekunden gehandelt – elektronische Handelssysteme führen täglich Milliarden Transaktionen durch.',
       'Der „Bid-Ask-Spread" ist die Differenz zwischen Kauf- und Verkaufspreis. Je liquider ein Markt, desto kleiner dieser Spread.',
@@ -107,10 +107,10 @@ const YEARLY_LEARNINGS: YearlyLearning[] = [
     title: 'Behavioral Finance – warum wir irrationale Entscheidungen treffen',
     concept: 'Kognitive Verzerrungen',
     explanation:
-      'Menschen sind keine rationalen Investoren. Wir verkaufen in Panik, wenn Kurse fallen (Verlustaversion). Wir halten Verlustpositionen zu lange, weil wir hoffen, sie erholen sich (Sunk-Cost-Fallacy). Wir kaufen was alle kaufen, wenn Kurse steigen (Herdenverhalten). Diese Fehler kosten Rendite – das Wissen darum hilft, sie zu vermeiden.',
+      'Menschen investieren nicht rational. Wir verkaufen in Panik, wenn Kurse fallen (Verlustaversion). Wir halten Verlustpositionen zu lange, weil wir hoffen, sie erholen sich (Sunk-Cost-Fallacy). Wir kaufen was alle kaufen, wenn Kurse steigen (Herdenverhalten). Diese Fehler kosten Rendite – das Wissen darum hilft, sie zu vermeiden.',
     deepDive: [
       'Verlustaversion: Laut Kahneman und Tversky schmerzt ein Verlust von 100 € doppelt so stark wie eine Freude über 100 € Gewinn.',
-      'Overconfidence: Die meisten Investoren überschätzen ihre Fähigkeit, den Markt zu schlagen. Studien zeigen: die wenigsten schaffen es.',
+      'Overconfidence: Die meisten Menschen, die investieren, überschätzen ihre Fähigkeit, den Markt zu schlagen. Studien zeigen: die wenigsten schaffen es.',
       'Recency Bias: Wir gewichten aktuelle Ereignisse stärker. Nach langen Booms erwarten wir weiteres Wachstum – kurz vor der Krise.',
       'Anchoring: Wir klammern uns an einen ersten Preis (z. B. Kaufkurs) und bewerten alles relativ dazu – selbst wenn er irrelevant ist.',
     ],
@@ -159,7 +159,7 @@ const YEARLY_LEARNINGS: YearlyLearning[] = [
     deepDive: [
       'Die „Gartner Hype Curve" zeigt: Neue Technologien durchlaufen erst übertriebene Begeisterung, dann Ernüchterung, dann reales Wachstum.',
       'Künstliche Intelligenz, Quantencomputing und Biotech gelten als nächste große Disruptions-Wellen für Aktienmärkte.',
-      'Platform-Unternehmen (Google, Amazon, Meta) haben Netzwerkeffekte: Je mehr Nutzer, desto wertvoller die Plattform.',
+      'Platform-Unternehmen (Google, Amazon, Meta) haben Netzwerkeffekte: Je mehr Menschen sie nutzen, desto wertvoller die Plattform.',
       'Themen-ETFs (z. B. „Cybersecurity ETF" oder „Clean Energy ETF") bieten Zugang zu Megatrends ohne Einzelaktien-Risiko.',
     ],
     tip: 'Nicht jede neue Technologie überlebt den Hype. Viele Internet-Firmen aus dem Jahr 2000 existieren heute nicht mehr – Amazon schon.',
@@ -168,10 +168,10 @@ const YEARLY_LEARNINGS: YearlyLearning[] = [
   {
     year: 2035,
     emoji: '🎯',
-    title: 'Langfristiges Denken – der wichtigste Vorteil privater Investoren',
+    title: 'Langfristiges Denken – der wichtigste Vorteil beim privaten Investieren',
     concept: 'Zeit als Wettbewerbsvorteil',
     explanation:
-      'Professionelle Fondsmanager stehen unter Druck, kurzfristige Quartalsziele zu erfüllen. Private Investoren müssen das nicht. Wer 10, 20 oder 30 Jahre investiert bleibt, hat einen strukturellen Vorteil: Er kann Krisen aussitzen, Volatilität ignorieren und vom langfristigen Wachstum profitieren.',
+      'Professionelles Fondsmanagement steht unter Druck, kurzfristige Quartalsziele zu erfüllen. Wer privat anlegt, muss das nicht. Wer 10, 20 oder 30 Jahre investiert bleibt, hat einen strukturellen Vorteil und kann Krisen aussitzen, Volatilität ignorieren und vom langfristigen Wachstum profitieren.',
     deepDive: [
       'Studien zeigen: Die meisten aktiv gemanagten Fonds schlagen ihren Vergleichsindex langfristig nicht – nach Kosten schon gar nicht.',
       'Time in the Market schlägt Timing the Market: Wer die 10 besten Börsentage in 20 Jahren verpasst, halbiert seine Rendite.',
@@ -225,14 +225,14 @@ function getNextRoundTip(state: GameState, assets: Asset[]): string | null {
 
   switch (state.role) {
     case 'sicherheitsdenker':
-      if (cashPct > 50) return `Du hast noch ${cashPct.toFixed(0)} % Cash. Als Sicherheitsdenker könntest du einen defensiven ETF in Betracht ziehen, um dein Kapital arbeiten zu lassen.`
+      if (cashPct > 50) return `Du hast noch ${cashPct.toFixed(0)} % Cash. Mit Fokus auf Sicherheit könntest du einen defensiven ETF in Betracht ziehen, um dein Kapital arbeiten zu lassen.`
       if (posCount < 3) return `Du hast erst ${posCount} Position(en). Deine Mission fordert mindestens 3 verschiedene Assets – streue breiter.`
       return `Dein Portfolio wirkt solide. Überprüfe, ob du zu viel in einem einzelnen Asset hast – auch bei niedrigem Risiko gilt: Streuung schützt.`
     case 'wachstumssucher':
-      if (cashPct > 40) return `${cashPct.toFixed(0)} % Cash generiert keine Rendite. Als Wachstumssucher solltest du Wachstumswerte konsequenter aufbauen.`
+      if (cashPct > 40) return `${cashPct.toFixed(0)} % Cash generiert keine Rendite. Wenn du auf Wachstum setzt, solltest du Wachstumswerte konsequenter aufbauen.`
       return `Halte Wachstumswerte auch bei Kursrückgängen – kurzfristige Verluste gehören zur Strategie. Überprüfe: Hast du Technologie und Mobilität abgedeckt?`
     case 'nachhaltigkeitsinvestor':
-      if (posCount === 0) return `Noch keine Positionen. Als Nachhaltigkeitsinvestor sind GreenEnergy Europe und der Austria Stability ETF ideal.`
+      if (posCount === 0) return `Noch keine Positionen. Für nachhaltiges Investieren sind GreenEnergy Europe und der Austria Stability ETF ideal.`
       return `Prüfe, ob mindestens 50 % deines investierten Kapitals in nachhaltigen Assets liegen – das ist deine Missions-Bedingung.`
     case 'diversifizierer':
       if (posCount < 4) return `Du hast ${posCount} Position(en). Deine Mission verlangt mindestens 4 Assets aus 3 verschiedenen Sektoren. Erkunde neue Branchen.`
@@ -348,7 +348,7 @@ export default function RoundEndScreen({ state, assets, onReflectionSubmit, onNe
               Der Leitzins ist der Zinssatz, zu dem sich Banken bei der Zentralbank (EZB) Geld leihen können. Steigt er, werden Kredite teurer – das belastet Unternehmen, die viel auf Pump finanzieren, besonders stark.
             </LernHinweis>
             <LernHinweis title="Warum reagieren Aktienmärkte auf Nachrichten?">
-              Aktienkurse spiegeln die Erwartungen der Investorinnen und Investoren wider. Wenn eine Nachricht die zukünftigen Gewinne eines Unternehmens wahrscheinlicher oder unwahrscheinlicher macht, reagieren die Kurse sofort – oft noch bevor die eigentlichen Zahlen bekannt sind.
+              Aktienkurse spiegeln die Erwartungen des Marktes wider. Wenn eine Nachricht die zukünftigen Gewinne eines Unternehmens wahrscheinlicher oder unwahrscheinlicher macht, reagieren die Kurse sofort – oft noch bevor die eigentlichen Zahlen bekannt sind.
             </LernHinweis>
             <LernHinweis title="Was ist der Unterschied zwischen Sektor und Einzelaktie?">
               Ein Sektor umfasst viele Unternehmen der gleichen Branche (z. B. Technologie). Eine Einzelaktie ist ein Anteil an genau einem Unternehmen. Ereignisse können ganze Sektoren treffen – oder nur bestimmte Firmen darin.

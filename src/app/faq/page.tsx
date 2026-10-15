@@ -9,7 +9,7 @@ import { faqCategories, faqTotalCount } from '@/lib/faq-data'
 export const metadata: Metadata = {
   title: 'Finanzbildung FAQ: 100 Fragen & Antworten für Lehrkräfte | Skills-UP!',
   description:
-    '100 typische Fragen von Lehrer:innen zur Finanzbildung in Österreich, kompakt beantwortet: Lehrplan & Pflichtfach 2027, Didaktik, Unterrichtsthemen von Budget bis Krypto, Betrugsschutz, Materialien und Skills-UP!.',
+    '100 typische Fragen von Lehrkräften zur Finanzbildung in Österreich, kompakt beantwortet: Lehrplan & Pflichtfach 2027, Didaktik, Unterrichtsthemen von Budget bis Krypto, Betrugsschutz, Materialien und Skills-UP!.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/faq' },
   openGraph: {
     title: 'Finanzbildung unterrichten: 100 Fragen & Antworten für Lehrkräfte',
@@ -96,7 +96,7 @@ export default function FaqPage() {
               Finanzbildung unterrichten: {faqTotalCount} Fragen, {faqTotalCount} Antworten.
             </h1>
             <p className="font-body text-white/70 text-xl leading-relaxed mb-4">
-              Vom Lehrplan über Didaktik bis zu Krypto, Betrugsschutz und Materialien: Hier beantworten wir die häufigsten Fragen, die uns Lehrer:innen zur Finanzbildung an österreichischen Schulen stellen.
+              Vom Lehrplan über Didaktik bis zu Krypto, Betrugsschutz und Materialien: Hier beantworten wir die häufigsten Fragen, die uns Lehrkräfte zur Finanzbildung an österreichischen Schulen stellen.
             </p>
             <p className="font-body text-white/50 text-base leading-relaxed">
               Kompakt, anbieterneutral und ohne Anlageberatung: zum Nachschlagen, Weiterleiten und direkt Einsetzen im Unterricht.

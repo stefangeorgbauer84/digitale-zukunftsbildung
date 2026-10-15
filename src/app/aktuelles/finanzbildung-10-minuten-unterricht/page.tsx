@@ -58,7 +58,7 @@ const formate = [
   {
     nr: '02',
     titel: 'Das Kurzmodul (15 Min.)',
-    beschreibung: 'Skills-UP! hat alle Module in einer 15-Minuten-Version. Schülerinnen und Schüler arbeiten digital, selbstständig.',
+    beschreibung: 'Skills-UP! hat alle Module in einer 15-Minuten-Version. Die Jugendlichen arbeiten digital, selbstständig.',
     beispiele: [
       'Lohnzettel lesen: 3 Lohnzettel, 3 Fehler finden: wer findet alle?',
       'Budgetplanung: Mit 1.200 € Netto auskommen: was passt, was nicht?',
@@ -161,7 +161,7 @@ export default function Finanzbildung10MinutenPage() {
               Alle drei Formate haben eines gemeinsam: Sie holen Jugendliche dort ab, wo sie bereits sind. Handy-Abo, erster Lohnzettel, Krypto-Hype auf TikTok, das sind keine abstrakten Lernziele, sondern echte Momente aus dem Leben 15- bis 20-Jähriger in Österreich. Finanzbildung, die daran anknüpft, bleibt.
             </p>
             <p className="font-body text-gray-700 leading-relaxed mb-10">
-              Lehrkräfte müssen dafür keine Finanzexpertinnen oder -experten sein. Das Programm übernimmt den fachlichen Teil. Die Lehrkraft moderiert, stellt Fragen, lässt diskutieren, das reicht.
+              Lehrkräfte brauchen dafür kein Vorwissen in Finanzthemen. Das Programm übernimmt den fachlichen Teil. Die Lehrkraft moderiert, stellt Fragen, lässt diskutieren, das reicht.
             </p>
 
             <div className="not-prose rounded-2xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 60%, #1a5c4e 100%)' }}>

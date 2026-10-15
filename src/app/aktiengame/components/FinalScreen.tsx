@@ -178,7 +178,7 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
   const copyText = [
     '🎮 Skills-UP! Aktiengame – Mein Ergebnis',
     `📅 Zeitraum: ${START_YEAR}–${START_YEAR + state.totalRounds - 1} (${state.totalRounds} Jahre)`,
-    `👤 Spieler: ${state.playerName} · Rolle: ${roleDef.name}`,
+    `👤 Spielname: ${state.playerName} · Rolle: ${roleDef.name}`,
     `💰 Startkapital: 10.000 € → Endvermögen: ${totalWealth.toFixed(0)} €`,
     `📈 Performance: ${performance >= 0 ? '+' : ''}${performance.toFixed(1)}% · Note: ${grade}`,
     `🏅 Achievements: ${achievementNames}`,
@@ -300,7 +300,7 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
 
       {/* Benchmark Vergleich (Feature 5) */}
       <div className="bg-white rounded-2xl shadow-card p-5">
-        <div className="text-sm font-semibold text-text-primary mb-4">Vergleich mit typischen Spielern</div>
+        <div className="text-sm font-semibold text-text-primary mb-4">Vergleich mit typischen Spielverläufen</div>
         <div className="space-y-4">
           <BenchmarkBar
             label="Performance"
@@ -318,7 +318,7 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
             benchmark={BENCHMARKS.reflexion}
           />
         </div>
-        <p className="text-xs text-text-muted mt-3">Ø-Werte basieren auf aggregierten Spielerdaten.</p>
+        <p className="text-xs text-text-muted mt-3">Ø-Werte basieren auf aggregierten Spieldaten.</p>
       </div>
 
       {/* Konfidenz (Feature 6) */}
@@ -472,7 +472,7 @@ export default function FinalScreen({ state, assets, onRestart }: FinalScreenPro
                   onClick={onRestart}
                   className={`w-full text-xs font-semibold py-2 rounded-lg border ${role.borderClass} ${role.colorClass} hover:opacity-80 transition-opacity bg-white/60`}
                 >
-                  Neu starten als {role.name}
+                  Neu starten mit: {role.name}
                 </button>
               </div>
             )

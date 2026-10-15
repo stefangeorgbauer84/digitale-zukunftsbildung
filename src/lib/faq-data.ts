@@ -69,7 +69,7 @@ export const faqCategories: FaqCategory[] = [
     items: [
       {
         q: 'Wo ist Finanzbildung im österreichischen Lehrplan verankert?',
-        a: 'In der Sekundarstufe I vor allem im Fach Geographie und wirtschaftliche Bildung (GW), das mit dem Lehrplan 2023 deutlich stärker auf Wirtschafts- und Finanzthemen ausgerichtet wurde. In der Sekundarstufe II je nach Schultyp in GW, Betriebswirtschaft, Rechnungswesen oder politischer Bildung. Zusätzlich gilt das Unterrichtsprinzip Wirtschafts- und Verbraucher:innenbildung für alle Fächer.',
+        a: 'In der Sekundarstufe I vor allem im Fach Geographie und wirtschaftliche Bildung (GW), das mit dem Lehrplan 2023 deutlich stärker auf Wirtschafts- und Finanzthemen ausgerichtet wurde. In der Sekundarstufe II je nach Schultyp in GW, Betriebswirtschaft, Rechnungswesen oder politischer Bildung. Zusätzlich gilt das Unterrichtsprinzip „Wirtschafts- und Verbraucher/innenbildung“ für alle Fächer.',
         link: { href: '/lehrplan-mapping', label: 'Zum Lehrplanmapping' },
       },
       {
@@ -95,7 +95,7 @@ export const faqCategories: FaqCategory[] = [
         a: 'Je nach Schultyp: An HAK und anderen BHS sind Betriebswirtschaft und Rechnungswesen prüfungsrelevant, an der AHS läuft Finanzbildung über GW ein. Finanzthemen eignen sich außerdem gut für vorwissenschaftliche Arbeiten und Diplomarbeiten — von Inflationsanalysen bis Konsumverhalten.',
       },
       {
-        q: 'Was ist das Unterrichtsprinzip Wirtschafts- und Verbraucher:innenbildung?',
+        q: 'Was ist das Unterrichtsprinzip „Wirtschafts- und Verbraucher/innenbildung“?',
         a: 'Ein per Grundsatzerlass verankertes Unterrichtsprinzip, das Wirtschafts- und Konsumkompetenz als Aufgabe aller Fächer und Schulstufen definiert. Es ist die formale Grundlage, auf die sich jede Lehrkraft berufen kann, die Finanzthemen in den eigenen Unterricht holt — unabhängig vom Fach.',
       },
       {
@@ -120,7 +120,7 @@ export const faqCategories: FaqCategory[] = [
     items: [
       {
         q: 'Ich fühle mich bei Finanzthemen selbst unsicher — kann ich Finanzbildung trotzdem unterrichten?',
-        a: 'Ja — und Sie sind damit in guter Gesellschaft. Fertig aufbereitete Programme mit Lösungen, Erklärvideos und Selbstlernmodulen nehmen die fachliche Last ab: Die Lehrkraft begleitet den Lernprozess, statt Expertin oder Experte für Steuerrecht sein zu müssen. Viele Lehrkräfte berichten, dass sie selbst mitlernen — das ist völlig legitim.',
+        a: 'Ja — und Sie sind damit in guter Gesellschaft. Fertig aufbereitete Programme mit Lösungen, Erklärvideos und Selbstlernmodulen nehmen die fachliche Last ab: Die Lehrkraft begleitet den Lernprozess, statt Fachwissen im Steuerrecht mitbringen zu müssen. Viele Lehrkräfte berichten, dass sie selbst mitlernen — das ist völlig legitim.',
       },
       {
         q: 'Wie starte ich ohne großen Aufwand mit Finanzbildung?',
@@ -128,11 +128,11 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: 'Welche Methoden funktionieren in der Finanzbildung am besten?',
-        a: 'Handlungsorientierte: Simulationen, Fallbeispiele, Planspiele, Peer-Formate und echte Rechercheaufträge. Reine Vorträge über Zinsen bleiben erfahrungsgemäß am wenigsten hängen. Faustregel: Jede Stunde sollte mindestens eine echte Entscheidung enthalten, die Schüler:innen selbst treffen.',
+        a: 'Handlungsorientierte: Simulationen, Fallbeispiele, Planspiele, Peer-Formate und echte Rechercheaufträge. Reine Vorträge über Zinsen bleiben erfahrungsgemäß am wenigsten hängen. Faustregel: Jede Stunde sollte mindestens eine echte Entscheidung enthalten, die die Jugendlichen selbst treffen.',
       },
       {
         q: 'Warum Simulationen statt Arbeitsblätter?',
-        a: 'Weil Finanzkompetenz Entscheidungskompetenz ist. In einer Simulation erleben Schüler:innen die Konsequenzen ihrer Wahl — der Ratenkauf, der sich summiert, das Depot, das schwankt — risikofrei und unmittelbar. Dieser Erfahrungsbezug erzeugt Transfer, den ein Lückentext nicht leisten kann.',
+        a: 'Weil Finanzkompetenz Entscheidungskompetenz ist. In einer Simulation erleben Jugendliche die Konsequenzen ihrer Wahl — der Ratenkauf, der sich summiert, das Depot, das schwankt — risikofrei und unmittelbar. Dieser Erfahrungsbezug erzeugt Transfer, den ein Lückentext nicht leisten kann.',
       },
       {
         q: 'Was ist Microlearning und warum passt es zur Finanzbildung?',
@@ -147,12 +147,12 @@ export const faqCategories: FaqCategory[] = [
         a: 'Über ihre eigene Lebenswelt: das erste Gehalt, der Handyvertrag, die Sneaker auf Raten, der Fake-Shop im Feed, die In-App-Käufe. Wer mit den Beispielen der Klasse arbeitet statt mit abstrakten Musterhaushalten, hat die Aufmerksamkeit meist nach wenigen Minuten.',
       },
       {
-        q: 'Sollen Schüler:innen im Unterricht auch Finanzfehler machen dürfen?',
+        q: 'Sollen Jugendliche im Unterricht auch Finanzfehler machen dürfen?',
         a: 'Unbedingt — im geschützten Rahmen. Wer in der Simulation in die Schuldenfalle tappt oder auf einen Scam hereinfällt, vergisst das nicht mehr. Der sichere Fehler heute verhindert den teuren Fehler mit 19.',
       },
       {
         q: 'Wie differenziere ich bei sehr unterschiedlichem Vorwissen?',
-        a: 'Mit Selbstlernmodulen im eigenen Tempo: Wer schnell ist, geht in die Tiefe, wer Grundlagen braucht, bekommt sie ohne Bloßstellung. Zwei Modulversionen (kurz/lang) und ein Dashboard mit Lernstand pro Schüler:in machen Differenzierung praktikabel statt theoretisch.',
+        a: 'Mit Selbstlernmodulen im eigenen Tempo: Wer schnell ist, geht in die Tiefe, wer Grundlagen braucht, bekommt sie ohne Bloßstellung. Zwei Modulversionen (kurz/lang) und ein Dashboard mit dem Lernstand jeder Person in der Klasse machen Differenzierung praktikabel statt theoretisch.',
       },
       {
         q: 'Wie mache ich trockene Zahlen greifbar?',
@@ -183,11 +183,11 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: 'Handyvertrag oder Wertkarte — wie behandle ich das Thema?',
-        a: 'Als Vertragslese-Übung: Bindungsfrist, Grundgebühr, Servicepauschalen, Kosten nach dem ersten Jahr, Roaming. Schüler:innen vergleichen reale Tarifmodelle (anonymisiert) und rechnen die echten Gesamtkosten über die Laufzeit — meist eine Überraschung.',
+        a: 'Als Vertragslese-Übung: Bindungsfrist, Grundgebühr, Servicepauschalen, Kosten nach dem ersten Jahr, Roaming. Jugendliche vergleichen reale Tarifmodelle (anonymisiert) und rechnen die echten Gesamtkosten über die Laufzeit — meist eine Überraschung.',
       },
       {
         q: 'Wie thematisiere ich Konsumfallen konkret?',
-        a: 'An echten Mechanismen: künstliche Verknappung („nur noch 2 verfügbar“), Lockpreise, Abofallen, dynamische Preise, In-App-Käufe. Schüler:innen sammeln eigene Beispiele aus ihrem Alltag und dekonstruieren die psychologischen Tricks dahinter — das wirkt nachhaltiger als jede Warnung.',
+        a: 'An echten Mechanismen: künstliche Verknappung („nur noch 2 verfügbar“), Lockpreise, Abofallen, dynamische Preise, In-App-Käufe. Jugendliche sammeln eigene Beispiele aus ihrem Alltag und dekonstruieren die psychologischen Tricks dahinter — das wirkt nachhaltiger als jede Warnung.',
       },
       {
         q: 'Warum ist „Buy now, pay later“ ein wichtiges Unterrichtsthema?',
@@ -199,10 +199,10 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: 'Wie behandle ich Werbung und Influencer-Marketing im Finanzkontext?',
-        a: 'Analytisch: Wie verdienen Influencer:innen an Empfehlungen (Affiliate-Links, Kooperationen)? Woran erkennt man Werbekennzeichnung? Welche Rolle spielen FOMO und Ideal-Lifestyles beim Konsumdruck? Konkrete Posts aus dem Feed der Klasse zu analysieren ist die wirksamste Übung.',
+        a: 'Analytisch: Wie wird auf Social Media mit Empfehlungen Geld verdient (Affiliate-Links, Kooperationen)? Woran erkennt man Werbekennzeichnung? Welche Rolle spielen FOMO und Ideal-Lifestyles beim Konsumdruck? Konkrete Posts aus dem Feed der Klasse zu analysieren ist die wirksamste Übung.',
       },
       {
-        q: 'Rechnung, Mahnung, Inkasso — was müssen Schüler:innen können?',
+        q: 'Rechnung, Mahnung, Inkasso — was müssen Jugendliche können?',
         a: 'Zahlungsfristen ernst nehmen, Mahnungen nie ignorieren, Mahn- und Inkassospesen als reale Kosten verstehen — und wissen, dass man bei Zahlungsproblemen aktiv werden kann: Kontakt aufnehmen, Ratenzahlung vereinbaren. Wichtig zu wissen: Staatlich anerkannte Schuldenberatungen in Österreich helfen kostenlos.',
       },
     ],
@@ -222,7 +222,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: 'Sparbuch, Bausparen, Fonds — wie vermittle ich Sparformen neutral?',
-        a: 'Über Kategorien statt Produkte: Wie schnell komme ich an mein Geld (Verfügbarkeit)? Wie sicher ist es (Risiko)? Was kann es bringen (Ertrag)? Schüler:innen ordnen Sparformen in dieses Dreieck ein — ohne Markennamen, ohne Empfehlung, aber mit klarem Verständnis der Zielkonflikte.',
+        a: 'Über Kategorien statt Produkte: Wie schnell komme ich an mein Geld (Verfügbarkeit)? Wie sicher ist es (Risiko)? Was kann es bringen (Ertrag)? Jugendliche ordnen Sparformen in dieses Dreieck ein — ohne Markennamen, ohne Empfehlung, aber mit klarem Verständnis der Zielkonflikte.',
       },
       {
         q: 'Sollte ich die Einlagensicherung erwähnen?',
@@ -230,7 +230,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: 'Darf ich über Aktien sprechen, ohne Anlageberatung zu machen?',
-        a: 'Ja — Konzeptwissen ist Bildung, keine Beratung. Was eine Aktie ist (Anteil an einem Unternehmen), wie Kurse entstehen, was Dividenden sind, welche Risiken bestehen: alles legitim. Die Grenze verläuft bei konkreten Kauf-Tipps und Produktempfehlungen — die gehören nicht in den Unterricht, und genau das sollten auch Schüler:innen als Warnsignal bei „Finanz-Gurus“ erkennen.',
+        a: 'Ja — Konzeptwissen ist Bildung, keine Beratung. Was eine Aktie ist (Anteil an einem Unternehmen), wie Kurse entstehen, was Dividenden sind, welche Risiken bestehen: alles legitim. Die Grenze verläuft bei konkreten Kauf-Tipps und Produktempfehlungen — die gehören nicht in den Unterricht, und genau das sollten auch Jugendliche als Warnsignal bei „Finanz-Gurus“ erkennen.',
       },
       {
         q: 'Wie erkläre ich das ETF-Konzept didaktisch sauber?',
@@ -261,7 +261,7 @@ export const faqCategories: FaqCategory[] = [
     blurb: 'Vom ersten Lohnzettel bis zur Pension — Finanzwissen rund um das Erwerbsleben.',
     items: [
       {
-        q: 'Wie bringe ich Schüler:innen bei, einen Lohnzettel zu lesen?',
+        q: 'Wie bringe ich der Klasse bei, einen Lohnzettel zu lesen?',
         a: 'Anhand eines realistischen Beispiel-Lohnzettels: Was ist brutto, was netto, wohin gehen Sozialversicherungsbeiträge und Lohnsteuer? Die österreichische Besonderheit von 13. und 14. Gehalt gehört unbedingt dazu. Eine Gehalts-Simulation, in der man selbst „verhandelt“ und dann den Nettoeffekt sieht, verankert das nachhaltig.',
       },
       {
@@ -270,7 +270,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: 'Lohnt sich die Arbeitnehmerveranlagung als Unterrichtsthema?',
-        a: 'Sehr — kaum ein Thema ist so unmittelbar nützlich: Viele Berufseinsteiger:innen lassen Geld liegen, weil sie die Arbeitnehmerveranlagung („Steuerausgleich“) nicht kennen. Grundlogik vermitteln: Wann bekomme ich Geld zurück, was sind Werbungskosten und Pendlerpauschale, wie funktioniert FinanzOnline.',
+        a: 'Sehr — kaum ein Thema ist so unmittelbar nützlich: Viele, die neu ins Berufsleben starten, lassen Geld liegen, weil sie die Arbeitnehmerveranlagung („Steuerausgleich“) nicht kennen. Grundlogik vermitteln: Wann bekomme ich Geld zurück, was sind Werbungskosten und Pendlerpauschale, wie funktioniert FinanzOnline.',
       },
       {
         q: 'Wie erkläre ich die Sozialversicherung?',
@@ -278,7 +278,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: 'Welche Versicherungen brauchen junge Erwachsene wirklich?',
-        a: 'Als Denkrahmen statt Produktliste: Existenzbedrohende Risiken zuerst absichern (etwa Haftpflicht-Schäden), kleine Risiken selbst tragen. Haushaltsversicherung mit integrierter Haftpflicht ist beim ersten eigenen Haushalt der Klassiker. Ziel ist ein Prüfraster, mit dem Schüler:innen Angebote selbst hinterfragen können.',
+        a: 'Als Denkrahmen statt Produktliste: Existenzbedrohende Risiken zuerst absichern (etwa Haftpflicht-Schäden), kleine Risiken selbst tragen. Haushaltsversicherung mit integrierter Haftpflicht ist beim ersten eigenen Haushalt der Klassiker. Ziel ist ein Prüfraster, mit dem die Jugendlichen Angebote selbst hinterfragen können.',
       },
       {
         q: 'Pension — wie mache ich das für 16-Jährige greifbar?',
@@ -320,7 +320,7 @@ export const faqCategories: FaqCategory[] = [
         a: 'Kriminelle werben Jugendliche mit „schnellem Nebenverdienst“ an: Das eigene Konto für fremde Überweisungen zur Verfügung stellen. Das ist Beihilfe zur Geldwäsche und strafbar — auch wenn man „nur“ das Konto verliehen hat. Diese Falle kennen viele Jugendliche nicht, bevor es zu spät ist.',
       },
       {
-        q: 'Woran erkennen Schüler:innen einen Fake-Shop?',
+        q: 'Woran erkennen Jugendliche einen Fake-Shop?',
         a: 'Prüfroutine üben: Impressum vorhanden und plausibel? Preise unrealistisch niedrig? Nur Vorkasse möglich? Gütezeichen echt oder nur als Bild kopiert? In Österreich ist die Watchlist Internet eine gute öffentliche Anlaufstelle, um gemeldete Fake-Shops nachzuschlagen.',
       },
       {
@@ -329,11 +329,11 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: 'Wie vermittle ich sicheres Online-Banking?',
-        a: 'Grundregeln, die sitzen müssen: Zwei-Faktor-Authentifizierung nutzen, TANs und Zugangsdaten niemals weitergeben (auch nicht an angebliche Bankmitarbeiter:innen am Telefon), Banking nur über die offizielle App oder selbst eingetippte Adresse, Vorsicht in öffentlichem WLAN.',
+        a: 'Grundregeln, die sitzen müssen: Zwei-Faktor-Authentifizierung nutzen, TANs und Zugangsdaten niemals weitergeben (auch nicht bei angeblichen Anrufen von der Bank), Banking nur über die offizielle App oder selbst eingetippte Adresse, Vorsicht in öffentlichem WLAN.',
       },
       {
         q: 'Identitätsdiebstahl — wie sensibilisiere ich dafür?',
-        a: 'Über Datensparsamkeit: Ausweisfotos, Selfies mit Dokument und persönliche Daten sind Rohstoff für Betrüger — etwa für Bestellungen auf fremden Namen. Ebenso wichtig: der Handlungsplan im Ernstfall (Bank informieren, Anzeige erstatten, Passwörter ändern).',
+        a: 'Über Datensparsamkeit: Ausweisfotos, Selfies mit Dokument und persönliche Daten sind Rohstoff für Betrug — etwa für Bestellungen auf fremden Namen. Ebenso wichtig: der Handlungsplan im Ernstfall (Bank informieren, Anzeige erstatten, Passwörter ändern).',
       },
       {
         q: 'KI und Finanz-Fakes — schon ein Unterrichtsthema?',
@@ -385,7 +385,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: 'Wie überwinde ich sprachliche Barrieren beim Finanzvokabular?',
-        a: 'Einfache Sprache als Standard, Fachbegriffe konsequent erklären (Glossar), Videos und Visualisierungen statt Textwüsten, Peer-Erklärungen in Partnerarbeit. Finanzdeutsch ist auch für Muttersprachler:innen eine Fremdsprache — das entlastet die Runde.',
+        a: 'Einfache Sprache als Standard, Fachbegriffe konsequent erklären (Glossar), Videos und Visualisierungen statt Textwüsten, Peer-Erklärungen in Partnerarbeit. Finanzdeutsch ist auch für Menschen mit Deutsch als Erstsprache eine Fremdsprache — das entlastet die Runde.',
       },
       {
         q: 'Sollte ich Eltern einbeziehen — und wie?',
@@ -412,7 +412,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: 'Kann ich deutsche Materialien für Österreich verwenden?',
-        a: 'Nur mit Vorsicht: Steuersystem, Sozialversicherung, Schulrecht, Institutionen und selbst Begriffe unterscheiden sich erheblich. Ein Material, das die Arbeitnehmerveranlagung, österreichische Kollektivverträge oder das 13./14. Gehalt nicht kennt, geht am Alltag der Schüler:innen vorbei. Österreich-spezifische Inhalte sind klar im Vorteil.',
+        a: 'Nur mit Vorsicht: Steuersystem, Sozialversicherung, Schulrecht, Institutionen und selbst Begriffe unterscheiden sich erheblich. Ein Material, das die Arbeitnehmerveranlagung, österreichische Kollektivverträge oder das 13./14. Gehalt nicht kennt, geht am Alltag der Jugendlichen vorbei. Österreich-spezifische Inhalte sind klar im Vorteil.',
       },
       {
         q: 'Welche öffentlichen Stellen bieten verlässliches Material?',
@@ -427,7 +427,7 @@ export const faqCategories: FaqCategory[] = [
         a: 'DSGVO zuerst: Welche Daten werden erhoben (Datenminimierung!), wo werden sie gehostet (EU?), gibt es eine Vereinbarung zur Auftragsverarbeitung für die Schule? Im Zweifel Schulleitung bzw. Schulerhalter einbinden. Browserbasierte Tools ohne Installation und ohne unnötige Datenerhebung machen die Prüfung einfach.',
       },
       {
-        q: 'Brauchen meine Schüler:innen eigene Geräte?',
+        q: 'Braucht meine Klasse eigene Geräte?',
         a: 'Für browserbasierte Programme reicht, was ohnehin da ist: Smartphone, Tablet, Laptop oder der EDV-Saal. Es muss nichts installiert werden, damit funktioniert der Einsatz auch ohne 1:1-Geräteausstattung — notfalls in Partnerarbeit am geteilten Gerät.',
       },
       {

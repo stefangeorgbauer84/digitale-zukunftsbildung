@@ -39,8 +39,8 @@ export default function HlwPage() {
       schulstufen="9.–13. Schulstufe"
       lehrplanFach="Ernährung & Haushalt · Wirtschaft · Projektunterricht · BOBI"
       icon={icon}
-      lehrerProblem="Ich unterrichte Haushaltsführung, Ernährung und Konsum, aber wenn ich frage, wie sie ihr Budget planen, schauen mich viele Schüler:innen ratlos an."
-      intro="HLW und wirtschaftliche Fachschulen haben Alltagskompetenz im Blut. Skills-UP! ergänzt diese Stärke um das, was Schüler:innen direkt nach der Schule brauchen: eine klare Vorstellung davon, wie sie mit Geld umgehen, im Haushalt, beim Einkauf und bei größeren Entscheidungen."
+      lehrerProblem="Ich unterrichte Haushaltsführung, Ernährung und Konsum, aber wenn ich frage, wie sie ihr Budget planen, schauen mich viele in der Klasse ratlos an."
+      intro="HLW und wirtschaftliche Fachschulen haben Alltagskompetenz im Blut. Skills-UP! ergänzt diese Stärke um das, was Jugendliche direkt nach der Schule brauchen: eine klare Vorstellung davon, wie sie mit Geld umgehen, im Haushalt, beim Einkauf und bei größeren Entscheidungen."
       lehrplanPassung={[
         {
           fach: 'Haushaltswirtschaft & Ernährung',
@@ -62,12 +62,12 @@ export default function HlwPage() {
       unterrichtsEinheiten={[
         {
           schritt: 'Einstieg: Supermarkt-Falle',
-          was: 'Simulierter Wocheneinkauf: Schüler:innen kaufen für eine Person mit 200 € Budget ein, mit versteckten Sonderangeboten, Impulsprodukten und saisonalen Preisschwankungen. Das ist Konsumerziehung zum Anfassen.',
+          was: 'Simulierter Wocheneinkauf: Die Jugendlichen kaufen für eine Person mit 200 € Budget ein, mit versteckten Sonderangeboten, Impulsprodukten und saisonalen Preisschwankungen. Das ist Konsumerziehung zum Anfassen.',
           zeitMinuten: 10,
         },
         {
           schritt: 'Haushaltsbudget erstellen',
-          was: 'Auf Basis eines realistischen HLW-Einstiegsgehalts erstellen Schüler:innen ihren ersten Monatsplan: Miete, Lebensmittel, Transport, Kleidung, Freizeit, Sparen. Die App führt sie durch alle Kategorien.',
+          was: 'Auf Basis eines realistischen HLW-Einstiegsgehalts erstellen die Jugendlichen ihren ersten Monatsplan: Miete, Lebensmittel, Transport, Kleidung, Freizeit, Sparen. Die App führt sie durch alle Kategorien.',
           zeitMinuten: 25,
         },
         {
@@ -77,17 +77,17 @@ export default function HlwPage() {
         },
         {
           schritt: 'Reflexion',
-          was: 'Schüler:innen dokumentieren drei Entscheidungen, die sie nach dieser Stunde anders treffen würden. Das geht direkt in die App, du siehst die Antworten im Dashboard.',
+          was: 'Die Jugendlichen dokumentieren drei Entscheidungen, die sie nach dieser Stunde anders treffen würden. Das geht direkt in die App, du siehst die Antworten im Dashboard.',
           zeitMinuten: 5,
         },
       ]}
       module={[
-        { titel: 'Finanzplanung', lernziel: 'Haushaltsbudget erstellen: Fixkosten vs. variable Kosten, 50-30-20-Regel, Sonderzahlungen einplanen, die 5 häufigsten Budgetfehler vermeiden.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Budgetplanung', icon: bookIcon },
-        { titel: 'Konsumfallen', lernziel: 'Psychologische Kauftrigger (FOMO, Anchoring, Scarcity) erkennen, und verstehen, wie Werbung und Dark Patterns Kaufentscheidungen steuern.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Konsumpsychologie', icon: alertIcon },
-        { titel: 'Ratenkauf & BNPL', lernziel: 'Klarna, Afterpay und Co. kritisch bewerten: Effektivzins berechnen, Widerrufsrecht kennen, KSV-Eintrag verstehen und vermeiden.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Konsumentenschutz', icon: alertIcon },
-        { titel: 'Versicherungen verstehen', lernziel: 'Haushaltsversicherung, Haftpflicht, Kfz-Pflicht, was braucht man wirklich? Selbstbehalt und Prämien sinnvoll vergleichen.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Versicherungen', icon: shieldIcon },
-        { titel: 'Schulden & Geld leihen', lernziel: 'Warnsignale für problematische Schulden früh erkennen, Inkasso-Rechte kennen. AK und Schuldnerberatung als kostenlose Hilfe.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Schuldenprävention', icon: chartIcon },
-        { titel: 'Risiko & Krisen', lernziel: 'Notgroschen aufbauen, Eskalationskette von Verzug bis Pfändung kennen. Krisenbudget für unerwartete Ausgaben.', dauer: '15 oder 50 Min', level: 'Einsteiger', kategorie: 'Krisenmanagement', icon: chartIcon },
+        { titel: 'Finanzplanung', lernziel: 'Haushaltsbudget erstellen: Fixkosten vs. variable Kosten, 50-30-20-Regel, Sonderzahlungen einplanen, die 5 häufigsten Budgetfehler vermeiden.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Budgetplanung', icon: bookIcon },
+        { titel: 'Konsumfallen', lernziel: 'Psychologische Kauftrigger (FOMO, Anchoring, Scarcity) erkennen, und verstehen, wie Werbung und Dark Patterns Kaufentscheidungen steuern.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Konsumpsychologie', icon: alertIcon },
+        { titel: 'Ratenkauf & BNPL', lernziel: 'Klarna, Afterpay und Co. kritisch bewerten: Effektivzins berechnen, Widerrufsrecht kennen, KSV-Eintrag verstehen und vermeiden.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Konsumentenschutz', icon: alertIcon },
+        { titel: 'Versicherungen verstehen', lernziel: 'Haushaltsversicherung, Haftpflicht, Kfz-Pflicht, was braucht man wirklich? Selbstbehalt und Prämien sinnvoll vergleichen.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Versicherungen', icon: shieldIcon },
+        { titel: 'Schulden & Geld leihen', lernziel: 'Warnsignale für problematische Schulden früh erkennen, Inkasso-Rechte kennen. AK und Schuldnerberatung als kostenlose Hilfe.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Schuldenprävention', icon: chartIcon },
+        { titel: 'Risiko & Krisen', lernziel: 'Notgroschen aufbauen, Eskalationskette von Verzug bis Pfändung kennen. Krisenbudget für unerwartete Ausgaben.', dauer: '15 oder 50 Min', level: 'Einstieg', kategorie: 'Krisenmanagement', icon: chartIcon },
       ]}
       simulationen={[
         { titel: 'Konsumfallen-Parcours', untertitel: 'FOMO, Dark Patterns, künstliche Knappheit und Abo-Fallen erleben. Konsumentenschutz nach FAGG kennenlernen.', dauer: '15–20 Min', icon: playIcon },
@@ -114,12 +114,12 @@ export default function HlwPage() {
       features={[
         {
           titel: 'Konsum-Simulationen',
-          nutzenfuerLehrer: 'Schüler:innen treffen im geschützten Raum reale Konsumentscheidungen. Supermarkt, Online-Shop, Mietvertrag, und sehen sofort die finanziellen Konsequenzen. Kein Theorievortrag nötig.',
+          nutzenfuerLehrer: 'Die Jugendlichen treffen im geschützten Raum reale Konsumentscheidungen. Supermarkt, Online-Shop, Mietvertrag, und sehen sofort die finanziellen Konsequenzen. Kein Theorievortrag nötig.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>,
         },
         {
           titel: 'Haushalts-Budget-Modul',
-          nutzenfuerLehrer: 'Schüler:innen planen ihren Monatshaushalt mit realen Kategorien und einem realistischen Einstiegslohn. Das Ergebnis ist direkt sichtbar, ideal als Grundlage für eine Unterrichtsdiskussion.',
+          nutzenfuerLehrer: 'Die Jugendlichen planen ihren Monatshaushalt mit realen Kategorien und einem realistischen Einstiegslohn. Das Ergebnis ist direkt sichtbar, ideal als Grundlage für eine Unterrichtsdiskussion.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>,
         },
         {
@@ -129,16 +129,16 @@ export default function HlwPage() {
         },
         {
           titel: 'Peer-Videos mit Alltagsbezug',
-          nutzenfuerLehrer: 'Gleichaltrige sprechen über Erfahrungen mit Werbung, Ratenkauf oder dem ersten eigenen Haushalt. Das trifft HLW-Schüler:innen direkt in ihrer Lebenswelt, und erzeugt echte Diskussionen.',
+          nutzenfuerLehrer: 'Gleichaltrige sprechen über Erfahrungen mit Werbung, Ratenkauf oder dem ersten eigenen Haushalt. Das trifft Jugendliche an der HLW direkt in ihrer Lebenswelt, und erzeugt echte Diskussionen.',
           icon: <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"/><polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"/></svg>,
         },
       ]}
       lehrerZitat={{
-        text: 'Ich hatte das Thema Haushaltsführung schon tausendmal unterrichtet. Mit Skills-UP! war es das erste Mal, dass Schüler:innen danach sagten: Das hat mich persönlich betroffen.',
+        text: 'Ich hatte das Thema Haushaltsführung schon tausendmal unterrichtet. Mit Skills-UP! war es das erste Mal, dass Jugendliche danach sagten: Das hat mich persönlich betroffen.',
         person: 'Lehrerin für Haushaltswirtschaft, HLW Graz',
       }}
       lehrerFoto="/fotos/lehrer/hlw.png"
-      gruenderStatement="Wer an der HLW Haushaltsführung und Wirtschaft lehrt, kommt an persönlicher Finanzplanung nicht vorbei. Skills-UP! macht diesen Zusammenhang für Schüler:innen konkret erlebbar, mit österreichischen Alltagsszenarien, die sie direkt betreffen."
+      gruenderStatement="Wer an der HLW Haushaltsführung und Wirtschaft lehrt, kommt an persönlicher Finanzplanung nicht vorbei. Skills-UP! macht diesen Zusammenhang für Jugendliche konkret erlebbar, mit österreichischen Alltagsszenarien, die sie direkt betreffen."
       lernpfad={[
         {
           stufe: 'Haushaltsgrundlagen',
@@ -174,10 +174,10 @@ export default function HlwPage() {
         schritte: [
           { label: 'Kostenarten strukturieren', beschreibung: 'Fixkosten (Personal-Grundzeit, Miete) vs. variable Kosten (Zutaten, Verbrauchsmaterial) erfassen.' },
           { label: 'Mengenplanung', beschreibung: 'Einkaufsmengen für 80 Personen berechnen: Die App rechnet Verderb-Puffer und Lieferantenvergleich gleich mit.' },
-          { label: 'Deckungsbeitrag berechnen', beschreibung: 'Welcher Preis pro Person deckt die Kosten? Welcher erwirtschaftet einen Überschuss? Schüler:innen setzen den Preis selbst.' },
+          { label: 'Deckungsbeitrag berechnen', beschreibung: 'Welcher Preis pro Person deckt die Kosten? Welcher erwirtschaftet einen Überschuss? Die Klasse setzt den Preis selbst.' },
           { label: 'Risikoanalyse', beschreibung: '20 Absagen kurzfristig: Was passiert mit dem Budget? Die Simulation zeigt, wie Fixkosten den Break-Even verschieben.' },
         ],
-        ergebnis: 'Schüler:innen beherrschen Event-Kalkulation mit Deckungsbeitrag, Risikopuffer und Preisgestaltung, direkt anwendbar in Tourismus und Gastgewerbe.',
+        ergebnis: 'Die Jugendlichen beherrschen Event-Kalkulation mit Deckungsbeitrag, Risikopuffer und Preisgestaltung, direkt anwendbar in Tourismus und Gastgewerbe.',
         mockUI: [
           { zeile: 'Schulcafé-Kalkulation', typ: 'label' },
           { zeile: 'Gästeanzahl|80 Personen', typ: 'wert' },
@@ -194,17 +194,17 @@ export default function HlwPage() {
       }}
       faqs={[
         { q: 'Welche HLW-Fächer eignen sich für Skills-UP!?', a: 'Betriebs- und Volkswirtschaftliche Grundlagen (BWK), Geographie, Geschichte und Politische Bildung (GGP) sowie der Klassenvorstand. Die Module passen nahtlos in bestehende Stundenpläne.' },
-        { q: 'Warum ist Finanzbildung für HLW-Schülerinnen besonders wichtig?', a: 'Viele HLW-Absolventinnen starten in sozialen oder touristischen Berufen mit geringeren Einstiegsgehältern. Finanzbildung gibt ihnen Werkzeuge, trotzdem finanziell stabil und selbstständig zu leben.' },
-        { q: 'Gibt es Module zu Themen wie Karenz oder Haushalt?', a: 'Ja. Skills-UP! hat Module zu Haushaltsbudget, Karenzgeld, Familienplanung und Lebenshaltungskosten: Themen, die für HLW-Schülerinnen besonders relevant sind.' },
+        { q: 'Warum ist Finanzbildung an der HLW besonders wichtig?', a: 'Viele starten nach der HLW in sozialen oder touristischen Berufen mit geringeren Einstiegsgehältern. Finanzbildung gibt ihnen Werkzeuge, trotzdem finanziell stabil und selbstständig zu leben.' },
+        { q: 'Gibt es Module zu Themen wie Karenz oder Haushalt?', a: 'Ja. Skills-UP! hat Module zu Haushaltsbudget, Karenzgeld, Familienplanung und Lebenshaltungskosten: Themen, die für Jugendliche an der HLW besonders relevant sind.' },
       ]}
       verwandteSchultypen={[
-        { slug: 'bafep', label: 'BAfEP & BASOP', teaser: 'Für angehende Pädagoginnen: Finanzbildung für Beruf und Familienleben.' },
+        { slug: 'bafep', label: 'BAfEP & BASOP', teaser: 'Für angehende pädagogische Fachkräfte: Finanzbildung für Beruf und Familienleben.' },
         { slug: 'ahs', label: 'AHS-Oberstufe', teaser: 'Breite Allgemeinbildung trifft persönliche Finanzkompetenz: GWK und PuG.' },
         { slug: 'hak', label: 'HAK & HAS', teaser: 'Wirtschaftliche Grundlagen persönlich anwenden: Lohnzettel, Budget, Kredit.' },
       ]}
       testimonials={[
         {
-          text: 'HLW-Schülerinnen stehen früh vor dem Berufseinstieg im Tourismus oder Sozialbereich: mit unterdurchschnittlichen Einstiegsgehältern. Skills-UP! gibt ihnen Werkzeuge, trotzdem finanziell stabil zu starten.',
+          text: 'Jugendliche an der HLW stehen früh vor dem Berufseinstieg im Tourismus oder Sozialbereich: mit unterdurchschnittlichen Einstiegsgehältern. Skills-UP! gibt ihnen Werkzeuge, trotzdem finanziell stabil zu starten.',
           person: 'Mag. Andrea L.',
           rolle: 'GGP-Lehrerin',
           schule: 'HLW Steiermark',
