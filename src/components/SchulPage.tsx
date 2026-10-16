@@ -1348,7 +1348,7 @@ export default function SchulPage({
                 </div>
               </div>
               <div className="text-center md:text-left">
-                <p className="font-heading font-700 text-white text-base leading-tight">Dr. Stefan Bauer</p>
+                <p className="font-heading font-700 text-white text-base leading-tight">MMag. Dr. Stefan Bauer</p>
                 <p className="font-body text-white/60 text-xs mt-0.5">Stellvertretender Vorsitz &amp; Vorstand</p>
                 <p className="font-body text-white/40 text-xs">Verein digitale Zukunftsbildung</p>
               </div>
@@ -1410,11 +1410,11 @@ export default function SchulPage({
                 <div className="absolute inset-0 rounded-2xl blur-2xl scale-110 pointer-events-none"
                   style={{ background: 'radial-gradient(circle, rgba(42,138,118,0.4) 0%, transparent 70%)' }} />
                 <div className="relative w-40 h-40 md:w-48 md:h-48 rounded-2xl overflow-hidden border-2 border-white/15 shadow-xl">
-                  <Image src="/fotos/skillsUP-8.jpg" alt="Marina Winkler" fill className="object-cover object-top" />
+                  <Image src="/fotos/skillsUP-8.jpg" alt="Marina Winkler, MA" fill className="object-cover object-top" />
                 </div>
               </div>
               <div className="text-center md:text-right">
-                <p className="font-heading font-700 text-white text-sm leading-tight">Marina Winkler</p>
+                <p className="font-heading font-700 text-white text-sm leading-tight">Marina Winkler, MA</p>
                 <p className="font-body text-white/55 text-xs mt-0.5">Vereinsleitung &amp; Kursleitung</p>
                 <p className="font-body text-white/35 text-xs">Ehemalige Lehrerin</p>
               </div>

@@ -1075,7 +1075,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="text-center md:text-left">
-                <p className="font-heading font-700 text-white text-lg leading-tight">Dr. Stefan Bauer</p>
+                <p className="font-heading font-700 text-white text-lg leading-tight">MMag. Dr. Stefan Bauer</p>
                 <p className="font-body text-white/60 text-sm mt-0.5">Stellvertretender Vorsitz &amp; Vorstand</p>
                 <p className="font-body text-white/55 text-xs mt-0.5">Verein digitale Zukunftsbildung</p>
               </div>
@@ -1162,14 +1162,14 @@ export default function HomePage() {
                 <div className="relative w-52 h-52 md:w-64 md:h-64 rounded-2xl overflow-hidden border-2 border-white/20 shadow-2xl">
                   <Image
                     src="/fotos/skillsUP-8.jpg"
-                    alt="Marina Winkler, Vereinsleitung Skills-UP!"
+                    alt="Marina Winkler, MA, Vereinsleitung Skills-UP!"
                     fill
                     className="object-cover object-top"
                   />
                 </div>
               </div>
               <div className="text-center md:text-right">
-                <p className="font-heading font-700 text-white text-lg leading-tight">Marina Winkler</p>
+                <p className="font-heading font-700 text-white text-lg leading-tight">Marina Winkler, MA</p>
                 <p className="font-body text-white/60 text-sm mt-0.5">Obfrau, Pädagogische Leitung &amp; Finanzbildungsexpertin</p>
                 <p className="font-body text-white/55 text-xs mt-0.5">Bildungsexpertin · Finanzkompetenz · Chancengerechtigkeit</p>
               </div>
@@ -1631,7 +1631,7 @@ export default function HomePage() {
             <div className="rounded-2xl overflow-hidden shadow-md">
               <Image
                 src="/fotos/skillsUP-8.jpg"
-                alt="Marina Winkler, Skills-UP! Team"
+                alt="Marina Winkler, MA, Skills-UP! Team"
                 width={600}
                 height={288}
                 className="w-full h-72 object-cover"

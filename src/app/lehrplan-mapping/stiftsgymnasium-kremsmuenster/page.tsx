@@ -340,7 +340,7 @@ export default function KremsmuensterMappingPage() {
             </div>
             <div className="rounded-2xl p-6" style={{ background: 'rgba(255,255,255,0.1)' }}>
               <p className="font-heading font-bold text-white text-xl mb-2">Für die Klassen bestellen</p>
-              <p className="font-body text-white/85 text-sm mb-5 leading-relaxed">Über den Marktplatz Lernapps, 13 Euro pro Schülerin und Schüler aus dem Lernapps-Budget der Schule. Bestellfrist 25. Oktober.</p>
+              <p className="font-body text-white/85 text-sm mb-5 leading-relaxed">Über den Marktplatz Lernapps, 13 Euro pro Person aus dem Lernapps-Budget der Schule. Bestellfrist 25. Oktober.</p>
               <a href="https://www.marktplatz-lernapps.at/product-detail?product=859" target="_blank" rel="noopener noreferrer"
                 className="inline-flex font-body font-bold text-sm px-5 py-3 rounded-xl bg-white text-[#4a2d8a] hover:bg-white/90 transition-all">
                 Zum Marktplatz Lernapps

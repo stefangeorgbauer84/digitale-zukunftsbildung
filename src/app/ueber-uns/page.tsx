@@ -93,6 +93,7 @@ const orgJsonLd = {
     {
       '@type': 'Person',
       name: 'Marina Winkler',
+      honorificSuffix: 'MA',
       jobTitle: 'Pädagogische Leitung',
       url: 'https://www.digitale-zukunftsbildung.eu/ueber-uns',
       sameAs: ['https://www.linkedin.com/in/marina-winkler-finanzbildung/'],
@@ -271,7 +272,7 @@ export default function UeberUns() {
             <div className="relative rounded-3xl overflow-hidden shadow-card-hover">
               <Image
                 src="/fotos/skillsUP-8.jpg"
-                alt="Marina Winkler, Gründerin Skills-UP!"
+                alt="Marina Winkler, MA, Gründerin Skills-UP!"
                 width={560}
                 height={420}
                 className="w-full object-cover"
@@ -279,7 +280,7 @@ export default function UeberUns() {
               />
               <div className="absolute bottom-0 left-0 right-0 p-6"
                 style={{ background: 'linear-gradient(to top, rgba(26,16,64,0.85) 0%, transparent 100%)' }}>
-                <p className="font-heading font-700 text-white text-base">Marina Winkler</p>
+                <p className="font-heading font-700 text-white text-base">Marina Winkler, MA</p>
                 <p className="font-body text-white/70 text-sm">Obfrau & Gründerin, Skills-UP!</p>
               </div>
             </div>
@@ -466,13 +467,13 @@ export default function UeberUns() {
           <div className="grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
             <div className="bg-white rounded-3xl overflow-hidden shadow-card hover:shadow-card-hover transition-all group">
               <div className="h-64 overflow-hidden">
-                <Image src="/fotos/skillsUP-8.jpg" alt="Marina Winkler"
+                <Image src="/fotos/skillsUP-8.jpg" alt="Marina Winkler, MA"
                   width={400} height={256}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   style={{ objectPosition: 'center 20%' }} />
               </div>
               <div className="p-6">
-                <h3 className="font-heading font-700 text-base text-text-primary mb-1">Marina Winkler</h3>
+                <h3 className="font-heading font-700 text-base text-text-primary mb-1">Marina Winkler, MA</h3>
                 <p className="text-xs font-body text-primary-medium font-700 mb-3">Obfrau, Pädagogische Leitung &amp; Finanzbildungsexpertin</p>
                 <p className="text-sm font-body text-text-muted leading-relaxed mb-4">
                   Bildungsexpertin mit Fokus auf Finanzkompetenz, digitalem Lernen und Chancengerechtigkeit. 15 Jahre Erfahrung, von der Bank über internationale Programme bis zum selbst entwickelten Lernprogramm für Jugendliche.
@@ -495,7 +496,7 @@ export default function UeberUns() {
                   style={{ objectPosition: 'center 20%' }} />
               </div>
               <div className="p-6">
-                <h3 className="font-heading font-700 text-base text-text-primary mb-1">Dr. Stefan Bauer</h3>
+                <h3 className="font-heading font-700 text-base text-text-primary mb-1">MMag. Dr. Stefan Bauer</h3>
                 <p className="text-xs font-body text-primary-medium font-700 mb-3">Vorstand & Finanzbildung</p>
                 <p className="text-sm font-body text-text-muted leading-relaxed mb-4">
                   Mitglied des Vereinsvorstands. Verbindet wirtschaftliche Expertise mit der Mission, jungen Menschen echte Finanzkompetenz zu vermitteln.
