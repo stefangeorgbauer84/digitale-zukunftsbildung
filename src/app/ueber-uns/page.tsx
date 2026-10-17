@@ -496,7 +496,7 @@ export default function UeberUns() {
                   style={{ objectPosition: 'center 20%' }} />
               </div>
               <div className="p-6">
-                <h3 className="font-heading font-700 text-base text-text-primary mb-1">MMag. Dr. Stefan Bauer</h3>
+                <h3 className="font-heading font-700 text-base text-text-primary mb-1">Dr. Stefan Bauer</h3>
                 <p className="text-xs font-body text-primary-medium font-700 mb-3">Vorstand & Finanzbildung</p>
                 <p className="text-sm font-body text-text-muted leading-relaxed mb-4">
                   Mitglied des Vereinsvorstands. Verbindet wirtschaftliche Expertise mit der Mission, jungen Menschen echte Finanzkompetenz zu vermitteln.

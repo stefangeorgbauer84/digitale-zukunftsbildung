@@ -1075,7 +1075,7 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="text-center md:text-left">
-                <p className="font-heading font-700 text-white text-lg leading-tight">MMag. Dr. Stefan Bauer</p>
+                <p className="font-heading font-700 text-white text-lg leading-tight">Dr. Stefan Bauer</p>
                 <p className="font-body text-white/60 text-sm mt-0.5">Stellvertretender Vorsitz &amp; Vorstand</p>
                 <p className="font-body text-white/55 text-xs mt-0.5">Verein digitale Zukunftsbildung</p>
               </div>
