@@ -148,7 +148,7 @@ export const KETTE_LEISTUNG: Kettenglied[] = [
     titel: 'Aktivitäten',
     frage: 'Was tun wir?',
     punkte: [
-      { text: `15 veröffentlichte Module in sechs Themenbereichen, Median bis zum Abschluss ${fmt(wert(K.median), 1)} Minuten`, beleg: 'gemessen' },
+      { text: `15 veröffentlichte Module in sechs Themenbereichen, Median bis zum Abschluss ${fmt(wert(K.median, Q), 1)} Minuten im ${Q_NAME}`, beleg: 'gemessen' },
       { text: 'Peer-Videos, Simulationen, Modulquiz am Ende jedes Moduls', beleg: 'gemessen' },
       { text: `Workshops an Berufsschulen und in Lehrbetrieben: ${VEREIN.workshops} Workshops an ${VEREIN.berufsschulen} Berufsschulen, drei je Schule`, beleg: 'verein' },
       { text: 'Lehrkraft-Dashboard mit Klassen, Lernpfaden und Fristen', beleg: 'gemessen' },
@@ -174,7 +174,7 @@ export const KETTE_WIRKUNG = {
     titel: 'Intendierte Bruttowirkungen',
     punkte: [
       { text: `Wissen am Modulende: ${fmt(wert(K.erstRichtig), 1)} % richtige Antworten im ersten Quizversuch (ohne Quizfragen am Modulstart, also kein Zuwachs belegt)`, beleg: 'gemessen' as Beleg },
-      { text: 'Bessere Entscheidungen in Simulationen wie erste Wohnung, Konto, Gehaltsverhandlung', beleg: 'gemessen' as Beleg },
+      { text: `Entscheidungen in Simulationen wie erste Wohnung, Konto, Gehaltsverhandlung: ${fmt(wert('Simulationsmissionen bestanden'), 1)} % der Missionen bestanden (ohne Ausgangswert, also kein Zuwachs belegt)`, beleg: 'gemessen' as Beleg },
       { text: 'Lernende budgetieren, sparen auf ein Ziel, vergleichen vor dem Kauf (Alltagsverhalten, aus Nutzerdaten nicht messbar)', beleg: 'hypothese' as Beleg },
       { text: 'Lehrkräfte unterrichten Finanzbildung regelmäßig und mit weniger Vorbereitung', beleg: 'hypothese' as Beleg },
     ],
@@ -189,7 +189,7 @@ export const KETTE_WIRKUNG = {
   },
   deadweight: {
     titel: 'Deadweight',
-    text: 'Was wäre ohne Skills-UP! ohnehin passiert? Lernende, die das Wissen schon vorher hatten oder es aus Elternhaus, Bank oder an Handelsakademien ab 2027 aus dem neuen Pflichtfach bekommen hätten. Wird heute nicht gemessen: es fehlen Quizfragen am Modulstart und Vergleichsklassen.',
+    text: 'Was wäre ohne Skills-UP! ohnehin passiert? Lernende, die das Wissen schon vorher hatten oder es aus Elternhaus, Bank oder ab dem Schuljahr 2027/28 aus dem Unterricht bekommen hätten, wenn Finanzbildung im Lehrplan verankert ist. Wird heute nicht gemessen: es fehlen Quizfragen am Modulstart und Vergleichsklassen.',
     beleg: 'geplant' as Beleg,
   },
   netto: {
@@ -221,7 +221,7 @@ export const STAKEHOLDER: Stakeholder[] = [
   { kategorie: 'Lehrbetriebe', akteure: 'Ausbildungsbetriebe wie TGW Logistics, überbetriebliche Lehrwerkstätten', wirkung: 'Finanzbildung wird Teil der Lehrlingsausbildung, weniger Geldsorgen im Betrieb', prioritaet: 2, eigene: true },
   { kategorie: 'Freiwillige', akteure: 'Jugendbeirat mit fünf Jugendlichen aus Wien, Oberösterreich und Kärnten, seit 2024', akteureBeleg: 'verein', wirkung: 'Mitsprache, Inhalte in der Sprache der Zielgruppe', prioritaet: 3 },
   { kategorie: 'Geldgebende', akteure: 'MEGA Bildungsstiftung, öffentliche Mittel, Unternehmenspartner', wirkung: 'Belegter Gegenwert für eingesetzte Mittel', prioritaet: 2 },
-  { kategorie: 'Staat, Länder, Gemeinden', akteure: 'Bildungsministerium mit Marktplatz Lern-Apps, Bildungsdirektionen, Nationale Finanzbildungsstrategie', wirkung: 'Praxisevidenz für die Strategie, geprüftes Angebot für das Pflichtfach an Handelsakademien ab 2027', prioritaet: 2 },
+  { kategorie: 'Staat, Länder, Gemeinden', akteure: 'Bildungsministerium mit Marktplatz Lern-Apps, Bildungsdirektionen, Nationale Finanzbildungsstrategie', wirkung: 'Praxisevidenz für die Strategie, geprüftes Angebot für die Lehrplanverankerung ab 2027/28', prioritaet: 2 },
   { kategorie: 'Zulieferung', akteure: 'Hosting, Videoplattform, Video- und Grafikproduktion', wirkung: 'Aufträge aus dem Bildungsbereich', prioritaet: 3 },
   { kategorie: 'Kooperationspartner', akteure: 'Berufsschulen, Hochschule Burgenland, FH CAMPUS 02, PH Burgenland, Schuldnerberatung Burgenland, AK Wien, WKO, 180 Degrees Consulting', wirkung: 'Zugang zu Schulen, Forschung und Fachwissen, Anschluss an Lehrkräftebildung', prioritaet: 2 },
   { kategorie: 'Sozialversicherung', akteure: 'Österreichische Gesundheitskasse, Pensionsversicherung, Arbeitslosenversicherung über das AMS', wirkung: 'Langfristig weniger Folgekosten von Überschuldung junger Menschen', prioritaet: 3 },
@@ -254,7 +254,7 @@ export const SCHRITTE: Schritt[] = [
   { nr: '5', titel: 'Datenerhebung und Wirkungsmessung', stand: 'teilweise', optional: true, text: 'Gemessen wird nur aus Nutzerdaten der Plattform, ohne Befragung (Entscheidung vom 4. November 2026). Die Quartalskennzahlen laufen automatisch. Es fehlen Quizfragen am Modulstart und Vergleichsklassen.' },
   { nr: '5a', titel: 'Untersuchungsdesign', stand: 'offen', optional: true, unter: true, text: 'Vorschlag aus Nutzerdaten: drei Quizfragen am Modulstart, Modulquiz am Ende, dieselben Fragen nach vier Wochen erneut, Vergleichsklassen, die Skills-UP! erst ein Semester später nutzen.' },
   { nr: '5b', titel: 'Identifikation und tieferes Verständnis', stand: 'teilweise', optional: true, unter: true, beleg: 'verein', text: 'Qualitative Rückmeldungen aus Workshops: 312 Rückmeldungen seit 2022 von Jugendlichen, Lehrlingen, Lehrkräften und Partnerorganisationen.' },
-  { nr: '5c', titel: 'Quantifizierung von Breite und Intensität', stand: 'teilweise', optional: true, unter: true, text: 'Kennzahlenbaum mit 21 Plattformkennzahlen je Quartal. Intensität der Wirkung (Vorher-nachher) noch nicht messbar.' },
+  { nr: '5c', titel: 'Quantifizierung von Breite und Intensität', stand: 'teilweise', optional: true, unter: true, text: `Kennzahlenbaum mit ${KENNZAHLEN.kpis.length} Plattformkennzahlen je Quartal. Intensität der Wirkung (Vorher-nachher) noch nicht messbar.` },
   { nr: '5d', titel: 'Aufbereitung und Analyse', stand: 'erledigt', optional: true, unter: true, text: 'Automatischer Quartalsbericht als Excel-Datei, am 1. und 7. Jänner, April, Juli und Oktober.' },
   { nr: '6', titel: 'Beurteilung und Bewertung', stand: 'offen', optional: true, text: 'Erst mit Deadweight möglich. Danach Kosten je Wirkung und optional Social Return on Investment.' },
   { nr: '7', titel: 'Verdichtung und Darstellung', stand: 'entwurf', text: 'Diese Seite und der Quartalsbericht.' },
@@ -288,7 +288,7 @@ export const MODELL = {
   wirkungen: [
     { gruppe: 'Lernende', punkte: ['Verstehen Lohnzettel, Budget, Kredit- und Ratenkosten', 'Erkennen Konsumfallen und Phishing', 'Setzen sich ein Sparziel und halten es ein', 'Vergleichen vor dem Kauf', 'Treffen Geldentscheidungen sicherer und mit weniger Stress'] },
     { gruppe: 'Lehrkräfte', punkte: ['Sparen Vorbereitungszeit', 'Fühlen sich sicher im Thema', 'Bauen Finanzbildung fest in den Jahresplan ein', 'Sehen, wo die Klasse steht'] },
-    { gruppe: 'Schulen und Lehrbetriebe', punkte: ['Erfüllen das übergreifende Thema Wirtschafts-, Finanz- und Verbraucherbildung', 'Handelsakademien sind vorbereitet auf das Pflichtfach ab 2027', 'Machen Finanzbildung zum Teil der Ausbildung'] },
+    { gruppe: 'Schulen und Lehrbetriebe', punkte: ['Erfüllen das übergreifende Thema Wirtschafts-, Finanz- und Verbraucherbildung', 'Sind vorbereitet auf die Lehrplanverankerung ab 2027/28', 'Machen Finanzbildung zum Teil der Ausbildung'] },
     { gruppe: 'Eltern und Familien', punkte: ['Sprechen öfter über Geld', 'Erleben weniger Konflikte um Geld'] },
     { gruppe: 'Bildungssystem und Staat', punkte: ['Bekommen Praxisdaten für die Nationale Finanzbildungsstrategie', 'Haben ein geprüftes Angebot im Marktplatz Lern-Apps'] },
     { gruppe: 'Hochschulen und Forschung', punkte: ['Gewinnen Daten zur Wirkung von Peer-Learning', 'Bringen den Ansatz in die Ausbildung künftiger Lehrkräfte'] },
@@ -314,10 +314,10 @@ export type KettenZeile = {
 export const KETTEN_TABELLE: KettenZeile[] = [
   {
     stakeholder: 'Lernende (Lehrlinge, Jugendliche ab 15)',
-    input: [`Zeit: Median ${fmt(wert(K.median), 1)} Minuten bis zum Modulabschluss`, 'Unterrichtsstunden', 'Smartphone oder Schulgerät'],
+    input: [`Zeit: Median ${fmt(wert(K.median, Q), 1)} Minuten bis zum Modulabschluss (${quartalName(Q)})`, 'Unterrichtsstunden', 'Smartphone oder Schulgerät'],
     aktivitaeten: ['Module mit Peer-Videos', 'Simulationen wie erste Wohnung, Konto, Gehaltsverhandlung', 'Modulquiz', 'Workshops'],
     output: ['Anzahl aktiver Lernender je Quartal', 'Anzahl abgeschlossener Module', 'Anzahl bestandener Modulquiz', 'Anzahl Workshop-Teilnahmen'],
-    brutto: ['Wissenszuwachs zu Budget, Lohnzettel, Kredit', 'Bessere Entscheidungen in den Simulationen', 'Mehr Sicherheit bei Geldentscheidungen (ohne Befragung nicht messbar)', 'Unintendiert: Gespräche zu Hause über Geld'],
+    brutto: ['Wissenszuwachs zu Budget, Lohnzettel, Kredit', 'Bestandene Missionen in den Simulationen', 'Mehr Sicherheit bei Geldentscheidungen (ohne Befragung nicht messbar)', 'Unintendiert: Gespräche zu Hause über Geld'],
     deadweight: ['Anteil der Lernenden, die die Fragen schon am Modulstart richtig beantworten', 'Zuwachs in Vergleichsklassen ohne Skills-UP!'],
     netto: ['Auf Skills-UP! zurückführbarer Wissenszuwachs', 'Auf Skills-UP! zurückführbar bessere Entscheidungen in den Simulationen'],
   },
@@ -327,7 +327,7 @@ export const KETTEN_TABELLE: KettenZeile[] = [
     aktivitaeten: ['Lehrkraft-Dashboard', 'Lernpfade und Fristen', 'Unterrichtsmaterial', 'Fortbildung'],
     output: ['Anzahl Lehrkräfte mit aktiver Klasse', 'Anzahl Klassen mit Lernpfad oder Frist', 'Anzahl Fortbildungen'],
     brutto: ['Weniger Vorbereitungszeit', 'Mehr Sicherheit im Thema', 'Finanzbildung fest im Jahresplan'],
-    deadweight: ['Lehrkräfte, die Finanzbildung ohnehin unterrichten würden, an Handelsakademien ab 2027 auch wegen des Pflichtfachs'],
+    deadweight: ['Lehrkräfte, die Finanzbildung ohnehin unterrichten würden, ab 2027/28 auch wegen der Lehrplanverankerung'],
     netto: ['Zusätzliche Unterrichtsstunden Finanzbildung durch Skills-UP!'],
   },
   {
@@ -344,7 +344,7 @@ export const KETTEN_TABELLE: KettenZeile[] = [
     input: ['Öffentliche Mittel und Marktplatz Lern-Apps', 'Prüfung für das Gütesiegel'],
     aktivitaeten: ['Mitarbeit in der Nationalen Finanzbildungsstrategie', 'Angebot im Marktplatz Lern-Apps'],
     output: ['Anzahl vergebener Lizenzen', 'Anzahl eingebrachter Empfehlungen'],
-    brutto: ['Praxisevidenz für die Strategie', 'Geprüftes Angebot für das Pflichtfach an Handelsakademien ab 2027'],
+    brutto: ['Praxisevidenz für die Strategie', 'Geprüftes Angebot für die Lehrplanverankerung ab 2027/28'],
     deadweight: ['Hoch: Marktplatz und Strategie bestehen auch ohne Skills-UP!'],
     netto: ['Empfehlungen und Unterrichtspraxis, die nachweislich auf Daten von Skills-UP! beruhen'],
   },
@@ -395,7 +395,7 @@ export const WIRKUNGSBOX: BoxZelle[][] = [
       { text: 'Finanzbildung gehört zur Lehrlingsausbildung', dim: 'kulturell' },
     ],
     [
-      { text: 'Handelsakademien erfüllen das Pflichtfach mit geprüftem Angebot', dim: 'sozial' },
+      { text: 'Schulen erfüllen den Lehrplan 2027/28 mit geprüftem Angebot', dim: 'sozial' },
       { text: 'Verein trägt sich ohne Förderung', dim: 'ökonomisch' },
     ],
   ],
@@ -446,8 +446,8 @@ function befunde(): Befund[] {
     },
     {
       titel: 'Das Modulquiz wird fast immer bestanden',
-      zahl: fmt(wert(K.erstBestanden), 1), einheit: '% im ersten Versuch',
-      text: `${fmt(wert(K.nordstern))} Lernende haben seit August 2026 ein Modulquiz bestanden, ${fmt(wert(K.erstBestanden), 1)} % schon im ersten Versuch, mit ${fmt(wert(K.erstRichtig), 1)} % richtigen Antworten.`,
+      zahl: fmt(wert(K.erstBestanden), 1), einheit: '% der ersten Abgaben bestanden',
+      text: `${fmt(wert(K.nordstern))} Lernende haben seit August 2026 ein Modulquiz bestanden. Von den ${fmt(kpi(K.erstBestanden).werte[GESAMT].basis ?? 0)} ersten Quizabgaben je Person und Modul waren ${fmt(wert(K.erstBestanden), 1)} % sofort bestanden, mit ${fmt(wert(K.erstRichtig), 1)} % richtigen Antworten.`,
       folge: 'So hohe Werte unterscheiden kaum zwischen viel und wenig Wissen. Lernzuwachs wird erst mit drei Quizfragen am Modulstart sichtbar, und das Quiz braucht schwerere Fragen.',
       beleg: 'gemessen',
     },
@@ -483,12 +483,12 @@ function befunde(): Befund[] {
 }
 export const BEFUNDE = befunde()
 
+// Jede Stufe ist Teilmenge der vorherigen: bestandenes Modulquiz setzt ein bestandenes Modul voraus.
 export const TRICHTER = [
   { stufe: 'Registriert', n: wert(K.reg), erklaerung: 'Konto als Lernende angelegt' },
   { stufe: 'Modul gestartet', n: wert(K.gestartet), erklaerung: 'mindestens ein Modul begonnen' },
   { stufe: 'Modul abgeschlossen', n: wert(K.abgeschlossen), erklaerung: 'mindestens ein Modul bestanden' },
   { stufe: 'Modulquiz bestanden', n: wert(K.nordstern), erklaerung: 'Nordstern, Quizversuche ab 12. August 2026' },
-  { stufe: 'Drei oder mehr Module', n: wert(K.drei), erklaerung: 'mindestens drei Module bestanden' },
 ]
 
 export const BEGRIFFE = [
@@ -515,7 +515,7 @@ export const KIRKPATRICK = [
 export const MESSPLAN = [
   { wirkung: 'Finanzwissen steigt', indikator: 'Differenz zwischen Quizfragen am Modulstart und Modulquiz', methode: 'Drei Quizfragen am Modulstart, Modulquiz am Ende', zeitpunkt: 'jedes Modul', quelle: 'Plattform', beleg: 'geplant' as Beleg },
   { wirkung: 'Wissen bleibt', indikator: 'Richtige Antworten bei denselben Fragen vier Wochen später', methode: 'Wiederholungsfragen im nächsten Modul', zeitpunkt: 'nach vier Wochen', quelle: 'Plattform', beleg: 'geplant' as Beleg },
-  { wirkung: 'Entscheidungen werden besser', indikator: 'Anteil bestandener Simulationsmissionen', methode: 'Simulationsdaten im Quartalsbericht', zeitpunkt: 'je Quartal', quelle: 'Plattform', beleg: 'gemessen' as Beleg },
+  { wirkung: 'Entscheidungen in Simulationen gelingen', indikator: 'Anteil bestandener Simulationsmissionen (Zuwachs erst mit Vergleich der Versuche)', methode: 'Simulationsdaten im Quartalsbericht', zeitpunkt: 'je Quartal', quelle: 'Plattform', beleg: 'gemessen' as Beleg },
   { wirkung: 'Lernende bleiben dran', indikator: 'Aktive, Wiederkehr, Abschlussquote, Lernende mit bestandenem Modulquiz', methode: 'Quartalsbericht', zeitpunkt: 'je Quartal', quelle: 'Plattform', beleg: 'gemessen' as Beleg },
   { wirkung: 'Lernende vertiefen', indikator: 'Anteil mit einem Modul außerhalb der Grundlagen', methode: 'Quartalsbericht', zeitpunkt: 'je Quartal', quelle: 'Plattform', beleg: 'gemessen' as Beleg },
   { wirkung: 'Deadweight', indikator: 'Zuwachs in Vergleichsklassen ohne Skills-UP!', methode: 'Wartekontrollgruppe mit denselben Quizfragen: Klassen starten ein Semester später', zeitpunkt: 'je Schuljahr', quelle: 'Plattform und Partnerschulen', beleg: 'geplant' as Beleg },

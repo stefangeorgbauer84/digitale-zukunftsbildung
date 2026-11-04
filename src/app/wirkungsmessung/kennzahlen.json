@@ -149,13 +149,13 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 128.0,
+     "wert": 129.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 169.0,
+     "wert": 170.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
@@ -180,13 +180,13 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 48.3,
+     "wert": 48.7,
      "basis": 265,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 63.8,
+     "wert": 64.2,
      "basis": 265,
      "status": "gemessen",
      "hinweis": ""
@@ -212,13 +212,13 @@
     },
     "2026-Q4": {
      "wert": 1.6,
-     "basis": 128,
+     "basis": 129,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 13.0,
-     "basis": 169,
+     "wert": 12.9,
+     "basis": 170,
      "status": "gemessen",
      "hinweis": ""
     }
@@ -242,13 +242,13 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 127.0,
+     "wert": 128.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 167.0,
+     "wert": 168.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
@@ -274,13 +274,13 @@
     },
     "2026-Q4": {
      "wert": 1.1,
-     "basis": 127,
+     "basis": 128,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
      "wert": 1.7,
-     "basis": 167,
+     "basis": 168,
      "status": "gemessen",
      "hinweis": ""
     }
@@ -304,14 +304,14 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 17.3,
-     "basis": 127,
+     "wert": 17.2,
+     "basis": 128,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 27.5,
-     "basis": 167,
+     "wert": 27.4,
+     "basis": 168,
      "status": "gemessen",
      "hinweis": ""
     }
@@ -490,14 +490,14 @@
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
     },
     "2026-Q4": {
-     "wert": 29.8,
-     "basis": 141,
+     "wert": 29.6,
+     "basis": 142,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 38.5,
-     "basis": 278,
+     "wert": 38.4,
+     "basis": 279,
      "status": "eingeschränkt",
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
     }
@@ -769,14 +769,14 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 39.7,
-     "basis": 126,
+     "wert": 39.4,
+     "basis": 127,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 32.1,
-     "basis": 156,
+     "wert": 31.8,
+     "basis": 157,
      "status": "gemessen",
      "hinweis": ""
     }

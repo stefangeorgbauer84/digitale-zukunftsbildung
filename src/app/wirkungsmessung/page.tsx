@@ -311,7 +311,9 @@ export default function WirkungsmessungPage() {
             })}
           </div>
           <p className="font-body text-sm mt-3" style={{ color: TEXT2 }}>
-            Der größte Verlust liegt zwischen Start und Abschluss. Hier wirken Lernpfade, Fristen und kürzere Einstiege am stärksten. <BelegChip beleg="gemessen" />
+            Der größte Verlust liegt zwischen Start und Abschluss. Hier wirken Lernpfade, Fristen und kürzere Einstiege am stärksten.
+            Getrennt davon: {fmt(wert(KPI_NAMEN.drei))} Lernende haben drei oder mehr Module abgeschlossen. Sie sind keine Teilmenge der
+            Stufe Modulquiz, weil Abschlüsse vor dem 12. August 2026 ohne Quiz möglich waren, darum stehen sie nicht im Trichter. <BelegChip beleg="gemessen" />
           </p>
         </Abschnitt>
 
@@ -596,7 +598,9 @@ export default function WirkungsmessungPage() {
                         </td>
                       ))}
                       <td className="px-3 py-2.5"><Verlauf werte={QUARTALE.map((q) => k.werte[q]?.wert ?? null)} einheit={k.einheit} /></td>
-                      <td className="px-3 py-2.5 text-xs" style={{ color: TEXT2 }}>{letzt?.hinweis || k.werte[GESAMT]?.hinweis}</td>
+                      <td className="px-3 py-2.5 text-xs" style={{ color: TEXT2 }}>
+                        {[...new Set([letzt?.hinweis && `${quartalName(QUARTALE[QUARTALE.length - 1]).replace('. Quartal', '. Q.')}: ${letzt.hinweis}`, k.werte[GESAMT]?.hinweis && `Gesamt: ${k.werte[GESAMT].hinweis}`].filter(Boolean))].join('; ')}
+                      </td>
                     </tr>
                   )
                 })}
@@ -753,9 +757,9 @@ export default function WirkungsmessungPage() {
                 ))}
               </div>
               <p className="font-body text-xs mt-4" style={{ color: TEXT2 }}>
-                Mittel je erreichter Person, abgeleitet: {fmt(BUDGET_GESAMT)} € geteilt durch {VEREIN.lehrlinge} direkt begleitete Lehrlinge sind
-                {' '}{fmt(Math.round(BUDGET_GESAMT / VEREIN.lehrlinge))} €, geteilt durch alle {fmt(VEREIN.reichweite)} erreichten jungen Menschen
-                {' '}{fmt(Math.round(BUDGET_GESAMT / VEREIN.reichweite))} €. Das Budget enthält auch den Aufbau der Plattform.
+                Mittel je Person, abgeleitet: {fmt(BUDGET_GESAMT)} € geteilt durch {VEREIN.lehrlinge} direkt begleitete Lehrlinge sind
+                {' '}{fmt(Math.round(BUDGET_GESAMT / VEREIN.lehrlinge))} €, geteilt durch {fmt(VEREIN.reichweite)} Zugänge aus Workshops und Lizenzen
+                {' '}{fmt(Math.round(BUDGET_GESAMT / VEREIN.reichweite))} € je Zugang. Eine Lizenz ist noch keine Nutzung, die zweite Zahl ist also eine Untergrenze der Kosten je lernender Person. Das Budget enthält auch den Aufbau der Plattform.
               </p>
             </figure>
           </div>
