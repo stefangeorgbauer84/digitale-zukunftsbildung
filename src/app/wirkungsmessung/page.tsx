@@ -4,9 +4,10 @@ import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import {
   BELEG, STAND, KETTE_LEISTUNG, KETTE_WIRKUNG, STAKEHOLDER, STAND_STIL, ZWECK, SCHRITTE, VERWENDUNG,
-  MODELL, KETTEN_TABELLE, DIMENSION_FARBE, EBENEN, ZEITEN, WIRKUNGSBOX, OEKOLOGISCH_HINWEIS, KPIS,
-  KIRKPATRICK, MESSPLAN, VEREINSANGABEN, LIZENZ_HINWEIS, GESCHICHTE, STIMMEN, QUELLEN,
-  type Beleg, type Kpi, type Dimension,
+  MODELL, KETTEN_TABELLE, DIMENSION_FARBE, EBENEN, ZEITEN, WIRKUNGSBOX, OEKOLOGISCH_HINWEIS,
+  KIRKPATRICK, MESSPLAN, GESCHICHTE, STIMMEN, QUELLEN, KENNZAHLEN, QUARTALE, GESAMT, Q_NAME, KPI_NAMEN, BEFUNDE,
+  TRICHTER, BEGRIFFE, VEREIN, BUDGET_GESAMT, ZIELE_2027, fmt, wert, quartalName,
+  type Beleg, type Dimension, type KpiStatus, type KpiZelle,
 } from './daten'
 
 // Noch nicht veröffentlicht: passwortgeschützt (src/middleware.ts), nicht in Sitemap und Navigation, noindex.
@@ -24,6 +25,9 @@ const INK = '#1a1040'
 const TEXT2 = '#4c5260'
 
 const INHALT = [
+  ['befunde', 'Was die Daten zeigen'],
+  ['phasen', 'Zwei Datenphasen'],
+  ['trichter', 'Vom Konto zum Lernerfolg'],
   ['kette', 'Wirkungskette'],
   ['stakeholder', 'Stakeholder'],
   ['vorgehen', 'Vorgehen in sieben Schritten'],
@@ -31,7 +35,9 @@ const INHALT = [
   ['je-gruppe', 'Wirkungskette je Gruppe'],
   ['wirkungsbox', 'Wirkungsbox'],
   ['kennzahlen', 'Kennzahlen je Quartal'],
+  ['ziele', 'Ziele bis Ende 2027'],
   ['messplan', 'Messplan'],
+  ['begriffe', 'Begriffe'],
   ['angaben', 'Vereinsangaben'],
   ['stimmen', 'Stimmen aus dem Verein'],
 ] as const
@@ -95,10 +101,40 @@ function Operator({ zeichen, label }: { zeichen: string; label: string }) {
   )
 }
 
-function zahl(wert: number | null, einheit: Kpi['einheit']) {
-  if (wert === null) return 'nicht erfasst'
-  const s = Number.isInteger(wert) ? wert.toLocaleString('de-AT') : wert.toLocaleString('de-AT', { minimumFractionDigits: 1, maximumFractionDigits: 1 })
-  return einheit ? `${s} ${einheit}` : s
+const KPI_STIL: Record<KpiStatus, React.CSSProperties> = {
+  gemessen: { color: '#212529' },
+  eingeschränkt: { background: '#FDF0E6', color: '#8A4210' },
+  fehlt: { color: '#6C757D' },
+}
+
+function zelle(z: KpiZelle | undefined, einheit: string) {
+  if (!z || z.wert === null) return 'nicht erfasst'
+  const ganz = Number.isInteger(z.wert)
+  const s = fmt(z.wert, ganz ? 0 : 1)
+  return einheit === 'Anzahl' ? s : `${s} ${einheit}`
+}
+
+/** Einfarbiger Balken, Länge kodiert den Wert. Tooltip über title. */
+function Balken({ anteil, label, hoehe = 'h-6' }: { anteil: number; label: string; hoehe?: string }) {
+  return (
+    <div className={`w-full ${hoehe} rounded bg-primary-50`} title={label}>
+      <div className="h-full rounded bg-primary-medium" style={{ width: `${Math.max(1.5, Math.min(100, anteil))}%` }} />
+    </div>
+  )
+}
+
+/** Mini-Verlauf über die Quartale, gleiche Skala je Kennzahl. */
+function Verlauf({ werte, einheit }: { werte: (number | null)[]; einheit: string }) {
+  const max = Math.max(...werte.map((w) => w ?? 0), 0.0001)
+  return (
+    <div className="flex items-end gap-[2px] h-6 w-16" aria-hidden="true">
+      {werte.map((w, i) => (
+        <div key={i} className="flex-1 rounded-t-[3px] bg-primary-medium"
+          style={{ height: w === null ? '2px' : `${Math.max(8, (w / max) * 100)}%`, opacity: w === null ? 0.25 : 1 }}
+          title={w === null ? 'nicht erfasst' : `${fmt(w, Number.isInteger(w) ? 0 : 1)}${einheit === 'Anzahl' ? '' : ' ' + einheit}`} />
+      ))}
+    </div>
+  )
 }
 
 function DimChip({ dim }: { dim: Dimension }) {
@@ -121,20 +157,32 @@ export default function WirkungsmessungPage() {
         <section className="pt-32 pb-14 px-6" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 60%, #1a5c4e 100%)' }}>
           <div className="max-w-6xl mx-auto">
             <p className="inline-flex items-center gap-2 font-body text-sm font-bold text-white bg-white/10 border border-white/20 rounded-full px-3 py-1 mb-6">
-              Entwurf, noch nicht veröffentlicht
+              Entwurf, noch nicht veröffentlicht. Stand {STAND}
             </p>
             <h1 className="font-heading font-bold text-4xl md:text-5xl text-white mb-5 text-balance">Wirkungsmessung Skills-UP!</h1>
-            <p className="font-body text-lg text-white/85 max-w-3xl mb-8">
-              Was Skills-UP! bei Jugendlichen, Lehrkräften, Schulen und im Bildungssystem bewirkt, wie wir das messen und wo
-              die Belege noch fehlen. Angewandt auf die Modelle der Wirkungsanalyse des Kompetenzzentrums für
+            <p className="font-body text-lg text-white/85 max-w-3xl mb-10">
+              Was Skills-UP! bei Jugendlichen, Lehrkräften, Schulen und im Bildungssystem bewirkt, was die Nutzerdaten
+              belegen und was nicht. Nach den Modellen der Wirkungsanalyse des Kompetenzzentrums für
               Nonprofit-Organisationen und Social Entrepreneurship der WU Wien.
             </p>
-            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 max-w-5xl">
-              {(Object.keys(BELEG) as Beleg[]).map((k) => (
-                <div key={k} className="bg-white rounded-xl p-3">
-                  <BelegChip beleg={k} />
-                  <p className="font-body text-xs mt-2" style={{ color: TEXT2 }}>{BELEG[k].erklaerung}</p>
+            <div className="grid gap-3 grid-cols-2 lg:grid-cols-4 mb-8">
+              {[
+                { n: fmt(wert(KPI_NAMEN.nordstern)), t: 'Lernende mit bestandenem Modulquiz', b: 'gemessen' as Beleg, h: 'Nordstern, seit August 2026' },
+                { n: fmt(wert(KPI_NAMEN.aktiv)), t: 'aktive Lernende auf der Plattform', b: 'gemessen' as Beleg, h: `von ${fmt(wert(KPI_NAMEN.reg))} registrierten` },
+                { n: fmt(VEREIN.lehrlinge), t: 'Lehrlinge direkt in Workshops begleitet', b: 'verein' as Beleg, h: '2022 bis Juni 2026' },
+                { n: fmt(VEREIN.lizenzen), t: 'Lizenzen über den Marktplatz Lern-Apps', b: 'verein' as Beleg, h: 'bis Juni 2026' },
+              ].map((k) => (
+                <div key={k.t} className="bg-white rounded-2xl p-4">
+                  <p className="font-heading font-bold text-4xl md:text-5xl text-primary-dark tabular-nums leading-none">{k.n}</p>
+                  <p className="font-body text-sm text-gray-900 mt-2 leading-snug">{k.t}</p>
+                  <p className="font-body text-xs mt-1" style={{ color: TEXT2 }}>{k.h}</p>
+                  <div className="mt-2"><BelegChip beleg={k.b} /></div>
                 </div>
+              ))}
+            </div>
+            <div className="flex flex-wrap gap-x-5 gap-y-2">
+              {(Object.keys(BELEG) as Beleg[]).map((k) => (
+                <p key={k} className="font-body text-xs text-white/85 flex items-center gap-2"><BelegChip beleg={k} /> {BELEG[k].erklaerung}</p>
               ))}
             </div>
           </div>
@@ -155,12 +203,117 @@ export default function WirkungsmessungPage() {
               <h2 className="font-heading font-bold text-lg mb-3" style={{ color: INK }}>Zweck der Wirkungsanalyse</h2>
               <p className="font-body text-base text-gray-900 mb-4">{ZWECK}</p>
               <p className="font-body text-sm" style={{ color: TEXT2 }}>
-                Plattformzahlen: Stand {STAND}. Die Formel der WU Wien gilt für alle Abschnitte:
+                Plattformzahlen: Stand {STAND}, nur aus Nutzerdaten, ohne Befragung. Die Formel der WU Wien gilt für alle Abschnitte:
                 Nettowirkung (Impact) ist die Bruttowirkung (Outcome) minus Deadweight.
               </p>
             </div>
           </div>
         </section>
+
+        {/* Befunde */}
+        <Abschnitt
+          id="befunde"
+          titel="Was die Daten zeigen"
+          intro={`Sieben Befunde aus den Nutzerdaten und den Zählungen des Vereins, jeweils mit der Folge für die Steuerung. Die Zahlen rechnen sich bei jedem Datenupdate neu, Stand ${STAND}.`}
+        >
+          <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-3">
+            {BEFUNDE.map((b) => (
+              <article key={b.titel} className="bg-white rounded-2xl border border-gray-200 p-5 flex flex-col">
+                <p className="flex items-baseline gap-2 mb-2">
+                  <span className="font-heading font-bold text-4xl text-primary-dark tabular-nums leading-none">{b.zahl}</span>
+                  <span className="font-body text-sm" style={{ color: TEXT2 }}>{b.einheit}</span>
+                </p>
+                <h3 className="font-heading font-bold text-lg mb-2 text-balance" style={{ color: INK }}>{b.titel}</h3>
+                <p className="font-body text-sm text-gray-900 mb-3">{b.text}</p>
+                <p className="font-body text-sm mt-auto rounded-xl p-3 bg-[#E6F4F1] text-[#14463b]"><strong>Folge:</strong> {b.folge}</p>
+                <div className="mt-3"><BelegChip beleg={b.beleg} /></div>
+              </article>
+            ))}
+          </div>
+        </Abschnitt>
+
+        {/* Zwei Datenphasen */}
+        <Abschnitt
+          id="phasen"
+          titel="Zwei Datenphasen, ein Übergang"
+          intro="Bis Juni 2026 hat der Verein die Reichweite selbst gezählt, vor allem Workshops. Seit April 2026 messen die Nutzerdaten der Plattform automatisch je Quartal. Im 2. Quartal 2026 laufen beide nebeneinander. Die beiden Reichweiten werden nicht addiert, weil sich Lehrlinge in Workshops und Konten auf der Plattform überschneiden können."
+        >
+          <div className="grid gap-4 lg:grid-cols-[minmax(0,5fr)_minmax(0,4fr)]">
+            <figure className="bg-white rounded-2xl border border-gray-200 p-5">
+              <figcaption className="mb-4">
+                <h3 className="font-heading font-bold text-lg" style={{ color: INK }}>Phase 1: Workshops</h3>
+                <p className="font-body text-sm" style={{ color: TEXT2 }}>Direkt begleitete Lehrlinge je Jahr <BelegChip beleg="verein" /></p>
+              </figcaption>
+              <div className="space-y-2.5">
+                {VEREIN.lehrlingeJahr.map((j) => (
+                  <div key={j.jahr} className="grid grid-cols-[6.5rem_minmax(0,1fr)_3rem] items-center gap-3">
+                    <span className="font-body text-sm text-gray-900">{j.jahr}</span>
+                    <Balken anteil={(j.n / 240) * 100} label={`${j.jahr}: ${j.n} Lehrlinge`} />
+                    <span className="font-heading font-bold text-base text-right tabular-nums" style={{ color: INK }}>{j.n}</span>
+                  </div>
+                ))}
+              </div>
+              <p className="font-body text-xs mt-4" style={{ color: TEXT2 }}>Summe {VEREIN.lehrlinge} Lehrlinge. Dazu {fmt(VEREIN.lizenzen)} Lizenzen über den Marktplatz Lern-Apps, gesamt etwa {fmt(VEREIN.reichweite)} erreichte junge Menschen bis Juni 2026.</p>
+            </figure>
+            <figure className="bg-white rounded-2xl border border-gray-200 p-5">
+              <figcaption className="mb-4">
+                <h3 className="font-heading font-bold text-lg" style={{ color: INK }}>Phase 2: Plattform</h3>
+                <p className="font-body text-sm" style={{ color: TEXT2 }}>Aktive Lernende je Quartal <BelegChip beleg="gemessen" /></p>
+              </figcaption>
+              <div className="space-y-2.5">
+                {QUARTALE.map((q) => {
+                  const n = wert(KPI_NAMEN.aktiv, q)
+                  const max = Math.max(...QUARTALE.map((x) => wert(KPI_NAMEN.aktiv, x)))
+                  return (
+                    <div key={q} className="grid grid-cols-[6.5rem_minmax(0,1fr)_3rem] items-center gap-3">
+                      <span className="font-body text-sm text-gray-900">{quartalName(q).replace('. Quartal', '. Q.')}</span>
+                      <Balken anteil={(n / max) * 100} label={`${quartalName(q)}: ${n} aktive Lernende`} />
+                      <span className="font-heading font-bold text-base text-right tabular-nums" style={{ color: INK }}>{fmt(n)}</span>
+                    </div>
+                  )
+                })}
+              </div>
+              <p className="font-body text-xs mt-4" style={{ color: TEXT2 }}>
+                {fmt(wert(KPI_NAMEN.aktiv))} verschiedene Lernende waren seit April 2026 aktiv, {fmt(wert(KPI_NAMEN.reg))} sind registriert.
+                {KENNZAHLEN.laufend && ` Das ${Q_NAME.replace(' (', ' läuft noch (')}.`}
+              </p>
+            </figure>
+          </div>
+          <ol className="mt-4 grid gap-3 md:grid-cols-3 font-body text-sm">
+            <li className="bg-white rounded-xl border border-gray-200 p-4"><strong className="text-gray-900">Bis Juni 2026:</strong> Vereinszählung, eingefroren mit Stand Juni 2026.</li>
+            <li className="bg-white rounded-xl border border-gray-200 p-4"><strong className="text-gray-900">April bis Juni 2026:</strong> beide Quellen. Quizversuche speichert die Plattform erst ab 12. August.</li>
+            <li className="bg-white rounded-xl border border-gray-200 p-4"><strong className="text-gray-900">Ab Juli 2026:</strong> Wirkung auf der Plattform nur noch aus Nutzerdaten. Workshops zählt der Verein weiter getrennt.</li>
+          </ol>
+        </Abschnitt>
+
+        {/* Trichter */}
+        <Abschnitt
+          id="trichter"
+          titel="Vom Konto zum Lernerfolg"
+          intro="Jede Stufe ist eine Teilmenge der vorherigen, jede Person einmal gezählt, seit April 2026. Die Balkenlänge zeigt den Anteil an allen registrierten Lernenden."
+        >
+          <div className="bg-white rounded-2xl border border-gray-200 p-5 space-y-3">
+            {TRICHTER.map((t) => {
+              const anteil = (t.n / TRICHTER[0].n) * 100
+              return (
+                <div key={t.stufe} className="grid gap-1 sm:grid-cols-[12rem_minmax(0,1fr)_7rem] sm:items-center sm:gap-4">
+                  <div>
+                    <p className="font-heading font-bold text-base" style={{ color: INK }}>{t.stufe}</p>
+                    <p className="font-body text-xs" style={{ color: TEXT2 }}>{t.erklaerung}</p>
+                  </div>
+                  <Balken anteil={anteil} label={`${t.stufe}: ${t.n}`} hoehe="h-7" />
+                  <p className="font-body text-sm sm:text-right tabular-nums">
+                    <strong className="font-heading text-lg" style={{ color: INK }}>{fmt(t.n)}</strong>{' '}
+                    <span style={{ color: TEXT2 }}>{fmt(anteil, 1)} %</span>
+                  </p>
+                </div>
+              )
+            })}
+          </div>
+          <p className="font-body text-sm mt-3" style={{ color: TEXT2 }}>
+            Der größte Verlust liegt zwischen Start und Abschluss. Hier wirken Lernpfade, Fristen und kürzere Einstiege am stärksten. <BelegChip beleg="gemessen" />
+          </p>
+        </Abschnitt>
 
         {/* 1 Wirkungskette */}
         <Abschnitt
@@ -255,7 +408,7 @@ export default function WirkungsmessungPage() {
                     <h3 className="font-heading font-bold text-base leading-tight" style={{ color: INK }}>{s.kategorie}</h3>
                     <span className="font-body text-[11px] font-bold whitespace-nowrap rounded-full px-2 py-0.5 bg-primary-50 text-primary-dark">Priorität {s.prioritaet}</span>
                   </div>
-                  <p className="font-body text-[13px] text-gray-900 mb-2">{s.akteure}</p>
+                  <p className="font-body text-[13px] text-gray-900 mb-2">{s.akteure}{s.akteureBeleg && <> <BelegChip beleg={s.akteureBeleg} /></>}</p>
                   <p className="font-body text-xs" style={{ color: TEXT2 }}>{s.wirkung} <BelegChip beleg="hypothese" /></p>
                   {s.eigene && <p className="font-body text-[11px] mt-2 text-primary-medium font-bold">eigene Gruppe für Skills-UP!</p>}
                 </article>
@@ -275,7 +428,7 @@ export default function WirkungsmessungPage() {
         <Abschnitt
           id="vorgehen"
           titel="Wirkungsanalyse in sieben Schritten"
-          intro="Das schrittweise Vorgehen der WU Wien, mit dem Stand für Skills-UP! am 4. November 2026. Schritte 4 bis 6 sind im Modell optional, für eine belastbare Aussage zur Nettowirkung brauchen wir sie."
+          intro="Das schrittweise Vorgehen der WU Wien, mit dem Stand für Skills-UP!. Schritte 4 bis 6 sind im Modell optional, für eine belastbare Aussage zur Nettowirkung brauchen wir sie."
         >
           <div className="rounded-2xl text-white p-4 mb-3 font-body text-sm" style={{ background: INK }}>
             <strong className="font-heading text-base">Definition des Zwecks.</strong> {ZWECK}
@@ -288,7 +441,7 @@ export default function WirkungsmessungPage() {
                   className={`grid gap-3 md:grid-cols-[4.5rem_minmax(0,16rem)_minmax(0,1fr)_7rem] md:items-center rounded-xl p-4 border ${s.optional ? 'bg-primary-50 border-primary-100' : 'bg-white border-gray-200'} ${s.unter ? 'md:ml-10' : ''}`}>
                   <span className="font-body text-xs font-bold" style={{ color: TEXT2 }}>Schritt {s.nr}</span>
                   <span className="font-heading font-bold text-base" style={{ color: INK }}>{s.titel}</span>
-                  <span className="font-body text-sm text-gray-900">{s.text}</span>
+                  <span className="font-body text-sm text-gray-900">{s.text}{s.beleg && <> <BelegChip beleg={s.beleg} /></>}</span>
                   <span className="justify-self-start md:justify-self-end font-body text-xs font-bold px-2.5 py-1 rounded-full" style={{ background: st.bg, color: st.fg }}>{st.label}</span>
                 </li>
               )
@@ -411,53 +564,91 @@ export default function WirkungsmessungPage() {
         <Abschnitt
           id="kennzahlen"
           titel="Kennzahlen je Quartal"
-          intro="Die Plattformkennzahlen aus dem Kennzahlenbaum, jeder Stufe der Wirkungskette zugeordnet. Nur Konten von Lernenden, außer bei Lehrkräften. Orange markiert eine kleine Fallzahl oder Datenlücke. Q4 2026 läuft bis 31. Dezember, Stand 4. November."
+          intro={`Alle Kennzahlen aus den Nutzerdaten, nur Konten von Lernenden, außer bei Lehrkräften. Gesamt zählt jede Person einmal, darum ist es nicht die Summe der Quartale. Orange: kleine Fallzahl oder bekannte Datenlücke. Stand ${STAND}.`}
         >
           <div className="overflow-x-auto rounded-2xl border border-gray-200 bg-white">
-            <table className="min-w-[760px] w-full text-left font-body text-sm">
+            <table className="min-w-[900px] w-full text-left font-body text-sm">
+              <caption className="sr-only">Plattformkennzahlen je Quartal und gesamt</caption>
               <thead className="bg-gray-50 text-gray-900">
                 <tr>
-                  <th scope="col" className="px-3 py-3 font-heading">Stufe</th>
+                  <th scope="col" className="px-3 py-3 font-heading">Bereich</th>
                   <th scope="col" className="px-3 py-3 font-heading">Kennzahl</th>
-                  <th scope="col" className="px-3 py-3 font-heading text-right">Q2 2026</th>
-                  <th scope="col" className="px-3 py-3 font-heading text-right">Q3 2026</th>
-                  <th scope="col" className="px-3 py-3 font-heading text-right">Q4 2026</th>
+                  {QUARTALE.map((q) => (
+                    <th key={q} scope="col" className="px-3 py-3 font-heading text-right whitespace-nowrap">{quartalName(q).replace('. Quartal', '. Q.')}</th>
+                  ))}
+                  <th scope="col" className="px-3 py-3 font-heading text-right bg-primary-50">Gesamt</th>
+                  <th scope="col" className="px-3 py-3 font-heading">Verlauf</th>
                   <th scope="col" className="px-3 py-3 font-heading">Hinweis</th>
                 </tr>
               </thead>
               <tbody className="divide-y divide-gray-100">
-                {KPIS.map((k) => (
-                  <tr key={k.name}>
-                    <td className="px-3 py-2.5 whitespace-nowrap">
-                      <span className="text-[11px] font-bold px-2 py-0.5 rounded-full"
-                        style={k.stufe === 'Outcome' ? { background: '#E6F4F1', color: '#1E6B5B' } : { background: '#EDE9F7', color: '#4a2d8a' }}>
-                        {k.stufe === 'Output Meso' ? 'Output Lehrkräfte' : k.stufe}
-                      </span>
-                    </td>
-                    <td className="px-3 py-2.5 text-gray-900">{k.name}</td>
-                    {(['q2', 'q3', 'q4'] as const).map((q) => (
-                      <td key={q} className="px-3 py-2.5 text-right tabular-nums whitespace-nowrap"
-                        style={k[q] === null ? { color: '#6C757D' } : k.eingeschraenkt?.includes(q) ? { background: '#FDF0E6', color: '#8A4210' } : { color: '#212529' }}>
-                        {zahl(k[q], k.einheit)}
-                      </td>
-                    ))}
-                    <td className="px-3 py-2.5 text-xs" style={{ color: TEXT2 }}>{k.hinweis}</td>
-                  </tr>
-                ))}
+                {KENNZAHLEN.kpis.map((k, i) => {
+                  const neuerBereich = i === 0 || KENNZAHLEN.kpis[i - 1].ast !== k.ast
+                  const letzt = k.werte[QUARTALE[QUARTALE.length - 1]]
+                  return (
+                    <tr key={k.kpi} className={neuerBereich && i > 0 ? 'border-t-2 border-gray-200' : ''}>
+                      <td className="px-3 py-2.5 font-bold text-gray-900 whitespace-nowrap">{neuerBereich ? k.ast : ''}</td>
+                      <td className="px-3 py-2.5 text-gray-900">{k.kpi.replace('Nordstern: ', '')}{k.kpi.startsWith('Nordstern') && <span className="ml-1.5 text-[11px] font-bold px-1.5 py-0.5 rounded bg-primary-dark text-white">Nordstern</span>}</td>
+                      {[...QUARTALE, GESAMT].map((q) => (
+                        <td key={q} className={`px-3 py-2.5 text-right tabular-nums whitespace-nowrap ${q === GESAMT ? 'font-bold' : ''}`}
+                          style={{ ...KPI_STIL[k.werte[q]?.status ?? 'fehlt'], ...(q === GESAMT && k.werte[q]?.status === 'gemessen' ? { background: '#f3f1f9' } : {}) }}>
+                          {zelle(k.werte[q], k.einheit)}
+                        </td>
+                      ))}
+                      <td className="px-3 py-2.5"><Verlauf werte={QUARTALE.map((q) => k.werte[q]?.wert ?? null)} einheit={k.einheit} /></td>
+                      <td className="px-3 py-2.5 text-xs" style={{ color: TEXT2 }}>{letzt?.hinweis || k.werte[GESAMT]?.hinweis}</td>
+                    </tr>
+                  )
+                })}
               </tbody>
             </table>
           </div>
           <p className="mt-4 font-body text-sm max-w-3xl" style={{ color: TEXT2 }}>
-            Was fehlt: Kennzahlen für Verhalten und Impact. Sie entstehen erst mit dem Messplan unten. Ein Quartalsbericht mit allen
-            Werten entsteht automatisch am Anfang jedes Quartals. <BelegChip beleg="gemessen" />
+            Was die Nutzerdaten nicht zeigen: Alltagsverhalten und gesellschaftliche Wirkung. Dafür steht im Messplan, was sich aus Nutzerdaten
+            annähern lässt. Der Quartalsbericht als Excel-Datei entsteht automatisch am Anfang jedes Quartals. <BelegChip beleg="gemessen" />
           </p>
+        </Abschnitt>
+
+        {/* Ziele */}
+        <Abschnitt
+          id="ziele"
+          titel="Ziele bis Ende 2027"
+          intro="Die Ziele aus der Strategie des Vereins, verglichen mit dem Stand vor Sommer 2026."
+        >
+          <div className="grid gap-3 md:grid-cols-2">
+            {ZIELE_2027.map((z) => {
+              const anteil = z.ist !== null && z.soll !== null ? (z.ist / z.soll) * 100 : null
+              return (
+                <article key={z.ziel} className="bg-white rounded-2xl border border-gray-200 p-5">
+                  <div className="flex items-start justify-between gap-3 mb-3">
+                    <h3 className="font-heading font-bold text-base" style={{ color: INK }}>{z.ziel}</h3>
+                    <BelegChip beleg={z.beleg} />
+                  </div>
+                  {anteil !== null && z.ist !== null && z.soll !== null ? (
+                    <>
+                      <p className="font-body text-sm text-gray-900 mb-2 tabular-nums">
+                        <strong className="font-heading text-2xl text-primary-dark">{fmt(z.ist)}</strong> von {fmt(z.soll)}
+                        {anteil >= 100 ? <span className="ml-2 font-bold text-[#1E6B5B]">Ziel erreicht</span> : <span className="ml-2" style={{ color: TEXT2 }}>{fmt(anteil)} %</span>}
+                      </p>
+                      <Balken anteil={anteil} label={`${fmt(z.ist)} von ${fmt(z.soll)}`} />
+                    </>
+                  ) : (
+                    <p className="font-body text-sm text-gray-900">
+                      {z.soll !== null && <><strong className="font-heading text-2xl text-primary-dark">{fmt(z.soll)} {z.einheit}</strong>{' '}</>}
+                      <span style={{ color: TEXT2 }}>{z.hinweis}</span>
+                    </p>
+                  )}
+                </article>
+              )
+            })}
+          </div>
         </Abschnitt>
 
         {/* 8 Messplan */}
         <Abschnitt
           id="messplan"
           titel="Messplan"
-          intro="Wie wir jede Wirkung künftig messen. Die vier Ebenen nach Kirkpatrick zeigen, wie tief die Messung heute reicht."
+          intro="Wie wir jede Wirkung messen, nur aus Nutzerdaten der Plattform. Eine Befragung ist bewusst nicht vorgesehen. Die vier Ebenen nach Kirkpatrick zeigen, wie tief die Messung damit reicht."
         >
           <div className="grid gap-3 md:grid-cols-2 xl:grid-cols-4 mb-8">
             {KIRKPATRICK.map((k) => (
@@ -494,22 +685,82 @@ export default function WirkungsmessungPage() {
           </div>
         </Abschnitt>
 
+        {/* Begriffe */}
+        <Abschnitt id="begriffe" titel="Begriffe" intro="So werden die Zahlen auf dieser Seite gezählt.">
+          <dl className="grid gap-3 md:grid-cols-2">
+            {BEGRIFFE.map((b) => (
+              <div key={b.begriff} className="bg-white rounded-xl border border-gray-200 p-4">
+                <dt className="font-heading font-bold text-base" style={{ color: INK }}>{b.begriff}</dt>
+                <dd className="font-body text-sm text-gray-900 mt-1">{b.text}</dd>
+              </div>
+            ))}
+          </dl>
+        </Abschnitt>
+
         {/* Vereinsangaben */}
         <Abschnitt
           id="angaben"
           titel="Vereinsangaben"
-          intro="Zahlen aus der eigenen Erhebung des Vereins, Stand Juni 2026. Sie sind extern noch nicht geprüft und werden vor der Veröffentlichung bestätigt."
+          intro="Zählungen des Vereins mit Stand vor Sommer 2026. Wo frühere Unterlagen verschiedene Werte nennen, steht hier der höhere. Extern sind sie nicht geprüft."
         >
-          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-            {VEREINSANGABEN.map((v) => (
-              <div key={v.zahl} className="bg-white rounded-2xl border border-gray-200 p-4">
+          <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { zahl: fmt(VEREIN.lehrlinge), text: 'Lehrlinge 2022 bis Juni 2026 direkt begleitet' },
+              { zahl: fmt(VEREIN.lizenzen), text: 'Lizenzen über den Marktplatz Lern-Apps' },
+              { zahl: fmt(VEREIN.reichweite), text: 'erreichte junge Menschen, Workshops und Lizenzen zusammen' },
+              { zahl: fmt(VEREIN.standorte), text: 'Schulstandorte, die Skills-UP! einsetzen' },
+              { zahl: fmt(VEREIN.lehrkraefte), text: `eingebundene Lehrkräfte, davon ${VEREIN.lehrkraefteBerufsschule} an ${VEREIN.berufsschulen} Berufsschulen` },
+              { zahl: fmt(VEREIN.workshops), text: `Workshops an ${VEREIN.berufsschulen} Berufsschulen, drei je Schule` },
+              { zahl: fmt(VEREIN.rueckmeldungen), text: 'Rückmeldungen seit 2022 von Jugendlichen, Lehrlingen, Lehrkräften und Partnerorganisationen' },
+              { zahl: fmt(VEREIN.jugendbeirat), text: 'Jugendliche im ehrenamtlichen Jugendbeirat' },
+            ].map((v) => (
+              <div key={v.text} className="bg-white rounded-2xl border border-gray-200 p-4">
                 <p className="font-heading font-bold text-3xl text-primary-dark tabular-nums">{v.zahl}</p>
-                <p className="font-body text-sm text-gray-900 mt-1">{v.text} <BelegChip beleg="verein" /></p>
+                <p className="font-body text-sm text-gray-900 mt-1">{v.text}</p>
+                <div className="mt-2"><BelegChip beleg="verein" /></div>
               </div>
             ))}
           </div>
-          <p className="mt-4 font-body text-sm max-w-3xl bg-[#FDF0E6] text-[#5c2f0b] rounded-xl p-4">{LIZENZ_HINWEIS}</p>
-          <figure className="mt-8 bg-white rounded-2xl border border-gray-200 p-6 max-w-3xl">
+
+          <div className="mt-6 grid gap-4 lg:grid-cols-2">
+            <figure className="bg-white rounded-2xl border border-gray-200 p-5">
+              <figcaption className="mb-4">
+                <h3 className="font-heading font-bold text-lg" style={{ color: INK }}>Budget je Jahr</h3>
+                <p className="font-body text-sm" style={{ color: TEXT2 }}>{fmt(BUDGET_GESAMT)} € seit 2022 <BelegChip beleg="verein" /></p>
+              </figcaption>
+              <div className="space-y-2.5">
+                {VEREIN.budgetJahre.map((b) => (
+                  <div key={b.jahr} className="grid grid-cols-[3.5rem_minmax(0,1fr)_6rem] items-center gap-3">
+                    <span className="font-body text-sm text-gray-900">{b.jahr}</span>
+                    <Balken anteil={(b.eur / 100000) * 100} label={`${b.jahr}: ${fmt(b.eur)} €`} />
+                    <span className="font-body text-sm text-right tabular-nums text-gray-900">{fmt(b.eur)} €</span>
+                  </div>
+                ))}
+              </div>
+            </figure>
+            <figure className="bg-white rounded-2xl border border-gray-200 p-5">
+              <figcaption className="mb-4">
+                <h3 className="font-heading font-bold text-lg" style={{ color: INK }}>Finanzierung 2026</h3>
+                <p className="font-body text-sm" style={{ color: TEXT2 }}>{fmt(100000)} € <BelegChip beleg="verein" /></p>
+              </figcaption>
+              <div className="space-y-2.5">
+                {VEREIN.budget2026.map((b) => (
+                  <div key={b.quelle} className="grid grid-cols-[minmax(0,10rem)_minmax(0,1fr)_6rem] items-center gap-3">
+                    <span className="font-body text-sm text-gray-900">{b.quelle}</span>
+                    <Balken anteil={(b.eur / 100000) * 100} label={`${b.quelle}: ${fmt(b.eur)} €`} />
+                    <span className="font-body text-sm text-right tabular-nums text-gray-900">{fmt(b.eur)} €</span>
+                  </div>
+                ))}
+              </div>
+              <p className="font-body text-xs mt-4" style={{ color: TEXT2 }}>
+                Mittel je erreichter Person, abgeleitet: {fmt(BUDGET_GESAMT)} € geteilt durch {VEREIN.lehrlinge} direkt begleitete Lehrlinge sind
+                {' '}{fmt(Math.round(BUDGET_GESAMT / VEREIN.lehrlinge))} €, geteilt durch alle {fmt(VEREIN.reichweite)} erreichten jungen Menschen
+                {' '}{fmt(Math.round(BUDGET_GESAMT / VEREIN.reichweite))} €. Das Budget enthält auch den Aufbau der Plattform.
+              </p>
+            </figure>
+          </div>
+
+          <figure className="mt-6 bg-white rounded-2xl border border-gray-200 p-6 max-w-3xl">
             <h3 className="font-heading font-bold text-lg mb-2" style={{ color: INK }}>{GESCHICHTE.titel}</h3>
             <p className="font-body text-sm text-gray-900 mb-3">{GESCHICHTE.text}</p>
             <blockquote className="font-body text-base italic border-l-4 border-primary-medium pl-4" style={{ color: INK }}>

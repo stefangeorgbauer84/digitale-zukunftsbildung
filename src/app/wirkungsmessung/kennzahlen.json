@@ -1,0 +1,786 @@
+{
+ "stand": "2026-11-04",
+ "quartale": [
+  "2026-Q2",
+  "2026-Q3",
+  "2026-Q4"
+ ],
+ "laufend": true,
+ "kpis": [
+  {
+   "ast": "Reichweite",
+   "kpi": "Lernende registriert (Stand Quartalsende)",
+   "einheit": "Anzahl",
+   "werte": {
+    "2026-Q2": {
+     "wert": 35.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q3": {
+     "wert": 78.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q4": {
+     "wert": 265.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 265.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    }
+   }
+  },
+  {
+   "ast": "Reichweite",
+   "kpi": "Neue Lernende im Quartal",
+   "einheit": "Anzahl",
+   "werte": {
+    "2026-Q2": {
+     "wert": 35.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q3": {
+     "wert": 43.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q4": {
+     "wert": 187.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 265.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    }
+   }
+  },
+  {
+   "ast": "Reichweite",
+   "kpi": "Lehrkräfte registriert (Stand Quartalsende)",
+   "einheit": "Anzahl",
+   "werte": {
+    "2026-Q2": {
+     "wert": 7.0,
+     "basis": null,
+     "status": "eingeschränkt",
+     "hinweis": "Testkonten nicht markiert"
+    },
+    "2026-Q3": {
+     "wert": 22.0,
+     "basis": null,
+     "status": "eingeschränkt",
+     "hinweis": "Testkonten nicht markiert"
+    },
+    "2026-Q4": {
+     "wert": 108.0,
+     "basis": null,
+     "status": "eingeschränkt",
+     "hinweis": "Testkonten nicht markiert"
+    },
+    "Gesamt": {
+     "wert": 108.0,
+     "basis": null,
+     "status": "eingeschränkt",
+     "hinweis": "Testkonten nicht markiert"
+    }
+   }
+  },
+  {
+   "ast": "Reichweite",
+   "kpi": "Klassen mit aktiven Lernenden",
+   "einheit": "Anzahl",
+   "werte": {
+    "2026-Q2": {
+     "wert": 2.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q3": {
+     "wert": 4.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q4": {
+     "wert": 10.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 13.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    }
+   }
+  },
+  {
+   "ast": "Nutzung",
+   "kpi": "Aktive Lernende im Quartal",
+   "einheit": "Anzahl",
+   "werte": {
+    "2026-Q2": {
+     "wert": 23.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q3": {
+     "wert": 33.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q4": {
+     "wert": 128.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 169.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    }
+   }
+  },
+  {
+   "ast": "Nutzung",
+   "kpi": "Anteil aktiv an Registrierten",
+   "einheit": "%",
+   "werte": {
+    "2026-Q2": {
+     "wert": 65.7,
+     "basis": 35,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q3": {
+     "wert": 42.3,
+     "basis": 78,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q4": {
+     "wert": 48.3,
+     "basis": 265,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 63.8,
+     "basis": 265,
+     "status": "gemessen",
+     "hinweis": ""
+    }
+   }
+  },
+  {
+   "ast": "Nutzung",
+   "kpi": "Wiederkehr an zwei oder mehr Lerntagen",
+   "einheit": "%",
+   "werte": {
+    "2026-Q2": {
+     "wert": 4.3,
+     "basis": 23,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q3": {
+     "wert": 15.2,
+     "basis": 33,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q4": {
+     "wert": 1.6,
+     "basis": 128,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 13.0,
+     "basis": 169,
+     "status": "gemessen",
+     "hinweis": ""
+    }
+   }
+  },
+  {
+   "ast": "Nutzung",
+   "kpi": "Lernende mit gestartetem Modul",
+   "einheit": "Anzahl",
+   "werte": {
+    "2026-Q2": {
+     "wert": 23.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q3": {
+     "wert": 31.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q4": {
+     "wert": 127.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 167.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    }
+   }
+  },
+  {
+   "ast": "Nutzung",
+   "kpi": "Gestartete Module je startender Person",
+   "einheit": "Anzahl",
+   "werte": {
+    "2026-Q2": {
+     "wert": 2.1,
+     "basis": 23,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q3": {
+     "wert": 2.9,
+     "basis": 31,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q4": {
+     "wert": 1.1,
+     "basis": 127,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 1.7,
+     "basis": 167,
+     "status": "gemessen",
+     "hinweis": ""
+    }
+   }
+  },
+  {
+   "ast": "Nutzung",
+   "kpi": "Themenbreite (Modul außerhalb Grundlagen)",
+   "einheit": "%",
+   "werte": {
+    "2026-Q2": {
+     "wert": 26.1,
+     "basis": 23,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q3": {
+     "wert": 61.3,
+     "basis": 31,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q4": {
+     "wert": 17.3,
+     "basis": 127,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 27.5,
+     "basis": 167,
+     "status": "gemessen",
+     "hinweis": ""
+    }
+   }
+  },
+  {
+   "ast": "Lernerfolg",
+   "kpi": "Nordstern: Lernende mit bestandenem Modulquiz",
+   "einheit": "Anzahl",
+   "werte": {
+    "2026-Q2": {
+     "wert": null,
+     "basis": null,
+     "status": "fehlt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    },
+    "2026-Q3": {
+     "wert": 5.0,
+     "basis": null,
+     "status": "eingeschränkt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    },
+    "2026-Q4": {
+     "wert": 40.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 42.0,
+     "basis": null,
+     "status": "eingeschränkt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    }
+   }
+  },
+  {
+   "ast": "Lernerfolg",
+   "kpi": "Lernende mit Modulquiz",
+   "einheit": "Anzahl",
+   "werte": {
+    "2026-Q2": {
+     "wert": null,
+     "basis": null,
+     "status": "fehlt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    },
+    "2026-Q3": {
+     "wert": 5.0,
+     "basis": null,
+     "status": "eingeschränkt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    },
+    "2026-Q4": {
+     "wert": 41.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 43.0,
+     "basis": null,
+     "status": "eingeschränkt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    }
+   }
+  },
+  {
+   "ast": "Lernerfolg",
+   "kpi": "Anteil mit Modulquiz an allen Registrierten",
+   "einheit": "%",
+   "werte": {
+    "2026-Q2": {
+     "wert": null,
+     "basis": 35,
+     "status": "fehlt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    },
+    "2026-Q3": {
+     "wert": 6.4,
+     "basis": 78,
+     "status": "eingeschränkt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    },
+    "2026-Q4": {
+     "wert": 15.5,
+     "basis": 265,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 16.2,
+     "basis": 265,
+     "status": "eingeschränkt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    }
+   }
+  },
+  {
+   "ast": "Lernerfolg",
+   "kpi": "Lernende mit abgeschlossenem Modul",
+   "einheit": "Anzahl",
+   "werte": {
+    "2026-Q2": {
+     "wert": 15.0,
+     "basis": null,
+     "status": "eingeschränkt",
+     "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
+    },
+    "2026-Q3": {
+     "wert": 10.0,
+     "basis": null,
+     "status": "eingeschränkt",
+     "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
+    },
+    "2026-Q4": {
+     "wert": 40.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 62.0,
+     "basis": null,
+     "status": "eingeschränkt",
+     "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
+    }
+   }
+  },
+  {
+   "ast": "Lernerfolg",
+   "kpi": "Lernende mit drei oder mehr abgeschlossenen Modulen",
+   "einheit": "Anzahl",
+   "werte": {
+    "2026-Q2": {
+     "wert": 4.0,
+     "basis": null,
+     "status": "eingeschränkt",
+     "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
+    },
+    "2026-Q3": {
+     "wert": 3.0,
+     "basis": null,
+     "status": "eingeschränkt",
+     "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
+    },
+    "2026-Q4": {
+     "wert": 0.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 7.0,
+     "basis": null,
+     "status": "eingeschränkt",
+     "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
+    }
+   }
+  },
+  {
+   "ast": "Lernerfolg",
+   "kpi": "Abschlussquote je Modulstart",
+   "einheit": "%",
+   "werte": {
+    "2026-Q2": {
+     "wert": 75.0,
+     "basis": 48,
+     "status": "eingeschränkt",
+     "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
+    },
+    "2026-Q3": {
+     "wert": 32.6,
+     "basis": 89,
+     "status": "eingeschränkt",
+     "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
+    },
+    "2026-Q4": {
+     "wert": 29.8,
+     "basis": 141,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 38.5,
+     "basis": 278,
+     "status": "eingeschränkt",
+     "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
+    }
+   }
+  },
+  {
+   "ast": "Lernerfolg",
+   "kpi": "Quiz im ersten Versuch bestanden",
+   "einheit": "%",
+   "werte": {
+    "2026-Q2": {
+     "wert": null,
+     "basis": 0,
+     "status": "fehlt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    },
+    "2026-Q3": {
+     "wert": 60.0,
+     "basis": 5,
+     "status": "eingeschränkt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    },
+    "2026-Q4": {
+     "wert": 90.7,
+     "basis": 43,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 87.5,
+     "basis": 48,
+     "status": "eingeschränkt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    }
+   }
+  },
+  {
+   "ast": "Lernerfolg",
+   "kpi": "Erstversuch: Anteil richtiger Antworten",
+   "einheit": "%",
+   "werte": {
+    "2026-Q2": {
+     "wert": null,
+     "basis": 0,
+     "status": "fehlt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    },
+    "2026-Q3": {
+     "wert": 80.0,
+     "basis": 5,
+     "status": "eingeschränkt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    },
+    "2026-Q4": {
+     "wert": 89.8,
+     "basis": 43,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 88.8,
+     "basis": 48,
+     "status": "eingeschränkt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    }
+   }
+  },
+  {
+   "ast": "Lernerfolg",
+   "kpi": "Verbesserung bei Wiederholung",
+   "einheit": "Punkte",
+   "werte": {
+    "2026-Q2": {
+     "wert": null,
+     "basis": 0,
+     "status": "fehlt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    },
+    "2026-Q3": {
+     "wert": 40.0,
+     "basis": 2,
+     "status": "eingeschränkt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    },
+    "2026-Q4": {
+     "wert": 60.0,
+     "basis": 3,
+     "status": "eingeschränkt",
+     "hinweis": "kleine Fallzahl (3)"
+    },
+    "Gesamt": {
+     "wert": 52.0,
+     "basis": 5,
+     "status": "eingeschränkt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    }
+   }
+  },
+  {
+   "ast": "Lernerfolg",
+   "kpi": "Simulationsmissionen bestanden",
+   "einheit": "%",
+   "werte": {
+    "2026-Q2": {
+     "wert": null,
+     "basis": 0,
+     "status": "fehlt",
+     "hinweis": "keine Fälle im Quartal"
+    },
+    "2026-Q3": {
+     "wert": 80.0,
+     "basis": 15,
+     "status": "eingeschränkt",
+     "hinweis": "kleine Fallzahl (15)"
+    },
+    "2026-Q4": {
+     "wert": 100.0,
+     "basis": 3,
+     "status": "eingeschränkt",
+     "hinweis": "kleine Fallzahl (3)"
+    },
+    "Gesamt": {
+     "wert": 83.3,
+     "basis": 18,
+     "status": "eingeschränkt",
+     "hinweis": "kleine Fallzahl (18)"
+    }
+   }
+  },
+  {
+   "ast": "Lernerfolg",
+   "kpi": "Zeit bis Modulabschluss (Median)",
+   "einheit": "min",
+   "werte": {
+    "2026-Q2": {
+     "wert": 1.0,
+     "basis": 36,
+     "status": "eingeschränkt",
+     "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
+    },
+    "2026-Q3": {
+     "wert": 20.6,
+     "basis": 29,
+     "status": "eingeschränkt",
+     "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
+    },
+    "2026-Q4": {
+     "wert": 19.9,
+     "basis": 42,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 16.1,
+     "basis": 107,
+     "status": "eingeschränkt",
+     "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
+    }
+   }
+  },
+  {
+   "ast": "Einsatz im Unterricht",
+   "kpi": "Anteil Klassen mit aktiven Lernenden",
+   "einheit": "%",
+   "werte": {
+    "2026-Q2": {
+     "wert": 40.0,
+     "basis": 5,
+     "status": "eingeschränkt",
+     "hinweis": "kleine Fallzahl (5)"
+    },
+    "2026-Q3": {
+     "wert": 21.1,
+     "basis": 19,
+     "status": "eingeschränkt",
+     "hinweis": "kleine Fallzahl (19)"
+    },
+    "2026-Q4": {
+     "wert": 6.0,
+     "basis": 166,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 7.8,
+     "basis": 166,
+     "status": "gemessen",
+     "hinweis": ""
+    }
+   }
+  },
+  {
+   "ast": "Einsatz im Unterricht",
+   "kpi": "Klassen mit Modulfrist (Stand Quartalsende)",
+   "einheit": "Anzahl",
+   "werte": {
+    "2026-Q2": {
+     "wert": 0.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q3": {
+     "wert": 1.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q4": {
+     "wert": 5.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 5.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    }
+   }
+  },
+  {
+   "ast": "Einsatz im Unterricht",
+   "kpi": "Klassen mit Lernpfad (Stand Quartalsende)",
+   "einheit": "Anzahl",
+   "werte": {
+    "2026-Q2": {
+     "wert": 3.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q3": {
+     "wert": 3.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q4": {
+     "wert": 3.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 3.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    }
+   }
+  },
+  {
+   "ast": "Einsatz im Unterricht",
+   "kpi": "Anteil der größten Klasse an Aktiven",
+   "einheit": "%",
+   "werte": {
+    "2026-Q2": {
+     "wert": 94.4,
+     "basis": 18,
+     "status": "eingeschränkt",
+     "hinweis": "kleine Fallzahl (18)"
+    },
+    "2026-Q3": {
+     "wert": 73.1,
+     "basis": 26,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "2026-Q4": {
+     "wert": 39.7,
+     "basis": 126,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 32.1,
+     "basis": 156,
+     "status": "gemessen",
+     "hinweis": ""
+    }
+   }
+  }
+ ]
+}
