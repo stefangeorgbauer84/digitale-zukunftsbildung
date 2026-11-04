@@ -102,21 +102,7 @@ export const VEREIN = {
   standorte: 42,
   rueckmeldungen: 312,
   jugendbeirat: 5,
-  budgetJahre: [
-    { jahr: '2022', eur: 20000 },
-    { jahr: '2023', eur: 35000 },
-    { jahr: '2024', eur: 40000 },
-    { jahr: '2025', eur: 37000 },
-    { jahr: '2026', eur: 100000 },
-  ],
-  budget2026: [
-    { quelle: 'MEGA Bildungsstiftung', eur: 66000 },
-    { quelle: 'Öffentliche Mittel und Marktplatz Lern-Apps', eur: 18000 },
-    { quelle: 'Eigene Erlöse', eur: 10500 },
-    { quelle: 'Noch offen', eur: 5500 },
-  ],
 }
-export const BUDGET_GESAMT = VEREIN.budgetJahre.reduce((a, b) => a + b.eur, 0)
 
 export const ZIELE_2027 = [
   { ziel: 'Direkt erreichte Lehrlinge', ist: VEREIN.lehrlinge, soll: 740, beleg: 'verein' as Beleg },
@@ -124,6 +110,23 @@ export const ZIELE_2027 = [
   { ziel: 'Lernende mit bestandenem Modulquiz auf der Plattform', ist: null as number | null, soll: null as number | null, beleg: 'geplant' as Beleg, hinweis: 'Noch kein Ziel festgelegt. Vorschlag: aus dem Nordstern ableiten, sobald zwei volle Quartale vorliegen.' },
   { ziel: 'Inhalte erweitern', ist: null as number | null, soll: 25, einheit: '%', beleg: 'geplant' as Beleg, hinweis: 'Ausgangsbasis: 15 Module. Ziel entspricht etwa vier weiteren Modulen.' },
 ]
+
+/* ------------------------------------------------------------------ */
+/* Ausgangslage und Ansatz                                              */
+/* ------------------------------------------------------------------ */
+
+export const AUSGANGSLAGE = {
+  problem:
+    'Jugendliche ab etwa 15 Jahren treffen erste echte Geldentscheidungen: eigenes Einkommen, Konsumdruck, Onlinekäufe, Verträge, Ratenzahlungen, oft ohne Sparziel. Geld ist für sie Alltag, aber selten Lerngegenstand. Wer hier früh ansetzt, beugt Konsumfallen und Verschuldung vor, bevor sie entstehen.',
+  ansatz:
+    'Skills-UP! macht Einkommen, Budget, Konsum, Ratenkauf und Vorsorge alltagsnah lernbar: mit Peer-Videos, kurzen Lerneinheiten, Simulationen echter Entscheidungen wie dem ersten Konto oder der ersten Wohnung, Quiz und Reflexion. Lehrlinge und Lernende an Schulen haben eigene Lernpfade.',
+  saeulen: [
+    { titel: 'Direkt bei Jugendlichen', text: 'Workshops an Berufsschulen und in Lehrbetrieben, drei je Berufsschule, damit Finanzbildung wiederkehrt statt einmal vorbeizukommen.' },
+    { titel: 'Über Lehrkräfte', text: 'Lehrkräfte setzen Module selbst im Unterricht ein, mit Klassen, Lernpfaden und Fristen. Fortbildung und Pädagogische Hochschulen tragen den Ansatz weiter.' },
+    { titel: 'Digital in ganz Österreich', text: 'Die Plattform ist über den Marktplatz Lern-Apps des Bildungsministeriums mit Gütesiegel für Schulen in ganz Österreich verfügbar.' },
+  ],
+  zielgruppen: ['Lehrlinge an Berufsschulen und in Lehrbetrieben', 'Lernende ab 15 an AHS, BHS und PTS', 'Lehrkräfte und Ausbildungsverantwortliche'],
+}
 
 /* ------------------------------------------------------------------ */
 /* 1. Wirkungskette                                                     */
@@ -137,8 +140,7 @@ export const KETTE_LEISTUNG: Kettenglied[] = [
     titel: 'Input',
     frage: 'Was setzen wir ein?',
     punkte: [
-      { text: `Budget 2026: ${fmt(100000)} €, davon ${fmt(66000)} € MEGA Bildungsstiftung, ${fmt(18000)} € öffentliche Mittel und Marktplatz Lern-Apps, ${fmt(10500)} € eigene Erlöse, ${fmt(5500)} € offen`, beleg: 'verein' },
-      { text: `Budget seit Projektstart 2022: ${fmt(BUDGET_GESAMT)} €`, beleg: 'verein' },
+      { text: 'Finanzielle Mittel von Stiftungen, öffentlicher Hand und eigenen Erlösen', beleg: 'verein' },
       { text: `Kernteam 2 Vollzeitäquivalente, Trainingsteam 4 Personen, technisch-didaktische Unterstützung 2 Personen, ${VEREIN.jugendbeirat} Jugendliche im ehrenamtlichen Jugendbeirat`, beleg: 'verein' },
       { text: 'Zeit der Lehrkräfte und Unterrichtsstunden der Schulen', beleg: 'hypothese' },
     ],
@@ -433,7 +435,7 @@ function befunde(): Befund[] {
     {
       titel: 'Die Reichweite wächst stark',
       zahl: fmt(neuQ), einheit: 'neue Lernende',
-      text: `Im ${Q_NAME} kamen ${fmt(neuQ)} neue Lernende auf die Plattform, ${neuQ > neuVorher ? 'mehr als in allen Quartalen davor zusammen' : 'nach'} (${fmt(neuVorher)} seit April 2026).`,
+      text: `Im ${Q_NAME} kamen ${fmt(neuQ)} neue Lernende auf die Plattform, ${neuQ > neuVorher ? 'mehr als in allen Quartalen davor zusammen' : 'nach'} (${fmt(neuVorher)} seit April 2026). Laut Verein sind es vor allem Lernende an Schulen, die über den Marktplatz Lern-Apps kommen.`,
       folge: 'Wachstum allein ist noch keine Wirkung. Entscheidend ist, wie viele davon lernen und bestehen.',
       beleg: 'gemessen',
     },

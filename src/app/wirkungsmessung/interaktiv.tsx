@@ -2,6 +2,7 @@
 
 // Interaktive Teile der Wirkungsseite. Alle Daten kommen als Props vom Server (daten.ts, kennzahlen.json).
 
+import Image from 'next/image'
 import { useEffect, useMemo, useState } from 'react'
 
 const INK = '#1a1040'
@@ -33,6 +34,16 @@ function fmt(n: number, stellen = 0) {
 /* Kapitelleiste mit Scrollspy                                          */
 /* ------------------------------------------------------------------ */
 
+export function PdfKnopf({ hell = false }: { hell?: boolean }) {
+  return (
+    <button type="button" onClick={() => window.print()}
+      className={`print:hidden inline-flex items-center gap-2 rounded-full px-5 py-2.5 font-body text-sm font-700 transition-colors ${hell ? 'bg-white text-primary-dark hover:bg-primary-50' : 'bg-primary-dark text-white hover:bg-primary-medium'}`}>
+      <svg aria-hidden="true" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M12 3v12" /><path d="m7 10 5 5 5-5" /><path d="M5 21h14" /></svg>
+      Bericht als PDF speichern
+    </button>
+  )
+}
+
 export function KapitelNav({ kapitel }: { kapitel: { id: string; titel: string }[] }) {
   const [aktiv, setAktiv] = useState(kapitel[0]?.id)
   useEffect(() => {
@@ -50,18 +61,25 @@ export function KapitelNav({ kapitel }: { kapitel: { id: string; titel: string }
     return () => beobachter.disconnect()
   }, [kapitel])
   return (
-    <nav aria-label="Kapitel" className="sticky top-[72px] z-30 bg-white/90 backdrop-blur border-b border-gray-100">
-      <ol className="max-w-7xl mx-auto px-6 flex gap-1 overflow-x-auto no-scrollbar py-2.5">
-        {kapitel.map((k, i) => (
-          <li key={k.id} className="shrink-0">
-            <a href={`#${k.id}`} aria-current={aktiv === k.id ? 'true' : undefined}
-              className={`inline-flex items-center gap-2 rounded-full px-4 py-2 font-body text-sm font-700 transition-colors ${aktiv === k.id ? 'bg-primary-dark text-white' : 'text-primary-dark hover:bg-primary-50'}`}>
-              <span className={`w-5 h-5 rounded-full text-[11px] flex items-center justify-center ${aktiv === k.id ? 'bg-white text-primary-dark' : 'bg-primary-50'}`}>{i + 1}</span>
-              {k.titel}
-            </a>
-          </li>
-        ))}
-      </ol>
+    <nav aria-label="Kapitel des Wirkungsberichts" className="print:hidden sticky top-16 z-30 text-white shadow-md"
+      style={{ background: 'linear-gradient(90deg, #4a2d8a 0%, #6b4db0 100%)' }}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center gap-3">
+        <a href="#willkommen" className="shrink-0 flex items-center gap-2 py-2 pr-3 border-r border-white/20">
+          <Image src="/fotos/Logo.png" alt="" width={32} height={32} className="rounded-lg" />
+          <span className="hidden md:inline font-heading font-700 text-sm leading-tight">Wirkungsbericht</span>
+        </a>
+        <ol className="flex gap-1 overflow-x-auto no-scrollbar py-2">
+          {kapitel.map((k, i) => (
+            <li key={k.id} className="shrink-0">
+              <a href={`#${k.id}`} aria-current={aktiv === k.id ? 'true' : undefined}
+                className={`inline-flex items-center gap-2 rounded-full px-3.5 py-1.5 font-body text-sm font-700 transition-colors ${aktiv === k.id ? 'bg-white text-primary-dark' : 'text-white/85 hover:bg-white/10'}`}>
+                <span className={`w-5 h-5 rounded-full text-[11px] flex items-center justify-center ${aktiv === k.id ? 'bg-primary-dark text-white' : 'bg-white/15'}`}>{i + 1}</span>
+                {k.titel}
+              </a>
+            </li>
+          ))}
+        </ol>
+      </div>
     </nav>
   )
 }
@@ -84,6 +102,17 @@ export function KetteInteraktiv({ stufen }: { stufen: KettenStufe[] }) {
   const s = stufen[i]
   return (
     <div>
+      <ol className="hidden print:grid grid-cols-2 gap-3">
+        {stufen.map((x, j) => (
+          <li key={x.id} className="rounded-xl border border-gray-200 p-4 break-inside-avoid">
+            <p className="font-heading font-700 text-base" style={{ color: TON[x.ton].ring }}>{j + 1}. {x.titel}</p>
+            <p className="font-body text-xs mb-2" style={{ color: TEXT2 }}>{x.frage}</p>
+            {x.text && <p className="font-body text-xs text-gray-900">{x.text}</p>}
+            <ul className="space-y-1">{x.punkte.map((p) => <li key={p.text} className="font-body text-xs text-gray-900">{p.text} <Chip beleg={p.beleg} /></li>)}</ul>
+          </li>
+        ))}
+      </ol>
+      <div className="print:hidden">
       <div className="relative">
         <div aria-hidden="true" className="absolute left-6 right-6 top-6 h-0.5 bg-primary-100 hidden md:block" />
         <ol role="tablist" aria-label="Stufen der Wirkungskette" className="relative grid grid-cols-3 md:grid-cols-6 gap-y-6 gap-x-2">
@@ -135,6 +164,7 @@ export function KetteInteraktiv({ stufen }: { stufen: KettenStufe[] }) {
             className="font-body text-sm font-700 text-white bg-primary-dark disabled:opacity-30 rounded-full px-5 py-2">Nächste Stufe</button>
         </div>
       </div>
+      </div>
     </div>
   )
 }
@@ -171,7 +201,7 @@ export function KpiExplorer({ kpis, quartale }: { kpis: KpiDaten[]; quartale: st
   const gesamt = k.werte['Gesamt']
 
   return (
-    <div className="rounded-[20px] shadow-card border border-primary-medium/10 bg-white overflow-hidden">
+    <div className="print:hidden rounded-[20px] shadow-card border border-primary-medium/10 bg-white overflow-hidden">
       <div role="tablist" aria-label="Bereich" className="flex gap-1 overflow-x-auto no-scrollbar border-b border-gray-100 px-4 pt-4">
         {bereiche.map((b) => (
           <button key={b} role="tab" aria-selected={b === bereich}
@@ -276,7 +306,7 @@ export function StakeholderFilter({ gruppen }: { gruppen: StakeholderDaten[] }) 
   ]
   return (
     <div>
-      <div role="group" aria-label="Nach Priorität filtern" className="flex flex-wrap justify-center gap-2 mb-8">
+      <div role="group" aria-label="Nach Priorität filtern" className="print:hidden flex flex-wrap justify-center gap-2 mb-8">
         {([0, 1, 2, 3] as const).map((p) => (
           <button key={p} onClick={() => setPrio(p)} aria-pressed={prio === p}
             className={`font-body text-sm font-700 rounded-full px-4 py-2 transition-colors ${prio === p ? 'bg-primary-dark text-white' : 'bg-primary-50 text-primary-dark hover:bg-primary-100'}`}>
@@ -329,8 +359,25 @@ export function GruppenKette({ zeilen }: { zeilen: KettenZeile[] }) {
     { titel: 'Deadweight', werte: z.deadweight, farbe: '#B23A3A', grund: '#FDF1F1' },
     { titel: 'Nettowirkung', werte: z.netto, farbe: '#1E6B5B', grund: '#E6F4F1' },
   ]
+  const druck = zeilen.map((zz) => [zz.stakeholder, [['Input', zz.input], ['Aktivitäten', zz.aktivitaeten], ['Output', zz.output], ['Bruttowirkung', zz.brutto], ['Deadweight', zz.deadweight], ['Nettowirkung', zz.netto]]] as const)
   return (
     <div>
+      <div className="hidden print:block space-y-4">
+        {druck.map(([name, teile]) => (
+          <div key={name} className="break-inside-avoid">
+            <p className="font-heading font-700 text-base mb-2" style={{ color: INK }}>{name}</p>
+            <div className="grid grid-cols-3 gap-2">
+              {teile.map(([t, w]) => (
+                <div key={t} className="rounded-lg border border-gray-200 p-2">
+                  <p className="font-body text-[10px] font-700 uppercase tracking-widest" style={{ color: TEXT2 }}>{t}</p>
+                  <ul>{(w as string[]).map((x) => <li key={x} className="font-body text-[11px] text-gray-900">{x}</li>)}</ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+      <div className="print:hidden">
       <div role="tablist" aria-label="Gruppe" className="flex flex-wrap justify-center gap-2 mb-8">
         {zeilen.map((x, j) => (
           <button key={x.stakeholder} role="tab" aria-selected={j === i} onClick={() => setI(j)}
@@ -349,6 +396,7 @@ export function GruppenKette({ zeilen }: { zeilen: KettenZeile[] }) {
           </li>
         ))}
       </ol>
+      </div>
       <p className="font-body text-sm text-center mt-6" style={{ color: TEXT2 }}>Output messen wir heute, Bruttowirkung teilweise, Deadweight und Nettowirkung noch nicht.</p>
     </div>
   )
@@ -367,7 +415,7 @@ export function WirkungsboxFilter({ ebenen, zeiten, box, farben, hinweis }: {
   const dims = Object.keys(farben) as Dimension[]
   return (
     <div>
-      <div role="group" aria-label="Nach Dimension filtern" className="flex flex-wrap justify-center gap-2 mb-8">
+      <div role="group" aria-label="Nach Dimension filtern" className="print:hidden flex flex-wrap justify-center gap-2 mb-8">
         <button onClick={() => setDim(null)} aria-pressed={dim === null}
           className={`font-body text-sm font-700 rounded-full px-4 py-2 ${dim === null ? 'bg-primary-dark text-white' : 'bg-primary-50 text-primary-dark'}`}>Alle Dimensionen</button>
         {dims.map((d) => (
@@ -379,7 +427,7 @@ export function WirkungsboxFilter({ ebenen, zeiten, box, farben, hinweis }: {
         ))}
       </div>
       <div className="overflow-x-auto pb-2">
-        <div className="min-w-[760px] grid grid-cols-[10rem_repeat(3,minmax(0,1fr))] gap-3">
+        <div className="min-w-[760px] print:min-w-0 grid grid-cols-[10rem_repeat(3,minmax(0,1fr))] print:grid-cols-[7rem_repeat(3,minmax(0,1fr))] gap-3 print:gap-2">
           <div />
           {zeiten.map((z, i) => (
             <div key={z} className="font-heading font-700 text-base text-primary-dark px-2 flex items-center gap-2">
