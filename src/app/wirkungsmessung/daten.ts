@@ -21,7 +21,7 @@ export const BELEG: Record<Beleg, { label: string; erklaerung: string; bg: strin
 
 export type KpiStatus = 'gemessen' | 'eingeschränkt' | 'fehlt'
 export type KpiZelle = { wert: number | null; basis: number | null; status: KpiStatus; hinweis: string }
-export type KpiDaten = { ast: string; kpi: string; einheit: string; werte: Record<string, KpiZelle> }
+export type KpiDaten = { ast: string; kpi: string; einheit: string; definition?: string; werte: Record<string, KpiZelle> }
 
 export const KENNZAHLEN = roh as { stand: string; quartale: string[]; laufend: boolean; kpis: KpiDaten[] }
 export const QUARTALE = KENNZAHLEN.quartale

@@ -11,6 +11,7 @@
    "ast": "Reichweite",
    "kpi": "Lernende registriert (Stand Quartalsende)",
    "einheit": "Anzahl",
+   "definition": "Konten mit Rolle Lernende, angelegt vor Quartalsende.",
    "werte": {
     "2026-Q2": {
      "wert": 35.0,
@@ -25,13 +26,13 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 265.0,
+     "wert": 266.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 265.0,
+     "wert": 266.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
@@ -42,6 +43,7 @@
    "ast": "Reichweite",
    "kpi": "Neue Lernende im Quartal",
    "einheit": "Anzahl",
+   "definition": "Konten mit Rolle Lernende, im Quartal angelegt.",
    "werte": {
     "2026-Q2": {
      "wert": 35.0,
@@ -56,13 +58,13 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 187.0,
+     "wert": 188.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 265.0,
+     "wert": 266.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
@@ -73,6 +75,7 @@
    "ast": "Reichweite",
    "kpi": "Lehrkräfte registriert (Stand Quartalsende)",
    "einheit": "Anzahl",
+   "definition": "Konten mit Rolle Lehrkraft. Test- und Workshopkonten sind nicht markiert und zählen mit.",
    "werte": {
     "2026-Q2": {
      "wert": 7.0,
@@ -104,6 +107,7 @@
    "ast": "Reichweite",
    "kpi": "Klassen mit aktiven Lernenden",
    "einheit": "Anzahl",
+   "definition": "Klassen (ohne Community-Klasse) mit mindestens einer im Quartal aktiven Person.",
    "werte": {
     "2026-Q2": {
      "wert": 2.0,
@@ -135,6 +139,7 @@
    "ast": "Nutzung",
    "kpi": "Aktive Lernende im Quartal",
    "einheit": "Anzahl",
+   "definition": "Personen mit Modulstart, Modulabschluss, Quizabgabe oder Simulationsmission im Quartal.",
    "werte": {
     "2026-Q2": {
      "wert": 23.0,
@@ -149,13 +154,13 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 129.0,
+     "wert": 132.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 170.0,
+     "wert": 173.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
@@ -166,6 +171,7 @@
    "ast": "Nutzung",
    "kpi": "Anteil aktiv an Registrierten",
    "einheit": "%",
+   "definition": "Aktive Lernende im Quartal geteilt durch Registrierte bei Quartalsende.",
    "werte": {
     "2026-Q2": {
      "wert": 65.7,
@@ -180,14 +186,14 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 48.7,
-     "basis": 265,
+     "wert": 49.6,
+     "basis": 266,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 64.2,
-     "basis": 265,
+     "wert": 65.0,
+     "basis": 266,
      "status": "gemessen",
      "hinweis": ""
     }
@@ -197,6 +203,7 @@
    "ast": "Nutzung",
    "kpi": "Wiederkehr an zwei oder mehr Lerntagen",
    "einheit": "%",
+   "definition": "Aktive mit Aktivität an mindestens zwei verschiedenen Tagen im Quartal.",
    "werte": {
     "2026-Q2": {
      "wert": 4.3,
@@ -211,14 +218,14 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 1.6,
-     "basis": 129,
+     "wert": 1.5,
+     "basis": 132,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 12.9,
-     "basis": 170,
+     "wert": 12.7,
+     "basis": 173,
      "status": "gemessen",
      "hinweis": ""
     }
@@ -228,6 +235,7 @@
    "ast": "Nutzung",
    "kpi": "Lernende mit gestartetem Modul",
    "einheit": "Anzahl",
+   "definition": "Personen, die im Zeitraum mindestens ein Modul gestartet haben.",
    "werte": {
     "2026-Q2": {
      "wert": 23.0,
@@ -242,13 +250,13 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 128.0,
+     "wert": 131.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 168.0,
+     "wert": 171.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
@@ -259,6 +267,7 @@
    "ast": "Nutzung",
    "kpi": "Gestartete Module je startender Person",
    "einheit": "Anzahl",
+   "definition": "Im Quartal neu gestartete Module je Person, die eines gestartet hat.",
    "werte": {
     "2026-Q2": {
      "wert": 2.1,
@@ -274,13 +283,13 @@
     },
     "2026-Q4": {
      "wert": 1.1,
-     "basis": 128,
+     "basis": 131,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 1.7,
-     "basis": 168,
+     "wert": 1.6,
+     "basis": 171,
      "status": "gemessen",
      "hinweis": ""
     }
@@ -290,6 +299,7 @@
    "ast": "Nutzung",
    "kpi": "Themenbreite (Modul außerhalb Grundlagen)",
    "einheit": "%",
+   "definition": "Anteil der Startenden mit mindestens einem Modul außerhalb der Kategorie Grundlagen.",
    "werte": {
     "2026-Q2": {
      "wert": 26.1,
@@ -304,14 +314,14 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 17.2,
-     "basis": 128,
+     "wert": 16.8,
+     "basis": 131,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 27.4,
-     "basis": 168,
+     "wert": 26.9,
+     "basis": 171,
      "status": "gemessen",
      "hinweis": ""
     }
@@ -321,37 +331,7 @@
    "ast": "Lernerfolg",
    "kpi": "Nordstern: Lernende mit bestandenem Modulquiz",
    "einheit": "Anzahl",
-   "werte": {
-    "2026-Q2": {
-     "wert": null,
-     "basis": null,
-     "status": "fehlt",
-     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
-    },
-    "2026-Q3": {
-     "wert": 5.0,
-     "basis": null,
-     "status": "eingeschränkt",
-     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
-    },
-    "2026-Q4": {
-     "wert": 40.0,
-     "basis": null,
-     "status": "gemessen",
-     "hinweis": ""
-    },
-    "Gesamt": {
-     "wert": 42.0,
-     "basis": null,
-     "status": "eingeschränkt",
-     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
-    }
-   }
-  },
-  {
-   "ast": "Lernerfolg",
-   "kpi": "Lernende mit Modulquiz",
-   "einheit": "Anzahl",
+   "definition": "Personen, die im Quartal ein Modul mit Quiz bestanden haben. Jede Person einmal.",
    "werte": {
     "2026-Q2": {
      "wert": null,
@@ -381,8 +361,41 @@
   },
   {
    "ast": "Lernerfolg",
+   "kpi": "Lernende mit Modulquiz",
+   "einheit": "Anzahl",
+   "definition": "Personen mit mindestens einer Quizabgabe im Quartal.",
+   "werte": {
+    "2026-Q2": {
+     "wert": null,
+     "basis": null,
+     "status": "fehlt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    },
+    "2026-Q3": {
+     "wert": 5.0,
+     "basis": null,
+     "status": "eingeschränkt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    },
+    "2026-Q4": {
+     "wert": 42.0,
+     "basis": null,
+     "status": "gemessen",
+     "hinweis": ""
+    },
+    "Gesamt": {
+     "wert": 44.0,
+     "basis": null,
+     "status": "eingeschränkt",
+     "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
+    }
+   }
+  },
+  {
+   "ast": "Lernerfolg",
    "kpi": "Anteil mit Modulquiz an allen Registrierten",
    "einheit": "%",
+   "definition": "Lernende mit Modulquiz geteilt durch alle registrierten Lernenden bei Quartalsende.",
    "werte": {
     "2026-Q2": {
      "wert": null,
@@ -397,14 +410,14 @@
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     },
     "2026-Q4": {
-     "wert": 15.5,
-     "basis": 265,
+     "wert": 15.8,
+     "basis": 266,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 16.2,
-     "basis": 265,
+     "wert": 16.5,
+     "basis": 266,
      "status": "eingeschränkt",
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     }
@@ -414,6 +427,7 @@
    "ast": "Lernerfolg",
    "kpi": "Lernende mit abgeschlossenem Modul",
    "einheit": "Anzahl",
+   "definition": "Personen, die im Zeitraum mindestens ein Modul bestanden haben, mit oder ohne Quiz.",
    "werte": {
     "2026-Q2": {
      "wert": 15.0,
@@ -428,13 +442,13 @@
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
     },
     "2026-Q4": {
-     "wert": 40.0,
+     "wert": 41.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 62.0,
+     "wert": 63.0,
      "basis": null,
      "status": "eingeschränkt",
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
@@ -445,6 +459,7 @@
    "ast": "Lernerfolg",
    "kpi": "Lernende mit drei oder mehr abgeschlossenen Modulen",
    "einheit": "Anzahl",
+   "definition": "Personen mit mindestens drei bestandenen Modulen im Zeitraum.",
    "werte": {
     "2026-Q2": {
      "wert": 4.0,
@@ -476,6 +491,7 @@
    "ast": "Lernerfolg",
    "kpi": "Abschlussquote je Modulstart",
    "einheit": "%",
+   "definition": "Im Quartal gestartete Module, die bestanden wurden (bis heute).",
    "werte": {
     "2026-Q2": {
      "wert": 75.0,
@@ -490,14 +506,14 @@
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
     },
     "2026-Q4": {
-     "wert": 29.6,
-     "basis": 142,
+     "wert": 29.7,
+     "basis": 145,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 38.4,
-     "basis": 279,
+     "wert": 38.3,
+     "basis": 282,
      "status": "eingeschränkt",
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
     }
@@ -507,6 +523,7 @@
    "ast": "Lernerfolg",
    "kpi": "Quiz im ersten Versuch bestanden",
    "einheit": "%",
+   "definition": "Erste Abgabe je Person und Modul erreicht die Bestehensgrenze des Quiz (70 bis 80 %).",
    "werte": {
     "2026-Q2": {
      "wert": null,
@@ -521,14 +538,14 @@
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     },
     "2026-Q4": {
-     "wert": 90.7,
-     "basis": 43,
+     "wert": 90.9,
+     "basis": 44,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 87.5,
-     "basis": 48,
+     "wert": 87.8,
+     "basis": 49,
      "status": "eingeschränkt",
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     }
@@ -538,6 +555,7 @@
    "ast": "Lernerfolg",
    "kpi": "Erstversuch: Anteil richtiger Antworten",
    "einheit": "%",
+   "definition": "Durchschnitt richtiger Antworten in der ersten Abgabe. Ohne Vortest kein Wirkungsbeleg.",
    "werte": {
     "2026-Q2": {
      "wert": null,
@@ -552,14 +570,14 @@
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     },
     "2026-Q4": {
-     "wert": 89.8,
-     "basis": 43,
+     "wert": 90.0,
+     "basis": 44,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 88.8,
-     "basis": 48,
+     "wert": 89.0,
+     "basis": 49,
      "status": "eingeschränkt",
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     }
@@ -569,6 +587,7 @@
    "ast": "Lernerfolg",
    "kpi": "Verbesserung bei Wiederholung",
    "einheit": "Punkte",
+   "definition": "Letzte minus erste Abgabe in Prozentpunkten, nur wer ein Quiz wiederholt hat.",
    "werte": {
     "2026-Q2": {
      "wert": null,
@@ -600,6 +619,7 @@
    "ast": "Lernerfolg",
    "kpi": "Simulationsmissionen bestanden",
    "einheit": "%",
+   "definition": "Anteil bestandener Simulationsmissionen im Quartal.",
    "werte": {
     "2026-Q2": {
      "wert": null,
@@ -631,6 +651,7 @@
    "ast": "Lernerfolg",
    "kpi": "Zeit bis Modulabschluss (Median)",
    "einheit": "min",
+   "definition": "Minuten vom Modulstart bis zum Bestehen, Median.",
    "werte": {
     "2026-Q2": {
      "wert": 1.0,
@@ -645,14 +666,14 @@
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
     },
     "2026-Q4": {
-     "wert": 19.9,
-     "basis": 42,
+     "wert": 19.5,
+     "basis": 43,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
      "wert": 16.1,
-     "basis": 107,
+     "basis": 108,
      "status": "eingeschränkt",
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
     }
@@ -662,6 +683,7 @@
    "ast": "Einsatz im Unterricht",
    "kpi": "Anteil Klassen mit aktiven Lernenden",
    "einheit": "%",
+   "definition": "Klassen mit aktiven Lernenden geteilt durch alle angelegten Klassen.",
    "werte": {
     "2026-Q2": {
      "wert": 40.0,
@@ -693,6 +715,7 @@
    "ast": "Einsatz im Unterricht",
    "kpi": "Klassen mit Modulfrist (Stand Quartalsende)",
    "einheit": "Anzahl",
+   "definition": "Klassen, für die eine Lehrkraft mindestens eine Modulfrist gesetzt hat.",
    "werte": {
     "2026-Q2": {
      "wert": 0.0,
@@ -724,6 +747,7 @@
    "ast": "Einsatz im Unterricht",
    "kpi": "Klassen mit Lernpfad (Stand Quartalsende)",
    "einheit": "Anzahl",
+   "definition": "Klassen mit eigenem Lernpfad.",
    "werte": {
     "2026-Q2": {
      "wert": 3.0,
@@ -755,6 +779,7 @@
    "ast": "Einsatz im Unterricht",
    "kpi": "Anteil der größten Klasse an Aktiven",
    "einheit": "%",
+   "definition": "Aktive der größten Klasse geteilt durch Aktive in allen Klassen. Hoch heißt Klumpenrisiko.",
    "werte": {
     "2026-Q2": {
      "wert": 94.4,
@@ -769,14 +794,14 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 39.4,
-     "basis": 127,
+     "wert": 38.5,
+     "basis": 130,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 31.8,
-     "basis": 157,
+     "wert": 31.3,
+     "basis": 160,
      "status": "gemessen",
      "hinweis": ""
     }
