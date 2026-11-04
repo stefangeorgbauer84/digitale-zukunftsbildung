@@ -136,7 +136,7 @@ export const STAKEHOLDER: Stakeholder[] = [
   { kategorie: 'Angehörige der Begünstigten', akteure: 'Eltern und Erziehungsberechtigte, Geschwister', wirkung: 'Geld wird zu Hause besprochen, weniger Konflikte um Geld', prioritaet: 3 },
   { kategorie: 'Mitarbeitende', akteure: 'Kernteam des Vereins, Trainingsteam, technisch-didaktische Unterstützung', wirkung: 'Kompetenzaufbau, Professionalisierung der Wirkungsmessung', prioritaet: 3 },
   { kategorie: 'Lehrbetriebe', akteure: 'Ausbildungsbetriebe wie TGW Logistics, überbetriebliche Lehrwerkstätten', wirkung: 'Finanzbildung wird Teil der Lehrlingsausbildung, weniger Geldsorgen im Betrieb', prioritaet: 2, eigene: true },
-  { kategorie: 'Freiwillige', akteure: 'Jugendbeirat mit fünf Jugendlichen aus Wien, Oberösterreich und Kärnten', wirkung: 'Mitsprache, Inhalte in der Sprache der Zielgruppe', prioritaet: 3 },
+  { kategorie: 'Freiwillige', akteure: 'Jugendbeirat mit fünf Jugendlichen aus Wien, Oberösterreich und Kärnten, seit 2024', wirkung: 'Mitsprache, Inhalte in der Sprache der Zielgruppe', prioritaet: 3 },
   { kategorie: 'Geldgebende', akteure: 'MEGA Bildungsstiftung, öffentliche Mittel, Unternehmenspartner', wirkung: 'Belegter Gegenwert für eingesetzte Mittel', prioritaet: 2 },
   { kategorie: 'Staat, Länder, Gemeinden', akteure: 'Bildungsministerium mit Marktplatz Lern-Apps, Bildungsdirektionen, Nationale Finanzbildungsstrategie', wirkung: 'Praxisevidenz für die Strategie, geprüftes Angebot für das Pflichtfach ab 2027', prioritaet: 2 },
   { kategorie: 'Zulieferung', akteure: 'Hosting, Videoplattform, Video- und Grafikproduktion', wirkung: 'Aufträge aus dem Bildungsbereich', prioritaet: 3 },
@@ -418,6 +418,16 @@ export const GESCHICHTE = {
   zitat: 'Durch Skills-UP! habe ich gelernt, mir mein Geld besser einzuteilen und wirklich auf meinen Führerschein hinzusparen.',
   beleg: 'verein' as Beleg,
 }
+
+// Episodische Evidenz: Zitate von Stefan Bauer und Marina Winkler, wortgleich aus der Startseite,
+// den Schulseiten und dem Hearing vom 25.06.2026 (Gedankenstriche durch Satzzeichen ersetzt).
+export const STIMMEN = [
+  { text: 'Junge Menschen treffen heute echte Geldentscheidungen, oft ohne jemanden, der ihnen erklärt wie. Das wollten wir ändern.', person: 'Dr. Stefan Bauer', rolle: 'Gründer Skills-UP!' },
+  { text: 'Die erste Idee für Skills-UP! entstand während des Lockdowns, als ich über Teach for Austria unterrichtete und hautnah sah, wie wenig Jugendliche über Finanzen wussten.', person: 'Marina Winkler, MA', rolle: 'Obfrau, Pädagogische Leitung' },
+  { text: 'Lehrlinge erklären Lehrlingen. Keine Bank, keine Lehrkräfte: echte Peers, in ihrer Sprache. Das wirkt, weil Vertrauen der entscheidende Lernfaktor ist.', person: 'Marina Winkler, MA', rolle: 'Obfrau, Pädagogische Leitung' },
+  { text: 'Lehrlinge verdienen echtes Geld, oft das erste Mal in ihrem Leben. Die meisten haben niemanden, der ihnen erklärt, was man damit macht. Skills-UP! springt genau dort ein: praxisnah, in kurzen Einheiten, und mit Szenarien, die Lehrlinge aus ihrem eigenen Alltag kennen.', person: 'Dr. Stefan Bauer', rolle: 'Gründer Skills-UP!' },
+  { text: 'Zusammen haben wir dieses Projekt ins Leben gerufen, um es irgendwann abzuschaffen, weil Finanzbildung so selbstverständlich sein soll wie das ABC.', person: 'Marina Winkler, MA', rolle: 'Obfrau, Pädagogische Leitung' },
+]
 
 export const QUELLEN = [
   'Grünhaus, C. & Rauscher, O. (2021): Impact und Wirkungsanalyse in Nonprofit Organisationen, Unternehmen und Organisationen mit gesellschaftlichem Mehrwert. Working Paper, NPO & SE Kompetenzzentrum der WU Wien.',

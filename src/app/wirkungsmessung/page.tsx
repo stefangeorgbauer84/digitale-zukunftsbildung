@@ -5,7 +5,7 @@ import SiteFooter from '@/components/SiteFooter'
 import {
   BELEG, STAND, KETTE_LEISTUNG, KETTE_WIRKUNG, STAKEHOLDER, STAND_STIL, ZWECK, SCHRITTE, VERWENDUNG,
   MODELL, KETTEN_TABELLE, DIMENSION_FARBE, EBENEN, ZEITEN, WIRKUNGSBOX, OEKOLOGISCH_HINWEIS, KPIS,
-  KIRKPATRICK, MESSPLAN, VEREINSANGABEN, LIZENZ_HINWEIS, GESCHICHTE, QUELLEN,
+  KIRKPATRICK, MESSPLAN, VEREINSANGABEN, LIZENZ_HINWEIS, GESCHICHTE, STIMMEN, QUELLEN,
   type Beleg, type Kpi, type Dimension,
 } from './daten'
 
@@ -33,6 +33,7 @@ const INHALT = [
   ['kennzahlen', 'Kennzahlen je Quartal'],
   ['messplan', 'Messplan'],
   ['angaben', 'Vereinsangaben'],
+  ['stimmen', 'Stimmen aus dem Verein'],
 ] as const
 
 function BelegChip({ beleg }: { beleg: Beleg }) {
@@ -516,6 +517,26 @@ export default function WirkungsmessungPage() {
             </blockquote>
             <figcaption className="mt-3"><BelegChip beleg={GESCHICHTE.beleg} /></figcaption>
           </figure>
+        </Abschnitt>
+
+        {/* Episodische Evidenz */}
+        <Abschnitt
+          id="stimmen"
+          titel="Stimmen aus dem Verein"
+          intro="Episodische Evidenz: warum es Skills-UP! gibt und was die beiden Verantwortlichen in der Arbeit mit Jugendlichen, Lehrkräften und Schulen erleben."
+        >
+          <div className="grid gap-4 md:grid-cols-2">
+            {STIMMEN.map((s) => (
+              <figure key={s.text} className="bg-white rounded-2xl border border-gray-200 p-6 flex flex-col">
+                <blockquote className="font-body text-base italic border-l-4 border-primary-medium pl-4 flex-1" style={{ color: INK }}>
+                  „{s.text}“
+                </blockquote>
+                <figcaption className="mt-4 font-body text-sm" style={{ color: TEXT2 }}>
+                  <span className="font-bold" style={{ color: INK }}>{s.person}</span>, {s.rolle} <BelegChip beleg="verein" />
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </Abschnitt>
 
         <section className="px-6 py-12 border-t border-gray-200 bg-white">
