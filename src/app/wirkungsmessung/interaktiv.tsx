@@ -3,7 +3,7 @@
 // Interaktive Teile der Wirkungsseite. Alle Daten kommen als Props vom Server (daten.ts, kennzahlen.json).
 
 import Image from 'next/image'
-import { useEffect, useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 
 const INK = '#1a1040'
 const TEXT2 = '#4c5260'
@@ -46,6 +46,15 @@ export function PdfKnopf({ hell = false }: { hell?: boolean }) {
 
 export function KapitelNav({ kapitel }: { kapitel: { id: string; titel: string }[] }) {
   const [aktiv, setAktiv] = useState(kapitel[0]?.id)
+  const leiste = useRef<HTMLOListElement>(null)
+  // Auf schmalen Bildschirmen das aktive Kapitel seitlich in die Leiste holen (nur horizontal, die Seite bleibt stehen).
+  useEffect(() => {
+    const ol = leiste.current
+    const el = ol?.querySelector<HTMLElement>(`a[href="#${aktiv}"]`)?.parentElement
+    if (!ol || !el) return
+    const ziel = el.offsetLeft - (ol.clientWidth - el.offsetWidth) / 2
+    ol.scrollTo({ left: Math.max(0, ziel), behavior: 'smooth' })
+  }, [aktiv])
   useEffect(() => {
     const beobachter = new IntersectionObserver(
       (eintraege) => {
@@ -68,7 +77,7 @@ export function KapitelNav({ kapitel }: { kapitel: { id: string; titel: string }
           <Image src="/fotos/Logo.png" alt="" width={32} height={32} className="rounded-lg" />
           <span className="hidden md:inline font-heading font-700 text-sm leading-tight">Wirkungsbericht</span>
         </a>
-        <ol className="flex gap-1 overflow-x-auto no-scrollbar py-2">
+        <ol ref={leiste} className="relative flex gap-1 overflow-x-auto no-scrollbar py-2">
           {kapitel.map((k, i) => (
             <li key={k.id} className="shrink-0">
               <a href={`#${k.id}`} aria-current={aktiv === k.id ? 'true' : undefined}
