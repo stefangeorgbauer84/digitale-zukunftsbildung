@@ -3,7 +3,9 @@
 Arbeitskopie des bisherigen [Pitch-Repositories](https://github.com/stefangeorgbauer84/skillsup-pitch),
 übernommen aus dem Stand vom 21. Mai 2026. Das Deck und seine Bilddateien liegen
 bewusst außerhalb von `public/`: Die Übernahme veröffentlicht keine neue Seite.
-Die bisherige GitHub-Pages-Adresse bleibt unabhängig davon bestehen.
+**Das Repository ist öffentlich; alle Dateien dieser Arbeitskopie sind auf
+GitHub öffentlich zugänglich.** Die bisherige GitHub-Pages-Adresse bleibt
+unabhängig davon bestehen. Keine vertraulichen Angaben hier ablegen.
 
 ## Nutzung
 
