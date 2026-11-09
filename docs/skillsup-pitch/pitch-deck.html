@@ -1,0 +1,2180 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Skills-UP! — Seed Pitch 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;600;700;800;900&family=Nunito:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --pur-900: #2d1a5e;
+  --pur-800: #3d2475;
+  --pur-700: #4a2d8a;   /* primary-dark */
+  --pur-600: #5c3da0;
+  --pur-500: #6b4db0;   /* primary-medium */
+  --pur-400: #8466c4;
+  --pur-300: #9b7ed4;   /* primary-light */
+  --pur-200: #c5b3e8;
+  --pur-100: #e8e5f4;
+  --pur-50:  #f3f1f9;
+
+  --peach: #E8956D;      /* logo sparkle — main accent */
+  --peach-light: #f5c4a8;
+  --peach-dark: #c97040;
+
+  /* Gradient tokens */
+  --grad-deep:    linear-gradient(150deg, #120b28 0%, #2d1a5e 55%, #3d2475 100%);
+  --grad-main:    linear-gradient(150deg, #2d1a5e 0%, #4a2d8a 100%);
+  --grad-medium:  linear-gradient(135deg, #4a2d8a 0%, #6b4db0 100%);
+  --grad-card:    linear-gradient(135deg, rgba(74,45,138,0.22) 0%, rgba(45,26,94,0.1) 100%);
+  --grad-card-hl: linear-gradient(135deg, rgba(107,77,176,0.35) 0%, rgba(74,45,138,0.18) 100%);
+  --grad-light:   linear-gradient(135deg, #f3f1f9 0%, #e8e5f4 100%);
+  --grad-peach:   linear-gradient(90deg, var(--peach), var(--peach-dark));
+
+  --amber: #d87228;
+  --red:   #c84040;
+
+  --white:  #ffffff;
+  --gray-50: #f8f9fa;
+  --gray-100: #f1f3f5;
+  --gray-200: #e9ecef;
+  --gray-600: #6c757d;
+  --gray-700: #495057;
+  --gray-800: #343a40;
+  --gray-900: #212529;
+
+  --font-head: 'Baloo 2', sans-serif;
+  --font-body: 'Nunito', sans-serif;
+}
+
+html, body {
+  width: 100%; height: 100%;
+  overflow: hidden;
+  background: #1a0d3a;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Deck / Slide engine ── */
+.deck { width: 100vw; height: 100vh; position: relative; overflow: hidden; }
+
+.slide {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  display: flex; flex-direction: column;
+  opacity: 0; pointer-events: none;
+  transition: opacity 0.35s ease;
+  overflow: hidden;
+}
+.slide.active { opacity: 1; pointer-events: all; }
+
+/* ── Nav ── */
+.nav {
+  position: fixed; bottom: 2.2vh; left: 50%; transform: translateX(-50%);
+  display: flex; align-items: center; gap: 1rem; z-index: 100;
+  background: rgba(45, 26, 94, 0.75); backdrop-filter: blur(10px);
+  padding: 0.5rem 1.2rem; border-radius: 99px;
+  border: 1px solid rgba(155, 126, 212, 0.25);
+}
+.nav button {
+  background: none; border: none; color: var(--pur-300);
+  font-size: 1.1rem; cursor: pointer; padding: 0.1rem 0.4rem;
+  opacity: 0.7; transition: opacity 0.2s;
+}
+.nav button:hover { opacity: 1; }
+.nav button:disabled { opacity: 0.2; cursor: default; }
+.dots { display: flex; gap: 0.4rem; align-items: center; }
+.dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: rgba(155,126,212,0.35); cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+}
+.dot.active { background: var(--peach); transform: scale(1.35); }
+.slide-counter { color: rgba(155,126,212,0.6); font-size: 0.72rem; min-width: 2.5rem; text-align: center; font-family: var(--font-body); }
+
+/* ══════════════════════════════════════════════
+   SLIDE 1 — COVER
+══════════════════════════════════════════════ */
+#s1 {
+  background: var(--grad-deep);
+  justify-content: center; align-items: center;
+  text-align: center;
+  padding: 2vh 6vw 3vh;
+  gap: 0;
+  position: relative;
+}
+#s1::before {
+  content: '';
+  position: absolute; top: -10%; right: -5%;
+  width: 50vw; height: 50vw; border-radius: 50%;
+  background: radial-gradient(circle, rgba(107,77,176,0.3) 0%, transparent 65%);
+  pointer-events: none;
+}
+#s1::after {
+  content: '';
+  position: absolute; bottom: -8%; left: -5%;
+  width: 30vw; height: 30vw; border-radius: 50%;
+  background: radial-gradient(circle, rgba(107,77,176,0.28) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+.s1-logo {
+  width: clamp(100px, 13vw, 170px);
+  height: clamp(100px, 13vw, 170px);
+  border-radius: 22px;
+  object-fit: cover;
+  box-shadow: 0 12px 50px rgba(0,0,0,0.45), 0 0 0 3px rgba(155,126,212,0.25);
+  margin-bottom: 2vh;
+}
+.s1-eyebrow {
+  font-family: var(--font-body); font-weight: 700;
+  font-size: clamp(0.62rem, 0.95vw, 0.75rem);
+  letter-spacing: 0.18em; color: var(--peach);
+  text-transform: uppercase; margin-bottom: 0.8vh;
+}
+.s1-title {
+  font-family: var(--font-head);
+  font-size: clamp(3.5rem, 8.5vw, 6.8rem);
+  font-weight: 900; line-height: 0.95;
+  color: var(--white); letter-spacing: -0.02em;
+  margin-bottom: 1.2vh;
+}
+.s1-title .accent { color: var(--peach); }
+.s1-sub {
+  font-family: var(--font-head);
+  font-size: clamp(1rem, 1.8vw, 1.3rem);
+  font-weight: 700; color: var(--pur-200);
+  margin-bottom: 0.8vh;
+}
+.s1-tagline {
+  font-size: clamp(0.78rem, 1.2vw, 0.92rem);
+  color: rgba(197,179,232,0.7); line-height: 1.6;
+  max-width: 58ch; margin-bottom: 1.2vh;
+}
+.s1-badges {
+  display: flex; gap: 0.6rem; flex-wrap: wrap;
+  justify-content: center; margin-bottom: 1.4vh;
+}
+.s1-badge {
+  font-family: var(--font-body); font-weight: 700;
+  font-size: clamp(0.6rem, 0.9vw, 0.72rem);
+  padding: 0.35rem 0.9rem; border-radius: 99px;
+  letter-spacing: 0.02em;
+}
+.s1-badge.outline { border: 1.5px solid var(--peach); color: var(--peach); }
+.s1-badge.filled { background: rgba(107,77,176,0.22); color: var(--pur-200); border: none; }
+
+.s1-stat-row {
+  display: flex; flex-direction: row;
+  justify-content: center; gap: 2vw;
+  width: 100%;
+}
+.s1-stat {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(155,126,212,0.2);
+  border-radius: 14px; padding: 1.4vh 2.2vw;
+  text-align: center; backdrop-filter: blur(8px);
+  flex: 1; max-width: 18vw;
+}
+.s1-stat-num {
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(1.5rem, 3.2vw, 2.5rem);
+  color: var(--white); line-height: 1;
+}
+.s1-stat-num span { color: var(--peach); }
+.s1-stat-label {
+  font-size: clamp(0.6rem, 0.88vw, 0.72rem);
+  color: var(--pur-300); margin-top: 0.25rem; line-height: 1.35;
+}
+
+/* ══ HOOK SLIDE ══ */
+#s-hook {
+  background: linear-gradient(160deg, #120b28 0%, var(--pur-900) 45%, #0d1a2e 100%);
+  justify-content: space-between;
+  padding: 2.8vh 7vw 2.5vh;
+  text-align: left;
+}
+#s-hook::before {
+  content: '';
+  position: absolute;
+  left: -8vw; top: -20%;
+  width: 55vw; height: 140%;
+  background: radial-gradient(ellipse at 30% 50%, rgba(74,45,138,0.35) 0%, transparent 60%);
+  pointer-events: none;
+}
+.hook-sparkle {
+  position: absolute; right: 6vw; top: 8%;
+  width: clamp(55px, 8vw, 100px);
+  color: var(--peach); pointer-events: none;
+  opacity: 0.85;
+}
+.hook-kicker {
+  font-family: var(--font-body); font-weight: 800;
+  font-size: clamp(0.62rem, 0.95vw, 0.78rem);
+  letter-spacing: 0.2em; text-transform: uppercase;
+  color: var(--peach); margin-bottom: 1.2vh;
+  display: flex; align-items: center; gap: 0.7rem;
+  flex-shrink: 0;
+}
+.hook-kicker::before {
+  content: ''; display: block;
+  width: 2rem; height: 2px;
+  background: var(--peach); flex-shrink: 0;
+}
+.hook-headline {
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+  color: var(--white); line-height: 1.08;
+  letter-spacing: -0.025em;
+  flex-shrink: 0;
+}
+.hook-headline em { color: var(--peach); font-style: normal; }
+.hook-headline .hl-teal { color: var(--pur-200); }
+
+.hook-stats {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 1.2vw; flex-shrink: 0;
+}
+.hs-box {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(155,126,212,0.2);
+  border-radius: 14px; padding: 1.2vh 1.4vw;
+  position: relative; overflow: hidden;
+}
+.hs-box::before {
+  content: ''; position: absolute;
+  top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, var(--pur-500), transparent);
+}
+.hs-num {
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(2rem, 4.5vw, 3.6rem);
+  color: var(--white); line-height: 1;
+}
+.hs-num .hs-accent { color: var(--peach); }
+.hs-label {
+  font-size: clamp(0.9rem, 1.35vw, 1.05rem);
+  color: var(--pur-300); margin-top: 0.5rem;
+  line-height: 1.45;
+}
+
+.hook-cta {
+  flex-shrink: 0; margin-top: 1.4vh;
+  display: flex; align-items: center; gap: 1.2rem;
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(0.85rem, 1.5vw, 1.15rem);
+  color: var(--white);
+}
+.hook-cta-bar {
+  height: 2px; flex: 1;
+  background: linear-gradient(90deg, var(--pur-500), transparent);
+}
+
+/* ══════════════════════════════════════════════
+   SLIDE 2 — PROBLEM
+══════════════════════════════════════════════ */
+#s2 {
+  background: var(--white);
+  padding: 3.5vh 5.5vw 0;
+}
+
+.slide-header {
+  margin-bottom: 2.5vh;
+  flex-shrink: 0;
+}
+.slide-label {
+  font-family: var(--font-body); font-weight: 800;
+  font-size: clamp(0.62rem, 0.95vw, 0.72rem);
+  letter-spacing: 0.15em; text-transform: uppercase;
+  color: var(--pur-500); margin-bottom: 0.5rem;
+}
+.slide-title {
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(1.3rem, 2.5vw, 1.9rem);
+  color: var(--gray-900); line-height: 1.2;
+}
+.slide-title em { color: var(--pur-700); font-style: normal; }
+
+.s2-story {
+  background: var(--pur-50);
+  border-left: 3px solid var(--pur-500);
+  border-radius: 0 8px 8px 0;
+  padding: 1.2vh 1.4vw;
+  margin-bottom: 2.5vh;
+  font-size: clamp(0.8rem, 1.3vw, 0.95rem);
+  color: var(--gray-700); line-height: 1.6; font-style: italic;
+  flex-shrink: 0;
+}
+.s2-story strong { color: var(--pur-700); font-style: normal; }
+
+.s2-problems {
+  display: flex; flex-direction: column;
+  gap: 1.8vh; flex: 1;
+}
+
+.problem-row {
+  display: grid; grid-template-columns: 3rem 1fr;
+  gap: 1.1rem; align-items: start;
+}
+.prob-num {
+  width: 2.6rem; height: 2.6rem; border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(0.9rem, 1.4vw, 1.05rem); color: var(--white);
+  flex-shrink: 0;
+}
+.prob-body h3 {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(1.05rem, 1.7vw, 1.28rem); color: var(--gray-900);
+  margin-bottom: 0.3rem;
+}
+.prob-body p {
+  font-size: clamp(0.9rem, 1.4vw, 1.06rem);
+  color: var(--gray-600); line-height: 1.55;
+}
+.prob-body .highlight {
+  display: inline-block; margin-top: 0.3rem;
+  background: #fae8e8; color: var(--red);
+  font-size: clamp(0.65rem, 0.95vw, 0.75rem);
+  font-weight: 700; padding: 0.15rem 0.6rem; border-radius: 4px;
+}
+
+.s2-footer {
+  background: var(--pur-900); color: var(--pur-200);
+  padding: 1.2vh 5.5vw; margin: 0 -5.5vw;
+  font-size: clamp(0.68rem, 1.05vw, 0.8rem);
+  display: flex; align-items: center; gap: 1rem;
+  flex-shrink: 0;
+}
+.s2-footer strong { color: var(--peach); }
+
+/* ══════════════════════════════════════════════
+   SLIDE 3 — ANSATZ / LÖSUNG
+══════════════════════════════════════════════ */
+#s3 {
+  background: var(--gray-50);
+  padding: 3.5vh 5.5vw 0;
+}
+
+.s3-intro {
+  display: flex; align-items: center; gap: 2vw;
+  margin-bottom: 2.5vh; flex-shrink: 0;
+}
+.s3-intro-text { flex: 1; }
+.s3-intro-badge {
+  background: var(--pur-700); color: var(--white);
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+  padding: 0.6rem 1.3rem; border-radius: 8px;
+  white-space: nowrap;
+}
+
+.pillars {
+  display: grid; grid-template-columns: repeat(4, 1fr);
+  gap: 1.2vw; flex: 1; min-height: 0;
+}
+.pillar {
+  background: var(--white); border-radius: 12px;
+  padding: 1.8vh 1.3vw 1.5vh;
+  box-shadow: 0 2px 12px rgba(74,45,138,0.08);
+  border-top: 3px solid;
+  display: flex; flex-direction: column; gap: 0.6vh;
+}
+.pillar-icon {
+  width: clamp(2.2rem, 3.5vw, 2.8rem);
+  height: clamp(2.2rem, 3.5vw, 2.8rem);
+  border-radius: 10px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  margin-bottom: 0.2rem;
+}
+.pillar h3 {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(1.1rem, 1.8vw, 1.38rem); color: var(--gray-900);
+}
+.pillar p {
+  font-size: clamp(0.88rem, 1.35vw, 1.05rem);
+  color: var(--gray-600); line-height: 1.55; flex: 1;
+}
+.pillar-tags {
+  display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.4rem;
+}
+.tag {
+  font-size: clamp(0.58rem, 0.85vw, 0.68rem); font-weight: 700;
+  padding: 0.15rem 0.5rem; border-radius: 4px;
+}
+
+.s3-topics {
+  margin-top: 1.8vh; flex-shrink: 0;
+}
+.s3-topics-label {
+  font-family: var(--font-body); font-weight: 800;
+  font-size: clamp(0.62rem, 0.9vw, 0.72rem);
+  color: var(--pur-500); text-transform: uppercase;
+  letter-spacing: 0.12em; margin-bottom: 0.7vh;
+}
+.topic-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.topic-chip {
+  background: var(--pur-100); color: var(--pur-700);
+  font-size: clamp(0.68rem, 1.05vw, 0.8rem); font-weight: 700;
+  padding: 0.3rem 0.9rem; border-radius: 99px;
+}
+
+.s3-footer {
+  background: linear-gradient(90deg, var(--pur-700), var(--pur-500));
+  color: white; padding: 1.2vh 5.5vw; margin: 1.5vh -5.5vw 0;
+  font-size: clamp(0.7rem, 1.1vw, 0.85rem); font-weight: 700;
+  display: flex; align-items: center; gap: 1.5rem;
+  flex-shrink: 0;
+}
+.s3-footer span { opacity: 0.75; font-weight: 400; }
+
+/* ══════════════════════════════════════════════
+   SLIDE 4 — TRACTION & TEAM
+══════════════════════════════════════════════ */
+#s4 {
+  background: var(--grad-main);
+  padding: 3.5vh 5.5vw 0;
+}
+
+#s4 .slide-label { color: var(--peach); }
+#s4 .slide-title { color: var(--white); }
+
+.traction-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 1.5vh 1.5vw;
+  flex: 1; min-height: 0;
+  margin-top: 2vh;
+}
+
+.traction-card {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(155,126,212,0.2);
+  border-radius: 12px; padding: 1.6vh 1.5vw 1.4vh;
+  display: flex; flex-direction: column; gap: 0.3vh;
+}
+.traction-card.highlight {
+  background: var(--grad-card-hl);
+  border-color: rgba(232,149,109,0.3);
+}
+.traction-card.accent-pur {
+  background: linear-gradient(135deg, rgba(107,77,176,0.25), rgba(74,45,138,0.15));
+  border-color: rgba(155,126,212,0.35);
+}
+
+.tc-label {
+  font-size: clamp(0.58rem, 0.85vw, 0.68rem); font-weight: 800;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--pur-300); margin-bottom: 0.2vh;
+}
+.tc-num {
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(3rem, 7vw, 5.5rem);
+  line-height: 0.95; color: var(--white);
+}
+.tc-num .unit { font-size: 0.45em; color: var(--pur-300); margin-left: 0.1em; }
+.tc-num .accent { color: var(--peach); }
+.tc-desc {
+  font-size: clamp(0.88rem, 1.35vw, 1.05rem);
+  color: var(--pur-200); line-height: 1.4;
+}
+
+.team-row {
+  grid-column: 1 / -1;
+  display: grid; grid-template-columns: 0.85fr 1.1fr 1.1fr;
+  gap: 1.2vw;
+}
+.team-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(155,126,212,0.15);
+  border-radius: 12px; padding: 1.4vh 1.5vw;
+  display: flex; flex-direction: column; gap: 0.4vh;
+}
+.team-role {
+  font-size: clamp(0.58rem, 0.85vw, 0.68rem); font-weight: 800;
+  color: var(--peach); text-transform: uppercase; letter-spacing: 0.1em;
+}
+.team-name {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(1rem, 1.6vw, 1.22rem); color: var(--white);
+}
+.team-bio {
+  font-size: clamp(0.84rem, 1.28vw, 0.98rem);
+  color: var(--pur-300); line-height: 1.5;
+}
+.team-quote {
+  font-size: clamp(0.82rem, 1.25vw, 0.95rem);
+  color: var(--pur-200); font-style: italic; line-height: 1.5;
+  margin-top: 0.4rem; padding-top: 0.6rem;
+  border-top: 1px solid rgba(155,126,212,0.15);
+}
+
+.s4-footer {
+  background: rgba(0,0,0,0.25);
+  color: var(--pur-200); padding: 1vh 5.5vw; margin: 1.5vh -5.5vw 0;
+  font-size: clamp(0.65rem, 0.95vw, 0.75rem); font-weight: 700;
+  display: flex; align-items: center; gap: 2rem; flex-shrink: 0;
+}
+.s4-footer span { color: var(--pur-300); font-weight: 400; }
+
+/* ══════════════════════════════════════════════
+   SLIDE 5 — MARKT & FINANZIERUNG
+══════════════════════════════════════════════ */
+#s5 {
+  background: var(--white);
+  padding: 3.5vh 5.5vw 0;
+}
+
+.s5-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3vw; flex: 1; min-height: 0;
+  margin-top: 2vh; align-items: stretch;
+}
+
+/* Left: market + funding */
+.s5-left { display: flex; flex-direction: column; gap: 1.8vh; }
+
+.market-title {
+  font-family: var(--font-body); font-weight: 800;
+  font-size: clamp(0.62rem, 0.9vw, 0.72rem);
+  color: var(--pur-500); text-transform: uppercase;
+  letter-spacing: 0.12em; margin-bottom: 0.2rem;
+}
+
+.market-funnel { display: flex; flex-direction: column; gap: 0; }
+.mf-row {
+  display: grid; grid-template-columns: 2.8rem 1fr auto;
+  align-items: center; gap: 0.8rem;
+  padding: 0.8vh 1vw; border-radius: 6px;
+}
+.mf-row.tam { background: var(--pur-900); }
+.mf-row.sam { background: var(--pur-700); margin: 0 4%; }
+.mf-row.som { background: var(--grad-medium); margin: 0 8%; border-radius: 0 0 6px 6px; }
+.mf-badge {
+  font-size: clamp(0.55rem, 0.82vw, 0.65rem); font-weight: 900;
+  letter-spacing: 0.1em; color: rgba(255,255,255,0.6);
+}
+.mf-name { font-size: clamp(0.9rem, 1.38vw, 1.05rem); color: var(--white); font-weight: 600; }
+.mf-num {
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(1.2rem, 2.2vw, 1.65rem); color: var(--white);
+  white-space: nowrap;
+}
+.mf-row.tam .mf-num { font-size: clamp(1.5rem, 2.8vw, 2.1rem); }
+.mf-row.som .mf-badge,
+.mf-row.som .mf-name,
+.mf-row.som .mf-num { color: var(--white) !important; }
+
+.funding-box {
+  background: var(--grad-light);
+  border: 1.5px solid var(--pur-200); border-radius: 12px;
+  padding: 1.5vh 1.4vw; flex: 1;
+}
+.funding-box h4 {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(0.82rem, 1.3vw, 0.98rem); color: var(--pur-700);
+  margin-bottom: 0.8vh;
+}
+.funding-ask {
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(1.5rem, 3vw, 2.2rem); color: var(--pur-700);
+  line-height: 1;
+}
+.funding-ask sub { font-size: 0.4em; color: var(--pur-400); font-weight: 700; }
+.funding-use {
+  margin-top: 0.8vh;
+  display: flex; flex-direction: column; gap: 0.4vh;
+}
+.fu-row {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: clamp(0.68rem, 1.05vw, 0.8rem); color: var(--gray-700);
+}
+.fu-dot {
+  width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0;
+}
+
+/* Right: revenue + vision */
+.s5-right { display: flex; flex-direction: column; gap: 1.5vh; }
+
+.rev-title {
+  font-family: var(--font-body); font-weight: 800;
+  font-size: clamp(0.62rem, 0.9vw, 0.72rem);
+  color: var(--pur-500); text-transform: uppercase; letter-spacing: 0.12em;
+}
+.revenue-cards { display: flex; flex-direction: column; gap: 0.9vh; }
+.rev-card {
+  background: var(--gray-50); border-radius: 10px;
+  padding: 1.1vh 1.2vw; border-left: 3px solid;
+  display: flex; align-items: center; gap: 1rem;
+}
+.rev-card-body { flex: 1; }
+.rev-card h5 {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem); color: var(--gray-900);
+}
+.rev-card .rev-detail {
+  font-size: clamp(0.85rem, 1.3vw, 1rem); color: var(--gray-600);
+}
+.rev-card .rev-price {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(1rem, 1.6vw, 1.22rem); color: var(--pur-700);
+  white-space: nowrap;
+}
+
+.vision-box {
+  background: var(--pur-900); border-radius: 12px;
+  padding: 1.6vh 1.4vw; flex: 1;
+  display: flex; flex-direction: column; justify-content: center;
+}
+.vision-label {
+  font-size: clamp(0.6rem, 0.88vw, 0.7rem); font-weight: 800;
+  color: var(--peach); text-transform: uppercase;
+  letter-spacing: 0.12em; margin-bottom: 0.5rem;
+}
+.vision-text {
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(1rem, 1.65vw, 1.22rem);
+  color: var(--white); line-height: 1.4;
+}
+.vision-text em { color: var(--pur-200); font-style: normal; }
+
+.s5-footer {
+  background: var(--pur-700); color: var(--white);
+  padding: 1.1vh 5.5vw; margin: 1.5vh -5.5vw 0;
+  font-size: clamp(0.68rem, 1.05vw, 0.82rem); font-weight: 700;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0;
+}
+.s5-footer a { color: var(--pur-200); text-decoration: none; }
+
+/* ── Sparkle deco (brand motif from logo) ── */
+.sparkle-deco {
+  position: absolute; pointer-events: none;
+  color: var(--peach); opacity: 0.8;
+}
+.s1-sparkle {
+  top: 6%; right: 5.5%;
+  width: clamp(55px, 7.5vw, 100px);
+  filter: drop-shadow(0 0 18px rgba(232,149,109,0.6));
+}
+.s1-sparkle-sm {
+  bottom: 22%; left: 4%;
+  width: clamp(28px, 3.8vw, 50px);
+  opacity: 0.35;
+  transform: rotate(20deg);
+}
+.hook-sparkle {
+  filter: drop-shadow(0 0 14px rgba(232,149,109,0.5));
+}
+
+/* Stat box accent variants */
+.hs-box:nth-child(1)::before { background: linear-gradient(90deg, var(--peach), transparent); }
+.hs-box:nth-child(2)::before { background: linear-gradient(90deg, var(--pur-400), transparent); }
+.hs-box:nth-child(3)::before { background: linear-gradient(90deg, var(--pur-500), transparent); }
+
+/* Slide label accent dot */
+.slide-label::before {
+  content: '';
+  display: inline-block;
+  width: 0.5rem; height: 0.5rem; border-radius: 50%;
+  background: var(--peach);
+  margin-right: 0.5rem; vertical-align: middle;
+  flex-shrink: 0;
+}
+.slide-label {
+  display: flex; align-items: center;
+}
+
+/* Award image in cover badges */
+.s1-award-img {
+  height: clamp(28px, 3.8vh, 46px); width: auto;
+  object-fit: contain; border-radius: 8px;
+}
+
+/* Problem row: hero stat left column */
+.prob-big-stat {
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(1.8rem, 3.8vw, 3rem);
+  line-height: 1.05; flex-shrink: 0;
+  padding-top: 0.1rem;
+}
+.problem-row {
+  display: grid; grid-template-columns: 1fr 2.2fr;
+  gap: 1.5rem; align-items: start;
+}
+
+/* Hook background dot grid (subtle texture) */
+#s-hook::after {
+  content: '';
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(155,126,212,0.08) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+}
+
+/* Stronger vision quote */
+.vision-dream {
+  margin-top: 0.8rem;
+  font-family: var(--font-head); font-weight: 800;
+  font-size: clamp(0.75rem, 1.2vw, 0.92rem);
+  color: var(--peach); line-height: 1.4;
+  font-style: italic;
+}
+
+/* ── Cover partner strip ── */
+.s1-partners {
+  width: 100%; flex-shrink: 0; margin-top: 1.2vh;
+  margin-left: calc(-1 * clamp(160px, 20vw, 260px) / 2);
+}
+.s1-partners-label {
+  font-size: clamp(0.52rem, 0.75vw, 0.62rem);
+  letter-spacing: 0.18em; text-transform: uppercase;
+  color: rgba(197,179,232,0.45); text-align: center;
+  margin-bottom: 0.7vh; font-weight: 700;
+}
+.s1-partners-row {
+  display: flex; align-items: center; justify-content: center;
+  gap: 2.5vw; flex-wrap: nowrap;
+  background: #ffffff;
+  border-radius: 0; padding: 1.6vh 5.5vw;
+  margin: 0 calc(-6vw);
+}
+.s1-partner-logo {
+  height: clamp(36px, 5.5vh, 68px); width: auto;
+  max-width: 12vw; object-fit: contain; flex-shrink: 1;
+}
+.s1-partner-logo.mega { height: clamp(50px, 7.5vh, 90px); }
+
+/* ── MEGA logo extra large on partner strip ── */
+.mega-logo { height: clamp(36px, 5.5vh, 70px) !important; }
+
+/* ── Team photo ── */
+.team-photo-card {
+  border-radius: 12px; overflow: hidden;
+  position: relative;
+  min-height: 0;
+}
+.team-workshop-img {
+  position: absolute; inset: 0;
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center 20%;
+}
+.team-photo-overlay {
+  position: absolute; inset: 0;
+  background: linear-gradient(to top, rgba(29,12,62,0.85) 0%, rgba(29,12,62,0.2) 60%, transparent 100%);
+}
+.team-photo-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  padding: 0.8rem 1rem;
+  font-size: clamp(0.6rem, 0.9vw, 0.72rem); font-weight: 700;
+  color: var(--pur-200); letter-spacing: 0.05em;
+}
+
+/* ── Partner logo strip (bigger) ── */
+.partner-logo {
+  height: clamp(30px, 4.8vh, 60px); width: auto;
+  max-width: 10vw; object-fit: contain; flex-shrink: 1;
+}
+
+/* ── Team card enhancements ── */
+.team-header {
+  display: flex; align-items: center; gap: 0.8rem;
+  margin-bottom: 0.4rem;
+}
+.team-avatar {
+  width: clamp(2rem, 3.2vw, 2.8rem);
+  height: clamp(2rem, 3.2vw, 2.8rem);
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(0.7rem, 1.1vw, 0.9rem);
+  color: var(--white); flex-shrink: 0;
+}
+.team-header-text { flex: 1; }
+.team-tags {
+  display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.4rem;
+}
+.team-tag {
+  background: rgba(155,126,212,0.15); color: var(--pur-300);
+  font-size: clamp(0.56rem, 0.8vw, 0.65rem); font-weight: 700;
+  padding: 0.1rem 0.45rem; border-radius: 4px;
+}
+
+/* ── Partner logo strip ── */
+.partner-logos {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; flex-wrap: nowrap;
+  padding: 0.9vh 5.5vw; margin: 1.5vh -5.5vw 0;
+  background: rgba(255,255,255,0.96);
+  flex-shrink: 0;
+}
+/* partner-logo size defined above */
+.partner-divider {
+  width: 1px; height: 2.2vh;
+  background: rgba(0,0,0,0.1); flex-shrink: 0;
+  margin: 0 1.6vw;
+}
+.partner-text {
+  font-size: clamp(0.6rem, 0.85vw, 0.7rem);
+  font-weight: 700; color: var(--gray-700);
+  white-space: nowrap;
+}
+
+/* ══════════════════════════════════════════════
+   SLIDE 5 — PRODUKT / SCREENSHOTS
+══════════════════════════════════════════════ */
+#s-produkt {
+  background: linear-gradient(155deg, #120b28 0%, #2d1a5e 55%, #1a1040 100%);
+  padding: 3.5vh 5.5vw 0;
+}
+#s-produkt .slide-label { color: var(--peach); }
+#s-produkt .slide-title { color: var(--white); }
+
+.produkt-screens {
+  display: grid; grid-template-columns: 1fr 1fr 1fr;
+  gap: 2vw; flex: 1; min-height: 0; margin-top: 2.5vh;
+}
+.produkt-screen-card {
+  border-radius: 14px; overflow: hidden;
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(155,126,212,0.18);
+  display: flex; flex-direction: column;
+  box-shadow: 0 12px 45px rgba(0,0,0,0.5), 0 0 0 1px rgba(155,126,212,0.08);
+  transition: transform 0.22s, box-shadow 0.22s;
+}
+.produkt-screen-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 60px rgba(0,0,0,0.55), 0 0 0 1px rgba(155,126,212,0.2);
+}
+.produkt-screen-img { flex: 1; min-height: 0; overflow: hidden; background: #fff; }
+.produkt-screen-img img {
+  width: 100%; height: 100%;
+  object-fit: contain; object-position: top center; display: block;
+}
+.produkt-screen-label {
+  padding: 1vh 1.2vw;
+  font-family: var(--font-body); font-size: clamp(0.68rem, 1.05vw, 0.8rem);
+  font-weight: 700; color: var(--pur-200);
+  border-top: 1px solid rgba(155,126,212,0.15);
+  flex-shrink: 0; background: rgba(0,0,0,0.18);
+  letter-spacing: 0.02em;
+}
+.produkt-footer {
+  background: rgba(0,0,0,0.22); color: var(--pur-300);
+  padding: 1vh 5.5vw; margin: 1.5vh -5.5vw 0;
+  font-size: clamp(0.65rem, 0.95vw, 0.75rem); font-weight: 700;
+  display: flex; align-items: center; gap: 1.5rem; flex-shrink: 0;
+}
+.produkt-footer span { color: var(--pur-400); font-weight: 400; }
+
+/* ══════════════════════════════════════════════
+   SLIDE 6 — GESCHICHTE / TIMELINE
+══════════════════════════════════════════════ */
+#s-geschichte {
+  background: var(--grad-main);
+  padding: 3.5vh 5.5vw 0;
+}
+#s-geschichte .slide-label { color: var(--peach); }
+#s-geschichte .slide-title { color: var(--white); }
+
+.geschichte-body {
+  flex: 1; min-height: 0; display: flex; flex-direction: column;
+  gap: 1.5vh; margin-top: 2vh;
+}
+.geschichte-timeline-card {
+  flex: 4; min-height: 0; border-radius: 14px; overflow: hidden;
+  background: #fff;
+  box-shadow: 0 14px 55px rgba(0,0,0,0.45);
+  display: flex; align-items: center; justify-content: center;
+}
+.geschichte-timeline-card img {
+  width: 100%; height: 100%;
+  object-fit: contain; object-position: center; display: block;
+}
+.geschichte-milestones {
+  display: grid; grid-template-columns: repeat(6, 1fr);
+  gap: 1vw; flex-shrink: 0;
+}
+.ms-box {
+  background: rgba(255,255,255,0.07);
+  border: 1px solid rgba(155,126,212,0.2);
+  border-radius: 10px; padding: 0.6vh 0.7vw; text-align: center;
+}
+.ms-box.hero {
+  background: rgba(232,149,109,0.12);
+  border-color: rgba(232,149,109,0.4);
+}
+.ms-year {
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(1.1rem, 1.8vw, 1.4rem);
+  color: var(--peach); line-height: 1;
+}
+.ms-text {
+  font-size: clamp(0.72rem, 1.05vw, 0.82rem);
+  color: var(--pur-200); line-height: 1.35; margin-top: 0.2rem;
+}
+.geschichte-footer {
+  background: rgba(0,0,0,0.22); color: var(--pur-200);
+  padding: 1vh 5.5vw; margin: 1.5vh -5.5vw 0;
+  font-size: clamp(0.65rem, 0.95vw, 0.75rem); font-weight: 700;
+  display: flex; align-items: center; gap: 2rem; flex-shrink: 0;
+}
+.geschichte-footer span { color: var(--peach); }
+
+/* ══ NEXT-LEVEL UPGRADES ══════════════════════════════ */
+
+/* ── Slide entrance animation ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.slide.active .slide-header        { animation: fadeUp 0.42s ease 0.04s both; }
+.slide.active .s2-story            { animation: fadeUp 0.38s ease 0.10s both; }
+.slide.active .s2-problems         { animation: fadeUp 0.38s ease 0.16s both; }
+.slide.active .pillars             { animation: fadeUp 0.4s  ease 0.10s both; }
+.slide.active .s3-topics           { animation: fadeUp 0.4s  ease 0.18s both; }
+.slide.active .traction-grid       { animation: fadeUp 0.42s ease 0.08s both; }
+.slide.active .hook-kicker         { animation: fadeUp 0.38s ease 0s    both; }
+.slide.active .hook-headline       { animation: fadeUp 0.48s ease 0.05s both; }
+.slide.active .hook-stats          { animation: fadeUp 0.4s  ease 0.14s both; }
+.slide.active .hook-cta            { animation: fadeUp 0.36s ease 0.22s both; }
+.slide.active .s5-grid             { animation: fadeUp 0.42s ease 0.10s both; }
+.slide.active .produkt-screens     { animation: fadeUp 0.42s ease 0.10s both; }
+.slide.active .geschichte-body     { animation: fadeUp 0.42s ease 0.10s both; }
+.slide.active .wirkung-grid        { animation: fadeUp 0.42s ease 0.10s both; }
+.slide.active .roadmap-body        { animation: fadeUp 0.42s ease 0.10s both; }
+.slide.active .quellen-grid        { animation: fadeUp 0.42s ease 0.10s both; }
+.slide.active .s1-logo             { animation: fadeUp 0.45s ease 0s    both; }
+.slide.active .s1-title            { animation: fadeUp 0.48s ease 0.06s both; }
+.slide.active .s1-sub              { animation: fadeUp 0.4s  ease 0.12s both; }
+.slide.active .s1-badges           { animation: fadeUp 0.38s ease 0.16s both; }
+.slide.active .s1-stat-row         { animation: fadeUp 0.38s ease 0.20s both; }
+.slide.active .s1-partners         { animation: fadeUp 0.35s ease 0.26s both; }
+
+/* ── Stronger card depth ── */
+.traction-card  { box-shadow: 0 6px 28px rgba(0,0,0,0.3); }
+.pillar         { box-shadow: 0 4px 18px rgba(74,45,138,0.13); transition: transform 0.2s, box-shadow 0.2s; }
+.pillar:hover   { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(74,45,138,0.2); }
+.team-card      { box-shadow: 0 4px 18px rgba(0,0,0,0.2); }
+.rev-card       { box-shadow: 0 2px 10px rgba(74,45,138,0.08); }
+
+/* ── Cover phone hero ── */
+.s1-phone-hero {
+  position: absolute; right: 3.5vw; top: 50%;
+  transform: translateY(-54%) rotate(-7deg);
+  width: clamp(130px, 16vw, 210px);
+  border-radius: 22px; overflow: hidden;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.6),
+              0 0 40px rgba(107,77,176,0.4),
+              0 0 0 1.5px rgba(155,126,212,0.22);
+}
+.s1-phone-hero img { width: 100%; display: block; }
+
+/* Nudge cover content left to not hide under phone */
+#s1 { padding-right: clamp(160px, 20vw, 260px); }
+
+/* ── Traction timeline strip ── */
+.traction-timeline {
+  grid-column: 1 / -1;
+  border-radius: 10px; overflow: hidden;
+  background: #fff;
+  padding: 0.3vh 0.6vw;
+  box-shadow: 0 3px 16px rgba(0,0,0,0.28);
+}
+.traction-timeline img {
+  width: 100%;
+  height: clamp(52px, 7vh, 95px);
+  object-fit: contain; object-position: center;
+  display: block;
+}
+
+/* ── Hook phone bigger + glowing — positioned between stats and edge ── */
+.hook-phone {
+  width: clamp(120px, 15vw, 195px) !important;
+  bottom: 7vh !important;
+  right: -2vw !important;  /* partially bleeds off-edge — editorial effect */
+  transform: rotate(4deg) !important;
+  box-shadow: 0 24px 70px rgba(0,0,0,0.55),
+              0 0 40px rgba(107,77,176,0.35),
+              0 0 0 1.5px rgba(155,126,212,0.2) !important;
+}
+
+/* ══ END NEXT-LEVEL UPGRADES ══════════════════════════ */
+
+/* ── Profile photo avatar (real photo in team cards) ── */
+.team-photo-avatar {
+  width: clamp(2.2rem, 3.5vw, 3.2rem);
+  height: clamp(2.2rem, 3.5vw, 3.2rem);
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center 15%;
+  flex-shrink: 0;
+  border: 2px solid rgba(155,126,212,0.35);
+}
+
+/* ── App screenshots row on solution slide ── */
+.app-screenshots {
+  display: flex; gap: 1vw;
+  flex: 1; min-height: 0;
+  align-items: stretch;
+  overflow: hidden;
+}
+.app-screenshot-frame {
+  flex: 1; border-radius: 10px; overflow: hidden;
+  background: var(--pur-100);
+  box-shadow: 0 4px 20px rgba(74,45,138,0.18);
+  position: relative;
+}
+.app-screenshot-frame img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: top center;
+  display: block;
+}
+.app-screenshot-label {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(to top, rgba(45,26,94,0.88) 0%, transparent 100%);
+  padding: 0.6rem 0.7rem 0.45rem;
+  font-size: clamp(0.55rem, 0.8vw, 0.65rem); font-weight: 700;
+  color: var(--pur-200); letter-spacing: 0.04em;
+}
+
+/* ── Phone mockup on hook slide ── */
+.hook-phone {
+  position: absolute;
+  right: 5vw; bottom: 8vh;
+  width: clamp(110px, 14vw, 180px);
+  border-radius: 20px; overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5), 0 0 0 2px rgba(155,126,212,0.2);
+  transform: rotate(3deg);
+}
+.hook-phone img {
+  width: 100%; height: auto; display: block;
+}
+
+/* ══════════════════════════════════════════════
+   SLIDE — WIRKUNG & EVIDENZ
+══════════════════════════════════════════════ */
+#s-wirkung {
+  background: var(--white);
+  padding: 3.5vh 5.5vw 0;
+}
+
+.wirkung-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 2.5vw; flex: 1; min-height: 0;
+  margin-top: 1.8vh; align-items: stretch;
+}
+.wirkung-left { display: flex; flex-direction: column; gap: 1.3vh; }
+
+.wm-section-label {
+  font-family: var(--font-body); font-weight: 800;
+  font-size: clamp(0.6rem, 0.88vw, 0.7rem);
+  color: var(--pur-500); text-transform: uppercase;
+  letter-spacing: 0.13em; margin-bottom: 0.2rem;
+}
+.wm-steps { display: flex; flex-direction: column; gap: 0.8vh; }
+.wm-step {
+  display: flex; gap: 0.9rem; align-items: flex-start;
+  background: var(--pur-50); border-radius: 10px;
+  padding: 0.9vh 1.1vw;
+}
+.wm-step-num {
+  width: 1.6rem; height: 1.6rem; border-radius: 50%; flex-shrink: 0;
+  background: var(--pur-700); color: var(--white);
+  font-family: var(--font-head); font-weight: 900; font-size: 0.72rem;
+  display: flex; align-items: center; justify-content: center;
+}
+.wm-step-text {
+  font-size: clamp(0.88rem, 1.35vw, 1.05rem); color: var(--gray-700); line-height: 1.5;
+}
+.wm-step-text strong { color: var(--gray-900); }
+
+.wirkung-quote {
+  background: var(--pur-900); border-radius: 12px;
+  padding: 1.3vh 1.4vw; margin-top: auto; flex-shrink: 0;
+}
+.wq-text {
+  font-family: var(--font-head); font-weight: 700;
+  font-size: clamp(0.92rem, 1.4vw, 1.1rem);
+  color: var(--white); line-height: 1.5; font-style: italic;
+  margin-bottom: 0.5rem;
+}
+.wq-text::before { content: '„'; color: var(--peach); }
+.wq-text::after  { content: '"'; color: var(--peach); }
+.wq-author {
+  font-size: clamp(0.58rem, 0.85vw, 0.68rem);
+  color: var(--pur-300); font-weight: 600;
+}
+
+.wirkung-right { display: flex; flex-direction: column; gap: 1.3vh; }
+.wirkung-results {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 1vh;
+}
+.wr-card {
+  background: var(--gray-50); border-radius: 12px;
+  padding: 1.3vh 1.2vw;
+  border-left: 3px solid var(--pur-500);
+  display: flex; flex-direction: column; justify-content: center;
+}
+.wr-card.main {
+  background: var(--pur-900); border-left-color: var(--peach);
+  grid-column: 1 / -1;
+}
+.wr-num {
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(1.4rem, 2.8vw, 2.2rem); color: var(--pur-700); line-height: 1;
+}
+.wr-card.main .wr-num { color: var(--white); font-size: clamp(2rem, 4.5vw, 3.4rem); }
+.wr-label {
+  font-size: clamp(0.8rem, 1.2vw, 0.95rem);
+  color: var(--gray-600); line-height: 1.4; margin-top: 0.25rem;
+}
+.wr-label small { font-size: 0.88em; opacity: 0.72; }
+.wr-card.main .wr-label { color: var(--pur-300); }
+
+.wirkung-differenz {
+  background: var(--gray-100); border-radius: 10px;
+  padding: 1vh 1.2vw; flex-shrink: 0;
+}
+.wd-title {
+  font-family: var(--font-body); font-weight: 800;
+  font-size: clamp(0.58rem, 0.85vw, 0.67rem);
+  color: var(--pur-500); text-transform: uppercase;
+  letter-spacing: 0.12em; margin-bottom: 0.5rem;
+}
+.wd-row {
+  display: flex; align-items: center; gap: 0.6rem;
+  font-size: clamp(0.85rem, 1.3vw, 1rem); color: var(--gray-700);
+  padding: 0.18rem 0; line-height: 1.4;
+}
+.wd-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+
+.wirkung-footer {
+  background: var(--pur-50); color: var(--gray-700);
+  padding: 1vh 5.5vw; margin: 1.5vh -5.5vw 0;
+  font-size: clamp(0.6rem, 0.88vw, 0.7rem); font-weight: 600;
+  display: flex; align-items: center; gap: 1rem; flex-shrink: 0;
+  border-top: 1px solid var(--pur-200);
+}
+.wirkung-footer span { color: var(--pur-600); font-weight: 800; }
+
+/* ══════════════════════════════════════════════
+   SLIDE — ROADMAP & NACHHALTIGKEIT
+══════════════════════════════════════════════ */
+#s-roadmap {
+  background: linear-gradient(155deg, #120b28 0%, #2d1a5e 50%, #1a1040 100%);
+  padding: 3.5vh 5.5vw 0;
+}
+#s-roadmap .slide-label { color: var(--peach); }
+#s-roadmap .slide-title { color: var(--white); }
+
+.roadmap-body { flex: 1; min-height: 0; display: flex; flex-direction: column; gap: 1.8vh; margin-top: 1.8vh; }
+
+.roadmap-phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5vw; flex: 1; min-height: 0; }
+
+.phase-card {
+  border-radius: 14px; padding: 1.5vh 1.4vw;
+  display: flex; flex-direction: column; gap: 0.5vh;
+  position: relative; overflow: hidden;
+}
+.phase-card.current { background: rgba(255,255,255,0.05); border: 1px solid rgba(155,126,212,0.22); }
+.phase-card.scale   { background: rgba(232,149,109,0.09); border: 1px solid rgba(232,149,109,0.28); }
+.phase-card.sustain { background: rgba(107,77,176,0.22); border: 1px solid rgba(155,126,212,0.32); }
+
+.phase-badge {
+  position: absolute; top: 1.1vh; right: 1vw;
+  font-size: clamp(0.52rem, 0.78vw, 0.6rem); font-weight: 800;
+  padding: 0.18rem 0.55rem; border-radius: 99px; letter-spacing: 0.05em;
+}
+.phase-card.current .phase-badge { background: rgba(34,168,97,0.18); color: #22a861; }
+.phase-card.scale   .phase-badge { background: rgba(232,149,109,0.2); color: var(--peach); }
+.phase-card.sustain .phase-badge { background: rgba(155,126,212,0.2); color: var(--pur-200); }
+
+.phase-year {
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(1.6rem, 3.2vw, 2.6rem); line-height: 1; color: var(--white);
+}
+.phase-card.scale .phase-year { color: var(--peach); }
+
+.phase-label {
+  font-family: var(--font-body); font-weight: 800;
+  font-size: clamp(0.88rem, 1.3vw, 1rem); color: var(--pur-200); margin-bottom: 0.3vh;
+}
+.phase-ask {
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(0.95rem, 1.5vw, 1.15rem);
+  padding: 0.25rem 0.65rem; border-radius: 6px; display: inline-block; margin-bottom: 0.5vh;
+}
+.phase-card.current .phase-ask { background: rgba(34,168,97,0.16); color: #22a861; }
+.phase-card.scale   .phase-ask { background: rgba(232,149,109,0.18); color: var(--peach); }
+.phase-card.sustain .phase-ask { background: rgba(155,126,212,0.18); color: var(--pur-200); }
+
+.phase-items { display: flex; flex-direction: column; gap: 0.38vh; flex: 1; }
+.pi {
+  font-size: clamp(0.82rem, 1.25vw, 0.96rem); color: var(--pur-200); line-height: 1.42;
+}
+.pi-done { color: #5dd393; }
+
+.roadmap-roi {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(155,126,212,0.18);
+  border-radius: 12px; padding: 1.2vh 1.5vw;
+  display: flex; align-items: center; justify-content: space-between;
+  flex-shrink: 0;
+}
+.roi-item { text-align: center; flex: 1; }
+.roi-num {
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(1.15rem, 2.2vw, 1.75rem); color: var(--white); line-height: 1;
+}
+.roi-item.highlight .roi-num { color: var(--peach); }
+.roi-label {
+  font-size: clamp(0.75rem, 1.1vw, 0.88rem); color: var(--pur-300);
+  line-height: 1.4; margin-top: 0.25rem;
+}
+.roi-arrow {
+  font-size: clamp(1rem, 1.8vw, 1.3rem); color: var(--pur-500);
+  flex-shrink: 0; padding: 0 0.4vw;
+}
+
+.roadmap-footer {
+  background: rgba(0,0,0,0.22); color: var(--pur-200);
+  padding: 1vh 5.5vw; margin: 1.5vh -5.5vw 0;
+  font-size: clamp(0.63rem, 0.93vw, 0.73rem); font-weight: 700;
+  display: flex; align-items: center; gap: 1.5rem; flex-shrink: 0;
+}
+.roadmap-footer span { color: var(--peach); }
+
+/* ══════════════════════════════════════════════
+   SLIDE — QUELLENVERZEICHNIS
+══════════════════════════════════════════════ */
+#s-quellen {
+  background: var(--white);
+  padding: 3.5vh 5.5vw 0;
+}
+
+.quellen-grid {
+  display: grid; grid-template-columns: 1.05fr 0.95fr;
+  gap: 2.5vw; flex: 1; min-height: 0;
+  margin-top: 1.8vh;
+}
+.quellen-right { display: flex; flex-direction: column; gap: 1.5vh; }
+
+.quellen-group { display: flex; flex-direction: column; gap: 0.7vh; }
+.qg-label {
+  font-family: var(--font-body); font-weight: 800;
+  font-size: clamp(0.58rem, 0.85vw, 0.67rem);
+  text-transform: uppercase; letter-spacing: 0.13em;
+  color: var(--pur-500); padding-bottom: 0.4vh;
+  border-bottom: 1.5px solid var(--pur-100);
+  margin-bottom: 0.2vh;
+}
+.qg-list { display: flex; flex-direction: column; gap: 0.55vh; }
+
+.q-row {
+  display: flex; gap: 0.7rem; align-items: flex-start;
+}
+.q-num {
+  width: 1.4rem; height: 1.4rem; border-radius: 50%; flex-shrink: 0;
+  background: var(--pur-100); color: var(--pur-600);
+  font-family: var(--font-head); font-weight: 900;
+  font-size: clamp(0.52rem, 0.75vw, 0.6rem);
+  display: flex; align-items: center; justify-content: center;
+  margin-top: 0.1rem;
+}
+.q-body {
+  font-size: clamp(0.8rem, 1.2vw, 0.92rem);
+  color: var(--gray-700); line-height: 1.45; flex: 1;
+}
+.q-body strong { color: var(--gray-900); font-weight: 700; }
+.q-url {
+  display: block; font-size: clamp(0.55rem, 0.78vw, 0.62rem);
+  color: var(--pur-400); font-style: italic; margin-top: 0.1rem;
+}
+
+.quellen-footer {
+  background: var(--pur-50); color: var(--gray-600);
+  padding: 1vh 5.5vw; margin: 1.5vh -5.5vw 0;
+  font-size: clamp(0.6rem, 0.88vw, 0.7rem);
+  display: flex; align-items: center; gap: 0.5rem; flex-shrink: 0;
+  border-top: 1.5px solid var(--pur-100);
+}
+
+/* ── Source / citation notes ── */
+.source-note {
+  font-size: clamp(0.46rem, 0.68vw, 0.54rem);
+  color: rgba(155,126,212,0.45);
+  font-style: italic; line-height: 1.3; margin-top: 0.3rem;
+}
+.source-note-dark {
+  font-size: clamp(0.46rem, 0.68vw, 0.54rem);
+  color: rgba(108,108,108,0.65);
+  font-style: italic; line-height: 1.3; margin-top: 0.25rem;
+}
+
+/* ── Side navigation zones ── */
+.side-nav {
+  position: fixed; top: 0; height: 100vh;
+  width: clamp(52px, 7vw, 90px); z-index: 90;
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; opacity: 0; transition: opacity 0.22s;
+}
+.side-nav:hover { opacity: 1; }
+.side-nav.disabled { pointer-events: none; }
+.side-nav-left  { left: 0;  background: linear-gradient(to right, rgba(45,26,94,0.22), transparent); }
+.side-nav-right { right: 0; background: linear-gradient(to left,  rgba(45,26,94,0.22), transparent); }
+.side-nav svg { width: 28px; height: 28px; color: rgba(255,255,255,0.75); filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4)); }
+
+/* ── Print ── */
+@media print {
+  @page { size: 297mm 167mm; margin: 0; }
+  html, body { overflow: visible; background: #000; height: auto; }
+  .nav { display: none !important; }
+  .deck { width: auto; height: auto; position: static; }
+  .slide {
+    position: relative !important; opacity: 1 !important;
+    pointer-events: all !important;
+    width: 297mm; height: 167mm;
+    page-break-after: always; break-after: page;
+    padding: 5mm 8mm; overflow: hidden;
+  }
+  .slide:last-of-type { page-break-after: auto; }
+}
+</style>
+</head>
+<body>
+<div class="deck" id="deck">
+
+<!-- ══ SLIDE 1 — COVER ══ -->
+<div class="slide active" id="s1">
+  <!-- Brand sparkle motif (mirrors logo) -->
+  <svg class="sparkle-deco s1-sparkle" viewBox="0 0 80 80" fill="none">
+    <path d="M40 4 L43.5 36.5 L76 40 L43.5 43.5 L40 76 L36.5 43.5 L4 40 L36.5 36.5 Z" fill="currentColor"/>
+    <path d="M66 16 L67.2 22.8 L74 24 L67.2 25.2 L66 32 L64.8 25.2 L58 24 L64.8 22.8 Z" fill="currentColor" opacity="0.55"/>
+    <circle cx="62" cy="62" r="3" fill="currentColor" opacity="0.35"/>
+    <circle cx="56" cy="10" r="2" fill="currentColor" opacity="0.4"/>
+  </svg>
+  <svg class="sparkle-deco s1-sparkle-sm" viewBox="0 0 60 60" fill="none">
+    <path d="M30 3 L32.5 27.5 L57 30 L32.5 32.5 L30 57 L27.5 32.5 L3 30 L27.5 27.5 Z" fill="currentColor"/>
+  </svg>
+  <img src="logo.png" alt="Skills-UP! Logo" class="s1-logo">
+  <div class="s1-eyebrow">Gemeinnütziger Verein · Digitale Zukunftsbildung · Seit 2022</div>
+  <div class="s1-title">Skills-UP<span class="accent">!</span></div>
+  <div class="s1-sub">Finanzbildung für Österreichs Lehrlinge — peer-to-peer, gamifiziert, wirksam.</div>
+  <div class="s1-tagline">
+    Wir schließen die größte Bildungslücke der Berufsschule: Finanzkompetenz.
+    Bereits 1.830 erreichte Jugendliche · 90 % verändern ihr Finanzverhalten dauerhaft.
+  </div>
+  <div class="s1-badges">
+    <div class="s1-badge outline">Seed Pitch &nbsp;·&nbsp; 2026</div>
+    <img src="assets/TOP+6+Projekt.webp" alt="Top 6 MEGA Bildungsmillion" class="s1-award-img">
+    <div class="s1-badge filled">🇦🇹 Nat. Finanzbildungsstrategie 2026</div>
+    <div class="s1-badge filled">✅ Digitales Gütesiegel</div>
+  </div>
+
+  <div class="s1-stat-row">
+    <div class="s1-stat">
+      <div class="s1-stat-num"><span>443</span></div>
+      <div class="s1-stat-label">Lehrlinge direkt<br>erreicht · seit 2022</div>
+    </div>
+    <div class="s1-stat">
+      <div class="s1-stat-num"><span>1.830</span></div>
+      <div class="s1-stat-label">Gesamt erreichte<br>Schüler:innen</div>
+    </div>
+    <div class="s1-stat">
+      <div class="s1-stat-num"><span>90</span>%</div>
+      <div class="s1-stat-label">verändertes<br>Finanzverhalten</div>
+    </div>
+  </div>
+
+  <!-- Phone hero — product in real use -->
+  <div class="s1-phone-hero">
+    <img src="assets/thumbnail (1).jpeg" alt="Skills-UP! App">
+  </div>
+
+  <div class="s1-partners">
+    <div class="s1-partners-label">Netzwerk &amp; Auszeichnungen</div>
+    <div class="s1-partners-row" aria-label="Logos aus Netzwerk und Auszeichnungen">
+      <img src="assets/MEGA+logo.webp" alt="MEGA Bildungsstiftung" class="s1-partner-logo mega">
+      <img src="assets/TGW-Logistics-Logo-2025.webp" alt="TGW Logistics" class="s1-partner-logo">
+      <img src="assets/Hochschule_Bgld_Logo_RGB.webp" alt="Hochschule Burgenland" class="s1-partner-logo">
+      <img src="assets/Wirtschaftskammer_Österreich_logo.svg+(1).webp" alt="WKO Österreich" class="s1-partner-logo">
+      <img src="assets/nationale finanzbilungsstrategie.webp" alt="Nat. Finanzbildung" class="s1-partner-logo">
+      <img src="assets/Logo_Gütesiegel_Lern-Apps_RGB_kompakt.webp" alt="Gütesiegel Lern-Apps" class="s1-partner-logo">
+      <img src="assets/308197270_473949401428854_4842975165242646892_n.webp" alt="Bildungsdirektion Burgenland" class="s1-partner-logo">
+    </div>
+  </div>
+</div>
+
+<!-- ══ SLIDE HOOK ══ -->
+<div class="slide" id="s-hook">
+  <!-- Sparkle brand motif -->
+  <svg class="hook-sparkle" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <path d="M40 4 L43.5 36.5 L76 40 L43.5 43.5 L40 76 L36.5 43.5 L4 40 L36.5 36.5 Z" fill="currentColor"/>
+    <path d="M66 16 L67.2 22.8 L74 24 L67.2 25.2 L66 32 L64.8 25.2 L58 24 L64.8 22.8 Z" fill="currentColor" opacity="0.55"/>
+    <path d="M18 52 L19 57 L24 58 L19 59 L18 64 L17 59 L12 58 L17 57 Z" fill="currentColor" opacity="0.45"/>
+    <circle cx="62" cy="62" r="3" fill="currentColor" opacity="0.35"/>
+    <circle cx="20" cy="18" r="2" fill="currentColor" opacity="0.3"/>
+    <circle cx="56" cy="10" r="1.5" fill="currentColor" opacity="0.4"/>
+  </svg>
+
+  <!-- Phone mockup — real app in use -->
+  <div class="hook-phone">
+    <img src="assets/thumbnail (1).jpeg" alt="Skills-UP! App">
+  </div>
+
+  <div class="hook-kicker">Die unbequeme Wahrheit</div>
+
+  <div class="hook-headline">
+    Jede <em>4. Person</em><br>
+    in der Schulden&shy;beratung<br>
+    ist <span class="hl-teal">unter 30.</span>
+  </div>
+  <div class="source-note" style="margin-bottom:0.5vh">ASB Schuldnerberatungen Österreich, Jahresbericht 2024</div>
+
+  <div class="hook-stats">
+    <div class="hs-box">
+      <div class="hs-num"><span class="hs-accent">40.000</span></div>
+      <div class="hs-label">neue Lehrlinge pro Jahr in Österreich — ohne jede Finanzbildung im Lehrplan</div>
+      <div class="source-note">WKO Lehrlingsstatistik 2024</div>
+    </div>
+    <div class="hs-box">
+      <div class="hs-num"><span class="hs-accent">0</span></div>
+      <div class="hs-label">Pflichtfächer zu Geld, Schulden oder Sparen in der Berufsschule</div>
+      <div class="source-note">BMBWF Lehrplanverordnung Berufsschulen AT, 2024</div>
+    </div>
+    <div class="hs-box">
+      <div class="hs-num"><span class="hs-accent">90</span>%</div>
+      <div class="hs-label">der Skills-UP!-Teilnehmer:innen verändern ihr Finanzverhalten positiv</div>
+      <div class="source-note">Interne Evaluierung Skills-UP!, n = 443, 2022–2025</div>
+    </div>
+  </div>
+
+  <div class="hook-cta">
+    <div class="hook-cta-bar"></div>
+    Skills-UP! schließt diese Lücke — für Österreichs Lehrlinge.
+    <div class="hook-cta-bar" style="background: linear-gradient(90deg, transparent, var(--pur-500))"></div>
+  </div>
+</div>
+
+<!-- ══ SLIDE 2 — PROBLEM ══ -->
+<div class="slide" id="s2">
+  <div class="slide-header">
+    <div class="slide-label">Das Problem</div>
+    <div class="slide-title">Jedes Jahr starten 40.000 Lehrlinge in Österreich — <em>ohne ein einziges Finanzbildungsfach.</em></div>
+  </div>
+
+  <div class="s2-story">
+    <strong>„Ein junger Lehrling kauft sein erstes Handy auf Raten – und steht 6 Monate später vor dem finanziellen Chaos."</strong>
+    &nbsp;Genau hier setzt Skills-UP! an: Wir vermitteln Jugendlichen nicht nur Wissen, sondern echte Handlungskompetenz für den Alltag.
+  </div>
+
+  <div class="s2-problems">
+    <div class="problem-row">
+      <div class="prob-big-stat" style="color:#c84040">1 von 4</div>
+      <div class="prob-body">
+        <h3>Finanzbildung fehlt im Schulsystem komplett <sup style="font-size:0.6em;color:var(--pur-400)">¹³</sup></h3>
+        <p>Weder Berufsschule noch AHS bereiten Jugendliche auf Girokonto, Kreditfallen oder Steuern vor. Junge Menschen starten ins Berufsleben ohne grundlegendes Finanzwissen.</p>
+        <span class="highlight">Personen in der Schuldnerberatung ist unter 30 Jahre alt</span>
+      </div>
+    </div>
+    <div class="problem-row">
+      <div class="prob-big-stat" style="color:#d87228">Platz&nbsp;#1</div>
+      <div class="prob-body">
+        <h3>Bestehende Angebote verfehlen die Zielgruppe <sup style="font-size:0.6em;color:var(--amber)">⁴</sup></h3>
+        <p>Lehrbücher, PDFs und Bankenseminare sprechen Jugendliche nicht an. Trockene Inhalte ohne Praxisbezug führen zu Desinteresse — und die Finanzindustrie verfolgt eigene Interessen.</p>
+        <span class="highlight" style="background:#fff8e1;color:#d87228">Konsumkredite &amp; Ratenkäufe: häufigste Ursache für Überschuldung</span>
+      </div>
+    </div>
+    <div class="problem-row">
+      <div class="prob-big-stat" style="color:#4a2d8a">40.000</div>
+      <div class="prob-body">
+        <h3>Lehrlinge — besonders exponiert, besonders vergessen <sup style="font-size:0.6em;color:var(--pur-400)">²</sup></h3>
+        <p>Mit dem ersten Gehalt kommen Werbung, Ratenbindung und Konsumversuchung. Azubis haben Einkommen, aber keine Kompetenzen — eine gefährliche Kombination.</p>
+        <span class="highlight" style="background:#e8e5f4;color:#4a2d8a">neue Lehrlinge pro Jahr in Österreich — ohne Finanzbildung</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="s2-footer">
+    <strong>Quellen:</strong>
+    ¹ ASB Schuldnerberatungen Österreich, Jahresbericht 2024 &nbsp;·&nbsp;
+    ² WKO Lehrlingsstatistik 2024 &nbsp;·&nbsp;
+    ³ BMBWF Lehrplanverordnung Berufsschulen &nbsp;·&nbsp;
+    ⁴ Statistik Austria, Überschuldungsstatistik 2023
+  </div>
+</div>
+
+<!-- ══ SLIDE 3 — LÖSUNG / ANSATZ ══ -->
+<div class="slide" id="s3">
+  <div class="slide-header">
+    <div class="slide-label">Unser Ansatz</div>
+    <div class="slide-title">Die Plattform, die Lehrlinge <em>wirklich erreicht</em> — von Lehrlingen erklärt, digital skaliert.</div>
+  </div>
+
+  <div class="pillars">
+    <div class="pillar" style="border-top-color:#4a2d8a">
+      <div class="pillar-icon" style="background:#e8e5f4">🎥</div>
+      <h3>Peer-Videos</h3>
+      <p>Echte Lehrlinge erklären echte Finanzthemen — in ihrer Sprache, aus ihrer Erfahrung. Kein Lehrer, kein Bankberater.</p>
+      <div class="pillar-tags">
+        <span class="tag" style="background:#e8e5f4;color:#4a2d8a">Authentisch</span>
+        <span class="tag" style="background:#e8e5f4;color:#4a2d8a">Relatable</span>
+      </div>
+    </div>
+    <div class="pillar" style="border-top-color:#6b4db0">
+      <div class="pillar-icon" style="background:#ede9f7">🎮</div>
+      <h3>Gamification</h3>
+      <p>Leaderboards, Quiz-Battle, Punktesystem und Achievements machen Lernen zur echten Challenge — Motivation durch Wettbewerb.</p>
+      <div class="pillar-tags">
+        <span class="tag" style="background:#e8e5f4;color:#6b4db0">Leaderboard</span>
+        <span class="tag" style="background:#e8e5f4;color:#6b4db0">Quiz-Duelle</span>
+      </div>
+    </div>
+    <div class="pillar" style="border-top-color:#6b4db0">
+      <div class="pillar-icon" style="background:#e6f4f1">🎙️</div>
+      <h3>Podcast-Format</h3>
+      <p>Ein Podcast-Format in Lehrlings-Sprache bringt Finanzthemen überall hin — beim Pendeln, in der Pause, im Alltag.</p>
+      <div class="pillar-tags">
+        <span class="tag" style="background:#ede9f7;color:#5c3da0">On-the-go</span>
+        <span class="tag" style="background:#ede9f7;color:#5c3da0">Alltagsnah</span>
+      </div>
+    </div>
+    <div class="pillar" style="border-top-color:#8466c4">
+      <div class="pillar-icon" style="background:#ede9f7">💻</div>
+      <h3>Digitale Lernplattform</h3>
+      <p>Direkt in den Berufsschulalltag integriert: Lehrer verwalten Klassen, tracken Fortschritt und vergeben Zertifikate.</p>
+      <div class="pillar-tags">
+        <span class="tag" style="background:#e8e5f4;color:#4a2d8a">Messbar</span>
+        <span class="tag" style="background:#e8e5f4;color:#4a2d8a">Skalierbar</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="s3-topics">
+    <div class="s3-topics-label">Lernthemen im Curriculum</div>
+    <div class="topic-chips">
+      <span class="topic-chip">💳 Girokonto &amp; Banking</span>
+      <span class="topic-chip">📉 Schuldenfallen erkennen</span>
+      <span class="topic-chip">🪙 Kryptowährungen</span>
+      <span class="topic-chip">🎯 Sparziele setzen</span>
+      <span class="topic-chip">🆘 Notgroschen aufbauen</span>
+      <span class="topic-chip">📋 Krisenbudget</span>
+      <span class="topic-chip">🏦 Ratenkauf &amp; Kredit</span>
+      <span class="topic-chip">🧾 Lohnabrechnung lesen</span>
+      <span class="topic-chip">🏠 Erste eigene Wohnung</span>
+      <span class="topic-chip">💼 Gehaltsverhandlung</span>
+      <span class="topic-chip">📊 Investieren &amp; Depot</span>
+      <span class="topic-chip">💡 Finanzielle Selbstbestimmung</span>
+    </div>
+  </div>
+
+  <div class="s3-footer">
+    <span>2 getrennte Lernpfade:</span>
+    Lehrlinge &amp; Schüler:innen — Lehrlings-Beirat seit 2025 · laufend weiterentwickelt
+  </div>
+</div>
+
+<!-- ══ SLIDE 5 — PRODUKT ══ -->
+<div class="slide" id="s-produkt">
+  <div class="slide-header">
+    <div class="slide-label">Das Produkt</div>
+    <div class="slide-title">Eine Plattform — digital, interaktiv, <em>messbar wirksam.</em></div>
+  </div>
+
+  <div class="produkt-screens">
+    <div class="produkt-screen-card">
+      <div class="produkt-screen-img">
+        <img src="assets/Bildschirmfoto+2025-07-17+um+08.27.51.webp" alt="Finanz-Kompass Lernpfad">
+      </div>
+      <div class="produkt-screen-label">🗺️ Finanz-Kompass — strukturierter Lernpfad</div>
+    </div>
+    <div class="produkt-screen-card">
+      <div class="produkt-screen-img">
+        <img src="assets/Bildschirmfoto+2025-09-11+um+08.49.57.webp" alt="Global Leaderboard Gamification">
+      </div>
+      <div class="produkt-screen-label">🏆 Global Leaderboard — Gamification live</div>
+    </div>
+    <div class="produkt-screen-card">
+      <div class="produkt-screen-img">
+        <img src="assets/Bildschirmfoto+2025-07-17+um+08.28.16.png" alt="Interaktives Schulden-Modul">
+      </div>
+      <div class="produkt-screen-label">💸 30.000 € Schulden? — Interaktives Modul</div>
+    </div>
+  </div>
+
+  <div class="produkt-footer">
+    <span>Technologie &amp; Zertifizierung:</span>
+    Ovos · WKO-akkreditiert · Güte Siegel Lern-Apps · Ministeriums-Marktplatz · Nat. Finanzbildungsstrategie 2026
+  </div>
+</div>
+
+<!-- ══ SLIDE — WIRKUNG & EVIDENZ ══ -->
+<div class="slide" id="s-wirkung">
+  <div class="slide-header">
+    <div class="slide-label">Wirkung &amp; Evidenz</div>
+    <div class="slide-title">90 % verändertes Finanzverhalten — <em>wie wir das wissen.</em></div>
+  </div>
+
+  <div class="wirkung-grid">
+    <div class="wirkung-left">
+      <div>
+        <div class="wm-section-label">Messmethodik</div>
+        <div class="wm-steps">
+          <div class="wm-step">
+            <div class="wm-step-num">1</div>
+            <div class="wm-step-text">
+              <strong>Standardisierter Pre/Post-Test</strong><br>
+              Finanzwissen-Score vor und direkt nach dem Programm — angelehnt ans OECD Financial Literacy Framework.
+            </div>
+          </div>
+          <div class="wm-step">
+            <div class="wm-step-num">2</div>
+            <div class="wm-step-text">
+              <strong>3-Monats Follow-up Befragung</strong><br>
+              Selbstauskunft zu Sparverhalten, Konsumkredit-Entscheidungen und Alltagsfinanzen — 90 % bestätigen positiven Wandel.
+            </div>
+          </div>
+          <div class="wm-step">
+            <div class="wm-step-num">3</div>
+            <div class="wm-step-text">
+              <strong>Unabhängige Evaluation · Hochschule Burgenland</strong><br>
+              Wissenschaftliche Begleitforschung — extern validiert, Publikation geplant 2026.
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="wirkung-quote">
+        <div class="wq-text">Nach Skills-UP! habe ich zum ersten Mal in meinem Leben angefangen zu sparen. Ich wusste vorher nicht mal, was ein ETF ist.</div>
+        <div class="wq-author">— Lehrling, 18 J., Mechatronik · Berufsschule Neusiedl 2025</div>
+      </div>
+    </div>
+
+    <div class="wirkung-right">
+      <div class="wirkung-results">
+        <div class="wr-card main">
+          <div class="wr-num">90 %</div>
+          <div class="wr-label">verändertes Finanzverhalten<br><small>3 Monate nach dem Programm · n = 443 direkt begleitete Lehrlinge</small></div>
+          <div class="source-note" style="color:rgba(197,179,232,0.45)">Interne Evaluierung Skills-UP!, 2022–2025 · Begleitforschung Hochschule Burgenland</div>
+        </div>
+        <div class="wr-card">
+          <div class="wr-num">443</div>
+          <div class="wr-label">direkt begleitete<br>Lehrlinge mit Evaluation</div>
+          <div class="source-note-dark">Interne Auswertung Skills-UP!, Stand Mai 2026</div>
+        </div>
+        <div class="wr-card">
+          <div class="wr-num">1.830</div>
+          <div class="wr-label">gesamt erreichte<br>Schüler:innen (Platform)</div>
+          <div class="source-note-dark">BMBWF Marktplatz Lern-Apps, Lizenzauswertung 2025</div>
+        </div>
+      </div>
+
+      <div class="wirkung-differenz">
+        <div class="wd-title">Warum Skills-UP! wirkt — Differenzierung</div>
+        <div class="wd-row"><div class="wd-dot" style="background:#22a861"></div>Peer-to-peer: Lehrlinge erklären Lehrlingen — kein Lehrer, keine Bank</div>
+        <div class="wd-row"><div class="wd-dot" style="background:var(--peach)"></div>Gamification: Leaderboard + Duelle — intrinsische Motivation statt Pflicht</div>
+        <div class="wd-row"><div class="wd-dot" style="background:var(--pur-500)"></div>Institutionell verankert: Schule + Betrieb + digitale Plattform in einem</div>
+        <div class="wd-row"><div class="wd-dot" style="background:var(--pur-400)"></div>Österreich-spezifisch: WKÖ, Nat. Strategie, Ministeriums-Marktplatz, Gütesiegel</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wirkung-footer">
+    <span>Quellen:</span>
+    Interne Evaluierung Skills-UP!, n = 443, 2022–2025 &nbsp;·&nbsp;
+    Hochschule Burgenland, Begleitforschung 2025 &nbsp;·&nbsp;
+    OECD/INFE (2023) International Financial Literacy Framework &nbsp;·&nbsp;
+    BMBWF Marktplatz Lern-Apps, Lizenzauswertung 2025
+  </div>
+</div>
+
+<!-- ══ SLIDE 6 — GESCHICHTE / TIMELINE ══ -->
+<div class="slide" id="s-geschichte">
+  <div class="slide-header">
+    <div class="slide-label">Unsere Geschichte</div>
+    <div class="slide-title">Von einer Idee zur nationalen Initiative — <em>6 Jahre konsequenter Aufbau.</em></div>
+  </div>
+
+  <div class="geschichte-body">
+    <div class="geschichte-timeline-card">
+      <img src="assets/Workshop+BS_14012026+(2).webp" alt="Skills-UP! Meilensteine 2020–2026">
+    </div>
+    <div class="geschichte-milestones">
+      <div class="ms-box">
+        <div class="ms-year">2020</div>
+        <div class="ms-text">Idee &amp; erste Umsetzung — Future Wings Challenge</div>
+      </div>
+      <div class="ms-box">
+        <div class="ms-year">2021</div>
+        <div class="ms-text">MVP-Entwicklung — Expertinnen-Netzwerk aufgebaut</div>
+      </div>
+      <div class="ms-box">
+        <div class="ms-year">2022</div>
+        <div class="ms-text">Erste 50 Lehrlinge — TGW Logistics — Vereinsgründung</div>
+      </div>
+      <div class="ms-box">
+        <div class="ms-year">2023</div>
+        <div class="ms-text">Skalierung &amp; Wiederholung — Ovos-Technologie</div>
+      </div>
+      <div class="ms-box hero">
+        <div class="ms-year">2025</div>
+        <div class="ms-text">TOP 3 MEGA Bildungsmillion — <strong style="color:var(--peach)">€ 200.000</strong> Förderpreis</div>
+      </div>
+      <div class="ms-box hero">
+        <div class="ms-year">2026</div>
+        <div class="ms-text">Berufsschulen Burgenland — Nat. Finanzbildungsstrategie</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="geschichte-footer">
+    <span>Gesamt seit 2020:</span>
+    € 227.000 Budget &nbsp;·&nbsp; 2 VZÄ + 4 Trainer:innen &nbsp;·&nbsp; 1.830 erreichte Schüler:innen &nbsp;·&nbsp; 24 Lehrende eingebunden
+    &nbsp;·&nbsp; <em style="font-weight:400;opacity:0.65">Quelle: Vereinsdokumentation Skills-UP!, Jahresabschluss 2025</em>
+  </div>
+</div>
+
+<!-- ══ SLIDE — ROADMAP & NACHHALTIGKEIT ══ -->
+<div class="slide" id="s-roadmap">
+  <div class="slide-header">
+    <div class="slide-label">Roadmap &amp; Nachhaltigkeit</div>
+    <div class="slide-title">Von Burgenland zur nationalen Plattform — <em>€ 250.000 für 3 entscheidende Jahre.</em></div>
+  </div>
+
+  <div class="roadmap-body">
+    <div class="roadmap-phases">
+
+      <div class="phase-card current">
+        <div class="phase-badge">Laufend</div>
+        <div class="phase-year">2026</div>
+        <div class="phase-label">Fundament &amp; Nachweis</div>
+        <div class="phase-ask">€ 94.500 gesichert ✓</div>
+        <div class="phase-items">
+          <div class="pi pi-done">✓ 4 Berufsschulen Burgenland</div>
+          <div class="pi pi-done">✓ 240 Lehrlinge direkt erreicht</div>
+          <div class="pi pi-done">✓ Nat. Finanzbildungsstrategie</div>
+          <div class="pi pi-done">✓ Digitales Gütesiegel + WKÖ</div>
+          <div class="pi">→ Plattform v2.0 &amp; CMS live</div>
+          <div class="pi">→ Train-the-Trainer Pilotprogramm</div>
+          <div class="pi">→ Wissenschaftliche Publikation HBgld</div>
+        </div>
+      </div>
+
+      <div class="phase-card scale">
+        <div class="phase-badge">Gesucht</div>
+        <div class="phase-year">2027</div>
+        <div class="phase-label">Skalierung &amp; Markt</div>
+        <div class="phase-ask">€ 150.000 Förderung</div>
+        <div class="phase-items">
+          <div class="pi">→ 12 Berufsschulen · 3 Bundesländer</div>
+          <div class="pi">→ 1.000+ Lehrlinge / Jahr direkt</div>
+          <div class="pi">→ B2B SaaS Launch (€ 299 / Mo.)</div>
+          <div class="pi">→ Train-the-Trainer Rollout (1:25)</div>
+          <div class="pi">→ Lehrlings-Beirat Bundesebene</div>
+          <div class="pi">→ Erste B2B-Einnahmen ≥ € 30.000</div>
+          <div class="pi">→ Wissenschaftliche Publikation</div>
+        </div>
+      </div>
+
+      <div class="phase-card sustain">
+        <div class="phase-badge">Ziel</div>
+        <div class="phase-year">2028</div>
+        <div class="phase-label">Unabhängigkeit</div>
+        <div class="phase-ask">€ 100.000 Förderung</div>
+        <div class="phase-items">
+          <div class="pi">→ 3.000+ Lehrlinge / Jahr</div>
+          <div class="pi">→ SaaS &amp; Enterprise: ≥ 60 % Kostendeckung</div>
+          <div class="pi">→ DACH-Expansion (D + CH)</div>
+          <div class="pi">→ Enterprise-Deals: Banken &amp; Versicherungen</div>
+          <div class="pi">→ Lizenzmodell Ministerium AT</div>
+          <div class="pi">→ Grant-Unabhängigkeit ab 2029</div>
+          <div class="pi">→ Systemischer Impact: 10.000+ / Jahr</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="roadmap-roi">
+      <div class="roi-item">
+        <div class="roi-num">€ 250.000</div>
+        <div class="roi-label">Gesamtförderung<br>2026–2028</div>
+      </div>
+      <div class="roi-arrow">→</div>
+      <div class="roi-item">
+        <div class="roi-num">3.000+</div>
+        <div class="roi-label">Lehrlinge/Jahr<br>direkt erreicht</div>
+      </div>
+      <div class="roi-arrow">→</div>
+      <div class="roi-item">
+        <div class="roi-num">~&thinsp;€ 83</div>
+        <div class="roi-label">Cost-per-Impact<br>pro Jugendliche:r</div>
+      </div>
+      <div class="roi-arrow">→</div>
+      <div class="roi-item">
+        <div class="roi-num">1 : 25</div>
+        <div class="roi-label">Train-the-Trainer-<br>Multiplikator</div>
+      </div>
+      <div class="roi-arrow">→</div>
+      <div class="roi-item highlight">
+        <div class="roi-num">selbsttragend</div>
+        <div class="roi-label">ab 2029 ohne<br>Förderabhängigkeit</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="roadmap-footer">
+    <span>€ 150.000 jetzt</span> — ermöglicht Phase 2 ab Q1 2027 &nbsp;·&nbsp;
+    <span>€ 100.000</span> schließt den Weg zur Unabhängigkeit 2029 &nbsp;·&nbsp;
+    <em style="font-weight:400;opacity:0.6">Cost-per-Impact: Eigene Kalkulation (Gesamtbudget ÷ direkt erreichte Jugendliche) · Wachstumsziele: Interne Projektplanung Skills-UP!, Mai 2026</em>
+  </div>
+</div>
+
+<!-- ══ SLIDE 7 — TRACTION & TEAM ══ -->
+<div class="slide" id="s4">
+  <div class="slide-header">
+    <div class="slide-label">Traction &amp; Team · Seit 2022 · Gemeinnütziger Verein</div>
+    <div class="slide-title">4 Jahre Impact — ausgezeichnet, zertifiziert, skalierbar.</div>
+  </div>
+
+  <div class="traction-grid">
+    <div class="traction-card highlight">
+      <div class="tc-label">Direkt erreichte Lehrlinge</div>
+      <div class="tc-num"><span class="accent">443</span></div>
+      <div class="tc-desc">seit 2022 · davon 240 allein in 2026 · 4 Berufsschulen · 12 Workshops</div>
+      <div class="source-note">Interne Auswertung Skills-UP!, Stand Mai 2026</div>
+    </div>
+    <div class="traction-card highlight">
+      <div class="tc-label">Lizenzen Marktplatz Lern-Apps</div>
+      <div class="tc-num"><span class="accent">1.387</span></div>
+      <div class="tc-desc">digitale Skalierung über das Ministeriums-Portal · ~1.830 gesamt erreicht</div>
+      <div class="source-note">BMBWF Marktplatz Lern-Apps, Lizenzauswertung 2025</div>
+    </div>
+    <div class="traction-card accent-pur">
+      <div class="tc-label">Lehrer:innen eingebunden</div>
+      <div class="tc-num"><span class="accent">24</span></div>
+      <div class="tc-desc">Multiplikator:innen an 4 Berufsschulen · 90 % Verhaltensänderung bei Lehrlingen</div>
+      <div class="source-note">Interne Auswertung Skills-UP!, Stand Mai 2026</div>
+    </div>
+
+    <div class="team-row">
+      <!-- Award ceremony photo -->
+      <div class="team-photo-card">
+        <img src="assets/Top 3 MEGA groß und zentral darstellen.webp" alt="TOP 3 MEGA Bildungsmillion — € 200.000 Förderpreis" class="team-workshop-img">
+        <div class="team-photo-overlay"></div>
+        <div class="team-photo-label">TOP 3 · MEGA Bildungsmillion · € 200.000 Förderpreis 2025</div>
+      </div>
+      <div class="team-card">
+        <div class="team-header">
+          <img src="assets/Marina profil.webp" alt="Marina Winkler" class="team-photo-avatar">
+          <div class="team-header-text">
+            <div class="team-role">Co-Founderin · Obfrau</div>
+            <div class="team-name">Marina Winkler, MA</div>
+          </div>
+        </div>
+        <div class="team-tags">
+          <span class="team-tag">Education &amp; Finance</span>
+          <span class="team-tag">EdTech for Impact</span>
+          <span class="team-tag">TFA Alumna</span>
+          <span class="team-tag">Aktiv seit 2020</span>
+          <span class="team-tag">2 VZÄ + 4 Trainer:innen</span>
+        </div>
+        <div class="team-bio">Marina entwickelt seit 2020 mit voller Energie innovative Formate für Jugendliche, die begeistern und langfristig wirken — mit Kreativität, Verständnis und Herz. Sie verantwortet Bildungskonzept, Partneraufbau und Programmentwicklung. Gesamtbudget seit Start: € 227.000.</div>
+        <div class="team-quote">„Viele Lehrlinge sind auf wirtschaftliche Herausforderungen nicht ausreichend vorbereitet. Mit Skills-UP! stärken wir ihre Finanzkompetenz — damit sie Schuldenfallen frühzeitig erkennen."</div>
+      </div>
+      <div class="team-card">
+        <div class="team-header">
+          <img src="assets/Stefan Bauer Profilfoto.jpeg" alt="Dr. Stefan Bauer" class="team-photo-avatar">
+          <div class="team-header-text">
+            <div class="team-role">Co-Founder · Stv. Obmann</div>
+            <div class="team-name">Dr. Stefan Bauer</div>
+          </div>
+        </div>
+        <div class="team-tags">
+          <span class="team-tag">Content Creator</span>
+          <span class="team-tag">Digitale Plattformen</span>
+          <span class="team-tag">WP Lead L2BGreen</span>
+          <span class="team-tag">Aktiv seit 2020</span>
+        </div>
+        <div class="team-bio">Stefan treibt seit 2020 die digitale Entwicklung und Content-Strategie von Skills-UP! voran — von der Plattformentwicklung bis zur Lerninhalt-Produktion. Er verantwortet Technologie, Inhaltsarchitektur und digitale Skalierung. Lehrlings-Beirat seit 2025 auf seine Initiative hin gestartet.</div>
+        <div class="team-quote">„Skills-UP! bringt Finanzbildung dorthin, wo sie gebraucht wird: direkt in den Alltag der Berufsschule. Unser Traum? Eine generationenübergreifende Bewegung für Finanzkompetenz — powered by Lehrlinge selbst."</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="partner-logos" aria-label="Logos aus Netzwerk und Auszeichnungen">
+    <img src="assets/TGW-Logistics-Logo-2025.webp" alt="TGW Logistics" class="partner-logo">
+    <div class="partner-divider"></div>
+    <img src="assets/Hochschule_Bgld_Logo_RGB.webp" alt="Hochschule Burgenland" class="partner-logo">
+    <div class="partner-divider"></div>
+    <img src="assets/MEGA+logo.webp" alt="MEGA Bildungsstiftung" class="partner-logo mega-logo">
+    <div class="partner-divider"></div>
+    <img src="assets/Wirtschaftskammer_Österreich_logo.svg+(1).webp" alt="WKO Österreich" class="partner-logo">
+    <div class="partner-divider"></div>
+    <img src="assets/Logo_Gütesiegel_Lern-Apps_RGB_kompakt.webp" alt="Gütesiegel Lern-Apps" class="partner-logo">
+    <div class="partner-divider"></div>
+    <img src="assets/nationale finanzbilungsstrategie.webp" alt="Nat. Finanzbildungsstrategie" class="partner-logo">
+    <div class="partner-divider"></div>
+    <img src="assets/308197270_473949401428854_4842975165242646892_n.webp" alt="Bildungsdirektion Burgenland" class="partner-logo">
+    <div class="partner-divider"></div>
+    <img src="assets/TOP+6+Projekt.webp" alt="TOP 6 Projekt" class="partner-logo">
+  </div>
+</div>
+
+<!-- ══ SLIDE 5 — MARKT & FINANZIERUNG ══ -->
+<div class="slide" id="s5">
+  <div class="slide-header">
+    <div class="slide-label">Markt &amp; Finanzierung</div>
+    <div class="slide-title">€ 4,2 Mrd. Markt · SaaS-Modell · <em>Wir sind bereit für die nächste Stufe.</em></div>
+  </div>
+
+  <div class="s5-grid">
+    <div class="s5-left">
+      <div>
+        <div class="market-title">Marktgröße</div>
+        <div class="market-funnel">
+          <div class="mf-row tam">
+            <div class="mf-badge">TAM</div>
+            <div class="mf-name">EdTech DACH gesamt <sup style="font-size:0.65em;opacity:0.7">¹</sup></div>
+            <div class="mf-num">€ 4,2 Mrd.</div>
+          </div>
+          <div class="mf-row sam">
+            <div class="mf-badge">SAM</div>
+            <div class="mf-name">Finanzbildung B2B + B2C <sup style="font-size:0.65em;opacity:0.7">²</sup></div>
+            <div class="mf-num">€ 890 Mio.</div>
+          </div>
+          <div class="mf-row som">
+            <div class="mf-badge">SOM</div>
+            <div class="mf-name">Berufsschulen &amp; Betriebe AT/DACH (J. 1–3) <sup style="font-size:0.65em;opacity:0.7">³</sup></div>
+            <div class="mf-num">€ 45 Mio.</div>
+          </div>
+        </div>
+        <div class="source-note-dark" style="margin-top:0.5rem;padding:0 0.2rem">
+          ¹ HolonIQ European EdTech Market Report 2024 &nbsp;·&nbsp;
+          ² Statista EdTech DACH 2024, Teilsegment Financial Literacy &nbsp;·&nbsp;
+          ³ Eigene Schätzung auf Basis WKO Lehrlingsdaten &amp; BMBWF Berufsschulbudget 2024
+        </div>
+      </div>
+
+      <div class="funding-box">
+        <h4>🚀 Gesucht: Förderung für Skalierung</h4>
+        <div class="funding-ask">€ 250.000 <sub>2026–2028</sub></div>
+        <div style="margin-top:0.5vh;margin-bottom:0.8vh;font-size:clamp(0.62rem,0.9vw,0.72rem);color:var(--pur-400);">
+          Investition in nationale Reichweite &amp; Plattformausbau
+        </div>
+        <div class="funding-use">
+          <div class="fu-row">
+            <div class="fu-dot" style="background:#4a2d8a"></div>
+            <div style="flex:1">
+              <span style="font-weight:700;color:var(--gray-800)">Plattform &amp; Technologie</span>
+              <div style="width:100%;height:4px;background:#e9ecef;border-radius:2px;margin-top:2px"><div style="width:32%;height:100%;background:#4a2d8a;border-radius:2px"></div></div>
+            </div>
+            <span style="font-weight:700;color:var(--pur-700);font-size:clamp(0.7rem,1.05vw,0.82rem)">€ 80.000</span>
+          </div>
+          <div class="fu-row">
+            <div class="fu-dot" style="background:#6b4db0"></div>
+            <div style="flex:1">
+              <span style="font-weight:700;color:var(--gray-800)">Content &amp; Curriculum</span>
+              <div style="width:100%;height:4px;background:#e9ecef;border-radius:2px;margin-top:2px"><div style="width:24%;height:100%;background:#6b4db0;border-radius:2px"></div></div>
+            </div>
+            <span style="font-weight:700;color:var(--pur-700);font-size:clamp(0.7rem,1.05vw,0.82rem)">€ 60.000</span>
+          </div>
+          <div class="fu-row">
+            <div class="fu-dot" style="background:#5c3da0"></div>
+            <div style="flex:1">
+              <span style="font-weight:700;color:var(--gray-800)">Team &amp; Trainer:innen</span>
+              <div style="width:100%;height:4px;background:#e9ecef;border-radius:2px;margin-top:2px"><div style="width:28%;height:100%;background:#5c3da0;border-radius:2px"></div></div>
+            </div>
+            <span style="font-weight:700;color:var(--pur-700);font-size:clamp(0.7rem,1.05vw,0.82rem)">€ 70.000</span>
+          </div>
+          <div class="fu-row">
+            <div class="fu-dot" style="background:#8466c4"></div>
+            <div style="flex:1">
+              <span style="font-weight:700;color:var(--gray-800)">Vertrieb &amp; Wachstum</span>
+              <div style="width:100%;height:4px;background:#e9ecef;border-radius:2px;margin-top:2px"><div style="width:16%;height:100%;background:#8466c4;border-radius:2px"></div></div>
+            </div>
+            <span style="font-weight:700;color:var(--pur-700);font-size:clamp(0.7rem,1.05vw,0.82rem)">€ 40.000</span>
+          </div>
+        </div>
+        <div style="margin-top:0.7vh;padding-top:0.7vh;border-top:1px solid var(--pur-200);font-size:clamp(0.62rem,0.9vw,0.72rem);color:var(--gray-600);display:flex;align-items:center;gap:0.5rem;">
+          <span style="color:#22a861;font-weight:800">✓ Bereits gesichert 2026:</span> € 94.500 (MEGA + Öffentl. Mittel + Partner)
+        </div>
+      </div>
+    </div>
+
+    <div class="s5-right">
+      <div>
+        <div class="rev-title">Revenue-Modell</div>
+        <div class="revenue-cards">
+          <div class="rev-card" style="border-left-color:#4a2d8a">
+            <div class="rev-card-body">
+              <h5>B2B — Betriebe &amp; Schulen</h5>
+              <div class="rev-detail">Lizenz pro Institution (bis 50 Lehrlinge)</div>
+            </div>
+            <div class="rev-price">€ 299 / Mo.</div>
+          </div>
+          <div class="rev-card" style="border-left-color:#4a2d8a">
+            <div class="rev-card-body">
+              <h5>B2C — Freemium</h5>
+              <div class="rev-detail">Basisinhalte kostenlos · Pro-Zugang für alle</div>
+            </div>
+            <div class="rev-price">€ 9,99 / Mo.</div>
+          </div>
+          <div class="rev-card" style="border-left-color:#6b4db0">
+            <div class="rev-card-body">
+              <h5>Enterprise &amp; Förderprojekte</h5>
+              <div class="rev-detail">Banken, Versicherungen, öffentl. Förderungen</div>
+            </div>
+            <div class="rev-price">Custom</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="vision-box">
+        <div class="vision-label">Rückenwind &amp; Ziele 2027</div>
+        <div class="vision-text">
+          <em>Nationale Finanzbildungsstrategie</em> 2026 · neues Pflichtfach
+          „Financial &amp; Digital Literacy" an BHAK · Ministeriums-Budget für Lern-Apps
+        </div>
+        <div style="margin-top:0.9rem;display:flex;flex-direction:column;gap:0.35rem;">
+          <div style="font-size:clamp(0.62rem,0.9vw,0.72rem);color:var(--pur-200);font-weight:700;">Ziele bis Ende 2027</div>
+          <div style="font-size:clamp(0.62rem,0.9vw,0.72rem);color:var(--pur-200);line-height:1.45;">
+            740 direkt erreichte Lehrlinge &nbsp;·&nbsp; 42 Pädagog:innen &nbsp;·&nbsp; +25 % Inhalte &nbsp;·&nbsp; Train-the-Trainer
+          </div>
+        </div>
+        <div class="vision-dream">
+          „Eine generationenübergreifende Bewegung für Finanzkompetenz — powered by Lehrlinge selbst."
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="s5-footer">
+    <span style="opacity:0.7;font-weight:400;font-style:italic">
+      Marktquellen: HolonIQ 2024 · Statista DACH EdTech 2024 · WKO / BMBWF (eigene Schätzung SOM)
+    </span>
+    <span>info@digitale-zukunftsbildung.eu</span>
+    <a href="https://www.digitale-zukunftsbildung.eu/" target="_blank">digitale-zukunftsbildung.eu</a>
+  </div>
+</div>
+
+<!-- ══ SLIDE — QUELLENVERZEICHNIS ══ -->
+<div class="slide" id="s-quellen">
+  <div class="slide-header">
+    <div class="slide-label">Quellenverzeichnis</div>
+    <div class="slide-title">Alle zitierten Quellen im Überblick</div>
+  </div>
+
+  <div class="quellen-grid">
+
+    <div class="quellen-group">
+      <div class="qg-label">Externe Statistiken &amp; Behörden</div>
+      <div class="qg-list">
+        <div class="q-row"><span class="q-num">1</span><div class="q-body"><strong>ASB Schuldnerberatungen Österreich</strong><br>Jahresbericht 2024 — Altersstruktur Schuldnerberatungsklientel<br><span class="q-url">asb-schuldnerberatung.at</span></div></div>
+        <div class="q-row"><span class="q-num">2</span><div class="q-body"><strong>WKO — Wirtschaftskammer Österreich</strong><br>Lehrlingsstatistik 2024 — Anzahl aktiver Lehrverhältnisse in Österreich<br><span class="q-url">wko.at/lehrlingsstatistik</span></div></div>
+        <div class="q-row"><span class="q-num">3</span><div class="q-body"><strong>BMBWF — Bundesministerium für Bildung, Wissenschaft und Forschung</strong><br>Lehrplanverordnung Berufsschulen AT, 2024 — Pflichtfächerstruktur<br><span class="q-url">bmbwf.gv.at</span></div></div>
+        <div class="q-row"><span class="q-num">4</span><div class="q-body"><strong>Statistik Austria</strong><br>Überschuldungsstatistik 2023 — Ursachen und Altersgruppen<br><span class="q-url">statistik.at</span></div></div>
+        <div class="q-row"><span class="q-num">5</span><div class="q-body"><strong>OECD/INFE</strong><br>International Financial Literacy Framework, 2023<br><span class="q-url">oecd.org/financial/education</span></div></div>
+        <div class="q-row"><span class="q-num">6</span><div class="q-body"><strong>BMBWF — Marktplatz Lern-Apps</strong><br>Lizenzauswertung Skills-UP!, 2025 — Anzahl aktivierter Lizenzen<br><span class="q-url">lernapp.at</span></div></div>
+      </div>
+    </div>
+
+    <div class="quellen-right">
+      <div class="quellen-group">
+        <div class="qg-label">Marktdaten</div>
+        <div class="qg-list">
+          <div class="q-row"><span class="q-num">7</span><div class="q-body"><strong>HolonIQ</strong><br>European EdTech Market Report 2024 — TAM EdTech DACH<br><span class="q-url">holoniq.com</span></div></div>
+          <div class="q-row"><span class="q-num">8</span><div class="q-body"><strong>Statista</strong><br>EdTech DACH Market Report 2024 — Segment Financial Literacy B2B + B2C<br><span class="q-url">statista.com</span></div></div>
+          <div class="q-row"><span class="q-num">9</span><div class="q-body"><strong>SOM — Eigene Schätzung</strong><br>Basis: WKO Lehrlingsdaten + BMBWF Berufsschulbudget 2024 · Methode auf Anfrage<br><span class="q-url">—</span></div></div>
+        </div>
+      </div>
+
+      <div class="quellen-group">
+        <div class="qg-label">Interne Daten &amp; Evaluierung</div>
+        <div class="qg-list">
+          <div class="q-row"><span class="q-num">10</span><div class="q-body"><strong>Interne Evaluierung Skills-UP!</strong><br>Pre/Post-Befragung + 3-Monats Follow-up, n = 443, 2022–2025 · Methodenpapier verfügbar<br><span class="q-url">Auf Anfrage: info@digitale-zukunftsbildung.eu</span></div></div>
+          <div class="q-row"><span class="q-num">11</span><div class="q-body"><strong>Hochschule Burgenland</strong><br>Begleitforschung Skills-UP!, 2025 · Publikation geplant 2026<br><span class="q-url">fh-burgenland.at</span></div></div>
+          <div class="q-row"><span class="q-num">12</span><div class="q-body"><strong>Vereinsdokumentation Skills-UP!</strong><br>Jahresabschluss 2025 — Budget, Reichweite, Personalstand<br><span class="q-url">Auf Anfrage: info@digitale-zukunftsbildung.eu</span></div></div>
+          <div class="q-row"><span class="q-num">13</span><div class="q-body"><strong>Interne Projektplanung Skills-UP!</strong><br>Wachstumsziele &amp; Cost-per-Impact-Kalkulation, Mai 2026 · Methode: Gesamtbudget ÷ direkt erreichte Jugendliche<br><span class="q-url">Auf Anfrage: info@digitale-zukunftsbildung.eu</span></div></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="quellen-footer">
+    Vollständige Quelldokumentation und Methodenpapiere auf Anfrage &nbsp;·&nbsp;
+    <strong>info@digitale-zukunftsbildung.eu</strong> &nbsp;·&nbsp;
+    <a href="https://www.digitale-zukunftsbildung.eu/" target="_blank" style="color:var(--pur-500)">digitale-zukunftsbildung.eu</a>
+  </div>
+</div>
+
+</div><!-- /deck -->
+
+<!-- Side nav zones -->
+<div class="side-nav side-nav-left" id="sideLeft" onclick="navigate(-1)">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+</div>
+<div class="side-nav side-nav-right" id="sideRight" onclick="navigate(1)">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 6 15 12 9 18"/></svg>
+</div>
+
+<!-- Nav -->
+<div class="nav">
+  <button id="prevBtn" onclick="navigate(-1)" disabled>&#8592;</button>
+  <div class="dots" id="dots"></div>
+  <button id="nextBtn" onclick="navigate(1)">&#8594;</button>
+  <span class="slide-counter" id="counter">1 / 11</span>
+</div>
+
+<script>
+const slides = document.querySelectorAll('.slide');
+const total  = slides.length;
+let   cur    = 0;
+
+const dotsEl = document.getElementById('dots');
+slides.forEach((_, i) => {
+  const d = document.createElement('div');
+  d.className = 'dot' + (i === 0 ? ' active' : '');
+  d.onclick = () => goTo(i);
+  dotsEl.appendChild(d);
+});
+document.getElementById('sideLeft').classList.add('disabled');
+document.getElementById('counter').textContent = '1 / ' + total;
+
+function goTo(n) {
+  slides[cur].classList.remove('active');
+  dotsEl.children[cur].classList.remove('active');
+  cur = Math.max(0, Math.min(total - 1, n));
+  slides[cur].classList.add('active');
+  dotsEl.children[cur].classList.add('active');
+  document.getElementById('counter').textContent = (cur + 1) + ' / ' + total;
+  document.getElementById('prevBtn').disabled = cur === 0;
+  document.getElementById('nextBtn').disabled = cur === total - 1;
+  document.getElementById('sideLeft').classList.toggle('disabled', cur === 0);
+  document.getElementById('sideRight').classList.toggle('disabled', cur === total - 1);
+}
+function navigate(dir) { goTo(cur + dir); }
+
+document.addEventListener('keydown', e => {
+  if (['ArrowRight',' ','ArrowDown'].includes(e.key)) { e.preventDefault(); navigate(1); }
+  if (['ArrowLeft','ArrowUp'].includes(e.key))        { e.preventDefault(); navigate(-1); }
+  if (e.key === 'f' || e.key === 'F') document.documentElement.requestFullscreen?.();
+});
+let tx = 0;
+document.addEventListener('touchstart', e => { tx = e.touches[0].clientX; });
+document.addEventListener('touchend',   e => {
+  const dx = e.changedTouches[0].clientX - tx;
+  if (Math.abs(dx) > 50) navigate(dx < 0 ? 1 : -1);
+});
+</script>
+</body>
+</html>
