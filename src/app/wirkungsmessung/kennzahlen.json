@@ -26,13 +26,13 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 312.0,
+     "wert": 333.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 312.0,
+     "wert": 333.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
@@ -58,13 +58,13 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 234.0,
+     "wert": 255.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 312.0,
+     "wert": 333.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
@@ -122,13 +122,13 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 15.0,
+     "wert": 16.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 18.0,
+     "wert": 19.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
@@ -154,13 +154,13 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 166.0,
+     "wert": 174.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 207.0,
+     "wert": 215.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
@@ -186,14 +186,14 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 53.2,
-     "basis": 312,
+     "wert": 52.3,
+     "basis": 333,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 66.3,
-     "basis": 312,
+     "wert": 64.6,
+     "basis": 333,
      "status": "gemessen",
      "hinweis": ""
     }
@@ -218,14 +218,14 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 3.0,
-     "basis": 166,
+     "wert": 2.9,
+     "basis": 174,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 12.1,
-     "basis": 207,
+     "wert": 11.6,
+     "basis": 215,
      "status": "gemessen",
      "hinweis": ""
     }
@@ -250,13 +250,13 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 164.0,
+     "wert": 172.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 204.0,
+     "wert": 212.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
@@ -283,13 +283,13 @@
     },
     "2026-Q4": {
      "wert": 1.4,
-     "basis": 164,
+     "basis": 172,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
      "wert": 1.8,
-     "basis": 204,
+     "basis": 212,
      "status": "gemessen",
      "hinweis": ""
     }
@@ -314,14 +314,14 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 20.7,
-     "basis": 164,
+     "wert": 19.8,
+     "basis": 172,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 28.4,
-     "basis": 204,
+     "wert": 27.4,
+     "basis": 212,
      "status": "gemessen",
      "hinweis": ""
     }
@@ -410,14 +410,14 @@
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     },
     "2026-Q4": {
-     "wert": 24.0,
-     "basis": 312,
+     "wert": 22.5,
+     "basis": 333,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 24.7,
-     "basis": 312,
+     "wert": 23.1,
+     "basis": 333,
      "status": "eingeschränkt",
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     }
@@ -506,14 +506,14 @@
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
     },
     "2026-Q4": {
-     "wert": 46.5,
-     "basis": 230,
+     "wert": 44.2,
+     "basis": 242,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 46.9,
-     "basis": 367,
+     "wert": 45.4,
+     "basis": 379,
      "status": "eingeschränkt",
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
     }
@@ -698,13 +698,13 @@
      "hinweis": "kleine Fallzahl (19)"
     },
     "2026-Q4": {
-     "wert": 8.3,
+     "wert": 8.9,
      "basis": 180,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 10.0,
+     "wert": 10.6,
      "basis": 180,
      "status": "gemessen",
      "hinweis": ""
@@ -794,14 +794,14 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 30.5,
-     "basis": 164,
+     "wert": 29.1,
+     "basis": 172,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 25.8,
-     "basis": 194,
+     "wert": 24.8,
+     "basis": 202,
      "status": "gemessen",
      "hinweis": ""
     }
