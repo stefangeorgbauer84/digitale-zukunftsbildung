@@ -87,6 +87,7 @@ export default function SiteFooter() {
             <ul className="space-y-3 mb-8">
               {[
                 { label: 'Über uns', href: '/ueber-uns' },
+                { label: 'Wirkungsbericht', href: '/wirkungsmessung' },
                 { label: 'Aktuelles', href: '/aktuelles' },
                 { label: 'Materialien & Tipps', href: '/blog' },
                 { label: 'Aktiengame', href: '/aktiengame' },

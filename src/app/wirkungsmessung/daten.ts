@@ -249,9 +249,9 @@ export const ZWECK =
   'Wir wollen wissen, ob Skills-UP! Jugendliche im Umgang mit Geld tatsächlich stärkt, und das gegenüber Schulen, Geldgebenden und dem Bildungsministerium belegen. Die Messung dient der Steuerung im Quartal, der Strategie bis Ende 2027 und der Kommunikation der Wirkung.'
 
 export const SCHRITTE: Schritt[] = [
-  { nr: '1', titel: 'Grundlegende Wirkungslogik', stand: 'entwurf', text: 'Wirkungskette von Input bis Impact für Skills-UP! beschrieben (Abschnitt Wirkungskette).' },
-  { nr: '2', titel: 'Stakeholder und Wirkungsbetroffene', stand: 'entwurf', text: 'Zwölf Gruppen benannt, darunter Lehrkräfte und Lehrbetriebe als eigene Gruppen, je mit Priorität.' },
-  { nr: '3', titel: 'Hypothetisches Wirkungsmodell', stand: 'entwurf', text: 'Wirkungen je Gruppe als Hypothesen formuliert und in der Wirkungsbox nach Ebene, Zeit und Dimension geordnet.' },
+  { nr: '1', titel: 'Grundlegende Wirkungslogik', stand: 'erledigt', text: 'Wirkungskette von Input bis Impact für Skills-UP! beschrieben (Abschnitt Wirkungskette).' },
+  { nr: '2', titel: 'Stakeholder und Wirkungsbetroffene', stand: 'erledigt', text: 'Zwölf Gruppen benannt, darunter Lehrkräfte und Lehrbetriebe als eigene Gruppen, je mit Priorität.' },
+  { nr: '3', titel: 'Hypothetisches Wirkungsmodell', stand: 'erledigt', text: 'Wirkungen je Gruppe als Hypothesen formuliert und in der Wirkungsbox nach Ebene, Zeit und Dimension geordnet.' },
   { nr: '4', titel: 'Priorisierung und Wirkungsziele', stand: 'teilweise', optional: true, beleg: 'geplant', text: 'Priorität 1: Lernende und Lehrkräfte. Ziele bis Ende 2027 laut Strategie: mindestens 740 direkt erreichte Lehrlinge, mindestens 42 eingebundene Lehrkräfte und Ausbildungsverantwortliche, Inhalte um 25 % erweitern.' },
   { nr: '5', titel: 'Datenerhebung und Wirkungsmessung', stand: 'teilweise', optional: true, text: 'Gemessen wird nur aus Nutzerdaten der Plattform, ohne Befragung (Entscheidung vom 4. November 2026). Die Quartalskennzahlen laufen automatisch. Es fehlen Quizfragen am Modulstart und Vergleichsklassen.' },
   { nr: '5a', titel: 'Untersuchungsdesign', stand: 'offen', optional: true, unter: true, text: 'Vorschlag aus Nutzerdaten: drei Quizfragen am Modulstart, Modulquiz am Ende, dieselben Fragen nach vier Wochen erneut, Vergleichsklassen, die Skills-UP! erst ein Semester später nutzen.' },
@@ -259,7 +259,7 @@ export const SCHRITTE: Schritt[] = [
   { nr: '5c', titel: 'Quantifizierung von Breite und Intensität', stand: 'teilweise', optional: true, unter: true, text: `Kennzahlenbaum mit ${KENNZAHLEN.kpis.length} Plattformkennzahlen je Quartal. Intensität der Wirkung (Vorher-nachher) noch nicht messbar.` },
   { nr: '5d', titel: 'Aufbereitung und Analyse', stand: 'erledigt', optional: true, unter: true, text: 'Automatischer Quartalsbericht als Excel-Datei, am 1. und 7. Jänner, April, Juli und Oktober.' },
   { nr: '6', titel: 'Beurteilung und Bewertung', stand: 'offen', optional: true, text: 'Erst mit Deadweight möglich. Danach Kosten je Wirkung und optional Social Return on Investment.' },
-  { nr: '7', titel: 'Verdichtung und Darstellung', stand: 'entwurf', text: 'Diese Seite und der Quartalsbericht.' },
+  { nr: '7', titel: 'Verdichtung und Darstellung', stand: 'erledigt', text: 'Dieser Wirkungsbericht, öffentlich seit November 2026, und der Quartalsbericht.' },
 ]
 
 export const VERWENDUNG = [
@@ -463,7 +463,7 @@ function befunde(): Befund[] {
     {
       titel: 'Viele Klassen sind angelegt, wenige aktiv',
       zahl: fmt(wert(K.klassenAktivAnteil, Q), 1), einheit: '% der Klassen aktiv',
-      text: `Von ${fmt(klassen)} angelegten Klassen hatten im ${Q_NAME} ${fmt(wert(K.klassenAktiv, Q))} aktive Lernende. Lehrkräfte legen also Klassen an, setzen sie aber oft noch nicht ein.`,
+      text: `Von ${fmt(klassen)} angelegten Klassen waren im ${Q_NAME} nur ${fmt(wert(K.klassenAktiv, Q))} Klassen mit aktiven Lernenden. Lehrkräfte legen also Klassen an, setzen sie aber oft noch nicht ein.`,
       folge: 'Lehrkräfte nach dem Anlegen einer Klasse beim ersten Einsatz begleiten, etwa mit einer fertigen ersten Stunde.',
       beleg: 'gemessen',
     },

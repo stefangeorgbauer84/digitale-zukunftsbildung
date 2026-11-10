@@ -25,6 +25,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/blog/inflation-einfach-erklaert-unterrichtsmaterial`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/lehrplan-mapping`, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/lernziele`, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${base}/wirkungsmessung`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/demo-anfragen`, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/demo`, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/aktiengame`, changeFrequency: 'monthly', priority: 0.7 },

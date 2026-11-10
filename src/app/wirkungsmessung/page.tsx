@@ -11,7 +11,7 @@ import {
 } from './daten'
 import { Chip, GruppenKette, KapitelNav, KetteInteraktiv, KpiExplorer, PdfKnopf, StakeholderFilter, WirkungsboxFilter, type KettenStufe } from './interaktiv'
 
-// Wirkungsbericht Skills-UP!, noch nicht veröffentlicht: passwortgeschützt (src/middleware.ts), nicht in Sitemap und Navigation, noindex.
+// Wirkungsbericht Skills-UP!, öffentlich seit 10.11.2026 (vorher passwortgeschützt), in Sitemap und Footer.
 // Aufbau: runde-4-berichtsstruktur.md (strategisch oben, Zahlen unten). Druckfassung über @media print und print:-Klassen.
 
 const URL = 'https://www.digitale-zukunftsbildung.eu/wirkungsmessung'
@@ -20,7 +20,12 @@ export const metadata: Metadata = {
   title: 'Wirkungsbericht Skills-UP! | Digitale Zukunftsbildung',
   description: 'Wirkungslogik, Ergebnisse und Kennzahlen von Skills-UP! nach den Modellen der WU Wien.',
   alternates: { canonical: URL },
-  robots: { index: false, follow: false },
+  openGraph: {
+    title: 'Wirkungsbericht Skills-UP!',
+    description: 'Wie Skills-UP! junge Menschen im Umgang mit Geld stärkt: Wirkungslogik, Ergebnisse und Kennzahlen.',
+    url: URL,
+    type: 'article',
+  },
 }
 
 const INK = '#1a1040'
@@ -229,9 +234,6 @@ export default function WirkungsberichtPage() {
               <div>
                 <div className="flex items-center gap-4 mb-8">
                   <Image src="/fotos/Logo.png" alt="Skills-UP!" width={72} height={72} className="rounded-2xl shadow-card" />
-                  <span className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-status-teal bg-status-teal-light px-4 py-2 rounded-full print:hidden">
-                    Entwurf, noch nicht veröffentlicht
-                  </span>
                 </div>
                 <h1 className="font-heading text-4xl md:text-6xl font-bold mb-6 text-balance" style={{ color: INK }}>
                   Willkommen beim Wirkungsbericht von <span className="text-primary-medium">Skills-UP!</span>

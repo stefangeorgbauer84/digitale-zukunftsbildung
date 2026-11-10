@@ -1,5 +1,5 @@
 {
- "stand": "2026-11-04",
+ "stand": "2026-11-10",
  "quartale": [
   "2026-Q2",
   "2026-Q3",
@@ -26,13 +26,13 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 266.0,
+     "wert": 312.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 266.0,
+     "wert": 312.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
@@ -58,13 +58,13 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 188.0,
+     "wert": 234.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 266.0,
+     "wert": 312.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
@@ -90,13 +90,13 @@
      "hinweis": "Testkonten nicht markiert"
     },
     "2026-Q4": {
-     "wert": 108.0,
+     "wert": 115.0,
      "basis": null,
      "status": "eingeschränkt",
      "hinweis": "Testkonten nicht markiert"
     },
     "Gesamt": {
-     "wert": 108.0,
+     "wert": 115.0,
      "basis": null,
      "status": "eingeschränkt",
      "hinweis": "Testkonten nicht markiert"
@@ -116,19 +116,19 @@
      "hinweis": ""
     },
     "2026-Q3": {
-     "wert": 4.0,
+     "wert": 5.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 10.0,
+     "wert": 15.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 13.0,
+     "wert": 18.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
@@ -154,13 +154,13 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 132.0,
+     "wert": 166.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 173.0,
+     "wert": 207.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
@@ -186,14 +186,14 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 49.6,
-     "basis": 266,
+     "wert": 53.2,
+     "basis": 312,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 65.0,
-     "basis": 266,
+     "wert": 66.3,
+     "basis": 312,
      "status": "gemessen",
      "hinweis": ""
     }
@@ -218,14 +218,14 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 1.5,
-     "basis": 132,
+     "wert": 3.0,
+     "basis": 166,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 12.7,
-     "basis": 173,
+     "wert": 12.1,
+     "basis": 207,
      "status": "gemessen",
      "hinweis": ""
     }
@@ -250,13 +250,13 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 131.0,
+     "wert": 164.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 171.0,
+     "wert": 204.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
@@ -282,14 +282,14 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 1.1,
-     "basis": 131,
+     "wert": 1.4,
+     "basis": 164,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 1.6,
-     "basis": 171,
+     "wert": 1.8,
+     "basis": 204,
      "status": "gemessen",
      "hinweis": ""
     }
@@ -314,14 +314,14 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 16.8,
-     "basis": 131,
+     "wert": 20.7,
+     "basis": 164,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 26.9,
-     "basis": 171,
+     "wert": 28.4,
+     "basis": 204,
      "status": "gemessen",
      "hinweis": ""
     }
@@ -346,13 +346,13 @@
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     },
     "2026-Q4": {
-     "wert": 41.0,
+     "wert": 73.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 43.0,
+     "wert": 75.0,
      "basis": null,
      "status": "eingeschränkt",
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
@@ -378,13 +378,13 @@
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     },
     "2026-Q4": {
-     "wert": 42.0,
+     "wert": 75.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 44.0,
+     "wert": 77.0,
      "basis": null,
      "status": "eingeschränkt",
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
@@ -410,14 +410,14 @@
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     },
     "2026-Q4": {
-     "wert": 15.8,
-     "basis": 266,
+     "wert": 24.0,
+     "basis": 312,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 16.5,
-     "basis": 266,
+     "wert": 24.7,
+     "basis": 312,
      "status": "eingeschränkt",
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     }
@@ -442,13 +442,13 @@
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
     },
     "2026-Q4": {
-     "wert": 41.0,
+     "wert": 73.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 63.0,
+     "wert": 95.0,
      "basis": null,
      "status": "eingeschränkt",
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
@@ -474,13 +474,13 @@
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
     },
     "2026-Q4": {
-     "wert": 0.0,
+     "wert": 6.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 7.0,
+     "wert": 13.0,
      "basis": null,
      "status": "eingeschränkt",
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
@@ -506,14 +506,14 @@
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
     },
     "2026-Q4": {
-     "wert": 29.7,
-     "basis": 145,
+     "wert": 46.5,
+     "basis": 230,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 38.3,
-     "basis": 282,
+     "wert": 46.9,
+     "basis": 367,
      "status": "eingeschränkt",
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
     }
@@ -538,14 +538,14 @@
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     },
     "2026-Q4": {
-     "wert": 90.9,
-     "basis": 44,
+     "wert": 80.7,
+     "basis": 109,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 87.8,
-     "basis": 49,
+     "wert": 79.8,
+     "basis": 114,
      "status": "eingeschränkt",
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     }
@@ -570,14 +570,14 @@
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     },
     "2026-Q4": {
-     "wert": 90.0,
-     "basis": 44,
+     "wert": 85.7,
+     "basis": 109,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 89.0,
-     "basis": 49,
+     "wert": 85.5,
+     "basis": 114,
      "status": "eingeschränkt",
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     }
@@ -602,14 +602,14 @@
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     },
     "2026-Q4": {
-     "wert": 60.0,
-     "basis": 3,
+     "wert": 53.9,
+     "basis": 19,
      "status": "eingeschränkt",
-     "hinweis": "kleine Fallzahl (3)"
+     "hinweis": "kleine Fallzahl (19)"
     },
     "Gesamt": {
-     "wert": 52.0,
-     "basis": 5,
+     "wert": 52.6,
+     "basis": 21,
      "status": "eingeschränkt",
      "hinweis": "Quizversuche erst ab 12.08.2026 gespeichert"
     }
@@ -635,15 +635,15 @@
     },
     "2026-Q4": {
      "wert": 100.0,
-     "basis": 3,
-     "status": "eingeschränkt",
-     "hinweis": "kleine Fallzahl (3)"
+     "basis": 26,
+     "status": "gemessen",
+     "hinweis": ""
     },
     "Gesamt": {
-     "wert": 83.3,
-     "basis": 18,
-     "status": "eingeschränkt",
-     "hinweis": "kleine Fallzahl (18)"
+     "wert": 92.7,
+     "basis": 41,
+     "status": "gemessen",
+     "hinweis": ""
     }
    }
   },
@@ -666,14 +666,14 @@
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
     },
     "2026-Q4": {
-     "wert": 19.5,
-     "basis": 43,
+     "wert": 20.2,
+     "basis": 107,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 16.1,
-     "basis": 108,
+     "wert": 16.9,
+     "basis": 172,
      "status": "eingeschränkt",
      "hinweis": "bis 12.08.2026 Abschluss auch ohne Quiz möglich"
     }
@@ -692,20 +692,20 @@
      "hinweis": "kleine Fallzahl (5)"
     },
     "2026-Q3": {
-     "wert": 21.1,
+     "wert": 26.3,
      "basis": 19,
      "status": "eingeschränkt",
      "hinweis": "kleine Fallzahl (19)"
     },
     "2026-Q4": {
-     "wert": 6.0,
-     "basis": 166,
+     "wert": 8.3,
+     "basis": 180,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 7.8,
-     "basis": 166,
+     "wert": 10.0,
+     "basis": 180,
      "status": "gemessen",
      "hinweis": ""
     }
@@ -730,13 +730,13 @@
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 5.0,
+     "wert": 7.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 5.0,
+     "wert": 7.0,
      "basis": null,
      "status": "gemessen",
      "hinweis": ""
@@ -788,20 +788,20 @@
      "hinweis": "kleine Fallzahl (18)"
     },
     "2026-Q3": {
-     "wert": 73.1,
+     "wert": 69.2,
      "basis": 26,
      "status": "gemessen",
      "hinweis": ""
     },
     "2026-Q4": {
-     "wert": 38.5,
-     "basis": 130,
+     "wert": 30.5,
+     "basis": 164,
      "status": "gemessen",
      "hinweis": ""
     },
     "Gesamt": {
-     "wert": 31.3,
-     "basis": 160,
+     "wert": 25.8,
+     "basis": 194,
      "status": "gemessen",
      "hinweis": ""
     }
