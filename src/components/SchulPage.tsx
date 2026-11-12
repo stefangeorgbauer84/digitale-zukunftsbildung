@@ -1121,7 +1121,7 @@ export default function SchulPage({
                 <ul className="space-y-4">
                   {[
                     { titel: 'DSGVO-konform', text: 'Entwickelt in Österreich, Daten bleiben in der EU. Kein Datenschutz-Risiko für die Schule.' },
-                    { titel: 'Offiziell zertifiziert', text: 'WKÖ-zertifiziert, Gütesiegel für digitale Qualitäts-Lern-Apps, Teil der nationalen Finanzbildungsstrategie.' },
+                    { titel: 'Offiziell geprüft', text: 'Gütesiegel für digitale Qualitäts-Lern-Apps, Teil der nationalen Finanzbildungsstrategie.' },
                     { titel: 'Ausgezeichnet', text: 'Top-3 Projekt der MEGA Bildungsmillion 2025, unter hunderten Einreichungen österreichweit.' },
                     { titel: 'Kein Extra-Fach', text: 'Skills-UP! ergänzt bestehende Stunden, braucht keine eigene Stunde im Stundenplan.' },
                     { titel: 'Nachweisbare Wirkung', text: 'Zertifikate für Jugendliche, Dashboard-Auswertungen für die Schule, alles dokumentierbar.' },
@@ -1197,7 +1197,7 @@ export default function SchulPage({
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             {[
               { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>, accent: '#6b4db0', bg: '#f3f1f9', headline: 'Top-3 Österreich', detail: 'MEGA Bildungsmillion 2025' },
-              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>, accent: '#2a8a76', bg: '#e6f4f1', headline: 'WKÖ zertifiziert', detail: 'Hochschule Burgenland bestätigt Qualität' },
+              { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>, accent: '#2a8a76', bg: '#e6f4f1', headline: 'Nationale Strategie', detail: 'Teil der nationalen Finanzbildungsstrategie' },
               { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>, accent: '#4a2d8a', bg: '#f3f1f9', headline: 'Gütesiegel', detail: 'Qualitäts-Lern-Apps zertifiziert' },
               { icon: <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>, accent: '#2A8A76', bg: '#e6f4f1', headline: 'DSGVO-konform', detail: 'Aus Österreich, für Österreich' },
             ].map((f) => (
@@ -1289,13 +1289,12 @@ export default function SchulPage({
         </div>
         {/* Screen-reader-only partner list */}
         <ul className="sr-only">
-          {['Hochschule Burgenland','WKÖ Wirtschaftskammer','MEGA Bildungsstiftung','Nationale Finanzbildungsstrategie','Gütesiegel Lern-Apps','Ovos','TGW Future Wings','TGW Logistics','Bildungsdirektion Burgenland'].map((n) => <li key={n}>{n}</li>)}
+          {['Hochschule Burgenland','MEGA Bildungsstiftung','Nationale Finanzbildungsstrategie','Gütesiegel Lern-Apps','Ovos','TGW Future Wings','TGW Logistics','Bildungsdirektion Burgenland'].map((n) => <li key={n}>{n}</li>)}
         </ul>
         <div className="relative marquee-track" aria-hidden="true">
           <div className="flex animate-marquee gap-20 items-center">
             {[
               { src: '/fotos/Logo%20Hochschule%20Burgenland.jpg', alt: 'Hochschule Burgenland' },
-              { src: '/fotos/Logo%20Wko%20Wirtschaftskammer.png', alt: 'WKÖ Wirtschaftskammer' },
               { src: '/fotos/MEGA%20Bildungsstiftung%20Logo.jpeg', alt: 'MEGA Bildungsstiftung' },
               { src: '/fotos/logo-finanzbildungsstrategie.png', alt: 'Nationale Finanzbildungsstrategie' },
               { src: '/fotos/logo-guetesiegel.png', alt: 'Gütesiegel Lern-Apps', highlight: true },

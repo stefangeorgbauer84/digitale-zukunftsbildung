@@ -250,7 +250,7 @@ const simulationen: SimGoals[] = [
     ],
     lehrer: [
       'ASVG §5 – Geringfügige Beschäftigung, Beitragspflicht',
-      'Gewerberecht – Bagatellgrenze WKO',
+      'Gewerberecht – Bagatellgrenze',
       'SV-Nachzahlung und rückwirkende Versicherungspflicht',
     ],
   },
@@ -266,7 +266,7 @@ const simulationen: SimGoals[] = [
     lehrer: [
       'Mietrecht AT: MRG, Betriebskostenabrechnung, Kautionsrecht',
       'Bestellerprinzip 2023: Maklerprovision, Auswirkungen auf den Wohnungsmarkt',
-      'Lehrplanbezug: Wirtschaft & Recht, WKO-Lernfelder Kaufmännisch',
+      'Lehrplanbezug: Wirtschaft & Recht, Lernfelder Kaufmännisch',
     ],
   },
   {

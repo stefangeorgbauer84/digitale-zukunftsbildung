@@ -290,7 +290,7 @@ export default function LehrplanMappingPage() {
               ))}
             </div>
 
-            {/* WKÖ-Zertifizierung */}
+            {/* Gütesiegel & Finanzbildungsstrategie */}
             <div className="rounded-2xl p-6 md:p-8 flex flex-col md:flex-row items-center gap-6"
               style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 60%, #0f3d2d 100%)' }}>
               <div className="shrink-0 w-14 h-14 rounded-2xl flex items-center justify-center"
@@ -300,10 +300,10 @@ export default function LehrplanMappingPage() {
                 </svg>
               </div>
               <div className="flex-1 text-center md:text-left">
-                <p className="font-heading font-700 text-white text-lg mb-1">WKÖ-zertifiziert und extern geprüft.</p>
+                <p className="font-heading font-700 text-white text-lg mb-1">Gütesiegel Lern-Apps und Teil der nationalen Finanzbildungsstrategie.</p>
                 <p className="font-body text-white/60 text-sm leading-relaxed">
-                  Die Wirtschaftskammer Österreich bestätigt Qualität und Praxisrelevanz der Inhalte, die Hochschule Burgenland
-                  begleitet das Programm wissenschaftlich. Skills-UP! wird im Rahmen der Nationalen Finanzbildungsstrategie unterstützt.
+                  Skills-UP! trägt das Gütesiegel Lern-Apps und ist Teil der nationalen Finanzbildungsstrategie.
+                  Die Hochschule Burgenland begleitet das Programm wissenschaftlich.
                   Ihre Schule setzt damit auf ein geprüftes, ministeriumsnah verankertes Programm.
                 </p>
               </div>

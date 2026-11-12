@@ -8,18 +8,18 @@ import BunnyVideoSektion, { type BunnyVideo } from '@/components/BunnyVideoSekti
 
 export const metadata: Metadata = {
   title: 'Über uns – Team & Mission | Skills-UP! Finanzbildung Österreich',
-  description: 'Skills-UP! erreicht heute über 1.830 Jugendliche in österreichischen Schulen. WKÖ-zertifiziert, Top-3 MEGA Bildungsmillion 2025. Lern das Team und die Mission hinter dem Programm kennen.',
+  description: 'Skills-UP! erreicht heute über 1.830 Jugendliche in österreichischen Schulen. Gütesiegel Lern-Apps, Top-3 MEGA Bildungsmillion 2025. Lern das Team und die Mission hinter dem Programm kennen.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/ueber-uns' },
   openGraph: {
     title: 'Über uns – Team & Mission | Skills-UP! Österreich',
-    description: 'Über 1.830 Jugendliche, WKÖ-zertifiziert, Top-3 MEGA Bildungsmillion 2025. Das Team hinter Skills-UP!',
+    description: 'Über 1.830 Jugendliche, Gütesiegel Lern-Apps, Top-3 MEGA Bildungsmillion 2025. Das Team hinter Skills-UP!',
     url: 'https://www.digitale-zukunftsbildung.eu/ueber-uns',
     type: 'website',
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Über uns – Skills-UP! Finanzbildung Österreich',
-    description: 'Über 1.830 Jugendliche. WKÖ-zertifiziert. Top-3 MEGA Bildungsmillion 2025.',
+    description: 'Über 1.830 Jugendliche. Gütesiegel Lern-Apps. Top-3 MEGA Bildungsmillion 2025.',
   },
 }
 
@@ -50,15 +50,6 @@ const auszeichnungen = [
     beschreibung: 'Skills-UP! trägt das offizielle Gütesiegel für Qualitäts-Lern-Apps. Geprüft nach pädagogischen, didaktischen und technischen Qualitätskriterien.',
     accent: '#4a2d8a',
     bg: '#f3f1f9',
-  },
-  {
-    logo: '/fotos/Logo%20Wko%20Wirtschaftskammer.png',
-    logoAlt: 'WKÖ Wirtschaftskammer',
-    badge: 'Zertifiziert',
-    titel: 'WKÖ zertifiziert',
-    beschreibung: 'Die Wirtschaftskammer Österreich bestätigt die inhaltliche Qualität und Praxisrelevanz von Skills-UP! für den Einsatz an österreichischen Schulen.',
-    accent: '#D87228',
-    bg: '#fdf0e6',
   },
   {
     logo: '/fotos/Logo%20Hochschule%20Burgenland.jpg',
@@ -446,7 +437,7 @@ export default function UeberUns() {
                 <li className="flex gap-3"><span className="font-700 text-primary-medium shrink-0">2021</span>Idee und Vereinsgründung während des Lockdowns</li>
                 <li className="flex gap-3"><span className="font-700 text-primary-medium shrink-0">2022</span>Entwicklung der ersten Lernmodule</li>
                 <li className="flex gap-3"><span className="font-700 text-primary-medium shrink-0">2023</span>Pilotprogramme an österreichischen Schulen</li>
-                <li className="flex gap-3"><span className="font-700 text-primary-medium shrink-0">2024</span>Top-3 MEGA Bildungsmillion, WKÖ-Zertifizierung</li>
+                <li className="flex gap-3"><span className="font-700 text-primary-medium shrink-0">2024</span>Top-3 MEGA Bildungsmillion</li>
                 <li className="flex gap-3"><span className="font-700 text-primary-medium shrink-0">2025</span>Hochschule Burgenland Kooperation &amp; bundesweiter Rollout</li>
               </ul>
             </div>

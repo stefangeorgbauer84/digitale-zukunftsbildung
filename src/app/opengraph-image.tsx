@@ -64,7 +64,7 @@ export default function OgImage() {
             textTransform: 'uppercase',
           }}
         >
-          WKÖ zertifiziert · MEGA Bildungsmillion Top 3 · AT
+          Gütesiegel Lern-Apps · MEGA Bildungsmillion Top 3 · AT
         </div>
 
         {/* Headline */}

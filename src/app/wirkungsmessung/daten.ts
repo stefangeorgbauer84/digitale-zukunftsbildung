@@ -225,7 +225,7 @@ export const STAKEHOLDER: Stakeholder[] = [
   { kategorie: 'Geldgebende', akteure: 'MEGA Bildungsstiftung, öffentliche Mittel, Unternehmenspartner', wirkung: 'Belegter Gegenwert für eingesetzte Mittel', prioritaet: 2 },
   { kategorie: 'Staat, Länder, Gemeinden', akteure: 'Bildungsministerium mit Marktplatz Lern-Apps, Bildungsdirektionen, Nationale Finanzbildungsstrategie', wirkung: 'Praxisevidenz für die Strategie, geprüftes Angebot für die Lehrplanverankerung ab 2027/28', prioritaet: 2 },
   { kategorie: 'Zulieferung', akteure: 'Hosting, Videoplattform, Video- und Grafikproduktion', wirkung: 'Aufträge aus dem Bildungsbereich', prioritaet: 3 },
-  { kategorie: 'Kooperationspartner', akteure: 'Berufsschulen, Hochschule Burgenland, FH CAMPUS 02, PH Burgenland, Schuldnerberatung Burgenland, AK Wien, WKO, 180 Degrees Consulting', wirkung: 'Zugang zu Schulen, Forschung und Fachwissen, Anschluss an Lehrkräftebildung', prioritaet: 2 },
+  { kategorie: 'Kooperationspartner', akteure: 'Berufsschulen, Hochschule Burgenland, FH CAMPUS 02, PH Burgenland, Schuldnerberatung Burgenland, AK Wien, 180 Degrees Consulting', wirkung: 'Zugang zu Schulen, Forschung und Fachwissen, Anschluss an Lehrkräftebildung', prioritaet: 2 },
   { kategorie: 'Sozialversicherung', akteure: 'Österreichische Gesundheitskasse, Pensionsversicherung, Arbeitslosenversicherung über das AMS', wirkung: 'Langfristig weniger Folgekosten von Überschuldung junger Menschen', prioritaet: 3 },
   { kategorie: 'Allgemeine Bevölkerung', akteure: 'Jugendliche und junge Erwachsene in Österreich, die Skills-UP! nicht selbst nutzen', wirkung: 'Höhere finanzielle Allgemeinbildung im OECD-Vergleich', prioritaet: 3 },
 ]

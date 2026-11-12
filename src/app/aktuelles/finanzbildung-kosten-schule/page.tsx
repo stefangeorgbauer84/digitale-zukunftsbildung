@@ -6,7 +6,7 @@ import NewsletterSignup from '@/components/NewsletterSignup'
 
 export const metadata: Metadata = {
   title: 'Was kostet Finanzbildung für Schulen? | Skills-UP!',
-  description: 'Was kostet Skills-UP! für Schulen wirklich? Vollständige Kostenübersicht, Förderungsmöglichkeiten durch WKÖ und Bildungsstiftungen, und wie Schulen das Programm kostenlos oder vergünstigt erhalten.',
+  description: 'Was kostet Skills-UP! für Schulen wirklich? Vollständige Kostenübersicht, Förderungsmöglichkeiten durch Bildungsstiftungen, und wie Schulen das Programm kostenlos oder vergünstigt erhalten.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/aktuelles/finanzbildung-kosten-schule' },
   openGraph: {
     title: 'Was kostet Finanzbildung für Schulen? Skills-UP! Kosten & Förderung',
@@ -79,7 +79,7 @@ const kostenModelle = [
       'Mengenrabatt ab 3 Schulen',
       'Zentrale Verwaltung & Reporting',
       'Gemeinsame Fortbildung für Lehrkräfte',
-      'Förderung durch WKÖ oder Bildungsstiftung möglich',
+      'Förderung durch Bildungsstiftung möglich',
     ],
     farbe: '#D87228',
     cta: 'Partnerschaft anfragen',
@@ -164,11 +164,10 @@ export default function FinanzbildungKostenPage() {
               Welche Förderungen gibt es?
             </h2>
             <p className="font-body text-gray-700 leading-relaxed mb-6">
-              Mehrere österreichische Institutionen fördern Finanzbildungsprojekte an Schulen. Skills-UP! ist bereits mit der Wirtschaftskammer Österreich (WKÖ), der Hochschule Burgenland und der MEGA Bildungsstiftung vernetzt: was die Finanzierung in vielen Fällen vereinfacht.
+              Mehrere österreichische Institutionen fördern Finanzbildungsprojekte an Schulen. Skills-UP! ist bereits mit der Hochschule Burgenland und der MEGA Bildungsstiftung vernetzt: was die Finanzierung in vielen Fällen vereinfacht.
             </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
               {[
-                { name: 'WKÖ Wirtschaftskammer', detail: 'Fördert Wirtschaftsbildung an BHS und Berufsschulen direkt: Anfrage über die jeweilige Landeskammer.' },
                 { name: 'MEGA Bildungsstiftung', detail: 'Skills-UP! war Top-3 bei der MEGA Bildungsmillion 2025. Stiftungsförderung für gemeinnützige Bildungsprojekte möglich.' },
                 { name: 'Hochschule Burgenland', detail: 'Akademische Zertifizierung des Programms. Kooperation ermöglicht günstigere Konditionen für Schulen im Burgenland.' },
                 { name: 'Bildungsdirektionen', detail: 'Mehrere Bildungsdirektionen haben bereits Pilotprojekte mitfinanziert. Kontaktiert uns für eine Einschätzung eurer Region.' },

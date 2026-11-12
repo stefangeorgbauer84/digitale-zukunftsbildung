@@ -122,10 +122,9 @@ export default function SiteFooter() {
             © {new Date().getFullYear()} Verein zur Entwicklung der digitalen Zukunftsbildung · Straußengasse 12/26, 1050 Wien
           </p>
           <div className="flex items-center gap-4">
-            <span className="text-xs font-body text-white/50">Zertifiziert von</span>
-            <span className="text-xs font-body text-white/60 font-600">Hochschule Burgenland</span>
+            <span className="text-xs font-body text-white/60 font-600">Gütesiegel Lern-Apps</span>
             <span className="text-white/40 text-xs">·</span>
-            <span className="text-xs font-body text-white/60 font-600">WKÖ</span>
+            <span className="text-xs font-body text-white/60 font-600">Nationale Finanzbildungsstrategie</span>
           </div>
         </div>
       </div>

@@ -55,7 +55,7 @@ export const metadata: Metadata = {
     title: 'Skills-UP! – Finanzbildung für Schulen',
     description: 'Finanzbildung für 15- bis 20-Jährige: Module, Praxissimulationen und Gamification. Lehrplankonform, für AHS, BHS und PTS.',
   },
-  keywords: ['Finanzbildung', 'Skills-UP', 'Finanzbildung Schule Österreich', 'Wirtschaftsbildung', 'Finanzkompetenz Jugendliche', 'Unterrichtsprogramm Finanzen', 'AHS BHS PTS', 'WKÖ zertifiziert', 'Finanzbildung Pflichtfach 2027'],
+  keywords: ['Finanzbildung', 'Skills-UP', 'Finanzbildung Schule Österreich', 'Wirtschaftsbildung', 'Finanzkompetenz Jugendliche', 'Unterrichtsprogramm Finanzen', 'AHS BHS PTS', 'Gütesiegel Lern-Apps', 'Nationale Finanzbildungsstrategie', 'Finanzbildung Pflichtfach 2027'],
   authors: [{ name: 'Verein zur Entwicklung der digitalen Zukunftsbildung', url: 'https://www.digitale-zukunftsbildung.eu' }],
   creator: 'Digitale Zukunftsbildung',
   publisher: 'Verein zur Entwicklung der digitalen Zukunftsbildung',

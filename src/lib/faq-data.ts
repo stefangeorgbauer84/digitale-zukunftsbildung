@@ -482,7 +482,7 @@ export const faqCategories: FaqCategory[] = [
       },
       {
         q: 'Ist Skills-UP! ausgezeichnet oder extern geprüft?',
-        a: 'Ja: Skills-UP! wurde als Top-3-Projekt der MEGA Bildungsmillion 2025 ausgezeichnet und von der Hochschule Burgenland sowie der WKÖ in Qualität und Praxisrelevanz bestätigt. Das Programm wird im Rahmen der Nationalen Finanzbildungsstrategie unterstützt.',
+        a: 'Ja: Skills-UP! wurde als Top-3-Projekt der MEGA Bildungsmillion 2025 ausgezeichnet trägt das Gütesiegel Lern-Apps und ist Teil der nationalen Finanzbildungsstrategie. Die Hochschule Burgenland begleitet das Programm wissenschaftlich.',
       },
       {
         q: 'Passt Skills-UP! zum Lehrplan meines Schultyps?',

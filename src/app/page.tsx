@@ -27,7 +27,6 @@ export const metadata: Metadata = {
 /* ── Partner / Award logos ─────────────────────────────── */
 const partnerLogos = [
   { src: '/fotos/Logo%20Hochschule%20Burgenland.jpg', alt: 'Hochschule Burgenland' },
-  { src: '/fotos/Logo%20Wko%20Wirtschaftskammer.png', alt: 'WKÖ Wirtschaftskammer' },
   { src: '/fotos/MEGA%20Bildungsstiftung%20Logo.jpeg', alt: 'MEGA Bildungsstiftung' },
   { src: '/fotos/logo-finanzbildungsstrategie.png', alt: 'Nationale Finanzbildungsstrategie' },
   { src: '/fotos/logo-guetesiegel.png', alt: 'Gütesiegel Lern-Apps' },
@@ -117,8 +116,8 @@ const trustFacts = [
     ),
     accent: '#2a8a76',
     bg: '#e6f4f1',
-    headline: 'WKÖ zertifiziert',
-    detail: 'Von der Wirtschaftskammer Österreich empfohlen. Wissenschaftliche Begleitung durch die Hochschule Burgenland.',
+    headline: 'Gütesiegel Lern-Apps',
+    detail: 'Teil der nationalen Finanzbildungsstrategie. Wissenschaftliche Begleitung durch die Hochschule Burgenland.',
   },
   {
     icon: (
@@ -316,7 +315,7 @@ export default function HomePage() {
       {
         '@type': 'Question',
         name: 'Ist Skills-UP! ausgezeichnet oder zertifiziert?',
-        acceptedAnswer: { '@type': 'Answer', text: 'Ja. Skills-UP! wurde als Top-3-Projekt der MEGA Bildungsmillion 2025 ausgezeichnet und von der Hochschule Burgenland sowie der WKÖ in Qualität und Praxisrelevanz bestätigt. Das Programm wird im Rahmen der Nationalen Finanzbildungsstrategie unterstützt.' },
+        acceptedAnswer: { '@type': 'Answer', text: 'Ja. Skills-UP! wurde als Top-3-Projekt der MEGA Bildungsmillion 2025 ausgezeichnet trägt das Gütesiegel Lern-Apps und ist Teil der nationalen Finanzbildungsstrategie. Die Hochschule Burgenland begleitet das Programm wissenschaftlich.' },
       },
     ],
   }
@@ -369,7 +368,7 @@ export default function HomePage() {
             <svg width="13" height="13" viewBox="0 0 24 24" fill="#fde68a" stroke="#fde68a" strokeWidth="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <span>Top-3 MEGA Bildungsmillion 2025</span>
             <span className="w-px h-3 bg-white/30" />
-            <span className="text-white/60">Hochschule Burgenland &amp; WKÖ zertifiziert</span>
+            <span className="text-white/60">Gütesiegel Lern-Apps</span>
           </div>
 
           {/* Maskottchen + Logo */}
@@ -1035,7 +1034,7 @@ export default function HomePage() {
               Skills-UP! wurde unter hunderten Einreichungen als eines der besten Bildungsprojekte Österreichs ausgezeichnet. Das bestätigt: Unser Ansatz funktioniert.
             </p>
             <div className="flex flex-wrap gap-3">
-              {['WKÖ zertifiziert', 'Wissenschaftliche Begleitung: Hochschule Burgenland', 'DSGVO-konform', 'Made in Austria'].map((tag) => (
+              {['Gütesiegel Lern-Apps', 'Teil der nationalen Finanzbildungsstrategie', 'Wissenschaftliche Begleitung: Hochschule Burgenland', 'DSGVO-konform', 'Made in Austria'].map((tag) => (
                 <span key={tag} className="px-3 py-1.5 rounded-full text-xs font-body font-700 bg-primary-50 text-primary-dark">
                   {tag}
                 </span>
@@ -1104,7 +1103,6 @@ export default function HomePage() {
                   { label: 'Top-3 MEGA Bildungsmillion', icon: '★' },
                   { label: 'Gütesiegel Lern-Apps', icon: '✓' },
                   { label: 'Nationale Finanzbildungsstrategie', icon: '⊕' },
-                  { label: 'WKÖ zertifiziert', icon: '◈' },
                 ].map((b) => (
                   <span key={b.label} className="inline-flex items-center gap-1.5 text-xs font-body font-700 px-3 py-1.5 rounded-full"
                     style={{ background: 'rgba(255,255,255,0.1)', color: 'rgba(255,255,255,0.75)', border: '1px solid rgba(255,255,255,0.2)' }}>
@@ -1309,12 +1307,12 @@ export default function HomePage() {
                   <span style={{ color: '#4a2d8a' }}>Skills-UP! ist jetzt bereit.</span>
                 </h2>
                 <p className="font-body text-text-muted text-base leading-relaxed mb-6 max-w-xl">
-                  Ab 2027 verankert Österreich Finanzbildung verbindlich im Lehrplan aller Schultypen (Nationale Finanzbildungsstrategie). Skills-UP! ist bereits heute lehrplankonform dokumentiert und zertifiziert, damit Ihre Schule nicht auf den letzten Drücker vorbereiten muss.
+                  Ab 2027 verankert Österreich Finanzbildung verbindlich im Lehrplan aller Schultypen (Nationale Finanzbildungsstrategie). Skills-UP! ist bereits heute lehrplankonform dokumentiert und trägt das Gütesiegel Lern-Apps, damit Ihre Schule nicht auf den letzten Drücker vorbereiten muss.
                 </p>
                 <div className="flex flex-wrap gap-3 mb-6">
                   {[
                     'Lehrplanbezug für jedes Modul dokumentiert',
-                    'WKÖ-zertifiziert & vom BMBWF anerkannt',
+                    'Gütesiegel Lern-Apps & Teil der nationalen Finanzbildungsstrategie',
                     'Sofort einsetzbar: kein Umstieg nötig',
                   ].map((t) => (
                     <span key={t} className="flex items-center gap-1.5 text-xs font-body font-600 px-3 py-1.5 rounded-full bg-white border border-primary-light/20"

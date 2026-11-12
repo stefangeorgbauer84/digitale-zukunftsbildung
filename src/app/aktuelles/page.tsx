@@ -53,7 +53,7 @@ const posts = [
     date: 'Juni 2025',
     category: 'Kosten & Förderung',
     title: 'Was kostet Skills-UP! für Schulen? Kosten, Modelle und Fördermöglichkeiten.',
-    excerpt: 'Transparente Antwort auf die häufigste Frage: inklusive kostenlosem Einstieg, Förderoptionen durch WKÖ und Bildungsstiftungen, und Vergleich mit anderen Angeboten.',
+    excerpt: 'Transparente Antwort auf die häufigste Frage: inklusive kostenlosem Einstieg, Förderoptionen durch Bildungsstiftungen, und Vergleich mit anderen Angeboten.',
     readingTime: '5 Min. Lesedauer',
     highlight: false,
   },
