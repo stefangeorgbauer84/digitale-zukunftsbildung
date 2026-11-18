@@ -550,9 +550,6 @@ export default function WirkungsberichtPage() {
 
         <Zitat text={GESCHICHTE.zitat} person="Lehrling bei TGW Logistics" rolle="hat im Workshop ein Sparziel gesetzt und den Führerschein angespart" />
 
-        <ErfahrungsVideo id="xQAagmEsEiA" titel="Lena von TGW Logistics über ihre Erfahrung mit Skills-UP!"
-          person="Lena" rolle="hat das Programm als Lehrling bei TGW Logistics durchlaufen und ist heute Alumna. Beleg: Erfahrungsbericht des Vereins, 2025." />
-
         {/* 4 Zahlen */}
         <Kapitel id="zahlen" nr={4} titel="Die Zahlen im Detail" getoent
           intro={`Alle ${KENNZAHLEN.kpis.length} Kennzahlen aus den Nutzerdaten der Plattform, je Quartal und gesamt. Gesamt zählt jede Person einmal, nicht die Summe der Quartale.`}>
@@ -567,6 +564,9 @@ export default function WirkungsberichtPage() {
             <div className="hidden print:block"><KennzahlenTabelle /></div>
           </Teil>
         </Kapitel>
+
+        <ErfahrungsVideo id="xQAagmEsEiA" titel="Lena von TGW Logistics über ihre Erfahrung mit Skills-UP!"
+          person="Lena" rolle="hat das Programm als Lehrling bei TGW Logistics durchlaufen und ist heute Alumna. Beleg: Erfahrungsbericht des Vereins, 2025." />
 
         <Zitat {...STIMMEN[3]} />
 

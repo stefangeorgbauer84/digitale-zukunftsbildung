@@ -9,7 +9,6 @@ const links = [
   { href: '/schulen', label: 'Für Schulen' },
   { href: '/lehrplan-mapping', label: 'Lehrplanmapping' },
   { href: '/lernziele', label: 'Lernziele' },
-  { href: '/aktiengame', label: 'Aktiengame' },
   { href: '/#unternehmen', label: 'Für Unternehmen' },
   { href: '/ueber-uns', label: 'Über uns' },
   { href: '/aktuelles', label: 'Aktuelles' },
@@ -76,7 +75,7 @@ export default function SiteNav({ dark = false }: { dark?: boolean }) {
           </div>
         </Link>
 
-        <nav className="hidden md:flex items-center gap-1" aria-label="Hauptnavigation">
+        <nav className="hidden xl:flex items-center gap-1 whitespace-nowrap" aria-label="Hauptnavigation">
           {links.map((l) => (
             <Link
               key={l.href}
@@ -90,17 +89,10 @@ export default function SiteNav({ dark = false }: { dark?: boolean }) {
               {l.label}
             </Link>
           ))}
-          <Link
-            href="/demo"
-            className="ml-2 px-5 py-2.5 rounded-xl text-sm font-body font-700 text-white transition-all hover:opacity-90 active:scale-95 shadow-lg"
-            style={{ background: 'linear-gradient(135deg, #4a2d8a, #2a8a76)', boxShadow: '0 4px 16px rgba(74,45,138,0.35)' }}
-          >
-            Gratis Demo starten
-          </Link>
         </nav>
 
         <button
-          className={`md:hidden p-3 rounded-xl transition-colors ${solid ? 'text-text-secondary hover:bg-primary-50' : 'text-white hover:bg-white/10'}`}
+          className={`xl:hidden p-3 rounded-xl transition-colors ${solid ? 'text-text-secondary hover:bg-primary-50' : 'text-white hover:bg-white/10'}`}
           onClick={() => setOpen(!open)}
           aria-label={open ? 'Menü schließen' : 'Menü öffnen'}
           aria-expanded={open}
@@ -120,7 +112,7 @@ export default function SiteNav({ dark = false }: { dark?: boolean }) {
         <div
           id="mobile-menu"
           ref={menuRef}
-          className="md:hidden bg-white border-t border-gray-200 px-4 pt-4 pb-4 shadow-lg"
+          className="xl:hidden bg-white border-t border-gray-200 px-4 pt-4 pb-4 shadow-lg"
           role="dialog"
           aria-label="Navigation"
           aria-modal="true"
@@ -136,14 +128,6 @@ export default function SiteNav({ dark = false }: { dark?: boolean }) {
                 {l.label}
               </Link>
             ))}
-            <Link
-              href="/demo"
-              onClick={() => setOpen(false)}
-              className="mt-3 block text-center text-white px-5 py-3 rounded-xl text-sm font-body font-700"
-              style={{ background: 'linear-gradient(135deg, #4a2d8a, #2a8a76)' }}
-            >
-              Gratis Demo starten
-            </Link>
           </nav>
         </div>
       )}
