@@ -95,12 +95,13 @@ function Teil({ id, titel, intro, children }: { id: string; titel: string; intro
 }
 
 /** Zitatband zwischen den Kapiteln, Foto am Rand. */
-function Zitat({ text, person, rolle, dunkel = false }: { text: string; person: string; rolle: string; dunkel?: boolean }) {
+function Zitat({ text, person, rolle, dunkel: streifenDunkel = false }: { text: string; person: string; rolle: string; dunkel?: boolean }) {
   const p = PERSON[person]
+  const dunkel = false // Zitate stehen auf Weiß, nur der Streifen wechselt die Farbe
   return (
     <aside className={`zitat relative overflow-hidden px-6 py-12 md:py-14 break-inside-avoid ${dunkel ? 'text-white' : ''}`}
-      style={{ background: dunkel ? '#1a1040' : '#f3f1f9' }}>
-      <figure className={`relative max-w-5xl mx-auto grid gap-8 items-center ${p ? 'md:grid-cols-[9rem_minmax(0,1fr)]' : ''}`}>
+      style={{ background: '#fff' }}>
+      <figure style={{ borderColor: streifenDunkel ? '#1a1040' : '#6b4db0' }} className={`relative max-w-5xl mx-auto border-l-[6px] pl-6 md:pl-8 grid gap-8 items-center ${p ? 'md:grid-cols-[9rem_minmax(0,1fr)]' : ''}`}>
         {p && (
           <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden mx-auto md:mx-0">
             <Image src={p.foto} alt={person} fill sizes="144px" className="object-cover" style={{ objectPosition: p.position }} />
@@ -309,7 +310,7 @@ export default function WirkungsberichtPage() {
                 ))}
               </ol>
               <div className="mt-8 flex flex-wrap gap-x-6 gap-y-2">
-                {(Object.keys(BELEG) as Beleg[]).map((k) => (
+                {(Object.keys(BELEG) as Beleg[]).filter((k) => k !== 'gemessen' && k !== 'verein').map((k) => (
                   <p key={k} className="font-body text-xs flex items-center gap-2" style={{ color: TEXT2 }}><BelegChip beleg={k} /> {BELEG[k].erklaerung}</p>
                 ))}
               </div>
@@ -641,15 +642,15 @@ export default function WirkungsberichtPage() {
             </ol>
           </Teil>
 
-          <div className="relative p-8 md:p-12 text-white grid gap-8 md:grid-cols-[minmax(0,1fr)_auto] items-center break-inside-avoid"
-            style={{ background: '#1a1040' }}>
+          <div className="relative border-l-[6px] pl-6 md:pl-8 py-2 grid gap-8 md:grid-cols-[minmax(0,1fr)_auto] items-center break-inside-avoid"
+            style={{ borderColor: '#1a1040' }}>
             <figure className="relative">
-              <blockquote className="font-heading text-2xl md:text-4xl leading-snug text-balance">„{STIMMEN[4].text}“</blockquote>
-              <figcaption className="mt-5 font-body text-sm text-white/80"><strong className="text-white">{STIMMEN[4].person}</strong>, {STIMMEN[4].rolle}</figcaption>
+              <blockquote className="font-heading text-2xl md:text-4xl leading-snug text-balance" style={{ color: INK }}>„{STIMMEN[4].text}“</blockquote>
+              <figcaption className="mt-5 font-body text-sm" style={{ color: TEXT2 }}><strong style={{ color: INK }}>{STIMMEN[4].person}</strong>, {STIMMEN[4].rolle}</figcaption>
             </figure>
             <div className="relative flex flex-col items-start md:items-center gap-4">
               <Image src="/fotos/Logo.png" alt="Skills-UP!" width={96} height={96} className="rounded-2xl" />
-              <PdfKnopf hell />
+              <PdfKnopf />
             </div>
           </div>
 

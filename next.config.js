@@ -48,6 +48,8 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      // Der Beitrag war kurz live; Aktuelles verlinkt jetzt direkt auf den Bericht.
+      { source: '/aktuelles/wirkungsbericht-skills-up', destination: '/wirkungsmessung', permanent: true },
       {
         // Vercel-Deployment-URL ist sonst als Duplikat der Domain indexierbar
         source: '/:path*',

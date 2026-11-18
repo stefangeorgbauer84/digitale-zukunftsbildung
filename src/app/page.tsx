@@ -1305,7 +1305,7 @@ export default function HomePage() {
               teaser: 'Das Erasmus+ Projekt mit unserem Verein als Partner öffnet seine Lernumgebung, mit Business Cases und dem KI-Lernassistenten Gaia.',
             },
             {
-              href: '/aktuelles/wirkungsbericht-skills-up',
+              href: '/wirkungsmessung',
               tag: 'Wirkung',
               tagColor: '#A84E12',
               date: 'November 2026',

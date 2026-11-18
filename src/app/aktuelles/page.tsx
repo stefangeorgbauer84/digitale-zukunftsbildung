@@ -32,11 +32,12 @@ const posts = [
   },
   {
     slug: 'wirkungsbericht-skills-up',
+    href: '/wirkungsmessung',
     date: 'November 2026',
     category: 'Wirkung',
     title: 'Was Skills-UP! bewirkt: unser Wirkungsbericht ist öffentlich.',
     excerpt: 'Der Bericht zeigt, wie Skills-UP! wirken soll, wie stark die Plattform wächst und was die Nutzungsdaten bisher zeigen.',
-    readingTime: '4 Min. Lesedauer',
+    readingTime: 'Zum Bericht',
     highlight: false,
   },
   {
@@ -100,7 +101,7 @@ export default function AktuellesPage() {
             <div className="space-y-6">
               {posts.map((post) => (
                 <article key={post.slug} className="bg-white rounded-3xl overflow-hidden border border-gray-100 hover:border-purple-200 transition-colors shadow-sm hover:shadow-md">
-                  <Link href={`/aktuelles/${post.slug}`} className="block p-8 md:p-10">
+                  <Link href={'href' in post && post.href ? post.href : `/aktuelles/${post.slug}`} className="block p-8 md:p-10">
                     <div className="flex items-center gap-3 mb-4">
                       <span className="text-xs font-body font-700 uppercase tracking-widest px-3 py-1 rounded-full"
                         style={{ background: '#f3f1f9', color: '#4a2d8a' }}>

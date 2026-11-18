@@ -17,6 +17,8 @@ const BELEG_STIL: Record<Beleg, { label: string; bg: string; fg: string; rand: s
 }
 
 export function Chip({ beleg }: { beleg: Beleg }) {
+  // Gemessen und Vereinsangabe werden nicht mehr ausgewiesen; nur Hypothese und Geplant bleiben sichtbar.
+  if (beleg === 'gemessen' || beleg === 'verein') return null
   const b = BELEG_STIL[beleg]
   return (
     <span className="inline-flex items-center text-[11px] font-body font-700 px-2 py-0.5 rounded-full whitespace-nowrap align-middle"
@@ -71,7 +73,7 @@ export function KapitelNav({ kapitel }: { kapitel: { id: string; titel: string }
   }, [kapitel])
   return (
     <nav aria-label="Kapitel des Wirkungsberichts" className="print:hidden sticky top-16 z-30 text-white shadow-md"
-      style={{ background: 'linear-gradient(90deg, #4a2d8a 0%, #6b4db0 100%)' }}>
+      style={{ background: '#4a2d8a' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center gap-3">
         <a href="#willkommen" className="shrink-0 flex items-center gap-2 py-2 pr-3 border-r border-white/20">
           <Image src="/fotos/Logo.png" alt="" width={32} height={32} className="rounded-lg" />
@@ -160,7 +162,7 @@ export function KetteInteraktiv({ stufen }: { stufen: KettenStufe[] }) {
         {s.punkte.length > 0 && (
           <ul className="grid gap-3 md:grid-cols-2">
             {s.punkte.map((p) => (
-              <li key={p.text} className="font-body text-sm text-gray-900 rounded-xl bg-primary-50/60 px-4 py-3">
+              <li key={p.text} className="font-body text-sm text-gray-900 border-l-2 border-primary-light pl-4 py-1">
                 {p.text} <Chip beleg={p.beleg} />
               </li>
             ))}
@@ -328,7 +330,7 @@ export function StakeholderFilter({ gruppen }: { gruppen: StakeholderDaten[] }) 
           const aus = prio !== 0 && s.prioritaet !== prio
           return (
             <article key={s.kategorie}
-              className={`${pos[i]} rounded-[20px] p-5 bg-white transition-all duration-300 ${aus ? 'opacity-25 scale-[0.97]' : ''} ${s.eigene ? 'border-2 border-dashed border-primary-medium/60' : s.prioritaet === 1 ? 'ring-2 ring-primary-dark' : 'border border-primary-medium/10'}`}>
+              className={`${pos[i]} pl-5 py-2 border-l-[3px] transition-all duration-300 ${aus ? 'opacity-25 scale-[0.97]' : ''} ${s.eigene ? 'border-dashed border-primary-medium' : s.prioritaet === 1 ? 'border-primary-dark' : 'border-primary-light'}`}>
               <div className="flex items-start justify-between gap-2 mb-2">
                 <h3 className="font-heading font-700 text-base leading-tight" style={{ color: INK }}>{s.kategorie}</h3>
                 <span className="font-body text-[11px] font-700 whitespace-nowrap rounded-full px-2 py-0.5 bg-primary-50 text-primary-dark">P{s.prioritaet}</span>
@@ -340,7 +342,7 @@ export function StakeholderFilter({ gruppen }: { gruppen: StakeholderDaten[] }) 
           )
         })}
         <div className="hidden lg:flex lg:col-start-2 lg:col-span-2 lg:row-start-2 lg:row-span-2 items-center justify-center">
-          <div className="relative w-64 h-64 rounded-full flex flex-col items-center justify-center text-center p-8 bg-primary-50">
+          <div className="relative w-64 h-64 rounded-full flex flex-col items-center justify-center text-center p-8 border-2 border-primary-dark">
             <div aria-hidden="true" className="absolute inset-4 rounded-full border-2 border-dashed border-primary-light/60" />
             <p className="font-heading font-700 text-3xl text-primary-dark">Skills-UP!</p>
             <p className="font-body text-sm mt-1" style={{ color: TEXT2 }}>Programm des Vereins zur Entwicklung der digitalen Zukunftsbildung</p>
@@ -397,7 +399,7 @@ export function GruppenKette({ zeilen }: { zeilen: KettenZeile[] }) {
       </div>
       <ol role="tabpanel" className="grid gap-3 md:grid-cols-3 xl:grid-cols-6">
         {spalten.map((s, j) => (
-          <li key={s.titel} className="rounded-[20px] p-5 relative" style={{ background: s.grund }}>
+          <li key={s.titel} className="pl-4 border-l-[3px] relative" style={{ borderColor: s.farbe }}>
             <p className="font-body text-[11px] font-700 uppercase tracking-widest mb-1" style={{ color: s.farbe }}>{j + 1}. {s.titel}</p>
             <ul className="space-y-2 mt-3">
               {s.werte.map((w) => <li key={w} className="font-body text-sm text-gray-900 leading-snug">{w}</li>)}
