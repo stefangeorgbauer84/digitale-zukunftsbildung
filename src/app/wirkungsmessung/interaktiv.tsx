@@ -399,8 +399,8 @@ export function GruppenKette({ zeilen }: { zeilen: KettenZeile[] }) {
       </div>
       <ol role="tabpanel" className="grid gap-3 md:grid-cols-3 xl:grid-cols-6">
         {spalten.map((s, j) => (
-          <li key={s.titel} className="pl-4 border-l-[3px] relative" style={{ borderColor: s.farbe }}>
-            <p className="font-body text-[11px] font-700 uppercase tracking-widest mb-1" style={{ color: s.farbe }}>{j + 1}. {s.titel}</p>
+          <li key={s.titel} className="relative min-w-0">
+            <p className="font-body text-[11px] font-700 uppercase tracking-widest mb-1 flex items-center justify-between gap-2 border-b-2 pb-2" style={{ color: s.farbe, borderColor: s.farbe }}>{j + 1}. {s.titel}{j < spalten.length - 1 && <svg aria-hidden="true" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><line x1="4" y1="12" x2="20" y2="12" /><polyline points="14 6 20 12 14 18" /></svg>}</p>
             <ul className="space-y-2 mt-3">
               {s.werte.map((w) => <li key={w} className="font-body text-sm text-gray-900 leading-snug">{w}</li>)}
             </ul>

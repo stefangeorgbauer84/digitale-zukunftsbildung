@@ -96,13 +96,12 @@ function Teil({ id, titel, intro, children }: { id: string; titel: string; intro
 }
 
 /** Zitatband zwischen den Kapiteln, Foto am Rand. */
-function Zitat({ text, person, rolle, dunkel: streifenDunkel = false }: { text: string; person: string; rolle: string; dunkel?: boolean }) {
+function Zitat({ text, person, rolle, dunkel = false }: { text: string; person: string; rolle: string; dunkel?: boolean }) {
   const p = PERSON[person]
-  const dunkel = false // Zitate stehen auf Weiß, nur der Streifen wechselt die Farbe
   return (
     <aside className={`zitat relative overflow-hidden px-6 py-12 md:py-14 break-inside-avoid ${dunkel ? 'text-white' : ''}`}
-      style={{ background: '#fff' }}>
-      <figure style={{ borderColor: streifenDunkel ? '#1a1040' : '#6b4db0' }} className={`relative max-w-5xl mx-auto border-l-[6px] pl-6 md:pl-8 grid gap-8 items-center ${p ? 'md:grid-cols-[9rem_minmax(0,1fr)]' : ''}`}>
+      style={{ background: dunkel ? '#4a2d8a' : '#f3f1f9' }}>
+      <figure className={`relative max-w-5xl mx-auto grid gap-8 items-center ${p ? 'md:grid-cols-[9rem_minmax(0,1fr)]' : ''}`}>
         {p && (
           <div className="relative w-28 h-28 md:w-36 md:h-36 rounded-full overflow-hidden mx-auto md:mx-0">
             <Image src={p.foto} alt={person} fill sizes="144px" className="object-cover" style={{ objectPosition: p.position }} />
@@ -284,7 +283,7 @@ export default function WirkungsberichtPage() {
                   { n: fmt(VEREIN.lizenzen), t: 'Lizenzen über den Marktplatz Lern-Apps', h: 'bis Juni 2026', b: 'verein' as Beleg },
                   { n: fmt(wert(KPI_NAMEN.reg)), t: 'Lernende auf der Plattform registriert', h: `Stand ${STAND}`, b: 'gemessen' as Beleg },
                 ].map((k) => (
-                  <div key={k.t} className={KARTE}>
+                  <div key={k.t} className="min-w-0">
                     <p className="font-heading font-bold text-4xl md:text-6xl text-primary-dark tabular-nums leading-none">{k.n}</p>
                     <p className="font-body text-sm md:text-base text-gray-900 mt-3 leading-snug">{k.t}</p>
                     <p className="font-body text-xs mt-1 mb-3" style={{ color: TEXT2 }}>{k.h}</p>
@@ -383,9 +382,9 @@ export default function WirkungsberichtPage() {
                 { titel: 'Input', farbe: '#1E6B5B', inhalt: MODELL.input.map((t) => ({ text: t, beleg: null as Beleg | null })) },
                 { titel: 'Aktivitäten', farbe: '#4a2d8a', inhalt: MODELL.aktivitaeten.map((t) => ({ text: t, beleg: null as Beleg | null })) },
                 { titel: 'Output', farbe: '#6b4db0', inhalt: MODELL.output.map((o) => ({ text: o.text, beleg: o.beleg as Beleg | null })) },
-              ].map((b) => (
-                <div key={b.titel} className={`${KARTE}`}>
-                  <h4 className="font-heading font-bold text-lg mb-4" style={{ color: b.farbe }}>{b.titel}</h4>
+              ].map((b, i) => (
+                <div key={b.titel} className="min-w-0 break-inside-avoid">
+                  <h4 className="font-heading font-bold text-lg mb-4 flex items-center justify-between gap-3 border-b-2 pb-2" style={{ color: b.farbe, borderColor: b.farbe }}>{b.titel}{i < 2 && <svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="shrink-0"><line x1="4" y1="12" x2="20" y2="12" /><polyline points="14 6 20 12 14 18" /></svg>}</h4>
                   <ul className="flex flex-wrap gap-2">
                     {b.inhalt.map((x) => (
                       <li key={x.text} className="font-body text-[13px] text-gray-900 rounded-full px-3 py-1.5" style={{ background: `${b.farbe}10` }}>
@@ -542,7 +541,7 @@ export default function WirkungsberichtPage() {
             </ol>
             <div className="grid gap-6 md:grid-cols-3 mt-12">
               {VERWENDUNG.map((v) => (
-                <div key={v.titel} className={KARTE}>
+                <div key={v.titel} className="bg-primary-50 p-6 min-w-0 break-inside-avoid">
                   <h4 className="font-heading font-bold text-base mb-1" style={{ color: INK }}>{v.titel}</h4>
                   <p className="font-body text-sm text-gray-900">{v.text}</p>
                 </div>
@@ -643,15 +642,15 @@ export default function WirkungsberichtPage() {
             </ol>
           </Teil>
 
-          <div className="relative border-l-[6px] pl-6 md:pl-8 py-2 grid gap-8 md:grid-cols-[minmax(0,1fr)_auto] items-center break-inside-avoid"
-            style={{ borderColor: '#1a1040' }}>
+          <div className="relative p-8 md:p-12 text-white grid gap-8 md:grid-cols-[minmax(0,1fr)_auto] items-center break-inside-avoid"
+            style={{ background: '#1a1040' }}>
             <figure className="relative">
-              <blockquote className="font-heading text-2xl md:text-4xl leading-snug text-balance" style={{ color: INK }}>„{STIMMEN[4].text}“</blockquote>
-              <figcaption className="mt-5 font-body text-sm" style={{ color: TEXT2 }}><strong style={{ color: INK }}>{STIMMEN[4].person}</strong>, {STIMMEN[4].rolle}</figcaption>
+              <blockquote className="font-heading text-2xl md:text-4xl leading-snug text-balance">„{STIMMEN[4].text}“</blockquote>
+              <figcaption className="mt-5 font-body text-sm text-white/80"><strong className="text-white">{STIMMEN[4].person}</strong>, {STIMMEN[4].rolle}</figcaption>
             </figure>
             <div className="relative flex flex-col items-start md:items-center gap-4">
               <Image src="/fotos/Logo.png" alt="Skills-UP!" width={96} height={96} className="rounded-2xl" />
-              <PdfKnopf />
+              <PdfKnopf hell />
             </div>
           </div>
 
