@@ -11,7 +11,7 @@ import {
 } from './daten'
 import { Chip, ErfahrungsVideo, GruppenKette, KapitelNav, KetteInteraktiv, KpiExplorer, PdfKnopf, StakeholderFilter, WirkungsboxFilter, type KettenStufe } from './interaktiv'
 
-// Wirkungsbericht Skills-UP!, öffentlich seit 10.11.2026 (vorher passwortgeschützt), in Sitemap und Footer.
+// Wirkungsbericht Skills-UP!, seit 18.11.2026 vorübergehend wieder passwortgeschützt (src/middleware.ts), nicht in Sitemap, noindex.
 // Aufbau: runde-4-berichtsstruktur.md (strategisch oben, Zahlen unten). Druckfassung über @media print und print:-Klassen.
 
 const URL = 'https://www.digitale-zukunftsbildung.eu/wirkungsmessung'
@@ -20,6 +20,7 @@ export const metadata: Metadata = {
   title: 'Wirkungsbericht Skills-UP! | Digitale Zukunftsbildung',
   description: 'Wirkungslogik, Ergebnisse und Kennzahlen von Skills-UP! nach den Modellen der WU Wien.',
   alternates: { canonical: URL },
+  robots: { index: false, follow: false },
   openGraph: {
     title: 'Wirkungsbericht Skills-UP!',
     description: 'Wie Skills-UP! junge Menschen im Umgang mit Geld stärkt: Wirkungslogik, Ergebnisse und Kennzahlen.',
