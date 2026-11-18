@@ -468,3 +468,44 @@ export function WirkungsboxFilter({ ebenen, zeiten, box, farben, hinweis }: {
     </div>
   )
 }
+
+/** Erfahrungsbericht als YouTube-Video. Lädt erst nach Klick (DSGVO, zwei Klicks), im Druck steht der Link. */
+export function ErfahrungsVideo({ id, titel, person, rolle }: { id: string; titel: string; person: string; rolle: string }) {
+  const [laeuft, setLaeuft] = useState(false)
+  const url = `https://www.youtube.com/shorts/${id}`
+  return (
+    <figure className="max-w-4xl mx-auto px-6 py-14 grid md:grid-cols-[260px_1fr] gap-8 items-center break-inside-avoid">
+      <div className="relative mx-auto w-full max-w-[260px] aspect-[9/16] rounded-[20px] overflow-hidden print:hidden" style={{ background: '#1a1040' }}>
+        {laeuft ? (
+          <iframe
+            src={`https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0`}
+            title={titel}
+            allow="autoplay; encrypted-media; picture-in-picture"
+            allowFullScreen
+            className="absolute inset-0 w-full h-full"
+          />
+        ) : (
+          <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 px-5 text-center">
+            <p className="font-body text-xs leading-relaxed text-white/80">
+              Beim Abspielen werden Daten (IP-Adresse, Geräteinformationen) an <strong className="text-white">Google LLC (USA)</strong> übertragen.
+            </p>
+            <button onClick={() => setLaeuft(true)}
+              className="px-5 py-2.5 rounded-xl text-sm font-body font-700 text-white transition-all hover:opacity-90"
+              style={{ background: '#6b4db0' }}>
+              Video laden und abspielen
+            </button>
+            <a href="/impressum#datenschutz" className="font-body text-xs text-white/60 underline hover:text-white">Datenschutzerklärung</a>
+          </div>
+        )}
+      </div>
+      <figcaption className="font-body">
+        <p className="text-xs font-700 uppercase tracking-widest mb-3" style={{ color: '#6b4db0' }}>Erfahrungsbericht im Video</p>
+        <p className="font-heading text-2xl md:text-3xl font-bold leading-snug mb-3" style={{ color: '#1a1040' }}>{titel}</p>
+        <p className="text-sm leading-relaxed mb-4" style={{ color: '#4c5260' }}><strong style={{ color: '#1a1040' }}>{person}</strong>, {rolle}</p>
+        <a href={url} target="_blank" rel="noopener noreferrer" className="text-sm font-700 underline underline-offset-2" style={{ color: '#4a2d8a' }}>
+          Auf YouTube ansehen<span className="hidden print:inline">: {url}</span>
+        </a>
+      </figcaption>
+    </figure>
+  )
+}

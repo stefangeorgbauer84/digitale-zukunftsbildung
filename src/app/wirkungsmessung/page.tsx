@@ -9,7 +9,7 @@ import {
   TRICHTER, BEGRIFFE, VEREIN, ZIELE_2027, AUSGANGSLAGE, fmt, wert, quartalName,
   type Beleg, type KpiStatus, type KpiZelle,
 } from './daten'
-import { Chip, GruppenKette, KapitelNav, KetteInteraktiv, KpiExplorer, PdfKnopf, StakeholderFilter, WirkungsboxFilter, type KettenStufe } from './interaktiv'
+import { Chip, ErfahrungsVideo, GruppenKette, KapitelNav, KetteInteraktiv, KpiExplorer, PdfKnopf, StakeholderFilter, WirkungsboxFilter, type KettenStufe } from './interaktiv'
 
 // Wirkungsbericht Skills-UP!, öffentlich seit 10.11.2026 (vorher passwortgeschützt), in Sitemap und Footer.
 // Aufbau: runde-4-berichtsstruktur.md (strategisch oben, Zahlen unten). Druckfassung über @media print und print:-Klassen.
@@ -549,6 +549,9 @@ export default function WirkungsberichtPage() {
         </Kapitel>
 
         <Zitat text={GESCHICHTE.zitat} person="Lehrling bei TGW Logistics" rolle="hat im Workshop ein Sparziel gesetzt und den Führerschein angespart" />
+
+        <ErfahrungsVideo id="xQAagmEsEiA" titel="Lena von TGW Logistics über ihre Erfahrung mit Skills-UP!"
+          person="Lena" rolle="hat das Programm als Lehrling bei TGW Logistics durchlaufen und ist heute Alumna. Beleg: Erfahrungsbericht des Vereins, 2025." />
 
         {/* 4 Zahlen */}
         <Kapitel id="zahlen" nr={4} titel="Die Zahlen im Detail" getoent
