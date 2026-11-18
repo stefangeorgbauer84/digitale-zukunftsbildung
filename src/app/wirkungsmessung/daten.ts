@@ -23,7 +23,20 @@ export type KpiStatus = 'gemessen' | 'eingeschränkt' | 'fehlt'
 export type KpiZelle = { wert: number | null; basis: number | null; status: KpiStatus; hinweis: string }
 export type KpiDaten = { ast: string; kpi: string; einheit: string; definition?: string; werte: Record<string, KpiZelle> }
 
-export const KENNZAHLEN = roh as { stand: string; quartale: string[]; laufend: boolean; kpis: KpiDaten[] }
+// Nur intern für die Steuerung, nicht im öffentlichen Bericht (Entscheidung 18.11.2026).
+const INTERN = [
+  'Wiederkehr an zwei oder mehr Lerntagen',
+  'Themenbreite (Modul außerhalb Grundlagen)',
+  'Anteil mit Modulquiz an allen Registrierten',
+  'Abschlussquote je Modulstart',
+  'Klassen mit aktiven Lernenden',
+  'Anteil Klassen mit aktiven Lernenden',
+  'Klassen mit Modulfrist (Stand Quartalsende)',
+  'Klassen mit Lernpfad (Stand Quartalsende)',
+  'Anteil der größten Klasse an Aktiven',
+]
+const alle = roh as { stand: string; quartale: string[]; laufend: boolean; kpis: KpiDaten[] }
+export const KENNZAHLEN = { ...alle, kpis: alle.kpis.filter((k) => !INTERN.includes(k.kpi)) }
 export const QUARTALE = KENNZAHLEN.quartale
 export const Q = QUARTALE[QUARTALE.length - 1]
 export const Q_VOR = QUARTALE[QUARTALE.length - 2]
@@ -61,9 +74,7 @@ const K = {
   neu: 'Neue Lernende im Quartal',
   aktiv: 'Aktive Lernende im Quartal',
   aktivAnteil: 'Anteil aktiv an Registrierten',
-  wiederkehr: 'Wiederkehr an zwei oder mehr Lerntagen',
   gestartet: 'Lernende mit gestartetem Modul',
-  themen: 'Themenbreite (Modul außerhalb Grundlagen)',
   nordstern: 'Nordstern: Lernende mit bestandenem Modulquiz',
   quiz: 'Lernende mit Modulquiz',
   abgeschlossen: 'Lernende mit abgeschlossenem Modul',
@@ -71,11 +82,6 @@ const K = {
   erstBestanden: 'Quiz im ersten Versuch bestanden',
   erstRichtig: 'Erstversuch: Anteil richtiger Antworten',
   median: 'Zeit bis Modulabschluss (Median)',
-  klassenAktivAnteil: 'Anteil Klassen mit aktiven Lernenden',
-  klassenAktiv: 'Klassen mit aktiven Lernenden',
-  fristen: 'Klassen mit Modulfrist (Stand Quartalsende)',
-  lernpfad: 'Klassen mit Lernpfad (Stand Quartalsende)',
-  groessteKlasse: 'Anteil der größten Klasse an Aktiven',
   lehrkraefte: 'Lehrkräfte registriert (Stand Quartalsende)',
 } as const
 export const KPI_NAMEN = K
@@ -265,7 +271,7 @@ export const SCHRITTE: Schritt[] = [
 export const VERWENDUNG = [
   { titel: 'Kommunikation der Wirkungen', text: 'Berichte an MEGA Bildungsstiftung, Marktplatz Lern-Apps, Schulen und Bildungsdirektionen.' },
   { titel: 'Strategiearbeit anhand der Wirkungen', text: 'Welche Module, Zielgruppen und Bundesländer zuerst ausbauen, Strategie bis Ende 2027.' },
-  { titel: 'Steuerung anhand der Wirkungen', text: 'Quartalskennzahlen: wo Lernende abbrechen, welche Klassen aktiv bleiben, welche Inhalte fehlen.' },
+  { titel: 'Steuerung anhand der Wirkungen', text: 'Quartalskennzahlen: welche Module gut ankommen und welche Inhalte als Nächstes fehlen.' },
 ]
 
 /* ------------------------------------------------------------------ */
@@ -327,7 +333,7 @@ export const KETTEN_TABELLE: KettenZeile[] = [
     stakeholder: 'Lehrkräfte',
     input: ['Zeit zum Anlegen einer Klasse', 'Unterrichtsstunden', 'Fortbildungszeit'],
     aktivitaeten: ['Lehrkraft-Dashboard', 'Lernpfade und Fristen', 'Unterrichtsmaterial', 'Fortbildung'],
-    output: ['Anzahl Lehrkräfte mit aktiver Klasse', 'Anzahl Klassen mit Lernpfad oder Frist', 'Anzahl Fortbildungen'],
+    output: ['Anzahl registrierter Lehrkräfte', 'Anzahl Fortbildungen'],
     brutto: ['Weniger Vorbereitungszeit', 'Mehr Sicherheit im Thema', 'Finanzbildung fest im Jahresplan'],
     deadweight: ['Lehrkräfte, die Finanzbildung ohnehin unterrichten würden, ab 2027/28 auch wegen der Lehrplanverankerung'],
     netto: ['Zusätzliche Unterrichtsstunden Finanzbildung durch Skills-UP!'],
@@ -336,7 +342,7 @@ export const KETTEN_TABELLE: KettenZeile[] = [
     stakeholder: 'Schulen und Lehrbetriebe',
     input: ['Lizenz- oder Workshopkosten', 'Räume und Geräte'],
     aktivitaeten: ['Workshops vor Ort, drei je Berufsschule', 'Plattformzugang', 'Lehrplanmapping'],
-    output: ['Anzahl Schulen mit aktiven Klassen', 'Anzahl Workshops', 'Anzahl Lehrbetriebe'],
+    output: ['Anzahl Schulstandorte', 'Anzahl Workshops', 'Anzahl Lehrbetriebe'],
     brutto: ['Finanzbildung als fester Teil von Unterricht und Ausbildung', 'Lehrplan Thema Wirtschafts-, Finanz- und Verbraucherbildung abgedeckt'],
     deadweight: ['Andere Angebote, die die Schule sonst genutzt hätte, etwa Bankworkshops oder Schuldnerberatung'],
     netto: ['Schulen und Betriebe, die Finanzbildung nur wegen Skills-UP! dauerhaft verankern'],
@@ -417,82 +423,6 @@ export const WIRKUNGSBOX: BoxZelle[][] = [
 export const OEKOLOGISCH_HINWEIS =
   'Ökologisch: keine eigene Wirkung erwartet. Das Modul Konsumfallen kann nachhaltigen Konsum fördern, das ist nicht Ziel und wird nicht gemessen.'
 
-/* ------------------------------------------------------------------ */
-/* Befunde: was die Daten zeigen und was daraus folgt                   */
-/* ------------------------------------------------------------------ */
-
-export type Befund = { titel: string; zahl: string; einheit: string; text: string; folge: string; beleg: Beleg }
-
-function befunde(): Befund[] {
-  const neuQ = wert(K.neu, Q)
-  const neuVorher = QUARTALE.slice(0, -1).reduce((a, q) => a + wert(K.neu, q), 0)
-  const wk = wert(K.wiederkehr, Q)
-  const tbQ = wert(K.themen, Q)
-  const tbVor = wert(K.themen, Q_VOR)
-  const klassen = kpi(K.klassenAktivAnteil).werte[Q].basis ?? 0
-  const gk = QUARTALE.map((q) => wert(K.groessteKlasse, q))
-  return [
-    {
-      titel: 'Die Reichweite wächst stark',
-      zahl: fmt(neuQ), einheit: 'neue Lernende',
-      text: `Im ${Q_NAME} kamen ${fmt(neuQ)} neue Lernende auf die Plattform, ${neuQ > neuVorher ? 'mehr als in allen Quartalen davor zusammen' : 'nach'} (${fmt(neuVorher)} seit April 2026). Laut Verein sind es vor allem Lernende an Schulen, die über den Marktplatz Lern-Apps kommen.`,
-      folge: 'Wachstum allein ist noch keine Wirkung. Entscheidend ist, wie viele davon lernen und bestehen.',
-      beleg: 'gemessen',
-    },
-    {
-      titel: 'Gelernt wird, aber meist nur einmal',
-      zahl: fmt(wk, 1), einheit: '% kommen wieder',
-      text: `${fmt(wert(K.aktiv))} von ${fmt(wert(K.reg))} registrierten Lernenden waren aktiv. Im ${Q_NAME} lernten aber nur ${fmt(wk, 1)} % der Aktiven an mehr als einem Tag.`,
-      folge: `Wiederholung entsteht über den Unterricht: Lernpfade und Modulfristen. Erst ${fmt(wert(K.fristen, Q))} Klassen haben eine Modulfrist, ${fmt(wert(K.lernpfad, Q))} einen Lernpfad.`,
-      beleg: 'gemessen',
-    },
-    {
-      titel: 'Das Modulquiz wird fast immer bestanden',
-      zahl: fmt(wert(K.erstBestanden), 1), einheit: '% der ersten Abgaben bestanden',
-      text: `${fmt(wert(K.nordstern))} Lernende haben seit August 2026 ein Modulquiz bestanden. Von den ${fmt(kpi(K.erstBestanden).werte[GESAMT].basis ?? 0)} ersten Quizabgaben je Person und Modul waren ${fmt(wert(K.erstBestanden), 1)} % sofort bestanden, mit ${fmt(wert(K.erstRichtig), 1)} % richtigen Antworten.`,
-      folge: 'So hohe Werte unterscheiden kaum zwischen viel und wenig Wissen. Lernzuwachs wird erst mit drei Quizfragen am Modulstart sichtbar, und das Quiz braucht schwerere Fragen.',
-      beleg: 'gemessen',
-    },
-    {
-      titel: 'Neue Klassen bleiben bei den Grundlagen',
-      zahl: fmt(tbQ, 1), einheit: '% gehen weiter',
-      text: `Im ${Q_NAME} starteten ${fmt(tbQ, 1)} % der Lernenden ein Modul außerhalb der Grundlagen, im ${quartalName(Q_VOR)} waren es ${fmt(tbVor, 1)} %. ${fmt(wert(K.drei))} Lernende haben drei oder mehr Module abgeschlossen.`,
-      folge: 'Nach dem Grundlagenmodul das nächste passende Thema direkt vorschlagen, für Lernende und für Lehrkräfte.',
-      beleg: 'gemessen',
-    },
-    {
-      titel: 'Viele Klassen sind angelegt, wenige aktiv',
-      zahl: fmt(wert(K.klassenAktivAnteil, Q), 1), einheit: '% der Klassen aktiv',
-      text: `Von ${fmt(klassen)} angelegten Klassen waren im ${Q_NAME} nur ${fmt(wert(K.klassenAktiv, Q))} Klassen mit aktiven Lernenden. Lehrkräfte legen also Klassen an, setzen sie aber oft noch nicht ein.`,
-      folge: 'Lehrkräfte nach dem Anlegen einer Klasse beim ersten Einsatz begleiten, etwa mit einer fertigen ersten Stunde.',
-      beleg: 'gemessen',
-    },
-    {
-      titel: 'Eine Lizenz ist noch keine Nutzung',
-      zahl: fmt(VEREIN.lizenzen), einheit: 'Lizenzen',
-      text: `Bis Juni 2026 wurden ${fmt(VEREIN.lizenzen)} Lizenzen über den Marktplatz Lern-Apps vergeben. Auf der Plattform sind heute ${fmt(wert(K.reg))} Lernende registriert.`,
-      folge: 'Für die Wirkung zählt, wer lernt. Der Abgleich von Lizenzen und Konten gehört in den nächsten Quartalsbericht.',
-      beleg: 'verein',
-    },
-    {
-      titel: 'Die Zahlen hängen weniger an einer Klasse',
-      zahl: fmt(gk[gk.length - 1], 1), einheit: '% in der größten Klasse',
-      text: `Die größte Klasse stellte im ${quartalName(QUARTALE[0])} ${fmt(gk[0], 1)} % der Aktiven, im ${Q_NAME} noch ${fmt(gk[gk.length - 1], 1)} %.`,
-      folge: 'Die Wirkung ist breiter verteilt. Aussagen werden belastbarer, wenn mehr Schulen dazukommen.',
-      beleg: 'gemessen',
-    },
-  ]
-}
-export const BEFUNDE = befunde()
-
-// Jede Stufe ist Teilmenge der vorherigen: bestandenes Modulquiz setzt ein bestandenes Modul voraus.
-export const TRICHTER = [
-  { stufe: 'Registriert', n: wert(K.reg), erklaerung: 'Konto als Lernende angelegt' },
-  { stufe: 'Modul gestartet', n: wert(K.gestartet), erklaerung: 'mindestens ein Modul begonnen' },
-  { stufe: 'Modul abgeschlossen', n: wert(K.abgeschlossen), erklaerung: 'mindestens ein Modul bestanden' },
-  { stufe: 'Modulquiz bestanden', n: wert(K.nordstern), erklaerung: 'Nordstern, Quizversuche ab 12. August 2026' },
-]
-
 export const BEGRIFFE = [
   { begriff: 'Lizenz', text: 'Ein über den Marktplatz Lern-Apps vergebener Zugang für eine Schule. Zählt der Verein.' },
   { begriff: 'Registriert', text: 'Eine Person hat ein Konto mit der Rolle Lernende angelegt. Lehrkräfte und Testkonten zählen nicht mit.' },
@@ -518,10 +448,8 @@ export const MESSPLAN = [
   { wirkung: 'Finanzwissen steigt', indikator: 'Differenz zwischen Quizfragen am Modulstart und Modulquiz', methode: 'Drei Quizfragen am Modulstart, Modulquiz am Ende', zeitpunkt: 'jedes Modul', quelle: 'Plattform', beleg: 'geplant' as Beleg },
   { wirkung: 'Wissen bleibt', indikator: 'Richtige Antworten bei denselben Fragen vier Wochen später', methode: 'Wiederholungsfragen im nächsten Modul', zeitpunkt: 'nach vier Wochen', quelle: 'Plattform', beleg: 'geplant' as Beleg },
   { wirkung: 'Entscheidungen in Simulationen gelingen', indikator: 'Anteil bestandener Simulationsmissionen (Zuwachs erst mit Vergleich der Versuche)', methode: 'Simulationsdaten im Quartalsbericht', zeitpunkt: 'je Quartal', quelle: 'Plattform', beleg: 'gemessen' as Beleg },
-  { wirkung: 'Lernende bleiben dran', indikator: 'Aktive, Wiederkehr, Abschlussquote, Lernende mit bestandenem Modulquiz', methode: 'Quartalsbericht', zeitpunkt: 'je Quartal', quelle: 'Plattform', beleg: 'gemessen' as Beleg },
-  { wirkung: 'Lernende vertiefen', indikator: 'Anteil mit einem Modul außerhalb der Grundlagen', methode: 'Quartalsbericht', zeitpunkt: 'je Quartal', quelle: 'Plattform', beleg: 'gemessen' as Beleg },
+  { wirkung: 'Lernende bleiben dran', indikator: 'Aktive Lernende, Lernende mit bestandenem Modulquiz', methode: 'Quartalsbericht', zeitpunkt: 'je Quartal', quelle: 'Plattform', beleg: 'gemessen' as Beleg },
   { wirkung: 'Deadweight', indikator: 'Zuwachs in Vergleichsklassen ohne Skills-UP!', methode: 'Wartekontrollgruppe mit denselben Quizfragen: Klassen starten ein Semester später', zeitpunkt: 'je Schuljahr', quelle: 'Plattform und Partnerschulen', beleg: 'geplant' as Beleg },
-  { wirkung: 'Lehrkräfte setzen gezielt ein', indikator: 'Klassen mit Modulfrist oder Lernpfad', methode: 'Quartalsbericht', zeitpunkt: 'je Quartal', quelle: 'Plattform', beleg: 'gemessen' as Beleg },
   { wirkung: 'Lehrkräfte bleiben dabei', indikator: 'Anteil der Lehrkräfte mit aktiver Klasse im Folgejahr', methode: 'Plattformdaten', zeitpunkt: 'je Schuljahr, erstmals im Herbst 2027', quelle: 'Plattform', beleg: 'geplant' as Beleg },
 ]
 

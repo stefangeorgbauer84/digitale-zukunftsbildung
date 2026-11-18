@@ -4,11 +4,11 @@ import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import NewsletterSignup from '@/components/NewsletterSignup'
 // Zahlen kommen aus den Berichtsdaten, damit Beitrag und Bericht nie auseinanderlaufen.
-import { BEFUNDE, STAND, VEREIN, KENNZAHLEN, fmt } from '@/app/wirkungsmessung/daten'
+import { STAND, VEREIN, KPI_NAMEN, QUARTALE, Q_NAME, GESCHICHTE, fmt, wert } from '@/app/wirkungsmessung/daten'
 
 const URL = 'https://www.digitale-zukunftsbildung.eu/aktuelles/wirkungsbericht-skills-up'
 const TITEL = 'Was Skills-UP! bewirkt: unser Wirkungsbericht ist öffentlich'
-const KURZ = 'Wirkungslogik, sieben Befunde und alle Kennzahlen je Quartal: Der Wirkungsbericht zu Skills-UP! zeigt offen, was gelingt und was noch fehlt.'
+const KURZ = 'Der Wirkungsbericht zu Skills-UP! zeigt, wie das Programm wirken soll, wie stark die Plattform wächst und was die Nutzungsdaten bisher zeigen.'
 
 export const metadata: Metadata = {
   title: 'Wirkungsbericht Skills-UP! ist öffentlich | Digitale Zukunftsbildung',
@@ -42,9 +42,10 @@ const articleJsonLd = {
 const kapitel = [
   { href: '/wirkungsmessung#ansatz', titel: 'Ansatz', text: 'Warum es Skills-UP! gibt und wie es arbeitet.' },
   { href: '/wirkungsmessung#wirkungslogik', titel: 'Wirkungslogik', text: 'Von Input bis Impact, für jede betroffene Gruppe.' },
-  { href: '/wirkungsmessung#erreicht', titel: 'Erreicht', text: 'Zwei Phasen, sieben Befunde, der Weg zum Lernerfolg.' },
-  { href: '/wirkungsmessung#zahlen', titel: 'Zahlen', text: 'Alle Kennzahlen je Quartal zum Erkunden.' },
+  { href: '/wirkungsmessung#erreicht', titel: 'Erreicht', text: 'Zwei Phasen, von Workshops zur Plattform.' },
+  { href: '/wirkungsmessung#zahlen', titel: 'Zahlen', text: 'Kennzahlen je Quartal zum Erkunden.' },
   { href: '/wirkungsmessung#methode', titel: 'Methode', text: 'Wie wir messen und wie wir zählen.' },
+  { href: '/wirkungsmessung#ausblick', titel: 'Ausblick', text: 'Ziele bis Ende 2027 und die nächsten Schritte.' },
 ]
 
 const P = 'font-body text-gray-700 leading-relaxed mb-6'
@@ -52,6 +53,8 @@ const H2 = 'font-heading text-2xl font-bold mb-4 mt-12'
 const A = 'font-bold underline underline-offset-2 hover:opacity-80'
 
 export default function WirkungsberichtBeitragPage() {
+  const neu = wert(KPI_NAMEN.neu, QUARTALE[QUARTALE.length - 1])
+  const davor = QUARTALE.slice(0, -1).reduce((a, q) => a + wert(KPI_NAMEN.neu, q), 0)
   return (
     <>
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
@@ -76,7 +79,7 @@ export default function WirkungsberichtBeitragPage() {
               {TITEL}
             </h1>
             <p className="font-body text-white/70 text-xl leading-relaxed">
-              Seit November 2026 kann jede und jeder nachlesen, wie Skills-UP! wirken soll, was die Nutzungsdaten zeigen und wo wir noch nachbessern müssen.
+              Seit November 2026 kann jede und jeder nachlesen, wie Skills-UP! wirken soll, wie stark die Plattform wächst und was die Nutzungsdaten bisher zeigen.
             </p>
           </div>
         </section>
@@ -89,46 +92,44 @@ export default function WirkungsberichtBeitragPage() {
               erstellt und veröffentlicht. Er folgt den Modellen der Wirkungsanalyse der WU Wien und beschreibt den Weg von den eingesetzten Mitteln bis zur Wirkung bei Jugendlichen, Lehrkräften und Lehrbetrieben.
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-10">
+            <dl className="grid grid-cols-1 sm:grid-cols-3 gap-8 my-12">
               {[
-                { zahl: fmt(VEREIN.reichweite), label: 'junge Menschen erreicht' },
-                { zahl: fmt(VEREIN.lehrlinge), label: 'Lehrlinge direkt in Workshops' },
-                { zahl: String(KENNZAHLEN.kpis.length), label: 'Kennzahlen je Quartal' },
+                { zahl: fmt(VEREIN.standorte), label: 'Schulstandorte', farbe: '#1a1040' },
+                { zahl: fmt(VEREIN.lehrlinge), label: 'Lehrlinge direkt in Workshops', farbe: '#4a2d8a' },
+                { zahl: fmt(neu), label: `neue Lernende im ${Q_NAME}`, farbe: '#6b4db0' },
               ].map((k) => (
-                <div key={k.label} className="rounded-2xl p-5 text-center" style={{ background: '#f3f1f9' }}>
-                  <p className="font-heading text-4xl font-bold leading-none mb-2" style={{ color: '#4a2d8a' }}>{k.zahl}</p>
-                  <p className="font-body text-sm text-gray-700">{k.label}</p>
+                <div key={k.label} className="border-l-[3px] pl-5" style={{ borderColor: k.farbe }}>
+                  <dt className="font-heading text-5xl font-bold leading-none mb-2" style={{ color: '#4a2d8a' }}>{k.zahl}</dt>
+                  <dd className="font-body text-sm text-gray-700">{k.label}</dd>
                 </div>
               ))}
-            </div>
+            </dl>
 
             <h2 className={H2} style={{ color: '#1a1040' }}>Gemessen wird, was auf der Plattform passiert</h2>
             <p className={P}>
               Die Plattformzahlen stammen ausschließlich aus Nutzungsdaten der Lernplattform, ohne Befragung. Jede Angabe im Bericht trägt einen Beleg: gemessen, vom Verein dokumentiert oder erst geplant. So bleibt sichtbar, was eine Zahl aussagt und was nicht. Die Kennzahlen werden je Quartal aktualisiert, aktueller Stand: {STAND}.
             </p>
 
-            <h2 className={H2} style={{ color: '#1a1040' }}>Sieben Befunde, auch die unbequemen</h2>
-            <p className={P}>
-              Der Bericht zeigt nicht nur Erfolge. Zu jedem Befund steht, was daraus folgt:
-            </p>
-            <div className="space-y-4 mb-10">
-              {BEFUNDE.map((b) => (
-                <div key={b.titel} className="rounded-2xl p-5 border border-gray-100 bg-white">
-                  <p className="font-heading font-bold text-base mb-1" style={{ color: '#1a1040' }}>
-                    {b.titel}
-                    <span className="font-body font-normal text-sm text-gray-600"> · {b.zahl} {b.einheit}</span>
-                  </p>
-                  <p className="font-body text-sm text-gray-700 leading-relaxed mb-2">{b.text}</p>
-                  <p className="font-body text-sm leading-relaxed" style={{ color: '#1E6B5B' }}><strong>Was daraus folgt:</strong> {b.folge}</p>
+            <h2 className={H2} style={{ color: '#1a1040' }}>Was die Zahlen zeigen</h2>
+            <div className="space-y-8 mb-10">
+              {[
+                { farbe: '#1a1040', titel: 'Die Plattform wächst stark', text: `Im ${Q_NAME} kamen ${fmt(neu)} neue Lernende dazu${neu > davor ? ', mehr als in allen Quartalen davor zusammen' : ''}. Insgesamt sind ${fmt(wert(KPI_NAMEN.reg))} Lernende registriert.` },
+                { farbe: '#4a2d8a', titel: 'Die meisten Quizabgaben sind sofort bestanden', text: `${fmt(wert(KPI_NAMEN.nordstern))} Lernende haben seit August 2026 ein Modulquiz bestanden. ${fmt(wert(KPI_NAMEN.erstBestanden), 1)} % der ersten Quizabgaben waren sofort bestanden, mit ${fmt(wert(KPI_NAMEN.erstRichtig), 1)} % richtigen Antworten.` },
+                { farbe: '#6b4db0', titel: 'Workshops erreichen Lehrlinge direkt', text: `${fmt(VEREIN.lehrlinge)} Lehrlinge haben wir seit 2022 in Workshops begleitet, ${fmt(VEREIN.workshops)} Workshops an ${fmt(VEREIN.berufsschulen)} Berufsschulen. ${fmt(VEREIN.rueckmeldungen)} Rückmeldungen sind seither eingegangen.` },
+                { farbe: '#9b7ed4', titel: 'Ein Beispiel: vom Sparziel zum Führerschein', text: `${GESCHICHTE.text} „${GESCHICHTE.zitat}“` },
+              ].map((b) => (
+                <div key={b.titel} className="border-l-[3px] pl-5" style={{ borderColor: b.farbe }}>
+                  <p className="font-heading font-bold text-lg mb-1" style={{ color: '#1a1040' }}>{b.titel}</p>
+                  <p className="font-body text-gray-700 leading-relaxed">{b.text}</p>
                 </div>
               ))}
             </div>
 
-            <h2 className={H2} style={{ color: '#1a1040' }}>Der Bericht in fünf Kapiteln</h2>
+            <h2 className={H2} style={{ color: '#1a1040' }}>Der Bericht in sechs Kapiteln</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
               {kapitel.map((k) => (
                 <Link key={k.href} href={k.href}
-                  className="rounded-xl p-4 border border-gray-100 bg-white hover:border-purple-200 hover:shadow-md transition-all">
+                  className="border-l-[3px] border-primary-medium/40 pl-4 py-1 hover:border-primary-dark transition-colors">
                   <p className="font-heading font-bold text-sm mb-1" style={{ color: '#4a2d8a' }}>{k.titel}</p>
                   <p className="font-body text-sm text-gray-600 leading-relaxed">{k.text}</p>
                 </Link>
@@ -138,11 +139,11 @@ export default function WirkungsberichtBeitragPage() {
               Der Bericht lässt sich am Bildschirm erkunden und als PDF speichern. Er ist für Schulen, Bildungsdirektionen, fördernde Stellen und alle gedacht, die wissen wollen, worauf sie sich bei Skills-UP! einlassen.
             </p>
 
-            <div className="rounded-2xl overflow-hidden" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 60%, #1a5c4e 100%)' }}>
+            <div style={{ background: '#1a1040' }}>
               <div className="p-8 md:p-10 flex flex-col md:flex-row items-center gap-6">
                 <div className="flex-1">
                   <p className="font-heading text-xl font-bold text-white mb-2">Den ganzen Wirkungsbericht lesen.</p>
-                  <p className="font-body text-white/70 text-sm leading-relaxed">Wirkungslogik, Befunde und alle Kennzahlen, frei zugänglich.</p>
+                  <p className="font-body text-white/70 text-sm leading-relaxed">Wirkungslogik, Ergebnisse und Kennzahlen, frei zugänglich.</p>
                 </div>
                 <Link href="/wirkungsmessung"
                   className="shrink-0 font-body font-bold text-sm px-6 py-3 rounded-xl text-white transition-all hover:opacity-90"

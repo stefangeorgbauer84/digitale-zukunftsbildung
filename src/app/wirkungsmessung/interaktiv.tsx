@@ -113,7 +113,7 @@ export function KetteInteraktiv({ stufen }: { stufen: KettenStufe[] }) {
     <div>
       <ol className="hidden print:grid grid-cols-2 gap-3">
         {stufen.map((x, j) => (
-          <li key={x.id} className="rounded-xl border border-gray-200 p-4 break-inside-avoid">
+          <li key={x.id} className="border-l-[3px] border-primary-medium pl-4 break-inside-avoid">
             <p className="font-heading font-700 text-base" style={{ color: TON[x.ton].ring }}>{j + 1}. {x.titel}</p>
             <p className="font-body text-xs mb-2" style={{ color: TEXT2 }}>{x.frage}</p>
             {x.text && <p className="font-body text-xs text-gray-900">{x.text}</p>}
@@ -151,7 +151,7 @@ export function KetteInteraktiv({ stufen }: { stufen: KettenStufe[] }) {
           <span className="col-span-3 border-t-2 border-[#1E6B5B]/40 pt-2">Wirkung: was sich verändert</span>
         </div>
       </div>
-      <div id="kette-panel" role="tabpanel" className="mt-8 rounded-[20px] p-6 md:p-8 shadow-card border border-primary-medium/10 bg-white">
+      <div id="kette-panel" role="tabpanel" className="mt-8 border-l-[3px] border-primary-dark pl-6 md:pl-8">
         <div className="flex flex-wrap items-baseline justify-between gap-3 mb-4">
           <h3 className="font-heading font-700 text-2xl" style={{ color: TON[s.ton].ring }}>{s.titel}</h3>
           <p className="font-body text-sm" style={{ color: TEXT2 }}>{s.frage}</p>
@@ -210,7 +210,7 @@ export function KpiExplorer({ kpis, quartale }: { kpis: KpiDaten[]; quartale: st
   const gesamt = k.werte['Gesamt']
 
   return (
-    <div className="print:hidden rounded-[20px] shadow-card border border-primary-medium/10 bg-white overflow-hidden">
+    <div className="print:hidden border-t-2 border-primary-dark overflow-hidden">
       <div role="tablist" aria-label="Bereich" className="flex gap-1 overflow-x-auto no-scrollbar border-b border-gray-100 px-4 pt-4">
         {bereiche.map((b) => (
           <button key={b} role="tab" aria-selected={b === bereich}
@@ -328,7 +328,7 @@ export function StakeholderFilter({ gruppen }: { gruppen: StakeholderDaten[] }) 
           const aus = prio !== 0 && s.prioritaet !== prio
           return (
             <article key={s.kategorie}
-              className={`${pos[i]} rounded-[20px] p-5 bg-white transition-all duration-300 ${aus ? 'opacity-25 scale-[0.97]' : 'shadow-card'} ${s.eigene ? 'border-2 border-dashed border-primary-medium/60' : s.prioritaet === 1 ? 'ring-2 ring-primary-dark' : 'border border-primary-medium/10'}`}>
+              className={`${pos[i]} rounded-[20px] p-5 bg-white transition-all duration-300 ${aus ? 'opacity-25 scale-[0.97]' : ''} ${s.eigene ? 'border-2 border-dashed border-primary-medium/60' : s.prioritaet === 1 ? 'ring-2 ring-primary-dark' : 'border border-primary-medium/10'}`}>
               <div className="flex items-start justify-between gap-2 mb-2">
                 <h3 className="font-heading font-700 text-base leading-tight" style={{ color: INK }}>{s.kategorie}</h3>
                 <span className="font-body text-[11px] font-700 whitespace-nowrap rounded-full px-2 py-0.5 bg-primary-50 text-primary-dark">P{s.prioritaet}</span>
@@ -447,7 +447,7 @@ export function WirkungsboxFilter({ ebenen, zeiten, box, farben, hinweis }: {
             <div key={e} className="contents">
               <div className="font-heading font-700 text-sm text-primary-dark flex items-center pr-2">{e}</div>
               {box[r].map((zelle, c) => (
-                <ul key={c} className="rounded-[20px] bg-white shadow-card border border-primary-medium/10 p-4 space-y-2.5 min-h-[7rem]">
+                <ul key={c} className="border-l-[3px] border-primary-medium pl-4 space-y-2.5 min-h-[7rem]">
                   {zelle.map((x) => {
                     const aus = dim !== null && x.dim !== dim
                     return (

@@ -35,7 +35,7 @@ const posts = [
     date: 'November 2026',
     category: 'Wirkung',
     title: 'Was Skills-UP! bewirkt: unser Wirkungsbericht ist öffentlich.',
-    excerpt: 'Wirkungslogik, sieben Befunde und alle Kennzahlen je Quartal. Der Bericht zeigt offen, was gelingt und was noch fehlt.',
+    excerpt: 'Der Bericht zeigt, wie Skills-UP! wirken soll, wie stark die Plattform wächst und was die Nutzungsdaten bisher zeigen.',
     readingTime: '4 Min. Lesedauer',
     highlight: false,
   },

@@ -1310,7 +1310,7 @@ export default function HomePage() {
               tagColor: '#A84E12',
               date: 'November 2026',
               title: 'Was Skills-UP! bewirkt: der Wirkungsbericht ist öffentlich',
-              teaser: 'Wirkungslogik, sieben Befunde und alle Kennzahlen je Quartal. Der Bericht zeigt offen, was gelingt und was noch fehlt.',
+              teaser: 'Der Bericht zeigt, wie Skills-UP! wirken soll, wie stark die Plattform wächst und was die Nutzungsdaten bisher zeigen.',
             },
             {
               href: '/aktuelles/finanzbildung-pflichtfach-2027',
@@ -1350,7 +1350,7 @@ export default function HomePage() {
           style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)', border: '1px solid rgba(74,45,138,0.1)' }}>
           <div>
             <p className="font-heading font-bold text-base" style={{ color: '#1a1040' }}>Wirkungsbericht Skills-UP!</p>
-            <p className="font-body text-sm text-gray-600 mt-0.5">Wirkungslogik, Befunde und alle Kennzahlen je Quartal, frei zugänglich.</p>
+            <p className="font-body text-sm text-gray-600 mt-0.5">Wirkungslogik, Ergebnisse und Kennzahlen je Quartal, frei zugänglich.</p>
           </div>
           <Link href="/wirkungsmessung"
             className="shrink-0 font-body text-sm font-bold px-5 py-2.5 rounded-xl text-white transition-all hover:opacity-90"
