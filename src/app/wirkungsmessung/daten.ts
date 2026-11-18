@@ -100,7 +100,8 @@ export const VEREIN = {
   ],
   lehrlinge: 443,
   lizenzen: 1387,
-  reichweite: 1830,
+  // Gesamtreichweite (Entscheidung Stefan Bauer 18.11.2026): Workshops plus Lizenzen bis Juni 2026 plus registrierte Lernende auf der Plattform.
+  reichweite: 443 + 1387 + wert(K.reg),
   lehrkraefte: 45,
   lehrkraefteBerufsschule: 24,
   berufsschulen: 4,

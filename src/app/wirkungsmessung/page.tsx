@@ -278,10 +278,10 @@ export default function WirkungsberichtPage() {
               <h2 className="font-heading font-bold text-2xl mb-8" style={{ color: INK }}>Auf einen Blick</h2>
               <div className="grid gap-x-8 gap-y-10 grid-cols-2 lg:grid-cols-4">
                 {[
+                  { n: fmt(VEREIN.reichweite), t: 'junge Menschen insgesamt erreicht', h: `Workshops, Lizenzen und Plattform, Stand ${STAND}`, b: 'verein' as Beleg },
                   { n: fmt(VEREIN.lehrlinge), t: 'Lehrlinge direkt in Workshops begleitet', h: '2022 bis Juni 2026', b: 'verein' as Beleg },
                   { n: fmt(VEREIN.lizenzen), t: 'Lizenzen über den Marktplatz Lern-Apps', h: 'bis Juni 2026', b: 'verein' as Beleg },
-                  { n: fmt(wert(KPI_NAMEN.neu, QUARTALE[QUARTALE.length - 1])), t: 'neue Lernende auf der Plattform', h: `im ${Q_NAME}`, b: 'gemessen' as Beleg },
-                  { n: fmt(wert(KPI_NAMEN.nordstern)), t: 'Lernende mit bestandenem Modulquiz', h: 'Nordstern, seit August 2026', b: 'gemessen' as Beleg },
+                  { n: fmt(wert(KPI_NAMEN.reg)), t: 'Lernende auf der Plattform registriert', h: `Stand ${STAND}`, b: 'gemessen' as Beleg },
                 ].map((k) => (
                   <div key={k.t} className={KARTE}>
                     <p className="font-heading font-bold text-4xl md:text-6xl text-primary-dark tabular-nums leading-none">{k.n}</p>
