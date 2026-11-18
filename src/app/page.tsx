@@ -351,36 +351,50 @@ export default function HomePage() {
           style={{ background: 'radial-gradient(circle, rgba(124,58,237,0.18) 0%, transparent 70%)', animationDelay: '4s' }} />
 
         {/* Hero content */}
-        <div className="relative z-10 flex-1 flex flex-col items-center justify-center max-w-5xl mx-auto px-6 pt-28 pb-16 text-center">
+        <div className="relative z-10 flex-1 flex flex-col items-center justify-center max-w-5xl mx-auto px-6 pt-24 pb-12 text-center">
           {/* Award badge */}
-          <div className="inline-flex items-center gap-2 glass text-white/90 text-xs font-body font-700 px-4 py-2 rounded-full mb-8 border border-white/20">
+          <div className="inline-flex items-center gap-2 glass text-white/90 text-xs font-body font-700 px-4 py-2 rounded-full mb-5 border border-white/20">
             <svg width="13" height="13" viewBox="0 0 24 24" fill="#fde68a" stroke="#fde68a" strokeWidth="1"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
             <span>Top-3 MEGA Bildungsmillion 2025</span>
             <span className="w-px h-3 bg-white/30" />
             <span className="text-white/60">Gütesiegel Lern-Apps</span>
           </div>
 
-          {/* Maskottchen + Logo */}
-          <div className="mb-6 flex flex-col items-center gap-3 relative">
+          {/* Maskottchen */}
+          <div className="mb-4 flex items-center justify-center relative">
             <div className="absolute inset-0 blur-3xl scale-125 pointer-events-none"
               style={{ background: 'radial-gradient(circle, rgba(155,126,212,0.4) 0%, transparent 70%)' }} />
-            <Image src="/capybara-mascot.png" alt="Skills-UP! Maskottchen" width={140} height={140}
-              className="relative drop-shadow-2xl w-24 md:w-[140px] h-auto" priority />
-            <Image src="/fotos/Logo.png" alt="Skills-UP! Digitale Zukunftsbildung" width={80} height={80}
-              className="relative drop-shadow-xl rounded-2xl opacity-90 w-16 md:w-20 h-auto" priority />
+            <Image src="/capybara-mascot.png" alt="Skills-UP! Maskottchen" width={96} height={96}
+              className="relative drop-shadow-2xl w-20 md:w-24 h-auto" priority />
           </div>
 
-          <p className="font-heading text-xl md:text-2xl text-white/80 font-600 mb-4 leading-snug">
+          <p className="font-heading text-lg md:text-2xl text-white/80 font-600 mb-3 leading-snug">
             Lehrplankonformes Finanzbildungsprogramm für österreichische Schulen
           </p>
 
-          <h1 id="hero-heading" className="font-heading text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 id="hero-heading" className="font-heading text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-white mb-4 leading-tight">
             Finanzbildung für Ihre Klasse.<br />
             <span className="text-primary-light">Fertig. Sofort.</span>
           </h1>
 
+          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-3">
+            <Link href="/demo"
+              className="inline-flex items-center justify-center gap-2 font-body font-700 text-base md:text-lg px-7 md:px-9 py-3.5 md:py-4 rounded-xl shadow-2xl transition-all duration-200 hover:scale-105 active:scale-95 text-white"
+              style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #6b4db0 50%, #2a8a76 100%)', boxShadow: '0 8px 32px rgba(107,77,176,0.5)' }}
+            >
+              Gratis Demo starten
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </Link>
+            <a href="#angebote"
+              className="glass inline-flex items-center justify-center gap-2 text-white font-body font-600 text-base md:text-lg px-6 md:px-8 py-3.5 md:py-4 rounded-xl hover:bg-white/15 transition-all duration-200 border border-white/20"
+            >
+              Bildungsprogramm entdecken
+            </a>
+          </div>
+          <p className="text-white/60 text-sm mb-5 font-body">Kostenlos · Keine Anmeldung · Kein automatischer Vertrag</p>
+
           {/* Zielgruppen-Split */}
-          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-8 mt-2">
+          <div className="flex flex-col sm:flex-row gap-3 justify-center mb-6 mt-1">
             {[
               {
                 href: '/schulen',
@@ -410,24 +424,8 @@ export default function HomePage() {
             ))}
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mb-4">
-            <Link href="/demo"
-              className="inline-flex items-center justify-center gap-2 font-body font-700 text-lg px-9 py-4 rounded-xl shadow-2xl transition-all duration-200 hover:scale-105 active:scale-95 text-white"
-              style={{ background: 'linear-gradient(135deg, #7c3aed 0%, #6b4db0 50%, #2a8a76 100%)', boxShadow: '0 8px 32px rgba(107,77,176,0.5)' }}
-            >
-              Gratis Demo starten
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-            </Link>
-            <a href="#angebote"
-              className="glass inline-flex items-center justify-center gap-2 text-white font-body font-600 text-lg px-8 py-4 rounded-xl hover:bg-white/15 transition-all duration-200 border border-white/20"
-            >
-              Bildungsprogramm entdecken
-            </a>
-          </div>
-          <p className="text-white/60 text-sm mb-7 font-body">Kostenlos · Keine Anmeldung · Kein automatischer Vertrag</p>
-
           {/* Quick-Start für gestresste Lehrkräfte */}
-          <div className="glass rounded-2xl border border-white/15 px-5 py-4 mb-10 max-w-2xl mx-auto">
+          <div className="glass rounded-2xl border border-white/15 px-5 py-4 mb-7 max-w-2xl mx-auto">
             <div className="grid sm:grid-cols-3 gap-3 text-left">
               {[
                 { nr: '1', fett: 'Ohne Vorbereitung.', rest: 'Demo öffnen, Klasse loslegen lassen.' },
