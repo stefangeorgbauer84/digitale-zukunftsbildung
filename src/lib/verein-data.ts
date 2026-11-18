@@ -1,66 +1,32 @@
+// Stammdaten des Vereins laut Vereinsregisterauszug vom 17.11.2026.
+// Einzige Quelle für Anschrift und Registerdaten: Impressum, Datenschutz, Footer und JSON-LD lesen von hier.
 export const VEREIN = {
   name: 'Verein zur Entwicklung der digitalen Zukunftsbildung',
   kurzname: 'Digitale Zukunftsbildung',
-  zvr: '1781551798',
-  gruendungsjahr: 2022,
+  zvr: '1093499022',
+  sitz: 'Wien',
+  entstehung: '13.12.2021',
+  behoerde: 'Landespolizeidirektion Wien, Referat Vereins-, Versammlungs- und Medienrechtsangelegenheiten',
   adresse: {
-    strasse: 'Johann-Roithner-Straße 131',
-    ort: '4050 Traun',
+    strasse: 'Maderstraße 1/2',
+    plz: '1040',
+    ort: 'Wien',
     land: 'Österreich',
+    zeile: 'Maderstraße 1/2, 1040 Wien',
   },
-  kontakt: {
-    email: 'info@digitale-zukunftsbildung.eu',
-    telefon: '+43 650 215 8715',
-    linkedin: 'https://linkedin.com/company/verein-zur-entwicklung-der-digitalen-zukunftsbildung',
+  // Die Anschrift liegt im Education Lab.
+  standort: { name: 'Education Lab', url: 'https://www.edlab.at' },
+  vorstand: {
+    obfrau: 'Marina Winkler, MA',
+    stellvertretung: 'Dr. Stefan Bauer',
+    funktionsperiode: '26.02.2025 bis 25.02.2027',
   },
-  vorstand: [
-    {
-      name: 'Dr. Stefan Bauer',
-      rolle: 'Obmann',
-      beschreibung:
-        'Bildungswissenschafter & Gründer des Vereins. Entwickelt Skills-UP! als praxisnahes Finanzbildungsprogramm für österreichische Schulen.',
-    },
-  ],
-  mission:
-    'Wir bringen echte Finanzkompetenz zu Jugendlichen ab 15 Jahren — praxisnah, digital und sofort einsetzbar.',
-  programme: [
-    {
-      id: 'skillsup',
-      name: 'Skills-UP!',
-      beschreibung:
-        'Finanzbildungsprogramm für AHS, BHS und PTS. 12+ Module, 10+ Praxissimulationen, lehrplankonform.',
-      url: '/',
-      schularten: ['AHS', 'HAK', 'HTL', 'HLW', 'BAfEP', 'PTS', 'Berufsschule'] as string[],
-    },
-    {
-      id: 'aktiengame',
-      name: 'Aktiengame',
-      beschreibung:
-        'Praxissimulation Börsenhandel — gamifiziert, DSGVO-sicher, sofort einsetzbar.',
-      url: '/aktiengame',
-      schularten: ['AHS', 'HAK', 'HTL', 'HLW', 'BAfEP'] as string[],
-    },
-  ],
-  auszeichnungen: [
-    {
-      titel: 'Top-3 MEGA Bildungsmillion 2025',
-      organisation: 'MEGA Bildungsstiftung',
-      jahr: 2025,
-    },
-    {
-      titel: 'Nationale Finanzbildungsstrategie',
-      organisation: 'Bundesministerium für Finanzen',
-      jahr: 2024,
-    },
-    {
-      titel: 'Gütesiegel Lern-Apps',
-      organisation: 'Österreichisches Institut für angewandte Telekommunikation',
-      jahr: 2024,
-    },
-  ],
-  reichweite: {
-    schuelerInnen: 1830,
-    schulen: 24,
-    bundeslaender: 7,
-  },
+} as const
+
+export const VEREIN_POSTAL_ADDRESS = {
+  '@type': 'PostalAddress',
+  streetAddress: VEREIN.adresse.strasse,
+  addressLocality: VEREIN.adresse.ort,
+  postalCode: VEREIN.adresse.plz,
+  addressCountry: 'AT',
 } as const

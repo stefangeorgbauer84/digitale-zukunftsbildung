@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
+import { VEREIN } from '@/lib/verein-data'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 
@@ -72,8 +73,15 @@ export default function Impressum() {
           </Section>
 
           <Section title="Anschrift">
-            <p>Straußengasse 12/26</p>
-            <p>1050 Wien, Österreich</p>
+            <p>{VEREIN.adresse.strasse}</p>
+            <p>{VEREIN.adresse.plz} {VEREIN.adresse.ort}, {VEREIN.adresse.land}</p>
+            <p>
+              Im{' '}
+              <a href={VEREIN.standort.url} target="_blank" rel="noopener noreferrer"
+                className="hover:underline" style={{ color: '#4a2d8a' }}>
+                {VEREIN.standort.name}
+              </a>
+            </p>
           </Section>
 
           <Section title="Kontakt">
@@ -106,12 +114,20 @@ export default function Impressum() {
           </Section>
 
           <Section title="Vertretungsberechtigte Personen (Vorstand)">
-            <p>Marina Winkler, MA – Obfrau (Vorsitzende) &amp; Projektleiterin</p>
-            <p>Dr. Stefan Bauer, Stellvertretender Vorsitz &amp; Vorstand, Verein digitale Zukunftsbildung</p>
+            <p>{VEREIN.vorstand.obfrau}, Obfrau (Vorsitzende) &amp; Projektleiterin</p>
+            <p>{VEREIN.vorstand.stellvertretung}, Obfrau-Stellvertreter</p>
+            <p>Funktionsperiode: {VEREIN.vorstand.funktionsperiode}</p>
+            <p>
+              Die Obfrau und ihr Stellvertreter vertreten den Verein gemeinsam nach außen (Gesamtvertretung).
+              Schriftliche Ausfertigungen des Vereins sind gültig, wenn beide unterschrieben haben.
+            </p>
           </Section>
 
           <Section title="Vereinsregister">
-            <p>ZVR-Zahl (Zentrales Vereinsregister): <strong className="text-text-primary">1093499022</strong></p>
+            <p>ZVR-Zahl (Zentrales Vereinsregister): <strong className="text-text-primary">{VEREIN.zvr}</strong></p>
+            <p>Sitz: {VEREIN.sitz}</p>
+            <p>Entstehungsdatum: {VEREIN.entstehung}</p>
+            <p>Zuständige Vereinsbehörde: {VEREIN.behoerde}</p>
           </Section>
 
           <Section title="Haftungsausschluss">
@@ -148,7 +164,8 @@ export default function Impressum() {
             <Sub title="Verantwortlicher">
               <p>
                 Verein zur Entwicklung der digitalen Zukunftsbildung<br />
-                Straußengasse 12/26, 1050 Wien, Österreich<br />
+                {VEREIN.adresse.zeile}, {VEREIN.adresse.land}<br />
+                ZVR-Zahl: {VEREIN.zvr}<br />
                 E-Mail: marina@digitale-zukunftsbildung.eu
               </p>
             </Sub>

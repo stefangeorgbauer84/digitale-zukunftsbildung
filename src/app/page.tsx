@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
+import { VEREIN_POSTAL_ADDRESS } from '@/lib/verein-data'
 import SiteNav from '@/components/SiteNav'
 import SiteFooter from '@/components/SiteFooter'
 import BackToTop from '@/components/BackToTop'
@@ -144,12 +145,6 @@ const trustFacts = [
   },
 ]
 
-/* ── How it works ───────────────────────────────────────── */
-const steps = [
-  { step: '01', title: 'Im Browser starten', desc: 'Kein IT-Aufwand, keine Installation. Skills-UP! läuft direkt im Browser, DSGVO-sicher und EU-rechtskonform. Schulweites Rollout in Minuten.', color: '#6b4db0' },
-  { step: '02', title: 'Erleben statt zuhören', desc: 'Jugendliche durchlaufen Module und Praxissimulationen: Depot eröffnen, Gehalt verhandeln, Budget planen. Microlearning, Peer-Videos und Gamification halten die Motivation hoch.', color: '#1E6B5B' },
-  { step: '03', title: 'Fortschritt im Dashboard', desc: 'Lehrkräfte sehen Fortschritt, Noten und Deadlines aller Klassen auf einen Blick. Ideal für Elterngespräche, ohne zusätzliche Korrekturarbeit.', color: '#A84E12' },
-]
 
 export default function HomePage() {
   const platformFeatures = [
@@ -221,13 +216,7 @@ export default function HomePage() {
     url: 'https://www.digitale-zukunftsbildung.eu',
     logo: 'https://www.digitale-zukunftsbildung.eu/fotos/Logo.png',
     description: 'Gemeinnütziger Verein zur Entwicklung von Finanzbildungsprogrammen für österreichische Schulen. Anbieter von Skills-UP!, dem Unterrichtsprogramm für 15- bis 20-Jährige.',
-    address: {
-      '@type': 'PostalAddress',
-      streetAddress: 'Straußengasse 12/26',
-      addressLocality: 'Wien',
-      postalCode: '1050',
-      addressCountry: 'AT',
-    },
+    address: VEREIN_POSTAL_ADDRESS,
     contactPoint: {
       '@type': 'ContactPoint',
       telephone: '+43-650-215-8715',
@@ -628,6 +617,10 @@ export default function HomePage() {
               </div>
             </div>
           </div>
+          <p className="text-center font-body text-sm text-text-secondary mt-8">
+            Was Skills-UP! bewirkt und wie wir es messen, steht im{' '}
+            <Link href="/wirkungsmessung" className="font-700 underline underline-offset-2 text-primary-dark hover:opacity-80">Wirkungsbericht</Link>.
+          </p>
         </div>
       </section>
 
@@ -915,48 +908,6 @@ export default function HomePage() {
       </section>
 
       {/* ══════════════════════════════════════════════════
-          WAS DU DANACH KANNST
-      ══════════════════════════════════════════════════ */}
-      <section className="py-20" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 60%, #0f3d2d 100%)' }}>
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-16 items-center">
-            <div>
-              <p className="text-white/50 text-xs font-body font-700 uppercase tracking-widest mb-4">Lernziele</p>
-              <h2 className="font-heading text-3xl md:text-4xl font-bold text-white mb-6 leading-tight">
-                Was Jugendliche danach<br /><span className="text-primary-light">wirklich können.</span>
-              </h2>
-              <p className="text-white/60 font-body text-lg mb-8 leading-relaxed">
-                Finanzbildung, die nicht im Klassenzimmer bleibt. Sie kommt an bei der ersten Lohnabrechnung, beim ersten Onlinekauf und beim ersten Sparziel.
-              </p>
-              <div className="relative">
-                <div className="absolute inset-0 blur-3xl scale-110 pointer-events-none"
-                  style={{ background: 'radial-gradient(circle, rgba(155,126,212,0.3) 0%, transparent 70%)' }} />
-                <Image src="/capybara-mascot.png" alt="Skills-UP! Maskottchen" width={180} height={180}
-                  className="relative drop-shadow-2xl" />
-              </div>
-            </div>
-            <ul className="space-y-4">
-              {[
-                { text: 'Den eigenen Lohnzettel lesen und Brutto-Netto verstehen', color: '#9b7ed4' },
-                { text: 'Ein realistisches Haushaltsbudget erstellen und einhalten', color: '#2a8a76' },
-                { text: 'Ratenkauf, BNPL und Konsumfallen kritisch durchschauen', color: '#D87228' },
-                { text: 'Krypto-Mythen und Scams als solche erkennen', color: '#4a2d8a' },
-                { text: 'Ein erstes Sparziel setzen und einen Notgroschen aufbauen', color: '#6b4db0' },
-                { text: 'Versicherungen einschätzen und Schuldenfallen vermeiden', color: '#1a5c4e' },
-              ].map((item) => (
-                <li key={item.text} className="flex items-start gap-3">
-                  <span className="mt-1 shrink-0 w-5 h-5 rounded-full flex items-center justify-center" style={{ background: item.color + '25' }}>
-                    <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke={item.color} strokeWidth="3" strokeLinecap="round" strokeLinejoin="round"><polyline points="20 6 9 17 4 12"/></svg>
-                  </span>
-                  <span className="text-white/75 font-body text-sm leading-relaxed">{item.text}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════
           PROGRAMM EINBLICK (Photo Gallery)
       ══════════════════════════════════════════════════ */}
       <section className="py-20 overflow-hidden" style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)' }}>
@@ -982,73 +933,6 @@ export default function HomePage() {
               <span>mehr</span>
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════
-          HOW IT WORKS: dark section
-      ══════════════════════════════════════════════════ */}
-      <section className="py-16 md:py-28" style={{ background: 'linear-gradient(135deg, #1a1040 0%, #2d1b69 50%, #1a3d34 100%)' }}>
-        <div className="max-w-5xl mx-auto px-6">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-white/50 border border-white/15 px-4 py-2 rounded-full mb-5">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-              So funktioniert Skills-UP!
-            </div>
-            <h2 className="font-heading text-3xl md:text-5xl font-bold text-white mb-5">
-              In 3 Schritten zur<br /><span className="text-primary-light">echten Kompetenz.</span>
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-8 relative">
-            <div className="hidden md:block absolute top-10 left-[calc(16.67%+1rem)] right-[calc(16.67%+1rem)] h-px bg-gradient-to-r from-primary-medium/40 via-status-teal/40 to-transparent" />
-            {steps.map((s) => (
-              <div key={s.step} className="glass-dark rounded-2xl p-8 text-center group">
-                <div className="font-heading text-5xl font-bold mb-4 transition-transform duration-300 group-hover:scale-110"
-                  style={{ color: s.color }}>
-                  {s.step}
-                </div>
-                <h3 className="font-heading text-lg font-bold text-white mb-3">{s.title}</h3>
-                <p className="text-white/60 text-sm font-body leading-relaxed">{s.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════
-          AWARD HIGHLIGHT
-      ══════════════════════════════════════════════════ */}
-      <section className="py-20 max-w-7xl mx-auto px-6">
-        <div className="grid md:grid-cols-2 gap-10 items-center">
-          <div>
-            <div className="inline-flex items-center gap-2 text-xs font-body font-700 uppercase tracking-widest text-status-teal bg-status-teal-light px-4 py-2 rounded-full mb-5">
-              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></svg>
-              Ausgezeichnet
-            </div>
-            <h2 className="font-heading text-3xl md:text-4xl font-bold mb-5" style={{ color: '#1a1040' }}>
-              Top-3 Projekt der<br />MEGA Bildungsmillion 2025.
-            </h2>
-            <p className="text-text-muted font-body text-lg leading-relaxed mb-6">
-              Skills-UP! wurde unter hunderten Einreichungen als eines der besten Bildungsprojekte Österreichs ausgezeichnet. Das bestätigt: Unser Ansatz funktioniert.
-            </p>
-            <div className="flex flex-wrap gap-3">
-              {['Gütesiegel Lern-Apps', 'Teil der nationalen Finanzbildungsstrategie', 'Wissenschaftliche Begleitung: Hochschule Burgenland', 'DSGVO-konform', 'Made in Austria'].map((tag) => (
-                <span key={tag} className="px-3 py-1.5 rounded-full text-xs font-body font-700 bg-primary-50 text-primary-dark">
-                  {tag}
-                </span>
-              ))}
-            </div>
-          </div>
-          <div className="rounded-3xl overflow-hidden shadow-xl">
-            <Image
-              src="/fotos/Top%203%20MEGA%20Bildungsstiftung.jpg"
-              alt="Top-3 MEGA Bildungsstiftung Award"
-              width={600}
-              height={288}
-              className="w-full h-72 object-cover"
-            />
           </div>
         </div>
       </section>
@@ -1205,9 +1089,6 @@ export default function HomePage() {
           } satisfies BunnyVideo]}
         />
       </div>
-
-      {/* ── Lernziele Teaser (erste 6) ───────────────────── */}
-      <LernzieleTeaser anzahl={6} offset={0} />
 
       {/* ══════════════════════════════════════════════════
           ZIELGRUPPEN
@@ -1405,7 +1286,7 @@ export default function HomePage() {
           <div>
             <p className="font-body text-xs font-bold uppercase tracking-widest mb-2" style={{ color: '#4a2d8a' }}>Aktuelles</p>
             <h2 className="font-heading text-3xl md:text-4xl font-bold" style={{ color: '#1a1040' }}>
-              Finanzbildung: was gerade wichtig ist
+              Neues aus Verein und Finanzbildung
             </h2>
           </div>
           <Link href="/aktuelles"
@@ -1418,28 +1299,28 @@ export default function HomePage() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {[
             {
+              href: '/aktuelles/l2bgreen-lernplattform-oeffentlich',
+              tag: 'Vereinsprojekt',
+              tagColor: '#1E6B5B',
+              date: 'November 2026',
+              title: 'L2BGreen: Lernplattform für grünes Unternehmertum ist öffentlich',
+              teaser: 'Das Erasmus+ Projekt mit unserem Verein als Partner öffnet seine Lernumgebung, mit Business Cases und dem KI-Lernassistenten Gaia.',
+            },
+            {
+              href: '/aktuelles/wirkungsbericht-skills-up',
+              tag: 'Wirkung',
+              tagColor: '#A84E12',
+              date: 'November 2026',
+              title: 'Was Skills-UP! bewirkt: der Wirkungsbericht ist öffentlich',
+              teaser: 'Wirkungslogik, sieben Befunde und alle Kennzahlen je Quartal. Der Bericht zeigt offen, was gelingt und was noch fehlt.',
+            },
+            {
               href: '/aktuelles/finanzbildung-pflichtfach-2027',
               tag: 'Bildungspolitik',
               tagColor: '#4a2d8a',
               date: 'März 2025',
               title: 'Finanzbildung wird Pflichtfach: was das für Schulen bedeutet',
               teaser: 'Ab 2027 ist Finanzbildung im Lehrplan verankert. Was ändert sich konkret, und wie können Schulen jetzt vorbereitet sein?',
-            },
-            {
-              href: '/aktuelles/finanzbildung-berufsschule',
-              tag: 'Schultypen',
-              tagColor: '#1E6B5B',
-              date: 'April 2025',
-              title: 'Finanzbildung in der Berufsschule: Chancen und Herausforderungen',
-              teaser: 'Dual Ausgebildete brauchen Finanzkompetenz besonders früh. Wie Skills-UP! Berufsschulen dabei unterstützt.',
-            },
-            {
-              href: '/aktuelles/finanzbildung-10-minuten-unterricht',
-              tag: 'Praxistipp',
-              tagColor: '#A84E12',
-              date: 'Mai 2025',
-              title: 'Finanzbildung in 10 Minuten Unterricht: 3 Formate',
-              teaser: 'Keine Zeit für lange Einheiten? Diese drei Formate bringen echte Finanzbildung in kurze Unterrichtsblöcke, ohne Vorbereitung.',
             },
           ].map((post) => (
             <Link key={post.href} href={post.href}
@@ -1470,13 +1351,13 @@ export default function HomePage() {
         <div className="mt-8 p-6 rounded-2xl flex flex-col sm:flex-row items-center gap-4 justify-between"
           style={{ background: 'linear-gradient(135deg, #f3f1f9 0%, #e6f4f1 100%)', border: '1px solid rgba(74,45,138,0.1)' }}>
           <div>
-            <p className="font-heading font-bold text-base" style={{ color: '#1a1040' }}>Lehrplan-Mapping</p>
-            <p className="font-body text-sm text-gray-600 mt-0.5">Welche Module passen zu welchem Schultyp? Die vollständige Zuordnungstabelle.</p>
+            <p className="font-heading font-bold text-base" style={{ color: '#1a1040' }}>Wirkungsbericht Skills-UP!</p>
+            <p className="font-body text-sm text-gray-600 mt-0.5">Wirkungslogik, Befunde und alle Kennzahlen je Quartal, frei zugänglich.</p>
           </div>
-          <Link href="/lehrplan-mapping"
+          <Link href="/wirkungsmessung"
             className="shrink-0 font-body text-sm font-bold px-5 py-2.5 rounded-xl text-white transition-all hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, #4a2d8a, #2a8a76)' }}>
-            Zum Lehrplan-Mapping →
+            Zum Wirkungsbericht
           </Link>
         </div>
       </section>
@@ -1637,30 +1518,6 @@ export default function HomePage() {
               />
             </div>
           </div>
-        </div>
-      </section>
-
-      {/* ══════════════════════════════════════════════════
-          PARTNER GRID: full detail
-      ══════════════════════════════════════════════════ */}
-      <section className="py-20 max-w-7xl mx-auto px-6">
-        <div className="text-center mb-12">
-          <p className="text-xs font-body font-700 uppercase tracking-widest text-primary-medium mb-3">Netzwerk</p>
-          <h2 className="font-heading text-3xl font-bold" style={{ color: '#1a1040' }}>Starke Partner an unserer Seite.</h2>
-        </div>
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-6">
-          {partnerLogos.map((logo) => (
-            <div key={logo.alt} className="bg-white rounded-2xl p-6 shadow-card hover:shadow-card-hover transition-all flex items-center justify-center h-40 group">
-              <Image
-                src={logo.src}
-                alt={logo.alt}
-                width={220}
-                height={100}
-                className="partner-logo"
-                style={{ maxHeight: '100px', width: 'auto', objectFit: 'contain' }}
-              />
-            </div>
-          ))}
         </div>
       </section>
 

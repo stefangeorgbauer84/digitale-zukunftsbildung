@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import SiteNav from '@/components/SiteNav'
+import { VEREIN_POSTAL_ADDRESS } from '@/lib/verein-data'
 import SiteFooter from '@/components/SiteFooter'
 import Link from 'next/link'
 import WillkommenVideos from '@/components/WillkommenVideos'
@@ -70,13 +71,7 @@ const orgJsonLd = {
   url: 'https://www.digitale-zukunftsbildung.eu',
   logo: 'https://www.digitale-zukunftsbildung.eu/fotos/Logo.png',
   description: 'Österreichischer gemeinnütziger Verein für Finanzbildung an Schulen. Betreiber des Programms Skills-UP!',
-  address: {
-    '@type': 'PostalAddress',
-    streetAddress: 'Straußengasse 12/26',
-    addressLocality: 'Wien',
-    postalCode: '1050',
-    addressCountry: 'AT',
-  },
+  address: VEREIN_POSTAL_ADDRESS,
   sameAs: [
     'https://www.linkedin.com/company/verein-zur-entwicklung-der-digitalen-zukunftsbildung',
   ],
@@ -228,7 +223,10 @@ export default function UeberUns() {
             ))}
           </div>
           <p className="text-center text-xs font-body text-text-muted mt-5">
-            Alle Zahlen verfiziert, Stand Juni 2026.
+            Alle Zahlen verifiziert, Stand Juni 2026. Herleitung und aktuelle Plattformzahlen im{' '}
+            <Link href="/wirkungsmessung" className="font-700 underline underline-offset-2 text-primary-dark hover:opacity-80">Wirkungsbericht</Link>.
+            {' '}Der Verein ist außerdem Partner im Erasmus+ Projekt{' '}
+            <Link href="/aktuelles/l2bgreen-lernplattform-oeffentlich" className="font-700 underline underline-offset-2 text-primary-dark hover:opacity-80">L2BGreen</Link>.
           </p>
         </div>
       </section>

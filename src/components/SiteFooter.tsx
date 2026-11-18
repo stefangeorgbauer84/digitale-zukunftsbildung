@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import { VEREIN } from '@/lib/verein-data'
 
 export default function SiteFooter() {
   return (
@@ -51,6 +52,14 @@ export default function SiteFooter() {
                 </svg>
                 LinkedIn
               </a>
+              <p className="text-sm font-body text-white/55 pt-2 leading-relaxed">
+                {VEREIN.adresse.strasse}, {VEREIN.adresse.plz} {VEREIN.adresse.ort}<br />
+                im{' '}
+                <a href={VEREIN.standort.url} target="_blank" rel="noopener noreferrer"
+                  className="underline underline-offset-2 hover:text-white transition-colors">
+                  {VEREIN.standort.name}
+                </a>
+              </p>
             </div>
           </div>
 
@@ -119,7 +128,7 @@ export default function SiteFooter() {
         {/* Bottom bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-xs font-body text-white/50 text-center sm:text-left break-words">
-            © {new Date().getFullYear()} Verein zur Entwicklung der digitalen Zukunftsbildung · Straußengasse 12/26, 1050 Wien
+            © {new Date().getFullYear()} {VEREIN.name} · {VEREIN.adresse.zeile} · ZVR {VEREIN.zvr}
           </p>
           <div className="flex items-center gap-4">
             <span className="text-xs font-body text-white/60 font-600">Gütesiegel Lern-Apps</span>

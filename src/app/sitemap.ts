@@ -16,6 +16,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${base}/schulen/pts`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/schulen/berufsschule`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/aktuelles`, changeFrequency: 'weekly', priority: 0.8 },
+    { url: `${base}/aktuelles/l2bgreen-lernplattform-oeffentlich`, changeFrequency: 'monthly', priority: 0.8 },
+    { url: `${base}/aktuelles/wirkungsbericht-skills-up`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/aktuelles/finanzbildung-pflichtfach-2027`, changeFrequency: 'monthly', priority: 0.9 },
     { url: `${base}/aktuelles/finanzbildung-berufsschule`, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${base}/aktuelles/finanzbildung-10-minuten-unterricht`, changeFrequency: 'monthly', priority: 0.8 },

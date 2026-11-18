@@ -5,7 +5,7 @@ import SiteFooter from '@/components/SiteFooter'
 
 export const metadata: Metadata = {
   title: 'Aktuelles | Skills-UP! Finanzbildung Österreich',
-  description: 'News, Bildungspolitik und Tipps rund um Finanzbildung in österreichischen Schulen. Aktuelle Beiträge vom Team der Digitalen Zukunftsbildung.',
+  description: 'News aus dem Verein, Bildungspolitik und Tipps rund um Finanzbildung in österreichischen Schulen. Aktuelle Beiträge vom Team der Digitalen Zukunftsbildung.',
   alternates: { canonical: 'https://www.digitale-zukunftsbildung.eu/aktuelles' },
   openGraph: {
     title: 'Aktuelles – Skills-UP! Finanzbildung Österreich',
@@ -21,6 +21,24 @@ export const metadata: Metadata = {
 }
 
 const posts = [
+  {
+    slug: 'l2bgreen-lernplattform-oeffentlich',
+    date: '18. November 2026',
+    category: 'Vereinsprojekt',
+    title: 'L2BGreen macht Lernplattform für grünes Unternehmertum öffentlich zugänglich.',
+    excerpt: 'Das Erasmus+ Projekt, an dem unser Verein als Partner beteiligt ist, öffnet seine Lernumgebung: Unternehmensfälle zu Nachhaltigkeit, der KI-Lernassistent Gaia und sechs Sprachen.',
+    readingTime: '4 Min. Lesedauer',
+    highlight: false,
+  },
+  {
+    slug: 'wirkungsbericht-skills-up',
+    date: 'November 2026',
+    category: 'Wirkung',
+    title: 'Was Skills-UP! bewirkt: unser Wirkungsbericht ist öffentlich.',
+    excerpt: 'Wirkungslogik, sieben Befunde und alle Kennzahlen je Quartal. Der Bericht zeigt offen, was gelingt und was noch fehlt.',
+    readingTime: '4 Min. Lesedauer',
+    highlight: false,
+  },
   {
     slug: 'finanzbildung-pflichtfach-2027',
     date: 'März 2025',
@@ -71,7 +89,7 @@ export default function AktuellesPage() {
               Aktuelles
             </h1>
             <p className="font-body text-white/60 text-lg">
-              News, Bildungspolitik und Praxistipps rund um Finanzbildung an österreichischen Schulen.
+              News aus dem Verein, Bildungspolitik und Praxistipps rund um Finanzbildung an österreichischen Schulen.
             </p>
           </div>
         </section>
